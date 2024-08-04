@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cab08e810a28af4a9eae052360cdb25, type: 3}
+  m_Name: Game Settings
+  m_EditorClassIdentifier: 
+  <ResetDuration>k__BackingField: 2.5
+  <StageWidth>k__BackingField: 50
+  <StageLength>k__BackingField: 50
+  <StartEnemySpawnTime>k__BackingField: 1
+  <EnemySpawnInterval>k__BackingField: 10
+  <EnemySpawnCount>k__BackingField: 8
+  <PlayerMaxHealth>k__BackingField: 10
+  <PlayerMoveSpeed>k__BackingField: 10
+  <PlayerRotateSpeed>k__BackingField: 20
+  <PlayerAttackDamage>k__BackingField: 5
+  <PlayerAttackCoolDown>k__BackingField: 0.25
+  <PlayerAttackStunDuration>k__BackingField: 0
+  <PredationRange>k__BackingField: 3
+  <PredationCoolDown>k__BackingField: 0
+  <DashDuration>k__BackingField: 0.1
+  <PredationDuration>k__BackingField: 0
+  <MaxHunger>k__BackingField: 10
