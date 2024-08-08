@@ -18,9 +18,10 @@ namespace JH
         {
             m_player = GetComponent<PlayerController>();
             m_mainCam = Camera.main;
+            m_aim.parent = transform.parent;
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             AimUpdate();
         }

@@ -296,6 +296,7 @@ Transform:
   m_Children:
   - {fileID: 384314030566087038}
   - {fileID: 9161773224877410759}
+  - {fileID: 3289847135284766036}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8536746120527603423
@@ -437,8 +438,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  m_Constraints: 116
+  m_CollisionDetection: 1
 --- !u!136 &5557951148573741946
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1194,8 +1195,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3289847135284766036}
+  m_Children: []
   m_Father: {fileID: 7626080337942912701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2686128555988909208
@@ -4122,7 +4122,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 9161773224877410759}
+  m_Father: {fileID: 7626080337942912701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2434417993995182076
 MeshFilter:

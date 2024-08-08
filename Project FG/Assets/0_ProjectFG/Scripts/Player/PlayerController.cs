@@ -11,15 +11,16 @@ namespace JH
         private Transform m_model;
 
         private Damageable m_damageable;
-        
+
         private PlayerInput m_input;
         private PlayerMovement m_movement;
         private PlayerPredation m_predation;
+        private PlayerAttack m_attack;
 
         private AnimationController m_animation;
         private CinemachineImpulseSource m_impulse;
 
-        [Header ("Game Settings")]
+        [Header("Game Settings")]
         [SerializeField] private GameSettings m_gameSettings;
 
         [Header("Player")]
@@ -43,6 +44,7 @@ namespace JH
             m_input = GetComponent<PlayerInput>();
             m_movement = GetComponent<PlayerMovement>();
             m_predation = GetComponent<PlayerPredation>();
+            m_attack = GetComponent<PlayerAttack>();
 
             m_animation = GetComponent<AnimationController>();
             m_impulse = GetComponent<CinemachineImpulseSource>();
@@ -99,7 +101,7 @@ namespace JH
         {
             m_animation.SetLayer("Upper Layer", 0);
             m_animation.SetBool(AnimationID.isDie, true);
-            GameManager.Instance.GameOver();            
+            GameManager.Instance.GameOver();
         }
 
         public void LookAt(Vector3 position)
@@ -112,8 +114,15 @@ namespace JH
             m_damageable.InvincibleMode(true);
         }
 
+
+        private bool IsFixedFrame()
+        {
+            Debug.Log(Time.time  +" / " + Time.fixedTime + " / " + Time.deltaTime + " / " + Time.fixedDeltaTime);
+            return Time.time == Time.fixedTime;
+
+        }
     }
 
 
-    
+
 }

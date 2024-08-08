@@ -38,6 +38,9 @@ namespace JH
                 if (t.m_predation.IsPredation)
                     return new PredationState();
 
+                if(t.m_attack.isAttack)
+                    return new AttackState();
+
                 // 입력이 있으면 이동 상태
                 if (t.Input.Move != Vector2.zero)
                     return new MoveState();
@@ -76,6 +79,9 @@ namespace JH
 
                 if (t.m_predation.PredationTarget != null)
                     return new PredationState();
+
+                if (t.m_attack.isAttack)
+                    return new AttackState();
 
                 // 입력이 없으면 대기 상태
                 if (t.Input.Move == Vector2.zero)
@@ -134,6 +140,43 @@ namespace JH
 
                 t.m_movement.Movement(velocity);
                 t.m_movement.LookRotation(moveDirWorld);
+            }
+        }
+        #endregion
+
+        #region ▶ STATE ATTACK : 공격 상태
+        public class AttackState : FSM<PlayerController>
+        {
+            // 상태 전이 조건을 넣는 메서드
+            public override FSM<PlayerController> StateTransition(PlayerController t)
+            {
+                if (t.m_damageable.IsDie)
+                    return new DieState();
+
+                if (t.m_predation.PredationTarget != null)
+                    return new PredationState();
+
+                if (t.m_attack.isAttack)
+                    return this;
+
+                return new IdleState();
+            }
+
+            public override void Enter(PlayerController t)
+            {
+                base.Enter(t);
+                t.StateHandler(FSMState.Attack);
+            }
+            // 상태 중일 때 실행될 메서드
+            public override void Stay(PlayerController t)
+            {
+                base.Stay(t);
+            }
+
+            // 상태를 빠져 나갈 때 실행될 메서드
+            public override void Exit(PlayerController t)
+            {
+                base.Exit(t);
             }
         }
         #endregion

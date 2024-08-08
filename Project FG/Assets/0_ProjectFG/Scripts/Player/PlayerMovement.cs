@@ -11,6 +11,10 @@ namespace JH
         private Rigidbody m_rigid;
         private Transform m_model;
 
+        [SerializeField] LayerMask m_wallMask;
+        [SerializeField] float m_wallDistance;
+
+        Vector3 m_velocity;
 
         private void Awake()
         {
@@ -23,7 +27,21 @@ namespace JH
         // 플레이어 이동 함수
         public void Movement(Vector3 velocity)
         {
-            m_rigid.MovePosition(m_rigid.position + velocity);
+            Vector3 newVelocity = m_rigid.position + velocity;
+
+            Ray ray = new Ray(m_rigid.position, velocity.normalized);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit, m_wallDistance, m_wallMask))
+            {
+                Debug.Log(hit.collider.name);
+                newVelocity = m_rigid.position;
+            }
+            
+
+            
+
+
+            m_rigid.MovePosition(newVelocity);
         }
 
         // 플레이어가 보는 방향
@@ -50,5 +68,15 @@ namespace JH
             m_model.LookAt(lookPos);
         }
 
+
+        private void OnDrawGizmosSelected()
+        {
+            Transform position = transform;
+
+            if (m_model)
+                position = m_model;
+
+            Debug.DrawRay(position.position, position.forward, Color.red);
+        }
     }
 }
