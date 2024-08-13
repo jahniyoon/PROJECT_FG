@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System.Security.Claims;
 
 namespace JH
 {
@@ -16,6 +17,7 @@ namespace JH
         private PlayerMovement m_movement;
         private PlayerPredation m_predation;
         private PlayerAttack m_attack;
+        private PlayerAim m_aim;
 
         private AnimationController m_animation;
         private CinemachineImpulseSource m_impulse;
@@ -25,13 +27,14 @@ namespace JH
 
         [Header("Player")]
         [SerializeField] private FSMState m_playerState;
-
+        [SerializeField] private bool m_isFreeze;
 
         #region 프로퍼티
         public PlayerInput Input => m_input;
         public GameSettings Setting => m_gameSettings;
         public AnimationController Animation => m_animation;
         public Transform Model => m_model;
+        public Transform Aim => m_aim.Aim;
         public FSMState State => m_playerState;
         #endregion
 
@@ -45,6 +48,7 @@ namespace JH
             m_movement = GetComponent<PlayerMovement>();
             m_predation = GetComponent<PlayerPredation>();
             m_attack = GetComponent<PlayerAttack>();
+            m_aim = GetComponent<PlayerAim>();
 
             m_animation = GetComponent<AnimationController>();
             m_impulse = GetComponent<CinemachineImpulseSource>();
@@ -119,7 +123,11 @@ namespace JH
         {
             Debug.Log(Time.time  +" / " + Time.fixedTime + " / " + Time.deltaTime + " / " + Time.fixedDeltaTime);
             return Time.time == Time.fixedTime;
+        }
 
+        public void SetFreeze(bool enable)
+        {
+            m_isFreeze = enable;
         }
     }
 

@@ -52,7 +52,7 @@ namespace JH
 
         public void Attack()
         {
-            if (m_isAttack || m_player.State == FSMState.Die || m_player.State == FSMState.Predation)
+            if (m_isAttack || m_player.State == FSMState.Die || m_player.State == FSMState.Predation || m_player.State == FSMState.Freeze)
                 return;
 
             m_player.Animation.SetTrigger(AnimationID.isAttack);
@@ -83,6 +83,7 @@ namespace JH
                         Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
 
                         damageable.OnDamage(m_player.Setting.PlayerAttackDamage);
+                        colls[i].GetComponent<EnemyController>().OnStun(m_player.Setting.PlayerAttackStunDuration);
                     }
                 }
             }
@@ -94,7 +95,7 @@ namespace JH
 
         void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = new Color(1,0,0,0.5f);
             Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_attackOffset, m_attackRadius);
         }
     }

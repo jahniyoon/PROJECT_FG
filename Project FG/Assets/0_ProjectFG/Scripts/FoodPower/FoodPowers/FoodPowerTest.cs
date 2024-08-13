@@ -18,12 +18,17 @@ namespace JH
         {
             Transform parent = GameManager.Instance.ProjectileParent;
 
-            Vector3 position = m_player.position;
+            Vector3 position = m_startT.position;
             position.y += m_offset;
 
-            GameObject projectile = Instantiate(m_projectilePrefab, position, m_player.rotation, parent);
+            Quaternion direction = GetDirection();
 
-            
+            // 방향이 없으면 발사하지 않는다.
+            if (direction == Quaternion.identity)
+                return;
+
+            GameObject projectile = Instantiate(m_projectilePrefab, position, direction, parent);
         }
+
     }
 }

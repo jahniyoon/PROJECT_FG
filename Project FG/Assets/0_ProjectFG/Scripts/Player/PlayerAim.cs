@@ -13,6 +13,7 @@ namespace JH
         [SerializeField] private Transform m_aim;
         [SerializeField] LayerMask m_floorLayer;
 
+        public Transform Aim => m_aim;
 
         private void Awake()
         {

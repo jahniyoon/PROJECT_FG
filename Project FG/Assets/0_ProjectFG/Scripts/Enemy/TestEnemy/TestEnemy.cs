@@ -17,7 +17,6 @@ namespace JH
 
         [Header("Attack CoolDown")]
         [SerializeField] private float m_attackCoolDown = 0;
-
         Coroutine m_attackCoolDownRoutine;
 
 

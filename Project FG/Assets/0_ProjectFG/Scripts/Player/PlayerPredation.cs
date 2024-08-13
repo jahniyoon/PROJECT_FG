@@ -45,7 +45,7 @@ namespace JH
         private void Predation()
         {
             //  사망 상태 및 이미 포식 타겟이 있으면 체크하지 않음                    
-            if (m_predationTarget != null || m_player.State == FSMState.Die)
+            if (m_predationTarget != null || m_player.State == FSMState.Die || m_hunger.CantPredation)
                 return;
 
             m_predationTarget = ScanTarget();
@@ -57,13 +57,13 @@ namespace JH
 
 
             // 1. 마우스 Aim 먼저 검사
-            target = ScanPosition(m_aim.GetPoint(), 1);
+            target = ScanPosition(m_aim.GetPoint(), m_player.Setting.PredationAimRange);
 
             if (target != null)
             return target;
 
             // 2. PC 주변 검사
-            target = ScanPosition(transform.position, m_player.Setting.PredationRange);
+            target = ScanPosition(transform.position, m_player.Setting.PredationPlayerRange);
 
             return target;
         }
@@ -84,8 +84,8 @@ namespace JH
                 {
                     EnemyController enemy = colls[i].GetComponent<EnemyController>();
                     
-                    //  그로기 상태가 아니면 패스
-                    if (enemy.State != FSMState.Groggy)
+                    //  포식 가능 상태가 아니면 패스
+                    if (enemy.CanPredation == false)
                         continue;
 
                     target = DistanceChecker(position, target, enemy.transform);
@@ -149,7 +149,7 @@ namespace JH
                 yield return null;
             }
 
-            Invoke(nameof(ResetTarget), m_player.Setting.PredationDuration);
+            Invoke(nameof(ResetTarget), m_player.Setting.PredationFatalityDuration);
             yield break;
         }
 

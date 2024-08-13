@@ -33,6 +33,7 @@ namespace JH
 
     public enum FSMState
     {
+        Freeze,       // 멈춤
         Idle,       // 대기
         Move,       // 이동
         Attack,     // 공격

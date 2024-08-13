@@ -13,8 +13,8 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_groggyCoolDown)
-                return new GroggyState();
+            if (0 < m_stunCoolDown)
+                return new HitState();
 
 
             if (m_target)
@@ -40,8 +40,8 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_groggyCoolDown)
-                return new GroggyState();
+            if (0 < m_stunCoolDown)
+                return new HitState();
 
             if (m_target == null)
                 return new IdleState();
@@ -75,8 +75,8 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_groggyCoolDown)
-                return new GroggyState();
+            if (0 < m_stunCoolDown)
+                return new HitState();
 
             if (m_target == null)
                 return new IdleState();
@@ -87,14 +87,18 @@ namespace JH
                 return null;
         }
 
-        float timer = 0;
+        protected override void AttackStateEnter()
+        {
+            // 돌입시 타이머를 리셋한다.
+            ResetAttackTimer();
+        }
 
         protected override void AttackStateStay()
         {
-            if(m_data.AttackSpeed < timer && CanAttackCheck())
+            if(m_data.AttackSpeed < m_attackTimer && CanAttackCheck())
             {
                 // 공격 속도 타이머와 쿨타임 초기화
-                timer = 0;
+                m_attackTimer = 0;
                 m_attackCoolDown = m_data.AttackCoolDown;
 
                 if(m_attackCoolDownRoutine != null)
@@ -110,37 +114,37 @@ namespace JH
             }
             ModelRotate(m_target.position);
 
-            timer += Time.deltaTime;
+            m_attackTimer += Time.deltaTime;
         }
         #endregion
 
-        #region GROGGY STATE
-        protected override FSM<EnemyController> GroggyStateConditional()
+        #region Hit STATE
+        protected override FSM<EnemyController> HitStateConditional()
         {
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (m_groggyCoolDown <= 0)
+            if (m_stunCoolDown <= 0)
                 return new IdleState();
 
             return null;
         }
-        protected override void GroggyStateEnter()
+        protected override void HitStateEnter()
         {
-            m_groggyEffect.gameObject.SetActive(true);
-            m_groggyEffect.Stop();
-            m_groggyEffect.Play();
+            m_stunEffect.gameObject.SetActive(true);
+            m_stunEffect.Stop();
+            m_stunEffect.Play();
         }
 
-        protected override void GroggyStateStay()
+        protected override void HitStateStay()
         {
-            m_groggyCoolDown -= Time.deltaTime;
+            m_stunCoolDown -= Time.deltaTime;
         }
 
-        protected override void GroggyStateExit()
+        protected override void HitStateExit()
         {
-            m_groggyEffect.gameObject.SetActive(false);
-            m_groggyEffect.Stop();
+            m_stunEffect.gameObject.SetActive(false);
+            m_stunEffect.Stop();
         }
         #endregion
 

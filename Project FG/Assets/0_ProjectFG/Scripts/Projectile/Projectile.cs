@@ -12,23 +12,25 @@ namespace JH
         [SerializeField] ProjectileData m_data;
         [Header("Projectile Setting")]
         [SerializeField] private TargetTag m_targetTag;
-        [SerializeField] private int m_damage = 1;
+        [SerializeField] private float m_damage = 1;
         [SerializeField] private float m_projectileSpeed = 5;   // 스피드
-        [SerializeField] private float m_destroyTime = 10;      // 자동 삭제 시간
+        [SerializeField] private float m_destroyDistnace = 10;      // 자동 삭제 거리
         [SerializeField] private int m_penetrate = 0;           // 관통
+        private Vector3 m_spawnPos;
 
         private void Awake()
         {
             m_rigid = GetComponent<Rigidbody>();
             m_collider = GetComponent<SphereCollider>();
-            
-            if(m_data)
+            m_spawnPos = transform.position;
+            if (m_data)
             {
                 m_targetTag = m_data.TargetTag;
                 m_damage = m_data.Damage;
-                m_projectileSpeed = m_data.ProjectildSpeed;
-                m_destroyTime = m_data.DestroyTime;
+                m_projectileSpeed = m_data.ProjectileSpeed;
+                m_destroyDistnace = m_data.DestroyDistance;
                 m_penetrate = m_data.Penetrate;
+                transform.localScale = Vector3.one * m_data.ProjectileScale;
             }
         }
 
@@ -43,9 +45,9 @@ namespace JH
             Vector3 velocity = transform.forward * (m_projectileSpeed * Time.deltaTime);
             m_rigid.MovePosition(m_rigid.position + velocity);
 
-            m_destroyTime -= Time.deltaTime;
+            float distance = Vector3.Distance(transform.position, m_spawnPos);
 
-            if (m_destroyTime <= 0)
+            if (m_destroyDistnace <= distance)
                 Collision();
         }
 

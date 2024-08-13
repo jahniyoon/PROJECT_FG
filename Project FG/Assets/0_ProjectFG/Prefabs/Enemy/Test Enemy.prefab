@@ -224,8 +224,12 @@ MonoBehaviour:
   m_targetDistance: 0
   m_healthBar: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
     type: 3}
-  m_groggyEffect: {fileID: 8319817106852655872}
-  m_groggyCoolDown: 0
+  m_FoodPower: {fileID: 0}
+  m_canPredation: 0
+  m_predationIcon: {fileID: 3742115071999069320, guid: 951f5672f13fe0542bf628a0d95102c3,
+    type: 3}
+  m_stunEffect: {fileID: 8319817106852655872}
+  m_stunCoolDown: 0
   m_attackEffect: {fileID: 2985188390900530244}
   m_attackOffset: 1
   m_attackRadius: 1

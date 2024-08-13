@@ -17,15 +17,23 @@ MonoBehaviour:
   <StageLength>k__BackingField: 50
   <StartEnemySpawnTime>k__BackingField: 1
   <EnemySpawnInterval>k__BackingField: 10
-  <EnemySpawnCount>k__BackingField: 8
+  <EnemySpawnCount>k__BackingField: 15
   <PlayerMaxHealth>k__BackingField: 10
   <PlayerMoveSpeed>k__BackingField: 10
   <PlayerRotateSpeed>k__BackingField: 20
   <PlayerAttackDamage>k__BackingField: 5
   <PlayerAttackCoolDown>k__BackingField: 0.25
   <PlayerAttackStunDuration>k__BackingField: 0
-  <PredationRange>k__BackingField: 3
+  <PredationPlayerRange>k__BackingField: 5
+  <PredationAimRange>k__BackingField: 3
   <PredationCoolDown>k__BackingField: 0
   <DashDuration>k__BackingField: 0.1
-  <PredationDuration>k__BackingField: 0
+  <PredationFatalityDuration>k__BackingField: 0
+  <PredationIconScale>k__BackingField: 0.5
   <MaxHunger>k__BackingField: 10
+  <HungerSkillRange>k__BackingField: 5
+  <HungerSkillDamage>k__BackingField: 5
+  <HungerSkillStun>k__BackingField: 1
+  <HungerSkillDelay>k__BackingField: 1
+  <FoodPowerDelay>k__BackingField: 0.25
+  <FoodPowerAimType>k__BackingField: 1

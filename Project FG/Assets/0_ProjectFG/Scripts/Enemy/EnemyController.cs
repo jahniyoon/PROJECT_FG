@@ -29,9 +29,18 @@ public partial class EnemyController : MonoBehaviour
     [SerializeField] private MiniHealthBar m_healthBar;
     [SerializeField] private FoodPower m_FoodPower;
 
-    [Header("Groggy")]
-    [SerializeField] protected ParticleSystem m_groggyEffect;
-    [SerializeField] protected float m_groggyCoolDown;
+    [Header("Predation")]
+    [SerializeField] private bool m_canPredation;
+    [SerializeField] private WorldSpaceIcon m_predationIcon;
+
+    [Header("Stun")]
+    [SerializeField] protected ParticleSystem m_stunEffect;
+    [SerializeField] protected float m_stunCoolDown;
+
+    // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
+    protected float m_attackTimer = 0;
+
+    public bool CanPredation => m_canPredation;
 
     public FSMState State => m_state;
 
@@ -80,6 +89,12 @@ public partial class EnemyController : MonoBehaviour
         m_damageable = GetComponent<Damageable>();
         m_healthBar = Instantiate(m_healthBar.gameObject, this.transform).GetComponent<MiniHealthBar>();
         m_hitEffect = GetComponent<HitEffect>();
+
+        m_FoodPower = m_data.FoodPower;
+
+        // 포식 아이콘 미리 꺼둔다.
+        m_predationIcon = Instantiate(m_predationIcon.gameObject, this.transform).GetComponent<WorldSpaceIcon>();
+        m_predationIcon.IconEnable(false);
     }
 
     protected virtual void StartInit()
@@ -122,11 +137,11 @@ public partial class EnemyController : MonoBehaviour
 
     }
 
-    protected bool GroggyCheck()
+    protected bool CanPredationCheck()
     {
         float curRatio = m_damageable.Health / (float)m_damageable.MaxHealth;
 
-        return curRatio <= m_data.GroggyHealthRatio * 0.01f;        
+        return curRatio <= m_data.PredationHealthRatio * 0.01f;        
     }
 
 
@@ -168,26 +183,43 @@ public partial class EnemyController : MonoBehaviour
     {
         float ratio = m_damageable.Health / (float)m_damageable.MaxHealth;
         m_healthBar.SetHealthSlider(ratio);
+
+        bool isPredation = m_canPredation;
+
+        // 체력을 업데이트 할 때마다 포식상태 체크 및 업데이트
+        m_canPredation = CanPredationCheck();
+        m_predationIcon.IconEnable(m_canPredation);
+
+        // 포식 가능한 상태가 아니였다가 포식 가능 상태가 되었을 때
+        if (isPredation == false && m_canPredation == true)
+        {
+            m_stunCoolDown = m_data.PredationStunCoolDown;
+        }
+
+    }
+
+
+    protected virtual void OnRestore()
+    {
+
     }
 
     protected virtual void OnDamage()
     {
         m_hitEffect.Hit();
-        if(GroggyCheck())
-        {
-            m_groggyCoolDown = m_data.GroggyStunTime;
-        }
+        ResetAttackTimer();
     }
 
-    protected virtual void OnGroggy()
+    public virtual void OnStun(float stunDuration)
     {
-        if(m_groggyEffect)
-            m_groggyEffect.Stop();
-            m_groggyEffect.Play();
+        m_stunCoolDown += stunDuration;
     }
 
     protected virtual void Die()
     {
+        m_canPredation = false;
+        m_predationIcon.IconEnable(m_canPredation);
+
         m_hitEffect.Die();
         Destroy(gameObject, 1);
         UIManager.Instance.Debug.KillCountText(1);
@@ -200,7 +232,12 @@ public partial class EnemyController : MonoBehaviour
     }
     public FoodPower GetFoodPower()
     {
-        return m_data.FoodPower;
+        return m_FoodPower;
+    }
+
+    protected void ResetAttackTimer()
+    {
+        m_attackTimer = 0;
     }
 
 }

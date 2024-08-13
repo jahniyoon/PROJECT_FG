@@ -59,8 +59,8 @@ namespace JH
             {
                 m_health = 0;
                 Die();
+                return;
             }
-
             DamageEvent?.Invoke();
             UpdateHealthEvent?.Invoke();
         }
@@ -70,6 +70,8 @@ namespace JH
                 return;
 
             m_isDie = true;
+
+            UpdateHealthEvent?.Invoke();
             DieEvent?.Invoke();
         }
 

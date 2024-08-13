@@ -26,6 +26,40 @@ namespace JH
             m_playerState = nextState;
         }
 
+
+        #region ▶ STATE FREEZE : 프리즈 상태
+        public class FreezeState : FSM<PlayerController>
+        {
+            // 상태 전이 조건을 넣는 메서드
+            public override FSM<PlayerController> StateTransition(PlayerController t)
+            {
+
+                if (t.m_isFreeze == false)
+                    return new IdleState();
+
+                return this;
+            }
+
+            public override void Enter(PlayerController t)
+            {
+                base.Enter(t);
+                t.StateHandler(FSMState.Freeze);
+            }
+            // 상태 중일 때 실행될 메서드
+            public override void Stay(PlayerController t)
+            {
+                base.Stay(t);
+            }
+
+            // 상태를 빠져 나갈 때 실행될 메서드
+            public override void Exit(PlayerController t)
+            {
+                base.Exit(t);
+            }
+        }
+        #endregion
+
+
         #region ▶ STATE IDLE : 대기 상태
         public class IdleState : FSM<PlayerController>
         {
@@ -34,6 +68,9 @@ namespace JH
             {
                 if (t.m_damageable.IsDie)
                     return new DieState();
+
+                if (t.m_isFreeze)
+                    return new FreezeState();
 
                 if (t.m_predation.IsPredation)
                     return new PredationState();
@@ -76,6 +113,9 @@ namespace JH
             {
                 if (t.m_damageable.IsDie)
                     return new DieState();
+
+                if (t.m_isFreeze)
+                    return new FreezeState();
 
                 if (t.m_predation.PredationTarget != null)
                     return new PredationState();
@@ -153,6 +193,9 @@ namespace JH
                 if (t.m_damageable.IsDie)
                     return new DieState();
 
+                if (t.m_isFreeze)
+                    return new FreezeState();
+
                 if (t.m_predation.PredationTarget != null)
                     return new PredationState();
 
@@ -190,7 +233,10 @@ namespace JH
                 if (t.m_damageable.IsDie)
                     return new DieState();
 
-                if(t.m_predation.IsPredation == false)
+                if (t.m_isFreeze)
+                    return new FreezeState();
+
+                if (t.m_predation.IsPredation == false)
                     return new IdleState();
 
                 return this;

@@ -33,7 +33,6 @@ namespace JH
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, m_wallDistance, m_wallMask))
             {
-                Debug.Log(hit.collider.name);
                 newVelocity = m_rigid.position;
             }
             
