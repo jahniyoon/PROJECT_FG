@@ -23,14 +23,14 @@ namespace JH
         [field: SerializeField] public int EnemySpawnCount { get; private set; }   // 에네미 스폰 수
 
         [field: Header("플레이어 체력")]
-        [field: SerializeField] public int PlayerMaxHealth { get; private set; }   // 플레이어 체력
+        [field: SerializeField] public float PlayerMaxHealth { get; private set; }   // 플레이어 체력
 
         [field: Header("플레이어 이동")]
         [field: SerializeField] public float PlayerMoveSpeed { get; private set; }   // 플레이어 이동속도
         [field: SerializeField] public float PlayerRotateSpeed { get; private set; }   // 플레이어 회전속도
         
         [field: Header("플레이어 공격")]
-        [field: SerializeField] public int PlayerAttackDamage { get; private set; }   // 플레이어 공격력
+        [field: SerializeField] public float PlayerAttackDamage { get; private set; }   // 플레이어 공격력
         [field: SerializeField] public float PlayerAttackCoolDown { get; private set; }   // 플레이어 공격력
         [field: SerializeField] public float PlayerAttackStunDuration { get; private set; }   // 경직 유발 시간
 

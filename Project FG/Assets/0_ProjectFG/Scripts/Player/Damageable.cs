@@ -9,8 +9,8 @@ namespace JH
     public class Damageable : MonoBehaviour, IDamageable
     {
         [Header("Health")]
-        [SerializeField] private int m_maxHealth;
-        [SerializeField] private int m_health;
+        [SerializeField] private float m_maxHealth;
+        [SerializeField] private float m_health;
         [SerializeField] private bool m_isDie;
 
         [SerializeField] private bool m_invincible;
@@ -19,12 +19,12 @@ namespace JH
         public UnityEvent DieEvent;
         public UnityEvent UpdateHealthEvent;
     
-    public int MaxHealth => m_maxHealth;
-        public int Health => m_health;
+    public float MaxHealth => m_maxHealth;
+        public float Health => m_health;
 
         public bool IsDie => m_isDie;
 
-        public void SetMaxHealth(int maxHealth)
+        public void SetMaxHealth(float maxHealth)
         {
             m_maxHealth = maxHealth;
             m_health = maxHealth;
@@ -32,7 +32,7 @@ namespace JH
             UpdateHealthEvent?.Invoke();
         }
 
-        public void RestoreHealth(int addHealth)
+        public void RestoreHealth(float addHealth)
         {
             if (IsDie)
                 return;
@@ -48,7 +48,7 @@ namespace JH
         }
 
 
-        public void OnDamage(int damage)
+        public void OnDamage(float damage)
         {
             if (IsDie)
                 return;
