@@ -155,6 +155,7 @@ namespace JH
             foodPowers.Clear();
 
             UIManager.Instance.MainUI.FoodPowerUI.SetMaxFoodPower(m_maxHunger);
+            UIManager.Instance.MainUI.HungerUI.SetSlider(m_maxHunger, m_curHunger);
         }
 
 
