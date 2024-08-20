@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276f4b62d465edd48903a4944cfc75e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: 20fad2c8c8c8ffb46ba6f9d3ec10d36d, type: 2}
+  m_data: {fileID: 11400000, guid: 06d697d57d7cca0419cf1e4d34da25dd, type: 2}
   m_state: 0
   m_target: {fileID: 0}
   m_targetDistance: 0
@@ -233,7 +233,6 @@ MonoBehaviour:
   m_attackEffect: {fileID: 2985188390900530244}
   m_attackOffset: 1
   m_attackRadius: 1
-  m_attackCoolDown: 0
 --- !u!114 &2386641190285868544
 MonoBehaviour:
   m_ObjectHideFlags: 0

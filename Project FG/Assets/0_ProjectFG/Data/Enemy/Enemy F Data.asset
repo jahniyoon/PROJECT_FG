@@ -9,18 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729b754429ef6cf4ebcb9fa29cd3bb38, type: 3}
-  m_Name: Test Enemy A
+  m_Script: {fileID: 11500000, guid: df11b14ae16425848b7d4cdce41b16c5, type: 3}
+  m_Name: Enemy F Data
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Test Enemy
+  <Name>k__BackingField: Test Enemy F
   <Health>k__BackingField: 15
-  <MoveSpeed>k__BackingField: 10
+  <MoveSpeed>k__BackingField: 7
   <RotateSpeed>k__BackingField: 10
-  <AttackSpeed>k__BackingField: 1
   <AttackDamage>k__BackingField: 1
+  <AttackSpeed>k__BackingField: 1
   <AttackRange>k__BackingField: 2
   <AttackCoolDown>k__BackingField: 3
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
   <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
     type: 3}
+  <SkillEffect>k__BackingField: {fileID: 2500426658639734181, guid: 00fc8da280617354e8394592271b6a72,
+    type: 3}
+  <SkillTickDamage>k__BackingField: 1
+  <SkillTickDuration>k__BackingField: 0.5
+  <SkillAreaRadius>k__BackingField: 5

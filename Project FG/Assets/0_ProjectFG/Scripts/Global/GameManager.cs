@@ -39,13 +39,13 @@ namespace JH
             }
 
             m_playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-
+            m_levelManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
 
             GameObject projectile = new GameObject("Projectile Parent");
             m_projectileParent = projectile.transform;
         }
 
-
+        private LevelManager m_levelManager;
         [SerializeField ] private PlayerController m_playerController;
         [SerializeField] private bool m_isGameOver = false;
 
@@ -71,6 +71,10 @@ namespace JH
             if(Input.GetKeyDown(KeyCode.F1))
             {
                 PC.GodMode();
+            }
+            if (Input.GetKeyDown(KeyCode.F2))
+            {
+                m_levelManager.SwitchSpawnEnable();
             }
 
             if (Input.GetKeyDown(KeyCode.R))

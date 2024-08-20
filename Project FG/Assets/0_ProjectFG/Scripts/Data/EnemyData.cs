@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Enemy Data", menuName = "ScriptableObjects/Enemy")]
+    [CreateAssetMenu(fileName = "Enemy Data", menuName = "ScriptableObjects/EnemyDefault", order = 0) ]
 
     public class EnemyData : ScriptableObject
     {

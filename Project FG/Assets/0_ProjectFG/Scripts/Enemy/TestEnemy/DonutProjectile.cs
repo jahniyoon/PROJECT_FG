@@ -8,16 +8,23 @@ namespace JH
     public class DonutProjectile : MonoBehaviour
     {
         [Header("Projectile Setting")]
-        [SerializeField] float m_projectileDamage = 1;                // 데미지
-        [SerializeField] float m_projectileSpeed = 5;                // 데미지
-        [SerializeField] float m_projectileScale = 5;                // 크기
-        [SerializeField] float m_AttackDamageRadius = 5;    // 전체 크기
-        [SerializeField] float m_AttackInnerRadius = 2.5f;  // 공격 받는 사이즈
-
         
+        [SerializeField] float m_projectileDamage = 1;                // 데미지
 
-        [Header("Donut Setting")]
+        [Tooltip("투사체 크기")]
+        [SerializeField] float m_projectileScale = 5;                // 크기
+        [Tooltip("투사체 전체 크기")]
+        [SerializeField] float m_AttackDamageRadius = 5;    // 전체 크기
+        [Tooltip("투사체 공격을 안받는 사이즈")]
+        [SerializeField] float m_AttackInnerRadius = 2.5f;  // 공격 받는 사이즈
+        [Tooltip("제거 시간")]
+        [SerializeField] float m_DestroyTime = 1;  // 공격 받는 사이즈
+
+
+        [Header("Donut Move Setting")]
+        [Tooltip("투사체가 떨어지는 시간")]
         [SerializeField] float m_projectileDropDuration = 1;    // 떨어지는 시간         
+        [Tooltip("투사체 목표의 높이\n보통은 플레이어의 높이입니다.")]
         [SerializeField] float m_targetHeight = 0;    // 목표 높이       
         [SerializeField] ParticleSystem m_dropParticle;
 
@@ -47,7 +54,7 @@ namespace JH
             while(timer < m_projectileDropDuration)
             {
                 transform.position = Vector3.Lerp(startPos, endPos, timer / m_projectileDropDuration);
-                timer += Time.deltaTime * m_projectileSpeed;
+                timer += Time.deltaTime ;
                 yield return null;
             }
 
@@ -79,8 +86,6 @@ namespace JH
                     targetPos.y = transform.position.y;
 
                     float distance = Vector3.Distance(transform.position, targetPos);
-                    Debug.Log(distance);
-
 
                     if (distance < m_AttackInnerRadius)
                     continue;
@@ -95,7 +100,7 @@ namespace JH
 
             m_dropParticle?.Stop();     
             m_dropParticle?.Play();     
-            Destroy(gameObject, 1);
+            Destroy(gameObject, m_DestroyTime);
         }
 
         void OnDrawGizmosSelected()

@@ -297,11 +297,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_projectileDamage: 1
-  m_projectileSpeed: 5
   m_projectileScale: 5
   m_AttackDamageRadius: 4
   m_AttackInnerRadius: 1
-  m_projectileDropDuration: 5
+  m_DestroyTime: 1
+  m_projectileDropDuration: 1
   m_targetHeight: 0
   m_dropParticle: {fileID: 3630752920800535794}
 --- !u!1 &7239603173963408453

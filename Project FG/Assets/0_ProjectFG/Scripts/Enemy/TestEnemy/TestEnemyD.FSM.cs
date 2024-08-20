@@ -88,7 +88,7 @@ namespace JH
             float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
 
             // 공격 거리보다 가까우면
-            if (targetDistance < m_escapeRadius)
+            if (targetDistance < m_dData.EscapeRadius)
             {
                 Vector3 destination = FindChasePos();
 

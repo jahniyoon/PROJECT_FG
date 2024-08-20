@@ -38,6 +38,10 @@ namespace JH
 
         }
 
+        public void SwitchSpawnEnable()
+        {
+            m_spawnEnable = !m_spawnEnable;
+        }
 
         // 에네미 스폰 루틴
         IEnumerator SpawnRoutine()

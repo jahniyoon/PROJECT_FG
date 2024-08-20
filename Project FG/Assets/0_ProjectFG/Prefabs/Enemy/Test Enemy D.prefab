@@ -10084,7 +10084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7cf3fd754396b4c9525188fa663b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: 836dee62032140d4e8c9bff624a79b72, type: 2}
+  m_data: {fileID: 11400000, guid: d9f0d1bb143b93d42a4d729e4b89b891, type: 2}
   m_state: 0
   m_target: {fileID: 0}
   m_targetDistance: 0
@@ -10099,11 +10099,8 @@ MonoBehaviour:
   m_projectile: {fileID: 4176830195239950719, guid: 6210d4ce275700d46951cc73b41d5fd9,
     type: 3}
   m_projectileYOffset: 10
-  m_AttackDamageRadius: 5
-  m_AttackInnerRadius: 2.5
   m_AttackRadius: 10
   m_escapeRadius: 5
-  m_attackCoolDown: 0
 --- !u!114 &3777391520323845705
 MonoBehaviour:
   m_ObjectHideFlags: 0
