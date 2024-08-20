@@ -219,8 +219,8 @@ namespace JH
 //            continue;
 //        }
 
-//        float timer = foodPowers[i].Timer + Time.deltaTime;
-//        foodPowers[i].SetTimer(timer);                
+//        float m_posCheckTimer = foodPowers[i].Timer + Time.deltaTime;
+//        foodPowers[i].SetTimer(m_posCheckTimer);                
 //    }           
 //}
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemy 
+    public partial class TestEnemyD
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -46,27 +46,62 @@ namespace JH
             if (m_target == null)
                 return new IdleState();
 
-            if (m_targetDistance <= m_data.AttackRange)
+            if (TargetAttackDistanceCheck())
             {
                 return new AttackState();
             }
 
             return null;
         }
+
+        float m_posCheckTimer = 0;
+
         protected override void MoveStateEnter()
         {
+            m_posCheckTimer = 0;
             m_agent.isStopped = false;
         }
 
         protected override void MoveStateStay()
         {
-            m_agent.SetDestination(m_target.position);
-            ModelRotate(m_target.position);
+            PositionCheck();
         }
+
+
         protected override void MoveStateExit()
         {
             m_agent.isStopped = true;
         }
+
+        private void PositionCheck()
+        {
+            //  타이머
+            //m_posCheckTimer += Time.deltaTime;
+
+            //if (m_posCheckTimer < 0.5f)
+            //    return;
+
+
+            //m_posCheckTimer = 0;
+
+
+            float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+
+            // 공격 거리보다 가까우면
+            if (targetDistance < m_escapeRadius)
+            {
+                Vector3 destination = FindChasePos();
+
+                m_agent.SetDestination(destination);
+                ModelRotate(destination);
+                return;
+            }
+
+            m_agent.SetDestination(m_target.position);
+            ModelRotate(m_target.position);
+
+        }
+
         #endregion
 
         #region ATTACK STATE
@@ -81,10 +116,10 @@ namespace JH
             if (m_target == null)
                 return new IdleState();
 
-            if (m_data.AttackRange < m_targetDistance)
+            if (TargetAttackDistanceCheck() == false)
                 return new MoveState();
 
-                return null;
+            return null;
         }
 
         protected override void AttackStateEnter()
@@ -95,13 +130,13 @@ namespace JH
 
         protected override void AttackStateStay()
         {
-            if(m_data.AttackSpeed < m_attackTimer && CanAttackCheck())
+            if (m_data.AttackSpeed < m_attackTimer && CanAttackCheck())
             {
                 // 공격 속도 타이머와 쿨타임 초기화
                 m_attackTimer = 0;
                 m_attackCoolDown = m_data.AttackCoolDown;
 
-                if(m_attackCoolDownRoutine != null)
+                if (m_attackCoolDownRoutine != null)
                 {
                     StopCoroutine(m_attackCoolDownRoutine);
                     m_attackCoolDownRoutine = null;
@@ -109,7 +144,7 @@ namespace JH
 
                 m_attackCoolDownRoutine = StartCoroutine(AttackCoolDownRoutine());
 
-                MeleeAttack();
+                Shootdonut(m_target.position);
                 ModelRotate(m_target.position, true);
             }
             ModelRotate(m_target.position);

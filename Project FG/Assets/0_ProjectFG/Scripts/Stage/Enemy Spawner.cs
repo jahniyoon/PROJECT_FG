@@ -36,7 +36,9 @@ namespace JH
 
             for(int i = 0; i < count;  i++)
             {
-                GameObject enemy = Instantiate(m_enemy[0], enemyParent);
+                int random = Random.Range(0, m_enemy.Length);
+
+                GameObject enemy = Instantiate(m_enemy[random], enemyParent);
 
                 Vector3 spawnPos = Vector3.zero;
 
