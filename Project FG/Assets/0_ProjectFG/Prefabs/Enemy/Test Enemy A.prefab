@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 7439829994547660686}
   - component: {fileID: 1685772254089466364}
   m_Layer: 0
-  m_Name: Test Enemy
+  m_Name: Test Enemy A
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

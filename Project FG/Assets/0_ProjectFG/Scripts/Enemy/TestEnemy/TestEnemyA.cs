@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 
 namespace JH
 {
-    public partial class TestEnemy : EnemyController
+    public partial class TestEnemyA : EnemyController
     {
 
         [Header("Attack")]
@@ -42,10 +42,6 @@ namespace JH
 
                     if (damageable)
                     {
-                        float distance = Vector3.Distance(transform.position, colls[i].transform.position);
-
-                        Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
-
                         damageable.OnDamage(m_data.AttackDamage);
                     }
                 }

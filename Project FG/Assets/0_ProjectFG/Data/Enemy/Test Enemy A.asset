@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 729b754429ef6cf4ebcb9fa29cd3bb38, type: 3}
-  m_Name: Test Enemy
+  m_Name: Test Enemy A
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Test Enemy
   <Health>k__BackingField: 15
-  <MoveSpeed>k__BackingField: 5
+  <MoveSpeed>k__BackingField: 10
   <RotateSpeed>k__BackingField: 10
-  <AttackDamage>k__BackingField: 1
   <AttackSpeed>k__BackingField: 1
+  <AttackDamage>k__BackingField: 1
   <AttackRange>k__BackingField: 2
   <AttackCoolDown>k__BackingField: 3
   <PredationHealthRatio>k__BackingField: 50
