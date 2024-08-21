@@ -16,7 +16,7 @@ MonoBehaviour:
   <Health>k__BackingField: 15
   <MoveSpeed>k__BackingField: 7
   <RotateSpeed>k__BackingField: 10
-  <AttackDamage>k__BackingField: 1
+  <AttackDamage>k__BackingField: 0
   <AttackSpeed>k__BackingField: 1
   <AttackRange>k__BackingField: 2
   <AttackCoolDown>k__BackingField: 3
@@ -27,5 +27,5 @@ MonoBehaviour:
   <SkillEffect>k__BackingField: {fileID: 2500426658639734181, guid: 00fc8da280617354e8394592271b6a72,
     type: 3}
   <SkillTickDamage>k__BackingField: 1
-  <SkillTickDuration>k__BackingField: 0.5
+  <SkillTickDuration>k__BackingField: 1
   <SkillAreaRadius>k__BackingField: 5
