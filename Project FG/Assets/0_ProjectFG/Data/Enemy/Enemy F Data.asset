@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy F Data
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Test Enemy F
-  <Health>k__BackingField: 15
+  <Health>k__BackingField: 10
   <MoveSpeed>k__BackingField: 7
   <RotateSpeed>k__BackingField: 10
   <AttackDamage>k__BackingField: 0
