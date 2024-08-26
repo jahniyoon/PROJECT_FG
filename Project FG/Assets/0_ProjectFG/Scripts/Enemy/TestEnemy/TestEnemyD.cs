@@ -14,9 +14,7 @@ namespace JH
         private EnemyDData m_dData;
 
         [Header("Enemy D")]
-        [SerializeField] private DonutProjectile m_projectile;
-        [Tooltip("투사체가 떨어지는 높이")]
-        [SerializeField] private float m_projectileYOffset = 5;    // 투사체가발사되는 곳
+        [SerializeField] private DonutAttack m_skill;
 
    
 
@@ -37,16 +35,17 @@ namespace JH
             }
         }
 
-        private void Shootdonut(Vector3 targetPos)
+        private void ShootDonut(Vector3 targetPos)
         {
-            Vector3 projectilePos = targetPos;
-            projectilePos.y += m_projectileYOffset;
 
-            var projectile = Instantiate(m_projectile, projectilePos, Quaternion.identity, GameManager.Instance.ProjectileParent);
+            var projectile = Instantiate(m_skill, targetPos, Quaternion.identity, GameManager.Instance.ProjectileParent);
+            projectile.SkillInit(m_data.AttackDamage, m_dData.OuterRadius, m_dData.InnerRadius, m_dData.SliderDuration);
+            projectile.SetColor(m_dData.OuterColor, m_dData.SliderColor);
+            
             // 투사체 초기화하고
-            projectile.ProjectileInit(m_data.AttackDamage);
+            //projectile.ProjectileInit(m_data.AttackDamage);
             // 발사
-            projectile.Shoot(targetPos);
+            //projectile.Shoot(targetPos);
         }
 
 

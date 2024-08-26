@@ -25,3 +25,8 @@ MonoBehaviour:
   <PredationStunCoolDown>k__BackingField: 0
   <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
     type: 3}
+  <OuterRadius>k__BackingField: 8
+  <InnerRadius>k__BackingField: 2
+  <SliderDuration>k__BackingField: 1
+  <OuterColor>k__BackingField: {r: 0.6981132, g: 0, b: 0.16555369, a: 0.5058824}
+  <SliderColor>k__BackingField: {r: 1, g: 0, b: 0.08648682, a: 0.19215687}

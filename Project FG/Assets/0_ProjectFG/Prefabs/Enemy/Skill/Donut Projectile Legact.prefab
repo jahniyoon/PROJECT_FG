@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 7194972115679689555}
   - component: {fileID: 4176830195239950719}
   m_Layer: 0
-  m_Name: Donut Projectile
+  m_Name: Donut Projectile Legact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

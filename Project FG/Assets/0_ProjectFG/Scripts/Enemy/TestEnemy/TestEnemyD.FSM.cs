@@ -126,7 +126,7 @@ namespace JH
                 m_attackTimer = 0;
                 m_attackCoolDown = m_data.AttackCoolDown;
          
-                Shootdonut(m_target.position);
+                ShootDonut(m_target.position);
                 ModelRotate(m_target.position, true);
             }
             ModelRotate(m_target.position);
