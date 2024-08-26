@@ -40,13 +40,13 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_stunCoolDown)
+            if (HitStateCheck())
                 return new HitState();
 
             if (m_target == null)
                 return new IdleState();
 
-            if (m_targetDistance <= m_data.AttackRange)
+            if (AttackRangeCheck())
             {
                 return new AttackState();
             }
@@ -60,6 +60,18 @@ namespace JH
 
         protected override void MoveStateStay()
         {
+            float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+
+            // 공격 거리보다 가까우면
+            if (targetDistance < m_data.EscapeRange)
+            {
+                Vector3 destination = FindChasePos();
+
+                m_agent.SetDestination(destination);
+                ModelRotate(destination);
+                return;
+            }
+
             m_agent.SetDestination(m_target.position);
             ModelRotate(m_target.position);
         }
@@ -75,13 +87,13 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_stunCoolDown)
+            if (HitStateCheck())
                 return new HitState();
 
             if (m_target == null)
                 return new IdleState();
 
-            if (m_data.AttackRange < m_targetDistance)
+            if (AttackRangeCheck() == false)
                 return new MoveState();
 
                 return null;
@@ -100,15 +112,7 @@ namespace JH
                 // 공격 속도 타이머와 쿨타임 초기화
                 m_attackTimer = 0;
                 m_attackCoolDown = m_data.AttackCoolDown;
-
-                if(m_attackCoolDownRoutine != null)
-                {
-                    StopCoroutine(m_attackCoolDownRoutine);
-                    m_attackCoolDownRoutine = null;
-                }
-
-                m_attackCoolDownRoutine = StartCoroutine(AttackCoolDownRoutine());
-
+         
                 MeleeAttack();
                 ModelRotate(m_target.position, true);
             }
@@ -124,7 +128,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (m_stunCoolDown <= 0)
+            if (HitStateCheck() == false)
                 return new IdleState();
 
             return null;

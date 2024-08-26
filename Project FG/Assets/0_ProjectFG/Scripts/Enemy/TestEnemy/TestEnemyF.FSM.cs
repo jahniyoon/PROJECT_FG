@@ -13,7 +13,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_stunCoolDown)
+            if (HitStateCheck())
                 return new HitState();
 
             if (m_target)
@@ -39,16 +39,11 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_stunCoolDown)
+            if (HitStateCheck())
                 return new HitState();
 
             if (m_target == null)
                 return new IdleState();
-
-            //if (m_targetDistance <= m_data.AttackRange)
-            //{
-            //    return new AttackState();
-            //}
 
             return null;
         }
@@ -59,6 +54,18 @@ namespace JH
 
         protected override void MoveStateStay()
         {
+            float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+
+            // 도망 거리보다 가까우면
+            if (targetDistance < m_data.EscapeRange)
+            {
+                Vector3 destination = FindChasePos();
+
+                m_agent.SetDestination(destination);
+                ModelRotate(destination);
+                return;
+            }
+
             m_agent.SetDestination(m_target.position);
             ModelRotate(m_target.position);
         }
@@ -68,35 +75,7 @@ namespace JH
         }
         #endregion
 
-        #region ATTACK STATE
-        protected override FSM<EnemyController> AttackStateConditional()
-        {
-            if (m_damageable.IsDie)
-                return new DieState();
-
-            if (0 < m_stunCoolDown)
-                return new HitState();
-
-            if (m_target == null)
-                return new IdleState();
-
-            if (m_data.AttackRange < m_targetDistance)
-                return new MoveState();
-
-                return null;
-        }
-
-        protected override void AttackStateEnter()
-        {
-            // 돌입시 타이머를 리셋한다.
-            ResetAttackTimer();
-        }
-
-        protected override void AttackStateStay()
-        {
-         
-        }
-        #endregion
+ 
 
         #region Hit STATE
         protected override FSM<EnemyController> HitStateConditional()
@@ -104,7 +83,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (m_stunCoolDown <= 0)
+            if (HitStateCheck() == false)
                 return new IdleState();
 
             return null;

@@ -6,11 +6,19 @@ using UnityEngine.VFX;
 
 namespace JH
 {
-    public partial class TestEnemyA : EnemyController
+    public partial class TestEnemyB : EnemyController
     {
-        EnemyAData m_aData;
-        [Header("Enemy A")]
+        EnemyBData m_bData;
+        [Header("Enemy B")]
+        [Header("Attack")]
         [SerializeField] private VisualEffect m_attackEffect;
+
+        [Header("Buff")]
+        [SerializeField] private bool m_isBuff;
+        [SerializeField] private float m_buffCoolDown;
+        [SerializeField] private GameObject m_buffShild;
+        Coroutine m_buffRoutine;
+
 
         protected override void StartInit()
         {
@@ -19,10 +27,10 @@ namespace JH
         }
         private bool TryGetData()
         {
-            EnemyAData m_childData = m_data as EnemyAData;
+            var m_childData = m_data as EnemyBData;
             if (m_childData != null)
             {
-                m_aData = m_childData;
+                m_bData = m_childData;
                 return true;
             }
             else
@@ -33,9 +41,34 @@ namespace JH
             }
         }
 
+        protected override void UpdateBehaviour()
+        {
+            base.UpdateBehaviour();
+            if(0 <m_buffCoolDown)
+            {
+                m_buffCoolDown -= Time.deltaTime;               
+            }
+        }
+
+
+
+        private void ActiveBuff()
+        {
+            m_isBuff = true;
+            m_buffCoolDown += m_bData.BuffCoolDown;
+            m_buffShild.SetActive(true);
+            Invoke(nameof(DeActiveBuff), m_bData.BuffDuration);
+        }
+        private void DeActiveBuff()
+        {
+            m_isBuff = false;
+            m_buffShild.SetActive(false);
+        }
+
+
         private void MeleeAttack()
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position + m_model.forward * m_aData.AttackOffset, m_aData.AttackRadius);
+            Collider[] colls = Physics.OverlapSphere(transform.position + m_model.forward * m_bData.AttackOffset, m_bData.AttackRadius);
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -53,9 +86,9 @@ namespace JH
                     }
                 }
             }
-
             if (m_attackEffect)
                 m_attackEffect.Play();
+
         }
 
 
@@ -66,7 +99,7 @@ namespace JH
             if (canGizmo)
             {
                 Gizmos.color = new Color(1, 0, 0, 0.5f);
-                Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_aData.AttackOffset, m_aData.AttackRadius);
+                //Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_bData.AttackOffset, m_bData.AttackRadius);
             }
         }
     }

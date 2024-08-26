@@ -33,9 +33,14 @@ public partial class EnemyController : MonoBehaviour
     [SerializeField] private bool m_canPredation;
     [SerializeField] private WorldSpaceIcon m_predationIcon;
 
+    [Header("Attack CoolDown")]
+    protected Coroutine m_attackCoolDownRoutine;
+    [SerializeField] protected float m_attackCoolDown;
+
     [Header("Stun")]
     [SerializeField] protected ParticleSystem m_stunEffect;
     [SerializeField] protected float m_stunCoolDown;
+
 
     // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
     protected float m_attackTimer = 0;
@@ -114,6 +119,7 @@ public partial class EnemyController : MonoBehaviour
     {
         TargetDistanceUpdate();
         FSMHandler();
+        CoolDownHandler();
     }
 
     private void TargetDistanceUpdate()
@@ -125,7 +131,11 @@ public partial class EnemyController : MonoBehaviour
         }
         m_targetDistance = Vector3.Distance(transform.position, m_target.position); 
     }
-
+    protected virtual void CoolDownHandler()
+    {
+        if (0 < m_attackCoolDown)
+            m_attackCoolDown -= Time.deltaTime;
+    }
 
     protected virtual void SetTarget(Transform target)
     {
@@ -146,13 +156,13 @@ public partial class EnemyController : MonoBehaviour
 
 
     // 모델 방향 돌리기
-    protected void ModelRotate(Vector3 position, bool instant = false)
+    protected void ModelRotate(Vector3 position, bool navDir = true, bool instant = false)
     {
 
         Vector3 navRotation = m_agent.velocity.normalized;
 
         //  네비게이션 있으면 네비게이션 우선으로 방향 보기
-        if (navRotation != Vector3.zero)
+        if (navRotation != Vector3.zero && navDir)
         {
             m_model.rotation = Quaternion.LookRotation(m_agent.velocity.normalized, Vector3.up);
             return;
@@ -238,6 +248,73 @@ public partial class EnemyController : MonoBehaviour
     protected void ResetAttackTimer()
     {
         m_attackTimer = 0;
+    }
+
+
+    protected virtual bool CanAttackCheck()
+    {
+        return m_attackCoolDown <= 0;
+    }
+
+    protected IEnumerator AttackCoolDownRoutine()
+    {
+        while (0 < m_attackCoolDown)
+        {
+            m_attackCoolDown -= Time.deltaTime;
+            yield return null;
+        }
+
+        m_attackCoolDown = 0;
+        yield break;
+    }
+
+    protected virtual bool HitStateCheck()
+    {
+        return 0 < m_stunCoolDown;
+    }
+
+
+    ///  <summary> 플레이어와의 공격 가능한 거리를 계속 체크한다.</summary>
+    /// <returns>TRUE : 공격 가능 / False : 공격 불가</returns>
+    protected bool AttackRangeCheck()
+    {
+        if (m_target == null)
+            return false;
+
+        float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+
+        // 타겟과의 거리가 도망가는 거리보다 크고, 공격 가능거리보다 짧다.
+        if (m_data.EscapeRange < targetDistance && targetDistance <= m_data.AttackRange)
+            return true;
+
+        return false;
+    }
+
+    /// <summary>
+    /// 플레이어를 피해 도망갈 포지션을 찾는다.
+    /// </summary>
+    /// <returns></returns>
+    protected Vector3 FindChasePos()
+    {
+
+        // 현재 적의 위치
+        Vector3 currentPosition = transform.position;
+
+        // 적에서 플레이어까지의 방향 벡터 (플레이어 방향)
+        Vector3 directionToPlayer = m_target.position - currentPosition;
+
+        // 플레이어로부터 반대 방향 (벡터의 반대 방향)
+        Vector3 oppositeDirection = -directionToPlayer.normalized;
+
+        // 도망가는 위치 = 현재 위치에서 반대 방향으로 일정 거리만큼 이동한 위치
+        Vector3 escapePosition = currentPosition + oppositeDirection * m_data.EscapeRange;
+
+        escapePosition = GFunc.FindNavPos(transform, escapePosition, m_data.EscapeRange * 2);
+        return escapePosition;
+
+
+        //// 이동가능한 곳인지 체크한다.
+
     }
 
 }

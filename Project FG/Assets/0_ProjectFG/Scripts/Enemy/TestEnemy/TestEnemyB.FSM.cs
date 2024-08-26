@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemyD
+    public partial class TestEnemyB
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -53,29 +53,15 @@ namespace JH
 
             return null;
         }
-
-        float m_posCheckTimer = 0;
-
         protected override void MoveStateEnter()
         {
-            m_posCheckTimer = 0;
             m_agent.isStopped = false;
         }
 
         protected override void MoveStateStay()
         {
-            PositionCheck();
-        }
-
-
-        protected override void MoveStateExit()
-        {
-            m_agent.isStopped = true;
-        }
-
-        private void PositionCheck()
-        {
             float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+            ModelRotate(m_target.position, navDir: false);
 
             // 공격 거리보다 가까우면
             if (targetDistance < m_data.EscapeRange)
@@ -83,15 +69,17 @@ namespace JH
                 Vector3 destination = FindChasePos();
 
                 m_agent.SetDestination(destination);
-                ModelRotate(destination);
                 return;
             }
 
             m_agent.SetDestination(m_target.position);
-            ModelRotate(m_target.position);
-
         }
+        protected override void MoveStateExit()
+        {
+            m_agent.SetDestination(this.transform.position);
 
+            m_agent.isStopped = true;
+        }
         #endregion
 
         #region ATTACK STATE
@@ -109,7 +97,7 @@ namespace JH
             if (AttackRangeCheck() == false)
                 return new MoveState();
 
-            return null;
+                return null;
         }
 
         protected override void AttackStateEnter()
@@ -120,16 +108,23 @@ namespace JH
 
         protected override void AttackStateStay()
         {
-            if (m_data.AttackSpeed < m_attackTimer && CanAttackCheck())
+            // 먼저 버프 가능한지 체크
+            if(m_buffCoolDown <= 0)
+            {
+                ActiveBuff();
+            }
+
+            // 버프중이 아니고, 공격 가능한지 체크
+            else if(m_isBuff == false && m_data.AttackSpeed < m_attackTimer && CanAttackCheck())
             {
                 // 공격 속도 타이머와 쿨타임 초기화
-                m_attackTimer = 0;
+                ResetAttackTimer();
                 m_attackCoolDown = m_data.AttackCoolDown;
-         
-                Shootdonut(m_target.position);
-                ModelRotate(m_target.position, true);
+
+                MeleeAttack();
             }
-            ModelRotate(m_target.position);
+
+            ModelRotate(m_target.position, navDir: false);
 
             m_attackTimer += Time.deltaTime;
         }
