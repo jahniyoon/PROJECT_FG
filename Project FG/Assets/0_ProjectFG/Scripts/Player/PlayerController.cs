@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System.Security.Claims;
+using System.Threading;
 
 namespace JH
 {
-    public partial class PlayerController : MonoBehaviour
+    public partial class PlayerController : MonoBehaviour, IKnockbackable
     {
         private FSM<PlayerController> m_fsm;
         private Transform m_model;
@@ -121,7 +122,7 @@ namespace JH
 
         private bool IsFixedFrame()
         {
-            Debug.Log(Time.time  +" / " + Time.fixedTime + " / " + Time.deltaTime + " / " + Time.fixedDeltaTime);
+            Debug.Log(Time.time + " / " + Time.fixedTime + " / " + Time.deltaTime + " / " + Time.fixedDeltaTime);
             return Time.time == Time.fixedTime;
         }
 
@@ -129,6 +130,46 @@ namespace JH
         {
             m_isFreeze = enable;
         }
+
+
+        public void OnKnockback(Vector3 hitPosition, float force, float duration)
+        {
+            SetFreeze(true);
+
+            if(knockbackRoutine != null)
+            {
+                StopCoroutine(knockbackRoutine);
+                knockbackRoutine = null;
+            }
+            knockbackRoutine = StartCoroutine(KnockBackRoutine(hitPosition, force, duration));
+
+        }
+        Coroutine knockbackRoutine;
+
+        IEnumerator KnockBackRoutine(Vector3 hitPos,float force, float duration)
+        {
+            float timer = 0;
+            Vector3 startPos = transform.position;
+
+            // 플레이어로부터 반대 방향 (벡터의 반대 방향)
+            Vector3 knockbackDirection = -(hitPos - startPos).normalized;
+
+            // 넉백 방향에 거리 추가
+            Vector3 endPos = startPos + knockbackDirection * force;
+            // 가능한 곳인지 확인 및 보정
+            endPos = GFunc.FindNavPos(transform, endPos, force * 2);
+
+            while (timer < duration)
+            {
+                transform.position = Vector3.Lerp(startPos, endPos, timer/duration);
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            SetFreeze(false);
+            yield break;
+        }
+
+
     }
 
 

@@ -35,12 +35,12 @@ namespace JH
             {
                 newVelocity = m_rigid.position;
             }
-            
-
-            
-
-
             m_rigid.MovePosition(newVelocity);
+        }
+
+        public void MovePosition(Vector3 position)
+        {
+            m_rigid.MovePosition(position);
         }
 
         // 플레이어가 보는 방향

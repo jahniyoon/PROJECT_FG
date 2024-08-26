@@ -78,11 +78,14 @@ namespace JH
 
                 if (colls[i].CompareTag("Player"))
                 {
-                    Damageable damageable = colls[i].GetComponent<Damageable>();
 
-                    if (damageable)
+                    if (colls[i].TryGetComponent<IDamageable>(out IDamageable damageable))
                     {
                         damageable.OnDamage(m_data.AttackDamage);
+                    }
+                    if(colls[i].TryGetComponent<IKnockbackable>(out IKnockbackable knockbackable))
+                    {
+                        knockbackable.OnKnockback(transform.position, m_bData.KnockBackDistance, m_bData.KnockBackDuration);
                     }
                 }
             }

@@ -30,5 +30,5 @@ MonoBehaviour:
   <BuffCoolDown>k__BackingField: 9
   <BuffDuration>k__BackingField: 5
   <DamageReduction>k__BackingField: 0
-  <KnockBackDistance>k__BackingField: 0
-  <KnockBackDuration>k__BackingField: 0
+  <KnockBackDistance>k__BackingField: 2
+  <KnockBackDuration>k__BackingField: 0.1
