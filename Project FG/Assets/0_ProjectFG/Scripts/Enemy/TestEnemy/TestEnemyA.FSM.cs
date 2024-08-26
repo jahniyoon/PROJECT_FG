@@ -13,7 +13,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (0 < m_stunCoolDown)
+            if (HitStateCheck())
                 return new HitState();
 
 
@@ -77,6 +77,7 @@ namespace JH
         }
         protected override void MoveStateExit()
         {
+            m_agent.SetDestination(this.transform.position);
             m_agent.isStopped = true;
         }
         #endregion

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95aeecee567cd0646a78f8286ca5ebc2, type: 3}
-  m_Name: Test Projectile
+  m_Name: Enemy C Projectile
   m_EditorClassIdentifier: 
   <ProjectileName>k__BackingField: Test
-  <TargetTag>k__BackingField: 0
-  <Damage>k__BackingField: 3
-  <ProjectileScale>k__BackingField: 1
-  <ProjectileSpeed>k__BackingField: 20
-  <DestroyDistance>k__BackingField: 10.26
-  <Penetrate>k__BackingField: 1
+  <TargetTag>k__BackingField: 1
+  <Damage>k__BackingField: 1
+  <ProjectileScale>k__BackingField: 1.48
+  <ProjectileSpeed>k__BackingField: 10
+  <Penetrate>k__BackingField: 0
+  <DestroyType>k__BackingField: 1
+  <DestroyValue>k__BackingField: 5

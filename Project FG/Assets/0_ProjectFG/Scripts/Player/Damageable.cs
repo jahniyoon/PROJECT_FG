@@ -57,7 +57,6 @@ namespace JH
 
             if (m_health <= 0)
             {
-                m_health = 0;
                 Die();
                 return;
             }
@@ -69,15 +68,16 @@ namespace JH
             if (IsDie)
                 return;
 
+            m_health = 0;
             m_isDie = true;
 
             UpdateHealthEvent?.Invoke();
             DieEvent?.Invoke();
         }
 
-        public void InvincibleMode(bool enable)
+        public void InvincibleMode()
         {
-            m_invincible = enable;
+            m_invincible = !m_invincible;
         }
 
     }

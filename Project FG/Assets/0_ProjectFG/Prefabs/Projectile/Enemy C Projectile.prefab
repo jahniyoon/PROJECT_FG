@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5005f85a7f137394eb994123e6ad4293, type: 2}
+  - {fileID: 2100000, guid: 39816fb12ec7f2947a09e773b822ab5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,11 +92,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7732278501881525740}
-  - component: {fileID: 4735689750019500411}
-  - component: {fileID: 1556999990054972769}
+  - component: {fileID: -105819037022775862}
   - component: {fileID: 6907334222896031824}
+  - component: {fileID: 3145825780146295158}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Enemy C Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ Transform:
   - {fileID: 8746121110821145306}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4735689750019500411
+--- !u!114 &-105819037022775862
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,16 +127,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 9173310347936448537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ee46fb985ecd348ab4ba543a172530, type: 3}
+  m_Script: {fileID: 11500000, guid: 2370f48c7d3c1b34ebf820b7b22ce297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: 04d2de2dd506d2042968b198021aaff3, type: 2}
-  m_targetTag: 0
-  m_damage: 3
-  m_projectileSpeed: 15
-  m_destroyTime: 10
-  m_penetrate: 1
---- !u!54 &1556999990054972769
+  m_data: {fileID: 11400000, guid: 99a0541550525c2489647fffed2c6142, type: 2}
+  m_penetrate: 0
+--- !u!135 &6907334222896031824
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9173310347936448537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.125
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3145825780146295158
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,24 +180,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!135 &6907334222896031824
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9173310347936448537}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.125
-  m_Center: {x: 0, y: 0, z: 0}

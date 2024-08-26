@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemyF 
+    public partial class TestEnemyC
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -15,6 +15,7 @@ namespace JH
 
             if (HitStateCheck())
                 return new HitState();
+
 
             if (m_target)
                 return new MoveState();
@@ -54,29 +55,42 @@ namespace JH
 
         protected override void MoveStateStay()
         {
-            float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+            ModelRotate(m_target.position, navDir: false);
 
-            // 도망 거리보다 가까우면
-            if (targetDistance < m_data.EscapeRange)
-            {
-                Vector3 destination = FindChasePos();
-
-                m_agent.SetDestination(destination);
-                ModelRotate(destination);
-                return;
-            }
-
-            m_agent.SetDestination(m_target.position);
-            ModelRotate(m_target.position);
+            // 에네미 C는 무브 스테이트 내에서 이동과 공격 상태를 갖는다.
+            MoveBehavior();
+            AttackBehavior();
         }
+
+        private void MoveBehavior()
+        {
+            Vector3 destination = m_target.position;
+
+            // 회피 범위보다 가까우면 가까우면 
+            if (m_targetDistance < m_data.EscapeRange)
+                destination = FindChasePos();
+            // 브레이크를 위해
+            else if (m_targetDistance < m_data.EscapeRange + 0.25f)
+                destination = transform.position;
+
+            m_agent.SetDestination(destination);
+        }
+
+        private void AttackBehavior()
+        {
+            if (m_targetDistance < m_data.AttackRange && CanAttackCheck())
+            {
+                m_attackCoolDown = m_data.AttackCoolDown;
+                ShootProjectile();
+            }
+        }
+
         protected override void MoveStateExit()
         {
             m_agent.SetDestination(this.transform.position);
             m_agent.isStopped = true;
         }
         #endregion
-
- 
 
         #region Hit STATE
         protected override FSM<EnemyController> HitStateConditional()

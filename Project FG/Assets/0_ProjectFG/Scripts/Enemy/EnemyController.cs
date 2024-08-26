@@ -256,17 +256,6 @@ public partial class EnemyController : MonoBehaviour
         return m_attackCoolDown <= 0;
     }
 
-    protected IEnumerator AttackCoolDownRoutine()
-    {
-        while (0 < m_attackCoolDown)
-        {
-            m_attackCoolDown -= Time.deltaTime;
-            yield return null;
-        }
-
-        m_attackCoolDown = 0;
-        yield break;
-    }
 
     protected virtual bool HitStateCheck()
     {

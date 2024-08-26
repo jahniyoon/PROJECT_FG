@@ -9,24 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e04262fd496bb941a9b17f5d65a1674, type: 3}
-  m_Name: Enemy D Data
+  m_Script: {fileID: 11500000, guid: 4ab1f8339af525947b87ad33584fd971, type: 3}
+  m_Name: Enemy C Data
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Test Enemy D
+  <Name>k__BackingField: Test Enemy C
   <Health>k__BackingField: 15
-  <MoveSpeed>k__BackingField: 7
+  <MoveSpeed>k__BackingField: 10
   <RotateSpeed>k__BackingField: 10
   <AttackDamage>k__BackingField: 1
   <AttackSpeed>k__BackingField: 1
-  <AttackCoolDown>k__BackingField: 3
-  <AttackRange>k__BackingField: 10
+  <AttackCoolDown>k__BackingField: 0.5
+  <AttackRange>k__BackingField: 5
   <EscapeRange>k__BackingField: 3
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
   <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
     type: 3}
-  <OuterRadius>k__BackingField: 5
-  <InnerRadius>k__BackingField: 1.25
-  <SliderDuration>k__BackingField: 1
-  <OuterColor>k__BackingField: {r: 0.5019608, g: 0, b: 0.014975156, a: 0.3764706}
-  <SliderColor>k__BackingField: {r: 1, g: 0, b: 0.08648682, a: 1}
+  <Projectile>k__BackingField: {fileID: 9173310347936448537, guid: 24adb55924de10849b42ceaaedac9c4d,
+    type: 3}

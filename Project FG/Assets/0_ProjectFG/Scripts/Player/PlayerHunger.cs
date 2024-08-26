@@ -196,8 +196,12 @@ namespace JH
 
         void OnDrawGizmosSelected()
         {
-            Gizmos.color = DebugColor;
-            Gizmos.DrawSphere(transform.position, m_gameSettings.HungerSkillRange);
+            if(m_gameSettings!=null)
+            {
+                Gizmos.color = DebugColor;
+                Gizmos.DrawSphere(transform.position, m_gameSettings.HungerSkillRange);
+            }
+
         }
 
     }

@@ -17,9 +17,12 @@ namespace JH
 
         [Header("Setting")]
         [SerializeField] private float m_hitDuration = 0.1f;
+        [SerializeField]private float m_pingPongSpeed = 1;
 
         private List<Material[]> m_originMats;
         private bool m_isDie = false;
+        private Color m_hitColor;
+
 
         Coroutine m_hitRoutine;
 
@@ -59,6 +62,49 @@ namespace JH
             SetMaterial(m_dieMat);
         }
 
+        Coroutine pingPongRoutine;
+
+        public void PingPong(bool enable = false)
+        {
+            if(pingPongRoutine != null)
+            {
+                StopCoroutine(pingPongRoutine);
+                pingPongRoutine = null;
+            }
+            ResetMaterial();
+
+            if(enable)
+                pingPongRoutine = StartCoroutine(PingPongRoutine());
+
+
+        }
+        IEnumerator PingPongRoutine()
+        {
+            SetMaterial(m_hitMat);
+            m_hitColor = m_hitMat.GetColor("_BaseColor");
+            float curAlpha;
+            float maxAlpha = m_hitColor.a;
+
+            while (true)
+            {
+                curAlpha = Mathf.PingPong(Time.time * m_pingPongSpeed, maxAlpha);
+                m_hitColor.a = curAlpha;
+                foreach (var mesh in m_meshRenderers)
+                {
+                    for (int i = 1; i < mesh.materials.Length; i++)
+                    {
+                        mesh.materials[i].SetColor("_BaseColor", m_hitColor);
+                    }
+                }
+
+                yield return null;
+            }
+
+
+            yield break;
+        }
+
+
 
         public void SetMaterial(Material mat)
         {
@@ -76,7 +122,6 @@ namespace JH
                 }
                 mats[mesh.materials.Length] = mat;
                 mesh.materials = mats;
-
             }
 
         }

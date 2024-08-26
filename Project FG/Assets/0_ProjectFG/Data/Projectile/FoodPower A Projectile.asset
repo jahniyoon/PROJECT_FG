@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aeecee567cd0646a78f8286ca5ebc2, type: 3}
+  m_Name: FoodPower A Projectile
+  m_EditorClassIdentifier: 
+  <ProjectileName>k__BackingField: Test
+  <TargetTag>k__BackingField: 0
+  <Damage>k__BackingField: 3
+  <ProjectileScale>k__BackingField: 1
+  <ProjectileSpeed>k__BackingField: 10.9
+  <Penetrate>k__BackingField: 1
+  <DestroyType>k__BackingField: 1
+  <DestroyValue>k__BackingField: 5

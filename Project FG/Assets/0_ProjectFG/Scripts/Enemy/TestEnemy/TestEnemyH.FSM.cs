@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemyF 
+    public partial class TestEnemyH
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -15,6 +15,7 @@ namespace JH
 
             if (HitStateCheck())
                 return new HitState();
+
 
             if (m_target)
                 return new MoveState();
@@ -45,6 +46,11 @@ namespace JH
             if (m_target == null)
                 return new IdleState();
 
+            if (AttackRangeCheck())
+            {
+                return new AttackState();
+            }
+
             return null;
         }
         protected override void MoveStateEnter()
@@ -54,20 +60,8 @@ namespace JH
 
         protected override void MoveStateStay()
         {
-            float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
-
-            // 도망 거리보다 가까우면
-            if (targetDistance < m_data.EscapeRange)
-            {
-                Vector3 destination = FindChasePos();
-
-                m_agent.SetDestination(destination);
-                ModelRotate(destination);
-                return;
-            }
-
             m_agent.SetDestination(m_target.position);
-            ModelRotate(m_target.position);
+            ModelRotate(m_target.position, false, true);
         }
         protected override void MoveStateExit()
         {
@@ -76,7 +70,43 @@ namespace JH
         }
         #endregion
 
- 
+        #region ATTACK STATE
+        protected override FSM<EnemyController> AttackStateConditional()
+        {
+            if (m_damageable.IsDie)
+                return new DieState();
+
+
+                return null;
+        }
+
+        float m_explosionTimer;
+        bool m_isExplosion;
+        protected override void AttackStateEnter()
+        {
+            if (m_explosionTrigger == false)
+            {
+                m_explosionTimer = 0;
+                m_isExplosion = false;
+                m_explosionTrigger = true;
+                m_hitEffect.PingPong(true);
+                // 일정 시간 이후에 폭발
+            }
+
+        }
+
+        protected override void AttackStateStay()
+        {           
+            if(m_isExplosion == false && m_data.AttackSpeed < m_explosionTimer)
+            {
+                m_isExplosion = true;
+                Explosion();
+            }
+            m_explosionTimer += Time.deltaTime;
+
+            ModelRotate(m_target.position, false, true);
+        }
+        #endregion
 
         #region Hit STATE
         protected override FSM<EnemyController> HitStateConditional()

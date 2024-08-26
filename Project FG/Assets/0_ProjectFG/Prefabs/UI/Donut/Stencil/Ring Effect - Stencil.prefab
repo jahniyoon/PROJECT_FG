@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1849232312050476944}
   - component: {fileID: 8470635982924617643}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: Ring Effect - Stencil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

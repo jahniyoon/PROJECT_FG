@@ -7,14 +7,14 @@ namespace JH
 {
     public class DonutAttack : MonoBehaviour
     {
-        RingEffect m_ring;
+        DonutShader m_donut;
         [SerializeField] private ParticleSystem m_effect;
         [SerializeField] float m_outerRadius;
         float m_innerRadius;
 
         private void Awake()
         {
-            m_ring = transform.GetComponentInChildren<RingEffect>();
+            m_donut = transform.GetComponentInChildren<DonutShader>();
         }
 
         public void SkillInit(float damage, float outer, float inner, float duration)
@@ -22,17 +22,17 @@ namespace JH
             m_outerRadius = outer;
             m_innerRadius = inner;
 
-            m_ring.SetRadius(m_outerRadius, m_innerRadius);
+            m_donut.SetRadius(m_outerRadius, m_innerRadius);
             StartCoroutine(ShootRoutine(damage, duration));
         }
         public void SetColor(Color outer, Color inner)
         {
-            m_ring.SetColor(outer, inner);
+            m_donut.SetColor(outer, inner);
         }
 
         public void Explosion(float damage)
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_outerRadius * 0.5f);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_outerRadius);
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -42,7 +42,7 @@ namespace JH
 
                 if (colls[i].CompareTag("Player"))
                 {
-                    if (Vector3.Distance(transform.position, colls[i].transform.position) < m_innerRadius * 0.5f)
+                    if (Vector3.Distance(transform.position, colls[i].transform.position) < m_innerRadius)
                         continue;
 
                     if (colls[i].TryGetComponent<IDamageable>(out IDamageable damageable))
@@ -59,7 +59,7 @@ namespace JH
 
             while (timer < duration)
             {
-                m_ring.SetSlider(timer / duration);
+                m_donut.SetSlider(timer / duration);
                 timer += Time.deltaTime;
                 yield return null;
             }
@@ -76,7 +76,7 @@ namespace JH
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = new Color(1,0,0,0.2f);
             Gizmos.DrawSphere(transform.position, m_outerRadius);
         }
 

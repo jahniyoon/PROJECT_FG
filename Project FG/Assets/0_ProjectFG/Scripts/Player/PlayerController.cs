@@ -116,7 +116,7 @@ namespace JH
 
         public void GodMode()
         {
-            m_damageable.InvincibleMode(true);
+            m_damageable.InvincibleMode();
         }
 
 

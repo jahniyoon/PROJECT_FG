@@ -70,6 +70,7 @@ namespace JH
 
         protected override void MoveStateExit()
         {
+            m_agent.SetDestination(this.transform.position);
             m_agent.isStopped = true;
         }
 
