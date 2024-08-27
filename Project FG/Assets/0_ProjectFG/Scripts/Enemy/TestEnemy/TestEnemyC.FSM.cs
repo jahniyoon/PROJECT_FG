@@ -80,7 +80,7 @@ namespace JH
         {
             if (m_targetDistance < m_data.AttackRange && CanAttackCheck())
             {
-                m_attackCoolDown = m_data.AttackCoolDown;
+                m_attackCoolDown = m_subData.AttackCoolDown;
                 ShootProjectile();
             }
         }

@@ -8,7 +8,7 @@ namespace JH
 {
     public partial class TestEnemyC : EnemyController
     {
-        EnemyCData m_cData;
+        EnemyCData m_subData;
         [Header("Enemy C")]
         [SerializeField] private Transform m_shootPos;
 
@@ -22,7 +22,7 @@ namespace JH
             EnemyCData m_childData = m_data as EnemyCData;
             if (m_childData != null)
             {
-                m_cData = m_childData;
+                m_subData = m_childData;
                 return true;
             }
             else
@@ -35,7 +35,7 @@ namespace JH
 
         private void ShootProjectile()
         {
-            var projectile = Instantiate(m_cData.Projectile, m_shootPos.position, m_model.rotation, GameManager.Instance.ProjectileParent);
+            var projectile = Instantiate(m_subData.Projectile, m_shootPos.position, m_model.rotation, GameManager.Instance.ProjectileParent);
         }
 
 

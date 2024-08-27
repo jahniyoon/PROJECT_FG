@@ -8,7 +8,7 @@ namespace JH
 {
     public partial class TestEnemyA : EnemyController
     {
-        EnemyAData m_aData;
+        EnemyAData m_subData;
         [Header("Enemy A")]
         [SerializeField] private VisualEffect m_attackEffect;
 
@@ -22,7 +22,7 @@ namespace JH
             EnemyAData m_childData = m_data as EnemyAData;
             if (m_childData != null)
             {
-                m_aData = m_childData;
+                m_subData = m_childData;
                 return true;
             }
             else
@@ -35,7 +35,7 @@ namespace JH
 
         private void MeleeAttack()
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position + m_model.forward * m_aData.AttackOffset, m_aData.AttackRadius);
+            Collider[] colls = Physics.OverlapSphere(transform.position + m_model.forward * m_subData.AttackOffset, m_subData.AttackRadius);
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -49,7 +49,7 @@ namespace JH
 
                     if (damageable)
                     {
-                        damageable.OnDamage(m_data.AttackDamage);
+                        damageable.OnDamage(m_subData.AttackDamage);
                     }
                 }
             }
@@ -66,7 +66,7 @@ namespace JH
             if (canGizmo)
             {
                 Gizmos.color = new Color(1, 0, 0, 0.5f);
-                Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_aData.AttackOffset, m_aData.AttackRadius);
+                Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_subData.AttackOffset, m_subData.AttackRadius);
             }
         }
     }

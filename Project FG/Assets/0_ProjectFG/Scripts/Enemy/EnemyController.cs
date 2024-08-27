@@ -34,7 +34,6 @@ public partial class EnemyController : MonoBehaviour
     [SerializeField] private WorldSpaceIcon m_predationIcon;
 
     [Header("Attack CoolDown")]
-    protected Coroutine m_attackCoolDownRoutine;
     [SerializeField] protected float m_attackCoolDown;
 
     [Header("Stun")]
@@ -170,9 +169,9 @@ public partial class EnemyController : MonoBehaviour
 
 
         Vector3 targetPos = position;
-        targetPos.y = 0;
+        targetPos.y = m_model.transform.position.y;
 
-        Vector3 targetDir = targetPos - this.transform.position;
+        Vector3 targetDir = targetPos - m_model.transform.position;
 
 
 

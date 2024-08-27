@@ -115,11 +115,11 @@ namespace JH
             }
 
             // 버프중이 아니고, 공격 가능한지 체크
-            else if(m_isBuff == false && m_data.AttackSpeed < m_attackTimer && CanAttackCheck())
+            else if(m_isBuff == false && m_subbData.AttackSpeed < m_attackTimer && CanAttackCheck())
             {
                 // 공격 속도 타이머와 쿨타임 초기화
                 ResetAttackTimer();
-                m_attackCoolDown = m_data.AttackCoolDown;
+                m_attackCoolDown = m_subbData.AttackCoolDown;
 
                 MeleeAttack();
             }

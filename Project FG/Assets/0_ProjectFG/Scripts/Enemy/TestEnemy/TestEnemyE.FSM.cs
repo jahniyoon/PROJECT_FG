@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemyD
+    public partial class TestEnemyE
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -53,28 +53,12 @@ namespace JH
 
             return null;
         }
-
-        float m_posCheckTimer = 0;
-
         protected override void MoveStateEnter()
         {
-            m_posCheckTimer = 0;
             m_agent.isStopped = false;
         }
 
         protected override void MoveStateStay()
-        {
-            PositionCheck();
-        }
-
-
-        protected override void MoveStateExit()
-        {
-            m_agent.SetDestination(this.transform.position);
-            m_agent.isStopped = true;
-        }
-
-        private void PositionCheck()
         {
             float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
 
@@ -90,9 +74,12 @@ namespace JH
 
             m_agent.SetDestination(m_target.position);
             ModelRotate(m_target.position);
-
         }
-
+        protected override void MoveStateExit()
+        {
+            m_agent.SetDestination(this.transform.position);
+            m_agent.isStopped = true;
+        }
         #endregion
 
         #region ATTACK STATE
@@ -113,27 +100,72 @@ namespace JH
             return null;
         }
 
+        private bool m_isAttackReady;
+        private float m_aimTimer;
+        private float m_shootTimer;
         protected override void AttackStateEnter()
         {
-            // 돌입시 타이머를 리셋한다.
-            ResetAttackTimer();
+            ShootOver();
         }
 
         protected override void AttackStateStay()
         {
-            if (m_subData.AttackSpeed < m_attackTimer && CanAttackCheck())
-            {
-                // 공격 속도 타이머와 쿨타임 초기화
-                m_attackTimer = 0;
-                m_attackCoolDown = m_subData.AttackCoolDown;
-         
-                ShootDonut(m_target.position);
-                ModelRotate(m_target.position, true);
-            }
-            ModelRotate(m_target.position);
+            ModelRotate(m_target.position, false, true);
+            AimEnable(m_isAttackReady == false);
 
+            if (m_isAttackReady == false)
+                AimBehavior();
+
+            else
+                AttackBehavior();
+        }
+
+        private void AimBehavior()
+        {
+            // 타이머만큼 조준 준비
+            if (m_subData.AimSpeed < m_aimTimer)
+            {
+                m_isAttackReady = true;
+                m_aimTimer = 0;
+                return;
+            }
+
+            AimSlider(m_aimTimer / m_subData.AimSpeed);
+            m_aimTimer += Time.deltaTime;
+        }
+
+        private void AttackBehavior()
+        {
+            // 사격 지속시간이 지나면 사격 종료
+            if (m_subData.ShootDuration < m_attackTimer)
+            {
+                ShootOver();
+                return;
+            }
+            // 바로 발사하도록 하기위해, 슛 타이머가 0이 될 때마다 발사
+            if (1 / m_subData.FireRate <= m_shootTimer)
+            {
+                Shoot();
+                m_shootTimer = 0;
+            }
+
+            m_shootTimer += Time.deltaTime;
             m_attackTimer += Time.deltaTime;
         }
+        private void ShootOver()
+        {
+            m_attackTimer = 0;
+            m_aimTimer = 0;
+            m_shootTimer = 1 / m_subData.FireRate;
+            m_isAttackReady = false;
+        }
+
+        protected override void AttackStateExit()
+        {
+            ShootOver(); 
+            AimEnable(false);
+        }
+
         #endregion
 
         #region Hit STATE

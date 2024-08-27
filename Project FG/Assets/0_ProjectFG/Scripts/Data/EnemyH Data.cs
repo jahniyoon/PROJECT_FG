@@ -8,6 +8,9 @@ namespace JH
     public class EnemyHData : EnemyData
     {
         [field: Header("에네미 H")]
+        [field: SerializeField] public int AttackDamage { get; private set; }
+        [field: SerializeField] public int AttackSpeed { get; private set; }
+
         [field: SerializeField] public float ExplosionRadius { get; private set; }
     }
 }

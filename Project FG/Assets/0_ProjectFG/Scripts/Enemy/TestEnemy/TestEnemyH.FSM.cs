@@ -97,7 +97,7 @@ namespace JH
 
         protected override void AttackStateStay()
         {           
-            if(m_isExplosion == false && m_data.AttackSpeed < m_explosionTimer)
+            if(m_isExplosion == false && m_subData.AttackSpeed < m_explosionTimer)
             {
                 m_isExplosion = true;
                 Explosion();

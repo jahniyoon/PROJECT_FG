@@ -8,7 +8,7 @@ namespace JH
 {
     public partial class TestEnemyH : EnemyController
     {
-        EnemyHData m_hData;
+        EnemyHData m_subData;
         [Header("Enemy H")]
         [SerializeField] private ParticleSystem[] m_explosionEffect;
         private bool m_explosionTrigger;
@@ -23,7 +23,7 @@ namespace JH
             EnemyHData m_childData = m_data as EnemyHData;
             if (m_childData != null)
             {
-                m_hData = m_childData;
+                m_subData = m_childData;
                 return true;
             }
             else
@@ -37,7 +37,7 @@ namespace JH
         private void Explosion()
         {
 
-            Collider[] colls = Physics.OverlapSphere(transform.position , m_hData.ExplosionRadius);
+            Collider[] colls = Physics.OverlapSphere(transform.position , m_subData.ExplosionRadius);
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -51,7 +51,7 @@ namespace JH
 
                     if (damageable)
                     {
-                        damageable.OnDamage(m_data.AttackDamage);
+                        damageable.OnDamage(m_subData.AttackDamage);
                     }
                 }
             }

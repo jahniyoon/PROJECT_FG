@@ -11,7 +11,7 @@ namespace JH
 {
     public partial class TestEnemyD : EnemyController
     {
-        private EnemyDData m_dData;
+        private EnemyDData m_subData;
 
         [Header("Enemy D")]
         [SerializeField] private DonutAttack m_skill;
@@ -26,7 +26,7 @@ namespace JH
             EnemyDData m_childData = m_data as EnemyDData;
             if(m_childData != null)
             {
-                m_dData = m_childData;
+                m_subData = m_childData;
             }
             else
             {
@@ -39,8 +39,8 @@ namespace JH
         {
 
             var projectile = Instantiate(m_skill, targetPos, Quaternion.identity, GameManager.Instance.ProjectileParent);
-            projectile.SkillInit(m_data.AttackDamage, m_dData.OuterRadius, m_dData.InnerRadius, m_dData.SliderDuration);
-            projectile.SetColor(m_dData.OuterColor, m_dData.SliderColor);
+            projectile.SkillInit(m_subData.AttackDamage, m_subData.OuterRadius, m_subData.InnerRadius, m_subData.SliderDuration);
+            projectile.SetColor(m_subData.OuterColor, m_subData.SliderColor);
             
             // 투사체 초기화하고
             //projectile.ProjectileInit(m_data.AttackDamage);

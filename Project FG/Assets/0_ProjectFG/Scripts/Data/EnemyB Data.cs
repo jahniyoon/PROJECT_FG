@@ -9,6 +9,10 @@ namespace JH
     {
         [field: Header("에네미 B")]
         [field: Header("공격")]
+        [field: SerializeField] public int AttackDamage { get; private set; }
+        [field: SerializeField] public int AttackSpeed { get; private set; }
+        [field: SerializeField] public int AttackCoolDown { get; private set; }
+        [field: Header("근접 공격 범위")]
         [field: SerializeField] public float AttackOffset { get; private set; }
         [field: SerializeField] public float AttackRadius { get; private set; }
 

@@ -8,7 +8,7 @@ namespace JH
 {
     public partial class TestEnemyB : EnemyController
     {
-        EnemyBData m_bData;
+        EnemyBData m_subbData;
         [Header("Enemy B")]
         [Header("Attack")]
         [SerializeField] private VisualEffect m_attackEffect;
@@ -30,7 +30,7 @@ namespace JH
             var m_childData = m_data as EnemyBData;
             if (m_childData != null)
             {
-                m_bData = m_childData;
+                m_subbData = m_childData;
                 return true;
             }
             else
@@ -55,9 +55,9 @@ namespace JH
         private void ActiveBuff()
         {
             m_isBuff = true;
-            m_buffCoolDown += m_bData.BuffCoolDown;
+            m_buffCoolDown += m_subbData.BuffCoolDown;
             m_buffShild.SetActive(true);
-            Invoke(nameof(DeActiveBuff), m_bData.BuffDuration);
+            Invoke(nameof(DeActiveBuff), m_subbData.BuffDuration);
         }
         private void DeActiveBuff()
         {
@@ -68,7 +68,7 @@ namespace JH
 
         private void MeleeAttack()
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position + m_model.forward * m_bData.AttackOffset, m_bData.AttackRadius);
+            Collider[] colls = Physics.OverlapSphere(transform.position + m_model.forward * m_subbData.AttackOffset, m_subbData.AttackRadius);
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -81,11 +81,11 @@ namespace JH
 
                     if (colls[i].TryGetComponent<IDamageable>(out IDamageable damageable))
                     {
-                        damageable.OnDamage(m_data.AttackDamage);
+                        damageable.OnDamage(m_subbData.AttackDamage);
                     }
                     if(colls[i].TryGetComponent<IKnockbackable>(out IKnockbackable knockbackable))
                     {
-                        knockbackable.OnKnockback(transform.position, m_bData.KnockBackDistance, m_bData.KnockBackDuration);
+                        knockbackable.OnKnockback(transform.position, m_subbData.KnockBackDistance, m_subbData.KnockBackDuration);
                     }
                 }
             }
@@ -102,7 +102,7 @@ namespace JH
             if (canGizmo)
             {
                 Gizmos.color = new Color(1, 0, 0, 0.5f);
-                //Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_bData.AttackOffset, m_bData.AttackRadius);
+                //Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_subbData.AttackOffset, m_subbData.AttackRadius);
             }
         }
     }

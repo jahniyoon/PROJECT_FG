@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14dad7b8e030df4cb3a39d122b3992c, type: 3}
+  m_Name: Enemy E Data
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Test Enemy E
+  <Health>k__BackingField: 15
+  <MoveSpeed>k__BackingField: 10
+  <RotateSpeed>k__BackingField: 10
+  <AttackRange>k__BackingField: 8
+  <EscapeRange>k__BackingField: 2.5
+  <PredationHealthRatio>k__BackingField: 50
+  <PredationStunCoolDown>k__BackingField: 0
+  <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
+    type: 3}
+  <AimSpeed>k__BackingField: 2
+  <AimAngle>k__BackingField: 90
+  <OuterColor>k__BackingField: {r: 0.5019608, g: 0, b: 0.015686275, a: 0.60784316}
+  <SliderColor>k__BackingField: {r: 1, g: 0, b: 0.08627451, a: 0.53333336}
+  <ShootDamage>k__BackingField: 3
+  <ShootDuration>k__BackingField: 5
+  <FireRate>k__BackingField: 4
