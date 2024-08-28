@@ -14,11 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Test Enemy F
   <Health>k__BackingField: 10
-  <MoveSpeed>k__BackingField: 7
+  <MoveSpeed>k__BackingField: 7.5
   <RotateSpeed>k__BackingField: 10
-  <AttackDamage>k__BackingField: 0
-  <AttackSpeed>k__BackingField: 1
-  <AttackCoolDown>k__BackingField: 3
   <AttackRange>k__BackingField: 1
   <EscapeRange>k__BackingField: 0
   <PredationHealthRatio>k__BackingField: 50

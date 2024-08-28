@@ -14,16 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Test Enemy C
   <Health>k__BackingField: 15
-  <MoveSpeed>k__BackingField: 10
+  <MoveSpeed>k__BackingField: 7.5
   <RotateSpeed>k__BackingField: 10
-  <AttackDamage>k__BackingField: 1
-  <AttackSpeed>k__BackingField: 1
-  <AttackCoolDown>k__BackingField: 0.5
-  <AttackRange>k__BackingField: 5
-  <EscapeRange>k__BackingField: 3
+  <AttackRange>k__BackingField: 15
+  <EscapeRange>k__BackingField: 8
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
   <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
     type: 3}
+  <AttackCoolDown>k__BackingField: 1.5
   <Projectile>k__BackingField: {fileID: 9173310347936448537, guid: 24adb55924de10849b42ceaaedac9c4d,
     type: 3}

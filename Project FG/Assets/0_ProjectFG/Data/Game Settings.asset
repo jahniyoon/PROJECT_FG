@@ -17,8 +17,8 @@ MonoBehaviour:
   <StageLength>k__BackingField: 50
   <StartEnemySpawnTime>k__BackingField: 1
   <EnemySpawnInterval>k__BackingField: 10
-  <EnemySpawnCount>k__BackingField: 15
-  <PlayerMaxHealth>k__BackingField: 10
+  <EnemySpawnCount>k__BackingField: 1
+  <PlayerMaxHealth>k__BackingField: 20
   <PlayerMoveSpeed>k__BackingField: 10
   <PlayerRotateSpeed>k__BackingField: 20
   <PlayerAttackDamage>k__BackingField: 5
@@ -34,6 +34,6 @@ MonoBehaviour:
   <HungerSkillRange>k__BackingField: 5
   <HungerSkillDamage>k__BackingField: 20
   <HungerSkillStun>k__BackingField: 1
-  <HungerSkillDelay>k__BackingField: 0
+  <HungerSkillDelay>k__BackingField: 0.3
   <FoodPowerDelay>k__BackingField: 0.25
   <FoodPowerAimType>k__BackingField: 1
