@@ -45,12 +45,7 @@ namespace JH
 
             if (m_target == null)
                 return new IdleState();
-
-            if (AttackRangeCheck())
-            {
-                return new AttackState();
-            }
-
+        
             return null;
         }
 
@@ -60,11 +55,34 @@ namespace JH
         {
             m_posCheckTimer = 0;
             m_agent.isStopped = false;
+            ResetAttackTimer();
         }
 
         protected override void MoveStateStay()
         {
+            MoveBehavior();
+            AttackBehavior();
+        }
+        private void MoveBehavior()
+        {
             PositionCheck();
+
+        }
+        private void AttackBehavior()
+        {
+
+            if (m_subData.AttackSpeed < m_attackTimer && CanAttackCheck() && AttackRangeCheck())
+            {
+                // 공격 속도 타이머와 쿨타임 초기화
+                m_attackTimer = 0;
+                m_attackCoolDown = m_subData.AttackCoolDown;
+
+                ShootDonut(m_target.position);
+                ModelRotate(m_target.position);
+            }
+
+            m_attackTimer += Time.deltaTime;
+            
         }
 
 
@@ -76,10 +94,18 @@ namespace JH
 
         private void PositionCheck()
         {
-            float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+            // 공격중엔 제자리
+            if(m_attackTimer < m_subData.AttackSpeed)
+            {
+                m_agent.SetDestination(this.transform.position);
+                ModelRotate(m_target.position);
+
+                return;
+            }
+
 
             // 공격 거리보다 가까우면
-            if (targetDistance < m_data.EscapeRange)
+            if (m_targetDistance < m_data.EscapeRange)
             {
                 Vector3 destination = FindChasePos();
 
@@ -95,46 +121,6 @@ namespace JH
 
         #endregion
 
-        #region ATTACK STATE
-        protected override FSM<EnemyController> AttackStateConditional()
-        {
-            if (m_damageable.IsDie)
-                return new DieState();
-
-            if (HitStateCheck())
-                return new HitState();
-
-            if (m_target == null)
-                return new IdleState();
-
-            if (AttackRangeCheck() == false)
-                return new MoveState();
-
-            return null;
-        }
-
-        protected override void AttackStateEnter()
-        {
-            // 돌입시 타이머를 리셋한다.
-            ResetAttackTimer();
-        }
-
-        protected override void AttackStateStay()
-        {
-            if (m_subData.AttackSpeed < m_attackTimer && CanAttackCheck())
-            {
-                // 공격 속도 타이머와 쿨타임 초기화
-                m_attackTimer = 0;
-                m_attackCoolDown = m_subData.AttackCoolDown;
-         
-                ShootDonut(m_target.position);
-                ModelRotate(m_target.position, true);
-            }
-            ModelRotate(m_target.position);
-
-            m_attackTimer += Time.deltaTime;
-        }
-        #endregion
 
         #region Hit STATE
         protected override FSM<EnemyController> HitStateConditional()
