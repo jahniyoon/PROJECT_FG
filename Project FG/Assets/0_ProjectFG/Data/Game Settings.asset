@@ -24,7 +24,7 @@ MonoBehaviour:
   <PlayerAttackDamage>k__BackingField: 50
   <PlayerAttackCoolDown>k__BackingField: 0.25
   <PlayerAttackStunDuration>k__BackingField: 0.1
-  <PredationRestoreHealth>k__BackingField: 1
+  <PredationRestoreHealth>k__BackingField: 10
   <PredationPlayerRange>k__BackingField: 5
   <PredationAimRange>k__BackingField: 3
   <PredationCoolDown>k__BackingField: 0

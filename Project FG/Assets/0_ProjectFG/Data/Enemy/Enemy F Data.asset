@@ -24,6 +24,6 @@ MonoBehaviour:
     type: 3}
   <SkillEffect>k__BackingField: {fileID: 2500426658639734181, guid: 00fc8da280617354e8394592271b6a72,
     type: 3}
-  <SkillTickDamage>k__BackingField: 5
+  <SkillTickDamage>k__BackingField: 7.5
   <SkillTickDuration>k__BackingField: 1
   <SkillAreaRadius>k__BackingField: 5
