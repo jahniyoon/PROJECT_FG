@@ -16,6 +16,8 @@ namespace JH
         [SerializeField] private GameObject m_trailPrefab;
         [SerializeField] private float m_trailSpeed = 0.1f;
 
+        [SerializeField] private GameObject m_targetPoint;
+
         private Transform[] m_trails;
         private int m_trailIndex;
         private WaitForSeconds m_trailSeconds;
@@ -78,7 +80,6 @@ namespace JH
         private void Shoot()
         {
             m_shootPos.LookAt(m_target.position);
-            Debug.Log(TargetAngle());
 
             RaycastHit hit;
             if (Physics.Raycast(m_shootPos.position, m_shootPos.forward, out hit, m_data.AttackRange, m_targetLayer, QueryTriggerInteraction.Ignore))

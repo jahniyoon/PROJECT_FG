@@ -95,7 +95,11 @@ namespace JH
                 return new IdleState();
             // 공격 범위 밖일 때 이동상태가 된다.
             // + 조준중일 때 이동상태가 되지 않는다.
-            if (AttackRangeCheck() == false && m_isAttackReady || TargetAngleCheck() == false && m_isAttackReady)
+            //
+
+
+            if (AttackRangeCheck() == false && m_isAttackReady || TargetAngleCheck() == false && m_isAttackReady
+                || m_isAttackReady== false && m_data.AttackRange < m_targetDistance )
                 return new MoveState();
 
             return null;
@@ -112,7 +116,9 @@ namespace JH
 
         protected override void AttackStateStay()
         {
-            AimEnable(true);
+            AimEnable(m_isAttackReady);
+            m_targetPoint.gameObject.SetActive(m_isAttackReady == false);
+
 
             if (m_isAttackReady == false)
             { AimBehavior(); }
@@ -122,7 +128,11 @@ namespace JH
         }
 
         private void AimBehavior()
-        {            
+        {
+            Vector3 position = m_target.position;
+            position.y = m_targetPoint.transform.position.y;
+            m_targetPoint.transform.position = position;
+            m_targetPoint.transform.localScale = (Vector3.one * (0.5f * (m_aimTimer - m_subData.AimSpeed)));
             // 타이머만큼 조준 준비
             if (m_subData.AimSpeed < m_aimTimer)
             {
@@ -130,8 +140,7 @@ namespace JH
                 m_aimTimer = 0;
                 return;
             }
-
-            AimSlider(m_aimTimer / m_subData.AimSpeed);
+            ModelRotate(m_target.position);
             m_aimTimer += Time.deltaTime;
         }
 
@@ -149,6 +158,7 @@ namespace JH
                 Shoot();
                 m_shootTimer = 0;
             }
+            AimSlider(m_attackTimer / m_subData.ShootDuration);
 
             m_shootTimer += Time.deltaTime;
             m_attackTimer += Time.deltaTime;
@@ -159,6 +169,7 @@ namespace JH
             m_aimTimer = 0;
             m_shootTimer = 1 / m_subData.FireRate;
             m_isAttackReady = false;
+            m_targetPoint.gameObject.SetActive(false);
         }
 
         protected override void AttackStateExit()

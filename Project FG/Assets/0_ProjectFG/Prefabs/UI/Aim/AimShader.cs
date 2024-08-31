@@ -16,6 +16,9 @@ namespace JH
 
         public void SetRadius(float radius, float angle)
         {
+            if(m_renderer ==null)
+                m_renderer = GetComponentInChildren<MeshRenderer>();
+
             transform.localScale = Vector3.one * radius;
             m_renderer.materials[0].SetFloat("_SliderScale", 0);
             m_renderer.materials[0].SetFloat("_Angle", angle);
