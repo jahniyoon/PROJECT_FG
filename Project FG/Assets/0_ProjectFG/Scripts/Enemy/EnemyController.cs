@@ -91,6 +91,7 @@ public partial class EnemyController : MonoBehaviour
         m_model = transform.GetChild(0);
         m_agent = GetComponent<NavMeshAgent>();
         m_damageable = GetComponent<Damageable>();
+        if(m_healthBar)
         m_healthBar = Instantiate(m_healthBar.gameObject, this.transform).GetComponent<MiniHealthBar>();
         m_hitEffect = GetComponent<HitEffect>();
 
@@ -107,6 +108,7 @@ public partial class EnemyController : MonoBehaviour
         m_damageable.SetMaxHealth(m_data.Health);
 
         m_fsm = new IdleState();
+        Debug.Log(m_fsm);
 
         if (m_player)
             SetTarget(m_player.transform);

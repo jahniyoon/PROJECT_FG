@@ -90,6 +90,7 @@ namespace JH
 
                     target = DistanceChecker(position, target, enemy.transform);
                 }
+
             }
 
             return target;
@@ -121,7 +122,7 @@ namespace JH
             // 포만감
             m_hunger.AddHunger(food, 1);
 
-            m_damageable.RestoreHealth(1);
+            m_damageable.RestoreHealth(m_player.Setting.PredationRestoreHealth);
 
             m_predationCoolDown = m_player.Setting.PredationCoolDown;
 
