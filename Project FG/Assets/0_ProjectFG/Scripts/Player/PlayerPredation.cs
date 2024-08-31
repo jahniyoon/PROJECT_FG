@@ -34,7 +34,7 @@ namespace JH
                 Predation();
             }
 
-            if(0 < m_predationCoolDown)
+            if (0 < m_predationCoolDown)
             {
                 m_predationCoolDown -= Time.deltaTime;
             }
@@ -60,7 +60,7 @@ namespace JH
             target = ScanPosition(m_aim.GetPoint(), m_player.Setting.PredationAimRange);
 
             if (target != null)
-            return target;
+                return target;
 
             // 2. PC 주변 검사
             target = ScanPosition(transform.position, m_player.Setting.PredationPlayerRange);
@@ -83,7 +83,7 @@ namespace JH
                 if (colls[i].CompareTag("Enemy"))
                 {
                     EnemyController enemy = colls[i].GetComponent<EnemyController>();
-                    
+
                     //  포식 가능 상태가 아니면 패스
                     if (enemy.CanPredation == false)
                         continue;
@@ -98,7 +98,7 @@ namespace JH
 
         private Transform DistanceChecker(Vector3 startPos, Transform curTarget, Transform newTarget)
         {
-            if(curTarget == null)
+            if (curTarget == null)
                 return newTarget;
 
             float curDistance = Vector3.Distance(startPos, curTarget.position);
@@ -115,12 +115,13 @@ namespace JH
         public void PredationDash()
         {
             //  처형
-            EnemyController enemy = m_predationTarget.GetComponent<EnemyController>();
-            enemy.Execution(100);
-            FoodPower food = enemy.GetFoodPower();
-
-            // 포만감
-            m_hunger.AddHunger(food, 1);
+            if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
+            {
+                enemy.Execution(100);
+                FoodPower food = enemy.GetFoodPower();
+                m_hunger.AddHunger(food, 1);
+                // 포만감
+            }
 
             m_damageable.RestoreHealth(m_player.Setting.PredationRestoreHealth);
 
@@ -132,6 +133,7 @@ namespace JH
                 m_dashRoutine = null;
             }
             m_dashRoutine = StartCoroutine(DashRoutine());
+
         }
 
         IEnumerator DashRoutine()

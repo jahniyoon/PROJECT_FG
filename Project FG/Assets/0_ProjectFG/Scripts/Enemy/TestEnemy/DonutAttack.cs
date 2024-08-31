@@ -53,7 +53,7 @@ namespace JH
 
 
 
-        IEnumerator ShootRoutine(float duration, float damage)
+        IEnumerator ShootRoutine(float damage, float duration)
         {
             float timer = 0;
 
