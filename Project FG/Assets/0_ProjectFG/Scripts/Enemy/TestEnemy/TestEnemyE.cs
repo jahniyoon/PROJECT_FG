@@ -79,7 +79,9 @@ namespace JH
 
         private void Shoot()
         {
-            m_shootPos.LookAt(m_target.position);
+            Vector3 target = m_target.position;
+            target.y = m_shootPos.position.y;
+            m_shootPos.LookAt(target);
 
             RaycastHit hit;
             if (Physics.Raycast(m_shootPos.position, m_shootPos.forward, out hit, m_data.AttackRange, m_targetLayer, QueryTriggerInteraction.Ignore))
@@ -98,6 +100,7 @@ namespace JH
             }
             else
             {
+                Debug.Log("감나빗");
                 Vector3 forwardPoint = m_shootPos.position + m_shootPos.forward * m_data.AttackRange;
                 if (m_shootHitEffect)
                 {
