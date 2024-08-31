@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace JH
 {
-    public partial class PlayerController : MonoBehaviour, IKnockbackable
+    public partial class PlayerController : MonoBehaviour, IKnockbackable 
     {
         private FSM<PlayerController> m_fsm;
         private Transform m_model;

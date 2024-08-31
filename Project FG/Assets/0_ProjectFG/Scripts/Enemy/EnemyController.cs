@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public partial class EnemyController : MonoBehaviour
+public partial class EnemyController : MonoBehaviour, IPredationable
 {
     private FSM<EnemyController> m_fsm;
     protected PlayerController m_player;
@@ -47,6 +47,7 @@ public partial class EnemyController : MonoBehaviour
     public bool CanPredation => m_canPredation;
 
     public FSMState State => m_state;
+    public Transform Transform => this.transform;
 
     #region Lifecycle
     private void Awake()
@@ -208,7 +209,10 @@ public partial class EnemyController : MonoBehaviour
         }
 
     }
+    public void Predation()
+    {
 
+    }
 
     protected virtual void OnRestore()
     {
@@ -265,7 +269,7 @@ public partial class EnemyController : MonoBehaviour
         return m_attackCoolDown <= 0;
     }
 
-
+ 
     protected virtual bool HitStateCheck()
     {
         return 0 < m_stunCoolDown;

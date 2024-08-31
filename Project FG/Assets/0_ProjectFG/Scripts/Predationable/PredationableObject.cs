@@ -7,16 +7,20 @@ namespace JH
     public class PredationableObject : MonoBehaviour, IPredationable
     {
         [SerializeField] private bool m_canPredationable;
-        public bool CanPredationable => m_canPredationable;
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField] private WorldSpaceIcon m_icon;
+        public bool CanPredation => m_canPredationable;
 
+        public Transform Transform => this.transform;
+
+        private void Awake()
+        {
+            
         }
-
-        public void Predationable()
+        public void Predation()
         {
-
+            m_canPredationable = false;
+            m_icon.enabled = false;
+            Destroy(gameObject);
         }
 
 

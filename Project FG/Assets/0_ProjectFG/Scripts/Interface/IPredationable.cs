@@ -6,8 +6,9 @@ namespace JH
 {
     public interface IPredationable 
     {
-        public bool CanPredationable { get; }
+        public Transform Transform { get; }
+        public bool CanPredation { get; }
 
-        public void Predationable();
+        public void Predation();
     }
 }

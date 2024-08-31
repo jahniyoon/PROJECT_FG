@@ -51,7 +51,7 @@ namespace JH
         public void SetTransform(Transform start, Transform aim)
         {
             m_startT = start;
-            m_aimT = aim;   
+            m_aimT = aim;
         }
 
         public void SetTimer(float timer)
@@ -60,16 +60,16 @@ namespace JH
         }
 
         // 푸드파워의 효과
-        public virtual void Active() 
+        public virtual void Active()
         {
-          
+
         }
 
 
         // 조준 타입을 설정한다.
         public void SetAimType(FoodPowerAimType type)
         {
-            m_aimType = type;          
+            m_aimType = type;
         }
 
         // 타입에 따라 발사 방향을 정해준다.
@@ -114,19 +114,19 @@ namespace JH
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
-                {
                     continue;
-                }
 
-                if (colls[i].CompareTag("Enemy"))
+                if (colls[i].CompareTag("Enemy") == false)
+                    continue;
+
+                if (colls[i].TryGetComponent<EnemyController>(out EnemyController enemy))
                 {
-                    EnemyController enemy = colls[i].GetComponent<EnemyController>();
-
                     if (enemy.State == FSMState.Die)
                         continue;
 
                     target = DistanceChecker(position, target, enemy.transform);
                 }
+
             }
 
             return target;
@@ -162,7 +162,7 @@ namespace JH
         // 루틴을 멈춘다.
         public void StopFoodPowerRoutine()
         {
-            if(foodRoutine != null)
+            if (foodRoutine != null)
             {
                 StopCoroutine(foodRoutine);
                 foodRoutine = null;
@@ -178,7 +178,7 @@ namespace JH
             while (isActive)
             {
                 // 쿨타임이 지나면 액티브
-                if(m_powerCoolDown < m_coolDownTimer)
+                if (m_powerCoolDown < m_coolDownTimer)
                 {
                     Active();
                     m_coolDownTimer = 0;

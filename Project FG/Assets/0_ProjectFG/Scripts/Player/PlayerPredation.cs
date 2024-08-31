@@ -82,14 +82,26 @@ namespace JH
 
                 if (colls[i].CompareTag("Enemy"))
                 {
-                    EnemyController enemy = colls[i].GetComponent<EnemyController>();
 
-                    //  포식 가능 상태가 아니면 패스
-                    if (enemy.CanPredation == false)
-                        continue;
+                    if (colls[i].TryGetComponent<IPredationable>(out IPredationable predation))
+                    {
+                        if (predation.CanPredation == false)
+                            continue;
+                        target = DistanceChecker(position, target, predation.Transform);
 
-                    target = DistanceChecker(position, target, enemy.transform);
+                    }
                 }
+
+                //if (colls[i].CompareTag("Enemy"))
+                //{
+                //    EnemyController enemy = colls[i].GetComponent<EnemyController>();
+
+                //    //  포식 가능 상태가 아니면 패스
+                //    if (enemy.CanPredation == false)
+                //        continue;
+
+                //    target = DistanceChecker(position, target, enemy.transform);
+                //}
 
             }
 
@@ -114,7 +126,7 @@ namespace JH
 
         public void PredationDash()
         {
-            //  처형
+            //  적이면 처형
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
                 enemy.Execution(100);
@@ -122,6 +134,8 @@ namespace JH
                 m_hunger.AddHunger(food, 1);
                 // 포만감
             }
+            if (m_predationTarget.TryGetComponent<IPredationable>(out IPredationable predationable))
+                predationable.Predation();
 
             m_damageable.RestoreHealth(m_player.Setting.PredationRestoreHealth);
 
