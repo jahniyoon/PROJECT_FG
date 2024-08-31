@@ -7,6 +7,7 @@ namespace JH
     public class AimShader : MonoBehaviour
     {
         private MeshRenderer m_renderer;
+        private Vector3 rotation;
 
         private void Awake()
         {
@@ -18,6 +19,8 @@ namespace JH
             transform.localScale = Vector3.one * radius;
             m_renderer.materials[0].SetFloat("_SliderScale", 0);
             m_renderer.materials[0].SetFloat("_Angle", angle);
+            rotation.y = angle / 2 * -1;
+            transform.localEulerAngles = rotation;
         }
         public void SetColor(Color radiusColor, Color sliderColor)
         {

@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -69,8 +67,19 @@ namespace JH
             m_aimShader.SetSlider(value);
         }
 
+        // 타겟 방향을 체크한다.
+        private bool TargetAngleCheck()
+        {         
+            float angle = TargetAngle();
+
+            return Mathf.Abs(angle) <= m_subData.AimAngle / 2;
+        }
+
         private void Shoot()
         {
+            m_shootPos.LookAt(m_target.position);
+            Debug.Log(TargetAngle());
+
             RaycastHit hit;
             if (Physics.Raycast(m_shootPos.position, m_shootPos.forward, out hit, m_data.AttackRange, m_targetLayer, QueryTriggerInteraction.Ignore))
             {
@@ -83,10 +92,20 @@ namespace JH
                         m_shootHitEffect.transform.position = hit.point;
                         m_shootHitEffect.Play();
                     }
-                    StartCoroutine(TrailRoutine(m_trails[TrailIndex()], m_shootPos.position, hit.point));
-                    
-
+                    StartCoroutine(TrailRoutine(m_trails[TrailIndex()], m_shootPos.position, hit.point));                   
                 }
+            }
+            else
+            {
+                Vector3 forwardPoint = m_shootPos.position + m_shootPos.forward * m_data.AttackRange;
+                if (m_shootHitEffect)
+                {
+                    m_shootHitEffect.Stop();
+                    m_shootHitEffect.transform.position = forwardPoint;
+                    m_shootHitEffect.Play();
+                }
+                StartCoroutine(TrailRoutine(m_trails[TrailIndex()], m_shootPos.position, forwardPoint));
+
             }
         }
 

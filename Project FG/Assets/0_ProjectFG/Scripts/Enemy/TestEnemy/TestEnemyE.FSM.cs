@@ -46,7 +46,7 @@ namespace JH
             if (m_target == null)
                 return new IdleState();
 
-            if (AttackRangeCheck())
+            if (AttackRangeCheck() && TargetAngleCheck())
             {
                 return new AttackState();
             }
@@ -93,8 +93,9 @@ namespace JH
 
             if (m_target == null)
                 return new IdleState();
-
-            if (AttackRangeCheck() == false)
+            // 공격 범위 밖일 때 이동상태가 된다.
+            // + 조준중일 때 이동상태가 되지 않는다.
+            if (AttackRangeCheck() == false && m_isAttackReady || TargetAngleCheck() == false && m_isAttackReady)
                 return new MoveState();
 
             return null;
@@ -105,23 +106,23 @@ namespace JH
         private float m_shootTimer;
         protected override void AttackStateEnter()
         {
+            ModelRotate(m_target.position, false, true);
             ShootOver();
         }
 
         protected override void AttackStateStay()
         {
-            ModelRotate(m_target.position, false, true);
-            AimEnable(m_isAttackReady == false);
+            AimEnable(true);
 
             if (m_isAttackReady == false)
-                AimBehavior();
+            { AimBehavior(); }
 
             else
-                AttackBehavior();
+            { AttackBehavior(); }
         }
 
         private void AimBehavior()
-        {
+        {            
             // 타이머만큼 조준 준비
             if (m_subData.AimSpeed < m_aimTimer)
             {
@@ -143,7 +144,7 @@ namespace JH
                 return;
             }
             // 바로 발사하도록 하기위해, 슛 타이머가 0이 될 때마다 발사
-            if (1 / m_subData.FireRate <= m_shootTimer)
+            if (1 / m_subData.FireRate <= m_shootTimer && TargetAngleCheck() && AttackRangeCheck())
             {
                 Shoot();
                 m_shootTimer = 0;
@@ -162,7 +163,7 @@ namespace JH
 
         protected override void AttackStateExit()
         {
-            ShootOver(); 
+            ShootOver();
             AimEnable(false);
         }
 

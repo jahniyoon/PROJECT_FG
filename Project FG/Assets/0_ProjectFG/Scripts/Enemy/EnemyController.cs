@@ -48,7 +48,7 @@ public partial class EnemyController : MonoBehaviour
 
     public FSMState State => m_state;
 
-# region Lifecycle
+    #region Lifecycle
     private void Awake()
     {
         AwakeInit();
@@ -128,7 +128,7 @@ public partial class EnemyController : MonoBehaviour
             m_targetDistance = -1;
             return;
         }
-        m_targetDistance = Vector3.Distance(transform.position, m_target.position); 
+        m_targetDistance = Vector3.Distance(transform.position, m_target.position);
     }
     protected virtual void CoolDownHandler()
     {
@@ -150,7 +150,7 @@ public partial class EnemyController : MonoBehaviour
     {
         float curRatio = m_damageable.Health / (float)m_damageable.MaxHealth;
 
-        return curRatio <= m_data.PredationHealthRatio * 0.01f;        
+        return curRatio <= m_data.PredationHealthRatio * 0.01f;
     }
 
 
@@ -232,6 +232,14 @@ public partial class EnemyController : MonoBehaviour
         m_hitEffect.Die();
         Destroy(gameObject, 1);
         UIManager.Instance.Debug.KillCountText(1);
+    }
+
+    protected float TargetAngle()
+    {
+        Vector3 target = m_target.position;
+        target.y = m_model.position.y;
+        Vector3 dir = target - m_model.position;
+        return Vector3.SignedAngle(m_model.forward, dir, Vector3.up);
     }
 
     // 처형
