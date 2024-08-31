@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy E Data
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Test Enemy E
-  <Health>k__BackingField: 15
+  <Health>k__BackingField: 150
   <MoveSpeed>k__BackingField: 7.5
   <RotateSpeed>k__BackingField: 10
   <AttackRange>k__BackingField: 20
@@ -26,6 +26,6 @@ MonoBehaviour:
   <AimAngle>k__BackingField: 45
   <OuterColor>k__BackingField: {r: 0.5019608, g: 0, b: 0.015686275, a: 0.60784316}
   <SliderColor>k__BackingField: {r: 1, g: 0, b: 0.08627451, a: 0.53333336}
-  <ShootDamage>k__BackingField: 1
+  <ShootDamage>k__BackingField: 5
   <ShootDuration>k__BackingField: 5
   <FireRate>k__BackingField: 4

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy D Data
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Test Enemy D
-  <Health>k__BackingField: 15
+  <Health>k__BackingField: 150
   <MoveSpeed>k__BackingField: 7.5
   <RotateSpeed>k__BackingField: 10
   <AttackRange>k__BackingField: 10
@@ -22,7 +22,7 @@ MonoBehaviour:
   <PredationStunCoolDown>k__BackingField: 0
   <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
     type: 3}
-  <AttackDamage>k__BackingField: 1
+  <AttackDamage>k__BackingField: 10
   <AttackSpeed>k__BackingField: 1
   <AttackCoolDown>k__BackingField: 3
   <OuterRadius>k__BackingField: 5
