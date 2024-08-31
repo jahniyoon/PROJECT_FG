@@ -47,6 +47,8 @@ namespace JH
         [field: SerializeField] public float PlayerAttackStunDuration { get; private set; }   // 경직 유발 시간
 
         [field: Header("플레이어 포식")]
+        [field: Tooltip("플레이어 포식 회복")]
+        [field: SerializeField] public float PredationRestoreHealth{ get; private set; }
         [field: Tooltip("플레이어 기준 검사 범위")]
         [field: SerializeField] public float PredationPlayerRange { get; private set; }
         [field: Tooltip("마우스 조준 기준 검사 범위")]

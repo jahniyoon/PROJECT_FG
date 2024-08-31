@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 06d697d57d7cca0419cf1e4d34da25dd, type: 2}
-  m_state: 0
+  m_state: 1
   m_target: {fileID: 0}
   m_targetDistance: 0
   m_healthBar: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
@@ -274,6 +274,7 @@ MonoBehaviour:
   m_hitMat: {fileID: 2100000, guid: acfbfa09e61ca004c9d8e28a4b669f8f, type: 2}
   m_dieMat: {fileID: 2100000, guid: e41397eb4cfeb5c4981929aa10829d7b, type: 2}
   m_hitDuration: 0.1
+  m_pingPongSpeed: 1
 --- !u!195 &7439829994547660686
 NavMeshAgent:
   m_ObjectHideFlags: 0

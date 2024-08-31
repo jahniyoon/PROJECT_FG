@@ -74,7 +74,7 @@ namespace JH
         // 투사체 충돌 시
         protected virtual void Collision()
         {
-            if (m_penetrate <= 0)
+            if (m_penetrate < 0)
             {
                 DestroyProjectile();
             }
