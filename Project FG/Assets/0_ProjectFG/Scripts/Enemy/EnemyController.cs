@@ -109,7 +109,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable
         m_damageable.SetMaxHealth(m_data.Health);
 
         m_fsm = new IdleState();
-        Debug.Log(m_fsm);
 
         if (m_player)
             SetTarget(m_player.transform);
