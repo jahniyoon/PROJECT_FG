@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2801e323704877945b3107c1a015eea3, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  associatedSheet: 1wxExSvFp9kodazhiLA8mDYORi728LRf7TfiaqDEdCvc
+  associatedWorksheets:
+  - ENEMY
+  START_ROW_LENGTH: 3
+  m_gameData:
+    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e0000
+    m_Values:
+    - name: 20001     Test Enemy A
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20001
+      - ColumnID: Name
+        Value: Test Enemy A
+      - ColumnID: Description
+        Value: "\uADFC\uC811\uD615"
+      - ColumnID: Health
+        Value: 151
+      - ColumnID: MoveSpeed
+        Value: 10
+      - ColumnID: AttackRange
+        Value: 2
+      - ColumnID: EscapeRange
+        Value: 1
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20002     Test Enemy B
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20002
+      - ColumnID: Name
+        Value: Test Enemy B
+      - ColumnID: Description
+        Value: "\uD0F1\uCEE4\uD615"
+      - ColumnID: Health
+        Value: 200
+      - ColumnID: MoveSpeed
+        Value: 12
+      - ColumnID: AttackRange
+        Value: 1.5
+      - ColumnID: EscapeRange
+        Value: 1
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20003     Test Enemy C
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20003
+      - ColumnID: Name
+        Value: Test Enemy C
+      - ColumnID: Description
+        Value: "\uD22C\uC0AC\uCCB4\uD615"
+      - ColumnID: Health
+        Value: 150
+      - ColumnID: MoveSpeed
+        Value: 7.5
+      - ColumnID: AttackRange
+        Value: 10
+      - ColumnID: EscapeRange
+        Value: 5
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20004     Test Enemy D
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20004
+      - ColumnID: Name
+        Value: Test Enemy D
+      - ColumnID: Description
+        Value: "\uB3C4\uB11B \uD22C\uC0AC\uCCB4\uD615"
+      - ColumnID: Health
+        Value: 150
+      - ColumnID: MoveSpeed
+        Value: 7.5
+      - ColumnID: AttackRange
+        Value: 10
+      - ColumnID: EscapeRange
+        Value: 3
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20005     Test Enemy E
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20005
+      - ColumnID: Name
+        Value: Test Enemy E
+      - ColumnID: Description
+        Value: "\uC18D\uC0AC\uD3EC\uD615"
+      - ColumnID: Health
+        Value: 150
+      - ColumnID: MoveSpeed
+        Value: 7.5
+      - ColumnID: AttackRange
+        Value: 20
+      - ColumnID: EscapeRange
+        Value: 5
+      - ColumnID: Damage
+        Value: 5
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20006     Test Enemy F
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20006
+      - ColumnID: Name
+        Value: Test Enemy F
+      - ColumnID: Description
+        Value: "\uB0C9\uAE30 \uC624\uB77C\uD615"
+      - ColumnID: Health
+        Value: 100
+      - ColumnID: MoveSpeed
+        Value: 7.5
+      - ColumnID: AttackRange
+        Value: 1
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 7.5
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20007     Test Enemy G
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20007
+      - ColumnID: Name
+        Value: Test Enemy G
+      - ColumnID: Description
+        Value: "\uCE58\uC720\uD615"
+      - ColumnID: Health
+        Value: 0
+      - ColumnID: MoveSpeed
+        Value: 0
+      - ColumnID: AttackRange
+        Value: 0
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 0
+      - ColumnID: PredationHealthRatio
+        Value: 50
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20008
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20008
+    - name: 20009
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20009
+    - name: 20010
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20010

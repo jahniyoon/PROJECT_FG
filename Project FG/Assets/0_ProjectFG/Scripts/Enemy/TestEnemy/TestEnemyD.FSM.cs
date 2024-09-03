@@ -49,11 +49,9 @@ namespace JH
             return null;
         }
 
-        float m_posCheckTimer = 0;
 
         protected override void MoveStateEnter()
         {
-            m_posCheckTimer = 0;
             m_agent.isStopped = false;
             ResetAttackTimer();
         }

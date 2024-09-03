@@ -23,10 +23,10 @@ namespace JH
         private ParticleSystem m_skillEffect;
 
         //TODO : 버프시스템 미구현
-        [Header("Skill Debuff")]
-        private float m_speedDebuff = 0.5f;   // 속도 디버프
-        private float m_needTicks = 5;   // 스킬 적용에 필요한 틱
-        private float m_DebuffDuration = 2;   // 스킬 적용에 필요한 틱
+        //[Header("Skill Debuff")]
+        //private float m_speedDebuff = 0.5f;   // 속도 디버프
+        //private float m_needTicks = 5;   // 스킬 적용에 필요한 틱
+        //private float m_DebuffDuration = 2;   // 스킬 적용에 필요한 틱
 
 
 

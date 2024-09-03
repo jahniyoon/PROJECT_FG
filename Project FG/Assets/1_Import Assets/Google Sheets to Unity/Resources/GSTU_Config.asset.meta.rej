@@ -1,0 +1,10 @@
+diff a/Project FG/Assets/1_Import Assets/Google Sheets to Unity/Resources/GSTU_Config.asset.meta b/Project FG/Assets/1_Import Assets/Google Sheets to Unity/Resources/GSTU_Config.asset.meta	(rejected hunks)
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 0ffc5387e15c8334899fdfb33c57cdfd
++timeCreated: 1475937386
++licenseType: Store
++NativeFormatImporter:
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
