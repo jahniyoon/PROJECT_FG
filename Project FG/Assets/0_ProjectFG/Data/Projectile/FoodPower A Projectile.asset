@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ProjectileName>k__BackingField: Test
   <TargetTag>k__BackingField: 0
-  <Damage>k__BackingField: 30
+  <Damage>k__BackingField: 25
   <ProjectileScale>k__BackingField: 1
   <ProjectileSpeed>k__BackingField: 20
-  <Penetrate>k__BackingField: 1
+  <Penetrate>k__BackingField: 0
   <DestroyType>k__BackingField: 1
   <DestroyValue>k__BackingField: 5
