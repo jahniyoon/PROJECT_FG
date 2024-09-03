@@ -108,8 +108,10 @@ namespace JH
             {
                 ImportData();
             }
-            if (GUILayout.Button("스프레드 시트로 데이터 내보내기"))
+            if (GUILayout.Button("스프레드 시트로 데이터 내보내기")   && !Application.isPlaying)
             {
+                bool result = EditorUtility.DisplayDialog("Warning", "정말 업로드하시겠습니까?\nGame Data를 기준으로 구글 스프레드 시트의 데이터를 모두 덮어씁니다.", "덮어쓰기", "취소");
+                if(result)
                 ExportAllData();
             }
         }
