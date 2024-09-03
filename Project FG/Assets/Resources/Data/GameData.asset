@@ -29,7 +29,7 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uADFC\uC811\uD615"
       - ColumnID: Health
-        Value: 151
+        Value: 150
       - ColumnID: MoveSpeed
         Value: 10
       - ColumnID: AttackRange
@@ -39,7 +39,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
-        Value: 50
+        Value: 40
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20002     Test Enemy B
@@ -62,7 +62,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
-        Value: 50
+        Value: 40
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20003     Test Enemy C
@@ -180,16 +180,44 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20008
+    - name: 20008     Test Enemy H
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20008
-    - name: 20009
+      - ColumnID: Name
+        Value: Test Enemy H
+      - ColumnID: Description
+        Value: "\uC790\uD3ED\uD615"
+      - ColumnID: Health
+        Value: 100
+      - ColumnID: MoveSpeed
+        Value: 5
+      - ColumnID: AttackRange
+        Value: 1.5
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 0
+      - ColumnID: PredationHealthRatio
+        Value: 40
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: '20009     '
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20009
+      - ColumnID: Name
+        Value: 
+      - ColumnID: Description
+        Value: "\uD14C\uC2A4\uD2B8\uD615"
+      - ColumnID: Health
+        Value: 
+      - ColumnID: MoveSpeed
+        Value: 
+      - ColumnID: AttackRange
+        Value: 4
     - name: 20010
       SheetID: ENEMY
       Data:

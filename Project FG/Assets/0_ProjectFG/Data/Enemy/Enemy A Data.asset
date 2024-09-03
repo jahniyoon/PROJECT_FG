@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 20001
   <Name>k__BackingField: Test Enemy A
-  <Description>k__BackingField: "\uADFC\uC811\uD615 \uC5D0\uB124\uBBF8"
-  <Health>k__BackingField: 151
+  <Description>k__BackingField: "\uADFC\uC811\uD615"
+  <Health>k__BackingField: 150
   <MoveSpeed>k__BackingField: 10
   <RotateSpeed>k__BackingField: 10
   <Damage>k__BackingField: 10

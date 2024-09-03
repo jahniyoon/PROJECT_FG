@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc673ef9fd9c5b64c91c861078fb1008, type: 3}
   m_Name: Enemy H Data
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 20008
   <Name>k__BackingField: Test Enemy H
+  <Description>k__BackingField: "\uC790\uD3ED\uD615"
   <Health>k__BackingField: 100
   <MoveSpeed>k__BackingField: 5
   <RotateSpeed>k__BackingField: 10
+  <Damage>k__BackingField: 0
   <AttackRange>k__BackingField: 1.5
   <EscapeRange>k__BackingField: 0
   <PredationHealthRatio>k__BackingField: 40
