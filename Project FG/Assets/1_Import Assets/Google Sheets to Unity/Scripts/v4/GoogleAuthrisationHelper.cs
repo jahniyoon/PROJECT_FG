@@ -57,7 +57,6 @@ namespace GoogleSheetsToUnity
         {
             string serverUrl = string.Format("http://127.0.0.1:{0}", SpreadsheetManager.Config.PORT);
 
-            Debug.Log(authToken);
             Debug.Log("Auth Token = " + authToken);
             WWWForm f = new WWWForm();
             f.AddField("code", authToken);
@@ -75,9 +74,17 @@ namespace GoogleSheetsToUnity
             using (UnityWebRequest request = UnityWebRequest.Post("https://accounts.google.com/o/oauth2/token", f))
             {
                 yield return request.SendWebRequest();
+                GoogleDataResponse gdr = JsonUtility.FromJson<GoogleDataResponse>(request.downloadHandler.text);
+                
+                // 데이터를 가져오기 전 암호화를 한번 한다.
+                gdr.EncryptToken();
 
-                SpreadsheetManager.Config.gdr = JsonUtility.FromJson<GoogleDataResponse>(request.downloadHandler.text);
+                SpreadsheetManager.Config.gdr.access_token = gdr.access_token;
+                SpreadsheetManager.Config.gdr.refresh_token = gdr.refresh_token;
+                SpreadsheetManager.Config.gdr.token_type = gdr.token_type;
+                SpreadsheetManager.Config.gdr.expires_in = gdr.expires_in;
                 SpreadsheetManager.Config.gdr.nextRefreshTime = DateTime.Now.AddSeconds(SpreadsheetManager.Config.gdr.expires_in);
+
                 EditorUtility.SetDirty(SpreadsheetManager.Config);
                 AssetDatabase.SaveAssets();
             }
@@ -184,7 +191,7 @@ namespace GoogleSheetsToUnity
                 WWWForm f = new WWWForm();
                 f.AddField("client_id", SpreadsheetManager.Config.CLIENT_ID);
                 f.AddField("client_secret", SpreadsheetManager.Config.CLIENT_SECRET);
-                f.AddField("refresh_token", SpreadsheetManager.Config.gdr.refresh_token);
+                f.AddField("refresh_token", SpreadsheetManager.Config.gdr.REFRESH_TOKEN);
                 f.AddField("grant_type", "refresh_token");
                 f.AddField("scope", "");
 
@@ -193,6 +200,9 @@ namespace GoogleSheetsToUnity
                     yield return request.SendWebRequest();
 
                     GoogleDataResponse newGdr = JsonUtility.FromJson<GoogleDataResponse>(request.downloadHandler.text);
+                    // 암호화를 한번 한다.
+                    newGdr.EncryptToken();
+
                     SpreadsheetManager.Config.gdr.access_token = newGdr.access_token;
                     SpreadsheetManager.Config.gdr.nextRefreshTime = DateTime.Now.AddSeconds(newGdr.expires_in);
 

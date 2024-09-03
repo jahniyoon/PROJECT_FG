@@ -3,6 +3,7 @@ using System;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using System.Diagnostics;
 
 public class Crypto
 {
@@ -26,17 +27,22 @@ public class Crypto
     }
 
 
-    public static string DecryptAESByBase64Key(string encryptData, string base64Key, string base64IV)
+    public static string DecryptAESByBase64Key(string encryptData, string base64Key, string base64IV, bool instead = false)
     {
         if (aesManages.ContainsKey(base64Key) == false)
-        {
-            //return string.Empty;
-            // 복호화할 때도 추가해준다.
-            CreateAESManage(base64Key, base64IV);
-
+        {          
+            return string.Empty;
         }
 
         return aesManages[base64Key].Decrypt(encryptData);
+    }
+
+    public static string SimpleDecryptAES(string encryptData, string base64Key, string base64IV)
+    {
+        CryptoAES aesManage = new CryptoAES();
+        aesManage.Create(base64Key, base64IV);
+        UnityEngine.Debug.Log($"{encryptData}, base : {base64Key}, IV : {base64IV}");
+        return aesManage.Decrypt(encryptData);
     }
 
     public static string EncodingBase64(string plainText)

@@ -49,7 +49,7 @@ namespace GoogleSheetsToUnity
             sb.Append("/" + search.sheetId);
             sb.Append("/values");
             sb.Append("/" + search.worksheetName + "!" + search.startCell + ":" + search.endCell);
-            sb.Append("?access_token=" + Config.gdr.access_token);
+            sb.Append("?access_token=" + Config.gdr.ACCESS_TOKEN);
 
             UnityWebRequest request = UnityWebRequest.Get(sb.ToString());
 
@@ -106,7 +106,7 @@ namespace GoogleSheetsToUnity
                     StringBuilder sb = new StringBuilder();
                     sb.Append("https://sheets.googleapis.com/v4/spreadsheets");
                     sb.Append("/" + search.sheetId);
-                    sb.Append("?access_token=" + Config.gdr.access_token);
+                    sb.Append("?access_token=" + Config.gdr.ACCESS_TOKEN);
 
                     UnityWebRequest request2 = UnityWebRequest.Get(sb.ToString());
                     Debug.Log(sb.ToString());
@@ -149,7 +149,7 @@ namespace GoogleSheetsToUnity
             sb.Append("/values");
             sb.Append("/" + search.worksheetName + "!" + search.startCell + ":" + search.endCell);
             sb.Append("?valueInputOption=USER_ENTERED");
-            sb.Append("&access_token=" + Config.gdr.access_token);
+            sb.Append("&access_token=" + Config.gdr.ACCESS_TOKEN);
 
             string json = JSON.Dump(inputData, EncodeOptions.NoTypeHints);
             byte[] bodyRaw = new UTF8Encoding().GetBytes(json);
@@ -204,7 +204,7 @@ namespace GoogleSheetsToUnity
             sb.Append("https://sheets.googleapis.com/v4/spreadsheets");
             sb.Append("/" + search.sheetId);
             sb.Append("/values:batchUpdate");
-            sb.Append("?access_token=" + Config.gdr.access_token);
+            sb.Append("?access_token=" + Config.gdr.ACCESS_TOKEN);
 
 
             string json = JSON.Dump(requestData, EncodeOptions.NoTypeHints);
@@ -264,7 +264,7 @@ namespace GoogleSheetsToUnity
             sb.Append("/" + search.worksheetName + "!" + search.startCell);
             sb.Append(":append");
             sb.Append("?valueInputOption=USER_ENTERED");
-            sb.Append("&access_token=" + Config.gdr.access_token);
+            sb.Append("&access_token=" + Config.gdr.ACCESS_TOKEN);
 
             string json = JSON.Dump(inputData, EncodeOptions.NoTypeHints);
 

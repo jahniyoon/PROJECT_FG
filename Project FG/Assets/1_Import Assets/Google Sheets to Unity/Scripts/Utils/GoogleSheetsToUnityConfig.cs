@@ -38,7 +38,7 @@ namespace GoogleSheetsToUnity
             StringReader stringReader = new StringReader(key.text);
             string[] text = stringReader.ReadLine().Split();
 
-            return Crypto.DecryptAESByBase64Key(CLIENT_SECRETPW, text[0], text[1]);
+            return Crypto.SimpleDecryptAES(CLIENT_SECRETPW, text[0], text[1]);
         }
 
     }
@@ -46,11 +46,53 @@ namespace GoogleSheetsToUnity
     [System.Serializable]
     public class GoogleDataResponse
     {
-        public string access_token = "";
-        public string refresh_token = "";
+        public string ACCESS_TOKEN { get { return Decrypt(access_token); }}
+        public string access_token;
+        public string REFRESH_TOKEN { get { return Decrypt(refresh_token); }}
+        public string refresh_token;
+
         public string token_type = "";
         public int expires_in = 0; //just a place holder to work the the json and caculate the next refresh time
         public DateTime nextRefreshTime;
+
+        public void EncryptToken()
+        {
+            access_token = Encrypt(access_token);
+            refresh_token = Encrypt(refresh_token);
+        }  
+
+        private string Encrypt(string token)
+        {
+            Debug.Log("암호화 : " + token);
+            TextAsset key = Resources.Load("SECRETKEY") as TextAsset;
+            if (key == null)
+            {
+                Debug.LogError("키를 찾을 수 없습니다. 키를 확인해주세요.");
+                return "";
+            }
+
+            StringReader stringReader = new StringReader(key.text);
+            string[] text = stringReader.ReadLine().Split();
+
+            return Crypto.EncryptAESbyBase64Key(token, text[0], text[1]);
+        }
+
+        public string Decrypt(string token)
+        {
+            TextAsset key = Resources.Load("SECRETKEY") as TextAsset;
+            if (key == null)
+            {
+                Debug.LogError("키를 찾을 수 없습니다. 키를 확인해주세요.");
+                return "";
+            }
+
+            StringReader stringReader = new StringReader(key.text);
+            string[] text = stringReader.ReadLine().Split();
+
+            return Crypto.SimpleDecryptAES(token, text[0], text[1]);
+        }
     }
+
+     
 
 }
