@@ -109,7 +109,7 @@ namespace GoogleSheetsToUnity
                     sb.Append("?access_token=" + Config.gdr.access_token);
 
                     UnityWebRequest request2 = UnityWebRequest.Get(sb.ToString());
-
+                    Debug.Log(sb.ToString());
                     yield return request2.SendWebRequest();
 
                     SheetsRootObject root = JSON.Load(request2.downloadHandler.text).Make<SheetsRootObject>();

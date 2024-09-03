@@ -1,23 +1,46 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
+using UnityEditor;
+using JH;
+using System.IO;
+using System.Text;
 
 namespace GoogleSheetsToUnity
 {
     public class GoogleSheetsToUnityConfig : ScriptableObject
-  {
-    public string CLIENT_ID = "";
-    public string CLIENT_SECRET = "";
-    public string ACCESS_TOKEN = "";
+    {
+        public string CLIENT_ID = "";
+        public string CLIENT_SECRETPW = "";
+        public string CLIENT_SECRET => SECRET();
 
-    [HideInInspector]
-    public string REFRESH_TOKEN;
+        public string ACCESS_TOKEN = "";
 
-    public string API_Key = "";
 
-    public int PORT;
+        [HideInInspector]
+        public string REFRESH_TOKEN;
 
-    public GoogleDataResponse gdr;
+        public string API_Key = "";
+
+        public int PORT;
+
+        public GoogleDataResponse gdr;
+
+        public string SECRET()
+        {
+            TextAsset key = Resources.Load("SECRETKEY") as TextAsset;
+            if (key == null)
+            {
+                Debug.LogError("키를 찾을 수 없습니다. 키를 확인해주세요.");
+                return "";
+            }
+
+            StringReader stringReader = new StringReader(key.text);
+            string[] text = stringReader.ReadLine().Split();
+
+            return Crypto.DecryptAESByBase64Key(CLIENT_SECRETPW, text[0], text[1]);
+        }
+
     }
 
     [System.Serializable]
@@ -29,4 +52,5 @@ namespace GoogleSheetsToUnity
         public int expires_in = 0; //just a place holder to work the the json and caculate the next refresh time
         public DateTime nextRefreshTime;
     }
+
 }

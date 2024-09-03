@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using UnityEditor;
 using UnityEngine;
 using System.Security.Cryptography.X509Certificates;
@@ -83,11 +83,11 @@ namespace GoogleSheetsToUnity.Editor
                         GUILayout.BeginHorizontal();
                         if (showSecret)
                         {
-                            config.CLIENT_SECRET = EditorGUILayout.TextField("Client Secret Code", config.CLIENT_SECRET);
+                            config.CLIENT_SECRETPW = EditorGUILayout.TextField("Client Secret Code", config.CLIENT_SECRETPW);
                         }
                         else
                         {
-                            config.CLIENT_SECRET = EditorGUILayout.PasswordField("Client Secret Code", config.CLIENT_SECRET);
+                            config.CLIENT_SECRETPW = EditorGUILayout.PasswordField("Client Secret Code", config.CLIENT_SECRETPW);
 
                         }
                         showSecret = GUILayout.Toggle(showSecret, "Show");

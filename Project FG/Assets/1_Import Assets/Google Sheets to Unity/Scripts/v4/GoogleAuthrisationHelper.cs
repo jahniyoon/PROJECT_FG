@@ -1,4 +1,4 @@
-﻿using GoogleSheetsToUnity.ThirdPary;
+using GoogleSheetsToUnity.ThirdPary;
 using System;
 using System.Collections;
 using System.Net;
@@ -59,7 +59,6 @@ namespace GoogleSheetsToUnity
 
             Debug.Log(authToken);
             Debug.Log("Auth Token = " + authToken);
-
             WWWForm f = new WWWForm();
             f.AddField("code", authToken);
             f.AddField("client_id", SpreadsheetManager.Config.CLIENT_ID);
