@@ -90,6 +90,8 @@ namespace JH
             data.Value = Value;
             return data;
         }
+
+        // 데이터 행의 순서가 바뀌면 여기를 수정해야함
         public virtual List<GSTU_Data> ExportData()
         {
             List<GSTU_Data> dataList = new List<GSTU_Data>();
