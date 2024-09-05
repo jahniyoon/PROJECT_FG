@@ -23,6 +23,8 @@ MonoBehaviour:
   <EscapeRange>k__BackingField: 0
   <PredationHealthRatio>k__BackingField: 40
   <PredationStunCoolDown>k__BackingField: 0
+  <PredationStun>k__BackingField: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5,
+    type: 2}
   <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
     type: 3}
   <SkillEffect>k__BackingField: {fileID: 2500426658639734181, guid: 00fc8da280617354e8394592271b6a72,

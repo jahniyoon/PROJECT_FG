@@ -14,6 +14,7 @@ namespace JH
         [SerializeField] private bool m_isDie;
 
         [SerializeField] private bool m_invincible;
+        [SerializeField] private float m_damageReduction;   // 피해 감소
 
         public UnityEvent DamageEvent;
         public UnityEvent DieEvent;
@@ -23,6 +24,7 @@ namespace JH
         public float Health => m_health;
 
         public bool IsDie => m_isDie;
+        public float DamageReduction;
 
         public void SetMaxHealth(float maxHealth)
         {
@@ -53,7 +55,7 @@ namespace JH
             if (IsDie)
                 return;
             if(m_invincible == false)
-            m_health -= damage;
+            m_health -= FinalDamage(damage);
 
             if (m_health <= 0)
             {
@@ -62,6 +64,14 @@ namespace JH
             }
             DamageEvent?.Invoke();
             UpdateHealthEvent?.Invoke();
+        }
+
+        // 최종데미지
+        private float FinalDamage(float damage)
+        {
+            float finalDamage = damage * (100 - m_damageReduction) * 0.01f;
+
+            return finalDamage;
         }
         public void Die()
         {
@@ -78,6 +88,11 @@ namespace JH
         public void InvincibleMode()
         {
             m_invincible = !m_invincible;
+        }
+
+        public void SetDamageReduction(float value)
+        {
+            m_damageReduction += value;
         }
 
     }

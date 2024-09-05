@@ -83,7 +83,6 @@ namespace JH
                         Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
 
                         damageable.OnDamage(m_player.Setting.PlayerAttackDamage);
-                        colls[i].GetComponent<EnemyController>().OnStun(m_player.Setting.PlayerAttackStunDuration);
                     }
                 }
             }

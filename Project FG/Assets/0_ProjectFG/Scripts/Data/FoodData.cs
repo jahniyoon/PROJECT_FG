@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Food Power Data", menuName = "ScriptableObjects/Food Power")]
+    [CreateAssetMenu(fileName = "Food Power Data", menuName = "ScriptableObjects/Food Power/Food Power")]
 
     public class FoodPowerData : ScriptableObject
     {

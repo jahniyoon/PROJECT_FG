@@ -14,7 +14,6 @@ namespace JH
         [SerializeField] private int m_maxHunger;
         [SerializeField] private bool m_cantPredation = false;
 
-
         [Header("Food Power")]
         [SerializeField] private List<FoodPower> foodPowers = new List<FoodPower>();
 
@@ -124,17 +123,15 @@ namespace JH
 
                 if (colls[i].CompareTag("Enemy"))
                 {
-                    Damageable damageable = colls[i].GetComponent<Damageable>();
-
-                    if (damageable)
+                    if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
                         float distance = Vector3.Distance(transform.position, colls[i].transform.position);
 
                         Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
 
                         damageable.OnDamage(m_player.Setting.HungerSkillDamage);
-                        colls[i].GetComponent<EnemyController>().OnStun(m_player.Setting.HungerSkillStun);
                     }
+                
                 }
             }
         }

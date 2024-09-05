@@ -10045,6 +10045,7 @@ GameObject:
   - component: {fileID: 4795335351158559030}
   - component: {fileID: 4603962538011813779}
   - component: {fileID: 3777391520323845705}
+  - component: {fileID: 6153186432526148540}
   - component: {fileID: 1872056295545521947}
   - component: {fileID: 6082852494758565167}
   - component: {fileID: 6129565820673834117}
@@ -10086,6 +10087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: d9f0d1bb143b93d42a4d729e4b89b891, type: 2}
   m_state: 0
+  m_buffHandler: {fileID: 0}
   m_target: {fileID: 0}
   m_targetDistance: 0
   m_healthBar: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
@@ -10123,6 +10125,29 @@ MonoBehaviour:
   UpdateHealthEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6153186432526148540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967336704677334945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9702e85f7fb63b84293702fa6ec129d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_status:
+    m_moveSpeed: 0
+    m_damageReduction: 0
+    m_stunTimer: 0
+  m_inherenceBuff: []
+  AddBuffEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RemoveBuffEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1872056295545521947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10140,6 +10165,7 @@ MonoBehaviour:
   m_hitMat: {fileID: 2100000, guid: acfbfa09e61ca004c9d8e28a4b669f8f, type: 2}
   m_dieMat: {fileID: 2100000, guid: e41397eb4cfeb5c4981929aa10829d7b, type: 2}
   m_hitDuration: 0.1
+  m_pingPongSpeed: 1
 --- !u!195 &6082852494758565167
 NavMeshAgent:
   m_ObjectHideFlags: 0

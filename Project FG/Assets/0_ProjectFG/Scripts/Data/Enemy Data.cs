@@ -10,7 +10,7 @@ using static UnityEditor.Progress;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Enemy Data", menuName = "ScriptableObjects/EnemyDefault", order = 0)]
+    [CreateAssetMenu(fileName = "Enemy Data", menuName = "ScriptableObjects/Enemy/EnemyDefault", order = 0)]
 
     public class EnemyData : ScriptableObject
     {
@@ -43,6 +43,8 @@ namespace JH
         [field: Tooltip("포식상태 돌입 시 쿨다운")]
 
         [field: SerializeField] public float PredationStunCoolDown { get; private set; }
+        [field: SerializeField] public BuffBase PredationStun { get; private set; }
+
 
         [field: Header("푸드 파워")]
         [field: SerializeField] public FoodPower FoodPower { get; private set; }
@@ -136,9 +138,12 @@ namespace JH
             }
             GUILayout.Label("\n\nGoogle Sheet");
 
-            if (GUILayout.Button("Online 데이터 내보내기"))
+
+            if (GUILayout.Button("Online 데이터 내보내기") && !Application.isPlaying)
             {
-                ExportData();
+                bool result = EditorUtility.DisplayDialog("Warning", "정말 업로드하시겠습니까?\n현재 데이터와 Game Data의 데이터들을 기준으로 구글 스프레드 시트의 데이터를 모두 덮어씁니다.", "덮어쓰기", "취소");
+                if (result)
+                    ExportData();
             }
         }
 

@@ -128,7 +128,7 @@ namespace JH
 
         protected override void HitStateStay()
         {
-            m_stunCoolDown -= Time.deltaTime;
+            //m_stunCoolDown -= Time.deltaTime;
         }
 
         protected override void HitStateExit()

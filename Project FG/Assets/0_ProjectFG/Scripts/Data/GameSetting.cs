@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "GameSeggings", menuName = "ScriptableObjects/GameSettings")]
+    [CreateAssetMenu(fileName = "GameSeggings", menuName = "ScriptableObjects/Setting/GameSettings")]
 
     public class GameSettings : ScriptableObject
     {

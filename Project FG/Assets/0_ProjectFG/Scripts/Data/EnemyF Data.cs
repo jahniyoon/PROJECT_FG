@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Enemy F Data", menuName = "ScriptableObjects/EnemyF", order = 6)]
+    [CreateAssetMenu(fileName = "Enemy F Data", menuName = "ScriptableObjects/Enemy/EnemyF", order = 6)]
     public class EnemyFData : EnemyData
     {
         [field: Header("에네미 F")]
@@ -15,5 +15,8 @@ namespace JH
         [field: SerializeField] public float SkillTickDuration { get; private set; }
         [Tooltip("스킬 범위")]
         [field: SerializeField] public float SkillAreaRadius { get; private set; }
+
+        [field: SerializeField] public BuffBase SlowDebuff { get; private set; }
+        [field: SerializeField] public BuffBase DotDamageBuff { get; private set; }
     }
 }

@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public partial class EnemyController : MonoBehaviour, IPredationable
+public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
 {
     private FSM<EnemyController> m_fsm;
     protected PlayerController m_player;
@@ -20,6 +20,11 @@ public partial class EnemyController : MonoBehaviour, IPredationable
     [Header("State")]
 
     [SerializeField] protected FSMState m_state;
+
+    [Header("Buff")]
+    [SerializeField] protected BuffHandler m_buffHandler;
+    protected float m_slowDebuff = 0;
+
 
     [Header("Target")]
     [SerializeField] protected Transform m_target;
@@ -38,7 +43,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable
 
     [Header("Stun")]
     [SerializeField] protected ParticleSystem m_stunEffect;
-    [SerializeField] protected float m_stunCoolDown;
 
 
     // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
@@ -101,11 +105,13 @@ public partial class EnemyController : MonoBehaviour, IPredationable
         // 포식 아이콘 미리 꺼둔다.
         m_predationIcon = Instantiate(m_predationIcon.gameObject, this.transform).GetComponent<WorldSpaceIcon>();
         m_predationIcon.IconEnable(false);
+
+        m_buffHandler = GetComponent<BuffHandler>();
     }
 
     protected virtual void StartInit()
     {
-        m_agent.speed = m_data.MoveSpeed;
+        m_agent.speed = FinalSpeed(m_data.MoveSpeed);
         m_damageable.SetMaxHealth(m_data.Health);
 
         m_fsm = new IdleState();
@@ -121,6 +127,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable
         TargetDistanceUpdate();
         FSMHandler();
         CoolDownHandler();
+        BuffHandler();
     }
 
     private void TargetDistanceUpdate()
@@ -136,6 +143,18 @@ public partial class EnemyController : MonoBehaviour, IPredationable
     {
         if (0 < m_attackCoolDown)
             m_attackCoolDown -= Time.deltaTime;
+    }
+    // 버프를 관리
+    protected virtual void BuffHandler()
+    {
+    }
+    public float FinalSpeed(float curSpeed)
+    {
+        return curSpeed * (100 - m_slowDebuff) * 0.01f;
+    }
+    public void SetSlowSpeed(float value)
+    {
+        m_slowDebuff += value;
     }
 
     protected virtual void SetTarget(Transform target)
@@ -204,7 +223,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable
         // 포식 가능한 상태가 아니였다가 포식 가능 상태가 되었을 때
         if (isPredation == false && m_canPredation == true)
         {
-            m_stunCoolDown = m_data.PredationStunCoolDown;
+            m_buffHandler.OnBuff(this.gameObject, m_data.PredationStun);
         }
 
     }
@@ -224,15 +243,14 @@ public partial class EnemyController : MonoBehaviour, IPredationable
         ResetAttackTimer();
     }
 
-    public virtual void OnStun(float stunDuration)
-    {
-        m_stunCoolDown += stunDuration;
-    }
+
 
     protected virtual void Die()
     {
         m_canPredation = false;
         m_predationIcon.IconEnable(m_canPredation);
+        // 버프 모두 지워주기
+        m_buffHandler.RemoveAllBuff();
 
         m_hitEffect.Die();
         Destroy(gameObject, 1);
@@ -271,7 +289,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable
  
     protected virtual bool HitStateCheck()
     {
-        return 0 < m_stunCoolDown;
+        return m_buffHandler.Status.IsStun;
     }
 
 

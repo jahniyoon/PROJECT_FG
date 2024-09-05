@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Projectile Data", menuName = "ScriptableObjects/Projectile")]
+    [CreateAssetMenu(fileName = "Projectile Data", menuName = "ScriptableObjects/Projectile/Projectile")]
 
     public class ProjectileData : ScriptableObject
     {

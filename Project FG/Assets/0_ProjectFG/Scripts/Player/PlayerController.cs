@@ -19,6 +19,7 @@ namespace JH
         private PlayerPredation m_predation;
         private PlayerAttack m_attack;
         private PlayerAim m_aim;
+        private BuffHandler m_buffHandler;
 
         private AnimationController m_animation;
         private CinemachineImpulseSource m_impulse;
@@ -53,6 +54,8 @@ namespace JH
 
             m_animation = GetComponent<AnimationController>();
             m_impulse = GetComponent<CinemachineImpulseSource>();
+
+            m_buffHandler = GetComponent<BuffHandler>();
         }
 
         private void Start()
@@ -106,6 +109,9 @@ namespace JH
         {
             m_animation.SetLayer("Upper Layer", 0);
             m_animation.SetBool(AnimationID.isDie, true);
+            // 버프 모두 지워주기
+            m_buffHandler.RemoveAllBuff();
+
             GameManager.Instance.GameOver();
         }
 

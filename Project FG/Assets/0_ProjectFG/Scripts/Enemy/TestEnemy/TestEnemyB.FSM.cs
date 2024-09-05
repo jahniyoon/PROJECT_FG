@@ -108,6 +108,8 @@ namespace JH
 
         protected override void AttackStateStay()
         {
+            bool isBuffEnable = m_buffHandler.BuffEnableCheck(this.gameObject, m_subbData.DamageReductionBuff);
+
             // 먼저 버프 가능한지 체크
             if(m_buffCoolDown <= 0)
             {
@@ -115,7 +117,7 @@ namespace JH
             }
 
             // 버프중이 아니고, 공격 가능한지 체크
-            else if(m_isBuff == false && m_subbData.AttackSpeed < m_attackTimer && CanAttackCheck())
+            else if(isBuffEnable == false && m_subbData.AttackSpeed < m_attackTimer && CanAttackCheck())
             {
                 // 공격 속도 타이머와 쿨타임 초기화
                 ResetAttackTimer();
@@ -150,7 +152,7 @@ namespace JH
 
         protected override void HitStateStay()
         {
-            m_stunCoolDown -= Time.deltaTime;
+            //m_stunCoolDown -= Time.deltaTime;
         }
 
         protected override void HitStateExit()

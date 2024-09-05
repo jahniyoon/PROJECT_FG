@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 7626080337942912701}
   - component: {fileID: 8536746120527603423}
   - component: {fileID: 4988308495212373085}
+  - component: {fileID: 2928737537154617340}
   - component: {fileID: 3707811607288711792}
   - component: {fileID: 429439280025874254}
   - component: {fileID: 855541216749996744}
@@ -337,6 +338,30 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   UpdateHealthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2928737537154617340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276918939081762280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9702e85f7fb63b84293702fa6ec129d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_status:
+    m_moveSpeed: 0
+    m_damageReduction: 0
+    m_stunTimer: 0
+  m_inherenceBuff:
+  - {fileID: 0}
+  AddBuffEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RemoveBuffEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &3707811607288711792
@@ -436,6 +461,7 @@ MonoBehaviour:
   m_curHunger: 0
   m_maxHunger: 0
   m_cantPredation: 0
+  m_stunBuff: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5, type: 2}
   foodPowers: []
   m_hungerSkillEffect: {fileID: 4871284313193287926}
   DebugColor: {r: 1, g: 1, b: 1, a: 0.25882354}

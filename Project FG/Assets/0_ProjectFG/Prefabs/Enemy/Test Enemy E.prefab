@@ -24913,6 +24913,7 @@ GameObject:
   - component: {fileID: 6412134118096490127}
   - component: {fileID: 4630600924933192777}
   - component: {fileID: 6965865061618629233}
+  - component: {fileID: -5116553629075298019}
   - component: {fileID: 4510291983175367558}
   - component: {fileID: 4551340168604416226}
   - component: {fileID: 8143575691385239260}
@@ -24956,6 +24957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: c90fe2a6ca5959d42994b2f12f45c262, type: 2}
   m_state: 0
+  m_buffHandler: {fileID: 0}
   m_target: {fileID: 0}
   m_targetDistance: 0
   m_healthBar: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
@@ -25000,6 +25002,29 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   UpdateHealthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-5116553629075298019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753025787564866403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9702e85f7fb63b84293702fa6ec129d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_status:
+    m_moveSpeed: 0
+    m_damageReduction: 0
+    m_stunTimer: 0
+  m_inherenceBuff: []
+  AddBuffEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RemoveBuffEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4510291983175367558

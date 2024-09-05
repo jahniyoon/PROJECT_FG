@@ -109,6 +109,7 @@ namespace JH
 
                 m_agent.SetDestination(destination);
                 ModelRotate(destination);
+
                 return;
             }
 
@@ -140,7 +141,7 @@ namespace JH
 
         protected override void HitStateStay()
         {
-            m_stunCoolDown -= Time.deltaTime;
+            //m_stunCoolDown -= Time.deltaTime;
         }
 
         protected override void HitStateExit()

@@ -252,7 +252,7 @@ namespace GoogleSheetsToUnity
     {
         /// <summary>
         ///     All the cells that the spreadsheet loaded
-        ///     Index is Cell ID IE "A2"
+        ///     Index is Cell InstanceID IE "A2"
         /// </summary>
         /// <returns></returns>
 

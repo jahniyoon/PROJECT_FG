@@ -14,7 +14,6 @@ namespace JH
         [SerializeField] private VisualEffect m_attackEffect;
 
         [Header("Buff")]
-        [SerializeField] private bool m_isBuff;
         [SerializeField] private float m_buffCoolDown;
         [SerializeField] private GameObject m_buffShild;
         Coroutine m_buffRoutine;
@@ -48,22 +47,19 @@ namespace JH
             {
                 m_buffCoolDown -= Time.deltaTime;               
             }
+
+            m_buffShild.SetActive(m_buffHandler.BuffEnableCheck(this.gameObject, m_subbData.DamageReductionBuff));
+
         }
 
 
 
         private void ActiveBuff()
         {
-            m_isBuff = true;
             m_buffCoolDown += m_subbData.BuffCoolDown;
-            m_buffShild.SetActive(true);
-            Invoke(nameof(DeActiveBuff), m_subbData.BuffDuration);
+            m_buffHandler.OnBuff(this.gameObject, m_subbData.DamageReductionBuff);
         }
-        private void DeActiveBuff()
-        {
-            m_isBuff = false;
-            m_buffShild.SetActive(false);
-        }
+
 
 
         private void MeleeAttack()

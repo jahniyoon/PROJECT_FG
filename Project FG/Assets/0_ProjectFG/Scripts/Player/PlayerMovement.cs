@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.XR;
 
 namespace JH
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour, ISlowable
     {
         private PlayerController m_controller;
         private Rigidbody m_rigid;
@@ -15,6 +15,7 @@ namespace JH
         [SerializeField] float m_wallDistance;
 
         Vector3 m_velocity;
+        private float m_slowDebuff = 0;
 
         private void Awake()
         {
@@ -67,6 +68,14 @@ namespace JH
             m_model.LookAt(lookPos);
         }
 
+        public float FinalSpeed(float curSpeed)
+        {
+            return curSpeed * (100 - m_slowDebuff) * 0.01f;
+        }
+        public void SetSlowSpeed(float value)
+        {
+            m_slowDebuff = value;
+        }
 
         private void OnDrawGizmosSelected()
         {

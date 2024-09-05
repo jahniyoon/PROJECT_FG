@@ -175,7 +175,7 @@ namespace JH
                 Vector3 moveDirWorld = Quaternion.FromToRotation(Vector3.forward, cameraForward) * m_lookDir;
 
                 // 방향에 맞게 이동시킨다.
-                Vector3 velocity = moveDirWorld * (t.m_gameSettings.PlayerMoveSpeed * Time.deltaTime);
+                Vector3 velocity = moveDirWorld * (t.m_movement.FinalSpeed(t.m_gameSettings.PlayerMoveSpeed) * Time.deltaTime);
 
 
                 t.m_movement.Movement(velocity);

@@ -17,7 +17,7 @@ MonoBehaviour:
   - ENEMY
   START_ROW_LENGTH: 3
   m_gameData:
-    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e0000
+    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e00002b4e0000
     m_Values:
     - name: 20001     Test Enemy A
       SheetID: ENEMY
@@ -190,9 +190,9 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC790\uD3ED\uD615"
       - ColumnID: Health
-        Value: 100
+        Value: 0
       - ColumnID: MoveSpeed
-        Value: 5
+        Value: 0
       - ColumnID: AttackRange
         Value: 1.5
       - ColumnID: EscapeRange
@@ -203,23 +203,72 @@ MonoBehaviour:
         Value: 40
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: '20009     '
+    - name: 20009     -
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20009
       - ColumnID: Name
-        Value: 
+        Value: '-'
       - ColumnID: Description
-        Value: "\uD14C\uC2A4\uD2B8\uD615"
+        Value: '-'
       - ColumnID: Health
-        Value: 
+        Value: 0
       - ColumnID: MoveSpeed
-        Value: 
+        Value: 0
       - ColumnID: AttackRange
         Value: 4
-    - name: 20010
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 0
+      - ColumnID: PredationHealthRatio
+        Value: 0
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20010     -
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20010
+      - ColumnID: Name
+        Value: '-'
+      - ColumnID: Description
+        Value: '-'
+      - ColumnID: Health
+        Value: 0
+      - ColumnID: MoveSpeed
+        Value: 0
+      - ColumnID: AttackRange
+        Value: 0
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 0
+      - ColumnID: PredationHealthRatio
+        Value: 0
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20011     -
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20011
+      - ColumnID: Name
+        Value: '-'
+      - ColumnID: Description
+        Value: '-'
+      - ColumnID: Health
+        Value: 0
+      - ColumnID: MoveSpeed
+        Value: 0
+      - ColumnID: AttackRange
+        Value: 0
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 0
+      - ColumnID: PredationHealthRatio
+        Value: 0
+      - ColumnID: PredationStunCoolDown
+        Value: 0

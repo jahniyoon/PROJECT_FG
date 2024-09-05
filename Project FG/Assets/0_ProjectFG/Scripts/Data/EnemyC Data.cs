@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Enemy C Data", menuName = "ScriptableObjects/EnemyC", order = 3)]
+    [CreateAssetMenu(fileName = "Enemy C Data", menuName = "ScriptableObjects/Enemy/EnemyC", order = 3)]
     public class EnemyCData : EnemyData
     {
         [field:Header("에네미 C")]
