@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -5,19 +6,28 @@ using UnityEngine;
 
 namespace JH
 {
+    public enum BuffType
+    {
+        Immediately,    // 즉시
+        Condition,      // 조건
+        Stack           // 스택
+    }
     [System.Serializable]
     public class BuffBase : ScriptableObject
     {
-        [HideInInspector][SerializeField] protected int m_instanceID; // 버프 고유 InstanceID
-        [Header("Buff Base")]
         [SerializeField] protected int m_buffID; // 버프 InstanceID
-        [SerializeField] protected string m_buffName; // 버프 InstanceID
-        [SerializeField] protected string m_buffDescription; // 버프 InstanceID
-        [Header("Buff Info")]
+        [SerializeField] protected string m_buffName; 
+        [SerializeField] [TextArea]protected string m_buffDescription; 
+        [field: Header("Buff Info")]
+        [field: SerializeField] public BuffType Type { get; private set; } // 버프 지속시간
         [SerializeField] protected float m_buffDuration; // 버프 지속시간
         [Header("One And Only Buff")]
         [SerializeField] protected bool m_isOneAndOnlyBuff; // 단 하나만 활성화 된다.
         [SerializeField] protected int m_Priority = 0;    // 우선도
+        [Header("Stack Buff")]
+        [SerializeField] protected int m_activeStack; 
+        [SerializeField] protected float m_stackUpTime; 
+        [SerializeField] protected float m_decreaseTime; 
 
         protected Status m_status;
         public Status Status
@@ -38,20 +48,17 @@ namespace JH
 
 
         #region Property
-        public int InstanceID => m_instanceID;
         public int ID => m_buffID;
         public float Duration => m_buffDuration;
         public bool IsOneAndOnly => m_isOneAndOnlyBuff;
         public int Priority => m_Priority;
+        public int ActiveStack => m_activeStack;
+        public float StackUpTime => m_stackUpTime;  
+        public float DecreaseTime => m_decreaseTime;
         #endregion
 
 
-        // 고유 InstanceID 가져오기
-        public virtual void SetID(GameObject obj)
-        {
-            //m_instanceID = this.GetInstanceID();
-            m_instanceID = obj.GetInstanceID();
-        }
+
 
         // 버프 활성화가 가능한지 체크하는 조건식
         public virtual bool CanActive(float timer)
@@ -59,6 +66,10 @@ namespace JH
             return true;
         }
 
+        public virtual bool CanActive(int Count)
+        {
+            return true;
+        }
         // 버프 활성화
         public virtual void ActiveBuff(BuffHandler handler)
         {

@@ -14,10 +14,11 @@ namespace JH
 
     public class EnemyData : ScriptableObject
     {
-        [field: Header("에네미 정보")]
         [field: SerializeField] public int ID { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
-        [field: SerializeField] public string Description { get; private set; }
+        [field: SerializeField][field: TextArea] public string Description { get; private set; }
+        [field: Header("에네미 정보")]
+
         [field: Tooltip("최대 체력 및 체력")]
         [field: SerializeField] public float Health { get; private set; }
         [field: Tooltip("이동 속도")]

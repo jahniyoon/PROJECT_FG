@@ -32,8 +32,7 @@ MonoBehaviour:
   <AttackCoolDown>k__BackingField: 3
   <AttackOffset>k__BackingField: 1
   <AttackRadius>k__BackingField: 1
-  <BuffCoolDown>k__BackingField: 9
-  <DamageReductionBuff>k__BackingField: {fileID: 11400000, guid: 5c6a281379dd4cf4c90b3f96b0b11465,
-    type: 2}
+  <ShieldSkill>k__BackingField: {fileID: 7117392201541675451, guid: 2a358062bd36fb84184cf1ff1172c496,
+    type: 3}
   <KnockBackDistance>k__BackingField: 2
   <KnockBackDuration>k__BackingField: 0.1

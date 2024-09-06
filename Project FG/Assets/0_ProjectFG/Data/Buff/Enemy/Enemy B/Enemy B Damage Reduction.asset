@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bda7c53bc3f8884591842822d1fc126, type: 3}
-  m_Name: Enemy B_Damage Reduction Buff
+  m_Name: Enemy B Damage Reduction
   m_EditorClassIdentifier: 
-  m_instanceID: 0
-  m_buffID: 0
+  m_buffID: 40002
   m_buffName: "Enemy B \uD53C\uD574 \uAC10\uC18C"
   m_buffDescription: "Enemy B \uBC29\uD328 \uB4E4\uBA74\uC11C \uD53C\uD574 \uAC10\uC18C
     \uBC84\uD504"
+  <Type>k__BackingField: 0
   m_buffDuration: 5
   m_isOneAndOnlyBuff: 0
   m_Priority: 0
+  m_activeStack: 0
+  m_stackUpTime: 0
+  m_decreaseTime: 0
   m_damageReduction: 50

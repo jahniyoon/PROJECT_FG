@@ -121,11 +121,6 @@ namespace JH
 
     }
 
-    public enum TargetTag
-    {
-        Enemy,
-        Player
-    }
 
     public enum DestroyType
     {

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83be27c94d2df445a5fde0e6ba8fa88, type: 3}
+  m_Name: Enemy F Frozen Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30002
+  <SkillName>k__BackingField: "\uC11C\uB9AC \uD3ED\uD48D"
+  <Description>k__BackingField: "\uBC94\uC704 \uB0B4\uC758 \uC801\uC5D0\uAC8C \uB3C4\uD2B8\uB370\uBBF8\uC9C0
+    \uBC0F \uC2AC\uB85C\uC6B0 \uD6A8\uACFC\uB97C \uC900\uB2E4."
+  <SkillDuration>k__BackingField: 0
+  <SkillCoolDown>k__BackingField: 0
+  <Target>k__BackingField: 1
+  <FrozenPrefab>k__BackingField: {fileID: 1897376551947421572, guid: 00fc8da280617354e8394592271b6a72,
+    type: 3}
+  <SkillRadius>k__BackingField: 5
+  <SlowDebuff>k__BackingField: {fileID: 11400000, guid: 2747bb0794d7e514cb0161e6644548d5,
+    type: 2}
+  <DotDamageBuff>k__BackingField: {fileID: 11400000, guid: dd8c7c96443b9164ea3ccac8bcf12b47,
+    type: 2}

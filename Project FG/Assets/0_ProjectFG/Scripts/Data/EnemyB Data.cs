@@ -17,8 +17,7 @@ namespace JH
         [field: SerializeField] public float AttackRadius { get; private set; }
 
         [field: Header("공격 막기 버프")]
-        [field: SerializeField] public float BuffCoolDown { get; private set; }
-        [field: SerializeField] public BuffBase DamageReductionBuff { get; private set; }
+        [field: SerializeField] public SkillBase ShieldSkill { get; private set; }
         [field: Header("넉백")]
         [field: SerializeField] public float KnockBackDistance { get; private set; }
         [field: SerializeField] public float KnockBackDuration { get; private set; }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f60fc4f9c22d02459f2734982fd8ae6, type: 3}
+  m_Name: Enemy B Shield Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30001
+  <SkillName>k__BackingField: "\uBC29\uD328"
+  <Description>k__BackingField: 
+  <SkillDuration>k__BackingField: 5
+  <SkillCoolDown>k__BackingField: 9
+  <ShieldBuff>k__BackingField: {fileID: 11400000, guid: 5c6a281379dd4cf4c90b3f96b0b11465,
+    type: 2}
+  <ShieldPrefab>k__BackingField: {fileID: 4697130184153759147, guid: bbbe0ba94305a07429d72d8d50c03c99,
+    type: 3}

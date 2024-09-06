@@ -22,7 +22,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
     [SerializeField] protected FSMState m_state;
 
     [Header("Buff")]
-    [SerializeField] protected BuffHandler m_buffHandler;
+    protected BuffHandler m_buffHandler;
     protected float m_slowDebuff = 0;
 
 

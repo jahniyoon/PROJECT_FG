@@ -13,16 +13,23 @@ namespace JH
         [Header("Attack")]
         [SerializeField] private VisualEffect m_attackEffect;
 
-        [Header("Buff")]
-        [SerializeField] private float m_buffCoolDown;
-        [SerializeField] private GameObject m_buffShild;
-        Coroutine m_buffRoutine;
+        [Header("Skill")]
+        [SerializeField] private SkillBase m_shildSkill;
+
+        //[Header("Buff")]
+        //[SerializeField] private float m_buffCoolDown;
+        //[SerializeField] private GameObject m_buffShild;
+        //Coroutine m_buffRoutine;
 
 
         protected override void StartInit()
         {
             base.StartInit();
             TryGetData();
+
+            // 스킬을 초기화한다.
+            m_shildSkill = Instantiate(m_subbData.ShieldSkill, transform).GetComponent<SkillBase>();
+            m_shildSkill.SkillInit(this.gameObject, m_model);
         }
         private bool TryGetData()
         {
@@ -43,24 +50,7 @@ namespace JH
         protected override void UpdateBehaviour()
         {
             base.UpdateBehaviour();
-            if(0 <m_buffCoolDown)
-            {
-                m_buffCoolDown -= Time.deltaTime;               
-            }
-
-            m_buffShild.SetActive(m_buffHandler.BuffEnableCheck(this.gameObject, m_subbData.DamageReductionBuff));
-
         }
-
-
-
-        private void ActiveBuff()
-        {
-            m_buffCoolDown += m_subbData.BuffCoolDown;
-            m_buffHandler.OnBuff(this.gameObject, m_subbData.DamageReductionBuff);
-        }
-
-
 
         private void MeleeAttack()
         {

@@ -8,6 +8,7 @@ namespace JH
     public class EnemyFData : EnemyData
     {
         [field: Header("에네미 F")]
+        [field: SerializeField] public SkillBase FrozenSkill { get; private set; }
         [field: SerializeField] public ParticleSystem SkillEffect { get; private set; }
         [Tooltip("틱당 데미지")]
         [field: SerializeField] public float SkillTickDamage { get; private set; }

@@ -15,7 +15,7 @@ namespace JH
         [SerializeField] float m_wallDistance;
 
         Vector3 m_velocity;
-        private float m_slowDebuff = 0;
+        [SerializeField] private float m_slowDebuff = 0;
 
         private void Awake()
         {
@@ -74,7 +74,7 @@ namespace JH
         }
         public void SetSlowSpeed(float value)
         {
-            m_slowDebuff = value;
+            m_slowDebuff += value;
         }
 
         private void OnDrawGizmosSelected()

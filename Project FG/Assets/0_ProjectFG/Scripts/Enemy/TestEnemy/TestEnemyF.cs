@@ -9,28 +9,10 @@ namespace JH
     public partial class TestEnemyF : EnemyController
     {
 
-        private EnemyFData m_fData;
-
-        //[Header("Test Enemy F")]
-        //[SerializeField] private ParticleSystem m_skillEffect;
-        //[Tooltip("틱당 데미지")]
-        //[SerializeField] private float m_skillTickDamage = 1;       // 틱 데미지
-        //[Tooltip("틱 간격")]
-        //[SerializeField] private float m_skillTickDuration = 0.5f;     // 틱 간격
-        //[Tooltip("스킬 범위")]
-        //[SerializeField] private float m_skillAreaRadius = 5;   // 스킬 범위
+        private EnemyFData m_subData;
 
         private ParticleSystem m_skillEffect;
-
-        //TODO : 버프시스템 미구현
-        //[Header("Skill Debuff")]
-        //private float m_speedDebuff = 0.5f;   // 속도 디버프
-        //private float m_needTicks = 5;   // 스킬 적용에 필요한 틱
-        //private float m_DebuffDuration = 2;   // 스킬 적용에 필요한 틱
-
-
-
-
+        [SerializeField] private SkillBase m_frozenSkill;
 
         protected override void StartInit()
         {
@@ -39,71 +21,77 @@ namespace JH
             EnemyFData m_childData = m_data as EnemyFData;
             if (m_childData != null)
             {
-                m_fData = m_childData;
+                m_subData = m_childData;
             }
             else
             {
                 Debug.Log(this.gameObject.name + "데이터를 다시 확인해주세요.");
                 this.enabled = false;
             }
+            m_frozenSkill = Instantiate(m_subData.FrozenSkill, transform).GetComponent<SkillBase>();
+            m_frozenSkill.SkillInit(this.gameObject, m_model);
+            m_frozenSkill.ActiveSkill();
 
-
-            m_skillEffect = Instantiate(m_fData.SkillEffect.gameObject, transform.position, transform.rotation, transform).GetComponent<ParticleSystem>();
-            SkillStart();
         }
 
-        private void SkillStart()
+        protected override void Die()
         {
-            m_skillEffect?.Stop();
-            m_skillEffect?.Play();
-
-            StartCoroutine(SkillRoutine());
+            base.Die();
+            m_frozenSkill.InactiveSkill();
         }
 
-        IEnumerator SkillRoutine()
-        {
-            float timer = 0;
-            Vector3 effectScale = Vector3.one;
+        //private void SkillStart()
+        //{
+        //    m_skillEffect?.Stop();
+        //    m_skillEffect?.Play();
 
-            while(timer < m_fData.SkillTickDuration)
-            {
-                effectScale.x = m_fData.SkillAreaRadius * (timer / m_fData.SkillTickDuration);
-                effectScale.z = m_fData.SkillAreaRadius * (timer / m_fData.SkillTickDuration);
+        //    StartCoroutine(SkillRoutine());
+        //}
 
-                m_skillEffect.transform.localScale = effectScale;
-                timer += Time.deltaTime;
-                yield return null;  
-            }
+        //IEnumerator SkillRoutine()
+        //{
+        //    float timer = 0;
+        //    Vector3 effectScale = Vector3.one;
+
+        //    while(timer < m_subData.SkillTickDuration)
+        //    {
+        //        effectScale.x = m_subData.SkillAreaRadius * (timer / m_subData.SkillTickDuration);
+        //        effectScale.z = m_subData.SkillAreaRadius * (timer / m_subData.SkillTickDuration);
+
+        //        m_skillEffect.transform.localScale = effectScale;
+        //        timer += Time.deltaTime;
+        //        yield return null;  
+        //    }
 
 
-            // 죽기 전까지 틱간격동안 반복
-            while (State != FSMState.Die)
-            {
+        //    // 죽기 전까지 틱간격동안 반복
+        //    while (State != FSMState.Die)
+        //    {
 
-                Collider[] colls = Physics.OverlapSphere(transform.position, m_fData.SkillAreaRadius);
-                for (int i = 0; i < colls.Length; i++)
-                {
-                    if (colls[i].isTrigger)
-                    {
-                        continue;
-                    }
+        //        Collider[] colls = Physics.OverlapSphere(transform.position, m_subData.SkillAreaRadius);
+        //        for (int i = 0; i < colls.Length; i++)
+        //        {
+        //            if (colls[i].isTrigger)
+        //            {
+        //                continue;
+        //            }
 
-                    if (colls[i].CompareTag("Enemy"))
-                    {
+        //            if (colls[i].CompareTag("Enemy"))
+        //            {
 
-                    }
+        //            }
 
-                    if (colls[i].CompareTag("Player"))
-                    {
-                        colls[i].GetComponent<IDamageable>().OnDamage(m_fData.SkillTickDamage);
-                        // TODO : 플레이어에게 틱 주는 디버프 넣기
-                    }
-                }
-                yield return new WaitForSeconds(m_fData.SkillTickDuration);
-            }
+        //            if (colls[i].CompareTag("Player"))
+        //            {
+        //                colls[i].GetComponent<IDamageable>().OnDamage(m_subData.SkillTickDamage);
+        //                // TODO : 플레이어에게 틱 주는 디버프 넣기
+        //            }
+        //        }
+        //        yield return new WaitForSeconds(m_subData.SkillTickDuration);
+        //    }
 
-            yield break;
-        }
+        //    yield break;
+        //}
 
 
 

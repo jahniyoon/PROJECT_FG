@@ -331,6 +331,7 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
+  m_damageReduction: 0
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -340,6 +341,7 @@ MonoBehaviour:
   UpdateHealthEvent:
     m_PersistentCalls:
       m_Calls: []
+  DamageReduction: 0
 --- !u!114 &2928737537154617340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,11 +355,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_status:
-    m_moveSpeed: 0
-    m_damageReduction: 0
     m_stunTimer: 0
-  m_inherenceBuff:
-  - {fileID: 0}
+  m_buffList:
+    keys: 
+    values: []
+  m_inherenceBuff: []
   AddBuffEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -461,7 +463,6 @@ MonoBehaviour:
   m_curHunger: 0
   m_maxHunger: 0
   m_cantPredation: 0
-  m_stunBuff: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5, type: 2}
   foodPowers: []
   m_hungerSkillEffect: {fileID: 4871284313193287926}
   DebugColor: {r: 1, g: 1, b: 1, a: 0.25882354}
