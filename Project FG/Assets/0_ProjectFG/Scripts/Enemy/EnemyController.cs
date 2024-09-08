@@ -16,6 +16,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
 
     [Header("Enemy Data")]
     [SerializeField] protected EnemyData m_data;
+    [SerializeField] protected SpriteRenderer m_spriteRenderer;
+    protected bool m_is2D;
 
     [Header("State")]
 
@@ -96,8 +98,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
         m_model = transform.GetChild(0);
         m_agent = GetComponent<NavMeshAgent>();
         m_damageable = GetComponent<Damageable>();
-        if(m_healthBar)
-        m_healthBar = Instantiate(m_healthBar.gameObject, this.transform).GetComponent<MiniHealthBar>();
+        if (m_healthBar)
+            m_healthBar = Instantiate(m_healthBar.gameObject, this.transform).GetComponent<MiniHealthBar>();
         m_hitEffect = GetComponent<HitEffect>();
 
         m_FoodPower = m_data.FoodPower;
@@ -107,6 +109,21 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
         m_predationIcon.IconEnable(false);
 
         m_buffHandler = GetComponent<BuffHandler>();
+
+        m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (m_spriteRenderer != null)
+        {
+            int id = m_data.ID - 20001;
+            m_spriteRenderer.sortingOrder = 1;
+            GetComponentInChildren<Animator>().SetInteger("EnemyColor", id);
+            m_agent.angularSpeed = 0;
+            m_is2D = true;
+            m_hitEffect.enabled = false;
+            Vector3 localPos = Vector3.zero;
+            localPos.z += 1;
+            m_healthBar.transform.localPosition = localPos;
+            m_predationIcon.transform.localPosition = localPos;
+        }
     }
 
     protected virtual void StartInit()
@@ -205,6 +222,13 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
             newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, ((m_data.RotateSpeed * 10f) * Time.deltaTime));
         }
 
+        if (m_is2D)
+        {
+            m_spriteRenderer.flipX = newRotation.eulerAngles.y < 180;
+            m_model.localRotation = newRotation;
+            return;
+        }
+
         m_model.rotation = newRotation;
     }
 
@@ -239,8 +263,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
 
     protected virtual void OnDamage()
     {
-        m_hitEffect.Hit();
         ResetAttackTimer();
+        if (m_is2D == false)
+            m_hitEffect.Hit();
     }
 
 
@@ -252,7 +277,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
         // 버프 모두 지워주기
         m_buffHandler.RemoveAllBuff();
 
-        m_hitEffect.Die();
+        if (m_is2D == false)
+            m_hitEffect.Die();
+
         Destroy(gameObject, 1);
         UIManager.Instance.Debug.KillCountText(1);
     }
@@ -286,7 +313,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
         return m_attackCoolDown <= 0;
     }
 
- 
+
     protected virtual bool HitStateCheck()
     {
         return m_buffHandler.Status.IsStun;

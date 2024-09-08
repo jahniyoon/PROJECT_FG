@@ -89,6 +89,7 @@ namespace JH
                 m_explosionTimer = 0;
                 m_isExplosion = false;
                 m_explosionTrigger = true;
+                if(m_is2D == false)
                 m_hitEffect.PingPong(true);
                 // 일정 시간 이후에 폭발
             }

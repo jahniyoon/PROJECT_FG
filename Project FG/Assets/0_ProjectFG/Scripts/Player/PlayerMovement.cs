@@ -10,11 +10,14 @@ namespace JH
         private PlayerController m_controller;
         private Rigidbody m_rigid;
         private Transform m_model;
-
         [SerializeField] LayerMask m_wallMask;
         [SerializeField] float m_wallDistance;
+        [Header("2D Setting")]
+        [SerializeField] SpriteRenderer m_2DModel;
 
         Vector3 m_velocity;
+        [Header("Debuff")]
+
         [SerializeField] private float m_slowDebuff = 0;
 
         private void Awake()
@@ -22,6 +25,7 @@ namespace JH
             m_controller = GetComponent<PlayerController>();
             m_rigid = GetComponent<Rigidbody>();
             m_model = transform.GetChild(0);
+            m_2DModel = GetComponentInChildren<SpriteRenderer>();
         }
 
 
@@ -51,11 +55,18 @@ namespace JH
             {
                 return;
             }
+
+
             // 목표 회전 값
             Quaternion targetRotation = Quaternion.LookRotation(rotation);
 
             // 현재 회전에서 목표 회전까지의 보간
             Quaternion newRotation = Quaternion.Lerp(m_model.localRotation, targetRotation, m_controller.Setting.PlayerRotateSpeed * Time.deltaTime);
+
+            // 2D 모델이면 플립되기만 하면 된다.
+            if (m_2DModel != null)
+                m_2DModel.flipX = 180 < newRotation.eulerAngles.y ;
+
 
             // 보간된 회전을 적용
             m_model.localRotation = newRotation;
