@@ -166,12 +166,14 @@ namespace JH
                 yield return null;
             }
 
+            m_player.Animation.SetBool(AnimationID.isPredation, true);
             Invoke(nameof(ResetTarget), m_player.Setting.PredationFatalityDuration);
             yield break;
         }
 
         public void ResetTarget()
         {
+            m_player.Animation.SetBool(AnimationID.isPredation, false);
             m_predationTarget = null;
         }
 
