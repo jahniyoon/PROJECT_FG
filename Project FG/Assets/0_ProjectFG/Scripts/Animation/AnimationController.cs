@@ -48,6 +48,7 @@ namespace JH
         isMove,
         isHit,
         isDie,
-        isAttack
+        isAttack,
+        isPredation
     }
 }
