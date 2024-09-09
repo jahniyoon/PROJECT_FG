@@ -20,6 +20,7 @@ namespace JH
         private PlayerAttack m_attack;
         private PlayerAim m_aim;
         private BuffHandler m_buffHandler;
+        private EffectHandler m_effectHandler;
 
         private AnimationController m_animation;
         private CinemachineImpulseSource m_impulse;
@@ -38,6 +39,8 @@ namespace JH
         public Transform Model => m_model;
         public Transform Aim => m_aim.Aim;
         public FSMState State => m_playerState;
+
+        public Status Status => m_buffHandler.Status;
         #endregion
 
         private void Awake()
@@ -56,6 +59,7 @@ namespace JH
             m_impulse = GetComponent<CinemachineImpulseSource>();
 
             m_buffHandler = GetComponent<BuffHandler>();
+            m_effectHandler = GetComponent<EffectHandler>();
         }
 
         private void Start()
@@ -175,6 +179,13 @@ namespace JH
             yield break;
         }
 
+
+        public bool HitStateCheck()
+        {
+            bool state = m_buffHandler.Status.IsStun;
+
+            return state;
+        }
 
     }
 

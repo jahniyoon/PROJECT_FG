@@ -18,6 +18,8 @@ namespace JH
         [field: SerializeField] public BuffBase SlowDebuff { get; private set; }
         [field: Header("Dot Damage")]
         [field: SerializeField] public BuffBase DotDamageBuff { get; private set; }
+        [field: Header("Dot Damage")]
+        [field: SerializeField] public BuffBase FrozenDebuff { get; private set; }
 
     }
 }

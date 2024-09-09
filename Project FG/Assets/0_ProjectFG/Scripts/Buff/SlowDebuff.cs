@@ -28,9 +28,6 @@ namespace JH
                 slowable.SetSlowSpeed(m_moveSpeedValue*-1);
         }
 
-        public override bool CanActive(int count)
-        {
-            return m_activeStack <= count;
-        }
+
     }
 }

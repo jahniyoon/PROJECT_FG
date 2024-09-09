@@ -91,6 +91,7 @@ namespace JH
                 {
                     buff.OnBuff(Caster, m_subData.SlowDebuff);
                     buff.OnBuff(Caster, m_subData.DotDamageBuff);
+                    buff.OnBuff(Caster, m_subData.FrozenDebuff);
                 }
             }
         }

@@ -9,8 +9,9 @@ namespace JH
     public enum BuffType
     {
         Immediately,    // 즉시
-        Condition,      // 조건
-        Stack           // 스택
+        TimeCondition,      // 조건
+        Stack,           // 스택
+        Stay           // 스택
     }
     [System.Serializable]
     public class BuffBase : ScriptableObject
@@ -68,7 +69,7 @@ namespace JH
 
         public virtual bool CanActive(int Count)
         {
-            return true;
+            return ActiveStack <= Count;
         }
         // 버프 활성화
         public virtual void ActiveBuff(BuffHandler handler)

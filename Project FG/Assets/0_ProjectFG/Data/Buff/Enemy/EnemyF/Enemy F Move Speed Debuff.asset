@@ -15,11 +15,11 @@ MonoBehaviour:
   m_buffID: 40004
   m_buffName: "\uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C"
   m_buffDescription: "Enemy E\uC758 \uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C \uB514\uBC84\uD504"
-  <Type>k__BackingField: 2
+  <Type>k__BackingField: 3
   m_buffDuration: 0
   m_isOneAndOnlyBuff: 1
   m_Priority: 5
-  m_activeStack: 5
-  m_stackUpTime: 1
-  m_decreaseTime: 0.2
+  m_activeStack: 0
+  m_stackUpTime: 0
+  m_decreaseTime: 0
   m_moveSpeedValue: 50

@@ -2,27 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Progress;
 
 namespace JH
 {
-    [System.Serializable]
-    public class BuffElement
-    {
-        public int Stack = 1;
-        public float Timer = 0;
-        public bool isActive = false;
-        public BuffBase Buff;
-        public void StackUp()
-        {
-            Timer = 0;
-            Stack++;
-        }
-        public void StackDown()
-        {
-            Stack--;
-        }
 
-    }
     public class BuffHandler : MonoBehaviour
     {
         [Header("버프 상태")]
@@ -41,6 +25,7 @@ namespace JH
         [HideInInspector] public UnityEvent AddBuffEvent;
         [HideInInspector] public UnityEvent RemoveBuffEvent;
 
+        WaitForFixedUpdate WaitForFixedUpdate = new WaitForFixedUpdate();
         private void Awake()
         {
         }
@@ -82,12 +67,12 @@ namespace JH
             // 버프가 이미 있으면 스택을 쌓아준다.
             if (m_buffList.ContainsKey(casterID))
             {
-                if (buff.StackUpTime < m_buffList[casterID].Timer)
+                if (buff.StackUpTime < m_buffList[casterID].Timer && m_buffList[casterID].Buff.Type == BuffType.Stack)
                 {
                     m_buffList[casterID].Buff.StackBuff(this);
                     m_buffList[casterID].StackUp();
                 }
-                m_buffList[casterID].Timer += (Time.deltaTime * 2);
+                m_buffList[casterID].isBuff = true;
                 return;
             }
 
@@ -100,7 +85,7 @@ namespace JH
         {
             BuffElement newBuff = new BuffElement();
             newBuff.Buff = buff;
-            newBuff.Timer = buff.DecreaseTime;
+            newBuff.isBuff = true;
 
             // 리스트에 버프 추가하고
             m_buffList.Add(casterID, newBuff);
@@ -153,7 +138,7 @@ namespace JH
 
 
             buffElement.Buff.ActiveBuff(this);
-            buffElement.isActive = true;
+            buffElement.SetActive(true);
 
             BuffCheck(buffElement.Buff);
         }
@@ -163,6 +148,8 @@ namespace JH
         {
             BuffBase buff = buffElement.Buff;
 
+            buffElement.Timer += Time.deltaTime;
+
 
             // 타입에 따라 루틴이 달라진다.
             switch (buff.Type)
@@ -170,48 +157,46 @@ namespace JH
                 // 1. 즉시 효과형
                 case BuffType.Immediately:
                     {
-                        float timer = 0;
 
                         // 즉시 실행하고 지속시간을 기다린다.
                         ActiveBuff(buffElement);
-                        while (timer < buff.Duration)
+                        while (buffElement.Timer < buff.Duration)
                         {
-                            timer += Time.deltaTime;
-                            yield return null;
+                            yield return WaitForFixedUpdate;
+                            buffElement.Timer += Time.deltaTime;
                         }
                         break;
                     }
+
                 //2. 조건 확인형 : 지속시간동안 조건을 충족하는지 기다린다.
-                case BuffType.Condition:
+                case BuffType.TimeCondition:
                     {
-                        float timer = 0;
-                        buffElement.Timer += 0.1f;
                         // 지속시간동안 유지한다.
                         while (0 < buffElement.Timer)
                         {
+                            yield return WaitForFixedUpdate;
+
                             // 조건식이 맞으면 조건식 버프가 실행된다.
-                            if (buff.CanActive(timer))
+                            if (buff.CanActive(buffElement.Timer))
                             {
                                 ActiveBuff(buffElement);
-                                buffElement.isActive = false;
-                                timer = 0;    // 액티브 타이머는 리셋해준다.
+                                buffElement.SetActive(false);
+                                buffElement.Timer = 0;    // 액티브 타이머는 리셋해준다.
                             }
 
-                            // 타이머 업데이트
-                            timer += Time.deltaTime;
-
-                            // 타이머를 줄여준다.
-                            buffElement.Timer -= Time.deltaTime;
-                            yield return null;
+                            buffElement.UpdateTimer();
                         }
                         break;
                     }
-
+                // 3. 스택형
                 case BuffType.Stack:
                     {
+
                         // 스택이 쌓이는 방식일 경우
-                        while (0 <= buffElement.Stack)
+                        while (0 < buffElement.Timer)
                         {
+                            yield return WaitForFixedUpdate;
+
                             if (buffElement.Timer < 0)
                             {
                                 buffElement.StackDown();
@@ -221,12 +206,26 @@ namespace JH
                             if (buff.CanActive(buffElement.Stack))
                             {
                                 ActiveBuff(buffElement);
-                                buffElement.Stack = 0;
-                                buffElement.Timer = buff.DecreaseTime;
+                                ResetStack(buffElement.Buff);
                             }
-                            buffElement.Timer -= Time.deltaTime;
-                            yield return null;
+
+
+                            buffElement.UpdateTimer();
+
                         }
+                        break;
+                    }
+                case BuffType.Stay:
+                    {
+                        ActiveBuff(buffElement);
+
+                        while (0 < buffElement.Timer)
+                        {
+                            yield return WaitForFixedUpdate;
+                            buffElement.UpdateTimer();
+
+                        }
+
                         break;
                     }
             }
@@ -235,6 +234,20 @@ namespace JH
 
             yield break;
         }
+
+        public void ResetStack(BuffBase buff)
+        {
+            foreach (var item in m_buffList)
+            {
+                if (item.Value.Buff.ID == buff.ID)
+                {
+                    item.Value.ResetStack();
+
+                }
+            }
+
+        }
+
         /// <summary>
         /// 한가지 버프 상태만 가져야하는 버프의 경우 버프 체크를 진행한다.
         /// 가장 높은 우선도를 체크하도록 한다.
@@ -261,7 +274,7 @@ namespace JH
                 if (item.Value.isActive)
                 {
                     item.Value.Buff.InactiveBuff(this);
-                    item.Value.isActive = false;
+                    item.Value.SetActive(false);
                 }
                 if (item.Key == checkThis)
                     continue;
@@ -282,7 +295,8 @@ namespace JH
 
             // 선정된 버프를 활성화해준다.
             priorityBuff.Buff.ActiveBuff(this);
-            priorityBuff.isActive = true;
+            priorityBuff.SetActive(true);
+
         }
 
         // 버프들은 상태 이상에 수정할 정보를 전달해준다.

@@ -72,16 +72,19 @@ namespace JH
                 if (t.m_isFreeze)
                     return new FreezeState();
 
+                if (t.HitStateCheck())
+                    return new HitState();
+
                 if (t.m_predation.IsPredation)
                     return new PredationState();
 
-                if(t.m_attack.isAttack)
+                if (t.m_attack.isAttack)
                     return new AttackState();
 
                 // 입력이 있으면 이동 상태
                 if (t.Input.Move != Vector2.zero)
                     return new MoveState();
-                
+
 
                 return this;
             }
@@ -116,6 +119,9 @@ namespace JH
 
                 if (t.m_isFreeze)
                     return new FreezeState();
+
+                if (t.HitStateCheck())
+                    return new HitState();
 
                 if (t.m_predation.PredationTarget != null)
                     return new PredationState();
@@ -155,7 +161,7 @@ namespace JH
 
             // 방향 업데이트
             private void UpdateDirection(PlayerController t)
-            {     
+            {
                 m_lookDir.x = t.m_model.forward.x;
                 m_lookDir.z = t.m_model.forward.z;
 
@@ -195,6 +201,9 @@ namespace JH
 
                 if (t.m_isFreeze)
                     return new FreezeState();
+
+                if (t.HitStateCheck())
+                    return new HitState();
 
                 if (t.m_predation.PredationTarget != null)
                     return new PredationState();
@@ -261,7 +270,48 @@ namespace JH
             }
 
 
-          
+
+        }
+        #endregion
+        #region ▶ STATE Predation : 히트 상태
+        public class HitState : FSM<PlayerController>
+        {
+            // 상태 전이 조건을 넣는 메서드
+            public override FSM<PlayerController> StateTransition(PlayerController t)
+            {
+                if (t.m_damageable.IsDie)
+                    return new DieState();
+
+                if (t.m_isFreeze)
+                    return new FreezeState();
+
+                if (t.HitStateCheck() == false)
+                    return new IdleState();
+
+                return this;
+            }
+
+            public override void Enter(PlayerController t)
+            {
+                base.Enter(t);
+                t.StateHandler(FSMState.Hit);
+            }
+            // 상태 중일 때 실행될 메서드
+            public override void Stay(PlayerController t)
+            {
+                base.Stay(t);
+                t.m_effectHandler.StunEnable(t.Status.IsStun);
+            }
+
+            // 상태를 빠져 나갈 때 실행될 메서드
+            public override void Exit(PlayerController t)
+            {
+                base.Exit(t);
+                t.m_effectHandler.StopAllEffect();
+            }
+
+
+
         }
         #endregion
 
@@ -271,8 +321,8 @@ namespace JH
             // 상태 전이 조건을 넣는 메서드
             public override FSM<PlayerController> StateTransition(PlayerController t)
             {
-             
-                if(t.m_damageable.IsDie == false)
+
+                if (t.m_damageable.IsDie == false)
                     return new IdleState();
 
                 return this;

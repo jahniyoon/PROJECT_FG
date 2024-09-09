@@ -10,6 +10,7 @@ namespace JH
     {
         [Header("Stun Buff")]
         [SerializeField] private float m_stunDuration;
+
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);
