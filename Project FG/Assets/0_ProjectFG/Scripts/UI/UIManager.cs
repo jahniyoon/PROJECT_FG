@@ -47,10 +47,8 @@ namespace JH
                 Destroy(gameObject);
             }
 
-            if(m_DebugUI)
-            {
-                m_DebugUI.gameObject.SetActive(m_debugEnable);  
-            }
+            m_DebugUI.DebugEnable(m_debugEnable);
+
         }
 
 

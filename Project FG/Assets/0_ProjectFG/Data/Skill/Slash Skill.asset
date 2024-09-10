@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1408293e654a52f4cadef267063b9e84, type: 3}
+  m_Name: Slash Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30001
+  <SkillName>k__BackingField: "\uADFC\uC811 \uACF5\uACA9"
+  <Description>k__BackingField: "\uADFC\uC811\uACF5\uACA9\uC744 \uD55C\uB2E4."
+  <SkillDuration>k__BackingField: 0
+  <SkillCoolDown>k__BackingField: 0
+  <Target>k__BackingField: 0
+  <SkillRadius>k__BackingField: 0
+  <SlashSkill>k__BackingField: {fileID: 3646354421168099405, guid: 3cee09f1833c3a146ae213580c5fd5e0,
+    type: 3}

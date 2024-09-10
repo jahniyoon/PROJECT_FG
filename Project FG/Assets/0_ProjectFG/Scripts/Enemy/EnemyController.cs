@@ -293,8 +293,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
     }
 
     // 처형
-    public virtual void Execution(int damage)
+    public virtual void Execution(float damage = 0)
     {
+        if (damage == 0)
+            damage = m_damageable.Health;
         m_damageable.OnDamage(damage);
     }
     public FoodPower GetFoodPower()

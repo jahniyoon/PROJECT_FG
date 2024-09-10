@@ -15,6 +15,7 @@ namespace JH
         [SerializeField] private bool m_cantPredation = false;
 
         [Header("Food Power")]
+        [SerializeField] private FoodPower m_defaultFoodPower;
         [SerializeField] private List<FoodPower> foodPowers = new List<FoodPower>();
 
         private Transform m_foodPowerParent;
@@ -38,14 +39,11 @@ namespace JH
             SetMaxHunger(m_player.Setting.MaxHunger);
             foodPowers.Clear();
             m_cantPredation = false;
+
+            if (m_defaultFoodPower != null)
+                AddHunger(m_defaultFoodPower, 0);
         }
 
-        // Legacy
-        //private void Update()
-        //{
-        //    // 푸드파워들의 쿨타임을 계속 업데이트 해준다.
-        //    FoodPowerManager();
-        //}
 
         // 최대 포만감 설정
         public void SetMaxHunger(int maxHunger, int hunger = 0)
@@ -60,19 +58,24 @@ namespace JH
         {
             // 푸드파워 깊은 복사 이후에 초기화
             FoodPower newPower = Instantiate(foodPower.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
+            string PowerName = hunger == 0 ? $"Default : {foodPower.name} {foodPowers.Count}" : 
+                $"{foodPower.name} {foodPowers.Count}" ;
+
+            newPower.gameObject.name = PowerName;
             newPower.Init();
+
+            // 푸드파워의 캐스터 세팅
+            newPower.SetCaster(this.gameObject, m_player.Model, m_player.Aim);
 
             // 현재 포만도 추가
             m_curHunger += hunger;
 
-            // 푸드파워의 유저를 지정
-            newPower.SetTransform(m_player.Model, m_player.Aim);
-            newPower.SetAimType(m_player.Setting.FoodPowerAimType);
+            // 먹은게 있어야 아이콘을 켜기
+            if (hunger != 0)
+                UIManager.Instance.MainUI.FoodPowerUI.AddFoodPower(newPower.Icon);
+            UIManager.Instance.MainUI.HungerUI.SetSlider(m_maxHunger, m_curHunger);
 
-            // 리스트에 추가한다.
-            foodPowers.Add(newPower);
-
-            UIManager.Instance.MainUI.FoodPowerUI.AddFoodPower(newPower.Icon);
+            bool canStart = false;
 
             // 맥스 값에 도달하면 포만도 소모기 발동
             if (m_maxHunger <= m_curHunger)
@@ -83,11 +86,30 @@ namespace JH
 
                 // 딜레이 뒤에 실행한다.
                 Invoke(nameof(HungerSkill), m_player.Setting.HungerSkillDelay);
+                canStart = true;
             }
-            // 레벨업까지 끝내고 푸드파워의 루틴을 초기화 시키고 시작시킨다.
+            else
+            {
+                // 레벨업까지 끝내고 푸드파워의 루틴을 초기화 시키고 시작시킨다.
+                for (int i = 0; i < foodPowers.Count; i++)
+                {
+                    // 같은 푸드파워가 있다면 레벨 업
+                    if (foodPowers[i].ID == foodPower.ID)
+                    {
+                        canStart = true;
+                        foodPowers[i].LevelUp();
+                        break;
+                    }
+                }
+            }
+            // 리스트에 추가한다.
+            foodPowers.Add(newPower);
+
+            // 레벨업이 아닌경우에만 루틴을 시작
+            if (canStart == false)
             StartFoodPowerRoutine();
 
-            UIManager.Instance.MainUI.HungerUI.SetSlider(m_maxHunger, m_curHunger);
+       
         }
 
 
@@ -131,7 +153,7 @@ namespace JH
 
                         damageable.OnDamage(m_player.Setting.HungerSkillDamage);
                     }
-                
+
                 }
             }
         }
@@ -150,6 +172,10 @@ namespace JH
             }
 
             foodPowers.Clear();
+
+            // 기본 푸드파워를 넣어준다.
+            if (m_defaultFoodPower != null)
+                AddHunger(m_defaultFoodPower, 0);
 
             UIManager.Instance.MainUI.FoodPowerUI.SetMaxFoodPower(m_maxHunger);
             UIManager.Instance.MainUI.HungerUI.SetSlider(m_maxHunger, m_curHunger);
@@ -193,7 +219,7 @@ namespace JH
 
         void OnDrawGizmosSelected()
         {
-            if(m_gameSettings!=null)
+            if (m_gameSettings != null)
             {
                 Gizmos.color = DebugColor;
                 Gizmos.DrawSphere(transform.position, m_gameSettings.HungerSkillRange);

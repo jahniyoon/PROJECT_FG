@@ -10,18 +10,18 @@ namespace JH
     [System.Serializable]
     public class FoodPower : MonoBehaviour
     {
-        [SerializeField] FoodPowerData m_data;
+        [SerializeField] protected FoodPowerData m_data;
 
         [Header("Food Power")]
         [SerializeField] private string m_powerName;
         [SerializeField] private Sprite m_powerIcon;
-        [SerializeField] private float m_powerCoolDown;
+        [SerializeField] protected int m_powerLevel;
 
         [SerializeField] private float m_coolDownTimer;
 
-        protected Transform m_startT;
-        protected Transform m_aimT;
-        protected FoodPowerAimType m_aimType;   // 조준 타입
+        protected GameObject m_caster;
+        protected Transform m_casterPosition;
+        protected Transform m_aimPosition;
 
         // 푸드파워 실행 루틴
         Coroutine foodRoutine;
@@ -29,29 +29,31 @@ namespace JH
         bool isActive;
 
         public Sprite Icon => m_powerIcon;
-        public float CoolDown => m_powerCoolDown;
+        public float CoolDown => m_data.GetLevelData(m_powerLevel).CoolDown;
         public float Timer => m_coolDownTimer;
+        public int ID => m_data.ID;
 
         private void Awake()
         {
             Init();
         }
 
-        public void Init()
+        public virtual void Init()
         {
             if (m_data == null)
                 return;
 
             m_powerName = m_data.FoodPowerName;
             m_powerIcon = m_data.Icon;
-            m_powerCoolDown = m_data.CoolDown;
+            SetLevel(0);
             m_coolDownTimer = 0;
         }
 
-        public void SetTransform(Transform start, Transform aim)
+        public void SetCaster(GameObject caster, Transform casterPosition, Transform aim)
         {
-            m_startT = start;
-            m_aimT = aim;
+            m_caster = caster;
+            m_casterPosition = casterPosition;
+            m_aimPosition = aim;
         }
 
         public void SetTimer(float timer)
@@ -65,39 +67,45 @@ namespace JH
 
         }
 
-
-        // 조준 타입을 설정한다.
-        public void SetAimType(FoodPowerAimType type)
+        public virtual void LevelUp()
         {
-            m_aimType = type;
+            m_powerLevel++;
         }
+        // 레벨 업
+        public virtual void SetLevel(int value)
+        {
+            m_powerLevel = value;
+        }
+
+
+
 
         // 타입에 따라 발사 방향을 정해준다.
         protected Quaternion GetDirection()
         {
             Quaternion direction = Quaternion.identity;
 
-            switch (m_aimType)
+            switch (m_data.GetLevelData(m_powerLevel).AimType)
             {
                 case FoodPowerAimType.PlayerDirection:
-                    direction = m_startT.rotation;
+                    direction = m_casterPosition.localRotation;
                     break;
 
                 case FoodPowerAimType.TargetNearest:
-                    Transform target = ScanPosition(m_startT.position, m_data.TargetNearestScanRadius);
+                    Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
 
                     // 타겟이 Null이 아닐 경우에만
                     if (target != null)
-                        direction = Quaternion.LookRotation(target.position - m_startT.position);
+                        direction = Quaternion.LookRotation(target.position - m_casterPosition.position);
 
                     // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
                     else if (target == null && m_data.AlwaysShoot)
-                        direction = m_startT.rotation;
+                        direction = m_casterPosition.rotation;
 
                     break;
 
                 case FoodPowerAimType.PointerDirection:
-                    direction = Quaternion.LookRotation(m_aimT.position - m_startT.position);
+                    direction = Quaternion.LookRotation(m_aimPosition.position - m_casterPosition.position);
                     break;
             }
 
@@ -133,6 +141,7 @@ namespace JH
         }
 
 
+        // 타겟의 거리를 체크한다.
         private Transform DistanceChecker(Vector3 startPos, Transform curTarget, Transform newTarget)
         {
             if (curTarget == null)
@@ -178,7 +187,7 @@ namespace JH
             while (isActive)
             {
                 // 쿨타임이 지나면 액티브
-                if (m_powerCoolDown < m_coolDownTimer)
+                if (m_data.GetLevelData(m_powerLevel).CoolDown < m_coolDownTimer)
                 {
                     Active();
                     m_coolDownTimer = 0;

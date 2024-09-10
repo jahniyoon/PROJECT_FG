@@ -54,9 +54,11 @@ namespace JH
         {
             if (IsDie)
                 return;
+
             if(m_invincible == false)
             m_health -= FinalDamage(damage);
 
+            UIManager.Instance.Debug.OnDamage(damage, transform.position);
             if (m_health <= 0)
             {
                 Die();

@@ -129,7 +129,10 @@ namespace JH
             //  적이면 처형
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
-                enemy.Execution(100);
+                if(enemy.State == FSMState.Die)
+                    return;
+
+                enemy.Execution();
                 FoodPower food = enemy.GetFoodPower();
                 m_hunger.AddHunger(food, 1);
                 // 포만감

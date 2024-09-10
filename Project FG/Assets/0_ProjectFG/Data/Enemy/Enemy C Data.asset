@@ -25,7 +25,7 @@ MonoBehaviour:
   <PredationStunCoolDown>k__BackingField: 0
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5,
     type: 2}
-  <FoodPower>k__BackingField: {fileID: 6181559105594114157, guid: 42527d69dbfd6d0449f9bef592a92fe8,
+  <FoodPower>k__BackingField: {fileID: -2637219223760161457, guid: d9970a426d59f2541b7f4ae51c1dcdba,
     type: 3}
   <AttackCoolDown>k__BackingField: 1.5
   <Projectile>k__BackingField: {fileID: 9173310347936448537, guid: 24adb55924de10849b42ceaaedac9c4d,

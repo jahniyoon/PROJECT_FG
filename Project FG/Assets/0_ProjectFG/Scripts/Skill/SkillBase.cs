@@ -13,7 +13,7 @@ namespace JH
         [Header("Skill State")]
         [SerializeField] private GameObject m_caster;   // 스킬 캐스터
         [SerializeField] private bool m_isActive;       // 스킬 활성화 여부
-        private Transform m_casterPosition;
+        protected Transform m_casterPosition;
         private float m_duration;
 
         [Header("Event")]
@@ -53,11 +53,13 @@ namespace JH
         protected virtual void UpdateBehavior() { }
 
         // 실행 가능 확인
-        public virtual bool CanActiveSkill(bool enable = true) 
-        { return enable; }
+        public virtual bool CanActiveSkill(bool enable = true)
+        {
+            return enable;
+        }
 
         // 스킬 실행
-        public virtual void ActiveSkill() 
+        public virtual void ActiveSkill()
         {
             m_isActive = true;
             ActiveEvent?.Invoke();
@@ -73,7 +75,7 @@ namespace JH
         }
 
         // 스킬 비활성화
-        public virtual void InactiveSkill() 
+        public virtual void InactiveSkill()
         {
             m_isActive = false;
             InactiveEvent?.Invoke();
