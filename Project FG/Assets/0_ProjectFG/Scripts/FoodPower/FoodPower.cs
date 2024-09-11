@@ -43,7 +43,7 @@ namespace JH
             if (m_data == null)
                 return;
 
-            m_powerName = m_data.FoodPowerName;
+            m_powerName = m_data.Name;
             m_powerIcon = m_data.Icon;
             SetLevel(0);
             m_coolDownTimer = 0;
@@ -87,7 +87,7 @@ namespace JH
 
             switch (m_data.GetLevelData(m_powerLevel).AimType)
             {
-                case FoodPowerAimType.PlayerDirection:
+                case FoodPowerAimType.MoveDirection:
                     direction = m_casterPosition.localRotation;
                     break;
 

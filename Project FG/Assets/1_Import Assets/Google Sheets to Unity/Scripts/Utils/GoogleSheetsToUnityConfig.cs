@@ -57,13 +57,17 @@ namespace GoogleSheetsToUnity
 
         public void EncryptToken()
         {
+            // 비어있으면 암호화를 하지 않는다.
+            if(String.IsNullOrEmpty(access_token) == false)
             access_token = Encrypt(access_token);
+
+            if(String.IsNullOrEmpty(refresh_token) == false)
             refresh_token = Encrypt(refresh_token);
         }  
 
         private string Encrypt(string token)
         {
-            Debug.Log("암호화 : " + token);
+            //Debug.Log("암호화 : " + token);
             TextAsset key = Resources.Load("SECRETKEY") as TextAsset;
             if (key == null)
             {

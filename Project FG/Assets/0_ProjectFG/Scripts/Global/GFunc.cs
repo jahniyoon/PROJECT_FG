@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -136,6 +137,32 @@ namespace JH
             }
             Debug.Log(agent.gameObject.name + " Nav Destination Missing");
             return agent.position;
+        }
+
+        // 타겟의 방향 각도를 체크하는 함수
+        public static bool TargetAngleCheck(Transform Start, Transform Target, float Angle)
+        {
+            // 정확한 방향을 체크하기 위해 높이를 우선 맞춰준다.
+            Vector3 TargetPosition = Target.position;
+            TargetPosition.y = Start.position.y;
+
+            Vector3 Direction = TargetPosition - Start.position;
+            // 방향 0 기준으로, -180 ~ 180까지로 변환
+            float SignedAngle = Vector3.SignedAngle(Start.forward, Direction, Vector3.up);
+            // 음수 양수를 절대값으로 체크하므로 반 나눈다.
+            return Mathf.Abs(SignedAngle) <= Angle / 2;
+
+        }
+
+        public static List<GSTU_Data> GetGameData(int ID)
+        {
+            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
+            if (gameData.GameData.ContainsKey(ID) == false)
+            {
+                Debug.LogWarning("데이터 ID를 확인해주세요." + ID);
+                return null;
+            }
+            return gameData.GameData[ID].Data;
         }
     }
 }

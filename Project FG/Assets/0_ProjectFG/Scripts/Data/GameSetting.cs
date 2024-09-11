@@ -88,8 +88,15 @@ namespace JH
 
     public enum FoodPowerAimType
     {
-        PlayerDirection,
-        TargetNearest,
-        PointerDirection
+        MoveDirection,      //  이동 방향
+        TargetNearest,      // 가까운 타겟 방향
+        PointerDirection,   // 포인터 방향
+        RandomDirection,     // 랜덤 방향
+        RandomEnemyDirection,    // 랜덤 적 방향
+        Hit,                    // 피격시
+        PcPosition,             // PC 위치에 소환
+        PcRadius                // PC 주변
+
+            
     }
 }

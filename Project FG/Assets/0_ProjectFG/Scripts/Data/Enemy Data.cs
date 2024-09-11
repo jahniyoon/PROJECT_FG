@@ -140,9 +140,9 @@ namespace JH
             GUILayout.Label("\n\nGoogle Sheet");
 
 
-            if (GUILayout.Button("Online 데이터 내보내기") && !Application.isPlaying)
+            if (GUILayout.Button("Ememy Data Online 데이터 내보내기") && !Application.isPlaying)
             {
-                bool result = EditorUtility.DisplayDialog("Warning", "정말 업로드하시겠습니까?\n현재 데이터와 Game Data의 데이터들을 기준으로 구글 스프레드 시트의 데이터를 모두 덮어씁니다.", "덮어쓰기", "취소");
+                bool result = EditorUtility.DisplayDialog("Warning", "Enemy 시트만 스프레드 시트로 내보냅니다.\n정말 업로드하시겠습니까?", "덮어쓰기", "취소");
                 if (result)
                     ExportData();
             }

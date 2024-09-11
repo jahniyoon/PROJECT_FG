@@ -39,6 +39,7 @@ namespace JH
                 DebugObj.localScale = Vector3.one * m_levelData.Radius * 2;
                 DebugObj.gameObject.SetActive(true);
             }
+
             Collider[] colls = Physics.OverlapSphere(transform.position + m_casterPosition.forward * m_levelData.GetValue(0), m_levelData.Radius);
             for (int i = 0; i < colls.Length; i++)
             {
@@ -47,8 +48,14 @@ namespace JH
                     continue;
                 }
 
+
                 if (colls[i].CompareTag(m_subData.Target.ToString()))
                 {
+                    // 180도만 제한한다.
+                    if (GFunc.TargetAngleCheck(transform, colls[i].transform, 180) == false)
+                        continue;
+
+
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
                         float distance = Vector3.Distance(transform.position, colls[i].transform.position);

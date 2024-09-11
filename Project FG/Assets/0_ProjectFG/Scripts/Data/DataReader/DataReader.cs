@@ -52,26 +52,35 @@ namespace JH
         }
 
         // 현재 SO에 저장된 데이터중 특정 시트의 데이터를 내보낸다.
+        // 특정 위치로 업로드하려면 해당 위치를 알아야함.
         public void ExportData(string sheet)
         {
             int count = START_ROW_LENGTH;
+
+            // 시트별로 시트 전체 리스트 안에 리스트를 넣어 한번에 보낸다.
+            List<List<string>> Combined = new List<List<string>>();
+            string StartCell = "A" + count;
+
             foreach (var item in m_gameData)
             {
                 // 같은 시트대상만 업데이트한다.
                 if (item.Value.SheetID.Equals(sheet) == false)
                     continue;
-
                 List<string> list = new List<string>();
-                string target = "A" + count;
                 // 한 라인
                 for(int i = 0; i < item.Value.Data.Count; i++)
                 {
                     list.Add(item.Value.Data[i].Value);
                 }
-                SpreadsheetManager.Write(new GSTU_Search(associatedSheet, sheet, target), new ValueRange(list), null);
+                Combined.Add(list);
+                //SpreadsheetManager.Write(new GSTU_Search(associatedSheet, sheet, StartCell), new ValueRange(list), null);
                 count++;
             }
+               SpreadsheetManager.Write(new GSTU_Search(associatedSheet, sheet, StartCell), new ValueRange(Combined), null);
         }
+
+
+
 
         public void OrderbyDatabase()
         {
@@ -148,15 +157,8 @@ namespace JH
         // 시트 명에 따라 다른 리스트 업데이트
         void UpdateData(GstuSpreadSheet ss, int count)
         {
-            switch (ss.sheetID)
-            {
-                case "ENEMY":
-                    {
-                        data.UpdateGameData(ss.sheetID, ss.rows[count]);
-                        break;
-                    }
+            data.UpdateGameData(ss.sheetID, ss.rows[count]);
 
-            }
             data.OrderbyDatabase();
         }
 

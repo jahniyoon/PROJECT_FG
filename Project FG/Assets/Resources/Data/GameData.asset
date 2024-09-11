@@ -15,9 +15,11 @@ MonoBehaviour:
   associatedSheet: 1wxExSvFp9kodazhiLA8mDYORi728LRf7TfiaqDEdCvc
   associatedWorksheets:
   - ENEMY
+  - FOOD POWER
+  - FOOD POWER LEVEL
   START_ROW_LENGTH: 3
   m_gameData:
-    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e00002b4e0000
+    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e00002b4e000051c3000052c3000053c3000054c3000055c3000056c3000057c3000058c3000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000
     m_Values:
     - name: 20001     Test Enemy A
       SheetID: ENEMY
@@ -271,4 +273,2063 @@ MonoBehaviour:
       - ColumnID: PredationHealthRatio
         Value: 0
       - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 50001     FoodPower A
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50001
+      - ColumnID: Name
+        Value: FoodPower A
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CC A"
+      - ColumnID: LevelData
+        Value: 60001-60009
+    - name: 50002     FoodPower B
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50002
+      - ColumnID: Name
+        Value: FoodPower B
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60011-60019
+    - name: 50003     FoodPower C
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50003
+      - ColumnID: Name
+        Value: FoodPower C
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60020-60028
+    - name: 50004     FoodPower D
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50004
+      - ColumnID: Name
+        Value: FoodPower D
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60029-60037
+    - name: 50005     FoodPower E
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50005
+      - ColumnID: Name
+        Value: FoodPower E
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60038-60046
+    - name: 50006     FoodPower F
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50006
+      - ColumnID: Name
+        Value: FoodPower F
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60047-60055
+    - name: 50007     FoodPower G
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50007
+      - ColumnID: Name
+        Value: FoodPower G
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60056-60064
+    - name: 50008     FoodPower H
+      SheetID: FOOD POWER
+      Data:
+      - ColumnID: ID
+        Value: 50008
+      - ColumnID: Name
+        Value: FoodPower H
+      - ColumnID: Description
+        Value: 
+      - ColumnID: LevelData
+        Value: 60065-60073
+    - name: "60001     \uD478\uB4DC\uD30C\uC6CCA lv0"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60001
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv0"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv0"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1.2
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 1
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC774\uB3D9 \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60002     \uD478\uB4DC\uD30C\uC6CCA lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60002
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 5
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 1
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60003     \uD478\uB4DC\uD30C\uC6CCA lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60003
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.9
+      - ColumnID: Damage
+        Value: 5
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 1
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60004     \uD478\uB4DC\uD30C\uC6CCA lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60004
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.8
+      - ColumnID: Damage
+        Value: 5
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 1
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60005     \uD478\uB4DC\uD30C\uC6CCA lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60005
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.7
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 2
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60006     \uD478\uB4DC\uD30C\uC6CCA lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60006
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 2
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60007     \uD478\uB4DC\uD30C\uC6CCA lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60007
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.3
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 2
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60008     \uD478\uB4DC\uD30C\uC6CCA lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60008
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.1
+      - ColumnID: Damage
+        Value: 15
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 3
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60009     \uD478\uB4DC\uD30C\uC6CCA lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60009
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.1
+      - ColumnID: Damage
+        Value: 20
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 3
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60010     \uD478\uB4DC\uD30C\uC6CCA lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60010
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.1
+      - ColumnID: Damage
+        Value: 30
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 4
+      - ColumnID: Duration
+        Value: 0.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0.2
+    - name: "60011     \uD478\uB4DC\uD30C\uC6CCB lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60011
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 20
+      - ColumnID: Damage
+        Value: 1
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 3
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60012     \uD478\uB4DC\uD30C\uC6CCB lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60012
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 18
+      - ColumnID: Damage
+        Value: 1
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 3.5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60013     \uD478\uB4DC\uD30C\uC6CCB lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60013
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 16
+      - ColumnID: Damage
+        Value: 2
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 4
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60014     \uD478\uB4DC\uD30C\uC6CCB lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60014
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 15
+      - ColumnID: Damage
+        Value: 2
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 4.5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60015     \uD478\uB4DC\uD30C\uC6CCB lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60015
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 14
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60016     \uD478\uB4DC\uD30C\uC6CCB lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60016
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 13
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 5.5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60017     \uD478\uB4DC\uD30C\uC6CCB lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60017
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 12
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 6
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60018     \uD478\uB4DC\uD30C\uC6CCB lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60018
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 12
+      - ColumnID: Damage
+        Value: 4
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 6.5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60019     \uD478\uB4DC\uD30C\uC6CCB lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60019
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCB lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 12
+      - ColumnID: Damage
+        Value: 4
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 7
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uD53C\uACA9 \uC2DC"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60020     \uD478\uB4DC\uD30C\uC6CCC lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60020
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60021     \uD478\uB4DC\uD30C\uC6CCC lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60021
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.9
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60022     \uD478\uB4DC\uD30C\uC6CCC lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60022
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.8
+      - ColumnID: Damage
+        Value: 3
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60023     \uD478\uB4DC\uD30C\uC6CCC lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60023
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.7
+      - ColumnID: Damage
+        Value: 6
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60024     \uD478\uB4DC\uD30C\uC6CCC lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60024
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 6
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60025     \uD478\uB4DC\uD30C\uC6CCC lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60025
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.3
+      - ColumnID: Damage
+        Value: 6
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60026     \uD478\uB4DC\uD30C\uC6CCC lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60026
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.1
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60027     \uD478\uB4DC\uD30C\uC6CCC lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60027
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.1
+      - ColumnID: Damage
+        Value: 15
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60028     \uD478\uB4DC\uD30C\uC6CCC lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60028
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.1
+      - ColumnID: Damage
+        Value: 20
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60029     \uD478\uB4DC\uD30C\uC6CCD lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60029
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 5
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 4
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60030     \uD478\uB4DC\uD30C\uC6CCD lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60030
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 5
+      - ColumnID: Damage
+        Value: 12
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60031     \uD478\uB4DC\uD30C\uC6CCD lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60031
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 4
+      - ColumnID: Damage
+        Value: 15
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 6
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 2
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60032     \uD478\uB4DC\uD30C\uC6CCD lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60032
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 4
+      - ColumnID: Damage
+        Value: 18
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 7
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 2
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60033     \uD478\uB4DC\uD30C\uC6CCD lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60033
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 4
+      - ColumnID: Damage
+        Value: 21
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 8
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 2
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60034     \uD478\uB4DC\uD30C\uC6CCD lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60034
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 2
+      - ColumnID: Damage
+        Value: 25
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 8
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60035     \uD478\uB4DC\uD30C\uC6CCD lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60035
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 2
+      - ColumnID: Damage
+        Value: 25
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 9
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60036     \uD478\uB4DC\uD30C\uC6CCD lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60036
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 2
+      - ColumnID: Damage
+        Value: 30
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 9
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 3
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60037     \uD478\uB4DC\uD30C\uC6CCD lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60037
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCD lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 40
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 10
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 4
+      - ColumnID: AimType
+        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60038     \uD478\uB4DC\uD30C\uC6CCE lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60038
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60039     \uD478\uB4DC\uD30C\uC6CCE lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60039
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1.1
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60040     \uD478\uB4DC\uD30C\uC6CCE lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60040
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1.2
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60041     \uD478\uB4DC\uD30C\uC6CCE lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60041
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1.3
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60042     \uD478\uB4DC\uD30C\uC6CCE lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60042
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 14
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60043     \uD478\uB4DC\uD30C\uC6CCE lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60043
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1.5
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60044     \uD478\uB4DC\uD30C\uC6CCE lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60044
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1.6
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60045     \uD478\uB4DC\uD30C\uC6CCE lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60045
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 1.7
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60046     \uD478\uB4DC\uD30C\uC6CCE lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60046
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCE lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.15
+      - ColumnID: Damage
+        Value: 2
+      - ColumnID: Range
+        Value: 15
+      - ColumnID: Radius
+        Value: 0
+      - ColumnID: Duration
+        Value: 5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "\uC0AC\uAC70\uB9AC\uB0B4 \uB79C\uB364\uD55C \uC801"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60047     \uD478\uB4DC\uD30C\uC6CCF lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60047
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 5
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60048     \uD478\uB4DC\uD30C\uC6CCF lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60048
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 6
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60049     \uD478\uB4DC\uD30C\uC6CCF lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60049
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 7
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60050     \uD478\uB4DC\uD30C\uC6CCF lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60050
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1.2
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 8
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60051     \uD478\uB4DC\uD30C\uC6CCF lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60051
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1.2
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 9
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60052     \uD478\uB4DC\uD30C\uC6CCF lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60052
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1.2
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 10
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60053     \uD478\uB4DC\uD30C\uC6CCF lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60053
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1.4
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 11
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60054     \uD478\uB4DC\uD30C\uC6CCF lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60054
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1.4
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 12
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60055     \uD478\uB4DC\uD30C\uC6CCF lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60055
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCF lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 0.5
+      - ColumnID: Damage
+        Value: 1.5
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 13
+      - ColumnID: Duration
+        Value: 0
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60056     \uD478\uB4DC\uD30C\uC6CCG lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60056
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1.5
+      - ColumnID: Damage
+        Value: 15
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 3
+      - ColumnID: Duration
+        Value: 1.3
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60057     \uD478\uB4DC\uD30C\uC6CCG lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60057
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1.4
+      - ColumnID: Damage
+        Value: 16
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 4
+      - ColumnID: Duration
+        Value: 1.5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60058     \uD478\uB4DC\uD30C\uC6CCG lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60058
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1.3
+      - ColumnID: Damage
+        Value: 17
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 5
+      - ColumnID: Duration
+        Value: 1.7
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60059     \uD478\uB4DC\uD30C\uC6CCG lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60059
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1.2
+      - ColumnID: Damage
+        Value: 18
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 6
+      - ColumnID: Duration
+        Value: 1.9
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60060     \uD478\uB4DC\uD30C\uC6CCG lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60060
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1.1
+      - ColumnID: Damage
+        Value: 19
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 7
+      - ColumnID: Duration
+        Value: 2.1
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60061     \uD478\uB4DC\uD30C\uC6CCG lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60061
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 20
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 8
+      - ColumnID: Duration
+        Value: 2.3
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60062     \uD478\uB4DC\uD30C\uC6CCG lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60062
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 22
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 9
+      - ColumnID: Duration
+        Value: 2.5
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60063     \uD478\uB4DC\uD30C\uC6CCG lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60063
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 24
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 10
+      - ColumnID: Duration
+        Value: 2.7
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60064     \uD478\uB4DC\uD30C\uC6CCG lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60064
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCG lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 1
+      - ColumnID: Damage
+        Value: 26
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 11
+      - ColumnID: Duration
+        Value: 2.9
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC8FC\uBCC0"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60065     \uD478\uB4DC\uD30C\uC6CCH lv1"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60065
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv1"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv1"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 10
+      - ColumnID: Damage
+        Value: 20
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 3
+      - ColumnID: Duration
+        Value: 10
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60066     \uD478\uB4DC\uD30C\uC6CCH lv2"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60066
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv2"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv2"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 9
+      - ColumnID: Damage
+        Value: 23
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 5
+      - ColumnID: Duration
+        Value: 12
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60067     \uD478\uB4DC\uD30C\uC6CCH lv3"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60067
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv3"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv3"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 8
+      - ColumnID: Damage
+        Value: 26
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 7
+      - ColumnID: Duration
+        Value: 14
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60068     \uD478\uB4DC\uD30C\uC6CCH lv4"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60068
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv4"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 7
+      - ColumnID: Damage
+        Value: 29
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 9
+      - ColumnID: Duration
+        Value: 16
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60069     \uD478\uB4DC\uD30C\uC6CCH lv5"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60069
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv5"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv5"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 6
+      - ColumnID: Damage
+        Value: 32
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 11
+      - ColumnID: Duration
+        Value: 18
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60070     \uD478\uB4DC\uD30C\uC6CCH lv6"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60070
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv6"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv6"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 5
+      - ColumnID: Damage
+        Value: 35
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 13
+      - ColumnID: Duration
+        Value: 20
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60071     \uD478\uB4DC\uD30C\uC6CCH lv7"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60071
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv7"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv7"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 4
+      - ColumnID: Damage
+        Value: 38
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 15
+      - ColumnID: Duration
+        Value: 25
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60072     \uD478\uB4DC\uD30C\uC6CCH lv8"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60072
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv8"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv8"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 3
+      - ColumnID: Damage
+        Value: 41
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 17
+      - ColumnID: Duration
+        Value: 30
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
+        Value: 0
+    - name: "60073     \uD478\uB4DC\uD30C\uC6CCH lv9"
+      SheetID: FOOD POWER LEVEL
+      Data:
+      - ColumnID: ID
+        Value: 60073
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv9"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCH lv9"
+      - ColumnID: Type
+        Value: '-'
+      - ColumnID: CoolDown
+        Value: 2
+      - ColumnID: Damage
+        Value: 44
+      - ColumnID: Range
+        Value: 0
+      - ColumnID: Radius
+        Value: 19
+      - ColumnID: Duration
+        Value: 40
+      - ColumnID: Count
+        Value: 1
+      - ColumnID: AimType
+        Value: "PC\uC704\uCE58 \uC18C\uD658"
+      - ColumnID: AdditionalValues
         Value: 0

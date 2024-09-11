@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: Food Power A
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 50001
-  <FoodPowerName>k__BackingField: Food Power A
+  <Name>k__BackingField: FoodPower A
+  <Description>k__BackingField: "\uD478\uB4DC\uD30C\uC6CC A"
   <Icon>k__BackingField: {fileID: 21300000, guid: 81ef8ae791d59cd42b614b7a057f496a,
     type: 3}
-  <LevelData>k__BackingField:
-  - Name: Lv0
+  <LevelDatas>k__BackingField:
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv0"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv0"
+    ID: 60001
     CoolDown: 1.2
     Damage: 3
     Range: 0
@@ -25,97 +28,103 @@ MonoBehaviour:
     Duration: 0.1
     Count: 1
     AimType: 0
-    Values:
+    AdditionalValues:
     - 0.2
-  - Name: Lv1
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv1"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv1"
+    ID: 60002
     CoolDown: 1
     Damage: 5
     Range: 0
     Radius: 1
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv2
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv2"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv2"
+    ID: 60003
     CoolDown: 0.9
     Damage: 5
     Range: 0
     Radius: 1
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv3
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv3"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv3"
+    ID: 60004
     CoolDown: 0.8
     Damage: 5
     Range: 0
     Radius: 1
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv4"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv4"
+    ID: 60005
     CoolDown: 0.7
     Damage: 10
     Range: 0
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv5
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv5"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv5"
+    ID: 60006
     CoolDown: 0.5
     Damage: 10
     Range: 0
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv6
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv6"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv6"
+    ID: 60007
     CoolDown: 0.3
     Damage: 10
     Range: 0
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv7
-    CoolDown: 0.2
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv7"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv7"
+    ID: 60008
+    CoolDown: 0.1
     Damage: 15
     Range: 0
     Radius: 3
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
-  - Name: Lv8
-    CoolDown: 0.15
+  - Name: "\uD478\uB4DC\uD30C\uC6CCA lv8"
+    Description: "\uD478\uB4DC\uD30C\uC6CCA lv8"
+    ID: 60009
+    CoolDown: 0.1
     Damage: 20
     Range: 0
     Radius: 3
     Duration: 0.1
     Count: 1
-    AimType: 0
-    Values:
-    - 0.2
-  - Name: Lv9
-    CoolDown: 0.1
-    Damage: 30
-    Range: 0
-    Radius: 4
-    Duration: 0.1
-    Count: 1
-    AimType: 0
-    Values:
+    AimType: 1
+    AdditionalValues:
     - 0.2
   <TargetNearestScanRadius>k__BackingField: 10
   <AlwaysShoot>k__BackingField: 0
