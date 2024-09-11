@@ -33,6 +33,8 @@ namespace JH
 
             m_foodPowerParent = new GameObject("Food Power").transform;
             m_foodPowerParent.parent = this.transform;
+
+            m_defaultFoodPower = m_gameSettings.DefaultFoodPower;
         }
         private void Start()
         {
@@ -90,7 +92,6 @@ namespace JH
             }
             else
             {
-                // 레벨업까지 끝내고 푸드파워의 루틴을 초기화 시키고 시작시킨다.
                 for (int i = 0; i < foodPowers.Count; i++)
                 {
                     // 같은 푸드파워가 있다면 레벨 업

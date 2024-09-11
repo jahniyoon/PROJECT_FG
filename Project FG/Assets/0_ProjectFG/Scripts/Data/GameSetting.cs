@@ -78,6 +78,8 @@ namespace JH
 
 
         [field: Header("푸드파워")]
+        [field: SerializeField] public FoodPower DefaultFoodPower { get; private set; }
+
         [field: Tooltip("푸드파워 딜레이")]
         [field: SerializeField] public float FoodPowerDelay { get; private set; }
         [field: Tooltip("푸드파워 투사체 조준 시스템")]

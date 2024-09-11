@@ -27,7 +27,7 @@ MonoBehaviour:
     Radius: 1
     Duration: 0.1
     Count: 1
-    AimType: 0
+    AimType: 1
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv1"
