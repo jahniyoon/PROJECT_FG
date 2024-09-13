@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 
@@ -8,24 +7,28 @@ namespace JH
 {
     [System.Serializable]
 
-    public class FoodPowerA : FoodPower
+    public class FoodPowerC : FoodPower
     {
-        [Header("Skill")]
-        [SerializeField] private FoodPowerSkill m_slashSkill;
-
+        [Header("Test Projectile")]
+        [SerializeField] private FoodPowerSkill m_projectileSkill;
+        [SerializeField] private float m_offset = 0.5f;
 
 
         public override void Active()
         {
+
             Vector3 position = m_casterPosition.position;
+            position.y += m_offset;
 
             Quaternion direction = GetDirection();
 
-            var skill = Instantiate(m_slashSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
+
+
+            FoodPowerSkill skill = Instantiate(m_projectileSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
             skill.SkillInit(m_caster.gameObject, m_casterPosition);
             skill.SetLevel(m_data.GetLevelData(m_powerLevel));
-
             skill.ActiveSkill();
+
         }
 
     }

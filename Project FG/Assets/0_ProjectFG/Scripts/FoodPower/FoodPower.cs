@@ -13,10 +13,7 @@ namespace JH
         [SerializeField] protected FoodPowerData m_data;
 
         [Header("Food Power")]
-        [SerializeField] private string m_powerName;
-        [SerializeField] private Sprite m_powerIcon;
         [SerializeField] protected int m_powerLevel;
-
         [SerializeField] private float m_coolDownTimer;
 
         protected GameObject m_caster;
@@ -28,7 +25,7 @@ namespace JH
 
         bool isActive;
 
-        public Sprite Icon => m_powerIcon;
+        public Sprite Icon => m_data.Icon;
         public float CoolDown => m_data.GetLevelData(m_powerLevel).CoolDown;
         public float Timer => m_coolDownTimer;
         public int ID => m_data.ID;
@@ -43,8 +40,6 @@ namespace JH
             if (m_data == null)
                 return;
 
-            m_powerName = m_data.Name;
-            m_powerIcon = m_data.Icon;
             SetLevel(0);
             m_coolDownTimer = 0;
         }

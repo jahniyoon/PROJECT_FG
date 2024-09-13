@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8399884839904067533}
-  - component: {fileID: 6181559105594114157}
+  - component: {fileID: -7065989394218447537}
   m_Layer: 0
-  m_Name: TestFoodPower
+  m_Name: Food Power C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6181559105594114157
+--- !u!114 &-7065989394218447537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7037454027081757407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6314dc7c790eeab4eb7d0e39137ae7a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 98fea59b5245d61478b454900b629b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: a4fda4fa8faa44843b77e3f5eac1a8f8, type: 2}
-  m_powerName: Test Power
-  m_powerIcon: {fileID: 21300000, guid: 81ef8ae791d59cd42b614b7a057f496a, type: 3}
-  m_powerCoolDown: 3
-  m_coolDownTimer: 1.19864
-  m_projectilePrefab: {fileID: 9173310347936448537, guid: 309abb57b75c9f545a3ad4fa32379bf6,
+  m_data: {fileID: 11400000, guid: 6d745782cf069e645b958b70fcc5aacb, type: 2}
+  m_powerLevel: 0
+  m_coolDownTimer: 0
+  m_projectileSkill: {fileID: 1901363571439153837, guid: 92fbe9098d9605041ac6f7689de01652,
     type: 3}
   m_offset: 0.5

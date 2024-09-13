@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1556999990054972769}
   - component: {fileID: 6907334222896031824}
   m_Layer: 0
-  m_Name: FoodPower A Projectile
+  m_Name: FoodPower C Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

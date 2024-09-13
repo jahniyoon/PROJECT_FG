@@ -7,6 +7,8 @@ namespace JH
 {
     public class FoodPowerSlashSkill : FoodPowerSkill
     {
+        [Header("근접공격 스킬")]
+
         private SlashSkillData m_subData;
         [SerializeField] private GameObject m_slashEffect;
 
@@ -73,18 +75,6 @@ namespace JH
             }
         }
 
-        IEnumerator SkillRoutine()
-        {
-            float timer = 0;
-            while (timer < m_levelData.Duration)
-            {
-                timer += Time.deltaTime;
-                yield return null;
-            }
-
-            InactiveSkill();
-            yield break;
-        }
         public override void InactiveSkill()
         {
             base.InactiveSkill();

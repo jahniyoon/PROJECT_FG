@@ -50,6 +50,15 @@ namespace JH
                 Invoke(nameof(DestroyProjectile), m_destroyValue);
             }
         }
+        public virtual void ProjectileInit(float Damage, float ProjectileSpeed, int Penetrate, float DestroyValue, TargetTag TargetTag)
+        {
+            m_damage = Damage;
+            m_projectileSpeed = ProjectileSpeed;
+            m_penetrate = Penetrate;
+            m_damage = DestroyValue;
+            m_destroyValue = Damage;
+            m_targetTag = TargetTag;
+        }
 
 
         void Update()

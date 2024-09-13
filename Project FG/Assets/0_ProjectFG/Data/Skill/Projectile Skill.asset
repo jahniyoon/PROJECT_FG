@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa2ac9951801954aac660b4d0994be3, type: 3}
+  m_Name: Projectile Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30004
+  <SkillName>k__BackingField: "\uD22C\uC0AC\uCCB4 \uBC1C\uC0AC"
+  <Description>k__BackingField: "\uD22C\uC0AC\uCCB4\uB97C \uBC1C\uC0AC\uD55C\uB2E4."
+  <SkillDuration>k__BackingField: 0
+  <SkillCoolDown>k__BackingField: 0
+  <Target>k__BackingField: 0
+  <ProjectilePrefab>k__BackingField: {fileID: 9173310347936448537, guid: 309abb57b75c9f545a3ad4fa32379bf6,
+    type: 3}

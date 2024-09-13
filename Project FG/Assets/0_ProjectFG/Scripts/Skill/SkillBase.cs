@@ -74,6 +74,7 @@ namespace JH
             m_skillRoutine = StartCoroutine(SkillRoutine(m_duration));
         }
 
+
         // 스킬 비활성화
         public virtual void InactiveSkill()
         {

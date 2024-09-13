@@ -12,8 +12,6 @@ namespace JH
         [field: Header("Slash Skill")]
 
         [field: SerializeField] public TargetTag Target { get; private set; }
-        [field: SerializeField] public float SkillRadius { get; private set; }
-        [field: SerializeField] public SkillBase SlashSkill { get; private set; }
 
 
       

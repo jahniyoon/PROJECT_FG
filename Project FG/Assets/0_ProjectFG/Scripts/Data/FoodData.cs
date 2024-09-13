@@ -67,7 +67,6 @@ namespace JH
                         for (int i=0; i < count; i++)
                         {
                             FoodPowerLevelData LevelData = new FoodPowerLevelData();
-                            Debug.Log(idRange[0] + i);
                             // ID에 맞는 데이터를 가져온다.
                             LevelDatas[i] = LevelData.SetFoodPowerLevelData(idRange[0] + i);
                         }

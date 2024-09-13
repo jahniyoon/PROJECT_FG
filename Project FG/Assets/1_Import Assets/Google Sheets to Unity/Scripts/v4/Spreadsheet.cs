@@ -127,7 +127,11 @@ namespace GoogleSheetsToUnity
         {
             int start = valueRange.range.IndexOf("!") + 1;
             int end = valueRange.range.IndexOf(":", start);
-            //Debug.Log(end - start);
+            if (end - start < 0)
+            {
+                Debug.LogError("데이터를 불러오지 못했습니다. 로그인을 다시 확인해주세요.");
+                return null;
+            }
             return valueRange.range.Substring(start, end - start);
         }
 
