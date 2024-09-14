@@ -28,11 +28,12 @@ namespace JH
         WaitForFixedUpdate WaitForFixedUpdate = new WaitForFixedUpdate();
         private void Awake()
         {
+            Init();
+
         }
 
         private void Start()
         {
-            Init();
         }
 
 
@@ -110,6 +111,7 @@ namespace JH
                 // 제거를 하고나면 버프를 체크한다.
                 BuffCheck(buff, casterID);
             }
+            Debug.Log("꺼진다");
 
             RemoveBuffEvent?.Invoke();
         }
@@ -215,10 +217,10 @@ namespace JH
                         }
                         break;
                     }
+                // 버프를 계속 받는동안 계속 유지된다.
                 case BuffType.Stay:
                     {
                         ActiveBuff(buffElement);
-
                         while (0 < buffElement.Timer)
                         {
                             yield return WaitForFixedUpdate;
@@ -227,6 +229,16 @@ namespace JH
                         }
 
                         break;
+                    }
+                case BuffType.Attachment:
+                    {
+                        ActiveBuff(buffElement);
+                        while (true)
+                        {
+                            yield return WaitForFixedUpdate;
+                            buffElement.UpdateTimer();
+                        }
+
                     }
             }
             // 버프가 끝나면 버프 비활성화 및 제거

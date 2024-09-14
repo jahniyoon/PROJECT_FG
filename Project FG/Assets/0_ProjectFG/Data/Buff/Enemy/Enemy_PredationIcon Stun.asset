@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9270db2c6909c428c8221ab8269766, type: 3}
   m_Name: Enemy_PredationIcon Stun
   m_EditorClassIdentifier: 
-  m_buffID: 40001
+  m_buffID: 40101
   m_buffName: "\uD3EC\uC2DD \uC2A4\uD134"
   m_buffDescription: "\uC5D0\uB124\uBBF8 \uD3EC\uC2DD \uAC00\uB2A5 \uC0C1\uD0DC\uC758
     \uC2A4\uD134"
+  <Type>k__BackingField: 0
   m_buffDuration: 0
   m_isOneAndOnlyBuff: 0
   m_Priority: 0

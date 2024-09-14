@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aa2ac9951801954aac660b4d0994be3, type: 3}
-  m_Name: Projectile Skill
+  m_Name: Food Power C Projectile Skill
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 30004
+  <ID>k__BackingField: 30003
   <SkillName>k__BackingField: "\uD22C\uC0AC\uCCB4 \uBC1C\uC0AC"
   <Description>k__BackingField: "\uD22C\uC0AC\uCCB4\uB97C \uBC1C\uC0AC\uD55C\uB2E4."
   <SkillDuration>k__BackingField: 0

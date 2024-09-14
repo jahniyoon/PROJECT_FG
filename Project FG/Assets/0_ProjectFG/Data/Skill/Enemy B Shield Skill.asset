@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60fc4f9c22d02459f2734982fd8ae6, type: 3}
   m_Name: Enemy B Shield Skill
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 30002
+  <ID>k__BackingField: 30101
   <SkillName>k__BackingField: "\uBC29\uD328"
   <Description>k__BackingField: "\uD53C\uD574\uAC10\uC18C \uBC0F \uBC29\uD328\uB97C
     \uB4E0\uB2E4."

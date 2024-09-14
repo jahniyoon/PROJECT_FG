@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1408293e654a52f4cadef267063b9e84, type: 3}
-  m_Name: Slash Skill
+  m_Script: {fileID: 11500000, guid: d1d717c20b356b64494679629a5f5bab, type: 3}
+  m_Name: Food Power A Slash Skill
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 30001
   <SkillName>k__BackingField: "\uADFC\uC811 \uACF5\uACA9"
@@ -18,6 +18,3 @@ MonoBehaviour:
   <SkillDuration>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 0
   <Target>k__BackingField: 0
-  <SkillRadius>k__BackingField: 0
-  <SlashSkill>k__BackingField: {fileID: 3646354421168099405, guid: 3cee09f1833c3a146ae213580c5fd5e0,
-    type: 3}

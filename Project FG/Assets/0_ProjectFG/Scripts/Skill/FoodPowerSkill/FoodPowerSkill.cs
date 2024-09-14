@@ -13,9 +13,14 @@ namespace JH
         {
             m_levelData = levelData;
         }
-        protected virtual IEnumerator SkillRoutine()
+        protected override IEnumerator SkillRoutine(float duration = 0)
         {
             float timer = 0;
+
+            // 듀레이션이 0보다 작으면 끄지 않는다.
+            if(m_levelData.Duration < 0)
+                yield break;
+
             while (timer < m_levelData.Duration)
             {
                 timer += Time.deltaTime;

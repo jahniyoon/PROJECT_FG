@@ -27,7 +27,7 @@ namespace JH
         {
             return JsonUtility.ToJson(this);
         }
-        public float GetValue(int num)
+        public float GetAdditionalValue(int num)
         {
             if (AdditionalValues.Length < num + 1)
             {

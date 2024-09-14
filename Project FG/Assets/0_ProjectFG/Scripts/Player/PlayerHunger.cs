@@ -217,6 +217,12 @@ namespace JH
             yield break;
         }
 
+        [ContextMenu("Add Power")]
+        public void AddDefaultPower()
+        {
+            AddHunger(m_defaultFoodPower, 1);
+        }
+
 
         void OnDrawGizmosSelected()
         {

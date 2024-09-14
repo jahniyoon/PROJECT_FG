@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c64a4532f250f41aab7cf527007086, type: 3}
   m_Name: Enemy F Move Speed Debuff
   m_EditorClassIdentifier: 
-  m_buffID: 40004
+  m_buffID: 40104
   m_buffName: "\uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C"
   m_buffDescription: "Enemy E\uC758 \uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C \uB514\uBC84\uD504"
   <Type>k__BackingField: 3

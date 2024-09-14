@@ -11,6 +11,12 @@ namespace JH
 	{
         [Header("Damage Reduction Buff")]
         [SerializeField] float m_damageReduction; // 영향을 줄 데미지
+
+        // TODO : 이 부분 꼭 추후 교체해야함!!!
+        public void SetValue(float value)
+        {
+            m_damageReduction = value;
+        }
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Slash Skill", menuName = "ScriptableObjects/Skill/Slash Skill")]
+    [CreateAssetMenu(fileName = "Food Power A Skill", menuName = "ScriptableObjects/Skill/Food Power/Food Power A Skill")]
 
-    public class SlashSkillData : SkillData
+    public class FoodPowerASkillData : SkillData
 	{
 
         [field: Header("Slash Skill")]

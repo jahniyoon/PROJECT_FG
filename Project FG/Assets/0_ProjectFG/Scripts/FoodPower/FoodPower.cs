@@ -44,7 +44,7 @@ namespace JH
             m_coolDownTimer = 0;
         }
 
-        public void SetCaster(GameObject caster, Transform casterPosition, Transform aim)
+        public virtual void SetCaster(GameObject caster, Transform casterPosition, Transform aim)
         {
             m_caster = caster;
             m_casterPosition = casterPosition;
@@ -58,6 +58,10 @@ namespace JH
 
         // 푸드파워의 효과
         public virtual void Active()
+        {
+
+        }
+        public virtual void Inactive()
         {
 
         }
@@ -82,25 +86,51 @@ namespace JH
 
             switch (m_data.GetLevelData(m_powerLevel).AimType)
             {
+                // 플레이어 방향
                 case FoodPowerAimType.MoveDirection:
-                    direction = m_casterPosition.localRotation;
-                    break;
+                    return m_casterPosition.localRotation;
 
+
+                // 가까운 타겟 방향
                 case FoodPowerAimType.TargetNearest:
                     Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
 
                     // 타겟이 Null이 아닐 경우에만
                     if (target != null)
-                        direction = Quaternion.LookRotation(target.position - m_casterPosition.position);
+                        return Quaternion.LookRotation(target.position - m_casterPosition.position);
 
                     // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
                     else if (target == null && m_data.AlwaysShoot)
-                        direction = m_casterPosition.rotation;
+                        return m_casterPosition.rotation;
 
                     break;
 
+                // 포인터 방향
                 case FoodPowerAimType.PointerDirection:
-                    direction = Quaternion.LookRotation(m_aimPosition.position - m_casterPosition.position);
+                    return Quaternion.LookRotation(m_aimPosition.position - m_casterPosition.position);
+
+                // PC의 포지션
+                case FoodPowerAimType.PcPosition:
+                    return direction;
+
+                    // 랜덤한 방향
+                case FoodPowerAimType.RandomDirection:
+                    Vector3 randomDir = direction.eulerAngles;
+                    randomDir.y = Random.Range(0, 360);
+                    direction.eulerAngles = randomDir;
+                    return direction;
+
+                    // 랜덤한 적 방향
+                case FoodPowerAimType.RandomEnemyDirection:
+                    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+
+                    // 타겟이 Null이 아닐 경우에만
+                    if (randomTarget != null)
+                        return Quaternion.LookRotation(randomTarget.position - m_casterPosition.position);
+
+                    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
+                    else if (randomTarget == null && m_data.AlwaysShoot)
+                        return m_casterPosition.rotation;
                     break;
             }
 
@@ -135,7 +165,33 @@ namespace JH
             return target;
         }
 
+        //  스캔된 에네미중 랜덤으로 포지션을 정한다.
+        private Transform ScanRandomPosition(Vector3 position, float radius)
+        {
+            Transform target = null;
 
+            Collider[] colls = Physics.OverlapSphere(position, radius);
+            List<Collider> enemies = new List<Collider>();
+            for (int i = 0; i < colls.Length; i++)
+            {
+                if (colls[i].isTrigger)
+                    continue;
+
+                if (colls[i].CompareTag("Enemy") == false)
+                    continue;
+
+                if (colls[i].TryGetComponent<EnemyController>(out EnemyController enemy))
+                {
+                    if (enemy.State == FSMState.Die)
+                        continue;
+                    enemies.Add(colls[i]);
+                }
+            }
+            int random = Random.Range(0, enemies.Count);
+
+            target = enemies[random].transform;
+            return target;
+        }
         // 타겟의 거리를 체크한다.
         private Transform DistanceChecker(Vector3 startPos, Transform curTarget, Transform newTarget)
         {
@@ -160,8 +216,6 @@ namespace JH
 
             isActive = true;
             foodRoutine = StartCoroutine(FoodPowerRoutine());
-
-
         }
         // 루틴을 멈춘다.
         public void StopFoodPowerRoutine()
@@ -175,17 +229,23 @@ namespace JH
         }
 
 
+        // 쿨타임에 맞게 실행이된다.
         IEnumerator FoodPowerRoutine()
         {
-            m_coolDownTimer = 0;
+            m_coolDownTimer = m_data.GetLevelData(m_powerLevel).CoolDown;
 
             while (isActive)
             {
                 // 쿨타임이 지나면 액티브
-                if (m_data.GetLevelData(m_powerLevel).CoolDown < m_coolDownTimer)
+                if (m_data.GetLevelData(m_powerLevel).CoolDown <= m_coolDownTimer)
                 {
                     Active();
                     m_coolDownTimer = 0;
+
+                    // 지속시간이 짧은 케이스의 경우 바로 종료
+                    if (m_data.GetLevelData(m_powerLevel).Duration < 0)
+                        yield break;
+
                     yield return null;
                     continue;
                 }

@@ -9,14 +9,14 @@ namespace JH
 {
     public class FoodPowerProjectileSkill : FoodPowerSkill
     {
-        private ProjectileSkillData m_subData;
+        private FoodPowerCSkillData m_subData;
         [Header("발사체 스킬")]
         [SerializeField] private float m_offset = 0.5f;
         [SerializeField] private float m_angleIncrement = 10f;
 
         protected override void Init()
         {
-            m_subData = m_skillData as ProjectileSkillData;
+            m_subData = m_skillData as FoodPowerCSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -57,7 +57,7 @@ namespace JH
             Transform parent = GameManager.Instance.ProjectileParent;
 
             var Projectile = Instantiate(projectile, shootPos, rotation, parent).GetComponent<Projectile>();
-            Projectile.ProjectileInit(m_levelData.Damage, m_levelData.GetValue(0), Mathf.FloorToInt(m_levelData.GetValue(1)), m_levelData.Duration, m_subData.Target);
+            Projectile.ProjectileInit(m_levelData.Damage, m_levelData.GetAdditionalValue(0), Mathf.FloorToInt(m_levelData.GetAdditionalValue(1)), m_levelData.Duration, m_subData.Target);
         }
 
         public override void InactiveSkill()

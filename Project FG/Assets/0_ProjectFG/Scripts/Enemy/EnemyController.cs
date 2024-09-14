@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
+public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable
 {
     private FSM<EnemyController> m_fsm;
     protected PlayerController m_player;
@@ -45,6 +45,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
 
     [Header("Stun")]
     [SerializeField] protected ParticleSystem m_stunEffect;
+    protected bool m_isKnockback;
 
 
     // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
@@ -318,7 +319,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
 
     protected virtual bool HitStateCheck()
     {
-        return m_buffHandler.Status.IsStun;
+        return m_buffHandler.Status.IsStun || m_isKnockback;
     }
 
 
@@ -364,5 +365,45 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable
         //// 이동가능한 곳인지 체크한다.
 
     }
+
+
+    public void OnKnockback(Vector3 hitPosition, float force, float duration)
+    {
+        if (knockbackRoutine != null)
+        {
+            StopCoroutine(knockbackRoutine);
+            knockbackRoutine = null;
+        }
+        knockbackRoutine = StartCoroutine(KnockBackRoutine(hitPosition, force, duration));
+
+    }
+    Coroutine knockbackRoutine;
+
+    IEnumerator KnockBackRoutine(Vector3 hitPos, float force, float duration)
+    {
+        m_isKnockback = true;
+
+
+        float timer = 0;
+        Vector3 startPos = transform.position;
+
+        // 플레이어로부터 반대 방향 (벡터의 반대 방향)
+        Vector3 knockbackDirection = -(hitPos - startPos).normalized;
+
+        // 넉백 방향에 거리 추가
+        Vector3 endPos = startPos + knockbackDirection * force;
+        // 가능한 곳인지 확인 및 보정
+        endPos = GFunc.FindNavPos(transform, endPos, force * 2);
+
+        while (timer < duration)
+        {
+            transform.position = Vector3.Lerp(startPos, endPos, timer / duration);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        m_isKnockback = false;
+        yield break;
+    }
+
 
 }

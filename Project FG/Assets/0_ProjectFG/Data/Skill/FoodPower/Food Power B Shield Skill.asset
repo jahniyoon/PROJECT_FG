@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e54137bbe358b40b18289a52ba1c29, type: 3}
+  m_Name: Food Power B Shield Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30002
+  <SkillName>k__BackingField: "\uC2E4\uB4DC"
+  <Description>k__BackingField: "\uD53C\uACA9 \uD53C\uD574 \uAC10\uC18C\uB97C \uAC00\uC9C0\uACE0
+    \uC801\uC5D0\uAC8C \uD53C\uACA9\uB2F9\uD560 \uC2DC \uB109\uBC31"
+  <SkillDuration>k__BackingField: 0
+  <SkillCoolDown>k__BackingField: 0
+  <Target>k__BackingField: 0
+  <KnockbackBuff>k__BackingField: {fileID: 0}
+  <DamageReductionBuff>k__BackingField: {fileID: 11400000, guid: 011cbf84dea0be14690b735030be1496,
+    type: 2}

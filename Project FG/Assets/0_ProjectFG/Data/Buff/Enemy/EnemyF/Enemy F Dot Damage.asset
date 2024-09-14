@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cac9335da555814bba1a22387263201, type: 3}
   m_Name: Enemy F Dot Damage
   m_EditorClassIdentifier: 
-  m_buffID: 40003
+  m_buffID: 40103
   m_buffName: "\uB3C4\uD2B8 \uB370\uBBF8\uC9C0"
   m_buffDescription: "Enemy E\uC758 \uB3C4\uD2B8 \uB370\uBBF8\uC9C0 \uB514\uBC84\uD504"
   <Type>k__BackingField: 1

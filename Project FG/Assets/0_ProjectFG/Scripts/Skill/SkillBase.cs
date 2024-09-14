@@ -64,10 +64,7 @@ namespace JH
             m_isActive = true;
             ActiveEvent?.Invoke();
 
-            // 길이가 0이면 즉시 발동
-            if (m_duration <= 0)
-                return;
-
+  
             // 스킬 루틴 시작
             if (m_skillRoutine != null)
                 StopCoroutine(m_skillRoutine);
@@ -90,14 +87,29 @@ namespace JH
 
 
         // 스킬 지속시간동안 이뤄지는 루틴
-        public IEnumerator SkillRoutine(float duration)
+        protected virtual IEnumerator SkillRoutine(float duration = 0)
         {
             float timer = 0;
+
+            // 길이가 0이면 즉시 발동
+            if (m_duration == 0)
+            {
+                InactiveSkill();
+                yield break;
+            }
+            // 음수면 스킬을 계속 지속한다.
+            else if (m_duration < 0)
+            {
+                yield break;
+            }
+
+
             while (timer < duration)
             {
                 timer += Time.deltaTime;
                 yield return null;
             }
+
             InactiveSkill();
             yield break;
         }

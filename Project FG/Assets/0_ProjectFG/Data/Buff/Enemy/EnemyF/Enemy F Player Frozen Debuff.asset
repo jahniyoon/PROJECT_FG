@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9270db2c6909c428c8221ab8269766, type: 3}
   m_Name: Enemy F Player Frozen Debuff
   m_EditorClassIdentifier: 
-  m_buffID: 40005
+  m_buffID: 40105
   m_buffName: "\uB3D9\uACB0 \uC2A4\uD134"
   m_buffDescription: "\uB3D9\uACB0 \uC0C1\uD0DC\uC758 \uC2A4\uD134"
   <Type>k__BackingField: 2
