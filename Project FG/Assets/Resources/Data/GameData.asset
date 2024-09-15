@@ -656,7 +656,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 5,5
     - name: "60012     \uD478\uB4DC\uD30C\uC6CCB lv2"
@@ -683,7 +683,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 6,5.5
     - name: "60013     \uD478\uB4DC\uD30C\uC6CCB lv3"
@@ -710,7 +710,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 7,6
     - name: "60014     \uD478\uB4DC\uD30C\uC6CCB lv4"
@@ -737,7 +737,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 8,6.5
     - name: "60015     \uD478\uB4DC\uD30C\uC6CCB lv5"
@@ -764,7 +764,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 9,7
     - name: "60016     \uD478\uB4DC\uD30C\uC6CCB lv6"
@@ -791,7 +791,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 15,7.5
     - name: "60017     \uD478\uB4DC\uD30C\uC6CCB lv7"
@@ -818,7 +818,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 17,8
     - name: "60018     \uD478\uB4DC\uD30C\uC6CCB lv8"
@@ -845,7 +845,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 19,8.5
     - name: "60019     \uD478\uB4DC\uD30C\uC6CCB lv9"
@@ -872,7 +872,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 21,9
     - name: "60020     \uD478\uB4DC\uD30C\uC6CCC lv1"
@@ -1628,7 +1628,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 10
     - name: "60048     \uD478\uB4DC\uD30C\uC6CCF lv2"
@@ -1655,9 +1655,9 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 0
+        Value: 15
     - name: "60049     \uD478\uB4DC\uD30C\uC6CCF lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1682,7 +1682,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 20
     - name: "60050     \uD478\uB4DC\uD30C\uC6CCF lv4"
@@ -1709,7 +1709,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 25
     - name: "60051     \uD478\uB4DC\uD30C\uC6CCF lv5"
@@ -1736,7 +1736,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 30
     - name: "60052     \uD478\uB4DC\uD30C\uC6CCF lv6"
@@ -1763,7 +1763,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 35
     - name: "60053     \uD478\uB4DC\uD30C\uC6CCF lv7"
@@ -1790,7 +1790,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 40
     - name: "60054     \uD478\uB4DC\uD30C\uC6CCF lv8"
@@ -1817,7 +1817,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 45
     - name: "60055     \uD478\uB4DC\uD30C\uC6CCF lv9"
@@ -1844,7 +1844,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
+        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 50
     - name: "60056     \uD478\uB4DC\uD30C\uC6CCG lv1"

@@ -80,14 +80,11 @@ namespace JH
                         case "사거리내 랜덤한 적":
                             AimType = FoodPowerAimType.RandomEnemyDirection;
                             break;
-                        case "피격 시":
-                            AimType = FoodPowerAimType.Hit;
-                            break;
-                        case "PC위치 소환":
+                        case "PC 위치":
                             AimType = FoodPowerAimType.PcPosition;
                             break;
-                        case "PC주변":
-                            AimType = FoodPowerAimType.PcRadius;
+                        case "PC위치 소환":
+                            AimType = FoodPowerAimType.PcPositionSummon;
                             break;
                     }
                 }
@@ -173,12 +170,10 @@ namespace JH
                     return "랜덤한 방향";
                 case FoodPowerAimType.RandomEnemyDirection:
                     return "사거리내 랜덤한 적";
-                case FoodPowerAimType.Hit:
-                    return "피격 시";
                 case FoodPowerAimType.PcPosition:
+                    return "PC 위치";
+                case FoodPowerAimType.PcPositionSummon:
                     return "PC위치 소환";
-                case FoodPowerAimType.PcRadius:
-                    return "PC주변";
             }
             return "Type Null";
         }

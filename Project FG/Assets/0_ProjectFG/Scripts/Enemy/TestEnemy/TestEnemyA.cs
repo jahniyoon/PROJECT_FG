@@ -53,7 +53,6 @@ namespace JH
                     }
                 }
             }
-            Debug.Log("때린다");
             if (m_attackEffect)
                 m_attackEffect.Play();
         }

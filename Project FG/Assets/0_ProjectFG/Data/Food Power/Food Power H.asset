@@ -27,7 +27,7 @@ MonoBehaviour:
     Radius: 3
     Duration: 10
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv2"
@@ -39,7 +39,7 @@ MonoBehaviour:
     Radius: 5
     Duration: 12
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv3"
@@ -51,7 +51,7 @@ MonoBehaviour:
     Radius: 7
     Duration: 14
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv4"
@@ -63,7 +63,7 @@ MonoBehaviour:
     Radius: 9
     Duration: 16
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv5"
@@ -75,7 +75,7 @@ MonoBehaviour:
     Radius: 11
     Duration: 18
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv6"
@@ -87,7 +87,7 @@ MonoBehaviour:
     Radius: 13
     Duration: 20
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv7"
@@ -99,7 +99,7 @@ MonoBehaviour:
     Radius: 15
     Duration: 25
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv8"
@@ -111,7 +111,7 @@ MonoBehaviour:
     Radius: 17
     Duration: 30
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv9"
@@ -123,7 +123,7 @@ MonoBehaviour:
     Radius: 19
     Duration: 40
     Count: 1
-    AimType: 6
+    AimType: 7
     AdditionalValues:
     - 0
   <TargetNearestScanRadius>k__BackingField: 10
