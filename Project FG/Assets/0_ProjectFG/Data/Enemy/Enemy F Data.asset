@@ -35,6 +35,9 @@ MonoBehaviour:
   <SkillTickDamage>k__BackingField: 5
   <SkillTickDuration>k__BackingField: 1
   <SkillAreaRadius>k__BackingField: 5
-  <FrozenDebuff>k__BackingField: {fileID: 0}
-  <SlowDebuff>k__BackingField: {fileID: 0}
-  <DotDamageBuff>k__BackingField: {fileID: 0}
+  <FrozenDebuff>k__BackingField: {fileID: 11400000, guid: 993b9c6e8a7289241a5c8cfc46c2aa29,
+    type: 2}
+  <SlowDebuff>k__BackingField: {fileID: 11400000, guid: 2747bb0794d7e514cb0161e6644548d5,
+    type: 2}
+  <DotDamageBuff>k__BackingField: {fileID: 11400000, guid: dd8c7c96443b9164ea3ccac8bcf12b47,
+    type: 2}
