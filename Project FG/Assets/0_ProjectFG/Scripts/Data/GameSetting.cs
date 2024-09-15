@@ -37,7 +37,7 @@ namespace JH
         [field: SerializeField] public float PlayerMoveSpeed { get; private set; }   // 플레이어 이동속도
         [field: Tooltip("플레이어의 회전 속도")]
         [field: SerializeField] public float PlayerRotateSpeed { get; private set; }   // 플레이어 회전속도
-        
+
         [field: Header("플레이어 공격")]
         [field: Tooltip("플레이어의 기본 공격 데미지")]
         [field: SerializeField] public float PlayerAttackDamage { get; private set; }   // 플레이어 공격력
@@ -48,7 +48,7 @@ namespace JH
 
         [field: Header("플레이어 포식")]
         [field: Tooltip("플레이어 포식 회복")]
-        [field: SerializeField] public float PredationRestoreHealth{ get; private set; }
+        [field: SerializeField] public float PredationRestoreHealth { get; private set; }
         [field: Tooltip("플레이어 기준 검사 범위")]
         [field: SerializeField] public float PredationPlayerRange { get; private set; }
         [field: Tooltip("마우스 조준 기준 검사 범위")]
@@ -90,6 +90,7 @@ namespace JH
 
     public enum FoodPowerAimType
     {
+        None,
         MoveDirection,      //  이동 방향
         TargetNearest,      // 가까운 타겟 방향
         PointerDirection,   // 포인터 방향
@@ -99,6 +100,5 @@ namespace JH
         PcPosition,             // PC 위치에 소환
         PcRadius                // PC 주변
 
-            
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50c15d73df3ee145a6080d8b19c632b, type: 3}
+  m_Name: Food Power D Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30004
+  <SkillName>k__BackingField: 
+  <Description>k__BackingField: 
+  <SkillDuration>k__BackingField: 0
+  <SkillCoolDown>k__BackingField: 0
+  <Target>k__BackingField: 0
+  <GrenadePrefab>k__BackingField: {fileID: 9173310347936448537, guid: 0dff3e6faa677244b9f068499163bd03,
+    type: 3}

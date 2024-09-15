@@ -47,4 +47,4 @@ MonoBehaviour:
   m_data: {fileID: 11400000, guid: e04f0fc1b698cb946912b58053268a33, type: 2}
   m_powerLevel: 0
   m_coolDownTimer: 0
-  m_slashSkill: {fileID: 0}
+  m_skill: {fileID: 603099643357149795, guid: 9e14bdae6614f61408502433b54525cb, type: 3}

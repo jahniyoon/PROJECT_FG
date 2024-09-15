@@ -33,10 +33,13 @@ namespace JH
 
         public FoodPowerLevelData GetLevelData(int level)
         {
-            if (LevelDatas.Length < level)
+            if (LevelDatas.Length <= level)
             {
                 Debug.Log($"{Name}의 '{level}'번째 레벨데이터를 찾을 수 없습니다.");
-                return LevelDatas[LevelDatas.Length];
+                int nextLevel = LevelDatas.Length - 1;
+                if (nextLevel < 0)
+                    nextLevel = 0;
+                return LevelDatas[nextLevel];
             }
             return LevelDatas[level];
         }

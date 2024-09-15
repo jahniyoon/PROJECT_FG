@@ -1134,11 +1134,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
-        Value: 0
+        Value: 4
       - ColumnID: Radius
         Value: 4
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
@@ -1161,11 +1161,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 12
       - ColumnID: Range
-        Value: 0
+        Value: 5
       - ColumnID: Radius
         Value: 5
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 1
       - ColumnID: AimType
@@ -1188,11 +1188,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 15
       - ColumnID: Range
-        Value: 0
+        Value: 6
       - ColumnID: Radius
         Value: 6
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 2
       - ColumnID: AimType
@@ -1215,11 +1215,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 18
       - ColumnID: Range
-        Value: 0
+        Value: 7
       - ColumnID: Radius
         Value: 7
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 2
       - ColumnID: AimType
@@ -1242,11 +1242,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 21
       - ColumnID: Range
-        Value: 0
+        Value: 8
       - ColumnID: Radius
         Value: 8
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 2
       - ColumnID: AimType
@@ -1269,11 +1269,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 25
       - ColumnID: Range
-        Value: 0
+        Value: 8
       - ColumnID: Radius
         Value: 8
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -1296,11 +1296,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 25
       - ColumnID: Range
-        Value: 0
+        Value: 9
       - ColumnID: Radius
         Value: 9
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -1323,11 +1323,11 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
-        Value: 0
+        Value: 9
       - ColumnID: Radius
         Value: 9
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -1354,7 +1354,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 10
       - ColumnID: Duration
-        Value: 0
+        Value: 1
       - ColumnID: Count
         Value: 4
       - ColumnID: AimType

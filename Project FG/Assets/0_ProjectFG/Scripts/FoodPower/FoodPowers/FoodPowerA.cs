@@ -23,7 +23,7 @@ namespace JH
 
             var skill = Instantiate(m_slashSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
             skill.SkillInit(m_caster.gameObject, m_casterPosition);
-            skill.SetLevel(m_data.GetLevelData(m_powerLevel));
+            skill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
 
             skill.ActiveSkill();
         }

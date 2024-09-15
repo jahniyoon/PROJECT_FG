@@ -19,6 +19,7 @@ namespace JH
         private PlayerPredation m_predation;
         private PlayerAttack m_attack;
         private PlayerAim m_aim;
+        private PlayerHunger m_playerHunger;
         private BuffHandler m_buffHandler;
         private EffectHandler m_effectHandler;
 
@@ -52,6 +53,7 @@ namespace JH
             m_input = GetComponent<PlayerInput>();
             m_movement = GetComponent<PlayerMovement>();
             m_predation = GetComponent<PlayerPredation>();
+            m_playerHunger = GetComponent<PlayerHunger>();
             m_attack = GetComponent<PlayerAttack>();
             m_aim = GetComponent<PlayerAim>();
 
@@ -128,7 +130,10 @@ namespace JH
         {
             m_damageable.InvincibleMode();
         }
-
+        public void GetDefaultFoodPower()
+        {
+            m_playerHunger.AddDefaultPower();
+        }
 
         private bool IsFixedFrame()
         {

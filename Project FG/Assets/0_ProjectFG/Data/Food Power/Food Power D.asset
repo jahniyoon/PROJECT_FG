@@ -23,11 +23,11 @@ MonoBehaviour:
     ID: 60029
     CoolDown: 5
     Damage: 10
-    Range: 0
+    Range: 4
     Radius: 4
-    Duration: 0
+    Duration: 1
     Count: 1
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv2"
@@ -35,11 +35,11 @@ MonoBehaviour:
     ID: 60030
     CoolDown: 5
     Damage: 12
-    Range: 0
+    Range: 5
     Radius: 5
-    Duration: 0
+    Duration: 1
     Count: 1
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv3"
@@ -47,11 +47,11 @@ MonoBehaviour:
     ID: 60031
     CoolDown: 4
     Damage: 15
-    Range: 0
+    Range: 6
     Radius: 6
-    Duration: 0
+    Duration: 1
     Count: 2
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv4"
@@ -59,11 +59,11 @@ MonoBehaviour:
     ID: 60032
     CoolDown: 4
     Damage: 18
-    Range: 0
+    Range: 7
     Radius: 7
-    Duration: 0
+    Duration: 1
     Count: 2
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv5"
@@ -71,11 +71,11 @@ MonoBehaviour:
     ID: 60033
     CoolDown: 4
     Damage: 21
-    Range: 0
+    Range: 8
     Radius: 8
-    Duration: 0
+    Duration: 1
     Count: 2
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv6"
@@ -83,11 +83,11 @@ MonoBehaviour:
     ID: 60034
     CoolDown: 2
     Damage: 25
-    Range: 0
+    Range: 8
     Radius: 8
-    Duration: 0
+    Duration: 1
     Count: 3
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv7"
@@ -95,11 +95,11 @@ MonoBehaviour:
     ID: 60035
     CoolDown: 2
     Damage: 25
-    Range: 0
+    Range: 9
     Radius: 9
-    Duration: 0
+    Duration: 1
     Count: 3
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv8"
@@ -107,11 +107,11 @@ MonoBehaviour:
     ID: 60036
     CoolDown: 2
     Damage: 30
-    Range: 0
+    Range: 9
     Radius: 9
-    Duration: 0
+    Duration: 1
     Count: 3
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCD lv9"
@@ -121,9 +121,9 @@ MonoBehaviour:
     Damage: 40
     Range: 15
     Radius: 10
-    Duration: 0
+    Duration: 1
     Count: 4
-    AimType: 3
+    AimType: 4
     AdditionalValues:
     - 0
   <TargetNearestScanRadius>k__BackingField: 10

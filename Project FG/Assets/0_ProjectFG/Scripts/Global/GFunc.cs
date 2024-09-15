@@ -164,5 +164,59 @@ namespace JH
             }
             return gameData.GameData[ID].Data;
         }
+
+        public static Quaternion GetQuaternion(FoodPowerAimType AimType, Transform transform)
+        {
+  
+                Quaternion direction = Quaternion.identity;
+
+                switch (AimType)
+                {
+                    // 플레이어 방향
+                    case FoodPowerAimType.MoveDirection:
+                        return transform.localRotation;
+
+
+                    //// 가까운 타겟 방향
+                    //case FoodPowerAimType.TargetNearest:
+                    //    Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+
+                    //    // 타겟이 Null이 아닐 경우에만
+                    //    if (target != null)
+                    //        return Quaternion.LookRotation(target.position - m_casterPosition.position);
+
+                    //    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
+                    //    else if (target == null && m_data.AlwaysShoot)
+                    //        return m_casterPosition.rotation;
+
+                    //    break;
+
+                    // PC의 포지션
+                    case FoodPowerAimType.PcPosition:
+                        return direction;
+
+                    // 랜덤한 방향
+                    case FoodPowerAimType.RandomDirection:
+                        Vector3 randomDir = direction.eulerAngles;
+                        randomDir.y = Random.Range(0, 360);
+                        direction.eulerAngles = randomDir;
+                        return direction;
+
+                    //// 랜덤한 적 방향
+                    //case FoodPowerAimType.RandomEnemyDirection:
+                    //    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+
+                    //    // 타겟이 Null이 아닐 경우에만
+                    //    if (randomTarget != null)
+                    //        return Quaternion.LookRotation(randomTarget.position - transform.position);
+
+                    //    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
+                    //    else if (randomTarget == null)
+                    //        return transform.rotation;
+                    //    break;
+                }
+
+                return direction;
+        }
     }
 }

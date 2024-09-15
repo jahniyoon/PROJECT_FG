@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Food Power B Skill", menuName = "ScriptableObjects/Skill/Food Power/Food Power B Skill")]
+    [CreateAssetMenu(fileName = "Food Power B Skill", menuName = "ScriptableObjects/Skill/Food Power/Food Power B Skill", order = 2)]
 
     public class FoodPowerBSkillData : SkillData
 	{
