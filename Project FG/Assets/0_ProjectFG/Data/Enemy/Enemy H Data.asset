@@ -18,7 +18,7 @@ MonoBehaviour:
   <Health>k__BackingField: 100
   <MoveSpeed>k__BackingField: 5
   <RotateSpeed>k__BackingField: 10
-  <Damage>k__BackingField: 0
+  <Damage>k__BackingField: 50
   <AttackRange>k__BackingField: 1.5
   <EscapeRange>k__BackingField: 0
   <PredationHealthRatio>k__BackingField: 40
