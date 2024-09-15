@@ -25,9 +25,12 @@ namespace JH
 
         public override void Inactive()
         {
-            base.Inactive();
             if (m_activeSkill)
+            {
                 m_activeSkill.InactiveSkill();
+                Destroy(m_activeSkill.gameObject);
+            }
+            base.Inactive();
         }
 
         public override void Active()

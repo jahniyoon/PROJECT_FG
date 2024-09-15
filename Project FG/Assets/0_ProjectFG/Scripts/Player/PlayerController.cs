@@ -132,6 +132,8 @@ namespace JH
         }
         public void GetDefaultFoodPower()
         {
+            if (m_playerState == FSMState.Freeze || m_playerState == FSMState.Die)
+                return;
             m_playerHunger.AddDefaultPower();
         }
 

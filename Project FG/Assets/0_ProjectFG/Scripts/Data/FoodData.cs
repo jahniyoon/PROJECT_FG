@@ -35,7 +35,7 @@ namespace JH
         {
             if (LevelDatas.Length <= level)
             {
-                Debug.Log($"{Name}의 '{level}'번째 레벨데이터를 찾을 수 없습니다.");
+                Debug.Log($"{Name}의 '{level+1}'번째 레벨데이터를 찾을 수 없습니다.");
                 int nextLevel = LevelDatas.Length - 1;
                 if (nextLevel < 0)
                     nextLevel = 0;

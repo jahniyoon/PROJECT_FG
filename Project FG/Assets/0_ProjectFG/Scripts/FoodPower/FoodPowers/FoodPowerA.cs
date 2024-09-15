@@ -12,6 +12,7 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_slashSkill;
+        private FoodPowerSkill m_activeSkill;
 
 
 
@@ -21,12 +22,20 @@ namespace JH
 
             Quaternion direction = GetDirection();
 
-            var skill = Instantiate(m_slashSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
-            skill.SkillInit(m_caster.gameObject, m_casterPosition);
-            skill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
+            m_activeSkill = Instantiate(m_slashSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
+            m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
+            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
 
-            skill.ActiveSkill();
+            m_activeSkill.ActiveSkill();
         }
-
+        public override void Inactive()
+        {
+            if (m_activeSkill)
+            {
+                m_activeSkill.InactiveSkill();
+                Destroy(m_activeSkill.gameObject);
+            }
+            base.Inactive();
+        }
     }
 }

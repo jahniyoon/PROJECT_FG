@@ -54,6 +54,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     public bool CanPredation => m_canPredation;
 
     public FSMState State => m_state;
+    public int ID => m_data.ID;
     public Transform Transform => this.transform;
 
     #region Lifecycle

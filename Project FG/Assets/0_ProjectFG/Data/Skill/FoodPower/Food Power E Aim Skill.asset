@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Food Power E Aim Skill
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 30005
-  <SkillName>k__BackingField: 
+  <SkillName>k__BackingField: "\uC870\uC900"
   <Description>k__BackingField: 
   <SkillDuration>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 0
