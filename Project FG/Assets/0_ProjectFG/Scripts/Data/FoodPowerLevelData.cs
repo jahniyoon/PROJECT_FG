@@ -29,7 +29,7 @@ namespace JH
         }
         public float GetAdditionalValue(int num)
         {
-            if (AdditionalValues.Length < num + 1)
+            if (AdditionalValues.Length < num)
             {
                 Debug.Log($"{Name}의 '{num}'번째 값을 찾을 수 없습니다.");
                 return 0;

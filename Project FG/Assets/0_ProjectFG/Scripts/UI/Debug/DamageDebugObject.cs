@@ -9,6 +9,7 @@ namespace JH
     {
         private TMP_Text m_textMeshPro;
         private RectTransform m_rectTransform;
+        private Transform m_target;
 
         [SerializeField] private RectTransform CanvasRect;
 
@@ -17,6 +18,12 @@ namespace JH
             m_textMeshPro = GetComponentInChildren<TMP_Text>();
             m_rectTransform = GetComponent<RectTransform>();
             CanvasRect = transform.root.GetComponent<RectTransform>();
+        }
+
+        private void Update()
+        {
+            if (m_target != null)
+                SetPosition(m_target.position);
         }
         public void SetPosition(Vector3 position)
         {
@@ -27,12 +34,12 @@ namespace JH
 
             m_rectTransform.anchoredPosition = WordObjectToScreenPosition;
         }
-        public void OnDamage(float value, float duration, Vector3 position)
+        public void OnDamage(float value, float duration, Transform position)
         {
             if (m_textMeshPro == null)
                 return;
 
-            SetPosition(position);
+            m_target = position;
             m_textMeshPro.text = value.ToString();
 
             Invoke(nameof(DamageEnd), duration);

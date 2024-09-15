@@ -48,13 +48,24 @@ namespace JH
         {
             m_targetResearchTime = 0;
         }
+
+        private Vector3 aimScale = Vector3.one;
         private void UpdateAimTargetLine()
         {
             m_aimEffect.gameObject.SetActive(m_target != null);
 
             if (m_target == null)
                 return;
-           
+
+            Quaternion rotation = Quaternion.identity;
+
+            m_aimEffect.transform.localRotation = rotation;
+
+
+            float Distance = Vector3.Distance(transform.position, m_target.position);
+            aimScale.z = Distance;
+            m_aimEffect.transform.localScale = aimScale;
+
 
         }
 

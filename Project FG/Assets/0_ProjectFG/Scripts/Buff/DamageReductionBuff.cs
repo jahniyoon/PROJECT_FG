@@ -21,13 +21,17 @@ namespace JH
         {
             base.ActiveBuff(handler);
             if(handler.TryGetComponent<Damageable>(out Damageable damageable))
+            {
                 damageable.SetDamageReduction(m_damageReduction);
+            }
         }
         public override void InactiveBuff(BuffHandler handler)
         {
             base.InactiveBuff(handler);
             if (handler.TryGetComponent<Damageable>(out Damageable damageable))
+            {
                 damageable.SetDamageReduction(m_damageReduction * -1);
+            }
         }
      
     }

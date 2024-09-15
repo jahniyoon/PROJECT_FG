@@ -14,6 +14,7 @@ namespace JH
         public int m_poolCount;
         public float m_duration;
         public DamageDebugObject[] m_damageList;
+        Transform m_target;
 
         private void Awake()
         {
@@ -31,9 +32,8 @@ namespace JH
             }
         }
 
-        public void OnDamage(float value, Vector3 position)
+        public void OnDamage(float value, Transform position)
         {
-
             m_damageList[curCount].gameObject.SetActive(true);
             m_damageList[curCount].OnDamage(value, m_duration, position);
 

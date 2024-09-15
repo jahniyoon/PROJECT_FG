@@ -22,4 +22,4 @@ MonoBehaviour:
   m_activeStack: 5
   m_stackUpTime: 1
   m_decreaseTime: 0.2
-  m_stunDuration: 2
+  m_stunDuration: 1

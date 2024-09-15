@@ -24,7 +24,7 @@ namespace JH
         public float Health => m_health;
 
         public bool IsDie => m_isDie;
-        public float DamageReduction;
+        public float DamageReduction=> m_damageReduction;
 
         public void SetMaxHealth(float maxHealth)
         {
@@ -58,7 +58,7 @@ namespace JH
             if(m_invincible == false)
             m_health -= FinalDamage(damage);
 
-            UIManager.Instance.Debug.OnDamage(damage, transform.position);
+            UIManager.Instance.Debug.OnDamage(FinalDamage(damage), transform);
             if (m_health <= 0)
             {
                 Die();

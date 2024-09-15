@@ -13,7 +13,7 @@ namespace JH
         [SerializeField] private DamageDebugController m_damageDebugController;
         private int m_killCount = 0;
 
-        public void OnDamage(float damage, Vector3 position)
+        public void OnDamage(float damage, Transform position)
         {
             m_damageDebugController.OnDamage(damage, position);
         }
