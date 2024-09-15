@@ -162,6 +162,16 @@ namespace JH
 
             List<GSTU_Data> gstuDatas = gameData.GameData[data.ID].Data;
             data.UpdateData(gstuDatas);
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(data); // 데이터가 변경되었음을 알림
+
+            // 저장 (에디터에서만 동작)
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+#else
+    Debug.LogError("SaveData는 에디터에서만 사용할 수 있습니다.");
+#endif
         }
         // 데이터 내보내기
         public void ExportData()

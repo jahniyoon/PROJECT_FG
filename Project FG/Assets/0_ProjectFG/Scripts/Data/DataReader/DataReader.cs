@@ -134,6 +134,15 @@ namespace JH
             {
                 UpdateSheets(UpdateAllMethod, sheet);
             }
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(data); // 데이터가 변경되었음을 알림
+
+            // 저장 (에디터에서만 동작)
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+#else
+    Debug.LogError("SaveData는 에디터에서만 사용할 수 있습니다.");
+#endif
         }
         void UpdateSheets(UnityAction<GstuSpreadSheet> callback, string sheet, bool mergedCells = false)
         {

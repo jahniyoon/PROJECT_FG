@@ -16,11 +16,11 @@ MonoBehaviour:
   <Name>k__BackingField: Test Enemy D
   <Description>k__BackingField: "\uB3C4\uB11B \uD22C\uC0AC\uCCB4\uD615"
   <Health>k__BackingField: 150
-  <MoveSpeed>k__BackingField: 7.5
+  <MoveSpeed>k__BackingField: 4
   <RotateSpeed>k__BackingField: 10
   <Damage>k__BackingField: 10
   <AttackRange>k__BackingField: 10
-  <EscapeRange>k__BackingField: 3
+  <EscapeRange>k__BackingField: 5
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5,

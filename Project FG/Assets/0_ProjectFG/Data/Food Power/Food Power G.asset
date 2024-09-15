@@ -25,9 +25,9 @@ MonoBehaviour:
     Damage: 15
     Range: 0
     Radius: 3
-    Duration: 1.3
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv2"
@@ -37,9 +37,9 @@ MonoBehaviour:
     Damage: 16
     Range: 0
     Radius: 4
-    Duration: 1.5
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv3"
@@ -49,9 +49,9 @@ MonoBehaviour:
     Damage: 17
     Range: 0
     Radius: 5
-    Duration: 1.7
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv4"
@@ -61,9 +61,9 @@ MonoBehaviour:
     Damage: 18
     Range: 0
     Radius: 6
-    Duration: 1.9
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv5"
@@ -73,9 +73,9 @@ MonoBehaviour:
     Damage: 19
     Range: 0
     Radius: 7
-    Duration: 2.1
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv6"
@@ -85,9 +85,9 @@ MonoBehaviour:
     Damage: 20
     Range: 0
     Radius: 8
-    Duration: 2.3
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv7"
@@ -97,9 +97,9 @@ MonoBehaviour:
     Damage: 22
     Range: 0
     Radius: 9
-    Duration: 2.5
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv8"
@@ -109,9 +109,9 @@ MonoBehaviour:
     Damage: 24
     Range: 0
     Radius: 10
-    Duration: 2.7
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv9"
@@ -121,9 +121,9 @@ MonoBehaviour:
     Damage: 26
     Range: 0
     Radius: 11
-    Duration: 2.9
+    Duration: -1
     Count: 1
-    AimType: 7
+    AimType: 6
     AdditionalValues:
     - 0
   <TargetNearestScanRadius>k__BackingField: 10
