@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7009e6d6f87e32e48a6edb521fa6999e, type: 3}
-  m_Name: Food Power F Skill
+  m_Script: {fileID: 11500000, guid: d371af24d3c01a9409227526d3944916, type: 3}
+  m_Name: Food Power H Land Mine Skill
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 30006
-  <SkillName>k__BackingField: "\uC2AC\uB85C\uC6B0 \uB514\uBC84\uD504"
-  <Description>k__BackingField: 
+  <ID>k__BackingField: 30008
+  <SkillName>k__BackingField: "\uC9C0\uB8B0"
+  <Description>k__BackingField: "\uC9C0\uB8B0\uB97C \uAE50\uB2E4."
   <SkillDuration>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 0
   <Target>k__BackingField: 0
-  <SlowDebuff>k__BackingField: {fileID: 11400000, guid: 57a0a5117e66bb24083c6a3545555180,
-    type: 2}

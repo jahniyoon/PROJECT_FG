@@ -87,12 +87,7 @@ namespace JH
 
  
 
-        void OnDrawGizmosSelected()
-        {
-            Gizmos.color = new Color(1, 0, 0, 0.5f);
-            Gizmos.DrawSphere(transform.position, 1);
-            //   Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_attackOffset, m_attackRadius);
-        }
+
 
         private void OnTriggerEnter(Collider other)
         {
@@ -104,7 +99,12 @@ namespace JH
                 Explosion();
             }
         }
-
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = new Color(1, 0, 0, 0.5f);
+            Gizmos.DrawSphere(transform.position, 1);
+            //   Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_attackOffset, m_attackRadius);
+        }
     }
 
 }
