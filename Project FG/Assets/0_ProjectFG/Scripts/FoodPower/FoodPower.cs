@@ -15,6 +15,7 @@ namespace JH
         [Header("Food Power")]
         [SerializeField] protected int m_powerLevel;
         [SerializeField] private float m_coolDownTimer;
+        [SerializeField] protected bool m_mainPower;
 
         protected GameObject m_caster;
         protected Transform m_casterPosition;
@@ -28,6 +29,7 @@ namespace JH
         public Sprite Icon => m_data.Icon;
         public float CoolDown => m_data.GetLevelData(m_powerLevel).CoolDown;
         public float Timer => m_coolDownTimer;
+        public bool Main => m_mainPower;
         public int ID => m_data.ID;
 
         private void Awake()
@@ -35,7 +37,7 @@ namespace JH
             Init();
         }
 
-        public virtual void Init()
+        public virtual void Init(bool isMain = false)
         {
             if (m_data == null)
                 return;
@@ -43,7 +45,10 @@ namespace JH
             SetLevel(0);
             m_coolDownTimer = 0;
         }
-
+        public void SetMain(bool enable = true)
+        {
+            m_mainPower = enable;
+        }
         public virtual void SetCaster(GameObject caster, Transform casterPosition, Transform aim)
         {
             m_caster = caster;
@@ -225,6 +230,7 @@ namespace JH
                 StopCoroutine(foodRoutine);
                 foodRoutine = null;
             }
+            Inactive();
             isActive = false;
         }
 

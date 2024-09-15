@@ -60,8 +60,8 @@ namespace JH
         {
             // 푸드파워 깊은 복사 이후에 초기화
             FoodPower newPower = Instantiate(foodPower.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
-            string PowerName = hunger == 0 ? $"Default : {foodPower.name} {foodPowers.Count}" : 
-                $"{foodPower.name} {foodPowers.Count}" ;
+            string PowerName = hunger == 0 ? $"Default : {foodPower.name} {foodPowers.Count}" :
+                $"{foodPower.name} {foodPowers.Count}";
 
             newPower.gameObject.name = PowerName;
             newPower.Init();
@@ -77,7 +77,7 @@ namespace JH
                 UIManager.Instance.MainUI.FoodPowerUI.AddFoodPower(newPower.Icon);
             UIManager.Instance.MainUI.HungerUI.SetSlider(m_maxHunger, m_curHunger);
 
-            bool canStart = false;
+            bool cantStart = false;
 
             // 맥스 값에 도달하면 포만도 소모기 발동
             if (m_maxHunger <= m_curHunger)
@@ -88,7 +88,7 @@ namespace JH
 
                 // 딜레이 뒤에 실행한다.
                 Invoke(nameof(HungerSkill), m_player.Setting.HungerSkillDelay);
-                canStart = true;
+                cantStart = true;
             }
             else
             {
@@ -97,7 +97,7 @@ namespace JH
                     // 같은 푸드파워가 있다면 레벨 업
                     if (foodPowers[i].ID == foodPower.ID)
                     {
-                        canStart = true;
+                        cantStart = true;
                         foodPowers[i].LevelUp();
                         break;
                     }
@@ -106,11 +106,16 @@ namespace JH
             // 리스트에 추가한다.
             foodPowers.Add(newPower);
 
-            // 레벨업이 아닌경우에만 루틴을 시작
-            if (canStart == false)
-            StartFoodPowerRoutine();
 
-       
+            // 레벨업이 아닌경우에만 루틴을 시작
+            if (cantStart == false)
+            {
+                newPower.SetMain(true);
+                StartFoodPowerRoutine();
+
+            }
+
+
         }
 
 
@@ -189,15 +194,33 @@ namespace JH
         {
             if (foodPowers.Count == 0)
                 return;
+            SetFoodPowerRoutine();
 
+            //if (m_foodPowerRoutine != null)
+            //{
+            //    StopCoroutine(m_foodPowerRoutine);
+            //    m_foodPowerRoutine = null;
+            //}
 
-            if (m_foodPowerRoutine != null)
+            //m_foodPowerRoutine = StartCoroutine(FoodPowerRoutine());
+        }
+
+        private void SetFoodPowerRoutine()
+        {
+            // 먼저 루틴을 모두 꺼준다.
+            for (int i = 0; i < foodPowers.Count; i++)
             {
-                StopCoroutine(m_foodPowerRoutine);
-                m_foodPowerRoutine = null;
+                foodPowers[i].StopFoodPowerRoutine();
             }
 
-            m_foodPowerRoutine = StartCoroutine(FoodPowerRoutine());
+
+            for (int i = 0; i < foodPowers.Count; i++)
+            {
+
+                if (foodPowers[i].Main)
+                    foodPowers[i].StartFoodPowerRoutine();
+
+            }
         }
 
         // 푸드파워 루틴을 딜레이를 주며 시작시킨다.

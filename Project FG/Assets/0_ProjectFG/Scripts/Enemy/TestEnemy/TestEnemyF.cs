@@ -31,7 +31,6 @@ namespace JH
             m_frozenSkill = Instantiate(m_subData.FrozenSkill, transform).GetComponent<SkillBase>();
             m_frozenSkill.SkillInit(this.gameObject, m_model);
             m_frozenSkill.ActiveSkill();
-
         }
 
         protected override void Die()
