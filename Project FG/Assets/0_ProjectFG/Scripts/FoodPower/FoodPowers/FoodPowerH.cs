@@ -11,7 +11,7 @@ namespace JH
     public class FoodPowerH : FoodPower
     {
         [Header("Skill")]
-        [SerializeField] private FoodPowerSkill m_slashSkill;
+        [SerializeField] private FoodPowerSkill m_skill;
 
 
 
@@ -20,8 +20,9 @@ namespace JH
             Vector3 position = m_casterPosition.position;
 
             Quaternion direction = GetDirection();
+            
 
-            var skill = Instantiate(m_slashSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
+            var skill = Instantiate(m_skill.gameObject, position, direction, GameManager.Instance.ProjectileParent).GetComponent<FoodPowerSkill>();
             skill.SkillInit(m_caster.gameObject, m_casterPosition);
             skill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
 
