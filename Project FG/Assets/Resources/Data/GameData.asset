@@ -685,7 +685,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 15.5
+        Value: 15,5
     - name: "60013     \uD478\uB4DC\uD30C\uC6CCB lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -739,7 +739,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 25.5
+        Value: 25,5
     - name: "60015     \uD478\uB4DC\uD30C\uC6CCB lv5"
       SheetID: FOOD POWER LEVEL
       Data:
