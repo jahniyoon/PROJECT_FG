@@ -108,8 +108,10 @@ namespace JH
 
         protected override void AttackStateStay()
         {
-            if(m_subData.AttackSpeed < m_attackTimer && CanAttackCheck())
+
+            if (m_subData.AttackSpeed < m_attackTimer && CanAttackCheck())
             {
+
                 // 공격 속도 타이머와 쿨타임 초기화
                 m_attackTimer = 0;
                 m_attackCoolDown = m_subData.AttackCoolDown;

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c64a4532f250f41aab7cf527007086, type: 3}
+  m_Name: Food Power F Slow Debuff
+  m_EditorClassIdentifier: 
+  m_buffID: 40002
+  m_buffName: "\uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C"
+  m_buffDescription: "\uC774\uB3D9\uC18D\uB3C4 \uAC10\uC18C \uB514\uBC84\uD504"
+  <Type>k__BackingField: 3
+  m_buffDuration: 0
+  m_isOneAndOnlyBuff: 1
+  m_Priority: 5
+  m_activeStack: 0
+  m_stackUpTime: 0
+  m_decreaseTime: 0
+  m_moveSpeedValue: 50

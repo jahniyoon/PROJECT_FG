@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Food Power F Skill
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 30006
-  <SkillName>k__BackingField: 
+  <SkillName>k__BackingField: "\uC2AC\uB85C\uC6B0 \uB514\uBC84\uD504"
   <Description>k__BackingField: 
   <SkillDuration>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 0
   <Target>k__BackingField: 0
+  <SlowDebuff>k__BackingField: {fileID: 11400000, guid: 57a0a5117e66bb24083c6a3545555180,
+    type: 2}

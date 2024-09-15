@@ -8,6 +8,7 @@ namespace JH
     [System.Serializable]
     public class BuffElement
     {
+        public int ID;
         public int Stack = 1;
         public float Timer = 0;
         public bool isActive = false;

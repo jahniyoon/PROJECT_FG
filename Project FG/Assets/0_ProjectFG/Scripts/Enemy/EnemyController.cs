@@ -173,6 +173,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     public void SetSlowSpeed(float value)
     {
         m_slowDebuff += value;
+        m_agent.speed = FinalSpeed(m_data.MoveSpeed);
     }
 
     protected virtual void SetTarget(Transform target)
@@ -264,7 +265,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     protected virtual void OnDamage()
     {
-        ResetAttackTimer();
+        //ResetAttackTimer();
         if (m_is2D == false)
             m_hitEffect.Hit();
     }
@@ -307,6 +308,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     protected void ResetAttackTimer()
     {
+        if (m_data.IgnoreAttack)
+            return;
         m_attackTimer = 0;
     }
 

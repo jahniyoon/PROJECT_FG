@@ -46,7 +46,7 @@ namespace JH
                 var buff = m_subData.DamageReductionBuff as DamageReductionBuff;
                 // TODO : SO를 셋 벨류하면 안됨 꼭 고쳐야함
                 buff.SetValue(m_levelData.GetAdditionalValue(0));
-                buffHandler.OnBuff(Caster, m_subData.DamageReductionBuff);
+                buffHandler.OnBuff(Caster, buff);
             }
 
             // 넉백 이벤트 연결

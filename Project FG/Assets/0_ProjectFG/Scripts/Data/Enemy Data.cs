@@ -46,6 +46,8 @@ namespace JH
         [field: SerializeField] public float PredationStunCoolDown { get; private set; }
         [field: SerializeField] public BuffBase PredationStun { get; private set; }
 
+        [field: Header("피격 무시")]
+        [field: SerializeField] public bool IgnoreAttack { get; private set; }
 
         [field: Header("푸드 파워")]
         [field: SerializeField] public FoodPower FoodPower { get; private set; }

@@ -85,6 +85,7 @@ namespace JH
         private void AddBuff(int casterID, BuffBase buff)
         {
             BuffElement newBuff = new BuffElement();
+            newBuff.ID = casterID;
             newBuff.Buff = buff;
             newBuff.isBuff = true;
 
@@ -111,7 +112,6 @@ namespace JH
                 // 제거를 하고나면 버프를 체크한다.
                 BuffCheck(buff, casterID);
             }
-            Debug.Log("꺼진다");
 
             RemoveBuffEvent?.Invoke();
         }
@@ -224,12 +224,16 @@ namespace JH
                         while (0 < buffElement.Timer)
                         {
                             yield return WaitForFixedUpdate;
+                            // 이전의 픽스드 업데이트에서 버프를 못넣었다는 의미
+                            if (buffElement.isBuff == false)
+                                break;
                             buffElement.UpdateTimer();
 
                         }
 
                         break;
                     }
+                    // 부착형
                 case BuffType.Attachment:
                     {
                         ActiveBuff(buffElement);

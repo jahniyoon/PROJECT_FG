@@ -169,6 +169,8 @@ namespace JH
             // 모두 리스트에서 지우고 삭제
             foreach (FoodPower power in foodPowers)
             {
+                // 파워도 꺼야함
+                power.Inactive();
                 Destroy(power.gameObject);
             }
 

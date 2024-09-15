@@ -25,10 +25,11 @@ MonoBehaviour:
   <PredationStunCoolDown>k__BackingField: 0
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5,
     type: 2}
+  <IgnoreAttack>k__BackingField: 1
   <FoodPower>k__BackingField: {fileID: 5687485155441610432, guid: 219eaf871789d264a9028f2b62dd914b,
     type: 3}
   <AttackDamage>k__BackingField: 10
-  <AttackSpeed>k__BackingField: 1
+  <AttackSpeed>k__BackingField: 4
   <AttackCoolDown>k__BackingField: 3
   <AttackOffset>k__BackingField: 1
   <AttackRadius>k__BackingField: 1

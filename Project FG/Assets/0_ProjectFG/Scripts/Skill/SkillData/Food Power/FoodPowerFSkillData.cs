@@ -12,9 +12,11 @@ namespace JH
         [field: Header("Skill")]
 
         [field: SerializeField] public TargetTag Target { get; private set; }
+        [field: SerializeField] public BuffBase SlowDebuff { get; private set; }
 
 
-      
+
+
 
 
     }
