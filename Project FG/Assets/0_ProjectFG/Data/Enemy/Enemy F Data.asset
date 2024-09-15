@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 20006
   <Name>k__BackingField: Test Enemy F
-  <Description>k__BackingField: 
-  <Health>k__BackingField: 100
-  <MoveSpeed>k__BackingField: 7.5
+  <Description>k__BackingField: "\uB0C9\uAE30 \uC624\uB77C\uD615"
+  <Health>k__BackingField: 150
+  <MoveSpeed>k__BackingField: 4
   <RotateSpeed>k__BackingField: 10
-  <Damage>k__BackingField: 0
+  <Damage>k__BackingField: 7.5
   <AttackRange>k__BackingField: 1
   <EscapeRange>k__BackingField: 0
-  <PredationHealthRatio>k__BackingField: 40
+  <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5,
     type: 2}
@@ -32,7 +32,7 @@ MonoBehaviour:
     type: 3}
   <SkillEffect>k__BackingField: {fileID: 2500426658639734181, guid: 00fc8da280617354e8394592271b6a72,
     type: 3}
-  <SkillTickDamage>k__BackingField: 10
+  <SkillTickDamage>k__BackingField: 5
   <SkillTickDuration>k__BackingField: 1
   <SkillAreaRadius>k__BackingField: 5
   <FrozenDebuff>k__BackingField: {fileID: 11400000, guid: 993b9c6e8a7289241a5c8cfc46c2aa29,

@@ -22,4 +22,4 @@ MonoBehaviour:
   m_activeStack: 0
   m_stackUpTime: 0
   m_decreaseTime: 0
-  m_moveSpeedValue: 50
+  m_moveSpeedValue: 25
