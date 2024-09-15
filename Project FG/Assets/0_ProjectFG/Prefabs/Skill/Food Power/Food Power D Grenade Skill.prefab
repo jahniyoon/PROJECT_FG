@@ -151,8 +151,9 @@ MonoBehaviour:
     AimType: 0
     AdditionalValues:
     - 0
+  m_aimtype: 0
   m_range: {fileID: 9014453599299692588}
-  m_isRandomRadius: 0
+  m_isRandomRange: 1
 --- !u!1 &9014453599299692588
 GameObject:
   m_ObjectHideFlags: 0
