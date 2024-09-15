@@ -17,7 +17,7 @@ MonoBehaviour:
   m_buffDescription: "Enemy E\uC758 \uB3C4\uD2B8 \uB370\uBBF8\uC9C0 \uB514\uBC84\uD504"
   <Type>k__BackingField: 1
   m_buffDuration: 0
-  m_isOneAndOnlyBuff: 0
+  m_isOneAndOnlyBuff: 1
   m_Priority: 0
   m_activeStack: 1
   m_stackUpTime: 1
