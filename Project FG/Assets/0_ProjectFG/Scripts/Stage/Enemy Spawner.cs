@@ -25,7 +25,7 @@ namespace JH
 
         public void SetArea(Vector2 size)
         {
-            m_spawnArea = size * 0.5f;
+            m_spawnArea = size * 0.4f;
         }
 
         public void SpawnEnemy(int count)
