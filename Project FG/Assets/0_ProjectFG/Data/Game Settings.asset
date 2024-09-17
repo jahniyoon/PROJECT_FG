@@ -16,7 +16,7 @@ MonoBehaviour:
   <StageWidth>k__BackingField: 50
   <StageLength>k__BackingField: 50
   <StartEnemySpawnTime>k__BackingField: 1
-  <EnemySpawnInterval>k__BackingField: 10
+  <EnemySpawnInterval>k__BackingField: 35
   <EnemySpawnCount>k__BackingField: 1
   <PlayerMaxHealth>k__BackingField: 300
   <PlayerMoveSpeed>k__BackingField: 10
