@@ -16,7 +16,7 @@ MonoBehaviour:
   <Name>k__BackingField: Test Enemy B
   <Description>k__BackingField: "\uD0F1\uCEE4\uD615"
   <Health>k__BackingField: 200
-  <MoveSpeed>k__BackingField: 6
+  <MoveSpeed>k__BackingField: 3
   <RotateSpeed>k__BackingField: 10
   <Damage>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5

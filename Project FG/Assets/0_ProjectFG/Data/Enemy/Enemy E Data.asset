@@ -16,7 +16,7 @@ MonoBehaviour:
   <Name>k__BackingField: Test Enemy E
   <Description>k__BackingField: "\uC18D\uC0AC\uD3EC\uD615"
   <Health>k__BackingField: 150
-  <MoveSpeed>k__BackingField: 4
+  <MoveSpeed>k__BackingField: 1
   <RotateSpeed>k__BackingField: 10
   <Damage>k__BackingField: 5
   <AttackRange>k__BackingField: 10
@@ -28,7 +28,7 @@ MonoBehaviour:
   <IgnoreAttack>k__BackingField: 1
   <FoodPower>k__BackingField: {fileID: 3405992995521304662, guid: e71de6335ed65d041a98a871916a2ccd,
     type: 3}
-  <AimSpeed>k__BackingField: 2
+  <AimSpeed>k__BackingField: 4
   <AimAngle>k__BackingField: 45
   <OuterColor>k__BackingField: {r: 0.5019608, g: 0, b: 0.015686275, a: 0.60784316}
   <SliderColor>k__BackingField: {r: 1, g: 0, b: 0.08627451, a: 0.53333336}

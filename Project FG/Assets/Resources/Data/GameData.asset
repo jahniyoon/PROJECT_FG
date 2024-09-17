@@ -79,7 +79,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
-        Value: 4
+        Value: 1
       - ColumnID: AttackRange
         Value: 10
       - ColumnID: EscapeRange
