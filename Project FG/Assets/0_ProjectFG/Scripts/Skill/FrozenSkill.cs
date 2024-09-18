@@ -95,6 +95,22 @@ namespace JH
                 }
             }
         }
-       
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.isTrigger || IsActive == false)
+                return;
+
+            if (other.CompareTag(m_subData.Target.ToString()))
+            {
+                if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
+                {
+                    buff.RemoveBuff(Caster, m_subData.FrozenDebuff, true);
+
+                    buff.RemoveBuff(Caster, m_subData.SlowDebuff);
+                    buff.RemoveBuff(Caster, m_subData.DotDamageBuff);
+                }
+            }
+        }
+
     }
 }

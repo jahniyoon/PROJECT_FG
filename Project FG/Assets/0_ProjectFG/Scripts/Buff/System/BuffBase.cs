@@ -19,7 +19,7 @@ namespace JH
     {
         [SerializeField] protected int m_buffID; // 버프 InstanceID
         [SerializeField] protected string m_buffName; 
-        [SerializeField] [TextArea]protected string m_buffDescription; 
+        [SerializeField] [TextArea]protected string m_buffDescription;
         [field: Header("Buff Info")]
         [field: SerializeField] public BuffType Type { get; private set; } // 버프 지속시간
         [SerializeField] protected float m_buffDuration; // 버프 지속시간
@@ -75,7 +75,6 @@ namespace JH
         // 버프 활성화
         public virtual void ActiveBuff(BuffHandler handler)
         {
-
         }
 
         // 조건에 맞으면 활성화되는 버프

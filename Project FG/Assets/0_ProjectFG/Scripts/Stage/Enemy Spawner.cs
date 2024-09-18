@@ -13,8 +13,8 @@ namespace JH
         [SerializeField] private GameObject[] m_enemy;
 
         [Header("Spawn Info")]
-        [SerializeField] private Vector2 m_spawnArea;
-        [SerializeField] private int m_spawnCount = 0;
+        private Vector2 m_spawnArea;
+        [SerializeField] private int m_spawnCount = 1;
 
 
         private void Awake()

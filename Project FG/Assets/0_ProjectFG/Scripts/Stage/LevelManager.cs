@@ -53,7 +53,7 @@ namespace JH
             while (GameManager.Instance.IsGameOver == false)
             {            
                 // 시간 간격이 지나면 에네미 스폰 후 타이머 리셋
-                if(m_gameSettings.EnemySpawnInterval < timer && m_spawnEnable)
+                if(m_gameSettings.EnemySpawnInterval < timer && m_spawnEnable || Input.GetKeyDown(KeyCode.N))
                 {
                     m_enemySpawner.SpawnEnemy(m_gameSettings.EnemySpawnCount);
                     timer = 0;

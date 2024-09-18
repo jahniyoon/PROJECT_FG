@@ -218,5 +218,11 @@ namespace JH
 
                 return direction;
         }
+
+        public static int XORCombine(int x, int y)
+        {
+            return x ^ y;  // 비트 단위 XOR 연산
+        }
+
     }
 }
