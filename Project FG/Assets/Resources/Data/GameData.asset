@@ -33,7 +33,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
-        Value: 5
+        Value: 3
       - ColumnID: AttackRange
         Value: 1
       - ColumnID: EscapeRange
@@ -102,7 +102,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
-        Value: 4
+        Value: 1
       - ColumnID: AttackRange
         Value: 10
       - ColumnID: EscapeRange
@@ -125,7 +125,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
-        Value: 4
+        Value: 1
       - ColumnID: AttackRange
         Value: 10
       - ColumnID: EscapeRange
@@ -148,7 +148,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
-        Value: 4
+        Value: 1
       - ColumnID: AttackRange
         Value: 1
       - ColumnID: EscapeRange
@@ -192,11 +192,11 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC790\uD3ED\uD615"
       - ColumnID: Health
-        Value: 100
+        Value: 150
       - ColumnID: MoveSpeed
         Value: 5
       - ColumnID: AttackRange
-        Value: 1.5
+        Value: 1
       - ColumnID: EscapeRange
         Value: 0
       - ColumnID: Damage
@@ -380,7 +380,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -407,7 +407,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -434,7 +434,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -461,7 +461,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -488,7 +488,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -509,13 +509,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 0.6
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -536,13 +536,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -563,13 +563,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.1
+        Value: 0.4
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -590,13 +590,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.1
+        Value: 0.3
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -623,7 +623,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 1.5
+        Value: 3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
