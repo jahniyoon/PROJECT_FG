@@ -12,7 +12,6 @@ namespace JH
 
         private SphereCollider m_range;
         private Rigidbody m_rigidbody;
-        float m_dotDuration = 0;
 
         protected override void Init()
         {

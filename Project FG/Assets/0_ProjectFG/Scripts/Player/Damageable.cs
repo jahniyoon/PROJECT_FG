@@ -18,6 +18,7 @@ namespace JH
 
         public UnityEvent DamageEvent;
         public UnityEvent DieEvent;
+        public UnityEvent<Damageable> DieDamageableEvent;
         public UnityEvent UpdateHealthEvent;
     
     public float MaxHealth => m_maxHealth;
@@ -42,16 +43,16 @@ namespace JH
             if (m_maxHealth <= m_health)
                 return;
 
+            float beforeHealth = m_health;
 
-            float restore = addHealth;
             m_health += addHealth;
 
-            if (m_maxHealth <= m_health)
+            if (m_maxHealth < m_health)
             {
-                restore -= m_health - m_maxHealth;
                 m_health = m_maxHealth;
             }
-            UIManager.Instance.Debug.OnDamage(FinalDamage(restore), transform, true);
+
+            UIManager.Instance.Debug.OnDamage((m_health - beforeHealth), transform, true);
 
             UpdateHealthEvent?.Invoke();
 
@@ -87,12 +88,13 @@ namespace JH
         {
             if (IsDie)
                 return;
+            DieEvent?.Invoke();
+            DieDamageableEvent?.Invoke(this);
 
             m_health = 0;
             m_isDie = true;
 
             UpdateHealthEvent?.Invoke();
-            DieEvent?.Invoke();
         }
 
         public void InvincibleMode()

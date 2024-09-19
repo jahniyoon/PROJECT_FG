@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66f891893a162294d9b4f9964d061079, type: 3}
-  m_Name: Food Power G Skill
+  m_Name: Food Power G Soul Eater Skill
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 30007
-  <SkillName>k__BackingField: 
+  <SkillName>k__BackingField: "\uC601\uD63C \uD3EC\uC2DD"
   <Description>k__BackingField: 
   <SkillDuration>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 0

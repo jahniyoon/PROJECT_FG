@@ -280,11 +280,20 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         // 버프 모두 지워주기
         m_buffHandler.RemoveAllBuff();
 
+        transform.GetComponent<CapsuleCollider>().enabled = false;
+
+
         if (m_is2D == false)
             m_hitEffect.Die();
 
-        Destroy(gameObject, 1);
         UIManager.Instance.Debug.KillCountText(1);
+        Invoke(nameof(Dead), 1f);
+    }
+
+    private void Dead()
+    {
+        this.transform.position = this.transform.position + Vector3.up * 1000;
+        Destroy(gameObject, 1);
     }
 
     protected float TargetAngle()
