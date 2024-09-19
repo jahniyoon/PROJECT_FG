@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
 
 
 namespace JH
@@ -37,6 +38,7 @@ namespace JH
             {
                 Destroy(gameObject);
             }
+            Time.timeScale = 1;
 
             m_playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             m_levelManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
@@ -46,8 +48,9 @@ namespace JH
         }
 
         private LevelManager m_levelManager;
-        [SerializeField ] private PlayerController m_playerController;
+        [SerializeField] private PlayerController m_playerController;
         [SerializeField] private bool m_isGameOver = false;
+        private bool isPause;
 
         private Transform m_projectileParent;
 
@@ -68,7 +71,7 @@ namespace JH
 
         private void DebugHotKey()
         {
-            if(Input.GetKeyDown(KeyCode.F1))
+            if (Input.GetKeyDown(KeyCode.F1))
             {
                 PC.GodMode();
             }
@@ -93,19 +96,49 @@ namespace JH
 
             if (Input.GetKeyDown(KeyCode.F12))
             {
-                Time.timeScale = 1f;
+                Resume();
             }
 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Pause();
+            }
+
+        }
+
+        private void Pause()
+        {
+            float timescale = 1;
+
+            isPause = !isPause;
+
+            if (isPause)
+                timescale = 0;
+
+            Time.timeScale = timescale;
+            UIManager.Instance.SetPauseUI(isPause);
+        }
+        public void Resume()
+        {
+            Time.timeScale = 1;
+            isPause = false;
+            UIManager.Instance.SetPauseUI(isPause);
         }
 
         // 게임 오버 함수
         public void GameOver()
         {
             m_isGameOver = true;
-            Invoke(nameof(ResetScene), PC.Setting.ResetDuration);
+            UIManager.Instance.SetGameOverUI(m_isGameOver);
+
         }
 
-        private void ResetScene()
+        public void TitleScene()
+        {
+            SceneManager.LoadScene("Title Scene");
+        }
+
+        public void ResetScene()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

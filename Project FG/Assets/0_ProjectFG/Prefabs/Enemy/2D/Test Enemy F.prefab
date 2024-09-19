@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1808950164, guid: b5021d953b55d2b479e6cb0356aa033b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.13521993, g: 0.22674967, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -227,10 +227,12 @@ MonoBehaviour:
   DieEvent:
     m_PersistentCalls:
       m_Calls: []
+  DieDamageableEvent:
+    m_PersistentCalls:
+      m_Calls: []
   UpdateHealthEvent:
     m_PersistentCalls:
       m_Calls: []
-  DamageReduction: 0
 --- !u!114 &4418803824942618572
 MonoBehaviour:
   m_ObjectHideFlags: 0

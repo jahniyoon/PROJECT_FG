@@ -10,10 +10,12 @@ namespace JH
         [SerializeField] private SliderUI m_healthUI;
         [SerializeField] private SliderUI m_hungerUI;
         [SerializeField] private FoodPowerUI m_foodPowerUI;
+        [SerializeField] private FoodComboUI m_foodComboUI;
 
         public SliderUI HealthUI => m_healthUI;
         public SliderUI HungerUI => m_hungerUI;
         public FoodPowerUI FoodPowerUI => m_foodPowerUI;
+        public FoodComboUI FoodComboUI => m_foodComboUI;
 
     }
 

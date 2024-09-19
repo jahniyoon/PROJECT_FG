@@ -117,6 +117,7 @@ namespace JH
             m_animation.SetBool(AnimationID.isDie, true);
             // 버프 모두 지워주기
             m_buffHandler.RemoveAllBuff();
+            m_playerHunger.StopFoodPowerRoutine();
 
             GameManager.Instance.GameOver();
         }

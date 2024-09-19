@@ -20,12 +20,12 @@ namespace JH
         public UnityEvent DieEvent;
         public UnityEvent<Damageable> DieDamageableEvent;
         public UnityEvent UpdateHealthEvent;
-    
-    public float MaxHealth => m_maxHealth;
+
+        public float MaxHealth => m_maxHealth;
         public float Health => m_health;
 
         public bool IsDie => m_isDie;
-        public float DamageReduction=> m_damageReduction;
+        public float DamageReduction => m_damageReduction;
 
         public void SetMaxHealth(float maxHealth)
         {
@@ -57,17 +57,28 @@ namespace JH
             UpdateHealthEvent?.Invoke();
 
         }
-
-
         public void OnDamage(float damage)
+        {
+            OnDamage(damage, false);
+        }
+
+
+        public void OnDamage(float damage, bool Execution = false)
         {
             if (IsDie)
                 return;
 
-            if(m_invincible == false)
-            m_health -= FinalDamage(damage);
+            float finalDamage = FinalDamage(damage);
+            if (m_invincible == false)
+            {
+                if (Execution)
+                    finalDamage = damage;
 
-            UIManager.Instance.Debug.OnDamage(FinalDamage(damage), transform);
+                m_health -= finalDamage;
+
+            }
+
+            UIManager.Instance.Debug.OnDamage(finalDamage, transform);
             if (m_health <= 0)
             {
                 Die();

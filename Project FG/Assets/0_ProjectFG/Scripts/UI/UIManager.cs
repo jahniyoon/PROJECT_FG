@@ -27,12 +27,20 @@ namespace JH
         [Header("Main UI")]
         [SerializeField] private MainUIController m_mainUIController;
 
+        [Header("Wave UI")]
+        [SerializeField] private WaveUIController m_waveUIController;
+
+        [Header("Game UI")]
+        [SerializeField] private GameObject m_pauseUI;
+        [SerializeField] private GameObject m_gameOverUI;
+        [SerializeField] private GameObject m_gameClearUI;
 
         [Header("Debug UI")]
         [SerializeField] private bool m_debugEnable;
         [SerializeField] private DebugUIController m_DebugUI;
 
         public MainUIController MainUI => m_mainUIController;
+        public WaveUIController WaveUI => m_waveUIController;
         public DebugUIController Debug => m_DebugUI;
 
         private void Awake()
@@ -49,6 +57,19 @@ namespace JH
 
             m_DebugUI.DebugEnable(m_debugEnable);
 
+        }
+
+        public void SetPauseUI(bool enable)
+        {
+            m_pauseUI.SetActive(enable);
+        }
+        public void SetGameOverUI(bool enable)
+        {
+            m_gameOverUI.SetActive(enable);
+        }
+        public void SetGameClearUI(bool enable)
+        {
+            m_gameClearUI.SetActive(enable);
         }
 
 

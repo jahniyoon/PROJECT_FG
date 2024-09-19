@@ -309,7 +309,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         if (damage == 0)
             damage = m_damageable.Health;
-        m_damageable.OnDamage(damage);
+        m_damageable.OnDamage(damage, true);
     }
     public FoodPower GetFoodPower()
     {

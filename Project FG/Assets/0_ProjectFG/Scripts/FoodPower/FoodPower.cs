@@ -15,7 +15,10 @@ namespace JH
         [Header("Food Power")]
         [SerializeField] protected int m_powerLevel;
         [SerializeField] private float m_coolDownTimer;
+        [Header("푸드파워 활성화 여부")]
         [SerializeField] protected bool m_mainPower;
+        [Header("습득한 푸드파워")]
+        [SerializeField] protected bool m_effectFoodPower;
 
         protected GameObject m_caster;
         protected Transform m_casterPosition;
@@ -31,6 +34,9 @@ namespace JH
         public float Timer => m_coolDownTimer;
         public bool Main => m_mainPower;
         public int ID => m_data.ID;
+        public int Level => m_powerLevel;
+        public bool IsEffectFoodPower => m_effectFoodPower;
+        public FoodPowerData Data => m_data;
 
         private void Awake()
         {
@@ -263,6 +269,10 @@ namespace JH
             yield break;
         }
 
-
+        // 이 푸드파워는 계산하지 않는다.
+        public void EffectFoodPower()
+        {
+            m_effectFoodPower = true;
+        }
     }
 }
