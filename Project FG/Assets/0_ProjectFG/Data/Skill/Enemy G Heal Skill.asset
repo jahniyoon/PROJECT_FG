@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8105b1cd8127a1944868349847143468, type: 3}
+  m_Name: Enemy G Heal Skill
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30103
+  <SkillName>k__BackingField: 
+  <Description>k__BackingField: "\uC801\uC758 \uD790"
+  <SkillDuration>k__BackingField: -1
+  <SkillCoolDown>k__BackingField: 0
+  <Target>k__BackingField: 0
+  <HealBuff>k__BackingField: {fileID: 11400000, guid: 05f1c15a7e06bef418d2c6945cb64168,
+    type: 2}
+  <SkillRadius>k__BackingField: 5
+  <HealPrefab>k__BackingField: {fileID: 2500426658639734181, guid: cae13e63e0d4d474e9e6fbc2656d2b79,
+    type: 3}

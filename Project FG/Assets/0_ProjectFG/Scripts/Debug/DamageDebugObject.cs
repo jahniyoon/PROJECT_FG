@@ -34,13 +34,19 @@ namespace JH
 
             m_rectTransform.anchoredPosition = WordObjectToScreenPosition;
         }
-        public void OnDamage(float value, float duration, Transform position)
+        public void OnDamage(float value, float duration, Transform position, bool isHeal = false)
         {
             if (m_textMeshPro == null)
                 return;
 
             m_target = position;
             m_textMeshPro.text = value.ToString();
+            m_textMeshPro.color = Color.white;
+
+            if(isHeal)
+                m_textMeshPro.color = Color.green;
+
+
 
             Invoke(nameof(DamageEnd), duration);
         }

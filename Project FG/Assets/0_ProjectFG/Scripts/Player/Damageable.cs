@@ -39,14 +39,22 @@ namespace JH
             if (IsDie)
                 return;
 
+            if (m_maxHealth <= m_health)
+                return;
+
+
+            float restore = addHealth;
             m_health += addHealth;
 
-            if(m_maxHealth <= m_health)
+            if (m_maxHealth <= m_health)
             {
+                restore -= m_health - m_maxHealth;
                 m_health = m_maxHealth;
             }
+            UIManager.Instance.Debug.OnDamage(FinalDamage(restore), transform, true);
 
             UpdateHealthEvent?.Invoke();
+
         }
 
 
