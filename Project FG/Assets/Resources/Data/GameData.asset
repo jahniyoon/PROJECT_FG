@@ -19,7 +19,7 @@ MonoBehaviour:
   - FOOD POWER LEVEL
   START_ROW_LENGTH: 3
   m_gameData:
-    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e00002b4e000051c3000052c3000053c3000054c3000055c3000056c3000057c3000058c3000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000
+    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e00002b4e00002c4e000051c3000052c3000053c3000054c3000055c3000056c3000057c3000058c3000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000
     m_Values:
     - name: 20001     Test Enemy A
       SheetID: ENEMY
@@ -272,6 +272,29 @@ MonoBehaviour:
         Value: 0
       - ColumnID: PredationHealthRatio
         Value: 0
+      - ColumnID: PredationStunCoolDown
+        Value: 0
+    - name: 20012     Test Enemy A2
+      SheetID: ENEMY
+      Data:
+      - ColumnID: ID
+        Value: 20012
+      - ColumnID: Name
+        Value: Test Enemy A2
+      - ColumnID: Description
+        Value: "\uADFC\uC811\uD615"
+      - ColumnID: Health
+        Value: 250
+      - ColumnID: MoveSpeed
+        Value: 3
+      - ColumnID: AttackRange
+        Value: 1
+      - ColumnID: EscapeRange
+        Value: 0
+      - ColumnID: Damage
+        Value: 10
+      - ColumnID: PredationHealthRatio
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 50001     FoodPower A
@@ -1468,7 +1491,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 1.0,4,5
+        Value: 1.0,3,5
     - name: "60042     \uD478\uB4DC\uD30C\uC6CCE lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1495,7 +1518,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 1.0,4,5
+        Value: 1.0,3,5
     - name: "60043     \uD478\uB4DC\uD30C\uC6CCE lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1522,7 +1545,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 1.0,4,5
+        Value: 1.0,3,5
     - name: "60044     \uD478\uB4DC\uD30C\uC6CCE lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1549,7 +1572,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 0.5,4,5
+        Value: 0.5,2,5
     - name: "60045     \uD478\uB4DC\uD30C\uC6CCE lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1576,7 +1599,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 0.5,4,5
+        Value: 0.5,2,5
     - name: "60046     \uD478\uB4DC\uD30C\uC6CCE lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1603,7 +1626,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 0.5,4,5
+        Value: 0.5,2,5
     - name: "60047     \uD478\uB4DC\uD30C\uC6CCF lv1"
       SheetID: FOOD POWER LEVEL
       Data:
