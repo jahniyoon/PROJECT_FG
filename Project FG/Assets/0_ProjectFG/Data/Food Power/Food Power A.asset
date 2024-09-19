@@ -21,10 +21,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv0"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv0"
     ID: 60001
-    CoolDown: 1.2
+    CoolDown: 1
     Damage: 50
     Range: 0
-    Radius: 3
+    Radius: 2
     Duration: 0.1
     Count: 1
     AimType: 1

@@ -36,7 +36,7 @@ MonoBehaviour:
     CoolDown: 5
     Damage: 120
     Range: 5
-    Radius: 5
+    Radius: 4
     Duration: 1
     Count: 1
     AimType: 4
@@ -48,7 +48,7 @@ MonoBehaviour:
     CoolDown: 4
     Damage: 150
     Range: 6
-    Radius: 6
+    Radius: 4
     Duration: 1
     Count: 2
     AimType: 4
@@ -60,7 +60,7 @@ MonoBehaviour:
     CoolDown: 4
     Damage: 180
     Range: 7
-    Radius: 7
+    Radius: 4
     Duration: 1
     Count: 2
     AimType: 4
@@ -72,7 +72,7 @@ MonoBehaviour:
     CoolDown: 4
     Damage: 210
     Range: 8
-    Radius: 8
+    Radius: 4
     Duration: 1
     Count: 2
     AimType: 4
@@ -84,7 +84,7 @@ MonoBehaviour:
     CoolDown: 2
     Damage: 250
     Range: 8
-    Radius: 8
+    Radius: 4
     Duration: 1
     Count: 3
     AimType: 4
@@ -96,7 +96,7 @@ MonoBehaviour:
     CoolDown: 2
     Damage: 250
     Range: 9
-    Radius: 9
+    Radius: 4
     Duration: 1
     Count: 3
     AimType: 4
@@ -108,7 +108,7 @@ MonoBehaviour:
     CoolDown: 2
     Damage: 300
     Range: 9
-    Radius: 9
+    Radius: 4
     Duration: 1
     Count: 3
     AimType: 4
@@ -120,7 +120,7 @@ MonoBehaviour:
     CoolDown: 1
     Damage: 400
     Range: 15
-    Radius: 10
+    Radius: 4
     Duration: 1
     Count: 4
     AimType: 4
