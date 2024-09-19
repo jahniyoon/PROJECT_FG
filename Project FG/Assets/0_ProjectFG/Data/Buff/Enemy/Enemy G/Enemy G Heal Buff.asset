@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8d6dc1d446ebd4f8674ddd7c1b25d2, type: 3}
+  m_Name: Enemy G Heal Buff
+  m_EditorClassIdentifier: 
+  m_buffID: 40106
+  m_buffName: "\uD790"
+  m_buffDescription: "\uC5D0\uB124\uBBF8\uB4E4\uC744 \uD790\uD55C\uB2E4."
+  <Type>k__BackingField: 2
+  m_buffDuration: 0
+  m_isOneAndOnlyBuff: 1
+  m_Priority: 0
+  m_activeStack: 1
+  m_stackUpTime: 1
+  m_decreaseTime: 0.2
+  m_healValue: 10
