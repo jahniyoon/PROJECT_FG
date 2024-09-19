@@ -16,7 +16,7 @@ MonoBehaviour:
   <TargetTag>k__BackingField: 1
   <Damage>k__BackingField: 10
   <ProjectileScale>k__BackingField: 1.48
-  <ProjectileSpeed>k__BackingField: 10
+  <ProjectileSpeed>k__BackingField: 5
   <Penetrate>k__BackingField: 0
   <DestroyType>k__BackingField: 1
   <DestroyValue>k__BackingField: 5
