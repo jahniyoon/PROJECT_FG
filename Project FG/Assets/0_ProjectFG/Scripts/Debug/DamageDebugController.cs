@@ -32,10 +32,10 @@ namespace JH
             }
         }
 
-        public void OnDamage(float value, Transform position, bool isHeal = false)
+        public void OnDamage(float value, Transform position, Color textColor)
         {
             m_damageList[curCount].gameObject.SetActive(true);
-            m_damageList[curCount].OnDamage(value, m_duration, position, isHeal);
+            m_damageList[curCount].OnDamage(value, m_duration, position, textColor);
 
             curCount++;
             if(m_poolCount <= curCount)

@@ -191,6 +191,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         float curRatio = m_damageable.Health / (float)m_damageable.MaxHealth;
 
+        if (m_damageable.IsDie)
+            return false;
+
         return curRatio <= m_data.PredationHealthRatio * 0.01f;
     }
 

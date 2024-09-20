@@ -24618,16 +24618,19 @@ MonoBehaviour:
   m_isDie: 0
   m_invincible: 0
   m_damageReduction: 0
+  m_damageEffectColor: {r: 1, g: 0.80784315, b: 0, a: 1}
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
   DieEvent:
     m_PersistentCalls:
       m_Calls: []
+  DieDamageableEvent:
+    m_PersistentCalls:
+      m_Calls: []
   UpdateHealthEvent:
     m_PersistentCalls:
       m_Calls: []
-  DamageReduction: 0
 --- !u!114 &4200900639326484160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24751,9 +24754,20 @@ MonoBehaviour:
   m_curHunger: 0
   m_maxHunger: 0
   m_cantPredation: 0
-  m_defaultFoodPower: {fileID: -2637219223760161457, guid: d9970a426d59f2541b7f4ae51c1dcdba,
-    type: 3}
+  m_defaultFoodPower: {fileID: 0}
   foodPowers: []
+  m_FoodComboEffects:
+    keys: []
+    values: 
+  m_foodComboStacks:
+    keys: []
+    values: 
+  foodComboNames:
+  - 'Triple '
+  - Quadruple
+  - Quintuple
+  - Hextuple
+  - Septuple
   m_hungerSkillEffect: {fileID: 2689120288571475630}
   DebugColor: {r: 1, g: 1, b: 1, a: 0.25882354}
 --- !u!54 &6068257472876306139
@@ -24856,7 +24870,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7347991003380837535}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 0
   m_Extents: {x: 0.06, y: 1, z: 0.06}
