@@ -41,3 +41,5 @@ MonoBehaviour:
     type: 2}
   <DotDamageBuff>k__BackingField: {fileID: 11400000, guid: dd8c7c96443b9164ea3ccac8bcf12b47,
     type: 2}
+  <SkillCoolDown>k__BackingField: 15
+  <SkillDuration>k__BackingField: 10

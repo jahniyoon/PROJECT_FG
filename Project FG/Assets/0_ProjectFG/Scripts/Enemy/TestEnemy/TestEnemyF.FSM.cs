@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemyF 
+    public partial class TestEnemyF
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -54,6 +54,17 @@ namespace JH
 
         protected override void MoveStateStay()
         {
+            MoveBehavior();
+            SkillBehavior();
+        }
+        protected override void MoveStateExit()
+        {
+            m_agent.SetDestination(this.transform.position);
+            m_agent.isStopped = true;
+        }
+
+        private void MoveBehavior()
+        {
             float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
 
             // 도망 거리보다 가까우면
@@ -69,11 +80,18 @@ namespace JH
             m_agent.SetDestination(m_target.position);
             ModelRotate(m_target.position);
         }
-        protected override void MoveStateExit()
+        private void SkillBehavior()
         {
-            m_agent.SetDestination(this.transform.position);
-            m_agent.isStopped = true;
+            if(m_skillCoolDownTimer <= 0)
+            {
+                ActiveSkill();
+                m_skillCoolDownTimer = m_subData.FrozenSkill.Data.SkillCoolDown;
+            }
+
+
         }
+
+
         #endregion
 
  
