@@ -918,7 +918,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -945,7 +945,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -972,7 +972,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -999,7 +999,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -1026,7 +1026,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
@@ -1053,9 +1053,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
-        Value: 4
+        Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
@@ -1074,15 +1074,15 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0.4
       - ColumnID: Damage
-        Value: 90
+        Value: 70
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
-        Value: 4
+        Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
@@ -1101,15 +1101,15 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0.3
       - ColumnID: Damage
-        Value: 90
+        Value: 70
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
-        Value: 5
+        Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
@@ -1134,9 +1134,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 5
+        Value: 0.5
       - ColumnID: Count
-        Value: 5
+        Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
