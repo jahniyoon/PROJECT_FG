@@ -13,9 +13,9 @@ namespace JH
         [SerializeField] private DamageDebugController m_damageDebugController;
         private int m_killCount = 0;
 
-        public void OnDamage(float damage, Transform position, bool isHeal = false)
+        public void OnDamage(float damage, Transform position, Color textColor = default)
         {
-            m_damageDebugController.OnDamage(damage, position, isHeal);
+            m_damageDebugController.OnDamage(damage, position, textColor);
         }
 
         public void WaveText(int wave)

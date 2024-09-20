@@ -15,11 +15,13 @@ namespace JH
 
         [SerializeField] private bool m_invincible;
         [SerializeField] private float m_damageReduction;   // 피해 감소
+        [SerializeField] private Color m_damageEffectColor = Color.white;
 
         public UnityEvent DamageEvent;
         public UnityEvent DieEvent;
         public UnityEvent<Damageable> DieDamageableEvent;
         public UnityEvent UpdateHealthEvent;
+
 
         public float MaxHealth => m_maxHealth;
         public float Health => m_health;
@@ -52,7 +54,7 @@ namespace JH
                 m_health = m_maxHealth;
             }
 
-            UIManager.Instance.Debug.OnDamage((m_health - beforeHealth), transform, true);
+            UIManager.Instance.Debug.OnDamage((m_health - beforeHealth), transform, Color.green);
 
             UpdateHealthEvent?.Invoke();
 
@@ -75,10 +77,9 @@ namespace JH
                     finalDamage = damage;
 
                 m_health -= finalDamage;
-
             }
 
-            UIManager.Instance.Debug.OnDamage(finalDamage, transform);
+            UIManager.Instance.Debug.OnDamage(finalDamage, transform, m_damageEffectColor);
             if (m_health <= 0)
             {
                 Die();

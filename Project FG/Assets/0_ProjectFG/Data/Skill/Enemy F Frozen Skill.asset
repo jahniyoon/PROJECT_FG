@@ -16,8 +16,8 @@ MonoBehaviour:
   <SkillName>k__BackingField: "\uC11C\uB9AC \uD3ED\uD48D"
   <Description>k__BackingField: "\uBC94\uC704 \uB0B4\uC758 \uC801\uC5D0\uAC8C \uB3C4\uD2B8\uB370\uBBF8\uC9C0
     \uBC0F \uC2AC\uB85C\uC6B0 \uD6A8\uACFC\uB97C \uC900\uB2E4."
-  <SkillDuration>k__BackingField: -1
-  <SkillCoolDown>k__BackingField: 0
+  <SkillDuration>k__BackingField: 3
+  <SkillCoolDown>k__BackingField: 10
   <Target>k__BackingField: 1
   <FrozenPrefab>k__BackingField: {fileID: 1897376551947421572, guid: 00fc8da280617354e8394592271b6a72,
     type: 3}
