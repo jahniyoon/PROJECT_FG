@@ -23,7 +23,7 @@ MonoBehaviour:
     ID: 60029
     CoolDown: 5
     Damage: 100
-    Range: 4
+    Range: 3
     Radius: 2
     Duration: 1
     Count: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     ID: 60030
     CoolDown: 5
     Damage: 110
-    Range: 5
+    Range: 3
     Radius: 2
     Duration: 1
     Count: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
     ID: 60031
     CoolDown: 4
     Damage: 120
-    Range: 6
+    Range: 3
     Radius: 2
     Duration: 1
     Count: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
     ID: 60032
     CoolDown: 4
     Damage: 130
-    Range: 7
+    Range: 3
     Radius: 2
     Duration: 1
     Count: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
     ID: 60033
     CoolDown: 4
     Damage: 140
-    Range: 8
+    Range: 3
     Radius: 2
     Duration: 1
     Count: 1
@@ -83,7 +83,7 @@ MonoBehaviour:
     ID: 60034
     CoolDown: 2
     Damage: 150
-    Range: 8
+    Range: 3
     Radius: 2
     Duration: 1
     Count: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
     ID: 60035
     CoolDown: 2
     Damage: 160
-    Range: 9
+    Range: 3
     Radius: 3
     Duration: 1
     Count: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
     ID: 60036
     CoolDown: 2
     Damage: 180
-    Range: 9
+    Range: 3
     Radius: 3
     Duration: 1
     Count: 1
@@ -119,7 +119,7 @@ MonoBehaviour:
     ID: 60037
     CoolDown: 1
     Damage: 200
-    Range: 15
+    Range: 3
     Radius: 3
     Duration: 1
     Count: 1
