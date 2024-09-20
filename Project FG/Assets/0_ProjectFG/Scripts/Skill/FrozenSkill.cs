@@ -13,6 +13,7 @@ namespace JH
         private SphereCollider m_range;
         private Rigidbody m_rigidbody;
         float m_dotDuration = 0;
+        Coroutine m_skillCoroutine;
 
         protected override void Init()
         {
@@ -43,10 +44,14 @@ namespace JH
             m_frozen.transform.localScale = scale;
             m_frozen.Stop();
             m_frozen.Play();
-
-            StartCoroutine(SkillRoutine());
+            if(m_skillCoroutine != null)
+            {
+                StopCoroutine(m_skillCoroutine);
+                m_skillCoroutine = null;
+            }
+            m_skillCoroutine = StartCoroutine(SkillRoutine());
         }
-   
+
         protected override void UpdateBehavior()
         {
             base.UpdateBehavior();
@@ -67,11 +72,11 @@ namespace JH
                 yield return null;
             }
 
-            if(m_skillData.SkillDuration < 0)
+            if (m_skillData.SkillDuration < 0)
             {
                 yield break;
             }
- 
+
             while (timer < m_skillData.SkillDuration)
             {
                 timer += Time.deltaTime;
@@ -86,16 +91,25 @@ namespace JH
         public override void InactiveSkill()
         {
             base.InactiveSkill();
-            m_frozen.Stop();
-            StopAllCoroutines();
+            if (m_frozen != null)
+            {
+                m_frozen?.Stop();
+                Destroy(m_frozen.gameObject);
+
+            }
+            if (m_skillCoroutine != null)
+            {
+                StopCoroutine(m_skillCoroutine);
+                m_skillCoroutine = null;
+            }
+
             m_range.enabled = false;
-            Destroy(m_frozen.gameObject);
             Destroy(this.gameObject);
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.isTrigger || IsActive ==false)
+            if (other.isTrigger || IsActive == false)
                 return;
 
             if (other.CompareTag(m_subData.Target.ToString()))

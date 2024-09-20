@@ -58,6 +58,7 @@ namespace JH
         protected override void Die()
         {
             base.Die();
+            if(m_frozenSkill != null)
             m_frozenSkill.InactiveSkill();
         }
 
