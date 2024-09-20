@@ -40,3 +40,16 @@ MonoBehaviour:
     type: 3}
   <FoodPowerDelay>k__BackingField: 0.25
   <FoodPowerAimType>k__BackingField: 1
+  <FoodCombo>k__BackingField:
+  - ComboType: 0
+    Level: 0
+  - ComboType: 1
+    Level: 1
+  - ComboType: 2
+    Level: 2
+  - ComboType: 3
+    Level: 3
+  - ComboType: 4
+    Level: 4
+  - ComboType: 5
+    Level: 5

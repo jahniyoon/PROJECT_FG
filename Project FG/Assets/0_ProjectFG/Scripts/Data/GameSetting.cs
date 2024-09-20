@@ -84,9 +84,18 @@ namespace JH
         [field: SerializeField] public float FoodPowerDelay { get; private set; }
         [field: Tooltip("푸드파워 투사체 조준 시스템")]
         [field: SerializeField] public FoodPowerAimType FoodPowerAimType { get; private set; }
+        [field: Header("식사콤보")]
+        [field: SerializeField] public List<FoodComboSetting> FoodCombo { get; private set; }
 
 
     }
+    [System.Serializable]
+    public class FoodComboSetting
+    {
+        public FoodComboType ComboType;
+        public int Level;
+    }
+
 
     public enum FoodPowerAimType
     {
@@ -100,4 +109,14 @@ namespace JH
         PcPositionSummon        // PC 위치 소환
 
     }
+    public enum FoodComboType
+    {
+        None,
+        Triple,
+        Quadruple,
+        Quintuple,
+        Hextuple,
+        Septuple
+    }
+
 }
