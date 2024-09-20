@@ -112,8 +112,8 @@ namespace JH
 
                         if (hunger == 0)
                         {
-                            for(int j = 0; j <= foodPower.Level; j++)
-                                foodPowers[i].LevelUp();                            
+                            for (int j = 0; j <= foodPower.Level; j++)
+                                foodPowers[i].LevelUp();
                         }
 
                         else
@@ -173,7 +173,8 @@ namespace JH
                 {
                     // 카운트가 2개 이상일 경우에만 콤보로 인정하고 삽입
                     if (3 <= count)
-                        m_foodComboStacks.Add(targetFP, count-2);
+                        SetFoodComboStack(targetFP, count);
+                    //m_foodComboStacks.Add(targetFP, count-2);
 
                     // 다음 타겟
                     targetFP = foodPowers[i];
@@ -182,12 +183,48 @@ namespace JH
             }
             // 순회하고 나서 카운트가 2개 이상일 경우에만 콤보로 인정하고 삽입
             if (3 <= count)
-                m_foodComboStacks.Add(targetFP, count-2);
+                SetFoodComboStack(targetFP, count);
+
+            //m_foodComboStacks.Add(targetFP, count - 2);
 
             UIManager.Instance.MainUI.FoodComboUI.SetFoodComboUI(m_FoodComboEffects, m_foodComboStacks);
         }
+        private void SetFoodComboStack(FoodPower FP, int stack)
+        {
+            FoodComboType Combo = FoodComboType.None;
+            int level = 0;
+            switch (stack)
+            {
+                case 3:
+                    Combo = FoodComboType.Triple;
+                    break;
+                case 4:
+                    Combo = FoodComboType.Quadruple;
+                    break;
+                case 5:
+                    Combo = FoodComboType.Quintuple;
+                    break;
+                case 6:
+                    Combo = FoodComboType.Hextuple;
+                    break;
+                case 7:
+                    Combo = FoodComboType.Septuple;
+                    break;
+            }
+
+            foreach(var type in m_gameSettings.FoodCombo)
+            {
+                if(type.ComboType == Combo)
+                {
+                    level = type.Level;
+                    break;
+                }
+            }
 
 
+            m_foodComboStacks.Add(FP, level);
+
+        }
         // 포만감 소모기
         private void HungerSkill()
         {
