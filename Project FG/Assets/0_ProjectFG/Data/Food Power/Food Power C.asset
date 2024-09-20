@@ -34,7 +34,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv2"
     ID: 60021
-    CoolDown: 2
+    CoolDown: 1.5
     Damage: 30
     Range: 0
     Radius: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv3"
     ID: 60022
-    CoolDown: 2
+    CoolDown: 1
     Damage: 30
     Range: 0
     Radius: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv4"
     ID: 60023
-    CoolDown: 2
+    CoolDown: 1
     Damage: 60
     Range: 0
     Radius: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv5"
     ID: 60024
-    CoolDown: 2
+    CoolDown: 1
     Damage: 60
     Range: 0
     Radius: 0
@@ -86,12 +86,12 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv6"
     ID: 60025
-    CoolDown: 2
+    CoolDown: 0.5
     Damage: 60
     Range: 0
     Radius: 0
     Duration: 5
-    Count: 3
+    Count: 4
     AimType: 2
     AdditionalValues:
     - 20
@@ -99,12 +99,12 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv7"
     ID: 60026
-    CoolDown: 2
-    Damage: 80
+    CoolDown: 0.4
+    Damage: 90
     Range: 0
     Radius: 0
     Duration: 5
-    Count: 3
+    Count: 4
     AimType: 2
     AdditionalValues:
     - 20
@@ -112,12 +112,12 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv8"
     ID: 60027
-    CoolDown: 2
-    Damage: 80
+    CoolDown: 0.3
+    Damage: 90
     Range: 0
     Radius: 0
     Duration: 5
-    Count: 3
+    Count: 5
     AimType: 2
     AdditionalValues:
     - 20
@@ -125,12 +125,12 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv9"
     ID: 60028
-    CoolDown: 2
+    CoolDown: 0.2
     Damage: 100
     Range: 0
     Radius: 0
     Duration: 5
-    Count: 3
+    Count: 5
     AimType: 2
     AdditionalValues:
     - 20

@@ -559,7 +559,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0.5
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
@@ -586,7 +586,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0.5
       - ColumnID: Damage
         Value: 65
       - ColumnID: Range
@@ -613,7 +613,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0.5
       - ColumnID: Damage
         Value: 70
       - ColumnID: Range
@@ -640,7 +640,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0.5
       - ColumnID: Damage
         Value: 76
       - ColumnID: Range
@@ -937,7 +937,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 1.5
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
@@ -964,7 +964,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 1
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
@@ -991,7 +991,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
@@ -1018,7 +1018,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
@@ -1045,7 +1045,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 0.5
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
@@ -1055,7 +1055,7 @@ MonoBehaviour:
       - ColumnID: Duration
         Value: 5
       - ColumnID: Count
-        Value: 3
+        Value: 4
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
@@ -1072,9 +1072,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 0.4
       - ColumnID: Damage
-        Value: 80
+        Value: 90
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -1082,7 +1082,7 @@ MonoBehaviour:
       - ColumnID: Duration
         Value: 5
       - ColumnID: Count
-        Value: 3
+        Value: 4
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
@@ -1099,9 +1099,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 0.3
       - ColumnID: Damage
-        Value: 80
+        Value: 90
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -1109,7 +1109,7 @@ MonoBehaviour:
       - ColumnID: Duration
         Value: 5
       - ColumnID: Count
-        Value: 3
+        Value: 5
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
@@ -1126,7 +1126,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 2
+        Value: 0.2
       - ColumnID: Damage
         Value: 100
       - ColumnID: Range
@@ -1136,7 +1136,7 @@ MonoBehaviour:
       - ColumnID: Duration
         Value: 5
       - ColumnID: Count
-        Value: 3
+        Value: 5
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
