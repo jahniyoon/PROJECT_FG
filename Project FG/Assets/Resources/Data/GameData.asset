@@ -127,7 +127,7 @@ MonoBehaviour:
       - ColumnID: MoveSpeed
         Value: 1
       - ColumnID: AttackRange
-        Value: 10
+        Value: 12
       - ColumnID: EscapeRange
         Value: 5
       - ColumnID: Damage
@@ -667,7 +667,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 20
+        Value: 15
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
@@ -681,7 +681,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 10,5
+        Value: 40,5
     - name: "60012     \uD478\uB4DC\uD30C\uC6CCB lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -694,7 +694,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 18
+        Value: 12
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
@@ -708,7 +708,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 15,5
+        Value: 45,5
     - name: "60013     \uD478\uB4DC\uD30C\uC6CCB lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -721,7 +721,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 16
+        Value: 10
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
@@ -735,7 +735,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 20,6
+        Value: 50,6
     - name: "60014     \uD478\uB4DC\uD30C\uC6CCB lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -748,7 +748,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 15
+        Value: 10
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
@@ -762,7 +762,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 25,5
+        Value: 55,5
     - name: "60015     \uD478\uB4DC\uD30C\uC6CCB lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -775,7 +775,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 14
+        Value: 10
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
@@ -789,7 +789,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 30,7
+        Value: 50,7
     - name: "60016     \uD478\uB4DC\uD30C\uC6CCB lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -802,7 +802,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 13
+        Value: 5
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
@@ -816,7 +816,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 35,7.5
+        Value: 55,7.5
     - name: "60017     \uD478\uB4DC\uD30C\uC6CCB lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -829,7 +829,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 12
+        Value: 5
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
@@ -843,7 +843,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 40,8
+        Value: 60,8
     - name: "60018     \uD478\uB4DC\uD30C\uC6CCB lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -856,7 +856,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 12
+        Value: 5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
@@ -870,7 +870,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 45,8.5
+        Value: 65,8.5
     - name: "60019     \uD478\uB4DC\uD30C\uC6CCB lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -883,7 +883,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 12
+        Value: 5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
@@ -897,7 +897,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 50,9
+        Value: 70,9
     - name: "60020     \uD478\uB4DC\uD30C\uC6CCC lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -918,13 +918,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60021     \uD478\uB4DC\uD30C\uC6CCC lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -945,13 +945,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60022     \uD478\uB4DC\uD30C\uC6CCC lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -972,13 +972,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60023     \uD478\uB4DC\uD30C\uC6CCC lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -999,13 +999,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60024     \uD478\uB4DC\uD30C\uC6CCC lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1026,13 +1026,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60025     \uD478\uB4DC\uD30C\uC6CCC lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1053,13 +1053,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60026     \uD478\uB4DC\uD30C\uC6CCC lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1080,13 +1080,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60027     \uD478\uB4DC\uD30C\uC6CCC lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1107,13 +1107,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60028     \uD478\uB4DC\uD30C\uC6CCC lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1134,13 +1134,13 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Duration
-        Value: 0.3
+        Value: 0.5
       - ColumnID: Count
         Value: 3
       - ColumnID: AimType
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
-        Value: 10,1
+        Value: 15,1
     - name: "60029     \uD478\uB4DC\uD30C\uC6CCD lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1626,7 +1626,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
-        Value: 0,7,5
+        Value: 0.5,7,5
     - name: "60047     \uD478\uB4DC\uD30C\uC6CCF lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1882,7 +1882,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1.5
+        Value: 0
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
@@ -1896,7 +1896,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.5,80,3
+        Value: 1.5,100,10
     - name: "60057     \uD478\uB4DC\uD30C\uC6CCG lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1909,7 +1909,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1.4
+        Value: 0
       - ColumnID: Damage
         Value: 21
       - ColumnID: Range
@@ -1923,7 +1923,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.4,80,3
+        Value: 1.4,100,10
     - name: "60058     \uD478\uB4DC\uD30C\uC6CCG lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1936,7 +1936,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1.3
+        Value: 0
       - ColumnID: Damage
         Value: 22
       - ColumnID: Range
@@ -1950,7 +1950,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.3,80,4
+        Value: 1.3,100,12
     - name: "60059     \uD478\uB4DC\uD30C\uC6CCG lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1963,7 +1963,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1.2
+        Value: 0
       - ColumnID: Damage
         Value: 23
       - ColumnID: Range
@@ -1977,7 +1977,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.2,80,4
+        Value: 1.2,100,12
     - name: "60060     \uD478\uB4DC\uD30C\uC6CCG lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1990,7 +1990,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1.1
+        Value: 0
       - ColumnID: Damage
         Value: 24
       - ColumnID: Range
@@ -2004,7 +2004,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.1,80,5
+        Value: 1.1,100,14
     - name: "60061     \uD478\uB4DC\uD30C\uC6CCG lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2017,7 +2017,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0
       - ColumnID: Damage
         Value: 25
       - ColumnID: Range
@@ -2031,7 +2031,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1,80,5
+        Value: 1,100,16
     - name: "60062     \uD478\uB4DC\uD30C\uC6CCG lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2044,7 +2044,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0
       - ColumnID: Damage
         Value: 27
       - ColumnID: Range
@@ -2058,7 +2058,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1,100,5
+        Value: 1,100,18
     - name: "60063     \uD478\uB4DC\uD30C\uC6CCG lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2071,7 +2071,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0
       - ColumnID: Damage
         Value: 29
       - ColumnID: Range
@@ -2085,7 +2085,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1,100,6
+        Value: 1,100,20
     - name: "60064     \uD478\uB4DC\uD30C\uC6CCG lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2098,13 +2098,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 0
       - ColumnID: Damage
         Value: 31
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 11
+        Value: 12
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -2112,7 +2112,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1,100,6
+        Value: 1,100,20
     - name: "60065     \uD478\uB4DC\uD30C\uC6CCH lv1"
       SheetID: FOOD POWER LEVEL
       Data:
