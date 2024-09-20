@@ -50,7 +50,7 @@ namespace JH
         private void Explosion()
         {
 
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_levelData.Radius);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_levelData.GetAdditionalValue(0));
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -68,7 +68,7 @@ namespace JH
                 }
             }
             var effect = Instantiate(m_effect.gameObject, transform.position, Quaternion.identity, GameManager.Instance.ProjectileParent).GetComponent<ParticleSystem>();
-            effect.transform.localScale = Vector3.one * m_levelData.Radius;
+            effect.transform.localScale = Vector3.one * m_levelData.GetAdditionalValue(0);
             effect.Play();
             Destroy(effect.gameObject, 1f);
             InactiveSkill();
