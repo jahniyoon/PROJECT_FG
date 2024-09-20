@@ -24,7 +24,7 @@ MonoBehaviour:
     CoolDown: 5
     Damage: 100
     Range: 4
-    Radius: 4
+    Radius: 2
     Duration: 1
     Count: 1
     AimType: 4
@@ -34,9 +34,9 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv2"
     ID: 60030
     CoolDown: 5
-    Damage: 120
+    Damage: 110
     Range: 5
-    Radius: 4
+    Radius: 2
     Duration: 1
     Count: 1
     AimType: 4
@@ -46,11 +46,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv3"
     ID: 60031
     CoolDown: 4
-    Damage: 150
+    Damage: 120
     Range: 6
-    Radius: 4
+    Radius: 2
     Duration: 1
-    Count: 2
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0
@@ -58,11 +58,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv4"
     ID: 60032
     CoolDown: 4
-    Damage: 180
+    Damage: 130
     Range: 7
-    Radius: 4
+    Radius: 2
     Duration: 1
-    Count: 2
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0
@@ -70,11 +70,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv5"
     ID: 60033
     CoolDown: 4
-    Damage: 210
+    Damage: 140
     Range: 8
-    Radius: 4
+    Radius: 2
     Duration: 1
-    Count: 2
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0
@@ -82,11 +82,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv6"
     ID: 60034
     CoolDown: 2
-    Damage: 250
+    Damage: 150
     Range: 8
-    Radius: 4
+    Radius: 2
     Duration: 1
-    Count: 3
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0
@@ -94,11 +94,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv7"
     ID: 60035
     CoolDown: 2
-    Damage: 250
+    Damage: 160
     Range: 9
-    Radius: 4
+    Radius: 3
     Duration: 1
-    Count: 3
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0
@@ -106,11 +106,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv8"
     ID: 60036
     CoolDown: 2
-    Damage: 300
+    Damage: 180
     Range: 9
-    Radius: 4
+    Radius: 3
     Duration: 1
-    Count: 3
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0
@@ -118,11 +118,11 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCD lv9"
     ID: 60037
     CoolDown: 1
-    Damage: 400
+    Damage: 200
     Range: 15
-    Radius: 4
+    Radius: 3
     Duration: 1
-    Count: 4
+    Count: 1
     AimType: 4
     AdditionalValues:
     - 0

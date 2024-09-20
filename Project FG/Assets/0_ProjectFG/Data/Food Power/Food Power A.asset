@@ -22,21 +22,21 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv0"
     ID: 60001
     CoolDown: 1
-    Damage: 50
+    Damage: 30
     Range: 0
-    Radius: 2
+    Radius: 1
     Duration: 0.1
     Count: 1
-    AimType: 1
+    AimType: 2
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv1"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv1"
     ID: 60002
     CoolDown: 1
-    Damage: 50
+    Damage: 35
     Range: 0
-    Radius: 3
+    Radius: 1
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -45,10 +45,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv2"
     ID: 60003
-    CoolDown: 0.9
-    Damage: 50
+    CoolDown: 1
+    Damage: 40
     Range: 0
-    Radius: 3
+    Radius: 1.2
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -57,10 +57,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv3"
     ID: 60004
-    CoolDown: 0.8
-    Damage: 50
+    CoolDown: 1
+    Damage: 45
     Range: 0
-    Radius: 3
+    Radius: 1.2
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -69,10 +69,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv4"
     ID: 60005
-    CoolDown: 0.7
+    CoolDown: 1
     Damage: 50
     Range: 0
-    Radius: 3
+    Radius: 1.4
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -81,10 +81,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv5"
     ID: 60006
-    CoolDown: 0.6
-    Damage: 50
+    CoolDown: 1
+    Damage: 55
     Range: 0
-    Radius: 3
+    Radius: 1.4
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -93,10 +93,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv6"
     ID: 60007
-    CoolDown: 0.5
-    Damage: 50
+    CoolDown: 1
+    Damage: 60
     Range: 0
-    Radius: 3
+    Radius: 1.6
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -105,10 +105,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv7"
     ID: 60008
-    CoolDown: 0.4
-    Damage: 50
+    CoolDown: 1
+    Damage: 65
     Range: 0
-    Radius: 3
+    Radius: 1.6
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -117,10 +117,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv8"
     ID: 60009
-    CoolDown: 0.3
-    Damage: 60
+    CoolDown: 1
+    Damage: 70
     Range: 0
-    Radius: 3
+    Radius: 1.8
     Duration: 0.1
     Count: 1
     AimType: 2
@@ -129,10 +129,10 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv9"
     ID: 60010
-    CoolDown: 0.1
-    Damage: 70
+    CoolDown: 1
+    Damage: 76
     Range: 0
-    Radius: 3
+    Radius: 2
     Duration: 0.1
     Count: 1
     AimType: 2

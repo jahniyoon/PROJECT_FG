@@ -21,7 +21,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv1"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv1"
     ID: 60020
-    CoolDown: 1
+    CoolDown: 2
     Damage: 30
     Range: 0
     Radius: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv2"
     ID: 60021
-    CoolDown: 0.9
+    CoolDown: 2
     Damage: 30
     Range: 0
     Radius: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv3"
     ID: 60022
-    CoolDown: 0.8
+    CoolDown: 2
     Damage: 30
     Range: 0
     Radius: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv4"
     ID: 60023
-    CoolDown: 0.7
+    CoolDown: 2
     Damage: 60
     Range: 0
     Radius: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv5"
     ID: 60024
-    CoolDown: 0.5
+    CoolDown: 2
     Damage: 60
     Range: 0
     Radius: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv6"
     ID: 60025
-    CoolDown: 0.3
+    CoolDown: 2
     Damage: 60
     Range: 0
     Radius: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv7"
     ID: 60026
-    CoolDown: 0.1
-    Damage: 100
+    CoolDown: 2
+    Damage: 80
     Range: 0
     Radius: 0
     Duration: 5
@@ -112,8 +112,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv8"
     ID: 60027
-    CoolDown: 0.1
-    Damage: 150
+    CoolDown: 2
+    Damage: 80
     Range: 0
     Radius: 0
     Duration: 5
@@ -125,8 +125,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv9"
     ID: 60028
-    CoolDown: 0.1
-    Damage: 200
+    CoolDown: 2
+    Damage: 100
     Range: 0
     Radius: 0
     Duration: 5

@@ -30,7 +30,7 @@ MonoBehaviour:
     AimType: 6
     AdditionalValues:
     - 1.5
-    - 100
+    - 80
     - 3
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCG lv2"
@@ -44,7 +44,7 @@ MonoBehaviour:
     AimType: 6
     AdditionalValues:
     - 1.4
-    - 100
+    - 80
     - 3
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCG lv3"
@@ -58,7 +58,7 @@ MonoBehaviour:
     AimType: 6
     AdditionalValues:
     - 1.3
-    - 100
+    - 80
     - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCG lv4"
@@ -72,7 +72,7 @@ MonoBehaviour:
     AimType: 6
     AdditionalValues:
     - 1.2
-    - 100
+    - 80
     - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCG lv5"
@@ -86,7 +86,7 @@ MonoBehaviour:
     AimType: 6
     AdditionalValues:
     - 1.1
-    - 100
+    - 80
     - 5
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCG lv6"
@@ -100,7 +100,7 @@ MonoBehaviour:
     AimType: 6
     AdditionalValues:
     - 1
-    - 100
+    - 80
     - 5
   - Name: "\uD478\uB4DC\uD30C\uC6CCG lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCG lv7"
