@@ -46,7 +46,7 @@ namespace JH
 
             StartCoroutine(SkillRoutine());
         }
-
+   
         protected override void UpdateBehavior()
         {
             base.UpdateBehavior();
@@ -66,7 +66,19 @@ namespace JH
                 timer += Time.deltaTime;
                 yield return null;
             }
+
+            if(m_skillData.SkillDuration < 0)
+            {
+                yield break;
+            }
  
+            while (timer < m_skillData.SkillDuration)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            InactiveSkill();
+
 
             yield break;
         }
@@ -77,7 +89,8 @@ namespace JH
             m_frozen.Stop();
             StopAllCoroutines();
             m_range.enabled = false;
-
+            Destroy(m_frozen.gameObject);
+            Destroy(this.gameObject);
         }
 
         private void OnTriggerStay(Collider other)
