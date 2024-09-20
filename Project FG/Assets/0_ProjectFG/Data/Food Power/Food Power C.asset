@@ -25,11 +25,11 @@ MonoBehaviour:
     Damage: 30
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv2"
@@ -38,11 +38,11 @@ MonoBehaviour:
     Damage: 30
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv3"
@@ -51,11 +51,11 @@ MonoBehaviour:
     Damage: 30
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv4"
@@ -64,11 +64,11 @@ MonoBehaviour:
     Damage: 60
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv5"
@@ -77,11 +77,11 @@ MonoBehaviour:
     Damage: 60
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv6"
@@ -90,11 +90,11 @@ MonoBehaviour:
     Damage: 60
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv7"
@@ -103,11 +103,11 @@ MonoBehaviour:
     Damage: 70
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv8"
@@ -116,11 +116,11 @@ MonoBehaviour:
     Damage: 70
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   - Name: "\uD478\uB4DC\uD30C\uC6CCC lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCC lv9"
@@ -129,11 +129,11 @@ MonoBehaviour:
     Damage: 100
     Range: 0
     Radius: 0
-    Duration: 0.3
+    Duration: 0.5
     Count: 3
     AimType: 2
     AdditionalValues:
-    - 10
+    - 15
     - 1
   <TargetNearestScanRadius>k__BackingField: 10
   <AlwaysShoot>k__BackingField: 0
