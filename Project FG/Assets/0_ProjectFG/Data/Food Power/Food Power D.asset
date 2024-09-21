@@ -84,7 +84,7 @@ MonoBehaviour:
     CoolDown: 2
     Damage: 150
     Range: 3
-    Radius: 2
+    Radius: 3
     Duration: 1
     Count: 1
     AimType: 4

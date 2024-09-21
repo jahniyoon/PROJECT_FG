@@ -29,7 +29,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 40
+    - 20
     - 5
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv2"
@@ -42,7 +42,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 45
+    - 25
     - 5
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv3"
@@ -55,7 +55,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 50
+    - 30
     - 6
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv4"
@@ -68,7 +68,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 55
+    - 35
     - 5
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv5"
@@ -81,7 +81,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 50
+    - 40
     - 7
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv6"
@@ -94,7 +94,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 55
+    - 45
     - 7.5
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv7"
@@ -107,7 +107,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 60
+    - 50
     - 8
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv8"
@@ -120,7 +120,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 65
+    - 55
     - 8.5
   - Name: "\uD478\uB4DC\uD30C\uC6CCB lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCB lv9"
@@ -133,7 +133,7 @@ MonoBehaviour:
     Count: 1
     AimType: 6
     AdditionalValues:
-    - 70
+    - 60
     - 9
   <TargetNearestScanRadius>k__BackingField: 10
   <AlwaysShoot>k__BackingField: 0
