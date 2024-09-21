@@ -125,7 +125,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
-        Value: 1
+        Value: 3
       - ColumnID: AttackRange
         Value: 8.5
       - ColumnID: EscapeRange
@@ -399,7 +399,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 1
       - ColumnID: Damage
-        Value: 50
+        Value: 40
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -426,11 +426,11 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 1
       - ColumnID: Damage
-        Value: 50
+        Value: 40
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 2
+        Value: 2.1
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -453,7 +453,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 1
       - ColumnID: Damage
-        Value: 50
+        Value: 40
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -480,7 +480,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 1
       - ColumnID: Damage
-        Value: 60
+        Value: 50
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -507,11 +507,11 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 1
       - ColumnID: Damage
-        Value: 60
+        Value: 50
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 2.4
+        Value: 2.3
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -534,7 +534,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 1
       - ColumnID: Damage
-        Value: 60
+        Value: 50
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -559,13 +559,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 1
       - ColumnID: Damage
-        Value: 70
+        Value: 60
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 2.6
+        Value: 2.5
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -586,13 +586,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 1
       - ColumnID: Damage
-        Value: 70
+        Value: 60
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 2.7
+        Value: 2.6
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -613,13 +613,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 1
       - ColumnID: Damage
-        Value: 70
+        Value: 60
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 2.8
+        Value: 2.7
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -640,13 +640,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 1
       - ColumnID: Damage
-        Value: 80
+        Value: 70
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 3
+        Value: 2.8
       - ColumnID: Duration
         Value: 0.1
       - ColumnID: Count
@@ -1645,7 +1645,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 5
+        Value: 3
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1672,7 +1672,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 6
+        Value: 3
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1699,7 +1699,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 7
+        Value: 4
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1726,7 +1726,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 8
+        Value: 4
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1753,7 +1753,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 9
+        Value: 5
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1780,7 +1780,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 10
+        Value: 5
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1807,7 +1807,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 11
+        Value: 6
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1834,7 +1834,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 12
+        Value: 6
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1861,7 +1861,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
-        Value: 13
+        Value: 7
       - ColumnID: Duration
         Value: -1
       - ColumnID: Count
@@ -1884,7 +1884,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 20
+        Value: 12
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -1896,7 +1896,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.5,100,5
+        Value: 1,100,5
     - name: "60057     \uD478\uB4DC\uD30C\uC6CCG lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1911,7 +1911,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 22
+        Value: 14
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -1923,7 +1923,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.4,100,7
+        Value: 1,100,7
     - name: "60058     \uD478\uB4DC\uD30C\uC6CCG lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1938,7 +1938,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 24
+        Value: 16
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -1950,7 +1950,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.3,100,9
+        Value: 1,100,9
     - name: "60059     \uD478\uB4DC\uD30C\uC6CCG lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1965,7 +1965,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 26
+        Value: 18
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -1977,7 +1977,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.2,100,11
+        Value: 1,100,11
     - name: "60060     \uD478\uB4DC\uD30C\uC6CCG lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1992,7 +1992,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 28
+        Value: 20
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -2004,7 +2004,7 @@ MonoBehaviour:
       - ColumnID: AimType
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
-        Value: 1.1,100,13
+        Value: 1,100,13
     - name: "60061     \uD478\uB4DC\uD30C\uC6CCG lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2019,7 +2019,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 30
+        Value: 22
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -2046,7 +2046,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 32
+        Value: 24
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -2073,7 +2073,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 34
+        Value: 26
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
@@ -2100,7 +2100,7 @@ MonoBehaviour:
       - ColumnID: CoolDown
         Value: 0
       - ColumnID: Damage
-        Value: 36
+        Value: 28
       - ColumnID: Range
         Value: 0
       - ColumnID: Radius
