@@ -4906,7 +4906,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1808950164, guid: b5021d953b55d2b479e6cb0356aa033b, type: 3}
-  m_Color: {r: 1, g: 0.5253334, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10172,6 +10172,7 @@ MonoBehaviour:
   m_isDie: 0
   m_invincible: 0
   m_damageReduction: 0
+  m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
