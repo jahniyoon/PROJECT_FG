@@ -19,7 +19,7 @@ MonoBehaviour:
   <EnemySpawnInterval>k__BackingField: 15
   <EnemySpawnCount>k__BackingField: 10
   <PlayerMaxHealth>k__BackingField: 200
-  <PlayerMoveSpeed>k__BackingField: 10
+  <PlayerMoveSpeed>k__BackingField: 6
   <PlayerRotateSpeed>k__BackingField: 20
   <PlayerAttackDamage>k__BackingField: 30
   <PlayerAttackCoolDown>k__BackingField: 0.25

@@ -21,7 +21,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv1"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv1"
     ID: 60038
-    CoolDown: 0.15
+    CoolDown: 3
     Damage: 15
     Range: 15
     Radius: 0
@@ -35,8 +35,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv2"
     ID: 60039
-    CoolDown: 0.15
-    Damage: 16
+    CoolDown: 3
+    Damage: 17
     Range: 15
     Radius: 0
     Duration: -1
@@ -49,8 +49,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv3"
     ID: 60040
-    CoolDown: 0.15
-    Damage: 17
+    CoolDown: 2
+    Damage: 19
     Range: 15
     Radius: 0
     Duration: -1
@@ -63,8 +63,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv4"
     ID: 60041
-    CoolDown: 0.15
-    Damage: 18
+    CoolDown: 2
+    Damage: 21
     Range: 15
     Radius: 0
     Duration: -1
@@ -77,8 +77,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv5"
     ID: 60042
-    CoolDown: 0.15
-    Damage: 19
+    CoolDown: 1
+    Damage: 23
     Range: 15
     Radius: 0
     Duration: -1
@@ -91,8 +91,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv6"
     ID: 60043
-    CoolDown: 0.15
-    Damage: 20
+    CoolDown: 1
+    Damage: 25
     Range: 15
     Radius: 0
     Duration: -1
@@ -105,8 +105,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv7"
     ID: 60044
-    CoolDown: 0.15
-    Damage: 21
+    CoolDown: 1
+    Damage: 27
     Range: 15
     Radius: 0
     Duration: -1
@@ -119,8 +119,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv8"
     ID: 60045
-    CoolDown: 0.15
-    Damage: 22
+    CoolDown: 1
+    Damage: 29
     Range: 15
     Radius: 0
     Duration: -1
@@ -133,8 +133,8 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCE lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCE lv9"
     ID: 60046
-    CoolDown: 0.15
-    Damage: 23
+    CoolDown: 0.1
+    Damage: 32
     Range: 15
     Radius: 0
     Duration: -1
