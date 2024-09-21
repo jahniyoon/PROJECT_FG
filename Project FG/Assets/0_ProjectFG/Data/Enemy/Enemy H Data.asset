@@ -29,5 +29,5 @@ MonoBehaviour:
   <FoodPower>k__BackingField: {fileID: 1961031887029804917, guid: 070509cee81b758439034c04c6d47d5c,
     type: 3}
   <AttackDamage>k__BackingField: 50
-  <AttackSpeed>k__BackingField: 1
+  <AttackSpeed>k__BackingField: 3
   <ExplosionRadius>k__BackingField: 5

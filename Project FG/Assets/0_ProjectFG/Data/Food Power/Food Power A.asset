@@ -108,7 +108,7 @@ MonoBehaviour:
     CoolDown: 0.5
     Damage: 70
     Range: 0
-    Radius: 1.6
+    Radius: 1.7
     Duration: 0.1
     Count: 1
     AimType: 2
