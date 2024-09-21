@@ -19,7 +19,7 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 1
   <RotateSpeed>k__BackingField: 10
   <Damage>k__BackingField: 5
-  <AttackRange>k__BackingField: 12
+  <AttackRange>k__BackingField: 8.5
   <EscapeRange>k__BackingField: 5
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
