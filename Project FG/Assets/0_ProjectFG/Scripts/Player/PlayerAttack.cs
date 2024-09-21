@@ -30,15 +30,15 @@ namespace JH
         }
 
 
-        //private void Update()
-        //{
-        //    if (m_player.Input.AttackDown)
-        //    {
-        //        Attack();
-        //    }
+        private void Update()
+        {
+            if (m_player.Input.AttackDown)
+            {
+                Attack();
+            }
 
-        //    AttackStateHandler();
-        //}
+            AttackStateHandler();
+        }
 
         private void AttackStateHandler()
         {
