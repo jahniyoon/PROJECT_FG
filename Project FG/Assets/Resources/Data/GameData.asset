@@ -1153,9 +1153,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 3
       - ColumnID: Damage
-        Value: 50
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
@@ -1180,9 +1180,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 2.8
       - ColumnID: Damage
-        Value: 50
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
@@ -1207,9 +1207,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 1
+        Value: 2.6
       - ColumnID: Damage
-        Value: 50
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
@@ -1234,9 +1234,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 2.4
       - ColumnID: Damage
-        Value: 60
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
@@ -1261,9 +1261,9 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 2.2
       - ColumnID: Damage
-        Value: 60
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
@@ -1288,13 +1288,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.5
+        Value: 2
       - ColumnID: Damage
-        Value: 60
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
-        Value: 3
+        Value: 2
       - ColumnID: Duration
         Value: 0.5
       - ColumnID: Count
@@ -1315,13 +1315,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.1
+        Value: 1.8
       - ColumnID: Damage
-        Value: 70
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
-        Value: 3
+        Value: 2
       - ColumnID: Duration
         Value: 0.5
       - ColumnID: Count
@@ -1342,13 +1342,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.1
+        Value: 1.5
       - ColumnID: Damage
-        Value: 70
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
-        Value: 3
+        Value: 2
       - ColumnID: Duration
         Value: 0.5
       - ColumnID: Count
@@ -1369,13 +1369,13 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.1
+        Value: 1
       - ColumnID: Damage
-        Value: 70
+        Value: 30
       - ColumnID: Range
         Value: 3
       - ColumnID: Radius
-        Value: 3
+        Value: 2
       - ColumnID: Duration
         Value: 0.5
       - ColumnID: Count
