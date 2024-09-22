@@ -39,6 +39,7 @@ namespace JH
         public int Level => m_powerLevel;
         public bool IsEffectFoodPower => m_effectFoodPower;
         public FoodPowerData Data => m_data;
+        public UnityEvent LevelUpEvent = new UnityEvent();
 
         private void Awake()
         {
@@ -82,11 +83,14 @@ namespace JH
         public virtual void LevelUp()
         {
             m_powerLevel++;
+            LevelUpEvent?.Invoke();
         }
         // 레벨 업
         public virtual void SetLevel(int value)
         {
             m_powerLevel = value;
+            LevelUpEvent?.Invoke();
+
         }
 
 
