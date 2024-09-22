@@ -41,7 +41,12 @@ namespace JH
 
 
             m_target = position;
+
+            int valueInt = (int)value;
+            if(value - value == 0)
             m_textMeshPro.text = value.ToString();
+            else
+            m_textMeshPro.text = value.ToString("F1");
 
             if(textColor == default)
                 textColor = Color.white;
