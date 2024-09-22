@@ -41,7 +41,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20002     Test Enemy B
@@ -56,7 +56,7 @@ MonoBehaviour:
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
-        Value: 5
+        Value: 4
       - ColumnID: AttackRange
         Value: 1.5
       - ColumnID: EscapeRange
@@ -64,7 +64,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20003     Test Enemy C
@@ -87,7 +87,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20004     Test Enemy D
@@ -110,7 +110,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20005     Test Enemy E
@@ -133,7 +133,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 5
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20006     Test Enemy F
@@ -156,7 +156,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 7.5
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20007     Test Enemy G
@@ -179,7 +179,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 0
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20008     Test Enemy H
@@ -202,7 +202,7 @@ MonoBehaviour:
       - ColumnID: Damage
         Value: 50
       - ColumnID: PredationHealthRatio
-        Value: 40
+        Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
     - name: 20009     -
@@ -586,7 +586,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.8
+        Value: 1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
@@ -613,7 +613,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.7
+        Value: 1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
@@ -640,7 +640,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.7
+        Value: 1
       - ColumnID: Damage
         Value: 70
       - ColumnID: Range
