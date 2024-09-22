@@ -24816,6 +24816,9 @@ MonoBehaviour:
   m_gameSettings: {fileID: 11400000, guid: 12053eeeb0b70a245805c17885685362, type: 2}
   m_playerState: 0
   m_isFreeze: 0
+  m_healthBarEnable: 1
+  m_healthBarPrefab: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
+    type: 3}
 --- !u!114 &1966324714621981550
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,6 +36,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     [Header("HealthBar")]
     [SerializeField] private MiniHealthBar m_healthBar;
+    [SerializeField] private float m_healthBarOffset = 1;
     [SerializeField] private FoodPower m_FoodPower;
 
     [Header("Predation")]
@@ -127,8 +128,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
             m_is2D = true;
             m_hitEffect.enabled = false;
             Vector3 localPos = Vector3.zero;
-            localPos.z += 1;
+            localPos.z += m_healthBarOffset;
             m_healthBar.transform.localPosition = localPos;
+            localPos.z += 0.5f;
+
             m_predationIcon.transform.localPosition = localPos;
         }
         m_spriteColor = GetComponent<SpriteColor>();
