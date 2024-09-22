@@ -83,7 +83,7 @@ MonoBehaviour:
       - ColumnID: AttackRange
         Value: 5
       - ColumnID: EscapeRange
-        Value: 5
+        Value: 4
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
@@ -106,7 +106,7 @@ MonoBehaviour:
       - ColumnID: AttackRange
         Value: 5
       - ColumnID: EscapeRange
-        Value: 5
+        Value: 4
       - ColumnID: Damage
         Value: 10
       - ColumnID: PredationHealthRatio
@@ -127,7 +127,7 @@ MonoBehaviour:
       - ColumnID: MoveSpeed
         Value: 3
       - ColumnID: AttackRange
-        Value: 5
+        Value: 7
       - ColumnID: EscapeRange
         Value: 5
       - ColumnID: Damage
