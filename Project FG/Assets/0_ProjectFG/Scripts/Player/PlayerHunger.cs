@@ -63,7 +63,7 @@ namespace JH
         }
 
         // 포식 성공 시 푸드파워 추가
-        public FoodPower AddHunger(FoodPower foodPower, int hunger = 0, bool isDefault = false)
+        public FoodPower AddHunger(FoodPower foodPower, int hunger = 0, bool isDefault = false, bool effect = false)
         {
             // 푸드파워 깊은 복사 이후에 초기화
             FoodPower newPower = Instantiate(foodPower.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
@@ -72,6 +72,9 @@ namespace JH
 
             newPower.gameObject.name = PowerName;
             newPower.Init();
+
+            if (effect)
+                newPower.SetLevel(foodPower.Level);
 
             // 애니메이션 연결
             if (isDefault)
@@ -216,9 +219,9 @@ namespace JH
                     break;
             }
 
-            foreach(var type in m_gameSettings.FoodCombo)
+            foreach (var type in m_gameSettings.FoodCombo)
             {
-                if(type.ComboType == Combo)
+                if (type.ComboType == Combo)
                 {
                     level = type.Level;
                     break;
@@ -300,7 +303,7 @@ namespace JH
 
             foreach (var item in m_FoodComboEffects)
             {
-                AddHunger(item.Key, 0);
+                AddHunger(item.Key, 0, effect: true);
                 Destroy(item.Key.gameObject);
             }
 

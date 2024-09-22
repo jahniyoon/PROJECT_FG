@@ -24703,6 +24703,7 @@ GameObject:
   - component: {fileID: 4510291983175367558}
   - component: {fileID: 4551340168604416226}
   - component: {fileID: 8143575691385239260}
+  - component: {fileID: 3783018804665123172}
   m_Layer: 0
   m_Name: Test Enemy E
   m_TagString: Enemy
@@ -24887,6 +24888,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3783018804665123172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753025787564866403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41efc45b784be3a41bc006e2f7326f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitDuration: 0.175
+  m_flickingDuration: 0.175
+  m_hitMaterial: {fileID: 2100000, guid: 5375bbf6406a1014bba196dc33100ac3, type: 2}
 --- !u!1 &8986078381660644388
 GameObject:
   m_ObjectHideFlags: 0

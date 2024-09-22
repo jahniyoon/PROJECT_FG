@@ -13,6 +13,7 @@ namespace JH
         private Transform m_model;
 
         private Damageable m_damageable;
+        private SpriteColor m_spriteColor;
 
         private PlayerInput m_input;
         private PlayerMovement m_movement;
@@ -62,6 +63,7 @@ namespace JH
 
             m_buffHandler = GetComponent<BuffHandler>();
             m_effectHandler = GetComponent<EffectHandler>();
+            m_spriteColor = GetComponent<SpriteColor>();
         }
 
         private void Start()
@@ -113,6 +115,7 @@ namespace JH
         {
             //m_animation.SetTrigger(AnimationID.isHit);
             m_impulse?.GenerateImpulse();
+            m_spriteColor?.OnHit();
         }
 
 

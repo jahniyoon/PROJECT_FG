@@ -24559,6 +24559,7 @@ GameObject:
   - component: {fileID: 2343442672217972025}
   - component: {fileID: 5691063815955157913}
   - component: {fileID: 6729693581052898426}
+  - component: {fileID: 8911213383767804282}
   m_Layer: 9
   m_Name: Player Controller 2D
   m_TagString: Player
@@ -24619,6 +24620,7 @@ MonoBehaviour:
   m_invincible: 0
   m_damageReduction: 0
   m_damageEffectColor: {r: 1, g: 0.80784315, b: 0, a: 1}
+  m_execution: 0
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -24945,6 +24947,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_stunEffect: {fileID: 1667102942520699731}
+--- !u!114 &8911213383767804282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347991003380837535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41efc45b784be3a41bc006e2f7326f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitDuration: 0.25
+  m_flickingDuration: 0.25
+  m_hitMaterial: {fileID: 2100000, guid: acfbfa09e61ca004c9d8e28a4b669f8f, type: 2}
 --- !u!1 &7453778104073557254
 GameObject:
   m_ObjectHideFlags: 0
@@ -30003,9 +30020,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7876119541193980847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1386881880905580121}
@@ -30051,7 +30068,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2708906, guid: d120c74879515bd468c7000a601c0dc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b143f7cf01610894eba0544ebd759c98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -30072,7 +30089,7 @@ Animator:
   m_GameObject: {fileID: 7876119541193980847}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d584ee4a3c3bcda4d84d6d0e4e849bfd, type: 2}
+  m_Controller: {fileID: 22100000, guid: 48b714635ee13e443aa45621a4b88bc0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
