@@ -23,7 +23,7 @@ MonoBehaviour:
     ID: 60038
     CoolDown: 0.05
     Damage: 10
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
     ID: 60039
     CoolDown: 0.05
     Damage: 12
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -51,7 +51,7 @@ MonoBehaviour:
     ID: 60040
     CoolDown: 0.05
     Damage: 14
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -65,7 +65,7 @@ MonoBehaviour:
     ID: 60041
     CoolDown: 0.05
     Damage: 16
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -79,7 +79,7 @@ MonoBehaviour:
     ID: 60042
     CoolDown: 0.05
     Damage: 18
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -93,7 +93,7 @@ MonoBehaviour:
     ID: 60043
     CoolDown: 0.05
     Damage: 20
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
     ID: 60044
     CoolDown: 0.05
     Damage: 22
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -121,7 +121,7 @@ MonoBehaviour:
     ID: 60045
     CoolDown: 0.05
     Damage: 24
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
     ID: 60046
     CoolDown: 0.05
     Damage: 26
-    Range: 15
+    Range: 10
     Radius: 0
     Duration: -1
     Count: 1
