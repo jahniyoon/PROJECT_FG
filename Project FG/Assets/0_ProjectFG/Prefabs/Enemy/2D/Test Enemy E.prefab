@@ -9915,7 +9915,7 @@ Transform:
   m_GameObject: {fileID: 3133660592648064320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.192, z: 0.504}
+  m_LocalPosition: {x: 0, y: 0.192, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24750,6 +24750,7 @@ MonoBehaviour:
   m_targetDistance: 0
   m_healthBar: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
     type: 3}
+  m_healthBarOffset: 1
   m_FoodPower: {fileID: 0}
   m_canPredation: 0
   m_predationIcon: {fileID: 3742115071999069320, guid: 951f5672f13fe0542bf628a0d95102c3,

@@ -15,6 +15,16 @@ namespace JH
         private FoodPowerSkill m_activeSkill;
 
 
+        public override void Init(bool isMain = false)
+        {
+            base.Init(isMain);
+            LevelUpEvent.AddListener(UpdateLevel);
+        }
+        private void UpdateLevel()
+        {
+            if(m_activeSkill)
+            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
+        }
 
         public override void Active()
         {
@@ -30,6 +40,7 @@ namespace JH
         }
         public override void Inactive()
         {
+
             if (m_activeSkill)
             {
                 m_activeSkill.InactiveSkill();

@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace JH
 {
-    public partial class PlayerController : MonoBehaviour, IKnockbackable 
+    public partial class PlayerController : MonoBehaviour, IKnockbackable
     {
         private FSM<PlayerController> m_fsm;
         private Transform m_model;
@@ -33,6 +33,9 @@ namespace JH
         [Header("Player")]
         [SerializeField] private FSMState m_playerState;
         [SerializeField] private bool m_isFreeze;
+        [SerializeField] private bool m_healthBarEnable;
+        [SerializeField] private MiniHealthBar m_healthBarPrefab;
+        private MiniHealthBar m_healthBar;
 
         #region 프로퍼티
         public PlayerInput Input => m_input;
@@ -64,6 +67,15 @@ namespace JH
             m_buffHandler = GetComponent<BuffHandler>();
             m_effectHandler = GetComponent<EffectHandler>();
             m_spriteColor = GetComponent<SpriteColor>();
+
+            if (m_healthBarEnable)
+            {
+                m_healthBar = Instantiate(m_healthBarPrefab.gameObject, this.transform).GetComponent<MiniHealthBar>();
+                Vector3 position = Vector3.zero;
+                position.z += 1;
+                m_healthBar.transform.localPosition = position;
+                m_healthBar?.HealthBarEnable(true);
+            }
         }
 
         private void Start()
@@ -108,6 +120,7 @@ namespace JH
         // 체력 UI 업데이트
         public void SetHealthUI()
         {
+            m_healthBar?.SetHealthSlider(m_damageable.Health / m_damageable.MaxHealth);
             UIManager.Instance.MainUI.HealthUI.SetSlider(m_damageable.MaxHealth, m_damageable.Health);
         }
 
@@ -127,6 +140,7 @@ namespace JH
             // 버프 모두 지워주기
             m_buffHandler.RemoveAllBuff();
             m_playerHunger.StopFoodPowerRoutine();
+            m_healthBar?.HealthBarEnable(false);
 
             GameManager.Instance.GameOver();
             this.gameObject.SetActive(false);
@@ -164,7 +178,7 @@ namespace JH
         {
             SetFreeze(true);
 
-            if(knockbackRoutine != null)
+            if (knockbackRoutine != null)
             {
                 StopCoroutine(knockbackRoutine);
                 knockbackRoutine = null;
@@ -174,7 +188,7 @@ namespace JH
         }
         Coroutine knockbackRoutine;
 
-        IEnumerator KnockBackRoutine(Vector3 hitPos,float force, float duration)
+        IEnumerator KnockBackRoutine(Vector3 hitPos, float force, float duration)
         {
             float timer = 0;
             Vector3 startPos = transform.position;
@@ -189,7 +203,7 @@ namespace JH
 
             while (timer < duration)
             {
-                transform.position = Vector3.Lerp(startPos, endPos, timer/duration);
+                transform.position = Vector3.Lerp(startPos, endPos, timer / duration);
                 timer += Time.deltaTime;
                 yield return null;
             }

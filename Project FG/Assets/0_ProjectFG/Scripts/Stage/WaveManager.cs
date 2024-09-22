@@ -102,10 +102,13 @@ namespace JH
                 // 타이머가 되면 스폰한다.
                 if (m_spawnCount < Wave.EnemyCreationCount)
                 {
-                    if (Wave.EnemyCreationTime <= timer || m_remainEnemy < Wave.EnemyLeftNumber)
+                    if (m_spawnEnable)
                     {
-                        SpawnEnemy(Wave.SpawnEnemy);
-                        timer = 0;
+                        if (Wave.EnemyCreationTime <= timer || m_remainEnemy < Wave.EnemyLeftNumber)
+                        {
+                            SpawnEnemy(Wave.SpawnEnemy);
+                            timer = 0;
+                        }
                     }
                 }
 

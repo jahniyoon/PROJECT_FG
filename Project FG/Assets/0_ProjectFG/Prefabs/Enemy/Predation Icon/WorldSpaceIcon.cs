@@ -41,7 +41,9 @@ namespace JH
             }
 
             m_icon.localScale = Vector3.one * gameSettings.PredationIconScale;
-            m_icon.rotation = Quaternion.LookRotation(transform.position - _mainCam.transform.position);
+            m_icon.rotation = Camera.main.transform.rotation;
+
+            //m_icon.rotation = Quaternion.LookRotation(transform.position - _mainCam.transform.position);
 
         }
     }

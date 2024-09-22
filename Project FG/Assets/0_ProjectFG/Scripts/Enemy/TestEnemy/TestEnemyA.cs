@@ -11,6 +11,10 @@ namespace JH
         EnemyAData m_subData;
         [Header("Enemy A")]
         [SerializeField] private VisualEffect m_attackEffect;
+        [SerializeField] private float m_canRotateDuration =  0.5f;
+        [SerializeField] private bool m_canRotate = true;
+
+
 
         protected override void StartInit()
         {
@@ -32,6 +36,8 @@ namespace JH
                 return false;
             }
         }
+
+
 
         private void MeleeAttack()
         {
@@ -55,6 +61,13 @@ namespace JH
             }
             if (m_attackEffect)
                 m_attackEffect.Play();
+
+            m_canRotate = false;
+            Invoke(nameof(CanRotate), m_canRotateDuration);
+        }
+        private void CanRotate()
+        {
+            m_canRotate = true;
         }
 
 
