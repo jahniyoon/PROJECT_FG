@@ -16,6 +16,7 @@ namespace JH
         [SerializeField] private bool m_invincible;
         [SerializeField] private float m_damageReduction;   // 피해 감소
         [SerializeField] private Color m_damageEffectColor = Color.white;
+        [SerializeField] private bool m_execution;
 
         public UnityEvent DamageEvent;
         public UnityEvent DieEvent;
@@ -69,8 +70,8 @@ namespace JH
         {
             if (IsDie)
                 return;
-
             float finalDamage = FinalDamage(damage);
+
             if (m_invincible == false)
             {
                 if (Execution)
@@ -78,6 +79,8 @@ namespace JH
 
                 m_health -= finalDamage;
             }
+
+            m_execution = Execution;
 
             UIManager.Instance.Debug.OnDamage(finalDamage, transform, m_damageEffectColor);
             if (m_health <= 0)
@@ -101,7 +104,12 @@ namespace JH
             if (IsDie)
                 return;
             DieEvent?.Invoke();
-            DieDamageableEvent?.Invoke(this);
+
+            if(m_execution == false)
+            {
+                DieDamageableEvent?.Invoke(this);
+                Debug.Log("힐을 보낸다");
+            }
 
             m_health = 0;
             m_isDie = true;

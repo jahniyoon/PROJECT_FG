@@ -137,6 +137,7 @@ namespace JH
                 m_hunger.AddHunger(food, 1);
                 // 포만감
             }
+
             if (m_predationTarget.TryGetComponent<IPredationable>(out IPredationable predationable))
                 predationable.Predation();
 

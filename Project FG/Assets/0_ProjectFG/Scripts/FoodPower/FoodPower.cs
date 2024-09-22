@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -29,6 +30,7 @@ namespace JH
 
         bool isActive;
 
+        public UnityEvent ActiveEvent = new UnityEvent();
         public Sprite Icon => m_data.Icon;
         public float CoolDown => m_data.GetLevelData(m_powerLevel).CoolDown;
         public float Timer => m_coolDownTimer;
@@ -70,7 +72,7 @@ namespace JH
         // 푸드파워의 효과
         public virtual void Active()
         {
-
+            ActiveEvent?.Invoke();
         }
         public virtual void Inactive()
         {

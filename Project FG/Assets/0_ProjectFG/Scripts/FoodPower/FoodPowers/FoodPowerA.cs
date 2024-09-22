@@ -29,6 +29,8 @@ namespace JH
             m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
 
             m_activeSkill.ActiveSkill();
+            base.Active();
+
         }
         public override void Inactive()
         {

@@ -102,15 +102,11 @@ namespace JH
 
             RemoveDamageable(damageable);
 
-
             if (m_levelData.GetAdditionalValue(1) < rand)
                 return;
 
-
             if (m_casterDamageable != null)
                 m_casterDamageable.RestoreHealth(m_levelData.GetAdditionalValue(2));
-
-
         }
 
 
