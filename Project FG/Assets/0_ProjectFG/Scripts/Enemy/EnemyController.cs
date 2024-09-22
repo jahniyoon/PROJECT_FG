@@ -278,7 +278,11 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     }
 
 
-
+    public void KillEnemy()
+    {
+        m_damageable.SetHealth(0);
+        Die();
+    }
     protected virtual void Die()
     {
         m_canPredation = false;

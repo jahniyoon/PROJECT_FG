@@ -37,6 +37,13 @@ namespace JH
 
             UpdateHealthEvent?.Invoke();
         }
+        public void SetHealth(float health)
+        {
+            m_health = health;
+
+            UpdateHealthEvent?.Invoke();
+        }
+
 
         public void RestoreHealth(float addHealth)
         {
