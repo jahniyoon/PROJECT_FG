@@ -138,5 +138,5 @@ MonoBehaviour:
     AimType: 2
     AdditionalValues:
     - 0.2
-  <TargetNearestScanRadius>k__BackingField: 2
+  <TargetNearestScanRadius>k__BackingField: 3
   <AlwaysShoot>k__BackingField: 0
