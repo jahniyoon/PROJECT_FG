@@ -97,6 +97,12 @@ namespace JH
         }
 
 
+        public void AttackAnimation()
+        {
+            m_animation.SetTrigger(AnimationID.isAttack);
+
+        }
+
         // 체력 UI 업데이트
         public void SetHealthUI()
         {
@@ -105,7 +111,7 @@ namespace JH
 
         public void OnDamage()
         {
-            m_animation.SetTrigger(AnimationID.isHit);
+            //m_animation.SetTrigger(AnimationID.isHit);
             m_impulse?.GenerateImpulse();
         }
 
