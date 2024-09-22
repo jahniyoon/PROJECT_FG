@@ -63,7 +63,7 @@ namespace JH
                 timer += Time.deltaTime;
                 yield return null;
             }
-
+            m_donut.transform.GetChild(0).gameObject.SetActive(false);
             Explosion(damage);
 
             if (m_effect)
