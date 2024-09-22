@@ -105,7 +105,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv7"
     ID: 60008
-    CoolDown: 0.8
+    CoolDown: 1
     Damage: 60
     Range: 0
     Radius: 2
@@ -117,7 +117,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv8"
     ID: 60009
-    CoolDown: 0.7
+    CoolDown: 1
     Damage: 60
     Range: 0
     Radius: 2
@@ -129,7 +129,7 @@ MonoBehaviour:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv9"
     ID: 60010
-    CoolDown: 0.7
+    CoolDown: 1
     Damage: 70
     Range: 0
     Radius: 2
@@ -138,5 +138,5 @@ MonoBehaviour:
     AimType: 2
     AdditionalValues:
     - 0.2
-  <TargetNearestScanRadius>k__BackingField: 10
+  <TargetNearestScanRadius>k__BackingField: 2
   <AlwaysShoot>k__BackingField: 0

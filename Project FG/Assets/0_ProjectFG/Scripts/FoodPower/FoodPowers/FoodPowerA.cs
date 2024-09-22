@@ -21,12 +21,16 @@ namespace JH
             Vector3 position = m_casterPosition.position;
 
             Quaternion direction = GetDirection();
+            if (direction == Quaternion.identity)
+                return;
 
             m_activeSkill = Instantiate(m_slashSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
             m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
             m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
 
             m_activeSkill.ActiveSkill();
+            base.Active();
+
         }
         public override void Inactive()
         {

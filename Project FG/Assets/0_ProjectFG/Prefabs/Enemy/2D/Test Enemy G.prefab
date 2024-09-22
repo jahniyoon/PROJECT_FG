@@ -310,6 +310,7 @@ MonoBehaviour:
     type: 3}
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 8319817106852655872}
+  m_notCount: 1
   m_conversionTime: 0
 --- !u!114 &2386641190285868544
 MonoBehaviour:

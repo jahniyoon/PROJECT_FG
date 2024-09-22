@@ -50,7 +50,7 @@ namespace JH
             m_cantPredation = false;
 
             if (m_defaultFoodPower != null)
-                AddHunger(m_defaultFoodPower, 0);
+                AddHunger(m_defaultFoodPower, 0, true);
         }
 
 
@@ -63,7 +63,7 @@ namespace JH
         }
 
         // 포식 성공 시 푸드파워 추가
-        public FoodPower AddHunger(FoodPower foodPower, int hunger = 0)
+        public FoodPower AddHunger(FoodPower foodPower, int hunger = 0, bool isDefault = false)
         {
             // 푸드파워 깊은 복사 이후에 초기화
             FoodPower newPower = Instantiate(foodPower.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
@@ -72,6 +72,10 @@ namespace JH
 
             newPower.gameObject.name = PowerName;
             newPower.Init();
+
+            // 애니메이션 연결
+            if (isDefault)
+                newPower.ActiveEvent.AddListener(m_player.AttackAnimation);
 
             // 포만도에 영향이 없으면 효과푸드파워이다.
             if (hunger == 0)
@@ -263,7 +267,7 @@ namespace JH
 
                         Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
 
-                        damageable.OnDamage(m_player.Setting.HungerSkillDamage);
+                        damageable.OnDamage(m_player.Setting.HungerSkillDamage, true);
                     }
 
                 }
@@ -292,7 +296,7 @@ namespace JH
 
             // 기본 푸드파워를 넣어준다.
             if (m_defaultFoodPower != null)
-                AddHunger(m_defaultFoodPower, 0);
+                AddHunger(m_defaultFoodPower, 0, true);
 
             foreach (var item in m_FoodComboEffects)
             {

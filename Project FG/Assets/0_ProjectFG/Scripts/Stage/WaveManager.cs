@@ -132,12 +132,16 @@ namespace JH
         private void SpawnEnemy(GameObject EnemyPrefab)
         {
             GameObject Enemy = Instantiate(EnemyPrefab, m_enemyParent);
-            Damageable[] Enemies = Enemy.GetComponentsInChildren<Damageable>();
+            EnemyController[] Enemies = Enemy.GetComponentsInChildren<EnemyController>();
 
-            m_remainEnemy += Enemies.Length;
             foreach (var enemy in Enemies)
             {
-                enemy.DieEvent.AddListener(EnemyDie);
+                if (enemy.NotCount)
+                {
+                    continue;
+                }
+                enemy.Damageable.DieEvent.AddListener(EnemyDie);
+                m_remainEnemy++;
             }
             m_spawnCount++;
             UIManager.Instance.WaveUI.SetRemainEnemy(m_remainEnemy);

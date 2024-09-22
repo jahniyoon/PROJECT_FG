@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -29,6 +30,7 @@ namespace JH
 
         bool isActive;
 
+        public UnityEvent ActiveEvent = new UnityEvent();
         public Sprite Icon => m_data.Icon;
         public float CoolDown => m_data.GetLevelData(m_powerLevel).CoolDown;
         public float Timer => m_coolDownTimer;
@@ -70,7 +72,7 @@ namespace JH
         // 푸드파워의 효과
         public virtual void Active()
         {
-
+            ActiveEvent?.Invoke();
         }
         public virtual void Inactive()
         {
@@ -94,6 +96,14 @@ namespace JH
         protected Quaternion GetDirection()
         {
             Quaternion direction = Quaternion.identity;
+
+            if (m_data.AlwaysShoot == false)
+            {
+                Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                if(randomTarget == null)
+                    return Quaternion.identity;
+            }
+
 
             switch (m_data.GetLevelData(m_powerLevel).AimType)
             {
@@ -182,6 +192,7 @@ namespace JH
             Transform target = null;
 
             Collider[] colls = Physics.OverlapSphere(position, radius);
+
             List<Collider> enemies = new List<Collider>();
             for (int i = 0; i < colls.Length; i++)
             {
@@ -199,6 +210,9 @@ namespace JH
                 }
             }
             int random = Random.Range(0, enemies.Count);
+
+            if (enemies.Count == 0)
+                return null;
 
             target = enemies[random].transform;
             return target;

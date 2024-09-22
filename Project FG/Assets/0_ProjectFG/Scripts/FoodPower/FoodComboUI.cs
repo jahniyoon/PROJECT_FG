@@ -74,7 +74,10 @@ namespace JH
         {
             // 우선 다꺼준다.
             foreach (var item in m_foodPowerIcons)
+            {
                 item.gameObject.SetActive(false);
+                item.SetEnable(false);
+            }
 
 
             int count = 0;
