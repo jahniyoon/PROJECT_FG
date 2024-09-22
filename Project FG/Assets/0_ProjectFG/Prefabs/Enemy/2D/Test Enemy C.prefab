@@ -4904,7 +4904,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9635941c6004829468e7f315ef28dcac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10149,6 +10149,7 @@ MonoBehaviour:
   m_targetDistance: 0
   m_healthBar: {fileID: 6593884500959067872, guid: a46e6a33f8b37254bbc2456694156217,
     type: 3}
+  m_healthBarOffset: 1
   m_FoodPower: {fileID: 0}
   m_canPredation: 0
   m_predationIcon: {fileID: 3742115071999069320, guid: 951f5672f13fe0542bf628a0d95102c3,

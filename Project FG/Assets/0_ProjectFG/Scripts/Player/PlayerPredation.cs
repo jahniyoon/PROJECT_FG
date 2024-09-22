@@ -171,7 +171,9 @@ namespace JH
                 yield return null;
             }
 
-            Invoke(nameof(ResetTarget), m_player.Setting.PredationFatalityDuration);
+            yield return new WaitForSeconds(m_player.Setting.PredationFatalityDuration);
+
+            ResetTarget();
             yield break;
         }
 
