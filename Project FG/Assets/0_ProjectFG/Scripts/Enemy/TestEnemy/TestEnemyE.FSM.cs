@@ -152,7 +152,7 @@ namespace JH
                 return;
             }
             // 바로 발사하도록 하기위해, 슛 타이머가 0이 될 때마다 발사
-            if (1 / m_subData.FireRate <= m_shootTimer && TargetAngleCheck() && AttackRangeCheck())
+            if (1 / m_subData.FireRate <= m_shootTimer && TargetAngleCheck() && m_targetDistance < m_data.AttackRange)
             {
                 Shoot();
                 m_shootTimer = 0;
