@@ -115,7 +115,6 @@ namespace JH
             if(m_execution == false)
             {
                 DieDamageableEvent?.Invoke(this);
-                Debug.Log("힐을 보낸다");
             }
 
             m_health = 0;
