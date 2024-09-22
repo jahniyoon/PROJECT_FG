@@ -28,6 +28,7 @@ namespace JH
         public float Health => m_health;
 
         public bool IsDie => m_isDie;
+        public bool Excution => m_execution;
         public float DamageReduction => m_damageReduction;
 
         public void SetMaxHealth(float maxHealth)

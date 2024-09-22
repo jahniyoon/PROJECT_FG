@@ -170,7 +170,6 @@ namespace JH
         }
         float scale = 1;
         Vector3 rotation = Vector3.zero;
-
         protected override void DieStateStay()
         {
             transform.localScale = Vector3.one * scale;
@@ -180,7 +179,7 @@ namespace JH
 
 
             rotation.y += Time.deltaTime * 5;
-            scale -= Time.deltaTime;
+            scale -= Time.deltaTime * m_dieSpeed;
         }
 
         #endregion

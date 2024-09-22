@@ -42,6 +42,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("Predation")]
     [SerializeField] private bool m_canPredation;
     [SerializeField] private WorldSpaceIcon m_predationIcon;
+    [SerializeField] protected float m_dieSpeed = 1.2f;
 
     [Header("Attack CoolDown")]
     [SerializeField] protected float m_attackCoolDown;
@@ -293,6 +294,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     }
     protected virtual void Die()
     {
+        if (m_damageable.Excution)
+            m_spriteRenderer.sortingOrder = 6;
+
         m_canPredation = false;
         m_predationIcon.IconEnable(m_canPredation);
         // 버프 모두 지워주기

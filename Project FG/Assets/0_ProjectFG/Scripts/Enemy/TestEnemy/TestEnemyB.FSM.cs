@@ -183,7 +183,7 @@ namespace JH
 
 
             rotation.y += Time.deltaTime * 5;
-            scale -= Time.deltaTime;
+            scale -= Time.deltaTime * m_dieSpeed;
         }
 
         #endregion
