@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PC Lower
+  m_Controller: {fileID: 9100000, guid: 39bf5a6c628ecd94a99d468a40f2e37f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c257edfc5d161d94bb2930f31de9ae9f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 44213df88e5e8f644b3799c71c87703e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3a399118ae316a347888a79990625beb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5ed610f9f4545304185922a7b7c74a93, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 28b5514aaf16e3e41addb7ec08b7d8c5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7e7e6d42c28ff7846bdf3733bf604474, type: 2}

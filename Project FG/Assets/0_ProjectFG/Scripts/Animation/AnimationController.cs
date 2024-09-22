@@ -7,31 +7,35 @@ namespace JH
 {
     public class AnimationController : MonoBehaviour
     {
-        private Animator m_animator;
+        private Animator[] m_animator;
 
         private void Awake()
         {
-            m_animator = GetComponentInChildren<Animator>();
+            m_animator = GetComponentsInChildren<Animator>();
 
         }
 
         public void Rebind()
         {
-            m_animator.Rebind();
+            foreach (var item in m_animator)
+                item.Rebind();
         }
 
         public void SetBool(AnimationID parameter, bool enable)
         {
-            m_animator.SetBool(parameter.ToString(), enable);
+            foreach (var item in m_animator)
+                item.SetBool(parameter.ToString(), enable);
         }
         public void SetTrigger(AnimationID parameter)
         {
-            m_animator.SetTrigger(parameter.ToString());
+            foreach (var item in m_animator)
+                item.SetTrigger(parameter.ToString());
         }
 
         public void SetLayer(string layerName, float value)
         {
-            m_animator.SetLayerWeight(m_animator.GetLayerIndex(layerName), value);
+            foreach (var item in m_animator)
+                item.SetLayerWeight(item.GetLayerIndex(layerName), value);
         }
 
     }
