@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public partial class TestEnemyA 
+    public partial class TestEnemyA
     {
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
@@ -68,12 +68,14 @@ namespace JH
                 Vector3 destination = FindChasePos();
 
                 m_agent.SetDestination(destination);
-                ModelRotate(destination);
+                if (m_canRotate)
+                    ModelRotate(destination);
                 return;
             }
 
             m_agent.SetDestination(m_target.position);
-            ModelRotate(m_target.position);
+            if (m_canRotate)
+                ModelRotate(m_target.position);
         }
         protected override void MoveStateExit()
         {
@@ -97,7 +99,7 @@ namespace JH
             if (AttackRangeCheck() == false)
                 return new MoveState();
 
-                return null;
+            return null;
         }
 
         protected override void AttackStateEnter()
@@ -115,9 +117,10 @@ namespace JH
                 // 공격 속도 타이머와 쿨타임 초기화
                 m_attackTimer = 0;
                 m_attackCoolDown = m_subData.AttackCoolDown;
-         
+
                 MeleeAttack();
-                ModelRotate(m_target.position, true);
+                if (m_canRotate)
+                    ModelRotate(m_target.position, true);
             }
             ModelRotate(m_target.position);
 
