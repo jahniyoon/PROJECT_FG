@@ -95,6 +95,14 @@ namespace JH
         {
             Quaternion direction = Quaternion.identity;
 
+            if (m_data.AlwaysShoot == false)
+            {
+                Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                if(randomTarget == null)
+                    return Quaternion.identity;
+            }
+
+
             switch (m_data.GetLevelData(m_powerLevel).AimType)
             {
                 // 플레이어 방향
@@ -182,6 +190,7 @@ namespace JH
             Transform target = null;
 
             Collider[] colls = Physics.OverlapSphere(position, radius);
+
             List<Collider> enemies = new List<Collider>();
             for (int i = 0; i < colls.Length; i++)
             {
@@ -199,6 +208,9 @@ namespace JH
                 }
             }
             int random = Random.Range(0, enemies.Count);
+
+            if (enemies.Count == 0)
+                return null;
 
             target = enemies[random].transform;
             return target;

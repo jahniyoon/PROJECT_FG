@@ -46,7 +46,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("Stun")]
     [SerializeField] protected ParticleSystem m_stunEffect;
     protected bool m_isKnockback;
-
+    [Header("Enemy Count")]
+    [SerializeField] private bool m_notCount;
 
     // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
     protected float m_attackTimer = 0;
@@ -56,6 +57,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     public FSMState State => m_state;
     public int ID => m_data.ID;
     public Transform Transform => this.transform;
+    public bool NotCount => m_notCount;
+    public Damageable Damageable => m_damageable;
 
     #region Lifecycle
     private void Awake()
