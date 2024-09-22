@@ -6,6 +6,7 @@ using System;
 using System.Text;
 using UnityEngine.Windows;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(CryptoComponent))]
 public class CryptoEditor : Editor
 {
@@ -103,3 +104,4 @@ public class CryptoEditor : Editor
         }
     }
 }
+#endif

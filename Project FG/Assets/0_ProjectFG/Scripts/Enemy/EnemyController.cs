@@ -52,12 +52,13 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     protected bool m_isKnockback;
     [Header("Enemy Count")]
     [SerializeField] private bool m_notCount;
-
+    [Header("Minimap Color")]
+    [SerializeField] protected Color m_minimapColor = Color.red;
     // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
     protected float m_attackTimer = 0;
+    private int m_instanceID;
 
     public bool CanPredation => m_canPredation;
-
     public FSMState State => m_state;
     public int ID => m_data.ID;
     public Transform Transform => this.transform;
@@ -102,8 +103,13 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     protected virtual void AwakeInit()
     {
-        m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            m_player = player.GetComponent<PlayerController>();
+        }
 
+        m_instanceID = this.gameObject.GetInstanceID();
         m_model = transform.GetChild(0);
         m_agent = GetComponent<NavMeshAgent>();
         m_damageable = GetComponent<Damageable>();
@@ -142,6 +148,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         m_agent.speed = FinalSpeed(m_data.MoveSpeed);
         m_damageable.SetMaxHealth(m_data.Health);
+        UIManager.Instance.MinimapUI.AddObject(m_instanceID, m_minimapColor);
 
         m_fsm = new IdleState();
 
@@ -157,6 +164,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         FSMHandler();
         CoolDownHandler();
         BuffHandler();
+
+        UIManager.Instance.MinimapUI.SetPosition(m_instanceID, this.transform.position);
+
     }
 
     private void TargetDistanceUpdate()
@@ -211,13 +221,22 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     // 모델 방향 돌리기
     protected void ModelRotate(Vector3 position, bool navDir = true, bool instant = false)
     {
-
         Vector3 navRotation = m_agent.velocity.normalized;
 
         //  네비게이션 있으면 네비게이션 우선으로 방향 보기
         if (navRotation != Vector3.zero && navDir)
         {
-            m_model.rotation = Quaternion.LookRotation(m_agent.velocity.normalized, Vector3.up);
+            Quaternion rotation = Quaternion.LookRotation(m_agent.velocity.normalized, Vector3.up);
+
+            if (m_is2D)
+            {
+                m_spriteRenderer.flipX = 180 <= rotation.eulerAngles.y ;
+                m_model.localRotation = rotation;
+
+                return;
+            }
+            m_model.rotation = rotation;
+
             return;
         }
 
@@ -230,17 +249,17 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDir.normalized);
-        Quaternion newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, (m_data.RotateSpeed * Time.deltaTime));
+        Quaternion newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, (m_data.RotateSpeed * 10 * Time.deltaTime));
 
-        // 즉시 바라본다.
-        if (instant)
-        {
-            newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, ((m_data.RotateSpeed * 10f) * Time.deltaTime));
-        }
+        //// 즉시 바라본다.
+        //if (instant)
+        //{
+        //    newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, ((m_data.RotateSpeed * 10f) * Time.deltaTime));
+        //}
 
         if (m_is2D)
         {
-            m_spriteRenderer.flipX = newRotation.eulerAngles.y < 180;
+            m_spriteRenderer.flipX = 180 <= newRotation.eulerAngles.y;
             m_model.localRotation = newRotation;
             return;
         }
@@ -296,6 +315,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         if (m_damageable.Excution)
             m_spriteRenderer.sortingOrder = 6;
+
+        UIManager.Instance.MinimapUI.RemoveObject(m_instanceID);
 
         m_canPredation = false;
         m_predationIcon.IconEnable(m_canPredation);

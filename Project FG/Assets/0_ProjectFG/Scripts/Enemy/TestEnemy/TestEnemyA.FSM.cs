@@ -68,14 +68,12 @@ namespace JH
                 Vector3 destination = FindChasePos();
 
                 m_agent.SetDestination(destination);
-                if (m_canRotate)
-                    ModelRotate(destination);
+                ModelRotate(destination);
                 return;
             }
 
             m_agent.SetDestination(m_target.position);
-            if (m_canRotate)
-                ModelRotate(m_target.position);
+            ModelRotate(m_target.position);
         }
         protected override void MoveStateExit()
         {
@@ -119,10 +117,9 @@ namespace JH
                 m_attackCoolDown = m_subData.AttackCoolDown;
 
                 MeleeAttack();
-                if (m_canRotate)
-                    ModelRotate(m_target.position, true);
+                //ModelRotate(m_target.position, true);
             }
-            ModelRotate(m_target.position);
+            //ModelRotate(m_target.position);
 
             m_attackTimer += Time.deltaTime;
         }

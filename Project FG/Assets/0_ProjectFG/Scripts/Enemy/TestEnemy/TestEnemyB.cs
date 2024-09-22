@@ -51,6 +51,11 @@ namespace JH
         {
             base.UpdateBehaviour();
         }
+        protected override void Die()
+        {
+            base.Die();
+            m_shildSkill.gameObject.SetActive(false);
+        }
 
         private void MeleeAttack()
         {

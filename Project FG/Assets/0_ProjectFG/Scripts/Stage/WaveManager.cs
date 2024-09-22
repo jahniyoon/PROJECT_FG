@@ -59,6 +59,8 @@ namespace JH
             m_stageCreator.CreateStage(stageSize);
             if (m_enemySpawner)
                 m_enemySpawner.SetArea(stageSize);
+
+            UIManager.Instance.MinimapUI.SetAreaSize(stageSize);
         }
 
         public void SwitchSpawnEnable()

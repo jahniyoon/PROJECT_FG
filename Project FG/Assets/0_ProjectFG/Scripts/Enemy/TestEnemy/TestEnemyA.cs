@@ -20,6 +20,7 @@ namespace JH
         {
             base.StartInit();
             TryGetData();
+            m_canRotate = true;
         }
         private bool TryGetData()
         {

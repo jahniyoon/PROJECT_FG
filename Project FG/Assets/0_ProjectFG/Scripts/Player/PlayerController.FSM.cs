@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace JH
@@ -140,7 +141,9 @@ namespace JH
             {
                 base.Enter(t);
                 t.StateHandler(FSMState.Move);
+                m_dustTimer = 0;
             }
+            float m_dustTimer = 0;
             // 상태 중일 때 실행될 메서드
             public override void Stay(PlayerController t)
             {
@@ -148,6 +151,13 @@ namespace JH
 
                 UpdateDirection(t);
                 Movement(t);
+
+                if(m_dustTimer <= 0)
+                {
+                    m_dustTimer = t.m_dustDuration;
+                    t.m_dustEffect?.Play();
+                }
+                m_dustTimer -= Time.deltaTime;
             }
 
             // 상태를 빠져 나갈 때 실행될 메서드
@@ -255,12 +265,18 @@ namespace JH
             {
                 base.Enter(t);
                 t.StateHandler(FSMState.Predation);
+
                 t.m_predation.PredationDash();
+
+                if (t.m_predation.PredationTarget != null)
+                    t.m_movement.LookRotation(t.m_predation.PredationTarget.position);
             }
             // 상태 중일 때 실행될 메서드
             public override void Stay(PlayerController t)
             {
                 base.Stay(t);
+
+
             }
 
             // 상태를 빠져 나갈 때 실행될 메서드

@@ -50,6 +50,7 @@ namespace JH
         private LevelManager m_levelManager;
         [SerializeField] private PlayerController m_playerController;
         [SerializeField] private bool m_isGameOver = false;
+        [SerializeField] private string m_gameoverSFX;
         private bool isPause;
 
         private Transform m_projectileParent;
@@ -130,12 +131,20 @@ namespace JH
         {
             m_isGameOver = true;
             UIManager.Instance.SetGameOverUI(m_isGameOver);
-
+            AudioManager.Instance.StopBGM();
+            AudioManager.Instance.PlaySFX(m_gameoverSFX);
         }
 
         public void TitleScene()
         {
-            SceneManager.LoadScene("Title Scene");
+            //SceneManager.LoadScene("Title Scene");
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+
+#else
+            Application.Quit;
+#endif
+
         }
 
         public void ResetScene()

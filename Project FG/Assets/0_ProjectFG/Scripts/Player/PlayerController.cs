@@ -27,6 +27,7 @@ namespace JH
         private AnimationController m_animation;
         private CinemachineImpulseSource m_impulse;
 
+
         [Header("Game Settings")]
         [SerializeField] private GameSettings m_gameSettings;
 
@@ -35,7 +36,16 @@ namespace JH
         [SerializeField] private bool m_isFreeze;
         [SerializeField] private bool m_healthBarEnable;
         [SerializeField] private MiniHealthBar m_healthBarPrefab;
-        private MiniHealthBar m_healthBar;
+        [Header("Effect")]
+
+        [SerializeField] protected float m_dustDuration = 0.5f;
+        [SerializeField] protected ParticleSystem m_dustEffect;
+        [Header("Minimap Color")]
+        [SerializeField] protected Color m_minimapColor = Color.yellow;
+
+        private MiniHealthBar m_healthBar; 
+        private int InstanceID;
+
 
         #region 프로퍼티
         public PlayerInput Input => m_input;
@@ -76,12 +86,15 @@ namespace JH
                 m_healthBar.transform.localPosition = position;
                 m_healthBar?.HealthBarEnable(true);
             }
+            InstanceID = this.gameObject.GetInstanceID();
         }
-
         private void Start()
         {
             m_damageable.SetMaxHealth(m_gameSettings.PlayerMaxHealth);
+            UIManager.Instance.MinimapUI.AddObject(InstanceID, m_minimapColor, 5);
+
             m_fsm = new IdleState();
+
         }
 
         private void OnEnable()
@@ -102,6 +115,8 @@ namespace JH
         {
             FSMHandler();
             AnimationHandler();
+            UIManager.Instance.MinimapUI.SetPosition(InstanceID, this.transform.position);
+
         }
 
 

@@ -68,7 +68,10 @@ namespace JH
             // 스킬 루틴 시작
             if (m_skillRoutine != null)
                 StopCoroutine(m_skillRoutine);
-            m_skillRoutine = StartCoroutine(SkillRoutine(m_duration));
+            if (this.gameObject.activeInHierarchy)
+            {
+                m_skillRoutine = StartCoroutine(SkillRoutine(m_duration));
+            }
         }
 
 

@@ -35,6 +35,9 @@ namespace JH
 
         private void ActiveSkill()
         {
+            if (this.gameObject.activeInHierarchy == false)
+                return;
+
             Vector3 position = m_casterPosition.position;
 
             m_activeSkill = Instantiate(m_slashSkill.gameObject, position, m_direction, m_caster.transform).GetComponent<FoodPowerSkill>();

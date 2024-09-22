@@ -34,6 +34,8 @@ namespace JH
         [SerializeField] private GameObject m_pauseUI;
         [SerializeField] private GameObject m_gameOverUI;
         [SerializeField] private GameObject m_gameClearUI;
+        [SerializeField] private MinimapUI m_minimapUI;
+
 
         [Header("Debug UI")]
         [SerializeField] private bool m_debugEnable;
@@ -42,6 +44,7 @@ namespace JH
         public MainUIController MainUI => m_mainUIController;
         public WaveUIController WaveUI => m_waveUIController;
         public DebugUIController Debug => m_DebugUI;
+        public MinimapUI MinimapUI => m_minimapUI;
 
         private void Awake()
         {

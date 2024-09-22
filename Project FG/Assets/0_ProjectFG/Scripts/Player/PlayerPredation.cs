@@ -129,7 +129,7 @@ namespace JH
             //  적이면 처형
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
-                if(enemy.State == FSMState.Die)
+                if (enemy.State == FSMState.Die)
                     return;
 
                 enemy.Execution();
@@ -167,14 +167,39 @@ namespace JH
                 transform.position = Vector3.Lerp(startPos, targetPos, dashTimer / m_player.Setting.DashDuration);
                 m_player.LookAt(targetPos);
 
+                if(TargetCheck())
+                {
+                    yield break;
+                }
+
+                dashTimer += Time.deltaTime;
+                yield return null;
+            }
+            dashTimer = 0;
+            while (dashTimer < m_player.Setting.PredationFatalityDuration)
+            {
+                if (TargetCheck())
+                {
+                    yield break;
+                }
                 dashTimer += Time.deltaTime;
                 yield return null;
             }
 
-            yield return new WaitForSeconds(m_player.Setting.PredationFatalityDuration);
 
             ResetTarget();
             yield break;
+        }
+
+        private bool TargetCheck()
+        {
+            bool targetCheck = m_predationTarget == null || m_predationTarget.gameObject.activeSelf == false;
+            if (targetCheck)
+            {
+                ResetTarget();
+                Debug.Log("사라졌다.");
+            }
+            return targetCheck;
         }
 
         public void ResetTarget()
