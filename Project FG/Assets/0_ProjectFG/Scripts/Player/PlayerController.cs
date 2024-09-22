@@ -135,7 +135,7 @@ namespace JH
         // 게임오버
         public void Die()
         {
-            m_animation.SetLayer("Upper Layer", 0);
+            //m_animation.SetLayer("Upper Layer", 0);
             m_animation.SetBool(AnimationID.isDie, true);
             // 버프 모두 지워주기
             m_buffHandler.RemoveAllBuff();
