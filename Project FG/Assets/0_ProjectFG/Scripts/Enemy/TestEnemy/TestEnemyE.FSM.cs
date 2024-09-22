@@ -97,9 +97,8 @@ namespace JH
             // + 조준중일 때 이동상태가 되지 않는다.
             //
 
-
-            if (AttackRangeCheck() == false && m_isAttackReady || TargetAngleCheck() == false && m_isAttackReady
-                || m_isAttackReady== false && m_data.AttackRange < m_targetDistance )
+            if (m_data.AttackRange < m_targetDistance && m_isAttackReady || TargetAngleCheck() == false && m_isAttackReady
+            || m_isAttackReady == false && m_data.AttackRange < m_targetDistance)
                 return new MoveState();
 
             return null;
