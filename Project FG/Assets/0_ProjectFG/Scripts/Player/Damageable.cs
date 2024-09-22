@@ -37,6 +37,13 @@ namespace JH
 
             UpdateHealthEvent?.Invoke();
         }
+        public void SetHealth(float health)
+        {
+            m_health = health;
+
+            UpdateHealthEvent?.Invoke();
+        }
+
 
         public void RestoreHealth(float addHealth)
         {
@@ -108,7 +115,6 @@ namespace JH
             if(m_execution == false)
             {
                 DieDamageableEvent?.Invoke(this);
-                Debug.Log("힐을 보낸다");
             }
 
             m_health = 0;

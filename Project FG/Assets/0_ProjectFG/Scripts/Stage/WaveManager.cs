@@ -175,6 +175,13 @@ namespace JH
         // 웨이브 종료
         public void WaveEnd()
         {
+            EnemyController[] Enemies = m_enemyParent.GetComponentsInChildren<EnemyController>();
+            foreach (EnemyController enemy in Enemies)
+            {
+                enemy.KillEnemy();
+            }
+
+
             if (m_waves.Count <= m_curWave)
             {
                 Clear();
