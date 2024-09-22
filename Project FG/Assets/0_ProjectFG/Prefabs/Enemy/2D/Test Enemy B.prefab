@@ -81,7 +81,7 @@ Transform:
   m_GameObject: {fileID: 4889653545554529764}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -0.9}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1808950164, guid: b5021d953b55d2b479e6cb0356aa033b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d70b849dce777345a4f33cbdd1bb393, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
     type: 3}
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 8319817106852655872}
+  m_notCount: 0
   m_attackEffect: {fileID: 2985188390900530244}
   m_shildSkill: {fileID: 0}
 --- !u!114 &2386641190285868544
@@ -245,6 +246,7 @@ MonoBehaviour:
   m_invincible: 0
   m_damageReduction: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_execution: 0
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -340,7 +342,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.02
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: 0}
