@@ -23,11 +23,14 @@ namespace JH
 
         [Header("이펙트")]
         [SerializeField] private GameObject m_aimEffect;
+        [SerializeField] private float m_aimDuration = 0.25f;
+        private SpriteRenderer m_spriteRenderer;
         [SerializeField] private TrailEffect m_trailEffect;
 
 
         protected override void Init()
         {
+            m_spriteRenderer = m_aimEffect.GetComponentInChildren<SpriteRenderer>();
             m_subData = m_skillData as FoodPowerESkillData;
             if (m_subData == null)
             {
@@ -112,8 +115,19 @@ namespace JH
             EnemyController enemy = m_target.GetComponent<EnemyController>();
             float timer = 0;
 
+            bool aimEnable = false;
+            float aimTimer = 0;
             while (timer < m_levelData.GetAdditionalValue(0)) 
             {
+                if(aimTimer <= 0)
+                {
+                    aimEnable = !aimEnable;
+                    LineEnable(aimEnable);
+
+                    aimTimer = m_aimDuration;
+                }
+
+
                 // 죽으면 조준 종료
                 if(enemy.State == FSMState.Die)
                 {
@@ -121,8 +135,12 @@ namespace JH
                     yield break;
                 }
                 timer += Time.deltaTime;
+                aimTimer -= Time.deltaTime;
                 yield return null;
             }
+
+            LineEnable(true);
+
 
             timer = 0;
             float shootTimer = 0;
@@ -155,6 +173,8 @@ namespace JH
         private void Shoot()
         {
             RaycastHit hit;
+            if (m_target == null)
+                return;
             float distance = Vector3.Distance(transform.position, m_target.position);
 
             if (Physics.Raycast(m_aimEffect.transform.position, m_aimEffect.transform.forward, out hit, distance + 1, m_targetLayer, QueryTriggerInteraction.Ignore))
@@ -188,6 +208,12 @@ namespace JH
 
 
         }
+
+        private void LineEnable(bool enable)
+        {
+            m_spriteRenderer.enabled = enable;
+        }
+
 
 
         public override void InactiveSkill()
