@@ -9774,6 +9774,7 @@ GameObject:
   - component: {fileID: 8659415267860449704}
   - component: {fileID: 3143117817990712201}
   - component: {fileID: 4601778639406904528}
+  - component: {fileID: -2322401506791842268}
   m_Layer: 0
   m_Name: Test Enemy H
   m_TagString: Enemy
@@ -9825,6 +9826,7 @@ MonoBehaviour:
     type: 3}
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 8237107783680899082}
+  m_notCount: 0
   m_explosionEffect:
   - {fileID: 6061688924791954073}
   - {fileID: 7813310190766811177}
@@ -9846,6 +9848,7 @@ MonoBehaviour:
   m_invincible: 0
   m_damageReduction: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_execution: 0
   DamageEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9945,6 +9948,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-2322401506791842268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267082333058534133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41efc45b784be3a41bc006e2f7326f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitDuration: 0.175
+  m_flickingDuration: 0.175
+  m_hitMaterial: {fileID: 2100000, guid: 5375bbf6406a1014bba196dc33100ac3, type: 2}
 --- !u!1 &1430031968166909197
 GameObject:
   m_ObjectHideFlags: 0

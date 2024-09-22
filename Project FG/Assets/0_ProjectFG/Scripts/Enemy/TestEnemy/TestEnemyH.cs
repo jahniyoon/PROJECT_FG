@@ -63,6 +63,7 @@ namespace JH
                 Destroy(effect.gameObject, 2);
 
             }
+            m_spriteColor?.StopFlicking();
 
             m_damageable.Die();
 
