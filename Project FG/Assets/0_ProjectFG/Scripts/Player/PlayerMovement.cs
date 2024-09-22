@@ -13,7 +13,7 @@ namespace JH
         [SerializeField] LayerMask m_wallMask;
         [SerializeField] float m_wallDistance;
         [Header("2D Setting")]
-        [SerializeField] SpriteRenderer m_2DModel;
+        [SerializeField] SpriteRenderer[] m_2DModel;
 
         Vector3 m_velocity;
         [Header("Debuff")]
@@ -25,7 +25,7 @@ namespace JH
             m_controller = GetComponent<PlayerController>();
             m_rigid = GetComponent<Rigidbody>();
             m_model = transform.GetChild(0);
-            m_2DModel = GetComponentInChildren<SpriteRenderer>();
+            m_2DModel = GetComponentsInChildren<SpriteRenderer>();
         }
 
 
@@ -65,7 +65,11 @@ namespace JH
 
             // 2D 모델이면 플립되기만 하면 된다.
             if (m_2DModel != null)
-                m_2DModel.flipX = 180 < newRotation.eulerAngles.y ;
+            {
+                bool flip = 180 >= newRotation.eulerAngles.y;
+                foreach (var renderer in m_2DModel)
+                    renderer.flipX = flip;
+            }
 
 
             // 보간된 회전을 적용

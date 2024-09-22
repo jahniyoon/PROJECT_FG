@@ -129,6 +129,7 @@ namespace JH
             m_playerHunger.StopFoodPowerRoutine();
 
             GameManager.Instance.GameOver();
+            this.gameObject.SetActive(false);
         }
 
         public void LookAt(Vector3 position)

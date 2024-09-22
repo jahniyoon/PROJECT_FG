@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PC UPPER
+  m_Controller: {fileID: 9100000, guid: d584ee4a3c3bcda4d84d6d0e4e849bfd, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c257edfc5d161d94bb2930f31de9ae9f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b1703a0b146b3f4428365ef21e9b36af, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3a399118ae316a347888a79990625beb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f28bcb77a88f6354ab376596efa5761a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 357a5fb303323ba428cde95be72489ff, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 881902469e61cdf4d9a8dd6238a0dc2b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 28b5514aaf16e3e41addb7ec08b7d8c5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6de0196c7f3344c49acbd5ca36e461c9, type: 2}
