@@ -160,6 +160,7 @@ namespace JH
 
             Vector3 startPos = this.transform.position;
             Vector3 targetPos = m_predationTarget.position;
+            m_player.Animation.SetBool(AnimationID.isPredation, true);
 
             while (dashTimer < m_player.Setting.DashDuration)
             {
@@ -170,7 +171,6 @@ namespace JH
                 yield return null;
             }
 
-            m_player.Animation.SetBool(AnimationID.isPredation, true);
             Invoke(nameof(ResetTarget), m_player.Setting.PredationFatalityDuration);
             yield break;
         }

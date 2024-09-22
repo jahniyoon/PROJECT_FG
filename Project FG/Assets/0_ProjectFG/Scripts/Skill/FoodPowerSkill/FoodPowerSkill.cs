@@ -14,7 +14,6 @@ namespace JH
 
         public void SetFoodPowerData(FoodPowerLevelData levelData)
         {
-            Debug.Log(m_levelData.Damage);
             m_levelData = levelData;
             m_aimtype = m_levelData.AimType;
         }
