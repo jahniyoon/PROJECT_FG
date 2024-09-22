@@ -33,6 +33,6 @@ MonoBehaviour:
   <AttackCoolDown>k__BackingField: 3
   <OuterRadius>k__BackingField: 2.5
   <InnerRadius>k__BackingField: 1
-  <SliderDuration>k__BackingField: 2
+  <SliderDuration>k__BackingField: 1
   <OuterColor>k__BackingField: {r: 0.5019608, g: 0, b: 0.014975156, a: 0.3764706}
   <SliderColor>k__BackingField: {r: 1, g: 0, b: 0.08648682, a: 1}
