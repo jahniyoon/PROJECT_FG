@@ -13,6 +13,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     protected Damageable m_damageable;
     protected Transform m_model;
     protected HitEffect m_hitEffect;
+    protected SpriteColor m_spriteColor;
+
 
     [Header("Enemy Data")]
     [SerializeField] protected EnemyData m_data;
@@ -129,6 +131,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
             m_healthBar.transform.localPosition = localPos;
             m_predationIcon.transform.localPosition = localPos;
         }
+        m_spriteColor = GetComponent<SpriteColor>();
     }
 
     protected virtual void StartInit()
@@ -275,10 +278,16 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         //ResetAttackTimer();
         if (m_is2D == false)
             m_hitEffect.Hit();
+
+        m_spriteColor?.OnHit();
     }
 
 
-
+    public void KillEnemy()
+    {
+        m_damageable.SetHealth(0);
+        Die();
+    }
     protected virtual void Die()
     {
         m_canPredation = false;

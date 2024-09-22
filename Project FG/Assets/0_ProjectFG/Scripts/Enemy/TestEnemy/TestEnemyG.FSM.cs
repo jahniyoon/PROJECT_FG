@@ -103,6 +103,7 @@ namespace JH
             m_healSkill = Instantiate(m_subData.HealSkill.gameObject, transform.position, transform.rotation, transform).GetComponent<SkillBase>();
             m_healSkill.SkillInit(this.gameObject, m_model);
             m_healSkill.ActiveSkill();
+            m_agent.enabled = false;
 
         }
 

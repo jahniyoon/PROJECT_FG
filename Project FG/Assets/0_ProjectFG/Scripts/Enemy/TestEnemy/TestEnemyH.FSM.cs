@@ -91,6 +91,7 @@ namespace JH
                 m_explosionTrigger = true;
                 if(m_is2D == false)
                 m_hitEffect.PingPong(true);
+                m_spriteColor?.PlayFlicking();
                 // 일정 시간 이후에 폭발
             }
 
@@ -136,6 +137,8 @@ namespace JH
         {
             m_stunEffect.gameObject.SetActive(false);
             m_stunEffect.Stop();
+            m_spriteColor?.StopFlicking();
+
         }
         #endregion
 
