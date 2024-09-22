@@ -34,7 +34,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv2"
     ID: 60066
     CoolDown: 4.5
-    Damage: 120
+    Damage: 110
     Range: 0
     Radius: 1
     Duration: 12
@@ -46,7 +46,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv3"
     ID: 60067
     CoolDown: 4
-    Damage: 150
+    Damage: 120
     Range: 0
     Radius: 1
     Duration: 14
@@ -58,7 +58,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv4"
     ID: 60068
     CoolDown: 3.5
-    Damage: 180
+    Damage: 130
     Range: 0
     Radius: 1
     Duration: 16
@@ -70,7 +70,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv5"
     ID: 60069
     CoolDown: 3
-    Damage: 210
+    Damage: 140
     Range: 0
     Radius: 1
     Duration: 18
@@ -82,7 +82,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv6"
     ID: 60070
     CoolDown: 2.5
-    Damage: 250
+    Damage: 150
     Range: 0
     Radius: 1
     Duration: 20
@@ -94,7 +94,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv7"
     ID: 60071
     CoolDown: 2
-    Damage: 250
+    Damage: 160
     Range: 0
     Radius: 1
     Duration: 25
@@ -106,7 +106,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv8"
     ID: 60072
     CoolDown: 1.5
-    Damage: 300
+    Damage: 170
     Range: 0
     Radius: 1
     Duration: 30
@@ -118,7 +118,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv9"
     ID: 60073
     CoolDown: 1
-    Damage: 400
+    Damage: 180
     Range: 0
     Radius: 1
     Duration: 40

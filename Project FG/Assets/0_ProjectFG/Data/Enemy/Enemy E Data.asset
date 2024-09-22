@@ -21,7 +21,7 @@ MonoBehaviour:
   <Damage>k__BackingField: 5
   <AttackRange>k__BackingField: 8.5
   <EscapeRange>k__BackingField: 5
-  <PredationHealthRatio>k__BackingField: 50
+  <PredationHealthRatio>k__BackingField: 35
   <PredationStunCoolDown>k__BackingField: 0
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 1b8ca58bf81c5754d911348bf24ca2e5,
     type: 2}
