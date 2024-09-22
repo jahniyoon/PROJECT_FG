@@ -15,7 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: 50001
   <Name>k__BackingField: FoodPower A
   <Description>k__BackingField: "\uD478\uB4DC\uD30C\uC6CC A"
-  <Icon>k__BackingField: {fileID: 21300000, guid: 6d11b35ac141e2b4d820ec16560b6119,
+  <Icon>k__BackingField: {fileID: 21300000, guid: 04f7f391409555d4f8756040d23ab5f4,
     type: 3}
   <LevelDatas>k__BackingField:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv0"
