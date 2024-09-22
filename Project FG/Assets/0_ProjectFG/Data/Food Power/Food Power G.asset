@@ -24,7 +24,119 @@ MonoBehaviour:
     CoolDown: 0
     Damage: 12
     Range: 0
-    Radius: 4
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 1
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv2"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv2"
+    ID: 60057
+    CoolDown: 0
+    Damage: 13
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 1
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv3"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv3"
+    ID: 60058
+    CoolDown: 0
+    Damage: 14
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 1
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv4"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv4"
+    ID: 60059
+    CoolDown: 0
+    Damage: 15
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 2
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv5"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv5"
+    ID: 60060
+    CoolDown: 0
+    Damage: 16
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 2
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv6"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv6"
+    ID: 60061
+    CoolDown: 0
+    Damage: 17
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 2
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv7"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv7"
+    ID: 60062
+    CoolDown: 0
+    Damage: 18
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 3
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv8"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv8"
+    ID: 60063
+    CoolDown: 0
+    Damage: 19
+    Range: 0
+    Radius: 3
+    Duration: -1
+    Count: 1
+    AimType: 6
+    AdditionalValues:
+    - 1
+    - 100
+    - 3
+  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv9"
+    Description: "\uD478\uB4DC\uD30C\uC6CCG lv9"
+    ID: 60064
+    CoolDown: 0
+    Damage: 20
+    Range: 0
+    Radius: 3
     Duration: -1
     Count: 1
     AimType: 6
@@ -32,117 +144,5 @@ MonoBehaviour:
     - 1
     - 100
     - 5
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv2"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv2"
-    ID: 60057
-    CoolDown: 0
-    Damage: 13
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 7
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv3"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv3"
-    ID: 60058
-    CoolDown: 0
-    Damage: 14
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 9
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv4"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv4"
-    ID: 60059
-    CoolDown: 0
-    Damage: 15
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 11
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv5"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv5"
-    ID: 60060
-    CoolDown: 0
-    Damage: 16
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 13
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv6"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv6"
-    ID: 60061
-    CoolDown: 0
-    Damage: 17
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 15
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv7"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv7"
-    ID: 60062
-    CoolDown: 0
-    Damage: 18
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 16
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv8"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv8"
-    ID: 60063
-    CoolDown: 0
-    Damage: 19
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 18
-  - Name: "\uD478\uB4DC\uD30C\uC6CCG lv9"
-    Description: "\uD478\uB4DC\uD30C\uC6CCG lv9"
-    ID: 60064
-    CoolDown: 0
-    Damage: 20
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 6
-    AdditionalValues:
-    - 1
-    - 100
-    - 20
   <TargetNearestScanRadius>k__BackingField: 10
   <AlwaysShoot>k__BackingField: 1

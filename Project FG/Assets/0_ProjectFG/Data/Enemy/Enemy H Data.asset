@@ -19,7 +19,7 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 5
   <RotateSpeed>k__BackingField: 10
   <Damage>k__BackingField: 50
-  <AttackRange>k__BackingField: 1.5
+  <AttackRange>k__BackingField: 3
   <EscapeRange>k__BackingField: 0
   <PredationHealthRatio>k__BackingField: 40
   <PredationStunCoolDown>k__BackingField: 0
@@ -29,5 +29,5 @@ MonoBehaviour:
   <FoodPower>k__BackingField: {fileID: 1961031887029804917, guid: 070509cee81b758439034c04c6d47d5c,
     type: 3}
   <AttackDamage>k__BackingField: 50
-  <AttackSpeed>k__BackingField: 3
+  <AttackSpeed>k__BackingField: 1.5
   <ExplosionRadius>k__BackingField: 5
