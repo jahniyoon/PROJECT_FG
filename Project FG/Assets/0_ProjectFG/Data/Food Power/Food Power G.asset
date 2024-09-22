@@ -145,4 +145,4 @@ MonoBehaviour:
     - 100
     - 20
   <TargetNearestScanRadius>k__BackingField: 10
-  <AlwaysShoot>k__BackingField: 0
+  <AlwaysShoot>k__BackingField: 1
