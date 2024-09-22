@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1791521419972045774
 Transform:
   m_ObjectHideFlags: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   m_levelData:
     Name: 
     Description: 
+    ID: 0
     CoolDown: 0
     Damage: 0
     Range: 0
@@ -181,6 +182,7 @@ MonoBehaviour:
     Count: 0
     AimType: 0
     AdditionalValues: []
+  m_aimtype: 0
   m_slashEffect: {fileID: 8944039893467872676, guid: 7e42348131646f7458eac627b7671479,
     type: 3}
   m_debug: 1
