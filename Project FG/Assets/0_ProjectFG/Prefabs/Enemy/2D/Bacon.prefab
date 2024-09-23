@@ -51,7 +51,7 @@ MonoBehaviour:
   m_canPredationable: 1
   m_icon: {fileID: 7422449537083720917}
   m_gameSettings: {fileID: 11400000, guid: 12053eeeb0b70a245805c17885685362, type: 2}
-  m_notCount: 0
+  m_notCount: 1
   m_animator: {fileID: 0}
   m_minimapColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!136 &6177903441785395092

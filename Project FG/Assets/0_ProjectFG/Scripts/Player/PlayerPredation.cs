@@ -132,6 +132,10 @@ namespace JH
 
         public void PredationDash()
         {
+            if (m_dashRoutine != null)
+            {
+                return;
+            }
             m_curState = PredationState.Start;
             //  적이면 처형
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
@@ -156,11 +160,7 @@ namespace JH
 
             m_predationCoolDown = m_player.Setting.PredationCoolDown;
 
-            if (m_dashRoutine != null)
-            {
-                StopCoroutine(m_dashRoutine);
-                m_dashRoutine = null;
-            }
+ 
             m_dashRoutine = StartCoroutine(DashRoutine());
 
         }
@@ -187,15 +187,10 @@ namespace JH
             {
                 transform.position = Vector3.Lerp(startPos, targetPos, m_dashTimer / m_player.Setting.DashDuration);
                 m_player.LookAt(targetPos);
-
-                if (TargetCheck())
-                {
-                    yield break;
-                }
-
                 m_dashTimer += Time.deltaTime;
                 yield return null;
             }
+            transform.position = targetPos;
             m_curState = PredationState.Predation;
 
             m_dashTimer = 0;
@@ -235,6 +230,12 @@ namespace JH
             m_predationTarget = null;
             tempEnemy = null;
             m_curState = PredationState.None;
+
+            if(m_dashRoutine != null)
+            {
+                StopCoroutine(m_dashRoutine);
+                m_dashRoutine = null;
+            }
 
         }
 
