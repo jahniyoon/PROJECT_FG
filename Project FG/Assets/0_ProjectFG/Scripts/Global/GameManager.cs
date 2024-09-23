@@ -80,15 +80,15 @@ namespace JH
             {
                 m_levelManager.SwitchSpawnEnable();
             }
-            if (Input.GetKeyDown(KeyCode.F3))
-            {
-                PC.GetDefaultFoodPower();
-            }
+            //if (Input.GetKeyDown(KeyCode.F3))
+            //{
+            //    PC.GetDefaultFoodPower();
+            //}
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                ResetScene();
-            }
+            //if (Input.GetKeyDown(KeyCode.R))
+            //{
+            //    ResetScene();
+            //}
 
             if (Input.GetKeyDown(KeyCode.F11))
             {

@@ -13,7 +13,10 @@ namespace JH
 
         [SerializeField] private Transform m_predationTarget;
         [SerializeField] private float m_predationCoolDown;
+        [SerializeField] private float m_dashTimer;
         [SerializeField] private string m_predationSFX;
+        [SerializeField] private PredationState m_curState;
+
 
         Coroutine m_dashRoutine;
         public Transform PredationTarget => m_predationTarget;
@@ -127,6 +130,7 @@ namespace JH
 
         public void PredationDash()
         {
+            m_curState = PredationState.Start;
             //  적이면 처형
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
@@ -158,36 +162,48 @@ namespace JH
             m_dashRoutine = StartCoroutine(DashRoutine());
 
         }
-
+        private EnemyController tempEnemy;
         IEnumerator DashRoutine()
         {
-            float dashTimer = 0;
+            m_dashTimer = 0;
+            m_curState = PredationState.Dash;
 
             Vector3 startPos = this.transform.position;
             Vector3 targetPos = m_predationTarget.position;
             m_player.Animation.SetBool(AnimationID.isPredation, true);
 
-            while (dashTimer < m_player.Setting.DashDuration)
+            if (m_predationTarget != null)
             {
-                transform.position = Vector3.Lerp(startPos, targetPos, dashTimer / m_player.Setting.DashDuration);
+                if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
+                {
+                    tempEnemy = enemy;
+                }
+
+            }
+
+            while (m_dashTimer < m_player.Setting.DashDuration)
+            {
+                transform.position = Vector3.Lerp(startPos, targetPos, m_dashTimer / m_player.Setting.DashDuration);
                 m_player.LookAt(targetPos);
 
-                if(TargetCheck())
+                if (TargetCheck())
                 {
                     yield break;
                 }
 
-                dashTimer += Time.deltaTime;
+                m_dashTimer += Time.deltaTime;
                 yield return null;
             }
-            dashTimer = 0;
-            while (dashTimer < m_player.Setting.PredationFatalityDuration)
+            m_curState = PredationState.Predation;
+
+            m_dashTimer = 0;
+            while (m_dashTimer < m_player.Setting.PredationFatalityDuration)
             {
                 if (TargetCheck())
                 {
                     yield break;
                 }
-                dashTimer += Time.deltaTime;
+                m_dashTimer += Time.deltaTime;
                 yield return null;
             }
 
@@ -199,10 +215,14 @@ namespace JH
         private bool TargetCheck()
         {
             bool targetCheck = m_predationTarget == null || m_predationTarget.gameObject.activeSelf == false;
+            // 만약 타겟이 널이 아닌데
+
+
+
             if (targetCheck)
             {
                 ResetTarget();
-                Debug.Log("사라졌다.");
+                Debug.Log("사라지거나 죽었다.");
             }
             return targetCheck;
         }
@@ -211,7 +231,18 @@ namespace JH
         {
             m_player.Animation.SetBool(AnimationID.isPredation, false);
             m_predationTarget = null;
+            tempEnemy = null;
+            m_curState = PredationState.None;
+
         }
 
+
+    }
+    public enum PredationState
+    {
+        None,
+        Start,
+        Dash,
+        Predation
     }
 }

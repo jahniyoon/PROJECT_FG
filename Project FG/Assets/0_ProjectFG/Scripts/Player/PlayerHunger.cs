@@ -13,6 +13,7 @@ namespace JH
         [SerializeField] private int m_curHunger;
         [SerializeField] private int m_maxHunger;
         [SerializeField] private bool m_cantPredation = false;
+        [SerializeField] private string m_hungerSkillSFX;
 
         [Header("Food Power")]
         [SerializeField] private FoodPower m_defaultFoodPower;
@@ -243,6 +244,7 @@ namespace JH
                 m_hungerSkillEffect?.Stop();
                 m_hungerSkillEffect?.Play();
             }
+            AudioManager.Instance.PlaySFX(m_hungerSkillSFX);
 
             // 멈춤을 풀어준다.
             m_player.SetFreeze(false);
