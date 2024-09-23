@@ -13,6 +13,7 @@ namespace JH
 
         private float m_maxValue;
         private float m_curValue;
+        public bool isDebugs;
 
         private void Awake()
         {
@@ -32,8 +33,14 @@ namespace JH
 
             float result = Mathf.Round((m_curValue / m_maxValue) * 100) / 100;
 
+
             m_slider.maxValue = 1;
             m_slider.value = result;
+
+            if (isDebugs)
+            {
+                Debug.Log($"입력값 : {result} / {1}, 슬라이더 : {m_slider.value} / {m_slider.maxValue}, 인풋 : {value} / {maxValue}");
+            }
             SetText();
         }
 
