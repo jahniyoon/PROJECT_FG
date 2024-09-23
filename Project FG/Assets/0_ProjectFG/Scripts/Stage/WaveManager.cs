@@ -93,9 +93,10 @@ namespace JH
             m_spawnCount = 0;
             m_baconSpawnCount = 0;
             m_spawnBaconPos.Clear();
-
-            SpawnEnemy(Wave.SpawnEnemy);
-
+            if (m_spawnEnable)
+            {
+                SpawnEnemy(Wave.SpawnEnemy);
+            }
             float timer = 0;
             float baconTimer = 0;
 

@@ -10153,9 +10153,11 @@ MonoBehaviour:
   m_canPredation: 0
   m_predationIcon: {fileID: 3742115071999069320, guid: 951f5672f13fe0542bf628a0d95102c3,
     type: 3}
+  m_dieSpeed: 1.5
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 6768538655180042351}
   m_notCount: 0
+  m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skill: {fileID: 2244859953546618165, guid: 1e4f1990ee442104f870ba8134331db1, type: 3}
 --- !u!114 &3777391520323845705
 MonoBehaviour:

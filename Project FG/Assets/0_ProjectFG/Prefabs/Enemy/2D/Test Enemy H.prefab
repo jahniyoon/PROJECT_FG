@@ -9825,9 +9825,11 @@ MonoBehaviour:
   m_canPredation: 0
   m_predationIcon: {fileID: 3742115071999069320, guid: 951f5672f13fe0542bf628a0d95102c3,
     type: 3}
+  m_dieSpeed: 1.5
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 8237107783680899082}
   m_notCount: 0
+  m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_explosionEffect:
   - {fileID: 6061688924791954073}
   - {fileID: 7813310190766811177}

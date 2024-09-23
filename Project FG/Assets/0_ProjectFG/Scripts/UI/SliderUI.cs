@@ -30,7 +30,10 @@ namespace JH
             m_maxValue = maxValue;
             m_curValue = value;
 
-            m_slider.value = m_curValue / m_maxValue;
+            float result = Mathf.Round((m_curValue / m_maxValue) * 100) / 100;
+
+            m_slider.maxValue = 1;
+            m_slider.value = result;
             SetText();
         }
 
