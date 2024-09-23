@@ -28,7 +28,7 @@ MonoBehaviour:
   <PredationPlayerRange>k__BackingField: 5
   <PredationAimRange>k__BackingField: 3
   <PredationCoolDown>k__BackingField: 0
-  <DashDuration>k__BackingField: 0.1
+  <DashDuration>k__BackingField: 0.2
   <PredationFatalityDuration>k__BackingField: 0.3
   <PredationIconScale>k__BackingField: 0.5
   <MaxHunger>k__BackingField: 10
