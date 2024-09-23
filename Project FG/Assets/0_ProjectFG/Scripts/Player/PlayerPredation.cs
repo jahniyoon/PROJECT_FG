@@ -53,6 +53,8 @@ namespace JH
                 return;
 
             m_predationTarget = ScanTarget();
+            if (m_predationTarget != null)
+                PredationDash();
         }
 
         private Transform ScanTarget()

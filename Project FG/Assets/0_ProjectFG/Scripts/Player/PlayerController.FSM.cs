@@ -266,7 +266,7 @@ namespace JH
                 base.Enter(t);
                 t.StateHandler(FSMState.Predation);
 
-                t.m_predation.PredationDash();
+                //t.m_predation.PredationDash();
 
                 if (t.m_predation.PredationTarget != null)
                     t.m_movement.LookRotation(t.m_predation.PredationTarget.position);
