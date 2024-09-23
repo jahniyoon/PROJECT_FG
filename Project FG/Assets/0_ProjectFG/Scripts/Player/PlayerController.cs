@@ -152,6 +152,8 @@ namespace JH
         {
             //m_animation.SetLayer("Upper Layer", 0);
             m_animation.SetBool(AnimationID.isDie, true);
+            UIManager.Instance.MainUI.HealthUI.SetSlider(m_damageable.MaxHealth, m_damageable.Health);
+
             // 버프 모두 지워주기
             m_buffHandler.RemoveAllBuff();
             m_playerHunger.StopFoodPowerRoutine();

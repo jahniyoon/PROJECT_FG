@@ -112,8 +112,9 @@ namespace JH
             if (IsDie)
                 return;
             DieEvent?.Invoke();
+            UpdateHealthEvent?.Invoke();
 
-            if(m_execution == false)
+            if (m_execution == false)
             {
                 DieDamageableEvent?.Invoke(this);
             }
@@ -121,7 +122,6 @@ namespace JH
             m_health = 0;
             m_isDie = true;
 
-            UpdateHealthEvent?.Invoke();
         }
 
         public void InvincibleMode()
