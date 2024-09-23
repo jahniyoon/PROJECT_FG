@@ -24962,6 +24962,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_predationTarget: {fileID: 0}
   m_predationCoolDown: 0
+  m_dashTimer: 0
+  m_predationSFX: predationSfx
+  m_curState: 0
 --- !u!114 &4309734068890861500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24978,6 +24981,7 @@ MonoBehaviour:
   m_curHunger: 0
   m_maxHunger: 0
   m_cantPredation: 0
+  m_hungerSkillSFX: hungerSkillBoom
   m_defaultFoodPower: {fileID: 0}
   foodPowers: []
   m_FoodComboEffects:
