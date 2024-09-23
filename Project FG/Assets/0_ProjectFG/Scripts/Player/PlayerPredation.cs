@@ -130,7 +130,10 @@ namespace JH
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
                 if (enemy.State == FSMState.Die)
+                {
+                    ResetTarget();
                     return;
+                }
 
                 enemy.Execution();
                 FoodPower food = enemy.GetFoodPower();
