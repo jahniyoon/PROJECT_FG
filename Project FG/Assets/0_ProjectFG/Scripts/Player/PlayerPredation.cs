@@ -13,6 +13,7 @@ namespace JH
 
         [SerializeField] private Transform m_predationTarget;
         [SerializeField] private float m_predationCoolDown;
+        [SerializeField] private string m_predationSFX;
 
         Coroutine m_dashRoutine;
         public Transform PredationTarget => m_predationTarget;
@@ -145,6 +146,7 @@ namespace JH
                 predationable.Predation();
 
             m_damageable.RestoreHealth(m_player.Setting.PredationRestoreHealth);
+            AudioManager.Instance.PlaySFX(m_predationSFX);
 
             m_predationCoolDown = m_player.Setting.PredationCoolDown;
 
