@@ -28,6 +28,42 @@ namespace JH
             m_2DModel = GetComponentsInChildren<SpriteRenderer>();
         }
 
+        Vector3 m_lookDir;
+
+        private void FixedUpdate()
+        {
+            if (m_controller.State == FSMState.Move)
+            {
+                MovementBehavior();
+            }
+        }
+
+        public void MovementBehavior()
+        {
+            m_lookDir.x = m_model.forward.x;
+            m_lookDir.z = m_model.forward.z;
+
+            if (m_controller.Input.Move != Vector2.zero)
+            {
+                m_lookDir.x = m_controller.Input.Move.x;
+                m_lookDir.z = m_controller.Input.Move.y;
+            }
+
+
+            // 카메라의 방향과 이동 방향을 곱하여 플레이어의 이동 속도 벡터 계산
+            Vector3 cameraForward = Camera.main.transform.forward;
+            cameraForward.y = 0f; // 수평 방향 벡터로 설정
+
+            Vector3 moveDirWorld = Quaternion.FromToRotation(Vector3.forward, cameraForward) * m_lookDir;
+
+            // 방향에 맞게 이동시킨다.
+            Vector3 velocity = moveDirWorld * (FinalSpeed(m_controller.Setting.PlayerMoveSpeed) * Time.deltaTime);
+
+
+            Movement(velocity);
+            LookRotation(moveDirWorld);
+        }
+
 
         // 플레이어 이동 함수
         public void Movement(Vector3 velocity)
@@ -36,7 +72,7 @@ namespace JH
 
             Ray ray = new Ray(m_rigid.position, velocity.normalized);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, m_wallDistance, m_wallMask))
+            if (Physics.Raycast(ray, out hit, m_wallDistance, m_wallMask))
             {
                 newVelocity = m_rigid.position;
             }

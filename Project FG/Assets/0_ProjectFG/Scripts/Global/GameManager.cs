@@ -140,9 +140,8 @@ namespace JH
             //SceneManager.LoadScene("Title Scene");
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-
 #else
-            Application.Quit;
+        Application.Quit();
 #endif
 
         }

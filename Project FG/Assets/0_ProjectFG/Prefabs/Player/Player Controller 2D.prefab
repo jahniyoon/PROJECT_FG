@@ -24822,6 +24822,7 @@ MonoBehaviour:
     type: 3}
   m_dustDuration: 0.1
   m_dustEffect: {fileID: 389665558499614753}
+  m_minimapColor: {r: 1, g: 0.80091095, b: 0, a: 1}
 --- !u!114 &1966324714621981550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25016,9 +25017,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 126
+  m_IsKinematic: 1
+  m_Interpolate: 2
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!136 &390180610281562812
 CapsuleCollider:

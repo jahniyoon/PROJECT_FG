@@ -150,7 +150,7 @@ namespace JH
                 base.Stay(t);
 
                 UpdateDirection(t);
-                Movement(t);
+                //Movement(t);
 
                 if(m_dustTimer <= 0)
                 {
