@@ -124,7 +124,7 @@ namespace JH
                 if (t.HitStateCheck())
                     return new HitState();
 
-                if (t.m_predation.PredationTarget != null)
+                if (t.m_predation.IsPredation)
                     return new PredationState();
 
                 if (t.m_attack.isAttack)
@@ -215,7 +215,7 @@ namespace JH
                 if (t.HitStateCheck())
                     return new HitState();
 
-                if (t.m_predation.PredationTarget != null)
+                if (t.m_predation.IsPredation)
                     return new PredationState();
 
                 if (t.m_attack.isAttack)

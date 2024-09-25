@@ -10,6 +10,8 @@ namespace JH
         private PlayerAim m_aim;
         private PlayerHunger m_hunger;
         private Damageable m_damageable;
+        private PlayerMovement m_playerMovement;
+
 
         [SerializeField] private Transform m_predationTarget;
         [SerializeField] private float m_predationCoolDown;
@@ -28,6 +30,7 @@ namespace JH
             m_aim = GetComponent<PlayerAim>();
             m_hunger = GetComponent<PlayerHunger>();
             m_damageable = GetComponent<Damageable>();
+            m_playerMovement = GetComponent<PlayerMovement>();
         }
 
 
@@ -52,9 +55,15 @@ namespace JH
             if (m_predationTarget != null || m_player.State == FSMState.Die || m_hunger.CantPredation)
                 return;
 
-            m_predationTarget = ScanTarget();
+            Transform target = ScanTarget();
+            SetTarget(target);
+
             if (m_predationTarget != null)
                 PredationDash();
+        }
+        private void SetTarget(Transform target)
+        {
+            m_predationTarget = target;
         }
 
         private Transform ScanTarget()
@@ -132,24 +141,17 @@ namespace JH
 
         public void PredationDash()
         {
-            if (m_dashRoutine != null)
-            {
+            if (m_curState != PredationState.None)
                 return;
-            }
+
             m_curState = PredationState.Start;
             //  적이면 처형
             if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
             {
-                if (enemy.State == FSMState.Die)
-                {
-                    ResetTarget();
-                    return;
-                }
-
+                tempEnemy = enemy;
                 enemy.Execution();
                 FoodPower food = enemy.GetFoodPower();
                 m_hunger.AddHunger(food, 1);
-                // 포만감
             }
 
             if (m_predationTarget.TryGetComponent<IPredationable>(out IPredationable predationable))
@@ -174,23 +176,18 @@ namespace JH
             Vector3 targetPos = m_predationTarget.position;
             m_player.Animation.SetBool(AnimationID.isPredation, true);
 
-            if (m_predationTarget != null)
-            {
-                if (m_predationTarget.TryGetComponent<EnemyController>(out EnemyController enemy))
-                {
-                    tempEnemy = enemy;
-                }
-
-            }
+            Vector3 nextPos = this.transform.position;
 
             while (m_dashTimer < m_player.Setting.DashDuration)
             {
-                transform.position = Vector3.Lerp(startPos, targetPos, m_dashTimer / m_player.Setting.DashDuration);
+                nextPos = Vector3.Lerp(startPos, targetPos, m_dashTimer / m_player.Setting.DashDuration);
+                m_playerMovement.MovePosition(nextPos);
                 m_player.LookAt(targetPos);
                 m_dashTimer += Time.deltaTime;
                 yield return null;
             }
-            transform.position = targetPos;
+            m_playerMovement.MovePosition(targetPos);
+
             m_curState = PredationState.Predation;
 
             m_dashTimer = 0;
@@ -227,7 +224,7 @@ namespace JH
         public void ResetTarget()
         {
             m_player.Animation.SetBool(AnimationID.isPredation, false);
-            m_predationTarget = null;
+            SetTarget(null);
             tempEnemy = null;
             m_curState = PredationState.None;
 
