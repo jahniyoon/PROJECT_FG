@@ -55,7 +55,8 @@ MonoBehaviour:
   - {fileID: -1878332245247344467}
   - {fileID: 8488230263401254212}
   - {fileID: 3369759560227862456}
-  m_RendererFeatureMap: adc0de57c6d2eee5448dc0b57340cc75b8b7db5d77cac32e
+  - {fileID: 6556362539732804052}
+  m_RendererFeatureMap: adc0de57c6d2eee5448dc0b57340cc75b8b7db5d77cac32ed4a17327fee0fc5a
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -140,6 +141,22 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &6556362539732804052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7f4d7262cad9e4d89cc3cf3adbaef8, type: 3}
+  m_Name: PixelizeFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    renderPassEvent: 550
+    screenHeight: 360
 --- !u!114 &8488230263401254212
 MonoBehaviour:
   m_ObjectHideFlags: 0
