@@ -8,12 +8,12 @@ namespace JH
     [System.Serializable]
     public struct GameData
     {
-        public string name;
+        public string Name;
         public string SheetID;
         public List<GSTU_Data> Data;
         public GameData (string name, string SheetID, List<GSTU_Data> Data)
         {
-            this.name = name;
+            this.Name = name;
             this.SheetID = SheetID;
             this.Data = Data;
         }

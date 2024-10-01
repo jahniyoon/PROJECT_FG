@@ -50,7 +50,7 @@ namespace GoogleSheetsToUnity.Utils
         /// 3 -> C<br/>
         /// ...
         /// </summary>
-        /// <param name="column"></param>
+        /// <param Name="column"></param>
         /// <returns></returns>
         public static string ExcelColumnFromNumber(int column)
         {
@@ -72,7 +72,7 @@ namespace GoogleSheetsToUnity.Utils
         /// C -> 3<br/>
         /// ...
         /// </summary>
-        /// <param name="column"></param>
+        /// <param Name="column"></param>
         /// <returns></returns>
         public static int NumberFromExcelColumn(string column)
         {

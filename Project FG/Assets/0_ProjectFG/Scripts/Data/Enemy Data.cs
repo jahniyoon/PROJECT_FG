@@ -1,6 +1,7 @@
 using Google.GData.Extensions;
 using GoogleSheetsToUnity;
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -11,11 +12,12 @@ namespace JH
 {
     [CreateAssetMenu(fileName = "Enemy Data", menuName = "ScriptableObjects/Enemy/EnemyDefault", order = 0)]
 
-    public class EnemyData : ScriptableObject
+    public class EnemyData : SOData
     {
         [field: SerializeField] public int ID { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField][field: TextArea] public string Description { get; private set; }
+        [field: SerializeField] public EnemyType Type { get; private set; }
         [field: Header("에네미 정보")]
 
         [field: Tooltip("최대 체력 및 체력")]
@@ -52,17 +54,43 @@ namespace JH
         [field: SerializeField] public FoodPower FoodPower { get; private set; }
 
 
+        public override void SetData(GameData gamedata)
+        {
+            UpdateData(gamedata.Data);
+        }
+
+        // 데이터 베이스의 데이터를 업데이트해준다.
+        public override void UpdateGameData()
+        {
+            base.UpdateGameData();
+            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
+            if (gameData.GameData.ContainsKey(ID) == false)
+            {
+                Debug.LogWarning("데이터 ID를 확인해주세요." + ID);
+                return;
+            }
+            GameData newData = new GameData(gameData.GameData[ID].Name, "ENEMY", ExportData());
+            gameData.GameData[ID] = newData;
+        }
+
+
         //  데이터를 업데이트한다.
         public virtual void UpdateData(List<GSTU_Data> datas)
         {
             // 가져온 데이터를 변환하는 부분
             foreach (var item in datas)
             {
+                if (item.ColumnID == "ID")
+                    ID = int.Parse(item.Value);
+
                 if (item.ColumnID == "Name")
                     Name = item.Value;
 
                 if (item.ColumnID == "Description")
                     Description = item.Value;
+
+                if (item.ColumnID == "BaseType")
+                    Type = (EnemyType)Enum.Parse(typeof(EnemyType), item.Value);
 
                 if (item.ColumnID == "Health")
                     Health = float.Parse(item.Value);
@@ -105,6 +133,7 @@ namespace JH
             dataList.Add(SetData("ID", ID.ToString()));
             dataList.Add(SetData("Name", Name.ToString()));
             dataList.Add(SetData("Description", Description.ToString()));
+            dataList.Add(SetData("BaseType", Type.ToString()));
             dataList.Add(SetData("Health", Health.ToString()));
             dataList.Add(SetData("MoveSpeed", MoveSpeed.ToString()));
             dataList.Add(SetData("AttackRange", AttackRange.ToString()));
@@ -181,8 +210,7 @@ namespace JH
                 Debug.LogWarning("데이터 ID를 확인해주세요." + data.ID);
                 return;
             }
-            GameData newData = new GameData(gameData.GameData[data.ID].name, "ENEMY", data.ExportData());
-            gameData.GameData[data.ID] = newData;
+            data.UpdateGameData();
             // TODO : 인덱스 값에 맞게 하나만 업데이트하고있음.
             // 만약 숫자 사이에 공백이 있으면 안됨. 수치를 고정하던가 다른 방법 찾기
             gameData.ExportData("ENEMY");
@@ -191,4 +219,17 @@ namespace JH
     }
 
 #endif
+
+    public enum EnemyType
+    {
+        EnemyA,
+        EnemyB,
+        EnemyC,
+        EnemyD,
+        EnemyE,
+        EnemyF,
+        EnemyG,
+        EnemyH
+
+    }
 }

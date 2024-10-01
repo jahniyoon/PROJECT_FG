@@ -8,9 +8,9 @@ namespace GreenerGames
     /// <summary>
     /// 2 key dictionary when key 1 and 2 are of different types
     /// </summary>
-    /// <typeparam name="T1"></typeparam>
-    /// <typeparam name="T2"></typeparam>
-    /// <typeparam name="V"></typeparam>
+    /// <typeparam Name="T1"></typeparam>
+    /// <typeparam Name="T2"></typeparam>
+    /// <typeparam Name="V"></typeparam>
     [Serializable]
     public class SecondaryKeyDictionary<T1, T2, V>
     {
@@ -31,8 +31,8 @@ namespace GreenerGames
         ///     This is used to attempt to grab from primary first, if not match will attempt to find from secondary keys
         ///     in the case of both type being the same, pass them both in through this to attempt to grab either
         /// </summary>
-        /// <param name="primary"></param>
-        /// <param name="secondary"></param>
+        /// <param Name="primary"></param>
+        /// <param Name="secondary"></param>
         /// <exception cref="KeyNotFoundException"></exception>
         public V this[T1 primary, T2 secondary]
         {
@@ -42,7 +42,7 @@ namespace GreenerGames
         /// <summary>
         ///     Gets the value based on the primary key
         /// </summary>
-        /// <param name="primaryKey"></param>
+        /// <param Name="primaryKey"></param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
         public V GetValueFromPrimary(T1 primaryKey)
@@ -55,7 +55,7 @@ namespace GreenerGames
         /// <summary>
         ///     Gets the value from the secondary key
         /// </summary>
-        /// <param name="secondaryKey"></param>
+        /// <param Name="secondaryKey"></param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
         public V GetValueFromSecondary(T2 secondaryKey)
@@ -72,8 +72,8 @@ namespace GreenerGames
         /// <summary>
         ///     Try get value from either based searching with primary key first
         /// </summary>
-        /// <param name="primary"></param>
-        /// <param name="secondary"></param>
+        /// <param Name="primary"></param>
+        /// <param Name="secondary"></param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
         public V GetValueFromEither(T1 primary, T2 secondary)
@@ -88,8 +88,8 @@ namespace GreenerGames
         /// <summary>
         /// Add an entry with only a primary key, can be linked at a later time
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param Name="key"></param>
+        /// <param Name="value"></param>
         /// <exception cref="InvalidOperationException"></exception>
         public void Add(T1 key, V value)
         {
@@ -101,9 +101,9 @@ namespace GreenerGames
         /// <summary>
         /// add an entry with a primary and secondary key
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <param name="secondaryKey"></param>
+        /// <param Name="key"></param>
+        /// <param Name="value"></param>
+        /// <param Name="secondaryKey"></param>
         public void Add(T1 key, V value, T2 secondaryKey)
         {
             Add(key, value);
@@ -114,8 +114,8 @@ namespace GreenerGames
         /// <summary>
         /// Link a secondary key to a primary key
         /// </summary>
-        /// <param name="primaryKey"></param>
-        /// <param name="secondaryKey"></param>
+        /// <param Name="primaryKey"></param>
+        /// <param Name="secondaryKey"></param>
         /// <exception cref="InvalidOperationException"></exception>
         public void LinkSecondaryKey(T1 primaryKey, T2 secondaryKey)
         {
@@ -165,8 +165,8 @@ namespace GreenerGames
     /// <summary>
     /// 2 Key dictionary when value 1 and 2 are of different types
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="V"></typeparam>
+    /// <typeparam Name="T"></typeparam>
+    /// <typeparam Name="V"></typeparam>
     [Serializable]
     public class SecondaryKeyDictionary<T, V>
     {
@@ -177,7 +177,7 @@ namespace GreenerGames
         ///     This is used to attempt to grab from primary first, if not match will attempt to find from secondary keys
         ///     in the case of both type being the same, pass them both in through this to attempt to grab either
         /// </summary>
-        /// <param name="key"></param>
+        /// <param Name="key"></param>
         /// <exception cref="KeyNotFoundException"></exception>
         public V this[T key]
         {
@@ -187,7 +187,7 @@ namespace GreenerGames
         /// <summary>
         ///     Gets the value based on the primary key
         /// </summary>
-        /// <param name="primaryKey"></param>
+        /// <param Name="primaryKey"></param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
         public V GetValueFromPrimary(T primaryKey)
@@ -200,7 +200,7 @@ namespace GreenerGames
         /// <summary>
         ///     Gets the value from the secondary key
         /// </summary>
-        /// <param name="secondaryKey"></param>
+        /// <param Name="secondaryKey"></param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
         public V GetValueFromSecondary(T secondaryKey)
@@ -218,7 +218,7 @@ namespace GreenerGames
         /// <summary>
         ///     Try get value from either based searching with primary key first
         /// </summary>
-        /// <param name="key"></param>
+        /// <param Name="key"></param>
         /// <returns></returns>
         /// <exception cref="KeyNotFoundException"></exception>
         public V GetValueFromEither(T key)
@@ -233,8 +233,8 @@ namespace GreenerGames
         /// <summary>
         /// Add an entry with only a primary key, can be linked at a later time
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param Name="key"></param>
+        /// <param Name="value"></param>
         /// <exception cref="InvalidOperationException"></exception>
         public void Add(T key, V value)
         {
@@ -246,9 +246,9 @@ namespace GreenerGames
         /// <summary>
         /// add an entry with a primary and secondary key
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <param name="secondaryKey"></param>
+        /// <param Name="key"></param>
+        /// <param Name="value"></param>
+        /// <param Name="secondaryKey"></param>
         public void Add(T key, V value, T secondaryKey)
         {
             Add(key, value);
@@ -259,8 +259,8 @@ namespace GreenerGames
         /// <summary>
         /// Link a secondary key to a primary key
         /// </summary>
-        /// <param name="primaryKey"></param>
-        /// <param name="secondaryKey"></param>
+        /// <param Name="primaryKey"></param>
+        /// <param Name="secondaryKey"></param>
         /// <exception cref="InvalidOperationException"></exception>
         public void LinkSecondaryKey(T primaryKey, T secondaryKey)
         {

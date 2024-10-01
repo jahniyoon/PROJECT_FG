@@ -96,7 +96,7 @@ public class PixelizePass : ScriptableRenderPass
 
 //    public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
 //    {
-//        this.pixelTarget = RTHandles.Alloc("_PixelBuffer", name: "_PixelBuffer");
+//        this.pixelTarget = RTHandles.Alloc("_PixelBuffer", Name: "_PixelBuffer");
 
 
 //        RenderTextureDescriptor descriptor = renderingData.cameraData.cameraTargetDescriptor;
@@ -113,7 +113,7 @@ public class PixelizePass : ScriptableRenderPass
 //        descriptor.width = pixelScreenWidth;
 
 
-//        RenderingUtils.ReAllocateIfNeeded(ref pixelTarget, descriptor, FilterMode.Point, name: "_PixelBuffer");
+//        RenderingUtils.ReAllocateIfNeeded(ref pixelTarget, descriptor, FilterMode.Point, Name: "_PixelBuffer");
 
 //        ConfigureTarget(pixelTarget);
 //    }

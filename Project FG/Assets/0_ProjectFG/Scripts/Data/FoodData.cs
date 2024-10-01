@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Playables;
 using static Cinemachine.DocumentationSortingAttribute;
 
 
@@ -11,7 +12,7 @@ namespace JH
 {
     [CreateAssetMenu(fileName = "Food Power Data", menuName = "ScriptableObjects/Food Power/Food Power")]
 
-    public class FoodPowerData : ScriptableObject
+    public class FoodPowerData : SOData
     {
         [field: Header("푸드파워 데이터")]
         [field: SerializeField] public int ID { get; private set; }
@@ -30,6 +31,24 @@ namespace JH
         [field: Tooltip("TargetNearest 타겟 검출 실패 시, 발사 여부")]
         [field: SerializeField] public bool AlwaysShoot { get; private set; }
 
+        public override void SetData(GameData gamedata)
+        {
+            base.SetData(gamedata);
+            UpdateData(gamedata.Data);
+        }
+
+        public override void UpdateGameData()
+        {
+            base.UpdateGameData();
+            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
+            if (gameData.GameData.ContainsKey(ID) == false)
+            {
+                Debug.LogWarning("데이터 ID를 확인해주세요." + ID);
+                return;
+            }
+            GameData newData = new GameData(gameData.GameData[ID].Name, "FOOD POWER", ExportData());
+            gameData.GameData[ID] = newData;
+        }
 
         public FoodPowerLevelData GetLevelData(int level)
         {
@@ -49,12 +68,17 @@ namespace JH
             // 가져온 데이터를 변환하는 부분
             foreach (var item in datas)
             {
+                if (item.ColumnID == "ID")
+                    ID = int.Parse(item.Value);
+
                 if (item.ColumnID == "Name")
                     Name = item.Value;
+
                 if (item.ColumnID == "Description")
                     Description = item.Value;
+
                 // 레벨 데이터를 모두 가져와서 넣는다.
-                if (item.ColumnID == "LevelData")
+                if (item.ColumnID == "LevelDataID")
                 {
                     // 범위를 가져온다. 60001-60010
                     int[] idRange = item.Value.Split('-').Select(int.Parse).ToArray();
@@ -176,8 +200,8 @@ namespace JH
                 Debug.LogWarning("데이터 ID를 확인해주세요." + data.ID);
                 return;
             }
-            GameData newData = new GameData(gameData.GameData[data.ID].name, "FOOD POWER", data.ExportData());
-            gameData.GameData[data.ID] = newData;
+            data.UpdateGameData();
+
             // TODO : 인덱스 값에 맞게 하나만 업데이트하고있음.
             // 만약 숫자 사이에 공백이 있으면 안됨. 수치를 고정하던가 다른 방법 찾기
             // 푸드파워 레벨 데이터도 함께 업데이트

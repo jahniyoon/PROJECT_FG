@@ -28,9 +28,9 @@ namespace GoogleSheetsToUnity.ThirdPary
         /// <summary>
         /// Start a coroutine and display a progress UI. only one EditorCoroutine can display a UI at once. equivilent of calling StartCoroutine on a mono behaviour
         /// </summary>
-        /// <param name="coroutine">coroutine to run</param>
-        /// <param name="title">Text to show in the UIs title bar</param>
-        /// <param name="isCancelable">Displays a cancel button if true</param>
+        /// <param Name="coroutine">coroutine to run</param>
+        /// <param Name="title">Text to show in the UIs title bar</param>
+        /// <param Name="isCancelable">Displays a cancel button if true</param>
         public static EditorCoroutine StartCoroutineWithUI(IEnumerator coroutine, string title, bool isCancelable = false)
         {
             if (uiCoroutineState != null)

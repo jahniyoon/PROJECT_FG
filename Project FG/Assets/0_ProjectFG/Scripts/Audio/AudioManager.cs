@@ -196,7 +196,7 @@ namespace JH
         /// <summary>
         /// BGM을 추가하는 메서드
         /// </summary>
-        /// <param name="name">"Audio/BGM/" 경로의 파일명을 입력</param>
+        /// <param Name="name">"Audio/BGM/" 경로의 파일명을 입력</param>
         public void AddBGM(string name)
         {
             audioPath[0] = "Audio/BGM/";
@@ -210,7 +210,7 @@ namespace JH
             }
             if (musicSounds.ContainsKey(name))
             {
-                //GFunc.Log(name + "은 이미 등록된 BGM입니다.");
+                //GFunc.Log(Name + "은 이미 등록된 BGM입니다.");
                 return;
             }
 
@@ -224,7 +224,7 @@ namespace JH
         /// <summary>
         /// 사운드 이펙트를 추가하는 메서드
         /// </summary>
-        /// <param name="name">"Audio/SFX/" 경로의 파일명을 입력</param>
+        /// <param Name="name">"Audio/SFX/" 경로의 파일명을 입력</param>
         public void AddSFX(string name)
         {
             audioPath[0] = "Audio/SFX/";

@@ -24,8 +24,8 @@ namespace JH
         /// <summary>
         /// 슬라이더를 세팅한다.
         /// </summary>
-        /// <param name="maxValue">슬라이더의 최대 값</param>
-        /// <param name="value">슬라이더의 값</param>
+        /// <param Name="maxValue">슬라이더의 최대 값</param>
+        /// <param Name="value">슬라이더의 값</param>
         public void SetSlider(float maxValue, float value)
         {
             m_maxValue = maxValue;

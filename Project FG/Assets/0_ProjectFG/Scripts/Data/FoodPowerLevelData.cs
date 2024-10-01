@@ -152,7 +152,7 @@ namespace JH
                 Debug.LogWarning("데이터 ID를 확인해주세요." + ID);
                 return;
             }
-            GameData newData = new GameData(gameData.GameData[ID].name, "FOOD POWER LEVEL", ExportData());
+            GameData newData = new GameData(gameData.GameData[ID].Name, "FOOD POWER LEVEL", ExportData());
             gameData.GameData[ID] = newData;
 
         }

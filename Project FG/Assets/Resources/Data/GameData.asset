@@ -18,20 +18,24 @@ MonoBehaviour:
   - FOOD POWER
   - FOOD POWER LEVEL
   START_ROW_LENGTH: 3
+  ignoreSOWorksheets:
+  - FOOD POWER LEVEL
   m_gameData:
-    m_Keys: 214e0000224e0000234e0000244e0000254e0000264e0000274e0000284e0000294e00002a4e00002b4e00002c4e000051c3000052c3000053c3000054c3000055c3000056c3000057c3000058c3000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000
+    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc50000040510000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000
     m_Values:
-    - name: 20001     Test Enemy A
+    - Name: 20100     Test Enemy A
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20001
+        Value: 20100
       - ColumnID: Name
         Value: Test Enemy A
       - ColumnID: Description
         Value: "\uADFC\uC811\uD615"
+      - ColumnID: BaseType
+        Value: EnemyA
       - ColumnID: Health
-        Value: 150
+        Value: 151
       - ColumnID: MoveSpeed
         Value: 3
       - ColumnID: AttackRange
@@ -44,15 +48,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20002     Test Enemy B
+    - Name: 20200     Test Enemy B
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20002
+        Value: 20200
       - ColumnID: Name
         Value: Test Enemy B
       - ColumnID: Description
         Value: "\uD0F1\uCEE4\uD615"
+      - ColumnID: BaseType
+        Value: EnemyB
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
@@ -67,15 +73,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20003     Test Enemy C
+    - Name: 20300     Test Enemy C
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20003
+        Value: 20300
       - ColumnID: Name
         Value: Test Enemy C
       - ColumnID: Description
         Value: "\uD22C\uC0AC\uCCB4\uD615"
+      - ColumnID: BaseType
+        Value: EnemyC
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -90,15 +98,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20004     Test Enemy D
+    - Name: 20400     Test Enemy D
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20004
+        Value: 20400
       - ColumnID: Name
         Value: Test Enemy D
       - ColumnID: Description
         Value: "\uB3C4\uB11B \uD22C\uC0AC\uCCB4\uD615"
+      - ColumnID: BaseType
+        Value: EnemyD
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -113,15 +123,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20005     Test Enemy E
+    - Name: 20500     Test Enemy E
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20005
+        Value: 20500
       - ColumnID: Name
         Value: Test Enemy E
       - ColumnID: Description
         Value: "\uC18D\uC0AC\uD3EC\uD615"
+      - ColumnID: BaseType
+        Value: EnemyE
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -136,15 +148,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20006     Test Enemy F
+    - Name: 20600     Test Enemy F
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20006
+        Value: 20600
       - ColumnID: Name
         Value: Test Enemy F
       - ColumnID: Description
         Value: "\uB0C9\uAE30 \uC624\uB77C\uD615"
+      - ColumnID: BaseType
+        Value: EnemyF
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -159,15 +173,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20007     Test Enemy G
+    - Name: 20700     Test Enemy G
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20007
+        Value: 20700
       - ColumnID: Name
         Value: Test Enemy G
       - ColumnID: Description
         Value: "\uCE58\uC720\uD615"
+      - ColumnID: BaseType
+        Value: EnemyG
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
@@ -182,15 +198,17 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20008     Test Enemy H
+    - Name: 20800     Test Enemy H
       SheetID: ENEMY
       Data:
       - ColumnID: ID
-        Value: 20008
+        Value: 20800
       - ColumnID: Name
         Value: Test Enemy H
       - ColumnID: Description
         Value: "\uC790\uD3ED\uD615"
+      - ColumnID: BaseType
+        Value: EnemyH
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -205,187 +223,95 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-    - name: 20009     -
-      SheetID: ENEMY
-      Data:
-      - ColumnID: ID
-        Value: 20009
-      - ColumnID: Name
-        Value: '-'
-      - ColumnID: Description
-        Value: '-'
-      - ColumnID: Health
-        Value: 0
-      - ColumnID: MoveSpeed
-        Value: 0
-      - ColumnID: AttackRange
-        Value: 4
-      - ColumnID: EscapeRange
-        Value: 0
-      - ColumnID: Damage
-        Value: 0
-      - ColumnID: PredationHealthRatio
-        Value: 0
-      - ColumnID: PredationStunCoolDown
-        Value: 0
-    - name: 20010     -
-      SheetID: ENEMY
-      Data:
-      - ColumnID: ID
-        Value: 20010
-      - ColumnID: Name
-        Value: '-'
-      - ColumnID: Description
-        Value: '-'
-      - ColumnID: Health
-        Value: 0
-      - ColumnID: MoveSpeed
-        Value: 0
-      - ColumnID: AttackRange
-        Value: 0
-      - ColumnID: EscapeRange
-        Value: 0
-      - ColumnID: Damage
-        Value: 0
-      - ColumnID: PredationHealthRatio
-        Value: 0
-      - ColumnID: PredationStunCoolDown
-        Value: 0
-    - name: 20011     -
-      SheetID: ENEMY
-      Data:
-      - ColumnID: ID
-        Value: 20011
-      - ColumnID: Name
-        Value: '-'
-      - ColumnID: Description
-        Value: '-'
-      - ColumnID: Health
-        Value: 0
-      - ColumnID: MoveSpeed
-        Value: 0
-      - ColumnID: AttackRange
-        Value: 0
-      - ColumnID: EscapeRange
-        Value: 0
-      - ColumnID: Damage
-        Value: 0
-      - ColumnID: PredationHealthRatio
-        Value: 0
-      - ColumnID: PredationStunCoolDown
-        Value: 0
-    - name: 20012     Test Enemy A2
-      SheetID: ENEMY
-      Data:
-      - ColumnID: ID
-        Value: 20012
-      - ColumnID: Name
-        Value: Test Enemy A2
-      - ColumnID: Description
-        Value: "\uADFC\uC811\uD615"
-      - ColumnID: Health
-        Value: 250
-      - ColumnID: MoveSpeed
-        Value: 3
-      - ColumnID: AttackRange
-        Value: 1
-      - ColumnID: EscapeRange
-        Value: 0
-      - ColumnID: Damage
-        Value: 10
-      - ColumnID: PredationHealthRatio
-        Value: 50
-      - ColumnID: PredationStunCoolDown
-        Value: 0
-    - name: 50001     FoodPower A
+    - Name: 50100     FoodPower A
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50001
+        Value: 50100
       - ColumnID: Name
         Value: FoodPower A
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CC A"
-      - ColumnID: LevelData
+      - ColumnID: LevelDataID
         Value: 60001-60010
-    - name: 50002     FoodPower B
+    - Name: 50200     FoodPower B
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50002
+        Value: 50200
       - ColumnID: Name
         Value: FoodPower B
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC B"
+      - ColumnID: LevelDataID
         Value: 60011-60019
-    - name: 50003     FoodPower C
+    - Name: 50300     FoodPower C
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50003
+        Value: 50300
       - ColumnID: Name
         Value: FoodPower C
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC C"
+      - ColumnID: LevelDataID
         Value: 60020-60028
-    - name: 50004     FoodPower D
+    - Name: 50400     FoodPower D
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50004
+        Value: 50400
       - ColumnID: Name
         Value: FoodPower D
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC D"
+      - ColumnID: LevelDataID
         Value: 60029-60037
-    - name: 50005     FoodPower E
+    - Name: 50500     FoodPower E
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50005
+        Value: 50500
       - ColumnID: Name
         Value: FoodPower E
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC E"
+      - ColumnID: LevelDataID
         Value: 60038-60046
-    - name: 50006     FoodPower F
+    - Name: 50600     FoodPower F
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50006
+        Value: 50600
       - ColumnID: Name
         Value: FoodPower F
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC F"
+      - ColumnID: LevelDataID
         Value: 60047-60055
-    - name: 50007     FoodPower G
+    - Name: 50700     FoodPower G
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50007
+        Value: 50700
       - ColumnID: Name
         Value: FoodPower G
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC G"
+      - ColumnID: LevelDataID
         Value: 60056-60064
-    - name: 50008     FoodPower H
+    - Name: 50800     FoodPower H
       SheetID: FOOD POWER
       Data:
       - ColumnID: ID
-        Value: 50008
+        Value: 50800
       - ColumnID: Name
         Value: FoodPower H
       - ColumnID: Description
-        Value: 
-      - ColumnID: LevelData
+        Value: "\uD478\uB4DC\uD30C\uC6CC H"
+      - ColumnID: LevelDataID
         Value: 60065-60073
-    - name: "60001     \uD478\uB4DC\uD30C\uC6CCA lv0"
+    - Name: "60001     \uD478\uB4DC\uD30C\uC6CCA lv0"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -412,7 +338,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60002     \uD478\uB4DC\uD30C\uC6CCA lv1"
+    - Name: "60002     \uD478\uB4DC\uD30C\uC6CCA lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -439,7 +365,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60003     \uD478\uB4DC\uD30C\uC6CCA lv2"
+    - Name: "60003     \uD478\uB4DC\uD30C\uC6CCA lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -466,7 +392,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60004     \uD478\uB4DC\uD30C\uC6CCA lv3"
+    - Name: "60004     \uD478\uB4DC\uD30C\uC6CCA lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -493,7 +419,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60005     \uD478\uB4DC\uD30C\uC6CCA lv4"
+    - Name: "60005     \uD478\uB4DC\uD30C\uC6CCA lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -520,7 +446,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60006     \uD478\uB4DC\uD30C\uC6CCA lv5"
+    - Name: "60006     \uD478\uB4DC\uD30C\uC6CCA lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -547,7 +473,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60007     \uD478\uB4DC\uD30C\uC6CCA lv6"
+    - Name: "60007     \uD478\uB4DC\uD30C\uC6CCA lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -574,7 +500,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60008     \uD478\uB4DC\uD30C\uC6CCA lv7"
+    - Name: "60008     \uD478\uB4DC\uD30C\uC6CCA lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -601,7 +527,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60009     \uD478\uB4DC\uD30C\uC6CCA lv8"
+    - Name: "60009     \uD478\uB4DC\uD30C\uC6CCA lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -628,7 +554,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60010     \uD478\uB4DC\uD30C\uC6CCA lv9"
+    - Name: "60010     \uD478\uB4DC\uD30C\uC6CCA lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -655,7 +581,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
-    - name: "60011     \uD478\uB4DC\uD30C\uC6CCB lv1"
+    - Name: "60011     \uD478\uB4DC\uD30C\uC6CCB lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -682,7 +608,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 20,3
-    - name: "60012     \uD478\uB4DC\uD30C\uC6CCB lv2"
+    - Name: "60012     \uD478\uB4DC\uD30C\uC6CCB lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -709,7 +635,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 25,3
-    - name: "60013     \uD478\uB4DC\uD30C\uC6CCB lv3"
+    - Name: "60013     \uD478\uB4DC\uD30C\uC6CCB lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -736,7 +662,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 30,3
-    - name: "60014     \uD478\uB4DC\uD30C\uC6CCB lv4"
+    - Name: "60014     \uD478\uB4DC\uD30C\uC6CCB lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -763,7 +689,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 35,3
-    - name: "60015     \uD478\uB4DC\uD30C\uC6CCB lv5"
+    - Name: "60015     \uD478\uB4DC\uD30C\uC6CCB lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -790,7 +716,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 40,3
-    - name: "60016     \uD478\uB4DC\uD30C\uC6CCB lv6"
+    - Name: "60016     \uD478\uB4DC\uD30C\uC6CCB lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -817,7 +743,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 45,3
-    - name: "60017     \uD478\uB4DC\uD30C\uC6CCB lv7"
+    - Name: "60017     \uD478\uB4DC\uD30C\uC6CCB lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -844,7 +770,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 50,3
-    - name: "60018     \uD478\uB4DC\uD30C\uC6CCB lv8"
+    - Name: "60018     \uD478\uB4DC\uD30C\uC6CCB lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -871,7 +797,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 55,3
-    - name: "60019     \uD478\uB4DC\uD30C\uC6CCB lv9"
+    - Name: "60019     \uD478\uB4DC\uD30C\uC6CCB lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -898,7 +824,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 60,3
-    - name: "60020     \uD478\uB4DC\uD30C\uC6CCC lv1"
+    - Name: "60020     \uD478\uB4DC\uD30C\uC6CCC lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -925,7 +851,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60021     \uD478\uB4DC\uD30C\uC6CCC lv2"
+    - Name: "60021     \uD478\uB4DC\uD30C\uC6CCC lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -952,7 +878,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60022     \uD478\uB4DC\uD30C\uC6CCC lv3"
+    - Name: "60022     \uD478\uB4DC\uD30C\uC6CCC lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -979,7 +905,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60023     \uD478\uB4DC\uD30C\uC6CCC lv4"
+    - Name: "60023     \uD478\uB4DC\uD30C\uC6CCC lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1006,7 +932,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60024     \uD478\uB4DC\uD30C\uC6CCC lv5"
+    - Name: "60024     \uD478\uB4DC\uD30C\uC6CCC lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1033,7 +959,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60025     \uD478\uB4DC\uD30C\uC6CCC lv6"
+    - Name: "60025     \uD478\uB4DC\uD30C\uC6CCC lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1060,7 +986,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60026     \uD478\uB4DC\uD30C\uC6CCC lv7"
+    - Name: "60026     \uD478\uB4DC\uD30C\uC6CCC lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1087,7 +1013,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60027     \uD478\uB4DC\uD30C\uC6CCC lv8"
+    - Name: "60027     \uD478\uB4DC\uD30C\uC6CCC lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1114,7 +1040,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60028     \uD478\uB4DC\uD30C\uC6CCC lv9"
+    - Name: "60028     \uD478\uB4DC\uD30C\uC6CCC lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1141,7 +1067,7 @@ MonoBehaviour:
         Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
-    - name: "60029     \uD478\uB4DC\uD30C\uC6CCD lv1"
+    - Name: "60029     \uD478\uB4DC\uD30C\uC6CCD lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1168,7 +1094,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60030     \uD478\uB4DC\uD30C\uC6CCD lv2"
+    - Name: "60030     \uD478\uB4DC\uD30C\uC6CCD lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1195,7 +1121,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60031     \uD478\uB4DC\uD30C\uC6CCD lv3"
+    - Name: "60031     \uD478\uB4DC\uD30C\uC6CCD lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1222,7 +1148,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60032     \uD478\uB4DC\uD30C\uC6CCD lv4"
+    - Name: "60032     \uD478\uB4DC\uD30C\uC6CCD lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1249,7 +1175,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60033     \uD478\uB4DC\uD30C\uC6CCD lv5"
+    - Name: "60033     \uD478\uB4DC\uD30C\uC6CCD lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1276,7 +1202,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60034     \uD478\uB4DC\uD30C\uC6CCD lv6"
+    - Name: "60034     \uD478\uB4DC\uD30C\uC6CCD lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1303,7 +1229,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60035     \uD478\uB4DC\uD30C\uC6CCD lv7"
+    - Name: "60035     \uD478\uB4DC\uD30C\uC6CCD lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1330,7 +1256,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60036     \uD478\uB4DC\uD30C\uC6CCD lv8"
+    - Name: "60036     \uD478\uB4DC\uD30C\uC6CCD lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1357,7 +1283,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60037     \uD478\uB4DC\uD30C\uC6CCD lv9"
+    - Name: "60037     \uD478\uB4DC\uD30C\uC6CCD lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1384,7 +1310,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
-    - name: "60038     \uD478\uB4DC\uD30C\uC6CCE lv1"
+    - Name: "60038     \uD478\uB4DC\uD30C\uC6CCE lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1396,7 +1322,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 7
       - ColumnID: Range
@@ -1411,7 +1337,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,5
-    - name: "60039     \uD478\uB4DC\uD30C\uC6CCE lv2"
+    - Name: "60039     \uD478\uB4DC\uD30C\uC6CCE lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1423,7 +1349,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 8
       - ColumnID: Range
@@ -1438,7 +1364,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,5.5
-    - name: "60040     \uD478\uB4DC\uD30C\uC6CCE lv3"
+    - Name: "60040     \uD478\uB4DC\uD30C\uC6CCE lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1450,7 +1376,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 9
       - ColumnID: Range
@@ -1465,7 +1391,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,6
-    - name: "60041     \uD478\uB4DC\uD30C\uC6CCE lv4"
+    - Name: "60041     \uD478\uB4DC\uD30C\uC6CCE lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1477,7 +1403,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
@@ -1492,7 +1418,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,6.5
-    - name: "60042     \uD478\uB4DC\uD30C\uC6CCE lv5"
+    - Name: "60042     \uD478\uB4DC\uD30C\uC6CCE lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1504,7 +1430,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 12
       - ColumnID: Range
@@ -1519,7 +1445,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,7
-    - name: "60043     \uD478\uB4DC\uD30C\uC6CCE lv6"
+    - Name: "60043     \uD478\uB4DC\uD30C\uC6CCE lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1531,7 +1457,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 14
       - ColumnID: Range
@@ -1546,7 +1472,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,7.5
-    - name: "60044     \uD478\uB4DC\uD30C\uC6CCE lv7"
+    - Name: "60044     \uD478\uB4DC\uD30C\uC6CCE lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1558,7 +1484,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 16
       - ColumnID: Range
@@ -1573,7 +1499,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,8
-    - name: "60045     \uD478\uB4DC\uD30C\uC6CCE lv8"
+    - Name: "60045     \uD478\uB4DC\uD30C\uC6CCE lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1585,7 +1511,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 18
       - ColumnID: Range
@@ -1600,7 +1526,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,8.5
-    - name: "60046     \uD478\uB4DC\uD30C\uC6CCE lv9"
+    - Name: "60046     \uD478\uB4DC\uD30C\uC6CCE lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1612,7 +1538,7 @@ MonoBehaviour:
       - ColumnID: Type
         Value: '-'
       - ColumnID: CoolDown
-        Value: 0.05
+        Value: 3
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
@@ -1627,7 +1553,7 @@ MonoBehaviour:
         Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,10
-    - name: "60047     \uD478\uB4DC\uD30C\uC6CCF lv1"
+    - Name: "60047     \uD478\uB4DC\uD30C\uC6CCF lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1654,7 +1580,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 10
-    - name: "60048     \uD478\uB4DC\uD30C\uC6CCF lv2"
+    - Name: "60048     \uD478\uB4DC\uD30C\uC6CCF lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1681,7 +1607,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 15
-    - name: "60049     \uD478\uB4DC\uD30C\uC6CCF lv3"
+    - Name: "60049     \uD478\uB4DC\uD30C\uC6CCF lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1708,7 +1634,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 20
-    - name: "60050     \uD478\uB4DC\uD30C\uC6CCF lv4"
+    - Name: "60050     \uD478\uB4DC\uD30C\uC6CCF lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1735,7 +1661,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 25
-    - name: "60051     \uD478\uB4DC\uD30C\uC6CCF lv5"
+    - Name: "60051     \uD478\uB4DC\uD30C\uC6CCF lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1762,7 +1688,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 30
-    - name: "60052     \uD478\uB4DC\uD30C\uC6CCF lv6"
+    - Name: "60052     \uD478\uB4DC\uD30C\uC6CCF lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1789,7 +1715,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 35
-    - name: "60053     \uD478\uB4DC\uD30C\uC6CCF lv7"
+    - Name: "60053     \uD478\uB4DC\uD30C\uC6CCF lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1816,7 +1742,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 40
-    - name: "60054     \uD478\uB4DC\uD30C\uC6CCF lv8"
+    - Name: "60054     \uD478\uB4DC\uD30C\uC6CCF lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1843,7 +1769,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 45
-    - name: "60055     \uD478\uB4DC\uD30C\uC6CCF lv9"
+    - Name: "60055     \uD478\uB4DC\uD30C\uC6CCF lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1870,7 +1796,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 50
-    - name: "60056     \uD478\uB4DC\uD30C\uC6CCG lv1"
+    - Name: "60056     \uD478\uB4DC\uD30C\uC6CCG lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1897,7 +1823,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,5
-    - name: "60057     \uD478\uB4DC\uD30C\uC6CCG lv2"
+    - Name: "60057     \uD478\uB4DC\uD30C\uC6CCG lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1924,7 +1850,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,5
-    - name: "60058     \uD478\uB4DC\uD30C\uC6CCG lv3"
+    - Name: "60058     \uD478\uB4DC\uD30C\uC6CCG lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1951,7 +1877,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,6
-    - name: "60059     \uD478\uB4DC\uD30C\uC6CCG lv4"
+    - Name: "60059     \uD478\uB4DC\uD30C\uC6CCG lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -1978,7 +1904,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,6
-    - name: "60060     \uD478\uB4DC\uD30C\uC6CCG lv5"
+    - Name: "60060     \uD478\uB4DC\uD30C\uC6CCG lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2005,7 +1931,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,7
-    - name: "60061     \uD478\uB4DC\uD30C\uC6CCG lv6"
+    - Name: "60061     \uD478\uB4DC\uD30C\uC6CCG lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2032,7 +1958,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,7
-    - name: "60062     \uD478\uB4DC\uD30C\uC6CCG lv7"
+    - Name: "60062     \uD478\uB4DC\uD30C\uC6CCG lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2059,7 +1985,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,8
-    - name: "60063     \uD478\uB4DC\uD30C\uC6CCG lv8"
+    - Name: "60063     \uD478\uB4DC\uD30C\uC6CCG lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2086,7 +2012,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,8
-    - name: "60064     \uD478\uB4DC\uD30C\uC6CCG lv9"
+    - Name: "60064     \uD478\uB4DC\uD30C\uC6CCG lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2113,7 +2039,7 @@ MonoBehaviour:
         Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,10
-    - name: "60065     \uD478\uB4DC\uD30C\uC6CCH lv1"
+    - Name: "60065     \uD478\uB4DC\uD30C\uC6CCH lv1"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2140,7 +2066,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60066     \uD478\uB4DC\uD30C\uC6CCH lv2"
+    - Name: "60066     \uD478\uB4DC\uD30C\uC6CCH lv2"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2167,7 +2093,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60067     \uD478\uB4DC\uD30C\uC6CCH lv3"
+    - Name: "60067     \uD478\uB4DC\uD30C\uC6CCH lv3"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2194,7 +2120,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60068     \uD478\uB4DC\uD30C\uC6CCH lv4"
+    - Name: "60068     \uD478\uB4DC\uD30C\uC6CCH lv4"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2221,7 +2147,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60069     \uD478\uB4DC\uD30C\uC6CCH lv5"
+    - Name: "60069     \uD478\uB4DC\uD30C\uC6CCH lv5"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2248,7 +2174,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60070     \uD478\uB4DC\uD30C\uC6CCH lv6"
+    - Name: "60070     \uD478\uB4DC\uD30C\uC6CCH lv6"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2275,7 +2201,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60071     \uD478\uB4DC\uD30C\uC6CCH lv7"
+    - Name: "60071     \uD478\uB4DC\uD30C\uC6CCH lv7"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2302,7 +2228,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60072     \uD478\uB4DC\uD30C\uC6CCH lv8"
+    - Name: "60072     \uD478\uB4DC\uD30C\uC6CCH lv8"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID
@@ -2329,7 +2255,7 @@ MonoBehaviour:
         Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
-    - name: "60073     \uD478\uB4DC\uD30C\uC6CCH lv9"
+    - Name: "60073     \uD478\uB4DC\uD30C\uC6CCH lv9"
       SheetID: FOOD POWER LEVEL
       Data:
       - ColumnID: ID

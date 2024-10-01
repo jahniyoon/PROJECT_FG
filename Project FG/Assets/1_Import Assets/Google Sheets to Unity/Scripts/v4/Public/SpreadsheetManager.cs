@@ -35,8 +35,8 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Read a public accessable spreadsheet
         /// </summary>
-        /// <param name="searchDetails"></param>
-        /// <param name="callback">event that will fire after reading is complete</param>
+        /// <param Name="searchDetails"></param>
+        /// <param Name="callback">event that will fire after reading is complete</param>
         public static void ReadPublicSpreadsheet(GSTU_Search searchDetails, OnSpreedSheetLoaded callback)
         {
             if (string.IsNullOrEmpty(Config.API_Key))
@@ -67,10 +67,10 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Wait for the Web request to complete and then process the results
         /// </summary>
-        /// <param name="www"></param>
-        /// <param name="titleColumn"></param>
-        /// <param name="titleRow"></param>
-        /// <param name="callback"></param>
+        /// <param Name="www"></param>
+        /// <param Name="titleColumn"></param>
+        /// <param Name="titleRow"></param>
+        /// <param Name="callback"></param>
         /// <returns></returns>
         static IEnumerator Read(UnityWebRequest www, string titleColumn, int titleRow, OnSpreedSheetLoaded callback)
         {

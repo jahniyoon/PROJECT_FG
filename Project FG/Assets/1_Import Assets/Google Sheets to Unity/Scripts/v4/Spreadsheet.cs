@@ -160,7 +160,7 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Used to create a spreadshhet that can be returned to google sheets
         /// </summary>
-        /// <param name="data"></param>
+        /// <param Name="data"></param>
         public ValueRange(List<List<string>> data)
         {
             values = data;
@@ -169,7 +169,7 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Used to create a spreadshhet that can be returned to google sheets
         /// </summary>
-        /// <param name="data"></param>
+        /// <param Name="data"></param>
         public ValueRange(List<string> data)
         {
             values.Add(data);

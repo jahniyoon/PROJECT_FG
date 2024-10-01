@@ -329,7 +329,6 @@ namespace JH
                             yield return WaitForFixedUpdate;
                             buffElement.UpdateTimer();
                         }
-
                     }
             }
 
@@ -358,8 +357,8 @@ namespace JH
         /// 한가지 버프 상태만 가져야하는 버프의 경우 버프 체크를 진행한다.
         /// 가장 높은 우선도를 체크하도록 한다.
         /// </summary>
-        /// <param name="buff">체크할 버프</param>
-        /// <param name="checkThis">체크할 버프를 함께 검사할지 정한다. 삭제할때는 필요가 없다.</param>
+        /// <param Name="buff">체크할 버프</param>
+        /// <param Name="checkThis">체크할 버프를 함께 검사할지 정한다. 삭제할때는 필요가 없다.</param>
         public void OnlyOneBuffCheck(BuffBase buff, int checkThis = default)
         {
             // 기준을 정한다.

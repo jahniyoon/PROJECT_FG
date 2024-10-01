@@ -39,9 +39,9 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Reads information from a spreadsheet
         /// </summary>
-        /// <param name="search"></param>
-        /// <param name="callback"></param>
-        /// <param name="containsMergedCells"> does the spreadsheet contain merged cells, will attempt to group these by titles</param>
+        /// <param Name="search"></param>
+        /// <param Name="callback"></param>
+        /// <param Name="containsMergedCells"> does the spreadsheet contain merged cells, will attempt to group these by titles</param>
         public static void Read(GSTU_Search search, UnityAction<GstuSpreadSheet> callback, bool containsMergedCells = false)
         {
             StringBuilder sb = new StringBuilder();
@@ -68,10 +68,10 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Reads the spread sheet and callback with the results
         /// </summary>
-        /// <param name="request"></param>
-        /// <param name="search"></param>
-        /// <param name="containsMergedCells"></param>
-        /// <param name="callback"></param>
+        /// <param Name="request"></param>
+        /// <param Name="search"></param>
+        /// <param Name="containsMergedCells"></param>
+        /// <param Name="callback"></param>
         /// <returns></returns>
         static IEnumerator Read(UnityWebRequest request, GSTU_Search search, bool containsMergedCells, UnityAction<GstuSpreadSheet> callback)
         {
@@ -127,9 +127,9 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Updates just the cell pased in as the startCell value of the search parameters
         /// </summary>
-        /// <param name="search"></param>
-        /// <param name="inputData"></param>
-        /// <param name="callback"></param>
+        /// <param Name="search"></param>
+        /// <param Name="inputData"></param>
+        /// <param Name="callback"></param>
         public static void Write(GSTU_Search search, string inputData, UnityAction callback)
         {
             Write(search, new ValueRange(inputData), callback);
@@ -138,9 +138,9 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Writes data to a spreadsheet
         /// </summary>
-        /// <param name="search"></param>
-        /// <param name="inputData"></param>
-        /// <param name="callback"></param>
+        /// <param Name="search"></param>
+        /// <param Name="inputData"></param>
+        /// <param Name="callback"></param>
         public static void Write(GSTU_Search search, ValueRange inputData, UnityAction callback)
         {
             StringBuilder sb = new StringBuilder();
@@ -195,9 +195,9 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Writes a batch update to a spreadsheet
         /// </summary>
-        /// <param name="search"></param>
-        /// <param name="requestData"></param>
-        /// <param name="callback"></param>
+        /// <param Name="search"></param>
+        /// <param Name="requestData"></param>
+        /// <param Name="callback"></param>
         public static void WriteBatch(GSTU_Search search, BatchRequestBody requestData, UnityAction callback)
         {
             StringBuilder sb = new StringBuilder();
@@ -252,9 +252,9 @@ namespace GoogleSheetsToUnity
         /// <summary>
         /// Adds the data to the next avaiable space to write it after the startcell
         /// </summary>
-        /// <param name="search"></param>
-        /// <param name="inputData"></param>
-        /// <param name="callback"></param>
+        /// <param Name="search"></param>
+        /// <param Name="inputData"></param>
+        /// <param Name="callback"></param>
         public static void Append(GSTU_Search search, ValueRange inputData, UnityAction callback)
         {
             StringBuilder sb = new StringBuilder();

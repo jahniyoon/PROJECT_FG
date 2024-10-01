@@ -58,7 +58,7 @@ namespace JH
             m_aimPoint = input;
         }
 
-        /// <param name="input"> 0 : 입력 대기 / 1 : 입력 </param>
+        /// <param Name="input"> 0 : 입력 대기 / 1 : 입력 </param>
         private void AttackInput(float input)
         {
             if (m_attack == false && input == 1)
@@ -73,7 +73,7 @@ namespace JH
             yield return WaitForEndOfFrame;
             m_attackDown = false;
         }
-        /// <param name="input"> 0 : 입력 대기 / 1 : 입력 </param>
+        /// <param Name="input"> 0 : 입력 대기 / 1 : 입력 </param>
         private void PredationInput(float input)
         {
             if (m_predation == false && input == 1)
