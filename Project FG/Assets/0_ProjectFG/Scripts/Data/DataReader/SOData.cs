@@ -7,7 +7,7 @@ namespace JH
     [System.Serializable]
 	public class SOData : ScriptableObject
 	{
-	
+	        
         public virtual void SetData(GameData gamedata)
         {
 
@@ -17,5 +17,13 @@ namespace JH
         {
 
         }
-	}
+
+        protected GSTU_Data SetData(string ColumnID, string Value)
+        {
+            GSTU_Data data = new GSTU_Data();
+            data.ColumnID = ColumnID;
+            data.Value = Value;
+            return data;
+        }
+    }
 }

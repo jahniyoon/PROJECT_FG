@@ -112,12 +112,12 @@ namespace JH
             switch (m_data.GetLevelData(m_powerLevel).AimType)
             {
                 // 플레이어 방향
-                case FoodPowerAimType.MoveDirection:
+                case AimType.MoveDirection:
                     return m_casterPosition.localRotation;
 
 
                 // 가까운 타겟 방향
-                case FoodPowerAimType.TargetNearest:
+                case AimType.NearTargetDirection:
                     Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
 
                     // 타겟이 Null이 아닐 경우에만
@@ -131,22 +131,22 @@ namespace JH
                     break;
 
                 // 포인터 방향
-                case FoodPowerAimType.PointerDirection:
+                case AimType.PointerDirection:
                     return Quaternion.LookRotation(m_aimPosition.position - m_casterPosition.position);
 
                 // PC의 포지션
-                case FoodPowerAimType.PcPosition:
+                case AimType.PcPosition:
                     return direction;
 
                     // 랜덤한 방향
-                case FoodPowerAimType.RandomDirection:
+                case AimType.RandomDirection:
                     Vector3 randomDir = direction.eulerAngles;
                     randomDir.y = Random.Range(0, 360);
                     direction.eulerAngles = randomDir;
                     return direction;
 
                     // 랜덤한 적 방향
-                case FoodPowerAimType.RandomEnemyDirection:
+                case AimType.RandomEnemyDirection:
                     Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
 
                     // 타겟이 Null이 아닐 경우에만

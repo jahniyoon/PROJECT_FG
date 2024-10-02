@@ -26,7 +26,6 @@ namespace JH
         [field: SerializeField] public float MoveSpeed { get; private set; }
         [field: Tooltip("회전 속도")]
         [field: SerializeField] public float RotateSpeed { get; private set; }
-        [field: SerializeField] public float Damage { get; private set; }
 
 
 
@@ -104,9 +103,6 @@ namespace JH
                 if (item.ColumnID == "EscapeRange")
                     EscapeRange = float.Parse(item.Value);
 
-                if (item.ColumnID == "Damage")
-                    Damage = float.Parse(item.Value);
-
                 if (item.ColumnID == "PredationHealthRatio")
                     PredationHealthRatio = float.Parse(item.Value);
 
@@ -115,13 +111,7 @@ namespace JH
             }
         }
 
-        private GSTU_Data SetData(string ColumnID, string Value)
-        {
-            GSTU_Data data = new GSTU_Data();
-            data.ColumnID = ColumnID;
-            data.Value = Value;
-            return data;
-        }
+
 
         // 데이터 행의 순서가 바뀌면 여기를 수정해야함
         public virtual List<GSTU_Data> ExportData()
@@ -138,7 +128,6 @@ namespace JH
             dataList.Add(SetData("MoveSpeed", MoveSpeed.ToString()));
             dataList.Add(SetData("AttackRange", AttackRange.ToString()));
             dataList.Add(SetData("EscapeRange", EscapeRange.ToString()));
-            dataList.Add(SetData("Damage", Damage.ToString()));
             dataList.Add(SetData("PredationHealthRatio", PredationHealthRatio.ToString()));
             dataList.Add(SetData("PredationStunCoolDown", PredationStunCoolDown.ToString()));
 

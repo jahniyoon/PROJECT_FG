@@ -13,7 +13,7 @@ namespace JH
 
         [field: SerializeField] public TargetTag Target { get; private set; }
         [field: SerializeField] public GameObject FrozenPrefab { get; private set; }
-        [field: SerializeField] public float SkillRadius { get; private set; }
+        [field: SerializeField] public float Radius { get; private set; }
         [field: Header("Slow Debuff")]
         [field: SerializeField] public BuffBase SlowDebuff { get; private set; }
         [field: Header("Dot Damage")]

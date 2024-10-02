@@ -83,7 +83,7 @@ namespace JH
         [field: Tooltip("푸드파워 딜레이")]
         [field: SerializeField] public float FoodPowerDelay { get; private set; }
         [field: Tooltip("푸드파워 투사체 조준 시스템")]
-        [field: SerializeField] public FoodPowerAimType FoodPowerAimType { get; private set; }
+        [field: SerializeField] public AimType FoodPowerAimType { get; private set; }
         [field: Header("식사콤보")]
         [field: SerializeField] public List<FoodComboSetting> FoodCombo { get; private set; }
 
@@ -97,26 +97,5 @@ namespace JH
     }
 
 
-    public enum FoodPowerAimType
-    {
-        None,
-        MoveDirection,      //  이동 방향
-        TargetNearest,      // 가까운 타겟 방향
-        PointerDirection,   // 포인터 방향
-        RandomDirection,     // 랜덤 방향
-        RandomEnemyDirection,    // 랜덤 적 방향
-        PcPosition,             // PC 위치
-        PcPositionSummon        // PC 위치 소환
-
-    }
-    public enum FoodComboType
-    {
-        None,
-        Triple,
-        Quadruple,
-        Quintuple,
-        Hextuple,
-        Septuple
-    }
 
 }

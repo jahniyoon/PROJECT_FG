@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae48906bdd6f2646b5254e2654b98b3, type: 3}
+  m_Name: 30400  SKILL  D1 Radius
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30400
+  <Name>k__BackingField: D1 Radius
+  <Description>k__BackingField: "\uC801 D1\uC758 \uBC94\uC704 \uD3ED\uACA9 \uAE30\uC220"
+  <BaseType>k__BackingField: 5
+  <SkillTarget>k__BackingField: 1
+  <SkillCoolDown>k__BackingField: 3
+  <SkillDuration>k__BackingField: 0
+  <SkillDamage>k__BackingField: 10
+  <AimType>k__BackingField: 10
+  <SkillRange>k__BackingField: 5
+  <ProjectileID>k__BackingField: bc600100
+  <ProjectileOffset>k__BackingField: 0
+  <SkillRadius>k__BackingField: 2.5
+  <SkillArc>k__BackingField: 360
+  <SkillLifeTime>k__BackingField: 0.1
+  <BuffID>k__BackingField: 
+  <Value1>k__BackingField:
+  - 1
+  <Value2>k__BackingField: []
+  <Value3>k__BackingField: []

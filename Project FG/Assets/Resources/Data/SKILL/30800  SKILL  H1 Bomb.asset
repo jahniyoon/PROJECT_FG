@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae48906bdd6f2646b5254e2654b98b3, type: 3}
+  m_Name: 30800  SKILL  H1 Bomb
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 30800
+  <Name>k__BackingField: H1 Bomb
+  <Description>k__BackingField: "\uC801 H1\uC758 \uC790\uD3ED \uAE30\uC220"
+  <BaseType>k__BackingField: 4
+  <SkillTarget>k__BackingField: 1
+  <SkillCoolDown>k__BackingField: 0
+  <SkillDuration>k__BackingField: 0
+  <SkillDamage>k__BackingField: 50
+  <AimType>k__BackingField: 5
+  <SkillRange>k__BackingField: 0
+  <ProjectileID>k__BackingField: 84610100
+  <ProjectileOffset>k__BackingField: 0
+  <SkillRadius>k__BackingField: 5
+  <SkillArc>k__BackingField: 360
+  <SkillLifeTime>k__BackingField: 0.1
+  <BuffID>k__BackingField: 
+  <Value1>k__BackingField: []
+  <Value2>k__BackingField: []
+  <Value3>k__BackingField: []

@@ -6,14 +6,7 @@ using UnityEngine;
 
 namespace JH
 {
-    public enum BuffType
-    {
-        Immediately,    // 즉시
-        TimeCondition,      // 조건
-        Stack,           // 스택
-        Stay,           // 계속 붙어있을 때 까지
-        Attachment           // 뗄 때까지
-    }
+
     [System.Serializable]
     public class BuffBase : ScriptableObject
     {

@@ -9,7 +9,7 @@ namespace JH
         [Header("푸드파워 레벨 데이터")]
         [SerializeField] protected FoodPowerLevelData m_levelData;
         [Header("푸드파워 조준 타입")]
-        [SerializeField] protected FoodPowerAimType m_aimtype;
+        [SerializeField] protected AimType m_aimtype;
 
 
         public void SetFoodPowerData(FoodPowerLevelData levelData)

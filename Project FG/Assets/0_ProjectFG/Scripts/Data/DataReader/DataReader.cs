@@ -52,7 +52,7 @@ namespace JH
                     id = int.Parse(item.value);
 
                 if (item.columnId == "Name")
-                    name = ("     " + item.value);
+                    name = ("  " + sheetID + "  " + item.value);
             }
             GameData data = new GameData(id + name, sheetID, datas);
             m_gameData.Add(id, data);
@@ -131,43 +131,24 @@ namespace JH
             return false;
         }
 
-        // 불러오기 경로
-        public string SoLoadPath(GameData data)
-        {
-            m_loadPath.Clear();
-            m_loadPath.Append("Data/");
-            m_loadPath.Append(data.SheetID);
-            m_loadPath.Append("/");
-            m_loadPath.Append(data.Name);
-            return m_loadPath.ToString();
-        }
-        // 저장 경로
-        public string SoSavePath(GameData data)
-        {
-            m_savePath.Clear();
-            m_savePath.Append("Assets/Resources/Data/");
-            m_savePath.Append(data.SheetID);
-            m_savePath.Append("/");
-            m_savePath.Append(data.Name);
-            m_savePath.Append(".asset");
-            return m_savePath.ToString();
-        }
+       
 
         // 가져온 SO를 유형에 맞게 생성해준다.
         private void CreateSO(GameData gameData)
         {
             bool createAsset = false;
 
-            string loadPath = SoLoadPath(gameData);
-            string savePath = SoSavePath(gameData);
+            string loadPath = SOHandler.SoLoadPath(gameData);
+            string savePath = SOHandler.SoSavePath(gameData);
 
             // 데이터 불러오기
             SOData data = Resources.Load<SOData>(loadPath);
 
+            // 불러온 데이터가 없으면 생성해준다.
             if (data == null)
             {
                 createAsset = true;
-                data = GetSOData(gameData);
+                data = SOHandler.GetSOData(gameData);
             }
 
             data.SetData(gameData);
@@ -188,47 +169,7 @@ namespace JH
         }
 
 
-        // 각 데이터 컨테이너를 만들어준다.
-        private SOData GetSOData(GameData gameData)
-        {
-            switch (gameData.SheetID)
-            {
-                case "ENEMY":
-                    return GetEnemyData(gameData);
 
-                case "FOOD POWER":
-                    return ScriptableObject.CreateInstance<FoodPowerData>();
-
-            }
-            return null;
-
-        }
-
-        // 에네미 데이터를 가져올 때
-        private SOData GetEnemyData(GameData gameData)
-        {
-            // 3번째가 BaseType
-            switch (gameData.Data[3].Value)
-            {
-                case "EnemyA":
-                    return ScriptableObject.CreateInstance<EnemyAData>();
-                case "EnemyB":
-                    return ScriptableObject.CreateInstance<EnemyBData>();
-                case "EnemyC":
-                    return ScriptableObject.CreateInstance<EnemyCData>();
-                case "EnemyD":
-                    return ScriptableObject.CreateInstance<EnemyDData>();
-                case "EnemyE":
-                    return ScriptableObject.CreateInstance<EnemyEData>();
-                case "EnemyF":
-                    return ScriptableObject.CreateInstance<EnemyFData>();
-                case "EnemyG":
-                    return ScriptableObject.CreateInstance<EnemyGData>();
-                case "EnemyH":
-                    return ScriptableObject.CreateInstance<EnemyHData>();
-            }
-            return ScriptableObject.CreateInstance<EnemyData>();
-        }
 
         #endregion
 
@@ -252,27 +193,12 @@ namespace JH
                     continue;
 
                 // 생성 또는 데이터를 업데이트한다.
-                SoToGameData(gameData);
+                SOHandler.SoToGameData(gameData);
             }
 
 
         }
-        private void SoToGameData(GameData gameData)
-        {
-            string loadPath = SoLoadPath(gameData);
 
-            // 데이터 불러오기
-            SOData data = Resources.Load<SOData>(loadPath);
-
-            if (data == null)
-            {
-                Debug.Log(loadPath + " 경로의 데이터를 찾을 수 없습니다.");
-                    return;
-            }
-            // 데이터 베이스의 게임 데이터를 업데이트한다.
-            data.UpdateGameData();
-
-        }
 
     }
 

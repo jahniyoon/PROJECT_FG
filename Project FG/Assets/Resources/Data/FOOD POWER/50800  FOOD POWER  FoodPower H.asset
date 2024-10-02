@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583af639b0e537b41bd1096d94da3f25, type: 3}
+  m_Name: 50800  FOOD POWER  FoodPower H
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 50800
+  <Name>k__BackingField: FoodPower H
+  <Description>k__BackingField: "\uD478\uB4DC\uD30C\uC6CC H"
+  <Icon>k__BackingField: {fileID: 0}
+  <LevelDatas>k__BackingField:
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv1"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv1"
+    ID: 60065
+    CoolDown: 10
+    Damage: 100
+    Range: 0
+    Radius: 1
+    Duration: 10
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv2"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv2"
+    ID: 60066
+    CoolDown: 9
+    Damage: 120
+    Range: 0
+    Radius: 1
+    Duration: 12
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv3"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv3"
+    ID: 60067
+    CoolDown: 8
+    Damage: 140
+    Range: 0
+    Radius: 1
+    Duration: 14
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv4"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv4"
+    ID: 60068
+    CoolDown: 7
+    Damage: 170
+    Range: 0
+    Radius: 1
+    Duration: 16
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv5"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv5"
+    ID: 60069
+    CoolDown: 6
+    Damage: 200
+    Range: 0
+    Radius: 1
+    Duration: 18
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv6"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv6"
+    ID: 60070
+    CoolDown: 5
+    Damage: 230
+    Range: 0
+    Radius: 1
+    Duration: 20
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv7"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv7"
+    ID: 60071
+    CoolDown: 4
+    Damage: 260
+    Range: 0
+    Radius: 1
+    Duration: 25
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv8"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv8"
+    ID: 60072
+    CoolDown: 3
+    Damage: 290
+    Range: 0
+    Radius: 1
+    Duration: 30
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  - Name: "\uD478\uB4DC\uD30C\uC6CCH lv9"
+    Description: "\uD478\uB4DC\uD30C\uC6CCH lv9"
+    ID: 60073
+    CoolDown: 2
+    Damage: 300
+    Range: 0
+    Radius: 1
+    Duration: 40
+    Count: 1
+    AimType: 4
+    AdditionalValues:
+    - 4
+  <TargetNearestScanRadius>k__BackingField: 0
+  <AlwaysShoot>k__BackingField: 0

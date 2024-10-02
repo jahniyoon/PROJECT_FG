@@ -19,7 +19,7 @@ namespace JH
         public float Radius;
         public float Duration;
         public int Count;
-        public FoodPowerAimType AimType;
+        public AimType AimType;
         public float[] AdditionalValues = new float[1];
 
 
@@ -66,25 +66,25 @@ namespace JH
                     switch (Data.Value)
                     {
                         case "가장 가까운 적":
-                            AimType = FoodPowerAimType.TargetNearest;
+                            AimType = AimType.NearTargetDirection;
                             break;
                         case "이동 방향":
-                            AimType = FoodPowerAimType.MoveDirection;
+                            AimType = AimType.MoveDirection;
                             break;
                         case "포인터 방향":
-                            AimType = FoodPowerAimType.PointerDirection;
+                            AimType = AimType.PointerDirection;
                             break;
                         case "랜덤한 방향":
-                            AimType = FoodPowerAimType.RandomDirection;
+                            AimType = AimType.RandomDirection;
                             break;
                         case "사거리내 랜덤한 적":
-                            AimType = FoodPowerAimType.RandomEnemyDirection;
+                            AimType = AimType.RandomEnemyDirection;
                             break;
                         case "PC 위치":
-                            AimType = FoodPowerAimType.PcPosition;
+                            AimType = AimType.PcPosition;
                             break;
                         case "PC위치 소환":
-                            AimType = FoodPowerAimType.PcPositionSummon;
+                            AimType = AimType.PcPositionSummon;
                             break;
                     }
                 }
@@ -156,23 +156,23 @@ namespace JH
             gameData.GameData[ID] = newData;
 
         }
-        public string GetAimTypeName(FoodPowerAimType AimType)
+        public string GetAimTypeName(AimType AimType)
         {
             switch (AimType)
             {
-                case FoodPowerAimType.TargetNearest:
+                case AimType.NearTargetDirection:
                     return "가장 가까운 적";
-                case FoodPowerAimType.MoveDirection:
+                case AimType.MoveDirection:
                     return "이동 방향";
-                case FoodPowerAimType.PointerDirection:
+                case AimType.PointerDirection:
                     return "포인터 방향";
-                case FoodPowerAimType.RandomDirection:
+                case AimType.RandomDirection:
                     return "랜덤한 방향";
-                case FoodPowerAimType.RandomEnemyDirection:
+                case AimType.RandomEnemyDirection:
                     return "사거리내 랜덤한 적";
-                case FoodPowerAimType.PcPosition:
+                case AimType.PcPosition:
                     return "PC 위치";
-                case FoodPowerAimType.PcPositionSummon:
+                case AimType.PcPositionSummon:
                     return "PC위치 소환";
             }
             return "Type Null";

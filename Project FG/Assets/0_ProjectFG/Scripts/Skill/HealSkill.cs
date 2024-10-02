@@ -29,7 +29,7 @@ namespace JH
 
             m_range = transform.AddComponent<SphereCollider>();
             m_range.isTrigger = true;
-            m_range.radius = m_subData.SkillRadius;
+            m_range.radius = m_subData.Radius;
             m_rigidbody = transform.AddComponent<Rigidbody>();
             m_rigidbody.isKinematic = true;
         }
@@ -37,7 +37,7 @@ namespace JH
         public override void ActiveSkill()
         {
             base.ActiveSkill();
-            Vector3 scale = Vector3.one * m_subData.SkillRadius;
+            Vector3 scale = Vector3.one * m_subData.Radius;
             scale.y = 1;
             m_radiusEffect.transform.localScale = scale;
             m_radiusEffect.Stop();
@@ -54,7 +54,7 @@ namespace JH
 
             while (timer < 0.5f)
             {
-                effectScale.x = m_subData.SkillRadius * (timer / 0.5f);
+                effectScale.x = m_subData.Radius * (timer / 0.5f);
                 effectScale.z = effectScale.x;
 
                 m_radiusEffect.transform.localScale = effectScale;

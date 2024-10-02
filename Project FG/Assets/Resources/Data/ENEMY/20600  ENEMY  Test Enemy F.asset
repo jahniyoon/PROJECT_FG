@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df11b14ae16425848b7d4cdce41b16c5, type: 3}
+  m_Name: 20600  ENEMY  Test Enemy F
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 20600
+  <Name>k__BackingField: Test Enemy F
+  <Description>k__BackingField: "\uB0C9\uAE30 \uC624\uB77C\uD615"
+  <Type>k__BackingField: 5
+  <Health>k__BackingField: 150
+  <MoveSpeed>k__BackingField: 1
+  <RotateSpeed>k__BackingField: 0
+  <AttackRange>k__BackingField: 1
+  <EscapeRange>k__BackingField: 0
+  <PredationHealthRatio>k__BackingField: 50
+  <PredationStunCoolDown>k__BackingField: 0
+  <PredationStun>k__BackingField: {fileID: 0}
+  <IgnoreAttack>k__BackingField: 0
+  <FoodPower>k__BackingField: {fileID: 0}
+  <FrozenSkill>k__BackingField: {fileID: 0}
+  <SkillEffect>k__BackingField: {fileID: 0}
+  <SkillTickDamage>k__BackingField: 0
+  <SkillTickDuration>k__BackingField: 0
+  <SkillAreaRadius>k__BackingField: 0
+  <FrozenDebuff>k__BackingField: {fileID: 0}
+  <SlowDebuff>k__BackingField: {fileID: 0}
+  <DotDamageBuff>k__BackingField: {fileID: 0}

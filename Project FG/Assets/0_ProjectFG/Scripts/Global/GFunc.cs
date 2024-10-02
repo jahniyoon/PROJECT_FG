@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -58,8 +59,20 @@ namespace JH
             return words;
         }
 
+        public static float[] StringToFloats(string input)
+        {
+            string[] str = input.Split(", ");
 
+            return str.Select(float.Parse).ToArray(); 
 
+        }
+        public static int[] StringToInts(string input)
+        {
+            string[] str = input.Split(", ");
+
+            return str.Select(int.Parse).ToArray();
+
+        }
         // 각도를 제한하는 함수
         public static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
@@ -165,7 +178,7 @@ namespace JH
             return gameData.GameData[ID].Data;
         }
 
-        public static Quaternion GetQuaternion(FoodPowerAimType AimType, Transform transform)
+        public static Quaternion GetQuaternion(AimType AimType, Transform transform)
         {
   
                 Quaternion direction = Quaternion.identity;
@@ -173,12 +186,12 @@ namespace JH
                 switch (AimType)
                 {
                     // 플레이어 방향
-                    case FoodPowerAimType.MoveDirection:
+                    case AimType.MoveDirection:
                         return transform.localRotation;
 
 
                     //// 가까운 타겟 방향
-                    //case FoodPowerAimType.TargetNearest:
+                    //case AimType.NearTargetDirection:
                     //    Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
 
                     //    // 타겟이 Null이 아닐 경우에만
@@ -192,18 +205,18 @@ namespace JH
                     //    break;
 
                     // PC의 포지션
-                    case FoodPowerAimType.PcPosition:
+                    case AimType.PcPosition:
                         return direction;
 
                     // 랜덤한 방향
-                    case FoodPowerAimType.RandomDirection:
+                    case AimType.RandomDirection:
                         Vector3 randomDir = direction.eulerAngles;
                         randomDir.y = Random.Range(0, 360);
                         direction.eulerAngles = randomDir;
                         return direction;
 
                     //// 랜덤한 적 방향
-                    //case FoodPowerAimType.RandomEnemyDirection:
+                    //case AimType.RandomEnemyDirection:
                     //    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
 
                     //    // 타겟이 Null이 아닐 경우에만
