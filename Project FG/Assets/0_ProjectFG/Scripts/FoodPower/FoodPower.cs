@@ -99,11 +99,13 @@ namespace JH
         // 타입에 따라 발사 방향을 정해준다.
         protected Quaternion GetDirection()
         {
+
+            float randomRadius = 5;
             Quaternion direction = Quaternion.identity;
 
             if (m_data.AlwaysShoot == false)
             {
-                Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                Transform randomTarget = ScanRandomPosition(m_casterPosition.position, randomRadius);
                 if(randomTarget == null)
                     return Quaternion.identity;
             }
@@ -118,7 +120,7 @@ namespace JH
 
                 // 가까운 타겟 방향
                 case AimType.NearTargetDirection:
-                    Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                    Transform target = ScanPosition(m_casterPosition.position, randomRadius);
 
                     // 타겟이 Null이 아닐 경우에만
                     if (target != null)
@@ -147,11 +149,14 @@ namespace JH
 
                     // 랜덤한 적 방향
                 case AimType.RandomEnemyDirection:
-                    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, randomRadius);
 
                     // 타겟이 Null이 아닐 경우에만
                     if (randomTarget != null)
+                    {
+                        if(randomTarget.position - m_casterPosition.position != Vector3.zero)
                         return Quaternion.LookRotation(randomTarget.position - m_casterPosition.position);
+                    }
 
                     // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
                     else if (randomTarget == null && m_data.AlwaysShoot)

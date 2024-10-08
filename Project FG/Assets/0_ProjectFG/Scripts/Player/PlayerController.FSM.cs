@@ -79,9 +79,6 @@ namespace JH
                 if (t.m_predation.IsPredation)
                     return new PredationState();
 
-                if (t.m_attack.isAttack)
-                    return new AttackState();
-
                 // 입력이 있으면 이동 상태
                 if (t.Input.Move != Vector2.zero)
                     return new MoveState();
@@ -126,9 +123,6 @@ namespace JH
 
                 if (t.m_predation.IsPredation)
                     return new PredationState();
-
-                if (t.m_attack.isAttack)
-                    return new AttackState();
 
                 // 입력이 없으면 대기 상태
                 if (t.Input.Move == Vector2.zero)
@@ -218,8 +212,6 @@ namespace JH
                 if (t.m_predation.IsPredation)
                     return new PredationState();
 
-                if (t.m_attack.isAttack)
-                    return this;
 
                 return new IdleState();
             }

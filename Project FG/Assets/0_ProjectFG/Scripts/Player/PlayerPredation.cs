@@ -107,9 +107,9 @@ namespace JH
                     }
                 }
 
-                //if (colls[i].CompareTag("Enemy"))
+                //if (m_scanColls[i].CompareTag("Enemy"))
                 //{
-                //    EnemyController enemy = colls[i].GetComponent<EnemyController>();
+                //    EnemyController enemy = m_scanColls[i].GetComponent<EnemyController>();
 
                 //    //  포식 가능 상태가 아니면 패스
                 //    if (enemy.CanPredation == false)

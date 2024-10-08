@@ -16,19 +16,23 @@ MonoBehaviour:
   <Name>k__BackingField: C1 Projectile
   <Description>k__BackingField: "\uC801 C1\uC758 \uD22C\uC0AC\uCCB4 \uC6D0\uAC70\uB9AC
     \uAE30\uC220"
-  <BaseType>k__BackingField: 5
+  <BaseType>k__BackingField: 6
   <SkillTarget>k__BackingField: 1
+  <ActiveTime>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 3
   <SkillDuration>k__BackingField: 0
   <SkillDamage>k__BackingField: 10
-  <AimType>k__BackingField: 9
+  <AimType>k__BackingField: 11
   <SkillRange>k__BackingField: 5
+  <SkillDelay>k__BackingField: 0
+  <SkillSpeed>k__BackingField: 0
   <ProjectileID>k__BackingField: 58600100
   <ProjectileOffset>k__BackingField: 0
   <SkillRadius>k__BackingField: 0
   <SkillArc>k__BackingField: 0
   <SkillLifeTime>k__BackingField: 10
   <BuffID>k__BackingField: 
+  <BuffValues>k__BackingField: []
   <Value1>k__BackingField: []
   <Value2>k__BackingField: []
   <Value3>k__BackingField: []

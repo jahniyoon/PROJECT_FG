@@ -15,7 +15,7 @@ namespace JH
         [SerializeField] private bool m_debug;
         protected override void Init()
         {
-            m_subData = m_skillData as FoodPowerASkillData;
+            m_subData = m_data as FoodPowerASkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -24,12 +24,12 @@ namespace JH
 
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             Slash();
 
-            StartCoroutine(SkillRoutine());
+            StartCoroutine(ActiveSkillRoutine());
         }
 
         public void Slash()

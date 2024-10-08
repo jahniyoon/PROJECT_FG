@@ -112,7 +112,7 @@ namespace JH
 
             if(m_shildSkill.CanActiveSkill())
             {
-                m_shildSkill.ActiveSkill();
+                m_shildSkill.LeagcyActiveSkill();
             }
 
             // 버프중이 아니고, 공격 가능한지 체크

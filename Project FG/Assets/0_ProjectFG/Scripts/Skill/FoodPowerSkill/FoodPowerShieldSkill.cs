@@ -15,16 +15,23 @@ namespace JH
         [Header("넉백 시간")]
         [SerializeField] private float m_knockbackDuration = 0.1f;
 
+        BuffBase m_shieldBuff;
 
 
         protected override void Init()
         {
-            m_subData = m_skillData as FoodPowerBSkillData;
+            m_subData = m_data as FoodPowerBSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
                 return;
             }
+
+            m_shieldBuff = BuffFactory.CreateBuff(m_subData.DamageReductionBuff);
+            //var buff = m_subData.DamageReductionBuff as DamageReductionBuff;
+
+            float[] values = new float[1] { m_levelData.GetAdditionalValue(0) };
+            m_shieldBuff.SetBuffValue(values);
 
         }
         // 비활성화되면 리스너를 모두 제거한다.
@@ -36,17 +43,15 @@ namespace JH
             }
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
 
             // 피해감소 스킬
             if (Caster.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
             {
-                var buff = m_subData.DamageReductionBuff as DamageReductionBuff;
-                // TODO : SO를 셋 벨류하면 안됨 꼭 고쳐야함
-                buff.SetValue(m_levelData.GetAdditionalValue(0));
-                buffHandler.OnBuff(Caster, buff);
+
+                buffHandler.OnBuff(Caster, m_shieldBuff);
             }
 
             // 넉백 이벤트 연결
@@ -56,7 +61,7 @@ namespace JH
             }
 
 
-            StartCoroutine(SkillRoutine());
+            StartCoroutine(ActiveSkillRoutine());
         }
 
         protected override void UpdateBehavior()
@@ -116,7 +121,7 @@ namespace JH
 
             if (Caster.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
             {
-                buffHandler.RemoveBuff(Caster, m_subData.DamageReductionBuff);
+                buffHandler.RemoveBuff(Caster, m_shieldBuff);
             }
 
             Destroy(gameObject);

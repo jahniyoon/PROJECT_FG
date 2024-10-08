@@ -11,7 +11,7 @@ namespace JH
         [field: Header("Heal Skill")]
         [field: SerializeField] public TargetTag Target { get; private set; }
 
-        [field: SerializeField] public BuffBase HealBuff { get; private set; }
+        [field: SerializeField] public BuffData HealBuff { get; private set; }
         [field: SerializeField] public float Radius { get; private set; }
         [field: SerializeField] public ParticleSystem HealPrefab { get; private set; }
 

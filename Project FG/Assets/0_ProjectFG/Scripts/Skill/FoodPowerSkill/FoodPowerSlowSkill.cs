@@ -12,6 +12,8 @@ namespace JH
         private SphereCollider m_range;
         private Rigidbody m_rigidbody;
 
+        private BuffBase m_buff;
+
 
         [Header("데미지")]
         [SerializeField] private float m_damageCoolDown;
@@ -19,10 +21,10 @@ namespace JH
         [SerializeField] private ParticleSystem m_frozen;
 
 
-
+        float[] values;
         protected override void Init()
         {
-            m_subData = m_skillData as FoodPowerFSkillData;
+            m_subData = m_data as FoodPowerFSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -34,16 +36,20 @@ namespace JH
             m_rigidbody = transform.AddComponent<Rigidbody>();
             m_rigidbody.isKinematic = true;
 
+            m_buff = BuffFactory.CreateBuff(m_subData.SlowDebuff);
+
+            values = new float[1] { m_levelData.GetAdditionalValue(0) };
+
 
         }
 
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             m_range.radius = m_levelData.Radius;
             m_frozen.transform.localScale = Vector3.one * m_levelData.Radius;
-            StartCoroutine(SkillRoutine());
+            StartCoroutine(ActiveSkillRoutine());
         }
 
         protected override void UpdateBehavior()
@@ -79,7 +85,7 @@ namespace JH
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
                         damageable.OnDamage(m_levelData.Damage);
-                    }                 
+                    }
                 }
             }
 
@@ -110,8 +116,7 @@ namespace JH
                 {
                     if (colls[i].TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
                     {
-                        var buff = m_subData.SlowDebuff as SlowDebuff;
-                        buffHandler.RemoveBuff(Caster, buff);
+                        buffHandler.RemoveBuff(Caster, m_buff);
                     }
                 }
             }
@@ -133,10 +138,11 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
                 {
-                    var buff = m_subData.SlowDebuff as SlowDebuff;
-                    // TODO : SO를 셋 벨류하면 안됨 꼭 고쳐야함
-                    buff.SetValue(m_levelData.GetAdditionalValue(0));
-                    buffHandler.OnBuff(Caster, buff);
+                    //var buff = m_subData.SlowDebuff as SlowDebuff;
+                    //// TODO : SO를 셋 벨류하면 안됨 꼭 고쳐야함
+
+                    m_buff.SetBuffValue(values);
+                    buffHandler.OnBuff(Caster, m_buff);
                 }
             }
         }

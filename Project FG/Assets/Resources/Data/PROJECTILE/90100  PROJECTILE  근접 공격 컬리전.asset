@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aeecee567cd0646a78f8286ca5ebc2, type: 3}
+  m_Name: "90100  PROJECTILE  \uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 90100
+  <Name>k__BackingField: "\uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+  <Description>k__BackingField: "\uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+  <Type>k__BackingField: 1
+  <Penetrate>k__BackingField: 0
+  <ProjectileScale>k__BackingField: 1
+  <ProjectileSpeed>k__BackingField: 0
+  <DerivativesID>k__BackingField: 

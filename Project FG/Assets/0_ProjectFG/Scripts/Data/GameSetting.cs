@@ -38,13 +38,7 @@ namespace JH
         [field: Tooltip("플레이어의 회전 속도")]
         [field: SerializeField] public float PlayerRotateSpeed { get; private set; }   // 플레이어 회전속도
 
-        [field: Header("플레이어 공격")]
-        [field: Tooltip("플레이어의 기본 공격 데미지")]
-        [field: SerializeField] public float PlayerAttackDamage { get; private set; }   // 플레이어 공격력
-        [field: Tooltip("플레이어의 공격 쿨타임")]
-        [field: SerializeField] public float PlayerAttackCoolDown { get; private set; }
-        [field: Tooltip("플레이어의 기본 공격 경직 유발시간")]
-        [field: SerializeField] public float PlayerAttackStunDuration { get; private set; }   // 경직 유발 시간
+
 
         [field: Header("플레이어 포식")]
         [field: Tooltip("플레이어 포식 회복")]
@@ -80,10 +74,7 @@ namespace JH
         [field: Header("푸드파워")]
         [field: SerializeField] public FoodPower DefaultFoodPower { get; private set; }
 
-        [field: Tooltip("푸드파워 딜레이")]
-        [field: SerializeField] public float FoodPowerDelay { get; private set; }
-        [field: Tooltip("푸드파워 투사체 조준 시스템")]
-        [field: SerializeField] public AimType FoodPowerAimType { get; private set; }
+
         [field: Header("식사콤보")]
         [field: SerializeField] public List<FoodComboSetting> FoodCombo { get; private set; }
 

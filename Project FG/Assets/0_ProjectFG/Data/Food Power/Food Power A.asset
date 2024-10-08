@@ -22,7 +22,7 @@ MonoBehaviour:
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv0"
     ID: 60001
     CoolDown: 1
-    Damage: 40
+    Damage: 0
     Range: 0
     Radius: 1.5
     Duration: 0.1

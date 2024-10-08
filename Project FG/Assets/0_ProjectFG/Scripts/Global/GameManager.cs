@@ -41,6 +41,7 @@ namespace JH
             Time.timeScale = 1;
 
             m_playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            m_aim = GameObject.FindGameObjectWithTag("Aim").transform;
             m_levelManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelManager>();
 
             GameObject projectile = new GameObject("Projectile Parent");
@@ -55,6 +56,7 @@ namespace JH
 
         private Transform m_projectileParent;
 
+        private Transform m_aim;
 
         public Transform ProjectileParent => m_projectileParent;
 
@@ -63,7 +65,7 @@ namespace JH
 
         public bool IsGameOver => m_isGameOver;
 
-
+        public Transform Aim => m_aim;
 
         private void Update()
         {

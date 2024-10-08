@@ -31,7 +31,7 @@ namespace JH
         protected override void Init()
         {
             m_spriteRenderer = m_aimEffect.GetComponentInChildren<SpriteRenderer>();
-            m_subData = m_skillData as FoodPowerESkillData;
+            m_subData = m_data as FoodPowerESkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -40,9 +40,9 @@ namespace JH
 
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
         }
         protected override void UpdateBehavior()
         {

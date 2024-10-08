@@ -14,6 +14,8 @@ namespace JH
         [Header("Attack State")]
         [SerializeField] private bool m_isAttack;
         [SerializeField] private float m_attackCoolDown;
+        [SerializeField] private float m_attackCoolDownTimer;
+        [SerializeField] private float m_damage;
 
 
         [Header("Attack Setting")]
@@ -42,12 +44,12 @@ namespace JH
 
         private void AttackStateHandler()
         {
-            if (0 < m_attackCoolDown)
+            if (0 < m_attackCoolDownTimer)
             {
-                m_attackCoolDown -= Time.deltaTime;
+                m_attackCoolDownTimer -= Time.deltaTime;
             }
 
-            m_isAttack = 0 < m_attackCoolDown;
+            m_isAttack = 0 < m_attackCoolDownTimer;
         }
 
         public void Attack()
@@ -58,7 +60,7 @@ namespace JH
             m_player.Animation.SetTrigger(AnimationID.isAttack);
 
 
-            m_attackCoolDown = m_player.Setting.PlayerAttackCoolDown;
+            m_attackCoolDownTimer = m_attackCoolDown;
             MeleeAttack();
         }
 
@@ -82,7 +84,7 @@ namespace JH
 
                         Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
 
-                        damageable.OnDamage(m_player.Setting.PlayerAttackDamage);
+                        damageable.OnDamage(m_damage);
                     }
                 }
             }

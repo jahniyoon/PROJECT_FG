@@ -18,7 +18,6 @@ namespace JH
         private PlayerInput m_input;
         private PlayerMovement m_movement;
         private PlayerPredation m_predation;
-        private PlayerAttack m_attack;
         private PlayerAim m_aim;
         private PlayerHunger m_playerHunger;
         private BuffHandler m_buffHandler;
@@ -68,7 +67,6 @@ namespace JH
             m_movement = GetComponent<PlayerMovement>();
             m_predation = GetComponent<PlayerPredation>();
             m_playerHunger = GetComponent<PlayerHunger>();
-            m_attack = GetComponent<PlayerAttack>();
             m_aim = GetComponent<PlayerAim>();
 
             m_animation = GetComponent<AnimationController>();
@@ -215,8 +213,11 @@ namespace JH
 
             // 넉백 방향에 거리 추가
             Vector3 endPos = startPos + knockbackDirection * force;
+
+
             // 가능한 곳인지 확인 및 보정
             endPos = GFunc.FindNavPos(transform, endPos, force * 2);
+            Debug.Log($"넉백 {hitPos}=>{endPos} {force}, {duration}");
 
             while (timer < duration)
             {

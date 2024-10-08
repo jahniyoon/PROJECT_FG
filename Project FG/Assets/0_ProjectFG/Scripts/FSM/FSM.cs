@@ -31,15 +31,5 @@ namespace JH
         }
     }
 
-    public enum FSMState
-    {
-        Freeze,       // 멈춤
-        Idle,       // 대기
-        Move,       // 이동
-        Attack,     // 공격
-        Groggy,     // 그로기
-        Predation,  // 포식
-        Hit,        // 피격
-        Die         // 사망
-    }
+ 
 }

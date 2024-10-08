@@ -13,9 +13,11 @@ namespace JH
         private SphereCollider m_range;
         private Rigidbody m_rigidbody;
 
+        BuffBase m_buff;
+
         protected override void Init()
         {
-            m_subData = m_skillData as HealSkillData;
+            m_subData = m_data as HealSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -32,11 +34,13 @@ namespace JH
             m_range.radius = m_subData.Radius;
             m_rigidbody = transform.AddComponent<Rigidbody>();
             m_rigidbody.isKinematic = true;
+
+            m_buff = BuffFactory.CreateBuff(m_subData.HealBuff);
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             Vector3 scale = Vector3.one * m_subData.Radius;
             scale.y = 1;
             m_radiusEffect.transform.localScale = scale;
@@ -84,7 +88,7 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.OnBuff(Caster, m_subData.HealBuff);
+                    buff.OnBuff(Caster, m_buff);
 
                 }
             }
@@ -98,7 +102,7 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.RemoveBuff(Caster, m_subData.HealBuff, true);
+                    buff.RemoveBuff(Caster, m_buff, true);
 
                   
                 }

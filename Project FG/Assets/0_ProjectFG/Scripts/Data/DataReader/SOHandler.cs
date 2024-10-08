@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace JH
 {
-	public static class SOHandler 
-	{
+    public static class SOHandler
+    {
         public static StringBuilder m_savePath = new StringBuilder();
         public static StringBuilder m_loadPath = new StringBuilder();
 
@@ -23,6 +23,12 @@ namespace JH
 
                 case "SKILL":
                     return GetSkillData(gameData);
+
+                case "BUFF":
+                    return ScriptableObject.CreateInstance<BuffData>();
+
+                case "PROJECTILE":
+                    return ScriptableObject.CreateInstance<ProjectileData>();
             }
             return null;
         }
@@ -33,22 +39,22 @@ namespace JH
             // 3번째가 BaseType
             switch (gameData.Data[3].Value)
             {
-                case "EnemyA":
-                    return ScriptableObject.CreateInstance<EnemyAData>();
-                case "EnemyB":
-                    return ScriptableObject.CreateInstance<EnemyBData>();
-                case "EnemyC":
-                    return ScriptableObject.CreateInstance<EnemyCData>();
-                case "EnemyD":
-                    return ScriptableObject.CreateInstance<EnemyDData>();
-                case "EnemyE":
-                    return ScriptableObject.CreateInstance<EnemyEData>();
-                case "EnemyF":
-                    return ScriptableObject.CreateInstance<EnemyFData>();
-                case "EnemyG":
-                    return ScriptableObject.CreateInstance<EnemyGData>();
-                case "EnemyH":
-                    return ScriptableObject.CreateInstance<EnemyHData>();
+                //case "EnemyA":
+                //    return ScriptableObject.CreateInstance<EnemyAData>();
+                //case "EnemyB":
+                //    return ScriptableObject.CreateInstance<EnemyBData>();
+                //case "EnemyC":
+                //    return ScriptableObject.CreateInstance<EnemyCData>();
+                //case "EnemyD":
+                //    return ScriptableObject.CreateInstance<EnemyDData>();
+                //case "EnemyE":
+                //    return ScriptableObject.CreateInstance<EnemyEData>();
+                //case "EnemyF":
+                //    return ScriptableObject.CreateInstance<EnemyFData>();
+                //case "EnemyG":
+                //    return ScriptableObject.CreateInstance<EnemyGData>();
+                //case "EnemyH":
+                //    return ScriptableObject.CreateInstance<EnemyHData>();
             }
             return ScriptableObject.CreateInstance<EnemyData>();
         }
@@ -56,23 +62,13 @@ namespace JH
         public static SOData GetSkillData(GameData gameData)
         {
             // 3번째가 BaseType
-            switch (gameData.Data[3].Value)
-            {
-                case "Aim Shoot Skill":
-                    return ScriptableObject.CreateInstance<EnemyAData>();
-                case "Area Skill":
-                    return ScriptableObject.CreateInstance<EnemyBData>();
-                case "Caster Buff":
-                    return ScriptableObject.CreateInstance<EnemyCData>();
-                case "Collision Skill":
-                    return ScriptableObject.CreateInstance<EnemyDData>();
-                case "Projectile Skill":
-                    return ScriptableObject.CreateInstance<EnemyEData>();
-
-            }
+            //switch (gameData.Data[3].Value)
+            //{
+               
+            //}
             return ScriptableObject.CreateInstance<SkillData>();
         }
-        
+
 
         public static void SoToGameData(GameData gameData)
         {

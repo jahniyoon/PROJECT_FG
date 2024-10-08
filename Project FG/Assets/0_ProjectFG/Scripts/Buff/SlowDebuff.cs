@@ -9,6 +9,11 @@ namespace JH
     [CreateAssetMenu(fileName = "Slow Debuff", menuName = "ScriptableObjects/Buff/Slow Debuff")]
     public class SlowDebuff : BuffBase
     {
+        public SlowDebuff(BuffData data) : base(data) 
+        {
+            m_data = data;
+        }
+
         [Header("Slow Debuff")]
         [SerializeField] private float m_moveSpeedValue;
 

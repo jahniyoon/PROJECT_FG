@@ -15,7 +15,28 @@ MonoBehaviour:
   <ID>k__BackingField: 50100
   <Name>k__BackingField: FoodPower A
   <Description>k__BackingField: "\uD478\uB4DC\uD30C\uC6CC A"
-  <Icon>k__BackingField: {fileID: 0}
+  <BaseType>k__BackingField: 7
+  <SkillTarget>k__BackingField: 0
+  <ActiveTime>k__BackingField: 1
+  <SkillCoolDown>k__BackingField: 0
+  <SkillDuration>k__BackingField: 0
+  <SkillDamage>k__BackingField: 0
+  <AimType>k__BackingField: 10
+  <SkillRange>k__BackingField: 0
+  <SkillDelay>k__BackingField: 0
+  <SkillSpeed>k__BackingField: 0
+  <ProjectileID>k__BackingField: 
+  <ProjectileOffset>k__BackingField: 0
+  <SkillRadius>k__BackingField: 0
+  <SkillArc>k__BackingField: 0
+  <SkillLifeTime>k__BackingField: 0
+  <BuffID>k__BackingField: 
+  <BuffValues>k__BackingField: []
+  <Value1>k__BackingField: []
+  <Value2>k__BackingField: []
+  <Value3>k__BackingField: []
+  <Icon>k__BackingField: {fileID: 21300000, guid: 04f7f391409555d4f8756040d23ab5f4,
+    type: 3}
   <LevelDatas>k__BackingField:
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv0"
     Description: "\uD478\uB4DC\uD30C\uC6CCA lv0"
@@ -26,7 +47,7 @@ MonoBehaviour:
     Radius: 1.5
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv1"
@@ -38,7 +59,7 @@ MonoBehaviour:
     Radius: 1.6
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv2"
@@ -50,7 +71,7 @@ MonoBehaviour:
     Radius: 1.7
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv3"
@@ -62,7 +83,7 @@ MonoBehaviour:
     Radius: 1.8
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv4"
@@ -74,7 +95,7 @@ MonoBehaviour:
     Radius: 1.9
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv5"
@@ -86,7 +107,7 @@ MonoBehaviour:
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv6"
@@ -98,7 +119,7 @@ MonoBehaviour:
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv7"
@@ -110,7 +131,7 @@ MonoBehaviour:
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv8"
@@ -122,7 +143,7 @@ MonoBehaviour:
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
   - Name: "\uD478\uB4DC\uD30C\uC6CCA lv9"
@@ -134,8 +155,8 @@ MonoBehaviour:
     Radius: 2
     Duration: 0.1
     Count: 1
-    AimType: 8
+    AimType: 0
     AdditionalValues:
     - 0.2
-  <TargetNearestScanRadius>k__BackingField: 0
+  <IngameUpgradeID>k__BackingField: 
   <AlwaysShoot>k__BackingField: 0

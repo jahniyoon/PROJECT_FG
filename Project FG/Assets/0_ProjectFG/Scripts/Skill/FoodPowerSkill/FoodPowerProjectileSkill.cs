@@ -16,7 +16,7 @@ namespace JH
 
         protected override void Init()
         {
-            m_subData = m_skillData as FoodPowerCSkillData;
+            m_subData = m_data as FoodPowerCSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -25,12 +25,12 @@ namespace JH
 
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             Shoot();
 
-            StartCoroutine(SkillRoutine());
+            StartCoroutine(ActiveSkillRoutine());
         }
 
         public void Shoot()
@@ -56,8 +56,9 @@ namespace JH
             Quaternion rotation = GetProjectileDirection(transform, index);
             Transform parent = GameManager.Instance.ProjectileParent;
 
-            var Projectile = Instantiate(projectile, shootPos, rotation, parent).GetComponent<Projectile>();
-            Projectile.ProjectileInit(m_levelData.Damage, m_levelData.GetAdditionalValue(0), Mathf.FloorToInt(m_levelData.GetAdditionalValue(1)), m_levelData.Duration, m_subData.Target);
+            var cloneProjectile = Instantiate(projectile, shootPos, rotation, parent).GetComponent<DefaultProjectile>();
+            cloneProjectile.SetSkill(this);
+            
         }
 
         public override void InactiveSkill()

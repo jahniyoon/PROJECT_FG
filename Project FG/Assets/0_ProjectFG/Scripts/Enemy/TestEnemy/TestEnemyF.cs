@@ -42,7 +42,7 @@ namespace JH
 
             m_frozenSkill = Instantiate(m_subData.FrozenSkill, transform).GetComponent<SkillBase>();
             m_frozenSkill.SkillInit(this.gameObject, m_model);
-            m_frozenSkill.ActiveSkill();
+            m_frozenSkill.LeagcyActiveSkill();
         }
         private void InactiveSkill()
         {

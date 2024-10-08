@@ -28,7 +28,7 @@ namespace JH
                 return;
 
             GameObject projectile = Instantiate(m_projectilePrefab, position, direction, parent);
-            //projectile.GetComponent<Projectile>().ProjectileInit();
+            //projectile.GetComponent<DefaultProjectile>().ProjectileInit();
         }
 
     }

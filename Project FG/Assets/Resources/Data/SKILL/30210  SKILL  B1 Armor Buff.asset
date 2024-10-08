@@ -15,19 +15,25 @@ MonoBehaviour:
   <ID>k__BackingField: 30210
   <Name>k__BackingField: B1 Armor Buff
   <Description>k__BackingField: "\uC801 B1\uC758 \uBC29\uC5B4\uB825 \uBC84\uD504"
-  <BaseType>k__BackingField: 4
+  <BaseType>k__BackingField: 3
   <SkillTarget>k__BackingField: 2
+  <ActiveTime>k__BackingField: 1
   <SkillCoolDown>k__BackingField: 9
   <SkillDuration>k__BackingField: 5
   <SkillDamage>k__BackingField: 0
   <AimType>k__BackingField: 0
   <SkillRange>k__BackingField: 0
+  <SkillDelay>k__BackingField: 0
+  <SkillSpeed>k__BackingField: 0
   <ProjectileID>k__BackingField: 
   <ProjectileOffset>k__BackingField: 0
   <SkillRadius>k__BackingField: 0
   <SkillArc>k__BackingField: 0
   <SkillLifeTime>k__BackingField: 0
-  <BuffID>k__BackingField: 48390100
+  <BuffID>k__BackingField: 743a0100
+  <BuffValues>k__BackingField:
+  - 50
+  - -1
   <Value1>k__BackingField:
   - 50
   <Value2>k__BackingField: []

@@ -9,7 +9,7 @@ namespace JH
     public class ShieldSkillData : SkillData
 	{
         [field: Header("Shield Skill")]
-        [field: SerializeField] public BuffBase ShieldBuff { get; private set; }
+        [field: SerializeField] public BuffData ShieldBuff { get; private set; }
         [field: SerializeField] public GameObject ShieldPrefab { get; private set; }
 
 

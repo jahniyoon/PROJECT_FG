@@ -161,9 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4582549c3babd4469906c38856d7540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_skillData: {fileID: 11400000, guid: 81e82a918735f61478dc3f77b9f0c6c3, type: 2}
+  m_data: {fileID: 11400000, guid: 81e82a918735f61478dc3f77b9f0c6c3, type: 2}
   m_caster: {fileID: 0}
   m_isActive: 0
+  m_skillCoolDownTimer: 0
+  m_buffs: []
   ActiveEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -8,11 +8,18 @@ namespace JH
     {
 
         private MeshRenderer m_renderer;
-
+        private GameObject m_effect;
 
         private void Awake()
         {
             m_renderer = GetComponentInChildren<MeshRenderer>();
+            m_effect = transform.GetChild(0).gameObject;
+            SetActive(false);
+        }
+
+        public void SetActive(bool enable)
+        {
+            m_effect.SetActive(enable);
         }
 
         public void SetRadius(float outer, float inner)

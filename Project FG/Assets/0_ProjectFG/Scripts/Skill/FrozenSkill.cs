@@ -15,9 +15,13 @@ namespace JH
         float m_dotDuration = 0;
         Coroutine m_skillCoroutine;
 
+        BuffBase m_slowBuff;
+        BuffBase m_frozenBuff;
+        BuffBase m_dotDamageBuff;
+
         protected override void Init()
         {
-            m_subData = m_skillData as FrozenSkillData;
+            m_subData = m_data as FrozenSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -34,11 +38,15 @@ namespace JH
             m_range.radius = m_subData.Radius;
             m_rigidbody = transform.AddComponent<Rigidbody>();
             m_rigidbody.isKinematic = true;
+
+            m_slowBuff = BuffFactory.CreateBuff(m_subData.SlowDebuff);
+            m_frozenBuff = BuffFactory.CreateBuff(m_subData.FrozenDebuff);
+            m_dotDamageBuff = BuffFactory.CreateBuff(m_subData.DotDamageBuff);
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             Vector3 scale = Vector3.one * m_subData.Radius;
             scale.y = 1;
             m_frozen.transform.localScale = scale;
@@ -72,12 +80,12 @@ namespace JH
                 yield return null;
             }
 
-            if (m_skillData.SkillDuration < 0)
+            if (m_data.SkillDuration < 0)
             {
                 yield break;
             }
 
-            while (timer < m_skillData.SkillDuration)
+            while (timer < m_data.SkillDuration)
             {
                 timer += Time.deltaTime;
                 yield return null;
@@ -116,9 +124,9 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.OnBuff(Caster, m_subData.SlowDebuff);
-                    buff.OnBuff(Caster, m_subData.DotDamageBuff);
-                    buff.OnBuff(Caster, m_subData.FrozenDebuff);
+                    buff.OnBuff(Caster, m_slowBuff);
+                    buff.OnBuff(Caster, m_dotDamageBuff);
+                    buff.OnBuff(Caster, m_frozenBuff);
                 }
             }
         }
@@ -131,10 +139,10 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.RemoveBuff(Caster, m_subData.FrozenDebuff, true);
+                    buff.RemoveBuff(Caster, m_frozenBuff, true);
 
-                    buff.RemoveBuff(Caster, m_subData.SlowDebuff);
-                    buff.RemoveBuff(Caster, m_subData.DotDamageBuff);
+                    buff.RemoveBuff(Caster, m_slowBuff);
+                    buff.RemoveBuff(Caster, m_dotDamageBuff);
                 }
             }
         }

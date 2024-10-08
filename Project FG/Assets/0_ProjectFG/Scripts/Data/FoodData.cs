@@ -1,4 +1,5 @@
 using Google.GData.Extensions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,34 +13,33 @@ namespace JH
 {
     [CreateAssetMenu(fileName = "Food Power Data", menuName = "ScriptableObjects/Food Power/Food Power")]
 
-    public class FoodPowerData : SOData
+    public class FoodPowerData : SkillData
     {
-        [field: Header("푸드파워 데이터")]
-        [field: SerializeField] public int ID { get; private set; }
-        [field: SerializeField] public string Name { get; private set; }
-        [field: TextArea]
-        [field: SerializeField] public string Description { get; private set; }
+        
+        [field: Space]
+        [field: Header("푸드파워 스킬 데이터")]
+
         [field: Tooltip("푸드 파워 아이콘\n푸드 파워 UI에 표시할 아이콘")]
         [field: SerializeField] public Sprite Icon { get; private set; }   // 체력
+
+
         [field: Header("푸드파워 레벨 데이터")]
         [field: SerializeField] public FoodPowerLevelData[] LevelDatas { get; private set; }
 
-        [field: Header("스캔 범위")]
-        [field: Tooltip("TargetNearest 방식의 스캔 시 스캔할 범위")]
 
-        [field: SerializeField] public float TargetNearestScanRadius { get; private set; }
+        [field: Header("인게임 강화")]
+        [field: SerializeField] public int[] IngameUpgradeID { get; private set; }
+
+
+
+
         [field: Tooltip("TargetNearest 타겟 검출 실패 시, 발사 여부")]
         [field: SerializeField] public bool AlwaysShoot { get; private set; }
 
-        public override void SetData(GameData gamedata)
-        {
-            base.SetData(gamedata);
-            UpdateData(gamedata.Data);
-        }
+
 
         public override void UpdateGameData()
         {
-            base.UpdateGameData();
             DataReader gameData = Resources.Load<DataReader>("Data/GameData");
             if (gameData.GameData.ContainsKey(ID) == false)
             {
@@ -62,12 +62,17 @@ namespace JH
             }
             return LevelDatas[level];
         }
+
         //  데이터를 업데이트한다.
-        public virtual void UpdateData(List<GSTU_Data> datas)
+        public override void UpdateData(List<GSTU_Data> datas)
         {
             // 가져온 데이터를 변환하는 부분
             foreach (var item in datas)
             {
+                if (item.Value == "-")
+                    continue;
+
+
                 if (item.ColumnID == "ID")
                     ID = int.Parse(item.Value);
 
@@ -84,14 +89,14 @@ namespace JH
                     int[] idRange = item.Value.Split('-').Select(int.Parse).ToArray();
 
                     // 두칸일 경우에만
-                    if(idRange.Length == 2)
+                    if (idRange.Length == 2)
                     {
                         int count = idRange[1] - idRange[0] + 1;
 
                         // 기존 데이터 초기화하고
                         LevelDatas = new FoodPowerLevelData[count];
 
-                        for (int i=0; i < count; i++)
+                        for (int i = 0; i < count; i++)
                         {
                             FoodPowerLevelData LevelData = new FoodPowerLevelData();
                             // ID에 맞는 데이터를 가져온다.
@@ -99,13 +104,49 @@ namespace JH
                         }
                     }
                 }
+
+                if (item.ColumnID == "BaseType")
+                    BaseType = (SkillType)Enum.Parse(typeof(SkillType), item.Value);
+
+                if (item.ColumnID == "ActiveTime")
+                    ActiveTime = (SkillActiveTime)Enum.Parse(typeof(SkillActiveTime), item.Value);
+
+                if (item.ColumnID == "AimType")
+                    AimType = (AimType)Enum.Parse(typeof(AimType), item.Value);
+
+                if (item.ColumnID == "IngameUpgradeID")
+                    IngameUpgradeID = GFunc.StringToInts(item.Value);
+
+                if (item.ColumnID == "ProjectileID")
+                    ProjectileID = GFunc.StringToInts(item.Value);
+
+                if (item.ColumnID == "BuffID")
+                    BuffID = GFunc.StringToInts(item.Value);
+
+                if (item.ColumnID == "BuffValue")
+                    BuffValues = GFunc.StringToFloats(item.Value);
+
+                if (item.ColumnID == "Value1")
+                    Value1 = GFunc.StringToFloats(item.Value);
+
+                if (item.ColumnID == "Value2")
+                    Value2 = GFunc.StringToFloats(item.Value);
+
+                if (item.ColumnID == "Value3")
+                    Value3 = GFunc.StringToFloats(item.Value);
+
+                if (item.ColumnID == "SkillDelay")
+                    SkillDelay = float.Parse(item.Value);
+
+                if (item.ColumnID == "SkillSpeed")
+                    SkillSpeed = float.Parse(item.Value);
             }
         }
 
 
 
         // 데이터 행의 순서가 바뀌면 여기를 수정해야함
-        public virtual List<GSTU_Data> ExportData()
+        public override List<GSTU_Data> ExportData()
         {
             List<GSTU_Data> dataList = new List<GSTU_Data>();
             GSTU_Data data = new GSTU_Data();
@@ -114,20 +155,28 @@ namespace JH
             dataList.Add(SetData("ID", ID.ToString()));
             dataList.Add(SetData("Name", Name.ToString()));
             dataList.Add(SetData("Description", Description.ToString()));
-            
+
             string LevelData = "0";
             if (LevelDatas != null)
-             LevelData = $"{LevelDatas[0].ID}-{LevelDatas[LevelDatas.Length - 1].ID}";
+                LevelData = $"{LevelDatas[0].ID}-{LevelDatas[LevelDatas.Length - 1].ID}";
 
             // 보유하고있는 푸드파워 데이터또한 모두 업데이트한다.
-            foreach(var Data in LevelDatas)
-            {
+            foreach (var Data in LevelDatas)
                 Data.ExportLevelData();
-            }
 
-            
             dataList.Add(SetData("LevelData", LevelData));
-
+            dataList.Add(SetData("BaseType", BaseType.ToString()));
+            dataList.Add(SetData("ActiveTime", ActiveTime.ToString()));
+            dataList.Add(SetData("AimType", AimType.ToString()));
+            dataList.Add(SetData("IngameUpgradeID", GFunc.IntsToString(IngameUpgradeID)));
+            dataList.Add(SetData("ProjectileID", GFunc.IntsToString(ProjectileID)));
+            dataList.Add(SetData("BuffID", GFunc.IntsToString(BuffID)));
+            dataList.Add(SetData("BuffValue", GFunc.FloatsToString(BuffValues)));
+            dataList.Add(SetData("Value1", GFunc.FloatsToString(Value1)));
+            dataList.Add(SetData("Value2", GFunc.FloatsToString(Value2)));
+            dataList.Add(SetData("Value3", GFunc.FloatsToString(Value3)));
+            dataList.Add(SetData("SkillDelay", SkillDelay.ToString()));
+            dataList.Add(SetData("SkillSpeed", SkillSpeed.ToString()));
             return dataList;
 
         }
@@ -170,8 +219,8 @@ namespace JH
         public void ImportData(bool isOnline = false)
         {
             List<GSTU_Data> gstuDatas = GFunc.GetGameData(data.ID);
-            if(gstuDatas != null)
-            data.UpdateData(gstuDatas);
+            if (gstuDatas != null)
+                data.UpdateData(gstuDatas);
 
 #if UNITY_EDITOR
             EditorUtility.SetDirty(data); // 데이터가 변경되었음을 알림

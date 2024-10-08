@@ -20,7 +20,7 @@ namespace JH
 
         protected override void Init()
         {
-            m_subData = m_skillData as FoodPowerDSkillData;
+            m_subData = m_data as FoodPowerDSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -29,12 +29,12 @@ namespace JH
 
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             Shoot();
             m_range.transform.localScale = Vector3.one * m_levelData.Range;
-            StartCoroutine(SkillRoutine());
+            StartCoroutine(ActiveSkillRoutine());
         }
 
         public void Shoot()
@@ -60,18 +60,16 @@ namespace JH
 
 
 
-            var Projectile = Instantiate(projectile, position, rotation, parent).GetComponent<Projectile>();
-            Projectile.ProjectileInit
-                (m_levelData.Damage, m_levelData.GetAdditionalValue(0), 0, m_levelData.Duration, m_subData.Target, m_levelData.Radius);
+            var cloneProjectile = Instantiate(projectile, position, rotation, parent).GetComponent<DefaultProjectile>();
+            cloneProjectile.SetSkill((SkillBase)this);
 
-            Vector3 targetPosition = Projectile.transform.position + Projectile.transform.forward * m_levelData.Range;
+            Vector3 targetPosition = cloneProjectile.transform.position + cloneProjectile.transform.forward * m_levelData.Range;
 
             if (m_isRandomRange)
             {
-                targetPosition = Projectile.transform.position + Projectile.transform.forward * Random.Range(0, m_levelData.Range);
+                targetPosition = cloneProjectile.transform.position + cloneProjectile.transform.forward * Random.Range(0, m_levelData.Range);
             }
 
-            Projectile.SetTarget(targetPosition);
 
         }
 

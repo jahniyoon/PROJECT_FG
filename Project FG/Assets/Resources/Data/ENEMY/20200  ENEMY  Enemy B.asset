@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729b754429ef6cf4ebcb9fa29cd3bb38, type: 3}
+  m_Name: 20200  ENEMY  Enemy B
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 20200
+  <Name>k__BackingField: Enemy B
+  <Description>k__BackingField: "\uD0F1\uCEE4\uD615"
+  <Type>k__BackingField: 2
+  <Health>k__BackingField: 200
+  <MoveSpeed>k__BackingField: 4
+  <RotateSpeed>k__BackingField: 0
+  <AttackRange>k__BackingField: 1.5
+  <EscapeRange>k__BackingField: 1
+  <PredationHealthRatio>k__BackingField: 50
+  <PredationStunCoolDown>k__BackingField: 0
+  <PredationStun>k__BackingField: {fileID: 11400000, guid: 63b7b36b68aa60049a91f2e349e20247,
+    type: 2}
+  <IgnoreAttack>k__BackingField: 0
+  <FoodPower>k__BackingField: {fileID: 5687485155441610432, guid: 219eaf871789d264a9028f2b62dd914b,
+    type: 3}
+  <AttackSkillID>k__BackingField: f8750000
+  <RoutineSkillID>k__BackingField: 02760000
+  <AdditionalValues>k__BackingField: []

@@ -106,6 +106,8 @@ namespace JH
         // 가져온 스프레드 시트 데이터를 스크립터블 오브젝트로 생성한다.
         public void CreateAllSO()
         {
+            //GFunc.BuffData().ClearList();
+
             foreach (var gameData in m_gameData)
             {
                 //생성해야하는지 먼저 체크
@@ -156,6 +158,11 @@ namespace JH
             if (createAsset)
                 AssetDatabase.CreateAsset(data, savePath);
 
+
+            //// 버프데이터면 버프에 넣기
+            //BuffData buffData = data as BuffData;
+            //if (buffData != null)
+            //    GFunc.BuffData().AddBuff(buffData);
 
 #if UNITY_EDITOR
             EditorUtility.SetDirty(data); // 데이터가 변경되었음을 알림

@@ -56,6 +56,7 @@ namespace JH
         IEnumerator ShootRoutine(float damage, float duration)
         {
             float timer = 0;
+            m_donut.SetActive(true);
 
             while (timer < duration)
             {
@@ -63,7 +64,7 @@ namespace JH
                 timer += Time.deltaTime;
                 yield return null;
             }
-            m_donut.transform.GetChild(0).gameObject.SetActive(false);
+            m_donut.SetActive(false);
             Explosion(damage);
 
             if (m_effect)

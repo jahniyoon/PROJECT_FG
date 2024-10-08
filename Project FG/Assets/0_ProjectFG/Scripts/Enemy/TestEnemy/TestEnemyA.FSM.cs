@@ -117,9 +117,9 @@ namespace JH
                 m_attackCoolDown = m_subData.AttackCoolDown;
 
                 MeleeAttack();
-                //ModelRotate(m_target.position, true);
+                //ModelRotate(m_skillTarget.position, true);
             }
-            //ModelRotate(m_target.position);
+            //ModelRotate(m_skillTarget.position);
 
             m_attackTimer += Time.deltaTime;
         }

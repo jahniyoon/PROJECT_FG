@@ -17,7 +17,7 @@ namespace JH
             m_levelData = levelData;
             m_aimtype = m_levelData.AimType;
         }
-        protected override IEnumerator SkillRoutine(float duration = 0)
+        protected override IEnumerator ActiveSkillRoutine(float duration = 0)
         {
             float timer = 0;
 

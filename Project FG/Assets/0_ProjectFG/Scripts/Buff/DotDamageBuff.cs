@@ -8,6 +8,11 @@ namespace JH
     [CreateAssetMenu(fileName = "DotDamageBuff", menuName = "ScriptableObjects/Buff/Dot Damage")]
     public class DotDamageBuff : BuffBase
     {
+        public DotDamageBuff(BuffData data) : base(data) 
+        { 
+            m_data = data;
+        }
+
         [Header("Dot Damage Buff")]
         [SerializeField] float m_damage; // 영향을 줄 데미지
         [SerializeField] float m_damageDuration; // 데미지 간격

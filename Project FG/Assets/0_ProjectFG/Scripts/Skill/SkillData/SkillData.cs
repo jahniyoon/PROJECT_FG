@@ -12,18 +12,21 @@ namespace JH
     [System.Serializable]
     public class SkillData : SOData
     {
-        [field: SerializeField] public int ID { get; private set; }
+        [field: SerializeField] public int ID { get; protected set; }
         [field: SerializeField] public string Name { get; protected set; }
         [field: SerializeField][field: TextArea] public string Description { get; protected set; }
         [field: Header("Skill")]
 
         [field: SerializeField] public SkillType BaseType { get; protected set; }
         [field: SerializeField] public TargetTag SkillTarget { get; protected set; }
+        [field: SerializeField] public SkillActiveTime ActiveTime { get; protected set; }
         [field: SerializeField] public float SkillCoolDown { get; protected set; }
         [field: SerializeField] public float SkillDuration { get; protected set; }
         [field: SerializeField] public float SkillDamage { get; protected set; }
         [field: SerializeField] public AimType AimType { get; protected set; }
         [field: SerializeField] public float SkillRange { get; protected set; }
+        [field: SerializeField] public float SkillDelay { get; protected set; }
+        [field: SerializeField] public float SkillSpeed { get; protected set; }
         [field: Header("Skill Projectile")]
         [field: SerializeField] public int[] ProjectileID { get; protected set; }
         [field: SerializeField] public float ProjectileOffset { get; protected set; }
@@ -32,12 +35,36 @@ namespace JH
         [field: SerializeField] public float SkillLifeTime { get; protected set; }
         [field: Header("Buff")]
         [field: SerializeField] public int[] BuffID { get; protected set; }
+        [field: SerializeField] public float[] BuffValues { get; protected set; }
         [field: Header("Additional Value")]
         [field: SerializeField] public float[] Value1 { get; protected set; }
         [field: SerializeField] public float[] Value2 { get; protected set; }
         [field: SerializeField] public float[] Value3 { get; protected set; }
 
-
+        public float TryGetBuffValue(int num = 0)
+        {
+            if (BuffValues.Length - 1 < num)
+                return 0;
+            return BuffValues[num];
+        }
+        public float TryGetValue1(int num = 0)
+        {
+            if (Value1.Length - 1 < num)
+                return 0;
+            return Value1[num];
+        }
+        public float TryGetValue2(int num = 0)
+        {
+            if (Value2.Length - 1 < num)
+                return 0;
+            return Value2[num];
+        }
+        public float TryGetValue3(int num = 0)
+        {
+            if (Value3.Length - 1 < num)
+                return 0;
+            return Value3[num];
+        }
         public override void SetData(GameData gamedata)
         {
             base.SetData(gamedata);
@@ -64,6 +91,28 @@ namespace JH
 
 
             dataList.Add(SetData("ID", ID.ToString()));
+            dataList.Add(SetData("Name", Name.ToString()));
+            dataList.Add(SetData("Description", Description.ToString()));
+            dataList.Add(SetData("BaseType", BaseType.ToString()));
+            dataList.Add(SetData("Target", SkillTarget.ToString()));
+            dataList.Add(SetData("ActiveTime", ActiveTime.ToString()));
+            dataList.Add(SetData("CoolDown", SkillCoolDown.ToString()));
+            dataList.Add(SetData("Duration", SkillDuration.ToString()));
+            dataList.Add(SetData("Damage", SkillDamage.ToString()));
+            dataList.Add(SetData("AimType", AimType.ToString()));
+            dataList.Add(SetData("Range", SkillRange.ToString()));
+            dataList.Add(SetData("ProjectileID", GFunc.IntsToString(ProjectileID)));
+            dataList.Add(SetData("ProjectileOffset", ProjectileOffset.ToString()));
+            dataList.Add(SetData("Radius", SkillRadius.ToString()));
+            dataList.Add(SetData("Arc", SkillArc.ToString()));
+            dataList.Add(SetData("LifeTime", SkillLifeTime.ToString()));
+            dataList.Add(SetData("BuffID",GFunc.IntsToString(BuffID)));
+            dataList.Add(SetData("BuffValue", GFunc.FloatsToString(BuffValues)));
+            dataList.Add(SetData("Value1",GFunc.FloatsToString(Value1)));
+            dataList.Add(SetData("Value2", GFunc.FloatsToString(Value2)));
+            dataList.Add(SetData("Value3", GFunc.FloatsToString(Value3)));
+            dataList.Add(SetData("SkillDelay", SkillDelay.ToString()));
+            dataList.Add(SetData("SkillSpeed", SkillSpeed.ToString()));
 
 
             return dataList;
@@ -93,10 +142,13 @@ namespace JH
                 if (item.ColumnID == "Target")
                     SkillTarget = (TargetTag)Enum.Parse(typeof(TargetTag), item.Value);
 
+                if (item.ColumnID == "ActiveTime")
+                    ActiveTime = (SkillActiveTime)Enum.Parse(typeof(SkillActiveTime), item.Value);
+
                 if (item.ColumnID == "CoolDown")
                     SkillCoolDown = float.Parse(item.Value);
 
-                if (item.ColumnID == "Dutation")
+                if (item.ColumnID == "Duration")
                     SkillDuration = float.Parse(item.Value);
 
                 if (item.ColumnID == "Damage")
@@ -126,27 +178,25 @@ namespace JH
                 if (item.ColumnID == "BuffID")
                     BuffID = GFunc.StringToInts(item.Value);
 
+                if (item.ColumnID == "BuffValue")
+                    BuffValues = GFunc.StringToFloats(item.Value);
+
                 if (item.ColumnID == "Value1")
                     Value1 = GFunc.StringToFloats(item.Value);
 
                 if (item.ColumnID == "Value2")
-                    Value1 = GFunc.StringToFloats(item.Value);
+                    Value2 = GFunc.StringToFloats(item.Value);
 
                 if (item.ColumnID == "Value3")
                     Value3 = GFunc.StringToFloats(item.Value);
+
+                if (item.ColumnID == "SkillDelay")
+                    SkillDelay = float.Parse(item.Value);
+
+                if (item.ColumnID == "SkillSpeed")
+                    SkillSpeed = float.Parse(item.Value);
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,6 +209,7 @@ namespace JH
         // 스킬을 사용한다.
         public virtual void ActiveSkill() { }
 
+        // 스킬 비활성화
         public virtual void InActiveSkill() { }
 
 

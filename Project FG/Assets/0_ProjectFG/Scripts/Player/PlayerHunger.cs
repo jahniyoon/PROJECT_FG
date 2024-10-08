@@ -362,24 +362,7 @@ namespace JH
 
         }
 
-        // 푸드파워 루틴을 딜레이를 주며 시작시킨다.
-        IEnumerator FoodPowerRoutine()
-        {
-            // 먼저 루틴을 모두 꺼준다.
-            for (int i = 0; i < foodPowers.Count; i++)
-            {
-                foodPowers[i].StopFoodPowerRoutine();
-            }
 
-
-            for (int i = 0; i < foodPowers.Count; i++)
-            {
-                foodPowers[i].StartFoodPowerRoutine();
-                yield return new WaitForSeconds(m_player.Setting.FoodPowerDelay);
-
-            }
-            yield break;
-        }
 
         [ContextMenu("Add Power")]
         public void AddDefaultPower()

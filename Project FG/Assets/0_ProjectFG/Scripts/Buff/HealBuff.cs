@@ -4,10 +4,13 @@ using UnityEngine;
 
 namespace JH
 {
-    [CreateAssetMenu(fileName = "Heal Buff", menuName = "ScriptableObjects/Buff/HealBuff")]
 
     public class HealBuff : BuffBase
     {
+        public HealBuff(BuffData data) : base(data) 
+        {
+            m_data = data;
+        }
         [Header("Heal Buff")]
         [SerializeField] private float m_healValue;
 

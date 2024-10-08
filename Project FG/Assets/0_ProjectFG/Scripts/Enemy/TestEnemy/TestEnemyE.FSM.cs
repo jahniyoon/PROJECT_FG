@@ -97,7 +97,8 @@ namespace JH
             // + 조준중일 때 이동상태가 되지 않는다.
             //
 
-            if (m_data.AttackRange < m_targetDistance && m_isAttackReady || TargetAngleCheck() == false && m_isAttackReady
+            if (m_data.AttackRange < m_targetDistance && m_isAttackReady
+                || TargetAngleCheck() == false && m_isAttackReady
             || m_isAttackReady == false && m_data.AttackRange < m_targetDistance)
                 return new MoveState();
 
@@ -130,6 +131,7 @@ namespace JH
         {
             Vector3 position = m_target.position;
             position.y = m_targetPoint.transform.position.y;
+            position.z += 1;
             m_targetPoint.transform.position = position;
             m_targetPoint.transform.localScale = (Vector3.one * (0.5f * (m_aimTimer - m_subData.AimSpeed)));
             // 타이머만큼 조준 준비

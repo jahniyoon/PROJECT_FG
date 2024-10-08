@@ -24758,7 +24758,6 @@ GameObject:
   - component: {fileID: 3453327413538294922}
   - component: {fileID: 1966324714621981550}
   - component: {fileID: 4200900639326484160}
-  - component: {fileID: 1303688020914538070}
   - component: {fileID: 6223954862423122885}
   - component: {fileID: 2268057108049087971}
   - component: {fileID: 7352647302683663179}
@@ -24878,23 +24877,6 @@ MonoBehaviour:
   RemoveBuffEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1303688020914538070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347991003380837535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a630b56fab3bc419fd1244e1ae5312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_isAttack: 0
-  m_attackCoolDown: 0
-  m_attackOffset: 0.75
-  m_attackRadius: 1.75
-  m_attackEffect: {fileID: 0}
 --- !u!114 &6223954862423122885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30097,7 +30079,7 @@ GameObject:
   - component: {fileID: 1343961696204421238}
   m_Layer: 0
   m_Name: Aim
-  m_TagString: Untagged
+  m_TagString: Aim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

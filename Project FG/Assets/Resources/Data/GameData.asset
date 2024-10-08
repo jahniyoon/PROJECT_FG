@@ -18,23 +18,25 @@ MonoBehaviour:
   - FOOD POWER
   - FOOD POWER LEVEL
   - SKILL
+  - BUFF
+  - PROJECTILE
   START_ROW_LENGTH: 3
   ignoreSOWorksheets:
   - FOOD POWER LEVEL
   m_gameData:
-    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000
+    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d0100943d0100f83d01005c3e0100c03e0100f45f01005860010062600100bc600100206101002a61010084610100e8610100
     m_Values:
-    - Name: 20100  ENEMY  Test Enemy A
+    - Name: 20100  ENEMY  Enemy A
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20100
       - ColumnID: Name
-        Value: Test Enemy A
+        Value: Enemy A
       - ColumnID: Description
         Value: "\uADFC\uC811\uD615"
       - ColumnID: BaseType
-        Value: EnemyA
+        Value: Default
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -47,19 +49,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
         Value: 30100
-    - Name: 20200  ENEMY  Test Enemy B
+      - ColumnID: RoutineSkill
+        Value: '-'
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20200  ENEMY  Enemy B
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20200
       - ColumnID: Name
-        Value: Test Enemy B
+        Value: Enemy B
       - ColumnID: Description
         Value: "\uD0F1\uCEE4\uD615"
       - ColumnID: BaseType
-        Value: EnemyB
+        Value: CantAttackOnBuff
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
@@ -72,19 +78,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
-        Value: 30200, 30210
-    - Name: 20300  ENEMY  Test Enemy C
+      - ColumnID: AttackSkill
+        Value: 30200
+      - ColumnID: RoutineSkill
+        Value: 30210
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20300  ENEMY  Enemy C
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20300
       - ColumnID: Name
-        Value: Test Enemy C
+        Value: Enemy C
       - ColumnID: Description
         Value: "\uD22C\uC0AC\uCCB4\uD615"
       - ColumnID: BaseType
-        Value: EnemyC
+        Value: Default
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -97,19 +107,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
         Value: 30300
-    - Name: 20400  ENEMY  Test Enemy D
+      - ColumnID: RoutineSkill
+        Value: '-'
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20400  ENEMY  Enemy D
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20400
       - ColumnID: Name
-        Value: Test Enemy D
+        Value: Enemy D
       - ColumnID: Description
         Value: "\uB3C4\uB11B \uD22C\uC0AC\uCCB4\uD615"
       - ColumnID: BaseType
-        Value: EnemyD
+        Value: Default
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -122,19 +136,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
         Value: 30400
-    - Name: 20500  ENEMY  Test Enemy E
+      - ColumnID: RoutineSkill
+        Value: '-'
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20500  ENEMY  Enemy E
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20500
       - ColumnID: Name
-        Value: Test Enemy E
+        Value: Enemy E
       - ColumnID: Description
         Value: "\uC18D\uC0AC\uD3EC\uD615"
       - ColumnID: BaseType
-        Value: EnemyE
+        Value: AimAndShoot
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -147,19 +165,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
         Value: 30500
-    - Name: 20600  ENEMY  Test Enemy F
+      - ColumnID: RoutineSkill
+        Value: '-'
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20600  ENEMY  Enemy F
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20600
       - ColumnID: Name
-        Value: Test Enemy F
+        Value: Enemy F
       - ColumnID: Description
         Value: "\uB0C9\uAE30 \uC624\uB77C\uD615"
       - ColumnID: BaseType
-        Value: EnemyF
+        Value: Default
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -172,19 +194,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
+        Value: '-'
+      - ColumnID: RoutineSkill
         Value: 30600
-    - Name: 20700  ENEMY  Test Enemy G
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20700  ENEMY  Enemy G
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20700
       - ColumnID: Name
-        Value: Test Enemy G
+        Value: Enemy G
       - ColumnID: Description
         Value: "\uCE58\uC720\uD615"
       - ColumnID: BaseType
-        Value: EnemyG
+        Value: Tower
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
@@ -197,19 +223,23 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
         Value: 30700
-    - Name: 20800  ENEMY  Test Enemy H
+      - ColumnID: RoutineSkill
+        Value: '-'
+      - ColumnID: AdditionalValue
+        Value: '-'
+    - Name: 20800  ENEMY  Enemy H
       SheetID: ENEMY
       Data:
       - ColumnID: ID
         Value: 20800
       - ColumnID: Name
-        Value: Test Enemy H
+        Value: Enemy H
       - ColumnID: Description
         Value: "\uC790\uD3ED\uD615"
       - ColumnID: BaseType
-        Value: EnemyH
+        Value: Suicide
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
@@ -222,8 +252,12 @@ MonoBehaviour:
         Value: 50
       - ColumnID: PredationStunCoolDown
         Value: 0
-      - ColumnID: skillID
+      - ColumnID: AttackSkill
         Value: 30800
+      - ColumnID: RoutineSkill
+        Value: '-'
+      - ColumnID: AdditionalValue
+        Value: '-'
     - Name: 30100  SKILL  A1 Attack
       SheetID: SKILL
       Data:
@@ -237,9 +271,11 @@ MonoBehaviour:
         Value: CollisionSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 3
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 0
       - ColumnID: Damage
         Value: 10
@@ -259,28 +295,36 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: BuffID
         Value: '-'
+      - ColumnID: BuffValue
+        Value: '-'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
         Value: '-'
-    - Name: 30200  SKILL  B2 Attack
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
+    - Name: 30200  SKILL  B1 Attack
       SheetID: SKILL
       Data:
       - ColumnID: ID
         Value: 30200
       - ColumnID: Name
-        Value: B2 Attack
+        Value: B1 Attack
       - ColumnID: Description
         Value: "\uC801 B1\uC758 \uADFC\uC811\uACF5\uACA9"
       - ColumnID: BaseType
         Value: CollisionSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 3
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 0
       - ColumnID: Damage
         Value: 10
@@ -299,13 +343,19 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: BuffID
-        Value: 80600
-      - ColumnID: Value1
+        Value: 81000
+      - ColumnID: BuffValue
         Value: 2, 0.1
+      - ColumnID: Value1
+        Value: '-'
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 30210  SKILL  B1 Armor Buff
       SheetID: SKILL
       Data:
@@ -316,37 +366,45 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC801 B1\uC758 \uBC29\uC5B4\uB825 \uBC84\uD504"
       - ColumnID: BaseType
-        Value: CollisionSkill
+        Value: Buff
       - ColumnID: Target
         Value: Caster
+      - ColumnID: ActiveTime
+        Value: CoolDown
       - ColumnID: CoolDown
         Value: 9
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 5
       - ColumnID: Damage
         Value: 0
       - ColumnID: AimType
         Value: None
       - ColumnID: Range
-        Value: '-'
+        Value: 0
       - ColumnID: ProjectileID
         Value: '-'
       - ColumnID: ProjectileOffset
-        Value: '-'
+        Value: 0
       - ColumnID: Radius
-        Value: '-'
+        Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: BuffID
-        Value: 80200
+        Value: 80500
+      - ColumnID: BuffValue
+        Value: 50, -1
       - ColumnID: Value1
-        Value: 50
+        Value: '-'
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 30300  SKILL  C1 Projectile
       SheetID: SKILL
       Data:
@@ -360,9 +418,11 @@ MonoBehaviour:
         Value: ProjectileSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 3
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 0
       - ColumnID: Damage
         Value: 10
@@ -375,12 +435,14 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: '-'
+        Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 10
       - ColumnID: BuffID
+        Value: '-'
+      - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
         Value: '-'
@@ -388,6 +450,10 @@ MonoBehaviour:
         Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 30400  SKILL  D1 Radius
       SheetID: SKILL
       Data:
@@ -398,12 +464,14 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC801 D1\uC758 \uBC94\uC704 \uD3ED\uACA9 \uAE30\uC220"
       - ColumnID: BaseType
-        Value: ProjectileSkill
+        Value: DonutSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 3
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 0
       - ColumnID: Damage
         Value: 10
@@ -422,13 +490,19 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: BuffID
-        Value: '-'
+        Value: 81000
+      - ColumnID: BuffValue
+        Value: 2, 0.1
       - ColumnID: Value1
-        Value: 1
+        Value: 1, 1
       - ColumnID: Value2
-        Value: 1
+        Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0.5
     - Name: 30500  SKILL  E1 Shoot
       SheetID: SKILL
       Data:
@@ -442,18 +516,20 @@ MonoBehaviour:
         Value: AimShootSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 0
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 5
       - ColumnID: Damage
-        Value: 0
+        Value: 5
       - ColumnID: AimType
-        Value: CasterPosition
+        Value: Caster
       - ColumnID: Range
         Value: 7
       - ColumnID: ProjectileID
-        Value: 90400
+        Value: 90600
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -463,13 +539,19 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: -1
       - ColumnID: BuffID
-        Value: 80410
+        Value: '-'
+      - ColumnID: BuffValue
+        Value: '-'
       - ColumnID: Value1
-        Value: 0.4, 5
+        Value: 0.4, 3
       - ColumnID: Value2
-        Value: 0
+        Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 30600  SKILL  F1 Frozen
       SheetID: SKILL
       Data:
@@ -483,9 +565,11 @@ MonoBehaviour:
         Value: AreaSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 10
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 10
       - ColumnID: Damage
         Value: 0
@@ -504,13 +588,19 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: -1
       - ColumnID: BuffID
-        Value: 80100, 80400, 81000
+        Value: 80100
+      - ColumnID: BuffValue
+        Value: 25, 10
       - ColumnID: Value1
-        Value: 25
+        Value: '-'
       - ColumnID: Value2
-        Value: 1, 10
+        Value: '-'
       - ColumnID: Value3
-        Value: 1, 5, 1, 0.2
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 30700  SKILL  G1 Heal
       SheetID: SKILL
       Data:
@@ -524,9 +614,11 @@ MonoBehaviour:
         Value: AreaSkill
       - ColumnID: Target
         Value: Enemy
+      - ColumnID: ActiveTime
+        Value: CoolDown
       - ColumnID: CoolDown
         Value: 0
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: -1
       - ColumnID: Damage
         Value: 0
@@ -535,7 +627,7 @@ MonoBehaviour:
       - ColumnID: Range
         Value: 0
       - ColumnID: ProjectileID
-        Value: 90400
+        Value: 90410
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -545,13 +637,19 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: -1
       - ColumnID: BuffID
-        Value: 80420
-      - ColumnID: Value1
+        Value: 80410
+      - ColumnID: BuffValue
         Value: 1, -10
+      - ColumnID: Value1
+        Value: 5, 10
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 30800  SKILL  H1 Bomb
       SheetID: SKILL
       Data:
@@ -565,16 +663,18 @@ MonoBehaviour:
         Value: CollisionSkill
       - ColumnID: Target
         Value: Player
+      - ColumnID: ActiveTime
+        Value: Active
       - ColumnID: CoolDown
         Value: 0
-      - ColumnID: Dutation
+      - ColumnID: Duration
         Value: 0
       - ColumnID: Damage
         Value: 50
       - ColumnID: AimType
-        Value: CasterPosition
+        Value: CasterDropPosition
       - ColumnID: Range
-        Value: 0
+        Value: 3
       - ColumnID: ProjectileID
         Value: 90500
       - ColumnID: ProjectileOffset
@@ -584,8 +684,10 @@ MonoBehaviour:
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
-        Value: 0.1
+        Value: 1
       - ColumnID: BuffID
+        Value: '-'
+      - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
         Value: '-'
@@ -593,6 +695,10 @@ MonoBehaviour:
         Value: '-'
       - ColumnID: Value3
         Value: '-'
+      - ColumnID: SkillDelay
+        Value: 2
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50100  FOOD POWER  FoodPower A
       SheetID: FOOD POWER
       Data:
@@ -604,6 +710,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC A"
       - ColumnID: LevelDataID
         Value: 60001-60010
+      - ColumnID: BaseType
+        Value: FoodPowerA
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: NearTargetDirection
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: '-'
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50200  FOOD POWER  FoodPower B
       SheetID: FOOD POWER
       Data:
@@ -615,6 +745,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC B"
       - ColumnID: LevelDataID
         Value: 60011-60019
+      - ColumnID: BaseType
+        Value: FoodPowerB
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: CasterPosition
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: 81000
+      - ColumnID: BuffValue
+        Value: 2, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50300  FOOD POWER  FoodPower C
       SheetID: FOOD POWER
       Data:
@@ -626,6 +780,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC C"
       - ColumnID: LevelDataID
         Value: 60020-60028
+      - ColumnID: BaseType
+        Value: FoodPowerC
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: NearTargetDirection
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: 80500
+      - ColumnID: BuffValue
+        Value: 50, -1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50400  FOOD POWER  FoodPower D
       SheetID: FOOD POWER
       Data:
@@ -637,6 +815,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC D"
       - ColumnID: LevelDataID
         Value: 60029-60037
+      - ColumnID: BaseType
+        Value: FoodPowerD
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: RandomDirection
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: '-'
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50500  FOOD POWER  FoodPower E
       SheetID: FOOD POWER
       Data:
@@ -648,6 +850,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC E"
       - ColumnID: LevelDataID
         Value: 60038-60046
+      - ColumnID: BaseType
+        Value: FoodPowerE
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: RandomDirection
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: 81000
+      - ColumnID: BuffValue
+        Value: 2, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50600  FOOD POWER  FoodPower F
       SheetID: FOOD POWER
       Data:
@@ -659,6 +885,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC F"
       - ColumnID: LevelDataID
         Value: 60047-60055
+      - ColumnID: BaseType
+        Value: FoodPowerF
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: CasterPosition
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: '-'
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50700  FOOD POWER  FoodPower G
       SheetID: FOOD POWER
       Data:
@@ -670,6 +920,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC G"
       - ColumnID: LevelDataID
         Value: 60056-60064
+      - ColumnID: BaseType
+        Value: FoodPowerG
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: CasterPosition
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: 80100
+      - ColumnID: BuffValue
+        Value: 25, 10
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: 50800  FOOD POWER  FoodPower H
       SheetID: FOOD POWER
       Data:
@@ -681,6 +955,30 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CC H"
       - ColumnID: LevelDataID
         Value: 60065-60073
+      - ColumnID: BaseType
+        Value: FoodPowerH
+      - ColumnID: ActiveTime
+        Value: CoolDown
+      - ColumnID: AimType
+        Value: CasterDropPosition
+      - ColumnID: IngameUpgradeID
+        Value: '-'
+      - ColumnID: ProjectileID
+        Value: '-'
+      - ColumnID: BuffID
+        Value: 80410
+      - ColumnID: BuffValue
+        Value: 1, -10
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
+      - ColumnID: SkillDelay
+        Value: 0
+      - ColumnID: SkillSpeed
+        Value: 0
     - Name: "60001  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv0"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -704,8 +1002,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60002  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv1"
@@ -731,8 +1027,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60003  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv2"
@@ -758,8 +1052,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60004  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv3"
@@ -785,8 +1077,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60005  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv4"
@@ -812,8 +1102,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60006  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv5"
@@ -839,8 +1127,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60007  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv6"
@@ -866,8 +1152,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60008  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv7"
@@ -893,8 +1177,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60009  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv8"
@@ -920,8 +1202,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60010  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv9"
@@ -947,8 +1227,6 @@ MonoBehaviour:
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 0.2
     - Name: "60011  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv1"
@@ -974,8 +1252,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 20,3
     - Name: "60012  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv2"
@@ -1001,8 +1277,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 25,3
     - Name: "60013  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv3"
@@ -1028,8 +1302,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 30,3
     - Name: "60014  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv4"
@@ -1055,8 +1327,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 35,3
     - Name: "60015  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv5"
@@ -1082,8 +1352,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 40,3
     - Name: "60016  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv6"
@@ -1109,8 +1377,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 45,3
     - Name: "60017  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv7"
@@ -1136,8 +1402,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 50,3
     - Name: "60018  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv8"
@@ -1163,8 +1427,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 55,3
     - Name: "60019  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv9"
@@ -1190,8 +1452,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 60,3
     - Name: "60020  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv1"
@@ -1217,8 +1477,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60021  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv2"
@@ -1244,8 +1502,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60022  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv3"
@@ -1271,8 +1527,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60023  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv4"
@@ -1298,8 +1552,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60024  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv5"
@@ -1325,8 +1577,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60025  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv6"
@@ -1352,8 +1602,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60026  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv7"
@@ -1379,8 +1627,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60027  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv8"
@@ -1406,8 +1652,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60028  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv9"
@@ -1433,8 +1677,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uC801"
       - ColumnID: AdditionalValues
         Value: 15,0
     - Name: "60029  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv1"
@@ -1460,8 +1702,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60030  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv2"
@@ -1487,8 +1727,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 2
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60031  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv3"
@@ -1514,8 +1752,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 3
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60032  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv4"
@@ -1541,8 +1777,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 4
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60033  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv5"
@@ -1568,8 +1802,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 4
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60034  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv6"
@@ -1595,8 +1827,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 5
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60035  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv7"
@@ -1622,8 +1852,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 5
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60036  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv8"
@@ -1649,8 +1877,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 5
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60037  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv9"
@@ -1676,8 +1902,6 @@ MonoBehaviour:
         Value: 0.5
       - ColumnID: Count
         Value: 6
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 0
     - Name: "60038  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv1"
@@ -1703,8 +1927,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,5
     - Name: "60039  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv2"
@@ -1730,8 +1952,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,5.5
     - Name: "60040  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv3"
@@ -1757,8 +1977,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,6
     - Name: "60041  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv4"
@@ -1784,8 +2002,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,6.5
     - Name: "60042  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv5"
@@ -1811,8 +2027,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,7
     - Name: "60043  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv6"
@@ -1838,8 +2052,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,7.5
     - Name: "60044  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv7"
@@ -1865,8 +2077,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,8
     - Name: "60045  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv8"
@@ -1892,8 +2102,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,8.5
     - Name: "60046  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv9"
@@ -1919,8 +2127,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "\uB79C\uB364\uD55C \uBC29\uD5A5"
       - ColumnID: AdditionalValues
         Value: 3,7,10
     - Name: "60047  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv1"
@@ -1946,8 +2152,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 10
     - Name: "60048  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv2"
@@ -1973,8 +2177,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 15
     - Name: "60049  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv3"
@@ -2000,8 +2202,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 20
     - Name: "60050  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv4"
@@ -2027,8 +2227,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 25
     - Name: "60051  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv5"
@@ -2054,8 +2252,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 30
     - Name: "60052  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv6"
@@ -2081,8 +2277,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 35
     - Name: "60053  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv7"
@@ -2108,8 +2302,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 40
     - Name: "60054  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv8"
@@ -2135,8 +2327,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 45
     - Name: "60055  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv9"
@@ -2162,8 +2352,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 50
     - Name: "60056  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv1"
@@ -2189,8 +2377,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,5
     - Name: "60057  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv2"
@@ -2216,8 +2402,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,5
     - Name: "60058  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv3"
@@ -2243,8 +2427,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,6
     - Name: "60059  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv4"
@@ -2270,8 +2452,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,6
     - Name: "60060  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv5"
@@ -2297,8 +2477,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,7
     - Name: "60061  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv6"
@@ -2324,8 +2502,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,7
     - Name: "60062  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv7"
@@ -2351,8 +2527,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,8
     - Name: "60063  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv8"
@@ -2378,8 +2552,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,8
     - Name: "60064  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv9"
@@ -2405,8 +2577,6 @@ MonoBehaviour:
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC \uC704\uCE58"
       - ColumnID: AdditionalValues
         Value: 1,100,10
     - Name: "60065  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv1"
@@ -2432,8 +2602,6 @@ MonoBehaviour:
         Value: 10
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60066  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv2"
@@ -2459,8 +2627,6 @@ MonoBehaviour:
         Value: 12
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60067  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv3"
@@ -2486,8 +2652,6 @@ MonoBehaviour:
         Value: 14
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60068  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv4"
@@ -2513,8 +2677,6 @@ MonoBehaviour:
         Value: 16
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60069  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv5"
@@ -2540,8 +2702,6 @@ MonoBehaviour:
         Value: 18
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60070  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv6"
@@ -2567,8 +2727,6 @@ MonoBehaviour:
         Value: 20
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60071  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv7"
@@ -2594,8 +2752,6 @@ MonoBehaviour:
         Value: 25
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60072  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv8"
@@ -2621,8 +2777,6 @@ MonoBehaviour:
         Value: 30
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
     - Name: "60073  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv9"
@@ -2648,7 +2802,691 @@ MonoBehaviour:
         Value: 40
       - ColumnID: Count
         Value: 1
-      - ColumnID: AimType
-        Value: "PC\uC704\uCE58 \uC18C\uD658"
       - ColumnID: AdditionalValues
         Value: 4
+    - Name: "80100  BUFF  \uB0C9\uB3D9"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80100
+      - ColumnID: Name
+        Value: "\uB0C9\uB3D9"
+      - ColumnID: Description
+        Value: "\uC801F1\uC758 \uB0C9\uAE30\uC7A5\uD310, \uD478\uB4DC\uD30C\uC6CCF
+          \uB4F1\uC774 \uC0AC\uC6A9\uD558\uB294 \uB0C9\uAE30 \uB514\uBC84\uD504"
+      - ColumnID: BaseType
+        Value: Frozen
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: 5, 1, 0.2
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80110  BUFF  \uBC94\uC704 \uB0C9\uB3D9"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80110
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uB0C9\uB3D9"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Frozen
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: 0.2
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80200  BUFF  \uAC00\uC5F4"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80200
+      - ColumnID: Name
+        Value: "\uAC00\uC5F4"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Burn
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80210  BUFF  \uBC94\uC704 \uAC00\uC5F4"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80210
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uAC00\uC5F4"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Burn
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80300  BUFF  \uBD80\uD328"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80300
+      - ColumnID: Name
+        Value: "\uBD80\uD328"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Putrefaction
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80310  BUFF  \uBC94\uC704 \uBD80\uD328"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80310
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uBD80\uD328"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Putrefaction
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80400  BUFF  \uCE58\uC720"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80400
+      - ColumnID: Name
+        Value: "\uCE58\uC720"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Heal
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80410  BUFF  \uBC94\uC704 \uCE58\uC720"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80410
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uCE58\uC720"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: AreaHeal
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80500  BUFF  \uBC29\uC5B4"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80500
+      - ColumnID: Name
+        Value: "\uBC29\uC5B4"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: HitDamageDecrease
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80510  BUFF  \uBC94\uC704 \uBC29\uC5B4"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80510
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uBC29\uC5B4"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: HitDamageDecrease
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80520  BUFF  \uCDE8\uC57D"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80520
+      - ColumnID: Name
+        Value: "\uCDE8\uC57D"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: HitDamageIncrease
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80530  BUFF  \uBC94\uC704 \uCDE8\uC57D"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80530
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uCDE8\uC57D"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: HitDamageIncrease
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80600  BUFF  \uAC15\uD654"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80600
+      - ColumnID: Name
+        Value: "\uAC15\uD654"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: AttackDamageIncrease
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: 1
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80610  BUFF  \uBC94\uC704 \uAC15\uD654"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80610
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uAC15\uD654"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: AttackDamageIncrease
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80620  BUFF  \uC57D\uD654"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80620
+      - ColumnID: Name
+        Value: "\uC57D\uD654"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: AttackDamageDecrease
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80630  BUFF  \uBC94\uC704 \uC57D\uD654"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80630
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uC57D\uD654"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: AttackDamageDecrease
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
+      - ColumnID: Value1
+        Value: 1
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80700  BUFF  \uC774\uC18D \uC99D\uAC00"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80700
+      - ColumnID: Name
+        Value: "\uC774\uC18D \uC99D\uAC00"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: FastSpeed
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80710  BUFF  \uBC94\uC704 \uC774\uC18D \uC99D\uAC00"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80710
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uC774\uC18D \uC99D\uAC00"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: FastSpeed
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80800  BUFF  \uC774\uC18D \uAC10\uC18C"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80800
+      - ColumnID: Name
+        Value: "\uC774\uC18D \uAC10\uC18C"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: SlowSpeed
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80810  BUFF  \uBC94\uC704 \uC774\uC18D \uAC10\uC18C"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80810
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uC774\uC18D \uAC10\uC18C"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: SlowSpeed
+      - ColumnID: EffectCondition
+        Value: Area
+      - ColumnID: StackType
+        Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "80900  BUFF  \uACBD\uC9C1 \uBC0F \uC2A4\uD134"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 80900
+      - ColumnID: Name
+        Value: "\uACBD\uC9C1 \uBC0F \uC2A4\uD134"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Stun
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC31\uC2E0 \uADDC\uCE59 \uCC38\uC870"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81000  BUFF  \uB109\uBC31"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81000
+      - ColumnID: Name
+        Value: "\uB109\uBC31"
+      - ColumnID: Description
+        Value: "\uC2A4\uD0AC\uC758 Value 1 \uAC12\uC744 \uAC00\uC838\uC624\uB294\uB370,
+          [0] = \uAC70\uB9AC, [1] = \uC2DC\uAC04"
+      - ColumnID: BaseType
+        Value: KnockBack
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC31\uC2E0 \uADDC\uCE59 \uCC38\uC870"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81100  BUFF  \uACF5\uD3EC"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81100
+      - ColumnID: Name
+        Value: "\uACF5\uD3EC"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Fear
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: "\uAC31\uC2E0 \uADDC\uCE59 \uCC38\uC870"
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81200  BUFF  \uBB34\uC801"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81200
+      - ColumnID: Name
+        Value: "\uBB34\uC801"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Invincible
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: 
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81300  BUFF  \uD45C\uC2DD"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81300
+      - ColumnID: Name
+        Value: "\uD45C\uC2DD"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Mark
+      - ColumnID: EffectCondition
+        Value: Mark
+      - ColumnID: StackType
+        Value: 
+      - ColumnID: Value1
+        Value: 10
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81400  BUFF  \uD3EC\uC2DD \uAC00\uB2A5 \uC0C1\uD0DC \uC2A4\uD134"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81400
+      - ColumnID: Name
+        Value: "\uD3EC\uC2DD \uAC00\uB2A5 \uC0C1\uD0DC \uC2A4\uD134"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: PredationreStun
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: 
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81500  BUFF  \uD3EC\uC2DD \uD328\uB9C1 \uAC00\uB2A5 \uC0C1\uD0DC"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81500
+      - ColumnID: Name
+        Value: "\uD3EC\uC2DD \uD328\uB9C1 \uAC00\uB2A5 \uC0C1\uD0DC"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: PredationParrying
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: 
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81600  BUFF  \uD328\uB9C1 \uC2A4\uD134"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81600
+      - ColumnID: Name
+        Value: "\uD328\uB9C1 \uC2A4\uD134"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: ParryingStun
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: 
+      - ColumnID: Value1
+        Value: 1
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "90100  PROJECTILE  \uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90100
+      - ColumnID: Name
+        Value: "\uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+      - ColumnID: Description
+        Value: "\uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+      - ColumnID: Type
+        Value: Collision
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90200  PROJECTILE  ENEMY C \uD22C\uC0AC\uCCB4"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90200
+      - ColumnID: Name
+        Value: "ENEMY C \uD22C\uC0AC\uCCB4"
+      - ColumnID: Description
+        Value: "\uC801C\uAC00 \uC0AC\uC6A9\uD558\uB294 \uD22C\uC0AC\uCCB4"
+      - ColumnID: Type
+        Value: Projectile
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 5
+      - ColumnID: ProjectileScale
+        Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90210  PROJECTILE  \uD478\uB4DC\uD30C\uC6CC C \uD22C\uC0AC\uCCB4"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90210
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CC C \uD22C\uC0AC\uCCB4"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCC\uC5D0 \uC0AC\uC6A9\uD558\uB294 \uD22C\uC0AC\uCCB4"
+      - ColumnID: Type
+        Value: Projectile
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 10
+      - ColumnID: ProjectileScale
+        Value: 0.48
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90300  PROJECTILE  \uB3C4\uB11B \uD22C\uC0AC\uCCB4"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90300
+      - ColumnID: Name
+        Value: "\uB3C4\uB11B \uD22C\uC0AC\uCCB4"
+      - ColumnID: Description
+        Value: "\uC911\uC559\uC774 \uBE44\uC5B4\uC788\uB294 \uC6D0\uD615 \uD3ED\uBC1C"
+      - ColumnID: Type
+        Value: Donut
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90400  PROJECTILE  \uC7A5\uD310"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90400
+      - ColumnID: Name
+        Value: "\uC7A5\uD310"
+      - ColumnID: Description
+        Value: "\uC9C0\uC18D \uC7A5\uD310"
+      - ColumnID: Type
+        Value: AOE
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 3
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90410  PROJECTILE  \uCE58\uC988 \uC7A5\uD310"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90410
+      - ColumnID: Name
+        Value: "\uCE58\uC988 \uC7A5\uD310"
+      - ColumnID: Description
+        Value: "\uC9C0\uC18D \uC7A5\uD310"
+      - ColumnID: Type
+        Value: AOE
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 3
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90500  PROJECTILE  \uD3ED\uBC1C"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90500
+      - ColumnID: Name
+        Value: "\uD3ED\uBC1C"
+      - ColumnID: Description
+        Value: "\uC6D0\uD615 \uD3ED\uBC1C"
+      - ColumnID: Type
+        Value: Collision
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 5
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90600  PROJECTILE  ENEMY E \uD22C\uC0AC\uCCB4"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90600
+      - ColumnID: Name
+        Value: "ENEMY E \uD22C\uC0AC\uCCB4"
+      - ColumnID: Description
+        Value: "\uD788\uD2B8\uC2A4\uCE94 \uD22C\uC0AC\uCCB4"
+      - ColumnID: Type
+        Value: HitScan
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'

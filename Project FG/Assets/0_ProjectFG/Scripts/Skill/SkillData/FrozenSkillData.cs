@@ -15,11 +15,11 @@ namespace JH
         [field: SerializeField] public GameObject FrozenPrefab { get; private set; }
         [field: SerializeField] public float Radius { get; private set; }
         [field: Header("Slow Debuff")]
-        [field: SerializeField] public BuffBase SlowDebuff { get; private set; }
+        [field: SerializeField] public BuffData SlowDebuff { get; private set; }
         [field: Header("Dot Damage")]
-        [field: SerializeField] public BuffBase DotDamageBuff { get; private set; }
+        [field: SerializeField] public BuffData DotDamageBuff { get; private set; }
         [field: Header("Dot Damage")]
-        [field: SerializeField] public BuffBase FrozenDebuff { get; private set; }
+        [field: SerializeField] public BuffData FrozenDebuff { get; private set; }
 
     }
 }

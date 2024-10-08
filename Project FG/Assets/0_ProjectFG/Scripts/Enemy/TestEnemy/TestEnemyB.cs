@@ -16,7 +16,7 @@ namespace JH
         [Header("Skill")]
         [SerializeField] private SkillBase m_shildSkill;
 
-        //[Header("Buff")]
+        //[Header("OnBuff")]
         //[SerializeField] private float m_buffCoolDown;
         //[SerializeField] private GameObject m_buffShild;
         //Coroutine m_buffRoutine;

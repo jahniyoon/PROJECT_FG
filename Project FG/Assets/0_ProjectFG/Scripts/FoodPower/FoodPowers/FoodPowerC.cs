@@ -25,7 +25,7 @@ namespace JH
             m_activeSkill = Instantiate(m_projectileSkill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
             m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
             m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
-            m_activeSkill.ActiveSkill();
+            m_activeSkill.LeagcyActiveSkill();
 
             // 투사체를 발사하고 사라진다.
             Inactive();

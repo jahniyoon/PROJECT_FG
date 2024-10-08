@@ -26,7 +26,7 @@ namespace JH
 
         protected override void Init()
         {
-            m_subData = m_skillData as FoodPowerGSkillData;
+            m_subData = m_data as FoodPowerGSkillData;
             if (m_subData == null)
             {
                 Debug.LogError("데이터를 확인해주세요.");
@@ -51,14 +51,14 @@ namespace JH
 
         }
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             m_damageTimer = 0;
             m_collider.radius = m_levelData.Radius;
             m_radiusEffect.transform.localScale = Vector3.one * m_levelData.Radius;
 
-            StartCoroutine(SkillRoutine());
+            StartCoroutine(ActiveSkillRoutine());
         }
         protected override void UpdateBehavior()
         {

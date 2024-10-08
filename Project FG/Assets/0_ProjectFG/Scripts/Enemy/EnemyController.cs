@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable
+public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster
 {
     private FSM<EnemyController> m_fsm;
     protected PlayerController m_player;
@@ -14,11 +14,12 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     protected Transform m_model;
     protected HitEffect m_hitEffect;
     protected SpriteColor m_spriteColor;
+    protected SpriteRenderer m_spriteRenderer;
 
+    protected bool m_isStop = false;
 
     [Header("Enemy Data")]
     [SerializeField] protected EnemyData m_data;
-    [SerializeField] protected SpriteRenderer m_spriteRenderer;
     protected bool m_is2D;
 
     [Header("State")]
@@ -43,6 +44,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [SerializeField] private bool m_canPredation;
     [SerializeField] private WorldSpaceIcon m_predationIcon;
     [SerializeField] protected float m_dieSpeed = 1.2f;
+    protected BuffBase m_stunBuff;
 
     [Header("Attack CoolDown")]
     [SerializeField] protected float m_attackCoolDown;
@@ -55,6 +57,17 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("Minimap Color")]
     [SerializeField] protected Color m_minimapColor = Color.red;
     // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
+
+    [Header("Skills")]
+    [Header("에네미 스킬")]
+
+    [SerializeField] protected float m_skillTimer = 0;
+    [SerializeField] protected List<SkillBase> m_attackSkills = new List<SkillBase>();
+    [SerializeField] protected List<SkillBase> m_routineSkills = new List<SkillBase>();
+
+
+
+
     protected float m_attackTimer = 0;
     private int m_instanceID;
 
@@ -113,17 +126,32 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_model = transform.GetChild(0);
         m_agent = GetComponent<NavMeshAgent>();
         m_damageable = GetComponent<Damageable>();
-        if (m_healthBar)
+
+        // TODO : 에네미 다 만들고 게임 오브젝트 내에 있도록 수정
+        var healthBar = transform.GetComponentInChildren<MiniHealthBar>();
+        if (healthBar != null)
+            m_healthBar = healthBar;
+
+        else if (m_healthBar)
             m_healthBar = Instantiate(m_healthBar.gameObject, this.transform).GetComponent<MiniHealthBar>();
+
+
         m_hitEffect = GetComponent<HitEffect>();
 
         m_FoodPower = m_data.FoodPower;
 
         // 포식 아이콘 미리 꺼둔다.
-        m_predationIcon = Instantiate(m_predationIcon.gameObject, this.transform).GetComponent<WorldSpaceIcon>();
-        m_predationIcon.IconEnable(false);
+        var predationIcon = transform.GetComponentInChildren<WorldSpaceIcon>();
+
+        if (predationIcon != null)
+            m_predationIcon = predationIcon;
+
+        else if (m_predationIcon)
+            m_predationIcon = Instantiate(m_predationIcon.gameObject, this.transform).GetComponent<WorldSpaceIcon>();
+
 
         m_buffHandler = GetComponent<BuffHandler>();
+
 
         m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (m_spriteRenderer != null)
@@ -148,12 +176,23 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         m_agent.speed = FinalSpeed(m_data.MoveSpeed);
         m_damageable.SetMaxHealth(m_data.Health);
+
+        m_predationIcon.IconEnable(false);
+
+
         UIManager.Instance.MinimapUI.AddObject(m_instanceID, m_minimapColor);
+
+        BuffBase stunBuff = BuffFactory.CreateBuff(m_data.PredationStun);
+        m_stunBuff = stunBuff;
+
 
         m_fsm = new IdleState();
 
         if (m_player)
             SetTarget(m_player.transform);
+
+        GetSkills();
+
     }
 
 
@@ -164,6 +203,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         FSMHandler();
         CoolDownHandler();
         BuffHandler();
+
+        m_skillTimer = m_skillTimer - Time.deltaTime <= 0 ? 0 : m_skillTimer -= Time.deltaTime;
 
         UIManager.Instance.MinimapUI.SetPosition(m_instanceID, this.transform.position);
 
@@ -230,7 +271,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
             if (m_is2D)
             {
-                m_spriteRenderer.flipX = 180 <= rotation.eulerAngles.y ;
+                m_spriteRenderer.flipX = 180 <= rotation.eulerAngles.y;
                 m_model.localRotation = rotation;
 
                 return;
@@ -246,21 +287,21 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
         Vector3 targetDir = targetPos - m_model.transform.position;
 
-
+        if (targetDir.normalized == Vector3.zero)
+            return;
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDir.normalized);
         Quaternion newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, (m_data.RotateSpeed * 10 * Time.deltaTime));
 
-        //// 즉시 바라본다.
-        //if (instant)
-        //{
-        //    newRotation = Quaternion.Slerp(m_model.rotation, targetRotation, ((m_data.RotateSpeed * 10f) * Time.deltaTime));
-        //}
+        if (instant)
+            newRotation = targetRotation;
 
         if (m_is2D)
         {
             m_spriteRenderer.flipX = 180 <= newRotation.eulerAngles.y;
             m_model.localRotation = newRotation;
+
+
             return;
         }
 
@@ -282,7 +323,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         // 포식 가능한 상태가 아니였다가 포식 가능 상태가 되었을 때
         if (isPredation == false && m_canPredation == true)
         {
-            m_buffHandler.OnBuff(this.gameObject, m_data.PredationStun);
+            m_buffHandler.OnBuff(this.gameObject, m_stunBuff);
         }
 
     }
@@ -311,6 +352,12 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_damageable.SetHealth(0);
         Die();
     }
+
+    protected void IsStop(bool enable = true)
+    {
+        m_isStop = enable;
+    }
+
     protected virtual void Die()
     {
         if (m_damageable.Excution)
@@ -386,10 +433,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         if (m_target == null)
             return false;
 
-        float targetDistance = Vector3.Distance(transform.position, m_target.transform.position);
+        
 
         // 타겟과의 거리가 도망가는 거리보다 크고, 공격 가능거리보다 짧다.
-        if (m_data.EscapeRange < targetDistance && targetDistance <= m_data.AttackRange)
+        if (m_data.EscapeRange <= m_targetDistance && m_targetDistance < m_data.AttackRange)
             return true;
 
         return false;
@@ -401,7 +448,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     /// <returns></returns>
     protected Vector3 FindChasePos()
     {
-
+        // Vector2 일 때 방향 필요.
         // 현재 적의 위치
         Vector3 currentPosition = transform.position;
 
@@ -460,6 +507,118 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_isKnockback = false;
         yield break;
     }
+    // 모든 스킬을 가져온다.
+    private void GetSkills()
+    {
+        foreach (int id in m_data.AttackSkillID)
+        {
+            SkillBase skill = CreateSkill(GFunc.GetSkillPrefab(id));
+            if (skill != null)
+                m_attackSkills.Add(skill);
+        }
+
+        foreach (int id in m_data.RoutineSkillID)
+        {
+            SkillBase skill = CreateSkill(GFunc.GetSkillPrefab(id));
+            if (skill != null)
+                m_routineSkills.Add(skill);
+        }
+    }
+
+    // 스킬 생성
+    private SkillBase CreateSkill(SkillBase skill)
+    {
+        if (skill == null)
+            return null;
+        SkillBase newSkill = Instantiate(skill.gameObject, transform.position, transform.rotation, transform).GetComponent<SkillBase>();
+
+        newSkill.SkillInit(this.gameObject, m_model);
+
+        if (m_target)
+            newSkill.SetTarget(m_target);
+        return newSkill;
+
+        #region AimType
+        //Transform skillParent = this.transform;
+
+        //Vector3 skillPosition = this.transform.position;
+        //Vector3 skillLocalPosition = Vector3.zero;
+
+        //// 조준 타입에 따라 다르게 세팅해준다.
+        //switch (newSkill.Data.AimType)
+        //{
+        //    case AimType.Caster:
+        //        skillParent = m_model.transform;
+        //        break;
+
+        //    case AimType.CasterPosition:
+        //        skillParent = GameManager.Instance.ProjectileParent;
+        //        break;
+
+        //    case AimType.CasterDirection:
+        //        newSkill.transform.rotation = m_model.transform.rotation;
+        //        break;
+
+        //    case AimType.NearTargetDirection:
+        //        if (m_target)
+        //            newSkill.transform.LookAt(m_target.transform.position);
+        //        break;
+
+        //    case AimType.TargetDirection:
+        //        if (m_target)
+        //            newSkill.transform.LookAt(m_target.transform.position);
+        //        break;
+
+        //    case AimType.TargetPosition:
+        //        if (m_target)
+        //            skillPosition = m_target.transform.position;
+        //        break;
+
+        //    case AimType.RandomDirection:
+        //        Vector3 randomRotation = Vector3.zero;
+        //        randomRotation.y = Random.Range(0, 360);
+        //        newSkill.transform.eulerAngles = randomRotation;
+        //        break;
+
+        //    case AimType.RandomTargetDirection:
+        //        if (m_target)
+        //            newSkill.transform.LookAt(m_target.transform.position);
+        //        break;
+
+        //    case AimType.RandomTargetPosition:
+        //        if (m_target)
+        //            skillPosition = m_target.transform.position;
+        //        break;
+
+        //}
+
+        //newSkill.transform.parent = skillParent;
+        //newSkill.transform.localPosition = skillLocalPosition;
+        //newSkill.transform.position = skillPosition;
+        #endregion
+    }
+
+    protected SkillBase TryGetSkill(int index = 0)
+    {
+        for(int i = 0; i < m_attackSkills.Count; i++)
+        {
+            if(index == i)
+                return m_attackSkills[i];
+        }
+        return null;
+    }
 
 
+    public virtual bool CanActiveSkill()
+    {
+        if (m_state != FSMState.Attack)
+            return false;
+
+        return true;
+    }
+
+    public void UpdateSkillTimer(float timer)
+    {
+        m_skillTimer = timer;
+    }
 }

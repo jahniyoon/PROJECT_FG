@@ -13,7 +13,7 @@ namespace JH
 
         [field: SerializeField] public TargetTag Target { get; private set; }
 
-        [field: SerializeField] public BuffBase DamageReductionBuff { get; private set; }
+        [field: SerializeField] public BuffData DamageReductionBuff { get; private set; }
       
 
 

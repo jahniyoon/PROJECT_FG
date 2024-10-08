@@ -42,12 +42,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Angle: 134.5
+    - _Angle: 0
     - _InnerScale: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rotate: 0
-    - _SliderScale: 0.5
+    - _SliderScale: 0
     - _Threshold: 0
     m_Colors:
     - _MainColor: {r: 1, g: 0, b: 0, a: 0.5254902}

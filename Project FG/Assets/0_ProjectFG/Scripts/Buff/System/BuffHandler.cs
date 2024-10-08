@@ -56,7 +56,7 @@ namespace JH
             // 장착된 버프들을 활성화한다.
             foreach (var buff in m_inherenceBuff)
             {
-                int casterID = GFunc.XORCombine(this.gameObject.GetInstanceID(), buff.GetInstanceID());
+                int casterID = GFunc.XORCombine(this.gameObject.GetInstanceID(), buff.ID);
                 AddBuff(casterID, buff);
             }
         }
@@ -65,7 +65,7 @@ namespace JH
         public void OnBuff(GameObject caster, BuffBase buff)
         {
             // 키가 중복되지 않도록 하기
-            int casterID = GFunc.XORCombine(caster.GetInstanceID(), buff.GetInstanceID());
+            int casterID = GFunc.XORCombine(caster.GetInstanceID(), buff.ID);
 
             // 버프가 이미 있으면 스택을 쌓아준다.
             if (m_buffList.ContainsKey(casterID))
@@ -221,7 +221,7 @@ namespace JH
         // isMaintain 유지가 되어야한다.
         public void RemoveBuff(GameObject caster, BuffBase buff, bool isMaintain = false)
         {
-            int casterID = GFunc.XORCombine(caster.GetInstanceID(), buff.GetInstanceID());
+            int casterID = GFunc.XORCombine(caster.GetInstanceID(), buff.ID);
             RemoveBuff(casterID, buff, isMaintain);
         }
 
@@ -234,7 +234,7 @@ namespace JH
             buffElement.Buff.ActiveBuff(this);
             buffElement.SetActive(true);
 
-            //OnlyOneBuffCheck(buffElement.Buff, buffElement.ID);
+            //OnlyOneBuffCheck(buffElement.OnBuff, buffElement.ID);
         }
 
         // 받아온 버프를 실행한다.
@@ -242,99 +242,104 @@ namespace JH
         {
             BuffBase buff = buffElement.Buff;
             buffElement.Timer += Time.deltaTime;
+            ActiveBuff(buffElement);
+            #region Legacy
+            //if(buff.Type == BuffType.None)
+            //{
 
-            // 타입에 따라 루틴이 달라진다.
-            switch (buff.Type)
-            {
-                // 1. 즉시 효과형
-                case BuffType.Immediately:
-                    {
-                        // 즉시 실행하고 지속시간을 기다린다.
-                        ActiveBuff(buffElement);
-                        while (buffElement.Timer < buff.Duration)
-                        {
-                            yield return WaitForFixedUpdate;
-                            buffElement.Timer += Time.deltaTime;
-                        }
-                        break;
-                    }
+            //// 타입에 따라 루틴이 달라진다.
+            //switch (buff.Type)
+            //{
+            //    // 1. 즉시 효과형
+            //    case BuffType.Immediately:
+            //        {
+            //            // 즉시 실행하고 지속시간을 기다린다.
+            //            ActiveBuff(buffElement);
+            //            //while (buffElement.Timer < buff.Duration)
+            //            //{
+            //            //    yield return WaitForFixedUpdate;
+            //            //    buffElement.Timer += Time.deltaTime;
+            //            //}
+            //            break;
+            //        }
 
-                //2. 조건 확인형 : 지속시간동안 조건을 충족하는지 기다린다.
-                case BuffType.TimeCondition:
-                    {
-                        // 지속시간동안 유지한다.
-                        while (0 < buffElement.Timer)
-                        {
-                            yield return WaitForFixedUpdate;
+            //    //2. 조건 확인형 : 지속시간동안 조건을 충족하는지 기다린다.
+            //    case BuffType.TimeCondition:
+            //        {
+            //            // 지속시간동안 유지한다.
+            //            while (0 < buffElement.Timer)
+            //            {
+            //                yield return WaitForFixedUpdate;
 
-                            // 조건식이 맞으면 조건식 버프가 실행된다.
-                            if (buff.CanActive(buffElement.Timer))
-                            {
-                                ActiveBuff(buffElement);
-                                buffElement.SetActive(false);
-                                buffElement.Timer = 0;    // 액티브 타이머는 리셋해준다.
-                            }
+            //                // 조건식이 맞으면 조건식 버프가 실행된다.
+            //                if (buff.CanActive(buffElement.Timer))
+            //                {
+            //                    ActiveBuff(buffElement);
+            //                    buffElement.SetActive(false);
+            //                    buffElement.Timer = 0;    // 액티브 타이머는 리셋해준다.
+            //                }
 
-                            buffElement.UpdateTimer();
-                        }
-                        break;
-                    }
-                // 3. 스택형
-                case BuffType.Stack:
-                    {
-                        // 스택이 쌓이는 방식일 경우
-                        while (0 <= buffElement.Stack)
-                        {
-                            yield return WaitForFixedUpdate;
+            //                buffElement.UpdateTimer();
+            //            }
+            //            break;
+            //        }
+            //    // 3. 스택형
+            //    case BuffType.Stack:
+            //        {
+            //            // 스택이 쌓이는 방식일 경우
+            //            while (0 <= buffElement.Stack)
+            //            {
+            //                yield return WaitForFixedUpdate;
 
-                            if (buffElement.Timer <= 0 && buffElement.isStay == false)
-                            {
-                                buffElement.StackDown();
-                                buffElement.Timer = buff.DecreaseTime;
-                            }
+            //                if (buffElement.Timer <= 0 && buffElement.isStay == false)
+            //                {
+            //                    buffElement.StackDown();
+            //                    buffElement.Timer = buff.DecreaseTime;
+            //                }
 
-                            if (buff.CanActive(buffElement.Stack))
-                            {
-                                ActiveBuff(buffElement);
-                                ResetStack(buffElement.Buff);
-                            }
+            //                if (buff.CanActive(buffElement.Stack))
+            //                {
+            //                    ActiveBuff(buffElement);
+            //                    ResetStack(buffElement.Buff);
+            //                }
 
 
-                            buffElement.UpdateTimer();
-                        }
-                        buffElement.Stack = 0;
-                        break;
-                    }
-                // 버프를 계속 받는동안 계속 유지된다.
-                case BuffType.Stay:
-                    {
-                        ActiveBuff(buffElement);
-                        while (0 < buffElement.Timer)
-                        {
-                            yield return WaitForFixedUpdate;
-                            // 이전의 픽스드 업데이트에서 버프를 못넣었다는 의미
-                            if (buffElement.isStay == false)
-                                break;
-                            buffElement.UpdateTimer();
-                        }
+            //                buffElement.UpdateTimer();
+            //            }
+            //            buffElement.Stack = 0;
+            //            break;
+            //        }
+            //    // 버프를 계속 받는동안 계속 유지된다.
+            //    case BuffType.Stay:
+            //        {
+            //            ActiveBuff(buffElement);
+            //            while (0 < buffElement.Timer)
+            //            {
+            //                yield return WaitForFixedUpdate;
+            //                // 이전의 픽스드 업데이트에서 버프를 못넣었다는 의미
+            //                if (buffElement.isStay == false)
+            //                    break;
+            //                buffElement.UpdateTimer();
+            //            }
 
-                        break;
-                    }
-                // 부착형
-                case BuffType.Attachment:
-                    {
-                        ActiveBuff(buffElement);
-                        while (true)
-                        {
-                            yield return WaitForFixedUpdate;
-                            buffElement.UpdateTimer();
-                        }
-                    }
-            }
-
+            //            break;
+            //        }
+            //    // 부착형
+            //    case BuffType.Attachment:
+            //        {
+            //            ActiveBuff(buffElement);
+            //            while (true)
+            //            {
+            //                yield return WaitForFixedUpdate;
+            //                buffElement.UpdateTimer();
+            //            }
+            //        }
+            //}
+            //}
+            #endregion
 
             // 버프가 끝나면 버프 비활성화 및 제거
-            RemoveBuff(casterID, buff);
+            //RemoveBuff(casterID, buff);
 
             yield break;
         }
@@ -465,7 +470,7 @@ namespace JH
             m_status.DeBuff(newStatus);
         }
         // 버프의 활성화를 체크한다.
-        public bool BuffEnableCheck(GameObject caster, BuffBase buff)
+        public bool BuffEnableCheck(GameObject caster, BuffData buff)
         {
             int casterID = GFunc.XORCombine(caster.GetInstanceID(), buff.GetInstanceID());
             return m_buffList.ContainsKey(casterID);

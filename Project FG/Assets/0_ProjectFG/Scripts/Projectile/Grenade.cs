@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace JH
 {
-    public class Grenade : Projectile
+    public class Grenade : DefaultProjectile
     {
         [Header("Grenade")]
         public ParticleSystem ExplosionEffect;
+        Vector3 m_targetPos;
 
         // 아무것도 안한다.
         protected override void TriggerEnter(Collider other)
@@ -17,7 +18,14 @@ namespace JH
         float timer;
         protected override void UpdatePosition()
         {
-            transform.position = Vector3.Lerp(m_spawnPos, m_targetPosition, timer / m_destroyTime);
+            m_targetPos = this.transform.position;
+            if(m_skill.Target != null)
+            {
+                m_targetPos = m_skill.Target.position;
+                m_targetPos.y = transform.position.y;
+            }
+
+            transform.position = Vector3.Lerp(m_spawnPos, m_targetPos, timer / m_skill.Data.SkillLifeTime);
             timer += Time.deltaTime;
         }
 
@@ -28,7 +36,7 @@ namespace JH
         }
         private void Explosion()
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_projectileScale);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.Data.SkillRadius);
             for (int i = 0; i < colls.Length; i++)
             {
                 if (colls[i].isTrigger)
@@ -36,11 +44,11 @@ namespace JH
                     continue;
                 }
 
-                if (colls[i].CompareTag(m_targetTag.ToString()))
+                if (colls[i].CompareTag(m_skill.Data.SkillTarget.ToString()))
                 {
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
-                        damageable.OnDamage(m_damage);
+                        damageable.OnDamage(m_skill.Data.SkillDamage);
                     }
                 }
             }
@@ -48,7 +56,7 @@ namespace JH
 
 
             var explosion = Instantiate(ExplosionEffect.gameObject, transform.position, transform.rotation, GameManager.Instance.ProjectileParent).GetComponent<ParticleSystem>();
-            explosion.transform.localScale = Vector3.one * m_projectileScale;
+            explosion.transform.localScale = Vector3.one * m_data.ProjectileScale;
             explosion.Play();
             Destroy(explosion.gameObject, 1f);
         }

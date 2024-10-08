@@ -38,20 +38,20 @@ namespace JH
         }
         #endregion
 
-        private static StringBuilder stringBuilder = new StringBuilder();
+        private static StringBuilder sb = new StringBuilder();
 
         /// <summary>
         /// 매개 변수로 받은 모든 string 인자를 더해서 반환한다.
         /// </summary>
         public static string SumString(params string[] inputs)
         {
-            stringBuilder.Clear();
+            sb.Clear();
             for (int i = 0; i < inputs.Length; i++)
             {
-                stringBuilder.Append(inputs[i]);
+                sb.Append(inputs[i]);
             }
 
-            return stringBuilder.ToString();
+            return sb.ToString();
         }
         public static string[] Split(string input)
         {
@@ -72,6 +72,35 @@ namespace JH
 
             return str.Select(int.Parse).ToArray();
 
+        }
+        public static string IntsToString(int[] id)
+        {
+            sb.Clear();
+            if (id == null || id.Length == 0)
+                return "-";
+
+            for (int i = 0; i < id.Length; i++)
+            {
+                sb.Append(id[i]);
+                if(i != id.Length - 1)
+                    sb.Append(", ");
+            }
+            return sb.ToString();
+        }
+        public static string FloatsToString(float[] id)
+        {
+            sb.Clear();
+            if (id == null || id.Length == 0)
+                return "-";
+
+
+            for (int i = 0; i < id.Length; i++)
+            {
+                sb.Append(id[i]);
+                if (i != id.Length - 1)
+                    sb.Append(", ");
+            }
+            return sb.ToString();
         }
         // 각도를 제한하는 함수
         public static float ClampAngle(float lfAngle, float lfMin, float lfMax)
@@ -176,6 +205,29 @@ namespace JH
                 return null;
             }
             return gameData.GameData[ID].Data;
+        }
+
+        public static SkillBase GetSkillPrefab(int skillID)
+        {
+            PrefabData skillData = Resources.Load<PrefabData>("Data/PrefabData");           
+            return skillData.TryGetSkill(skillID);
+        }
+        public static ProjectileBase GetProjectilePrefab(int projectileID)
+        {
+            PrefabData skillData = Resources.Load<PrefabData>("Data/PrefabData");
+            return skillData.TryGetProjectile(projectileID);
+
+
+        }
+
+        public static BuffData GetBuff(int buffID)
+        {
+            BuffDataBase buffData = Resources.Load<BuffDataBase>("Data/BuffData");
+            return buffData.TryGetBuff(buffID);
+        }
+        public static BuffDataBase BuffData()
+        {
+            return Resources.Load<BuffDataBase>("Data/BuffData");
         }
 
         public static Quaternion GetQuaternion(AimType AimType, Transform transform)

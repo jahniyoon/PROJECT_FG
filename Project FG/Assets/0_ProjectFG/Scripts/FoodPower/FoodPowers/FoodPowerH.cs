@@ -27,7 +27,7 @@ namespace JH
             m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
             m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
 
-            m_activeSkill.ActiveSkill();
+            m_activeSkill.LeagcyActiveSkill();
         }
         public override void Inactive()
         {

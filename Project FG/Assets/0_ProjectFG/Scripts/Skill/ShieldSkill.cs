@@ -10,10 +10,11 @@ namespace JH
         private GameObject m_shield;
         [Header("Shield Skill")]
         [SerializeField] private float m_coolDownTimer;
+        BuffBase m_shieldBuff;
 
         protected override void Init()
         {
-            m_subData = m_skillData as ShieldSkillData;
+            m_subData = m_data as ShieldSkillData;
             if (m_subData == null)
             { 
                 Debug.LogError("데이터를 확인해주세요.");
@@ -23,6 +24,8 @@ namespace JH
             m_shield = Instantiate(m_subData.ShieldPrefab, Position);
             m_shield.transform.localEulerAngles = Vector3.zero;
             m_shield.SetActive(false);
+
+            m_shieldBuff = BuffFactory.CreateBuff(m_subData.ShieldBuff);
 
             SetDuration(m_subData.SkillDuration);
         }
@@ -38,11 +41,11 @@ namespace JH
         }
 
 
-        public override void ActiveSkill()
+        public override void LeagcyActiveSkill()
         {
-            base.ActiveSkill();
+            base.LeagcyActiveSkill();
             if (Caster.TryGetComponent<BuffHandler>(out BuffHandler buff))
-                buff.OnBuff(Caster, m_subData.ShieldBuff);
+                buff.OnBuff(Caster, m_shieldBuff);
 
             m_shield.SetActive(true);
             m_coolDownTimer = m_subData.SkillCoolDown;

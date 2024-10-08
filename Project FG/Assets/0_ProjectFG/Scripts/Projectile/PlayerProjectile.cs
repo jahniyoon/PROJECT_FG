@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace JH
 {
-    public class PlayerProjectile : Projectile
+    public class PlayerProjectile : DefaultProjectile
     {
         protected override bool IgnoreCollider(Collider other)
         {
             // 적이면 적 관통하도록 하기
-            if (m_targetTag == TargetTag.Enemy)
+            if (m_skill.Data.SkillTarget == TargetTag.Enemy)
                 return other.isTrigger || other.CompareTag("Player");
 
             return other.isTrigger || other.CompareTag("Player");

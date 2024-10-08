@@ -8,21 +8,26 @@ namespace JH
 
     public class StunBuff : BuffBase
     {
-        [Header("Stun Buff")]
-        [SerializeField] private float m_stunDuration;
-
-        public override void ActiveBuff(BuffHandler handler)
+        public StunBuff(BuffData data):base(data) 
         {
-            base.ActiveBuff(handler);
-            StatusInit();
-            handler.BuffStatus(Status);
+            m_data = data;
         }
 
+        [Header("Stun Buff")]
+        [SerializeField] private float m_stunDuration;
         public override void StatusInit()
         {
             Status status = new Status();
             status.Init(StunTimer: m_stunDuration);
             m_status = status;
         }
+        public override void ActiveBuff(BuffHandler handler)
+        {
+            base.ActiveBuff(handler);
+            StatusInit();
+            handler.BuffStatus(m_status);
+        }
+
+     
     }
 }

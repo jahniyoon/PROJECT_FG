@@ -17,9 +17,9 @@ namespace JH
         [Tooltip("스킬 범위")]
         [field: SerializeField] public float SkillAreaRadius { get; private set; }
 
-        [field: SerializeField] public BuffBase FrozenDebuff { get; private set; }
-        [field: SerializeField] public BuffBase SlowDebuff { get; private set; }
-        [field: SerializeField] public BuffBase DotDamageBuff { get; private set; }
+        [field: SerializeField] public BuffData FrozenDebuff { get; private set; }
+        [field: SerializeField] public BuffData SlowDebuff { get; private set; }
+        [field: SerializeField] public BuffData DotDamageBuff { get; private set; }
 
 
 

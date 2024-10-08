@@ -15,20 +15,29 @@ MonoBehaviour:
   <ID>k__BackingField: 30400
   <Name>k__BackingField: D1 Radius
   <Description>k__BackingField: "\uC801 D1\uC758 \uBC94\uC704 \uD3ED\uACA9 \uAE30\uC220"
-  <BaseType>k__BackingField: 5
+  <BaseType>k__BackingField: 4
   <SkillTarget>k__BackingField: 1
+  <ActiveTime>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 3
   <SkillDuration>k__BackingField: 0
   <SkillDamage>k__BackingField: 10
-  <AimType>k__BackingField: 10
+  <AimType>k__BackingField: 12
   <SkillRange>k__BackingField: 5
+  <SkillDelay>k__BackingField: 0
+  <SkillSpeed>k__BackingField: 0.5
   <ProjectileID>k__BackingField: bc600100
   <ProjectileOffset>k__BackingField: 0
   <SkillRadius>k__BackingField: 2.5
   <SkillArc>k__BackingField: 360
   <SkillLifeTime>k__BackingField: 0.1
-  <BuffID>k__BackingField: 
+  <BuffID>k__BackingField: 683c0100
+  <BuffValues>k__BackingField:
+  - 2
+  - 0.1
   <Value1>k__BackingField:
   - 1
-  <Value2>k__BackingField: []
+  - 1
+  <Value2>k__BackingField:
+  - 1
+  - 1
   <Value3>k__BackingField: []

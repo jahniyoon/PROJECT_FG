@@ -13,13 +13,27 @@ MonoBehaviour:
   m_Name: Enemy G Heal Skill
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 30103
-  <SkillName>k__BackingField: 
+  <Name>k__BackingField: 
   <Description>k__BackingField: "\uC801\uC758 \uD790"
-  <SkillDuration>k__BackingField: -1
+  <BaseType>k__BackingField: 0
+  <SkillTarget>k__BackingField: 0
   <SkillCoolDown>k__BackingField: 0
+  <SkillDuration>k__BackingField: -1
+  <SkillDamage>k__BackingField: 0
+  <AimType>k__BackingField: 0
+  <SkillRange>k__BackingField: 0
+  <ProjectileID>k__BackingField: 
+  <ProjectileOffset>k__BackingField: 0
+  <SkillRadius>k__BackingField: 3
+  <SkillArc>k__BackingField: 0
+  <SkillLifeTime>k__BackingField: 0
+  <BuffID>k__BackingField: 
+  <Value1>k__BackingField: []
+  <Value2>k__BackingField: []
+  <Value3>k__BackingField: []
   <Target>k__BackingField: 0
   <HealBuff>k__BackingField: {fileID: 11400000, guid: 05f1c15a7e06bef418d2c6945cb64168,
     type: 2}
-  <SkillRadius>k__BackingField: 3
+  <Radius>k__BackingField: 3
   <HealPrefab>k__BackingField: {fileID: 2500426658639734181, guid: cae13e63e0d4d474e9e6fbc2656d2b79,
     type: 3}
