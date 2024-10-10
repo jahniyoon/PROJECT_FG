@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.48, y: 0.48, z: 0.48}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4698659033719124858}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 3145825780146295158}
   m_Layer: 0
   m_Name: "90200  PROJECTILE  ENEMY C \uD22C\uC0AC\uCCB4"
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,6 +216,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 2aa058fff715f4a40abdc07cd5f9ea9c, type: 2}
   m_skill: {fileID: 0}
+  m_buffs: []
+  m_particles: []
+  m_effects: []
+  m_debug: {fileID: 0}
+  m_debugMode: 0
   m_penetrateCount: 0
 --- !u!135 &6907334222896031824
 SphereCollider:
@@ -236,7 +241,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.125
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3145825780146295158
 Rigidbody:

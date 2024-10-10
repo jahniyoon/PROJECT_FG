@@ -18,29 +18,27 @@ MonoBehaviour:
   <BaseType>k__BackingField: 2
   <SkillTarget>k__BackingField: 1
   <ActiveTime>k__BackingField: 0
-  <SkillCoolDown>k__BackingField: 10
-  <SkillDuration>k__BackingField: 10
-  <SkillDamage>k__BackingField: 0
   <AimType>k__BackingField: 6
-  <SkillRange>k__BackingField: 0
+  <TargetLayer>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1536
+  <LevelData>k__BackingField:
+    CoolDown: 10
+    Duration: 10
+    Damage: 0
+    Range: 0
+    ProjectileOffset: 0
+    Radius: 3
+    Arc: 360
+    LifeTime: -1
+    Count: 1
+    BuffValues:
+    - 25
+    - 10
+    Value1: []
+    Value2: []
+    Value3: []
   <SkillDelay>k__BackingField: 0
   <SkillSpeed>k__BackingField: 0
-  <ProjectileID>k__BackingField: 20610100
-  <ProjectileOffset>k__BackingField: 0
-  <SkillRadius>k__BackingField: 3
-  <SkillArc>k__BackingField: 360
-  <SkillLifeTime>k__BackingField: -1
   <BuffID>k__BackingField: e4380100
-  <BuffValues>k__BackingField:
-  - 25
-  - 10
-  <Value1>k__BackingField:
-  - 25
-  <Value2>k__BackingField:
-  - 1
-  - 10
-  <Value3>k__BackingField:
-  - 1
-  - 5
-  - 1
-  - 0.2
+  <ProjectileID>k__BackingField: 20610100

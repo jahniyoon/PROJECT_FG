@@ -50,17 +50,29 @@ namespace JH
             gameData.GameData[ID] = newData;
         }
 
-        public FoodPowerLevelData GetLevelData(int level)
+        public FoodPowerLevelData GetFoodPowerLevelData(int level)
         {
             if (LevelDatas.Length <= level)
             {
-                //Debug.Log($"{Name}의 '{level+1}'번째 레벨데이터를 찾을 수 없습니다.");
+                //DebugProjectile.Log($"{Name}의 '{level+1}'번째 레벨데이터를 찾을 수 없습니다.");
                 int nextLevel = LevelDatas.Length - 1;
                 if (nextLevel < 0)
                     nextLevel = 0;
                 return LevelDatas[nextLevel];
             }
             return LevelDatas[level];
+        }
+        public LevelData GetLevelData(int level)
+        {
+            if (LevelDatas.Length <= level)
+            {
+                //DebugProjectile.Log($"{Name}의 '{level+1}'번째 레벨데이터를 찾을 수 없습니다.");
+                int nextLevel = LevelDatas.Length - 1;
+                if (nextLevel < 0)
+                    nextLevel = 0;
+                return LevelDatas[nextLevel].LevelData;
+            }
+            return LevelDatas[level].LevelData;
         }
 
         //  데이터를 업데이트한다.
@@ -123,17 +135,7 @@ namespace JH
                 if (item.ColumnID == "BuffID")
                     BuffID = GFunc.StringToInts(item.Value);
 
-                if (item.ColumnID == "BuffValue")
-                    BuffValues = GFunc.StringToFloats(item.Value);
-
-                if (item.ColumnID == "Value1")
-                    Value1 = GFunc.StringToFloats(item.Value);
-
-                if (item.ColumnID == "Value2")
-                    Value2 = GFunc.StringToFloats(item.Value);
-
-                if (item.ColumnID == "Value3")
-                    Value3 = GFunc.StringToFloats(item.Value);
+  
 
                 if (item.ColumnID == "SkillDelay")
                     SkillDelay = float.Parse(item.Value);

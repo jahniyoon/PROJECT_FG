@@ -22,7 +22,6 @@ namespace JH
         protected override void StartInit()
         {
             base.StartInit();
-            ActiveRoutineSkill();
             m_aimSkill = TryGetSkill(0);
         }
 
@@ -39,12 +38,6 @@ namespace JH
         }
 
 
-        // 루틴 스킬을 실행한다.
-        private void ActiveRoutineSkill()
-        {
-            for (int i = 0; i < m_routineSkills.Count; i++)
-                m_routineSkills[i].StartSkillRoutine();
-        }
 
         public override bool CanActiveSkill()
         {
@@ -104,7 +97,7 @@ namespace JH
             }
 
             // 조준 완료상태에서타겟의 각도가 스킬 범위 밖이면 이동상태
-            if (m_isAim && m_aimSkill.Data.SkillArc * 0.5f < Mathf.Abs(TargetAngle()))
+            if (m_isAim && m_aimSkill.Data.LevelData.Arc * 0.5f < Mathf.Abs(TargetAngle()))
             {
                 return false;
             }

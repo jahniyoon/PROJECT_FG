@@ -23,20 +23,19 @@ namespace JH
         private void UpdateLevel()
         {
             if(m_activeSkill)
-            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
+            m_activeSkill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
         }
 
         public override void Active()
         {
-            Vector3 position = m_casterPosition.position;
+            Vector3 position = Caster.Transform.position;
 
             Quaternion direction = GetDirection();
 
-            m_activeSkill = Instantiate(m_skill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
-            m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
-            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
+            m_activeSkill = Instantiate(m_skill.gameObject, position, direction, Caster.Transform).GetComponent<FoodPowerSkill>();
+            m_activeSkill.SkillInit(Caster);
+            m_activeSkill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
 
-            m_activeSkill.LeagcyActiveSkill();
         }
         public override void Inactive()
         {

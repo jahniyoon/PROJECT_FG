@@ -11,7 +11,6 @@ namespace JH
 
         [Header("Aim Shader")]
         [SerializeField] private AimShader m_aimShader;
-        [SerializeField] private LayerMask m_targetLayer;
         [SerializeField] private Transform m_targetMark;
 
 
@@ -24,20 +23,16 @@ namespace JH
         [SerializeField] private float m_attackTimer;
         [SerializeField] private float m_shootTimer;
 
+        [SerializeField] ProjectileBase m_hitScan;
 
         Coroutine m_skillRoutine;
         private bool m_aimReady;
-        public LayerMask TargetLayer => m_targetLayer;
         
 
         protected override void Init()
         {
-            for (int i = 0; i < m_projectiles.Count; i++)
-            {
-                var projectile = CreateProjectile(m_projectiles[i]);
-                m_projectiles[i] = projectile;
-            }
-            if(Caster.TryGetComponent<IAimSkillCaster>(out IAimSkillCaster aimCaster))
+            CreateProjectiles();
+            if(Caster.Transform.TryGetComponent<IAimSkillCaster>(out IAimSkillCaster aimCaster))
             {
                 m_aimCaster = aimCaster;
             }
@@ -91,9 +86,11 @@ namespace JH
                 AimEnable(m_aimCaster.AimState == AimState.Shoot);
                 m_targetMark.gameObject.SetActive(m_aimCaster.AimState == AimState.Aim);
 
-
+                // 조준상태
                 if (m_aimCaster.AimState == AimState.Aim)
                     AimBehavior();
+
+                // 조준 이후 상태
                 else if(m_aimCaster.AimState == AimState.Shoot)
                     ShootBehavior();
 
@@ -108,10 +105,11 @@ namespace JH
         private void AimBehavior()
         {
 
-            if(Data.TryGetValue1(1) < m_aimTimer)
+            if(Data.LevelData.TryGetValue1(1) < m_aimTimer)
             {
                 ResetAimTimer();
                 m_aimReady = true;
+
                 return;
             }
             m_aimTimer += Time.deltaTime;
@@ -121,26 +119,25 @@ namespace JH
             markPos.z += 1f;
 
             m_targetMark.transform.position = markPos;
-            m_targetMark.transform.localScale = Vector3.one * (m_aimTimer - Data.TryGetValue1(1)) * 0.5f;
+            m_targetMark.transform.localScale = Vector3.one * (m_aimTimer - Data.LevelData.TryGetValue1(1)) * 0.5f;
+            transform.rotation = Caster.Model.rotation;
+
         }
 
         private void ShootBehavior()
         {
-            AimSlider(m_attackTimer / Data.SkillDuration);
+            AimSlider(m_attackTimer / Data.LevelData.Duration);
 
-            if(Data.SkillDuration < m_attackTimer)
+            if(Data.LevelData.Duration < m_attackTimer)
             {
                 ResetAimTimer();
                 m_aimReady = false;
                 return;
             }
             // 바로 발사하도록 하기위해, 슛 타이머가 0이 될 때마다 발사
-            if (Data.TryGetValue1() <= m_shootTimer)
+            if (Data.LevelData.TryGetValue1() <= m_shootTimer)
             {
-                for (int i = 0; i < m_projectiles.Count; i++)
-                {
-                    ActiveProjectile(m_projectiles[i]);
-                }
+                ActiveProjectiles();
                 m_shootTimer = 0;
             }
 

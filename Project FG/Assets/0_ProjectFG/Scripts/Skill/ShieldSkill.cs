@@ -21,13 +21,13 @@ namespace JH
                 return;
             }
 
-            m_shield = Instantiate(m_subData.ShieldPrefab, Position);
+            m_shield = Instantiate(m_subData.ShieldPrefab, Caster.Model);
             m_shield.transform.localEulerAngles = Vector3.zero;
             m_shield.SetActive(false);
 
             m_shieldBuff = BuffFactory.CreateBuff(m_subData.ShieldBuff);
 
-            SetDuration(m_subData.SkillDuration);
+            SetDuration(m_subData.Duration);
         }
 
         protected override void UpdateBehavior()
@@ -35,20 +35,15 @@ namespace JH
             m_coolDownTimer = 0 < m_coolDownTimer ? m_coolDownTimer - Time.deltaTime : 0;
         }
 
-        public override bool CanActiveSkill(bool enable = true)
-        {
-            return m_coolDownTimer <= 0;
-        }
 
-
-        public override void LeagcyActiveSkill()
+        public override void ActiveSkill()
         {
-            base.LeagcyActiveSkill();
-            if (Caster.TryGetComponent<BuffHandler>(out BuffHandler buff))
-                buff.OnBuff(Caster, m_shieldBuff);
+            base.ActiveSkill();
+            if (Caster.Transform.TryGetComponent<BuffHandler>(out BuffHandler buff))
+                buff.OnBuff(Caster.GameObject, m_shieldBuff);
 
             m_shield.SetActive(true);
-            m_coolDownTimer = m_subData.SkillCoolDown;
+            m_coolDownTimer = m_subData.LevelData.CoolDown;
         }
 
 

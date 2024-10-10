@@ -20,7 +20,7 @@ namespace JH
             CanvasRect = transform.root.GetComponent<RectTransform>();
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if (m_target != null)
                 SetPosition(m_target.position);
@@ -41,7 +41,7 @@ namespace JH
 
 
             m_target = position;
-
+            SetPosition(position.position);
             int valueInt = (int)value;
             if(value - value == 0)
             m_textMeshPro.text = value.ToString();
@@ -60,6 +60,7 @@ namespace JH
 
         public void DamageEnd()
         {
+            m_target = null;
             this.gameObject.SetActive(false);
         }
 

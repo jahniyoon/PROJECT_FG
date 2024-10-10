@@ -55,4 +55,5 @@ MonoBehaviour:
   LevelUpEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_skill: {fileID: 3861836039137434517, guid: 78f62e23b25f1a647af4becc2a0c3454, type: 3}
+  m_aimShootSkill: {fileID: 3861836039137434517, guid: b519b34456e3b3a43986a3e1cda56873,
+    type: 3}

@@ -10,6 +10,9 @@ namespace JH
 
         public void UpdateSkillTimer(float timer);
         public FSMState State { get; }
+        public Transform Transform { get; }
+        public Transform Model { get; }
+        public GameObject GameObject { get; }
 	}
 
     public interface IAimSkillCaster

@@ -220,7 +220,16 @@ namespace JH
 
         }
 
-        public static BuffData GetBuff(int buffID)
+        public static BuffBase TryGetBuff(int buffID)
+        {
+            BuffData data = GetBuffData(buffID);
+            if(data == null)
+                return null;
+
+            return BuffFactory.CreateBuff(data);
+
+        }
+        public static BuffData GetBuffData(int buffID)
         {
             BuffDataBase buffData = Resources.Load<BuffDataBase>("Data/BuffData");
             return buffData.TryGetBuff(buffID);
@@ -244,15 +253,15 @@ namespace JH
 
                     //// 가까운 타겟 방향
                     //case AimType.NearTargetDirection:
-                    //    Transform target = ScanPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                    //    Transform target = ScanPosition(Model.position, m_data.TargetNearestScanRadius);
 
                     //    // 타겟이 Null이 아닐 경우에만
                     //    if (target != null)
-                    //        return Quaternion.LookRotation(target.position - m_casterPosition.position);
+                    //        return Quaternion.LookRotation(target.position - Model.position);
 
                     //    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
                     //    else if (target == null && m_data.AlwaysShoot)
-                    //        return m_casterPosition.rotation;
+                    //        return Model.rotation;
 
                     //    break;
 
@@ -269,7 +278,7 @@ namespace JH
 
                     //// 랜덤한 적 방향
                     //case AimType.RandomEnemyDirection:
-                    //    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, m_data.TargetNearestScanRadius);
+                    //    Transform randomTarget = ScanRandomPosition(Model.position, m_data.TargetNearestScanRadius);
 
                     //    // 타겟이 Null이 아닐 경우에만
                     //    if (randomTarget != null)

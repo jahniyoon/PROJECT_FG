@@ -20,7 +20,7 @@ namespace JH
 
             if (handler.TryGetComponent<IKnockbackable>(out IKnockbackable knockbackable))
             {
-                knockbackable.OnKnockback(m_caster.position, GetValue1(0), GetValue1(1));
+                knockbackable.OnKnockback(m_caster.position, GetBuffValue(0), GetBuffValue(1));
             }
         }
         

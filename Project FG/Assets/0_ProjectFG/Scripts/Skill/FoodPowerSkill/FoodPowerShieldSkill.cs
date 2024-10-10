@@ -7,110 +7,88 @@ namespace JH
 {
     public class FoodPowerShieldSkill : FoodPowerSkill
     {
-        private FoodPowerBSkillData m_subData;
-        [Header("실드 스킬")]
-        [SerializeField] private GameObject m_shield;
+        [Header("실드 이펙트")]
+        [SerializeField] private GameObject m_shieldEffect;
         [SerializeField] private ParticleSystem m_knockbackEffect;
-        [SerializeField] private float m_knockbackCooldown;
-        [Header("넉백 시간")]
-        [SerializeField] private float m_knockbackDuration = 0.1f;
 
-        BuffBase m_shieldBuff;
+        [SerializeField] BuffBase m_shieldBuff;
+        [SerializeField] BuffBase m_knockBackBuff;
 
 
         protected override void Init()
         {
-            m_subData = m_data as FoodPowerBSkillData;
-            if (m_subData == null)
-            {
-                Debug.LogError("데이터를 확인해주세요.");
-                return;
-            }
+            base.Init();
 
-            m_shieldBuff = BuffFactory.CreateBuff(m_subData.DamageReductionBuff);
-            //var buff = m_subData.DamageReductionBuff as DamageReductionBuff;
-
-            float[] values = new float[1] { m_levelData.GetAdditionalValue(0) };
-            m_shieldBuff.SetBuffValue(values);
-
-        }
-        // 비활성화되면 리스너를 모두 제거한다.
-        private void OnDisable()
-        {
-            if (Caster.TryGetComponent<Damageable>(out Damageable damageable))
-            {
-                damageable.DamageEvent.RemoveListener(KnockBack);
-            }
-        }
-
-        public override void LeagcyActiveSkill()
-        {
-            base.LeagcyActiveSkill();
-
-            // 피해감소 스킬
-            if (Caster.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
-            {
-
-                buffHandler.OnBuff(Caster, m_shieldBuff);
-            }
+            //  피해감소 버프 가져오기
+            m_shieldBuff = GFunc.TryGetBuff(Data.TryGetBuffID(0));
 
             // 넉백 이벤트 연결
-            if (Caster.TryGetComponent<Damageable>(out Damageable damageable))
+            if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
+                damageable.DamageEvent.AddListener(DamageEvent);
+
+            // 넉백 버프 가져오기
+            m_knockBackBuff = GFunc.TryGetBuff(Data.TryGetBuffID(1));
+
+        }
+
+      
+        // 레벨데이터가 변경될 때 호출되는 메서드
+        protected override void LevelDataChange()
+        {
+            base.LevelDataChange();
+            if (m_shieldBuff != null)
             {
-                damageable.DamageEvent.AddListener(KnockBack);
+                float[] damageBuffValue = new float[1] { LevelData.TryGetBuffValue() };
+                m_shieldBuff.SetBuffValue(damageBuffValue);
+            }
+
+            if (m_knockBackBuff != null)
+            {
+                m_knockBackBuff.SetCaster(transform);
+                float[] knockBackBuffValue = new float[2] { LevelData.TryGetBuffValue(1), LevelData.TryGetBuffValue(2) };
+                m_knockBackBuff.SetBuffValue(knockBackBuffValue);
             }
 
 
-            StartCoroutine(ActiveSkillRoutine());
+            // 피해감소 버프 활성화
+            if (Caster.Transform.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
+            {
+                buffHandler.RemoveBuff(Caster.GameObject, m_shieldBuff);
+                buffHandler.OnBuff(Caster.GameObject, m_shieldBuff);
+            }
         }
 
-        protected override void UpdateBehavior()
+        public override void ActiveSkill()
         {
-            // 0 미만이면 시간을 더 빼지 않는다.
-            m_knockbackCooldown = 0 <= m_knockbackCooldown ? m_knockbackCooldown - Time.deltaTime : 0;
+            base.ActiveSkill();
+            m_shieldEffect.gameObject.SetActive(true);
         }
 
 
-
-        public void KnockBack()
+        // 캐스터가 데미지 입혀질 경우
+        public void DamageEvent()
         {
-            // 쿨타임 한번 체크한다.
-            if (0 < m_knockbackCooldown)
+            if (State == SkillState.Reloading)
                 return;
-            // 쿨타임 업데이트
-            m_knockbackCooldown = m_levelData.CoolDown;
+
 
             m_knockbackEffect.Stop();
-            m_knockbackEffect.transform.parent.localScale = Vector3.one * m_levelData.Radius;
+            m_knockbackEffect.transform.parent.localScale = Vector3.one * LevelData.Radius;
             m_knockbackEffect.Play();
 
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_levelData.Radius);
+            Collider[] colls = Physics.OverlapSphere(transform.position, LevelData.Radius, Data.TargetLayer, QueryTriggerInteraction.Ignore);
             for (int i = 0; i < colls.Length; i++)
             {
-                if (colls[i].isTrigger)
-                {
+                if (colls[i].CompareTag(Data.SkillTarget.ToString()) == false)
                     continue;
-                }
 
+                if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
+                    damageable.OnDamage(LevelData.Damage);
 
-                if (colls[i].CompareTag(m_subData.Target.ToString()))
-                {
-
-                    if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
-                    {
-                        damageable.OnDamage(m_levelData.Damage);
-                    }
-                    if (colls[i].TryGetComponent<IKnockbackable>(out IKnockbackable knockbackable))
-                    {
-                        float distance = Vector3.Distance(transform.position, colls[i].transform.position);
-                        Vector3 hitPoint = colls[i].ClosestPoint(transform.position);
-                        knockbackable.OnKnockback(hitPoint, m_levelData.GetAdditionalValue(1), m_knockbackDuration);
-                    }
-
-
-                }
+                    if (colls[i].TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
+                    buffHandler.OnBuff(Caster.GameObject, m_knockBackBuff);
             }
-
+            InactiveSkill();
 
         }
 
@@ -119,21 +97,23 @@ namespace JH
         {
             base.InactiveSkill();
 
-            if (Caster.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
-            {
-                buffHandler.RemoveBuff(Caster, m_shieldBuff);
-            }
-
-            Destroy(gameObject);
+            StopEffect();
 
         }
 
-        void OnDrawGizmosSelected()
+        // 비활성화되면 리스너를 모두 제거한다.
+        private void OnDisable()
         {
-            Gizmos.color = new Color(1, 0, 0, 0.5f);
-            Gizmos.DrawSphere(transform.position, 1);
-            //   Gizmos.DrawSphere(transform.position + transform.GetChild(0).forward * m_attackOffset, m_attackRadius);
+            // 피해감소 버프 비활성화
+            if (Caster.GameObject.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
+                buffHandler.RemoveBuff(Caster.GameObject, m_shieldBuff);
+
+            if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
+            {
+                damageable.DamageEvent.RemoveListener(DamageEvent);
+            }
         }
+
 
     }
 }

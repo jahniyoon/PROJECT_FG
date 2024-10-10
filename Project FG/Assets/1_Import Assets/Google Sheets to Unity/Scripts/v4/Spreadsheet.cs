@@ -313,7 +313,7 @@ namespace GoogleSheetsToUnity
                  {
                      foreach(var merge in data.sheetInfo.merges)
                      {
-                         Debug.Log("Merge starts at : " + merge.startRowIndex + " " + GoogleSheetsToUnityUtilities.ExcelColumnFromNumber(merge.startColumnIndex));
+                         DebugProjectile.Log("Merge starts at : " + merge.startRowIndex + " " + GoogleSheetsToUnityUtilities.ExcelColumnFromNumber(merge.startColumnIndex));
                      }
                  }
              }*/

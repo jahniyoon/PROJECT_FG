@@ -18,7 +18,7 @@ namespace JH
         {
             Transform parent = GameManager.Instance.ProjectileParent;
 
-            Vector3 position = m_casterPosition.position;
+            Vector3 position = Caster.Transform.position;
             position.y += m_offset;
 
             Quaternion direction = GetDirection();

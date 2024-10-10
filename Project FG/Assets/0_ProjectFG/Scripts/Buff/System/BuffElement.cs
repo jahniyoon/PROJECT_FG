@@ -21,7 +21,7 @@ namespace JH
         // 켜지기
         public void SetActive(bool enable)
         {
-            //Debug.Log("켠다");
+            //DebugProjectile.Log("켠다");
             isActive = enable;
         }
         // 스택 올리기
@@ -29,18 +29,18 @@ namespace JH
         {
             Timer = 0;
             Stack++;
-            //Debug.Log(ID + " 스택 업 : " + Stack);
+            //DebugProjectile.Log(ID + " 스택 업 : " + Stack);
         }
         // 스택 내리기
         public void StackDown()
         {
             Stack--;
-            //Debug.Log(ID + " 스택 다운 : " + Stack);
+            //DebugProjectile.Log(ID + " 스택 다운 : " + Stack);
         }
         // 스택 리셋
         public void ResetStack()
         {
-            //Debug.Log(ID + " 스택 리셋");
+            //DebugProjectile.Log(ID + " 스택 리셋");
             Timer = 0;
             Stack = 0;
             isActive = false;
@@ -48,7 +48,7 @@ namespace JH
 
         public void MainTain(BuffElement buff)
         {
-            //Debug.Log("계승");
+            //DebugProjectile.Log("계승");
             this.Stack = buff.Stack;
             this.Timer = buff.Timer;
             this.isActive = buff.isActive;

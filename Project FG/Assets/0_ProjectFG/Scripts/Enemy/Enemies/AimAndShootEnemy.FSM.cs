@@ -148,7 +148,7 @@ namespace JH
             m_aimState = AimState.Shoot;
 
             // 사격 종료
-            if (m_aimSkill.Data.SkillDuration <= m_shootingTimer)
+            if (m_aimSkill.Data.Duration <= m_shootingTimer)
             {
                 m_aimState = AimState.Reload;
 

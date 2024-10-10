@@ -9,9 +9,9 @@ namespace JH
 	{
         [SerializeField] private VisualEffect m_collisionEffect;
 
-        public override void LeagcyActiveSkill()
+        public override void ActiveSkill()
         {
-            base.LeagcyActiveSkill();
+            base.ActiveSkill();
             Invoke(nameof(StopEffect), m_data.SkillLifeTime);
         }
 

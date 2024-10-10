@@ -18,133 +18,192 @@ MonoBehaviour:
   <BaseType>k__BackingField: 12
   <SkillTarget>k__BackingField: 0
   <ActiveTime>k__BackingField: 1
-  <SkillCoolDown>k__BackingField: 0
-  <SkillDuration>k__BackingField: 0
-  <SkillDamage>k__BackingField: 0
   <AimType>k__BackingField: 6
-  <SkillRange>k__BackingField: 0
+  <TargetLayer>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1536
+  <LevelData>k__BackingField:
+    CoolDown: 0
+    Duration: 0
+    Damage: 0
+    Range: 0
+    ProjectileOffset: 0
+    Radius: 0
+    Arc: 0
+    LifeTime: 0
+    Count: 1
+    BuffValues: []
+    Value1: []
+    Value2: []
+    Value3: []
   <SkillDelay>k__BackingField: 0
   <SkillSpeed>k__BackingField: 0
-  <ProjectileID>k__BackingField: 
-  <ProjectileOffset>k__BackingField: 0
-  <SkillRadius>k__BackingField: 0
-  <SkillArc>k__BackingField: 0
-  <SkillLifeTime>k__BackingField: 0
-  <BuffID>k__BackingField: 
-  <BuffValues>k__BackingField: []
-  <Value1>k__BackingField: []
-  <Value2>k__BackingField: []
-  <Value3>k__BackingField: []
+  <BuffID>k__BackingField: a03b0100
+  <ProjectileID>k__BackingField: 34610100
   <Icon>k__BackingField: {fileID: 21300000, guid: f6ce302cbbde71d4e808327772be1ac3,
     type: 3}
   <LevelDatas>k__BackingField:
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv1"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv1"
     ID: 60047
-    CoolDown: 1
-    Damage: 10
-    Range: 0
-    Radius: 3
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 10
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 10
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 3
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 10
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv2"
     ID: 60048
-    CoolDown: 1
-    Damage: 12
-    Range: 0
-    Radius: 3
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 15
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 12
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 3
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 15
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv3"
     ID: 60049
-    CoolDown: 1
-    Damage: 14
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 20
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 14
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 4
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 20
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv4"
     ID: 60050
-    CoolDown: 1
-    Damage: 16
-    Range: 0
-    Radius: 4
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 25
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 16
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 4
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 25
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv5"
     ID: 60051
-    CoolDown: 1
-    Damage: 18
-    Range: 0
-    Radius: 5
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 30
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 18
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 5
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 30
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv6"
     ID: 60052
-    CoolDown: 1
-    Damage: 20
-    Range: 0
-    Radius: 5
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 35
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 20
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 5
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 35
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv7"
     ID: 60053
-    CoolDown: 1
-    Damage: 22
-    Range: 0
-    Radius: 6
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 40
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 22
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 6
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 40
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv8"
     ID: 60054
-    CoolDown: 1
-    Damage: 26
-    Range: 0
-    Radius: 6
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 45
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 26
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 6
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 45
+      Value1: []
+      Value2: []
+      Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCF lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCF lv9"
     ID: 60055
-    CoolDown: 1
-    Damage: 30
-    Range: 0
-    Radius: 7
-    Duration: -1
-    Count: 1
-    AimType: 0
-    AdditionalValues:
-    - 50
+    LevelData:
+      CoolDown: 1
+      Duration: -1
+      Damage: 30
+      Range: 0
+      ProjectileOffset: 0
+      Radius: 7
+      Arc: 360
+      LifeTime: -1
+      Count: 1
+      BuffValues:
+      - 50
+      Value1: []
+      Value2: []
+      Value3: []
   <IngameUpgradeID>k__BackingField: 
   <AlwaysShoot>k__BackingField: 0

@@ -1,39 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace JH
 {
-	public class FoodPowerSkill : SkillBase
-	{
+    public class FoodPowerSkill : SkillBase
+    {
         [Header("푸드파워 레벨 데이터")]
-        [SerializeField] protected FoodPowerLevelData m_levelData;
-        [Header("푸드파워 조준 타입")]
-        [SerializeField] protected AimType m_aimtype;
+        [SerializeField] protected FoodPowerLevelData m_foodPowerData;
 
+
+        protected override void Init()
+        {
+            base.Init();
+        }
 
         public void SetFoodPowerData(FoodPowerLevelData levelData)
         {
-            m_levelData = levelData;
-            m_aimtype = m_levelData.AimType;
+            m_foodPowerData = levelData;
+            SetLevelData(levelData.LevelData);
+
+
+            SetDuration(LevelData.Duration);
+            m_skillCoolDown = levelData.LevelData.CoolDown;
+  
+            LevelDataChange();
         }
-        protected override IEnumerator ActiveSkillRoutine(float duration = 0)
-        {
-            float timer = 0;
 
-            // 듀레이션이 0보다 작으면 끄지 않는다.
-            if(m_levelData.Duration < 0)
-                yield break;
 
-            while (timer < m_levelData.Duration)
-            {
-                timer += Time.deltaTime;
-                yield return null;
-            }
+        protected virtual void LevelDataChange() { }
 
-            InactiveSkill();
-            yield break;
-        }
 
     }
 }

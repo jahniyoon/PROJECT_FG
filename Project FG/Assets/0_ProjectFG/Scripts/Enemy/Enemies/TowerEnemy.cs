@@ -14,7 +14,6 @@ namespace JH
         protected override void StartInit()
         {
             base.StartInit();
-            ActiveRoutineSkill();
         }
 
         protected override void Die()
@@ -34,12 +33,6 @@ namespace JH
             return true;
         }
 
-        // 루틴 스킬을 실행한다.
-        private void ActiveRoutineSkill()
-        {
-            for (int i = 0; i < m_routineSkills.Count; i++)
-                m_routineSkills[i].StartSkillRoutine();
-        }
 
 
     }

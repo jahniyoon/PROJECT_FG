@@ -14,7 +14,7 @@ namespace JH
         [SerializeField] private bool m_isDie;
 
         [SerializeField] private bool m_invincible;
-        [SerializeField] private float m_damageReduction;   // 피해 감소
+        [SerializeField] private float m_HitdamageDecrease;   // 피해 감소
         [SerializeField] private Color m_damageEffectColor = Color.white;
         [SerializeField] private bool m_execution;
 
@@ -29,7 +29,7 @@ namespace JH
 
         public bool IsDie => m_isDie;
         public bool Excution => m_execution;
-        public float DamageReduction => m_damageReduction;
+        public float HitDamageDecrease => m_HitdamageDecrease;
 
         public void SetMaxHealth(float maxHealth)
         {
@@ -78,6 +78,7 @@ namespace JH
         {
             if (IsDie)
                 return;
+
             float finalDamage = FinalDamage(damage);
 
             if (m_invincible == false)
@@ -103,7 +104,7 @@ namespace JH
         // 최종데미지
         private float FinalDamage(float damage)
         {
-            float finalDamage = damage * (100 - m_damageReduction) * 0.01f;
+            float finalDamage = damage * (100 - m_HitdamageDecrease) * 0.01f;
 
             return finalDamage;
         }
@@ -131,7 +132,7 @@ namespace JH
 
         public void SetDamageReduction(float value)
         {
-            m_damageReduction += value;
+            m_HitdamageDecrease += value;
         }
 
     }

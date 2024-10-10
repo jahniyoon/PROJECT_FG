@@ -27,20 +27,20 @@ namespace JH
         //private void CreateProjectile(ProjectileBase projectile)
         //{
         //    Transform parent = GameManager.Instance.ProjectileParent;
-        //    Vector3 position = m_casterPosition.position;
-        //    Quaternion rotation = m_casterPosition.rotation;
+        //    Vector3 position = Model.position;
+        //    Quaternion rotation = Model.rotation;
 
         //    Vector3 targetPos = transform.position;
         //    if (m_skillTarget)
         //    {
         //        targetPos = m_skillTarget.transform.position;
-        //        targetPos.y = m_casterPosition.position.y;
+        //        targetPos.y = Model.position.y;
         //    }
 
         //    switch (m_data.AimType)
         //    {
         //        case AimType.Caster:
-        //            parent = m_casterPosition;
+        //            parent = Model;
         //            break;
 
         //        case AimType.NearTargetDirection:
@@ -63,7 +63,7 @@ namespace JH
         //        default: break;
         //    }
 
-        //    position.y = m_casterPosition.position.y;
+        //    position.y = Model.position.y;
         //    var cloneProjectile = Instantiate(projectile.gameObject, position, rotation, parent).GetComponent<ProjectileBase>();
         //    cloneProjectile.SetSkill(this);
         //}

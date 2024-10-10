@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1010257665575003431}
   - component: {fileID: 4192012262988035128}
   - component: {fileID: 4784605930795097928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 20300 Enemy C
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -433,9 +433,10 @@ MonoBehaviour:
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
   m_attackCoolDown: 0
-  m_stunEffect: {fileID: 0}
+  m_stunEffect: {fileID: 938430140483904776}
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
+  m_skillTimer: 0
   m_attackSkills: []
   m_routineSkills: []
 --- !u!114 &8965000800174073816
@@ -454,7 +455,7 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
-  m_damageReduction: 0
+  m_HitdamageDecrease: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_execution: 0
   DamageEvent:

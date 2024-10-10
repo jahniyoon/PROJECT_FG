@@ -19699,7 +19699,7 @@ GameObject:
   - component: {fileID: 4389255518941853}
   m_Layer: 0
   m_Name: "90300  PROJECTILE  \uB3C4\uB11B \uD22C\uC0AC\uCCB4"
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19732,11 +19732,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fb57ef79407474781d055c0e8aba73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_skill: {fileID: 0}
   m_data: {fileID: 11400000, guid: cb2010b5d6d53544f88bb9ee9a801f63, type: 2}
+  m_skill: {fileID: 0}
+  m_buffs: []
+  m_particles: []
+  m_effects: []
+  m_debug: {fileID: 0}
+  m_debugMode: 0
   m_donutEffect: {fileID: 7013246298930340443}
   m_collisionParticles:
   - {fileID: 6119685100004439092}
+  m_outerRadius: 0
+  m_innerRadius: 0
 --- !u!1 &5454359741324258868
 GameObject:
   m_ObjectHideFlags: 0

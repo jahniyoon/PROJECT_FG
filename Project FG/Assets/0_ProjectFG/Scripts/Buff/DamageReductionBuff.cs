@@ -20,7 +20,7 @@ namespace JH
 
             if (handler.TryGetComponent<Damageable>(out Damageable damageable))
             {
-                damageable.SetDamageReduction(GetValue1());
+                damageable.SetDamageReduction(GetBuffValue());
             }
         }
         public override void InactiveBuff(BuffHandler handler)
@@ -28,7 +28,7 @@ namespace JH
             base.InactiveBuff(handler);
             if (handler.TryGetComponent<Damageable>(out Damageable damageable))
             {
-                damageable.SetDamageReduction(GetValue1() * -1);
+                damageable.SetDamageReduction(GetBuffValue() * -1);
             }
         }
      

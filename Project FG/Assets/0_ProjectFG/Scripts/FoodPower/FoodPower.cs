@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 
@@ -21,16 +22,17 @@ namespace JH
         [Header("습득한 푸드파워")]
         [SerializeField] protected bool m_effectFoodPower;
 
-        protected GameObject m_caster;
-        protected Transform m_casterPosition;
         protected Transform m_aimPosition;
 
         // 푸드파워 실행 루틴
         Coroutine foodRoutine;
+        ISkillCaster m_caster;
+
 
         bool isActive;
 
-        public UnityEvent ActiveEvent = new UnityEvent();
+        #region Property
+        public ISkillCaster Caster => m_caster;
         public Sprite Icon => m_data.Icon;
         public float CoolDown => m_data.GetLevelData(m_powerLevel).CoolDown;
         public float Timer => m_coolDownTimer;
@@ -39,13 +41,17 @@ namespace JH
         public int Level => m_powerLevel;
         public bool IsEffectFoodPower => m_effectFoodPower;
         public FoodPowerData Data => m_data;
+        #endregion
+
+        public UnityEvent ActiveEvent = new UnityEvent();
         public UnityEvent LevelUpEvent = new UnityEvent();
 
-        private void Awake()
+        private void OnDisable()
         {
-            Init();
+            ActiveEvent.RemoveAllListeners();
         }
 
+ 
         public virtual void Init(bool isMain = false)
         {
             if (m_data == null)
@@ -58,10 +64,9 @@ namespace JH
         {
             m_mainPower = enable;
         }
-        public virtual void SetCaster(GameObject caster, Transform casterPosition, Transform aim)
+        public virtual void SetCaster(ISkillCaster caster, Transform aim)
         {
             m_caster = caster;
-            m_casterPosition = casterPosition;
             m_aimPosition = aim;
         }
 
@@ -73,7 +78,16 @@ namespace JH
         // 푸드파워의 효과
         public virtual void Active()
         {
-            ActiveEvent?.Invoke();
+
+        }
+       
+
+        
+
+        // 스킬이 애니메이션을 발동한다.
+        public void SkillActiveEvent()
+        {
+            ActiveEvent.Invoke();
         }
         public virtual void Inactive()
         {
@@ -83,8 +97,11 @@ namespace JH
         public virtual void LevelUp()
         {
             m_powerLevel++;
+            Inactive();
+            Active();
             LevelUpEvent?.Invoke();
         }
+
         // 레벨 업
         public virtual void SetLevel(int value)
         {
@@ -99,70 +116,70 @@ namespace JH
         // 타입에 따라 발사 방향을 정해준다.
         protected Quaternion GetDirection()
         {
-
+            return Quaternion.identity;
             float randomRadius = 5;
             Quaternion direction = Quaternion.identity;
 
             if (m_data.AlwaysShoot == false)
             {
-                Transform randomTarget = ScanRandomPosition(m_casterPosition.position, randomRadius);
+                Transform randomTarget = ScanRandomPosition(Caster.Transform.position, randomRadius);
                 if(randomTarget == null)
                     return Quaternion.identity;
             }
 
 
-            switch (m_data.GetLevelData(m_powerLevel).AimType)
-            {
-                // 플레이어 방향
-                case AimType.MoveDirection:
-                    return m_casterPosition.localRotation;
+            //switch (m_data.GetLevelData(m_powerLevel).AimType)
+            //{
+            //    // 플레이어 방향
+            //    case AimType.MoveDirection:
+            //        return Caster.Transform.localRotation;
 
 
-                // 가까운 타겟 방향
-                case AimType.NearTargetDirection:
-                    Transform target = ScanPosition(m_casterPosition.position, randomRadius);
+            //    // 가까운 타겟 방향
+            //    case AimType.NearTargetDirection:
+            //        Transform target = ScanPosition(Caster.Transform.position, randomRadius);
 
-                    // 타겟이 Null이 아닐 경우에만
-                    if (target != null)
-                        return Quaternion.LookRotation(target.position - m_casterPosition.position);
+            //        // 타겟이 Null이 아닐 경우에만
+            //        if (target != null)
+            //            return Quaternion.LookRotation(target.position - Caster.Transform.position);
 
-                    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
-                    else if (target == null && m_data.AlwaysShoot)
-                        return m_casterPosition.rotation;
+            //        // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
+            //        else if (target == null && m_data.AlwaysShoot)
+            //            return Caster.Transform.rotation;
 
-                    break;
+            //        break;
 
-                // 포인터 방향
-                case AimType.PointerDirection:
-                    return Quaternion.LookRotation(m_aimPosition.position - m_casterPosition.position);
+            //    // 포인터 방향
+            //    case AimType.PointerDirection:
+            //        return Quaternion.LookRotation(m_aimPosition.position - Caster.Transform.position);
 
-                // PC의 포지션
-                case AimType.PcPosition:
-                    return direction;
+            //    // PC의 포지션
+            //    case AimType.PcPosition:
+            //        return direction;
 
-                    // 랜덤한 방향
-                case AimType.RandomDirection:
-                    Vector3 randomDir = direction.eulerAngles;
-                    randomDir.y = Random.Range(0, 360);
-                    direction.eulerAngles = randomDir;
-                    return direction;
+            //        // 랜덤한 방향
+            //    case AimType.RandomDirection:
+            //        Vector3 randomDir = direction.eulerAngles;
+            //        randomDir.y = Random.Range(0, 360);
+            //        direction.eulerAngles = randomDir;
+            //        return direction;
 
-                    // 랜덤한 적 방향
-                case AimType.RandomEnemyDirection:
-                    Transform randomTarget = ScanRandomPosition(m_casterPosition.position, randomRadius);
+            //        // 랜덤한 적 방향
+            //    case AimType.RandomEnemyDirection:
+            //        Transform randomTarget = ScanRandomPosition(Caster.Transform.position, randomRadius);
 
-                    // 타겟이 Null이 아닐 경우에만
-                    if (randomTarget != null)
-                    {
-                        if(randomTarget.position - m_casterPosition.position != Vector3.zero)
-                        return Quaternion.LookRotation(randomTarget.position - m_casterPosition.position);
-                    }
+            //        // 타겟이 Null이 아닐 경우에만
+            //        if (randomTarget != null)
+            //        {
+            //            if(randomTarget.position - Caster.Transform.position != Vector3.zero)
+            //            return Quaternion.LookRotation(randomTarget.position - Caster.Transform.position);
+            //        }
 
-                    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
-                    else if (randomTarget == null && m_data.AlwaysShoot)
-                        return m_casterPosition.rotation;
-                    break;
-            }
+            //        // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
+            //        else if (randomTarget == null && m_data.AlwaysShoot)
+            //            return Caster.Transform.rotation;
+            //        break;
+            //}
 
             return direction;
         }
@@ -243,54 +260,20 @@ namespace JH
         }
 
         // 푸드파워 루틴을 실행한다.
-        public void StartFoodPowerRoutine()
+        public void ActiveFoodPower()
         {
-            // 이미 실행되고 있는 루틴이 있다면 끄고 시작하다.
-            StopFoodPowerRoutine();
+            Active();
 
             isActive = true;
-            foodRoutine = StartCoroutine(FoodPowerRoutine());
         }
         // 루틴을 멈춘다.
-        public void StopFoodPowerRoutine()
+        public void InActiveFoodPower()
         {
-            if (foodRoutine != null)
-            {
-                StopCoroutine(foodRoutine);
-                foodRoutine = null;
-            }
             Inactive();
             isActive = false;
         }
 
 
-        // 쿨타임에 맞게 실행이된다.
-        IEnumerator FoodPowerRoutine()
-        {
-            m_coolDownTimer = m_data.GetLevelData(m_powerLevel).CoolDown;
-
-            while (isActive)
-            {
-                // 쿨타임이 지나면 액티브
-                if (m_data.GetLevelData(m_powerLevel).CoolDown <= m_coolDownTimer)
-                {
-                    Active();
-                    m_coolDownTimer = 0;
-
-                    // 지속시간이 짧은 케이스의 경우 바로 종료
-                    if (m_data.GetLevelData(m_powerLevel).Duration < 0)
-                        yield break;
-
-                    yield return null;
-                    continue;
-                }
-
-                m_coolDownTimer += Time.deltaTime;
-                yield return null;
-            }
-
-            yield break;
-        }
 
         // 이 푸드파워는 계산하지 않는다.
         public void EffectFoodPower()

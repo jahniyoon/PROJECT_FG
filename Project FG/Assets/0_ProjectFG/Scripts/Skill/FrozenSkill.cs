@@ -28,10 +28,10 @@ namespace JH
                 return;
             }
 
-            m_frozen = Instantiate(m_subData.FrozenPrefab, Caster.transform).GetComponent<ParticleSystem>();
+            m_frozen = Instantiate(m_subData.FrozenPrefab, Caster.Transform).GetComponent<ParticleSystem>();
             m_frozen.transform.localEulerAngles = Vector3.zero;
 
-            SetDuration(m_subData.SkillDuration);
+            SetDuration(m_subData.Duration);
 
             m_range = transform.AddComponent<SphereCollider>();
             m_range.isTrigger = true;
@@ -44,9 +44,9 @@ namespace JH
             m_dotDamageBuff = BuffFactory.CreateBuff(m_subData.DotDamageBuff);
         }
 
-        public override void LeagcyActiveSkill()
+        public override void ActiveSkill()
         {
-            base.LeagcyActiveSkill();
+            base.ActiveSkill();
             Vector3 scale = Vector3.one * m_subData.Radius;
             scale.y = 1;
             m_frozen.transform.localScale = scale;
@@ -80,12 +80,12 @@ namespace JH
                 yield return null;
             }
 
-            if (m_data.SkillDuration < 0)
+            if (m_data.Duration < 0)
             {
                 yield break;
             }
 
-            while (timer < m_data.SkillDuration)
+            while (timer < m_data.Duration)
             {
                 timer += Time.deltaTime;
                 yield return null;
@@ -124,9 +124,9 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.OnBuff(Caster, m_slowBuff);
-                    buff.OnBuff(Caster, m_dotDamageBuff);
-                    buff.OnBuff(Caster, m_frozenBuff);
+                    buff.OnBuff(Caster.GameObject, m_slowBuff);
+                    buff.OnBuff(Caster.GameObject, m_dotDamageBuff);
+                    buff.OnBuff(Caster.GameObject, m_frozenBuff);
                 }
             }
         }
@@ -139,10 +139,10 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.RemoveBuff(Caster, m_frozenBuff, true);
+                    buff.RemoveBuff(Caster.GameObject, m_frozenBuff, true);
 
-                    buff.RemoveBuff(Caster, m_slowBuff);
-                    buff.RemoveBuff(Caster, m_dotDamageBuff);
+                    buff.RemoveBuff(Caster.GameObject, m_slowBuff);
+                    buff.RemoveBuff(Caster.GameObject, m_dotDamageBuff);
                 }
             }
         }

@@ -24,10 +24,10 @@ namespace JH
                 return;
             }
 
-            m_radiusEffect = Instantiate(m_subData.HealPrefab, Caster.transform).GetComponent<ParticleSystem>();
+            m_radiusEffect = Instantiate(m_subData.HealPrefab, Caster.Transform).GetComponent<ParticleSystem>();
             m_radiusEffect.transform.localEulerAngles = Vector3.zero;
 
-            SetDuration(m_subData.SkillDuration);
+            SetDuration(m_subData.Duration);
 
             m_range = transform.AddComponent<SphereCollider>();
             m_range.isTrigger = true;
@@ -38,9 +38,9 @@ namespace JH
             m_buff = BuffFactory.CreateBuff(m_subData.HealBuff);
         }
 
-        public override void LeagcyActiveSkill()
+        public override void ActiveSkill()
         {
-            base.LeagcyActiveSkill();
+            base.ActiveSkill();
             Vector3 scale = Vector3.one * m_subData.Radius;
             scale.y = 1;
             m_radiusEffect.transform.localScale = scale;
@@ -88,7 +88,7 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.OnBuff(Caster, m_buff);
+                    buff.OnBuff(Caster.GameObject, m_buff);
 
                 }
             }
@@ -102,7 +102,7 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.RemoveBuff(Caster, m_buff, true);
+                    buff.RemoveBuff(Caster.GameObject, m_buff, true);
 
                   
                 }

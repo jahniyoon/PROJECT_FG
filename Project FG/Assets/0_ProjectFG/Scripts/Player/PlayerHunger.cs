@@ -72,6 +72,10 @@ namespace JH
                 $"{foodPower.name} {foodPowers.Count}";
 
             newPower.gameObject.name = PowerName;
+
+
+            // 푸드파워의 캐스터 세팅
+            newPower.SetCaster(m_player, m_player.Aim);
             newPower.Init();
 
             if (effect)
@@ -85,8 +89,7 @@ namespace JH
             if (hunger == 0)
                 newPower.EffectFoodPower();
 
-            // 푸드파워의 캐스터 세팅
-            newPower.SetCaster(this.gameObject, m_player.Model, m_player.Aim);
+     
 
             // 현재 포만도 추가
             m_curHunger += hunger;
@@ -140,7 +143,6 @@ namespace JH
             {
                 newPower.SetMain(true);
                 StartFoodPowerRoutine();
-
             }
 
             return newPower;
@@ -348,7 +350,7 @@ namespace JH
             {
 
                 if (foodPowers[i].Main)
-                    foodPowers[i].StartFoodPowerRoutine();
+                    foodPowers[i].ActiveFoodPower();
 
             }
         }
@@ -357,7 +359,7 @@ namespace JH
             // 먼저 루틴을 모두 꺼준다.
             for (int i = 0; i < foodPowers.Count; i++)
             {
-                foodPowers[i].StopFoodPowerRoutine();
+                foodPowers[i].InActiveFoodPower();
             }
 
         }

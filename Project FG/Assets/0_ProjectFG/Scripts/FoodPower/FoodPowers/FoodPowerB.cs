@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 namespace JH
@@ -11,40 +12,32 @@ namespace JH
     public class FoodPowerB : FoodPower
     {
         [Header("Skill")]
-        [SerializeField] private FoodPowerSkill m_skillPrefab;
-        private FoodPowerSkill m_activeSkill;
+        [SerializeField] private FoodPowerSkill m_shieldSkill;
+        private FoodPowerSkill m_skill;
 
-        // 레벨업 한 경우에 스킬을 다시 켜줘야한다.
-        public override void LevelUp()
+        // 푸드파워 활성화
+        public override void Active()
         {
-            base.LevelUp();
-            Inactive();
-            Active();
+            base.Active();
+            if (m_skill == null)
+                m_skill = Instantiate(m_shieldSkill.gameObject, this.transform).GetComponent<FoodPowerSkill>();
+
+            m_skill.SkillInit(Caster);
+            m_skill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
         }
+        // 푸드파워 비활성화
 
         public override void Inactive()
         {
-            if (m_activeSkill)
+            if (m_skill != null)
             {
-                m_activeSkill.InactiveSkill();
-                Destroy(m_activeSkill.gameObject);
+                m_skill.InactiveSkill();
             }
+
             base.Inactive();
         }
 
 
-        public override void Active()
-        {
-            Vector3 position = m_casterPosition.position;
-
-            Quaternion direction = GetDirection();
-
-            m_activeSkill = Instantiate(m_skillPrefab.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
-            m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
-            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
-
-            m_activeSkill.LeagcyActiveSkill();
-        }
 
     }
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 63b7b36b68aa60049a91f2e349e20247,
     type: 2}
   <IgnoreAttack>k__BackingField: 0
-  <FoodPower>k__BackingField: {fileID: 2780114308409712790, guid: e91f4aa2f56b15b469c52f8a1bcdfa2c,
+  <FoodPower>k__BackingField: {fileID: 2780114308409712790, guid: 33ba44060c9658842aca3fd6d56f1b14,
     type: 3}
   <AttackSkillID>k__BackingField: ec770000
   <RoutineSkillID>k__BackingField: 

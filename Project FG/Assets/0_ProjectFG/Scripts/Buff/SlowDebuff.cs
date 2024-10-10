@@ -14,21 +14,12 @@ namespace JH
             m_data = data;
         }
 
-        [Header("Slow Debuff")]
-        [SerializeField] private float m_moveSpeedValue;
-
-
-        // TODO : 이 부분 꼭 추후 교체해야함!!!
-        public void SetValue(float value)
-        {
-            m_moveSpeedValue = value;
-        }
 
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);
             if (handler.TryGetComponent<ISlowable>(out ISlowable slowable))
-                slowable.SetSlowSpeed(m_moveSpeedValue);
+                slowable.SetSlowSpeed(GetBuffValue());
         }
 
 
@@ -38,7 +29,7 @@ namespace JH
         {
             base.InactiveBuff(handler);
             if (handler.TryGetComponent<ISlowable>(out ISlowable slowable))
-                slowable.SetSlowSpeed(m_moveSpeedValue*-1);
+                slowable.SetSlowSpeed(GetBuffValue() * -1);
         }
 
 

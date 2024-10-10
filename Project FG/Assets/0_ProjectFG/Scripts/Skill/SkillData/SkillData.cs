@@ -20,50 +20,57 @@ namespace JH
         [field: SerializeField] public SkillType BaseType { get; protected set; }
         [field: SerializeField] public TargetTag SkillTarget { get; protected set; }
         [field: SerializeField] public SkillActiveTime ActiveTime { get; protected set; }
-        [field: SerializeField] public float SkillCoolDown { get; protected set; }
-        [field: SerializeField] public float SkillDuration { get; protected set; }
-        [field: SerializeField] public float SkillDamage { get; protected set; }
         [field: SerializeField] public AimType AimType { get; protected set; }
-        [field: SerializeField] public float SkillRange { get; protected set; }
+        [field: SerializeField] public LayerMask TargetLayer { get; private set; }
+
+
+        [field: Header("Skill Level Data")]
+        [field: SerializeField] public LevelData LevelData { get; protected set; }
         [field: SerializeField] public float SkillDelay { get; protected set; }
         [field: SerializeField] public float SkillSpeed { get; protected set; }
+        [field: Header("Skill Buff")]
+        [field: SerializeField] public int[] BuffID { get; protected set; }
         [field: Header("Skill Projectile")]
         [field: SerializeField] public int[] ProjectileID { get; protected set; }
-        [field: SerializeField] public float ProjectileOffset { get; protected set; }
-        [field: SerializeField] public float SkillRadius { get; protected set; }
-        [field: SerializeField] public float SkillArc { get; protected set; }
-        [field: SerializeField] public float SkillLifeTime { get; protected set; }
-        [field: Header("Buff")]
-        [field: SerializeField] public int[] BuffID { get; protected set; }
-        [field: SerializeField] public float[] BuffValues { get; protected set; }
-        [field: Header("Additional Value")]
-        [field: SerializeField] public float[] Value1 { get; protected set; }
-        [field: SerializeField] public float[] Value2 { get; protected set; }
-        [field: SerializeField] public float[] Value3 { get; protected set; }
 
+
+        public float CoolDown => LevelData.CoolDown;
+        public float Duration => LevelData.Duration;
+        public float SkillDamage => LevelData.Damage;
+        public float SkillRange => LevelData.Range;
+        public float ProjectileOffset => LevelData.ProjectileOffset;
+        public float SkillRadius => LevelData.Radius;
+        public float SkillArc => LevelData.Arc;
+        public float SkillLifeTime => LevelData.LifeTime;
+        public float[] BuffValues => LevelData.BuffValues;
+        public float[] Value1 => LevelData.Value1;
+        public float[] Value2 => LevelData.Value2;
+        public float[] Value3 => LevelData.Value3;
+
+        public int TryGetBuffID(int num = 0)
+        {
+            if (BuffID.Length - 1 < num)
+                return BuffID[BuffID.Length -1];
+            return BuffID[num];
+        }
         public float TryGetBuffValue(int num = 0)
         {
-            if (BuffValues.Length - 1 < num)
-                return 0;
-            return BuffValues[num];
+            return LevelData.TryGetBuffValue(num);
         }
         public float TryGetValue1(int num = 0)
         {
-            if (Value1.Length - 1 < num)
-                return 0;
-            return Value1[num];
+            return LevelData.TryGetValue1(num);
+
         }
         public float TryGetValue2(int num = 0)
         {
-            if (Value2.Length - 1 < num)
-                return 0;
-            return Value2[num];
+            return LevelData.TryGetValue2(num);
+
         }
         public float TryGetValue3(int num = 0)
         {
-            if (Value3.Length - 1 < num)
-                return 0;
-            return Value3[num];
+            return LevelData.TryGetValue3(num);
+
         }
         public override void SetData(GameData gamedata)
         {
@@ -96,12 +103,12 @@ namespace JH
             dataList.Add(SetData("BaseType", BaseType.ToString()));
             dataList.Add(SetData("Target", SkillTarget.ToString()));
             dataList.Add(SetData("ActiveTime", ActiveTime.ToString()));
-            dataList.Add(SetData("CoolDown", SkillCoolDown.ToString()));
-            dataList.Add(SetData("Duration", SkillDuration.ToString()));
+            dataList.Add(SetData("CoolDown", CoolDown.ToString()));
+            dataList.Add(SetData("Duration", Duration.ToString()));
             dataList.Add(SetData("Damage", SkillDamage.ToString()));
             dataList.Add(SetData("AimType", AimType.ToString()));
-            dataList.Add(SetData("Range", SkillRange.ToString()));
             dataList.Add(SetData("ProjectileID", GFunc.IntsToString(ProjectileID)));
+            dataList.Add(SetData("Range", SkillRange.ToString()));
             dataList.Add(SetData("ProjectileOffset", ProjectileOffset.ToString()));
             dataList.Add(SetData("Radius", SkillRadius.ToString()));
             dataList.Add(SetData("Arc", SkillArc.ToString()));
@@ -121,6 +128,7 @@ namespace JH
         //  데이터를 업데이트한다.
         public virtual void UpdateData(List<GSTU_Data> datas)
         {
+            LevelData = new LevelData();
             // 가져온 데이터를 변환하는 부분
             foreach (var item in datas)
             {
@@ -146,49 +154,49 @@ namespace JH
                     ActiveTime = (SkillActiveTime)Enum.Parse(typeof(SkillActiveTime), item.Value);
 
                 if (item.ColumnID == "CoolDown")
-                    SkillCoolDown = float.Parse(item.Value);
+                    LevelData.CoolDown = float.Parse(item.Value);
 
                 if (item.ColumnID == "Duration")
-                    SkillDuration = float.Parse(item.Value);
+                    LevelData.Duration = float.Parse(item.Value);
 
                 if (item.ColumnID == "Damage")
-                    SkillDamage = float.Parse(item.Value);
+                    LevelData.Damage = float.Parse(item.Value);
 
                 if (item.ColumnID == "AimType")
                     AimType = (AimType)Enum.Parse(typeof(AimType), item.Value);
-
-                if (item.ColumnID == "Range")
-                    SkillRange = float.Parse(item.Value);
-
+      
                 if (item.ColumnID == "ProjectileID")
                     ProjectileID = GFunc.StringToInts(item.Value);
 
+                if (item.ColumnID == "Range")
+                    LevelData.Range = float.Parse(item.Value);
+
                 if (item.ColumnID == "ProjectileOffset")
-                    ProjectileOffset = float.Parse(item.Value);
+                    LevelData.ProjectileOffset = float.Parse(item.Value);
 
                 if (item.ColumnID == "Radius")
-                    SkillRadius = float.Parse(item.Value);
+                    LevelData.Radius = float.Parse(item.Value);
 
                 if (item.ColumnID == "Arc")
-                    SkillArc = float.Parse(item.Value);
+                    LevelData.Arc = float.Parse(item.Value);
 
                 if (item.ColumnID == "LifeTime")
-                    SkillLifeTime = float.Parse(item.Value);
+                    LevelData.LifeTime = float.Parse(item.Value);
 
                 if (item.ColumnID == "BuffID")
                     BuffID = GFunc.StringToInts(item.Value);
 
                 if (item.ColumnID == "BuffValue")
-                    BuffValues = GFunc.StringToFloats(item.Value);
+                    LevelData.BuffValues = GFunc.StringToFloats(item.Value);
 
                 if (item.ColumnID == "Value1")
-                    Value1 = GFunc.StringToFloats(item.Value);
+                    LevelData.Value1 = GFunc.StringToFloats(item.Value);
 
                 if (item.ColumnID == "Value2")
-                    Value2 = GFunc.StringToFloats(item.Value);
+                    LevelData.Value2 = GFunc.StringToFloats(item.Value);
 
                 if (item.ColumnID == "Value3")
-                    Value3 = GFunc.StringToFloats(item.Value);
+                    LevelData.Value3 = GFunc.StringToFloats(item.Value);
 
                 if (item.ColumnID == "SkillDelay")
                     SkillDelay = float.Parse(item.Value);

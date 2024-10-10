@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace JH
 {
-    public partial class PlayerController : MonoBehaviour, IKnockbackable
+    public partial class PlayerController : MonoBehaviour, IKnockbackable, ISkillCaster
     {
         private FSM<PlayerController> m_fsm;
         private Transform m_model;
@@ -46,6 +46,7 @@ namespace JH
         private int InstanceID;
 
 
+        protected float m_skillTimer;
         #region 프로퍼티
         public PlayerInput Input => m_input;
         public GameSettings Setting => m_gameSettings;
@@ -53,7 +54,8 @@ namespace JH
         public Transform Model => m_model;
         public Transform Aim => m_aim.Aim;
         public FSMState State => m_playerState;
-
+        public Transform Transform => this.transform;
+        public GameObject GameObject => this.gameObject;
         public Status Status => m_buffHandler.Status;
         #endregion
 
@@ -217,7 +219,7 @@ namespace JH
 
             // 가능한 곳인지 확인 및 보정
             endPos = GFunc.FindNavPos(transform, endPos, force * 2);
-            Debug.Log($"넉백 {hitPos}=>{endPos} {force}, {duration}");
+            //DebugProjectile.Log($"넉백 {hitPos}=>{endPos} {force}, {duration}");
 
             while (timer < duration)
             {
@@ -237,6 +239,17 @@ namespace JH
             return state;
         }
 
+        #region ISkillCaster
+        public bool CanActiveSkill()
+        {
+            return State != FSMState.Die;
+        }
+
+        public void UpdateSkillTimer(float timer)
+        {
+            m_skillTimer = timer;
+        }
+        #endregion ISkill Caster
     }
 
 

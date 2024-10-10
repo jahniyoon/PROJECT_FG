@@ -21,9 +21,11 @@ namespace JH
                 case BuffType.KnockBack:
                     return buff = new KnockbackBuff(data);
 
-                case BuffType.HitDamageIncrease:
+                case BuffType.HitDamageDecrease:
                         return buff = new DamageReductionBuff(data);
 
+                case BuffType.SlowSpeed:
+                    return buff = new SlowDebuff(data);
 
                 default:
                     return buff = new BuffBase(data);

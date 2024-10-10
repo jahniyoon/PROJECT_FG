@@ -100,7 +100,7 @@ namespace JH
             }
             else
             {
-                //Debug.Log("감나빗");
+                //DebugProjectile.Log("감나빗");
                 Vector3 forwardPoint = m_shootPos.position + m_shootPos.forward * m_data.AttackRange;
                 if (m_shootHitEffect)
                 {

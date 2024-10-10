@@ -309,13 +309,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 99b252d5a0c4e8a43b19aa23e8de1159, type: 2}
-  m_caster: {fileID: 0}
-  m_isActive: 0
-  m_duration: 0
+  m_skillLevelData:
+    CoolDown: 0
+    Duration: 0
+    Damage: 0
+    Range: 0
+    ProjectileOffset: 0
+    Radius: 0
+    Arc: 0
+    LifeTime: 0
+    BuffValues: []
+    Value1: []
+    Value2: []
+    Value3: []
+  m_state: 0
+  m_routine: 1
+  m_skillTarget: {fileID: 0}
+  m_scanLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  m_maxScanTarget: 10
+  m_isAlwaywShoot: 1
   m_skillCoolDown: 0
   m_skillCoolDownTimer: 0
+  m_duration: 0
   m_buffs: []
   m_projectiles: []
+  m_particles: []
+  m_visualEffects: []
+  CastEvent:
+    m_PersistentCalls:
+      m_Calls: []
   ActiveEvent:
     m_PersistentCalls:
       m_Calls: []

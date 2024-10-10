@@ -195,7 +195,7 @@ namespace JH
 //            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
 //            if (gameData.GameData.ContainsKey(data.ID) == false)
 //            {
-//                Debug.LogWarning("데이터 ID를 확인해주세요." + data.ID);
+//                DebugProjectile.LogWarning("데이터 ID를 확인해주세요." + data.ID);
 //                return;
 //            }
 
@@ -209,7 +209,7 @@ namespace JH
 //            AssetDatabase.SaveAssets();
 //            AssetDatabase.Refresh();
 //#else
-//    Debug.LogError("SaveData는 에디터에서만 사용할 수 있습니다.");
+//    DebugProjectile.LogError("SaveData는 에디터에서만 사용할 수 있습니다.");
 //#endif
 //        }
 //        // 데이터 내보내기
@@ -218,7 +218,7 @@ namespace JH
 //            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
 //            if (gameData.GameData.ContainsKey(data.ID) == false)
 //            {
-//                Debug.LogWarning("데이터 ID를 확인해주세요." + data.ID);
+//                DebugProjectile.LogWarning("데이터 ID를 확인해주세요." + data.ID);
 //                return;
 //            }
 //            data.UpdateGameData();

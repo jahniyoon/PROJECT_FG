@@ -24,7 +24,7 @@ MonoBehaviour:
   ignoreSOWorksheets:
   - FOOD POWER LEVEL
   m_gameData:
-    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d0100943d0100f83d01005c3e0100c03e0100f45f01005860010062600100bc600100206101002a61010084610100e8610100
+    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d0100943d0100f83d01005c3e0100c03e0100f45f0100fe5f01005860010062600100bc600100206101002a6101003461010084610100e86101004c620100b0620100
     m_Values:
     - Name: 20100  ENEMY  Enemy A
       SheetID: ENEMY
@@ -281,10 +281,10 @@ MonoBehaviour:
         Value: 10
       - ColumnID: AimType
         Value: TargetDirection
-      - ColumnID: Range
-        Value: 1
       - ColumnID: ProjectileID
         Value: 90100
+      - ColumnID: Range
+        Value: 1
       - ColumnID: ProjectileOffset
         Value: 0.2
       - ColumnID: Radius
@@ -330,10 +330,10 @@ MonoBehaviour:
         Value: 10
       - ColumnID: AimType
         Value: TargetDirection
-      - ColumnID: Range
-        Value: 1.5
       - ColumnID: ProjectileID
         Value: 90100
+      - ColumnID: Range
+        Value: 1.5
       - ColumnID: ProjectileOffset
         Value: 0.2
       - ColumnID: Radius
@@ -379,10 +379,10 @@ MonoBehaviour:
         Value: 0
       - ColumnID: AimType
         Value: None
-      - ColumnID: Range
-        Value: 0
       - ColumnID: ProjectileID
         Value: '-'
+      - ColumnID: Range
+        Value: 0
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -428,10 +428,10 @@ MonoBehaviour:
         Value: 10
       - ColumnID: AimType
         Value: TargetDirection
-      - ColumnID: Range
-        Value: 5
       - ColumnID: ProjectileID
         Value: 90200
+      - ColumnID: Range
+        Value: 5
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -477,10 +477,10 @@ MonoBehaviour:
         Value: 10
       - ColumnID: AimType
         Value: TargetPosition
-      - ColumnID: Range
-        Value: 5
       - ColumnID: ProjectileID
         Value: 90300
+      - ColumnID: Range
+        Value: 5
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -526,10 +526,10 @@ MonoBehaviour:
         Value: 5
       - ColumnID: AimType
         Value: Caster
-      - ColumnID: Range
-        Value: 7
       - ColumnID: ProjectileID
         Value: 90600
+      - ColumnID: Range
+        Value: 7
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -575,10 +575,10 @@ MonoBehaviour:
         Value: 0
       - ColumnID: AimType
         Value: CasterPosition
-      - ColumnID: Range
-        Value: 0
       - ColumnID: ProjectileID
         Value: 90400
+      - ColumnID: Range
+        Value: 0
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -624,10 +624,10 @@ MonoBehaviour:
         Value: 0
       - ColumnID: AimType
         Value: CasterPosition
-      - ColumnID: Range
-        Value: 0
       - ColumnID: ProjectileID
         Value: 90410
+      - ColumnID: Range
+        Value: 0
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -673,10 +673,10 @@ MonoBehaviour:
         Value: 50
       - ColumnID: AimType
         Value: CasterDropPosition
-      - ColumnID: Range
-        Value: 3
       - ColumnID: ProjectileID
         Value: 90500
+      - ColumnID: Range
+        Value: 3
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
@@ -719,16 +719,8 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90100
       - ColumnID: BuffID
-        Value: '-'
-      - ColumnID: BuffValue
-        Value: '-'
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
         Value: '-'
       - ColumnID: SkillDelay
         Value: 0
@@ -756,15 +748,7 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: '-'
       - ColumnID: BuffID
-        Value: 81000
-      - ColumnID: BuffValue
-        Value: 2, 0.1
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
-        Value: '-'
+        Value: 80500, 81000
       - ColumnID: SkillDelay
         Value: 0
       - ColumnID: SkillSpeed
@@ -789,16 +773,8 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90210
       - ColumnID: BuffID
-        Value: 80500
-      - ColumnID: BuffValue
-        Value: 50, -1
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
         Value: '-'
       - ColumnID: SkillDelay
         Value: 0
@@ -824,16 +800,8 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90700
       - ColumnID: BuffID
-        Value: '-'
-      - ColumnID: BuffValue
-        Value: '-'
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
         Value: '-'
       - ColumnID: SkillDelay
         Value: 0
@@ -859,16 +827,8 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90600
       - ColumnID: BuffID
-        Value: 81000
-      - ColumnID: BuffValue
-        Value: 2, 0.1
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
         Value: '-'
       - ColumnID: SkillDelay
         Value: 0
@@ -894,17 +854,9 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90420
       - ColumnID: BuffID
-        Value: '-'
-      - ColumnID: BuffValue
-        Value: '-'
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
-        Value: '-'
+        Value: 80800
       - ColumnID: SkillDelay
         Value: 0
       - ColumnID: SkillSpeed
@@ -929,16 +881,8 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90100
       - ColumnID: BuffID
-        Value: 80100
-      - ColumnID: BuffValue
-        Value: 25, 10
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
         Value: '-'
       - ColumnID: SkillDelay
         Value: 0
@@ -964,16 +908,8 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: '-'
+        Value: 90800
       - ColumnID: BuffID
-        Value: 80410
-      - ColumnID: BuffValue
-        Value: 1, -10
-      - ColumnID: Value1
-        Value: '-'
-      - ColumnID: Value2
-        Value: '-'
-      - ColumnID: Value3
         Value: '-'
       - ColumnID: SkillDelay
         Value: 0
@@ -988,22 +924,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv0"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv0"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 1.5
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60002  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1013,22 +959,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 1.6
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60003  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1038,22 +994,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 1.7
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60004  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1063,22 +1029,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 1.8
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60005  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1088,22 +1064,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 1.9
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60006  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1113,22 +1099,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60007  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1138,22 +1134,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60008  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1163,22 +1169,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60009  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1188,22 +1204,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 60
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60010  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1213,22 +1239,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCA lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.1
       - ColumnID: Damage
         Value: 70
       - ColumnID: Range
-        Value: 0
+        Value: 1.5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 180
+      - ColumnID: LifeTime
         Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0.2
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60011  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1238,22 +1274,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 15
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 20,3
+      - ColumnID: BuffValue
+        Value: 20, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60012  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1263,22 +1309,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 12
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3.5
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 25,3
+      - ColumnID: BuffValue
+        Value: 25, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60013  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1288,22 +1344,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 10
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 4
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 30,3
+      - ColumnID: BuffValue
+        Value: 30, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60014  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1313,22 +1379,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 10
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 4.5
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 35,3
+      - ColumnID: BuffValue
+        Value: 35, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60015  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1338,22 +1414,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 10
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 5
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 40,3
+      - ColumnID: BuffValue
+        Value: 40, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60016  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1363,22 +1449,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 5.5
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 45,3
+      - ColumnID: BuffValue
+        Value: 45, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60017  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1388,22 +1484,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 6
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 50,3
+      - ColumnID: BuffValue
+        Value: 50, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60018  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1413,22 +1519,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 6.5
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 55,3
+      - ColumnID: BuffValue
+        Value: 55, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60019  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCB lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1438,22 +1554,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCB lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 7
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 0.1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 60,3
+      - ColumnID: BuffValue
+        Value: 60, 3, 0.1
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60020  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1463,22 +1589,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 2
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60021  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1488,22 +1624,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.8
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60022  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1513,22 +1659,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.6
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 32
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60023  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1538,22 +1694,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.4
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 34
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60024  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1563,22 +1729,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.2
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 36
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60025  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1588,22 +1764,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 38
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60026  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1613,22 +1799,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 0.8
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60027  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1638,22 +1834,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 0.6
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 42
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60028  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCC lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1663,22 +1869,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCC lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 0.4
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 45
       - ColumnID: Range
-        Value: 0
+        Value: 5
+      - ColumnID: ProjectileOffset
+        Value: 0.2
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: 8
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 15,0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 15, 0
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60029  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1688,22 +1904,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60030  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1713,22 +1939,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 35
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 2
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60031  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1738,22 +1974,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 35
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 3
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60032  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1763,22 +2009,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 35
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 4
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60033  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1788,22 +2044,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 4
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60034  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1813,22 +2079,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 5
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60035  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1838,22 +2114,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 5
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60036  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1863,22 +2149,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 40
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 5
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60037  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCD lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1888,22 +2184,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCD lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 0.5
       - ColumnID: Damage
         Value: 50
       - ColumnID: Range
         Value: 3.5
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 2
-      - ColumnID: Duration
-        Value: 0.5
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
+        Value: 1
       - ColumnID: Count
         Value: 6
-      - ColumnID: AdditionalValues
-        Value: 0
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60038  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1913,22 +2219,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 7
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60039  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1938,22 +2254,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 8
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,5.5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 5.5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60040  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1963,22 +2289,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 9
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,6
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 6
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60041  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1988,22 +2324,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,6.5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 6.5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60042  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2013,22 +2359,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 12
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,7
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 7
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60043  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2038,22 +2394,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 14
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,7.5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 7.5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60044  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2063,22 +2429,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 16
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,8
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 8
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60045  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2088,22 +2464,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 18
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,8.5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 8.5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60046  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCE lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2113,22 +2499,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCE lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
         Value: 10
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 0
-      - ColumnID: Duration
-        Value: -1
+      - ColumnID: Arc
+        Value: '-'
+      - ColumnID: LifeTime
+        Value: '-'
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 3,7,10
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 3, 7, 10
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60047  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2138,22 +2534,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 10
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 10
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60048  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2163,22 +2569,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 12
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 15
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60049  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2188,22 +2604,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 14
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 4
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 20
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60050  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2213,22 +2639,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 16
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 4
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 25
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60051  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2238,22 +2674,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 18
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 5
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 30
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60052  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2263,22 +2709,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 5
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 35
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60053  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2288,22 +2744,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 22
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 6
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 40
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60054  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2313,22 +2779,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 26
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 6
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 45
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60055  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCF lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2338,22 +2814,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCF lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 30
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 7
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
+      - ColumnID: BuffValue
         Value: 50
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60056  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2363,22 +2849,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 2
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 12
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60057  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2388,22 +2884,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 2
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 13
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,5
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 5
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60058  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2413,22 +2919,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 2
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 14
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,6
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 6
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60059  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2438,22 +2954,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 15
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,6
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 6
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60060  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2463,22 +2989,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 16
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,7
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 7
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60061  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2488,22 +3024,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1.5
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 17
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,7
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 7
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60062  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2513,22 +3059,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 18
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,8
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 8
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60063  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2538,22 +3094,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 19
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,8
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 8
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60064  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCG lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2563,22 +3129,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCG lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 1
+      - ColumnID: Duration
+        Value: -1
       - ColumnID: Damage
         Value: 20
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
         Value: 3
-      - ColumnID: Duration
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: -1
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 1,100,10
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: 1, 100, 10
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60065  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv1"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2588,22 +3164,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv1"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv1"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
+        Value: 10
+      - ColumnID: Duration
         Value: 10
       - ColumnID: Damage
         Value: 100
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 10
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60066  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2613,22 +3199,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv2"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv2"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 9
+      - ColumnID: Duration
+        Value: 12
       - ColumnID: Damage
         Value: 120
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 12
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60067  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2638,22 +3234,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv3"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv3"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 8
+      - ColumnID: Duration
+        Value: 14
       - ColumnID: Damage
         Value: 140
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 14
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60068  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2663,22 +3269,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv4"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv4"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 7
+      - ColumnID: Duration
+        Value: 16
       - ColumnID: Damage
         Value: 170
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 16
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60069  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2688,22 +3304,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv5"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv5"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 6
+      - ColumnID: Duration
+        Value: 18
       - ColumnID: Damage
         Value: 200
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 18
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60070  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2713,22 +3339,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv6"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv6"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 5
+      - ColumnID: Duration
+        Value: 20
       - ColumnID: Damage
         Value: 230
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 20
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60071  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2738,22 +3374,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv7"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv7"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 4
+      - ColumnID: Duration
+        Value: 25
       - ColumnID: Damage
         Value: 260
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 25
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60072  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2763,22 +3409,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv8"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv8"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 3
+      - ColumnID: Duration
+        Value: 30
       - ColumnID: Damage
         Value: 290
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 30
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "60073  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -2788,22 +3444,32 @@ MonoBehaviour:
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv9"
       - ColumnID: Description
         Value: "\uD478\uB4DC\uD30C\uC6CCH lv9"
-      - ColumnID: Type
-        Value: '-'
       - ColumnID: CoolDown
         Value: 2
+      - ColumnID: Duration
+        Value: 40
       - ColumnID: Damage
         Value: 300
       - ColumnID: Range
         Value: 0
+      - ColumnID: ProjectileOffset
+        Value: 0
       - ColumnID: Radius
-        Value: 1
-      - ColumnID: Duration
+        Value: 4
+      - ColumnID: Arc
+        Value: 360
+      - ColumnID: LifeTime
         Value: 40
       - ColumnID: Count
         Value: 1
-      - ColumnID: AdditionalValues
-        Value: 4
+      - ColumnID: BuffValue
+        Value: '-'
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+      - ColumnID: Value3
+        Value: '-'
     - Name: "80100  BUFF  \uB0C9\uB3D9"
       SheetID: BUFF
       Data:
@@ -3357,6 +4023,25 @@ MonoBehaviour:
         Value: 1
       - ColumnID: DerivativesID
         Value: '-'
+    - Name: "90110  PROJECTILE  \uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90110
+      - ColumnID: Name
+        Value: "\uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
+      - ColumnID: Description
+        Value: "\uD478\uB4DC\uD30C\uC6CCA\uC5D0 \uC0AC\uC6A9\uD558\uB294 \uD22C\uC0AC\uCCB4"
+      - ColumnID: Type
+        Value: Collision
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'
     - Name: "90200  PROJECTILE  ENEMY C \uD22C\uC0AC\uCCB4"
       SheetID: PROJECTILE
       Data:
@@ -3373,7 +4058,7 @@ MonoBehaviour:
       - ColumnID: ProjectileSpeed
         Value: 5
       - ColumnID: ProjectileScale
-        Value: 1
+        Value: 0.48
       - ColumnID: DerivativesID
         Value: '-'
     - Name: "90210  PROJECTILE  \uD478\uB4DC\uD30C\uC6CC C \uD22C\uC0AC\uCCB4"
@@ -3452,6 +4137,25 @@ MonoBehaviour:
         Value: 3
       - ColumnID: DerivativesID
         Value: '-'
+    - Name: "90420  PROJECTILE  \uD478\uB4DC\uD30C\uC6CC F \uC7A5\uD310"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90420
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CC F \uC7A5\uD310"
+      - ColumnID: Description
+        Value: "\uC9C0\uC18D \uC7A5\uD310"
+      - ColumnID: Type
+        Value: AOE
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'
     - Name: "90500  PROJECTILE  \uD3ED\uBC1C"
       SheetID: PROJECTILE
       Data:
@@ -3488,5 +4192,43 @@ MonoBehaviour:
         Value: 0
       - ColumnID: ProjectileScale
         Value: 1
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90700  PROJECTILE  \uD478\uB4DC\uD30C\uC6CC D \uD22C\uC0AC\uCCB4"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90700
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CC D \uD22C\uC0AC\uCCB4"
+      - ColumnID: Description
+        Value: "\uC218\uB958\uD0C4 \uD22C\uC0AC\uCCB4"
+      - ColumnID: Type
+        Value: Grenade
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 0.2
+      - ColumnID: DerivativesID
+        Value: '-'
+    - Name: "90800  PROJECTILE  \uD478\uB4DC\uD30C\uC6CC G \uC9C0\uB8B0"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90800
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CC G \uC9C0\uB8B0"
+      - ColumnID: Description
+        Value: "\uC9C0\uB8B0"
+      - ColumnID: Type
+        Value: Mine
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 0.2
       - ColumnID: DerivativesID
         Value: '-'

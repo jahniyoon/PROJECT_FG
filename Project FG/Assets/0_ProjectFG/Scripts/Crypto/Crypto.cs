@@ -41,7 +41,7 @@ public class Crypto
     {
         CryptoAES aesManage = new CryptoAES();
         aesManage.Create(base64Key, base64IV);
-        //UnityEngine.Debug.Log($"{encryptData}, base : {base64Key}, IV : {base64IV}");
+        //UnityEngine.DebugProjectile.Log($"{encryptData}, base : {base64Key}, IV : {base64IV}");
         return aesManage.Decrypt(encryptData);
     }
 

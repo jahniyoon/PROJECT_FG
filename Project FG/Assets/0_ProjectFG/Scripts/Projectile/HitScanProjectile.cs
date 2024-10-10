@@ -10,8 +10,6 @@ namespace JH
 
 
 
-        [SerializeField] private int m_penetrateCount;
-        [SerializeField] private LayerMask m_layerMask;
         [SerializeField] private float m_trailSpeed = 0.1f;
 
         [Header("Effect")]
@@ -22,39 +20,28 @@ namespace JH
         private int m_trailIndex;
         private Transform[] m_trails;
         private WaitForSeconds m_trailSeconds;
-
-        protected Vector3 m_spawnPos;
+        private Transform m_trailParent;
 
         protected override void AwakeInit()
         {
-
-            m_spawnPos = transform.position;
-            m_penetrateCount = m_data.Penetrate;
+            GameObject parent = new GameObject("Trails");
+            m_trailParent = parent.transform;
+            m_trailParent.parent = GameManager.Instance.ProjectileParent;
 
             m_trails = new Transform[10];
             for (int i = 0; i < 10; i++)
             {
-                m_trails[i] = Instantiate(m_trailPrefab, GameManager.Instance.ProjectileParent).transform;
+                m_trails[i] = Instantiate(m_trailPrefab, m_trailParent).transform;
                 m_trails[i].gameObject.SetActive(false);
             }
             m_trailIndex = 0;
             m_trailSeconds = new WaitForSeconds(0.1f);
 
         }
-        public override void SetSkill(SkillBase skill)
-        {
-            base.SetSkill(skill);
-            var shootSkill = m_skill as AimAndShootSkill;
-            if (shootSkill)
-            {
-                m_layerMask = shootSkill.TargetLayer;
-            }
-        }
-
+  
 
         public override void ActiveProjectile()
         {
-            base.ActiveProjectile();
             Shoot();
         }
 
@@ -65,22 +52,27 @@ namespace JH
             transform.LookAt(target);
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, m_skill.Data.SkillRange, m_layerMask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, m_skill.LevelData.Range, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore))
             {
-                if (hit.transform.TryGetComponent<IDamageable>(out IDamageable damageable))
+
+                if (hit.transform.CompareTag(m_skill.Data.SkillTarget.ToString()))
                 {
-                    damageable.OnDamage(m_skill.Data.SkillDamage);
 
-                    OnBuff(hit.transform);
-                    RemoveBuff(hit.transform);
+                    if (hit.transform.TryGetComponent<IDamageable>(out IDamageable damageable))
+                    {
+                        damageable.OnDamage(m_skill.LevelData.Damage);
 
-                    HitEffect(hit.point);
-                    StartCoroutine(TrailRoutine(m_trails[TrailIndex()], transform.position, hit.point));
+                        OnBuff(hit.transform);
+                        RemoveBuff(hit.transform);
+
+                    }
                 }
+                HitEffect(hit.point);
+                StartCoroutine(TrailRoutine(m_trails[TrailIndex()], transform.position, hit.point));
             }
             else
             {
-                Vector3 forwardPoint = transform.position + transform.forward * m_skill.Data.SkillRange;
+                Vector3 forwardPoint = transform.position + transform.forward * m_skill.LevelData.Range;
                 HitEffect(forwardPoint);
                 StartCoroutine(TrailRoutine(m_trails[TrailIndex()], transform.position, forwardPoint));
 
@@ -135,6 +127,7 @@ namespace JH
         // 투사체 파괴
         protected virtual void DestroyProjectile()
         {
+            Destroy(m_trailParent.gameObject);
             Destroy(gameObject);
         }
 

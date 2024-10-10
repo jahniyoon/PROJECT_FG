@@ -34,7 +34,9 @@ namespace JH
     public enum SkillActiveTime
     {
         Active, // 즉시 실행
-        CoolDown    // 쿨다운 이후
+        CoolDown,    // 쿨다운 이후
+        ActiveReset,
+        CoolDownReset
     }
     public enum BuffType
     {
@@ -78,6 +80,14 @@ namespace JH
     {
 
     }
+
+    public enum SkillState
+    {
+        Reloading,
+        Ready,
+        Cast,
+        Active
+    }
     public enum ProjectileType
     {
         None,
@@ -86,7 +96,10 @@ namespace JH
         Donut,
         AOE,
         Explosion,
-        HitScan
+        HitScan,
+        Grenade,
+        Mine
+            
     }
 
     // TODO : 정리 필요

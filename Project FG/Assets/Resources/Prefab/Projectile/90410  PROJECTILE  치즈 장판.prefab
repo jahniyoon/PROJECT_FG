@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1540245646153170421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7693111393642708801}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7693111393642708801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540245646153170421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7732278501881525740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1830707144199627567
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,14 +59,14 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4672351715546448499}
   - {fileID: 914479314908227526}
   - {fileID: 5198634793148820618}
   - {fileID: 2897090652693298202}
-  m_Father: {fileID: 7732278501881525740}
+  m_Father: {fileID: 4253073953572816799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &8887011817175598839
 ParticleSystem:
@@ -4892,6 +4923,38 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &1914127922430026261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4253073953572816799}
+  m_Layer: 0
+  m_Name: Effect Radius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4253073953572816799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914127922430026261}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1723313184070682521}
+  m_Father: {fileID: 7732278501881525740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055438231694204930
 GameObject:
   m_ObjectHideFlags: 0
@@ -24499,7 +24562,7 @@ GameObject:
   - component: {fileID: 5165988038494980296}
   m_Layer: 0
   m_Name: "90410  PROJECTILE  \uCE58\uC988 \uC7A5\uD310"
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24513,11 +24576,12 @@ Transform:
   m_GameObject: {fileID: 9173310347936448537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6.997199, y: 0.08333337, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1723313184070682521}
+  - {fileID: 7693111393642708801}
+  - {fileID: 4253073953572816799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5165988038494980296
@@ -24535,8 +24599,12 @@ MonoBehaviour:
   m_data: {fileID: 11400000, guid: 48296c46495fc4048a12470817fbe9d1, type: 2}
   m_skill: {fileID: 0}
   m_buffs: []
-  m_aoeTargets: []
-  m_isDestroy: 0
-  m_collisionParticles:
+  m_penetrateCount: 0
+  m_projectileSpeed: 0
+  m_particles:
   - {fileID: 8887011817175598839}
-  m_collisionEffect: []
+  m_effects: []
+  m_debug: {fileID: 0}
+  m_debugMode: 0
+  m_aoeTargets: []
+  m_effectTransform: {fileID: 4253073953572816799}

@@ -5112,7 +5112,7 @@ GameObject:
   - component: {fileID: 8876238271128749416}
   - component: {fileID: 7122732597053017241}
   - component: {fileID: 3138419915942500437}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 20500 Enemy E
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5160,12 +5160,13 @@ MonoBehaviour:
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
   m_attackCoolDown: 0
-  m_stunEffect: {fileID: 0}
+  m_stunEffect: {fileID: 8170748327520663570}
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
   m_attackSkills: []
   m_routineSkills: []
+  m_aimState: 0
   m_isAim: 0
   m_aimTimer: 0
   m_shootingTimer: 0
@@ -5185,7 +5186,7 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
-  m_damageReduction: 0
+  m_HitdamageDecrease: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_execution: 0
   DamageEvent:

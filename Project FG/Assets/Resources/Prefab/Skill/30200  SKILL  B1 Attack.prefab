@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 8710877525875055629}
   - component: {fileID: 6359735813813382736}
   m_Layer: 0
-  m_Name: 30200  SKILL  B2 Attack
+  m_Name: 30200  SKILL  B1 Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,15 +308,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bec5fd96e9dbdb428737189ccdc4f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: 6694d2de67de59440b6f856b70adc704, type: 2}
-  m_caster: {fileID: 0}
-  m_isActive: 0
+  m_data: {fileID: 11400000, guid: 1548764089e84ef41bd2e607133bcd5f, type: 2}
+  m_skillLevelData:
+    CoolDown: 0
+    Duration: 0
+    Damage: 0
+    Range: 0
+    ProjectileOffset: 0
+    Radius: 0
+    Arc: 0
+    LifeTime: 0
+    BuffValues: []
+    Value1: []
+    Value2: []
+    Value3: []
+  m_state: 0
+  m_routine: 0
+  m_skillTarget: {fileID: 0}
+  m_scanLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  m_maxScanTarget: 10
+  m_isAlwaywShoot: 1
+  m_skillCoolDown: 0
   m_skillCoolDownTimer: 0
+  m_duration: 0
   m_buffs: []
+  m_projectiles: []
+  m_particles: []
+  m_visualEffects: []
+  CastEvent:
+    m_PersistentCalls:
+      m_Calls: []
   ActiveEvent:
     m_PersistentCalls:
       m_Calls: []
   InactiveEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_collisionEffect: {fileID: 2683986534879770511}

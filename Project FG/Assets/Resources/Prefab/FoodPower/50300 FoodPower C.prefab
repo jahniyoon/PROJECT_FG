@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7037454027081757407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.178349, y: 0.30788946, z: 5.846635}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,6 +55,6 @@ MonoBehaviour:
   LevelUpEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_projectileSkill: {fileID: 1901363571439153837, guid: 92fbe9098d9605041ac6f7689de01652,
+  m_projectileSkill: {fileID: 1901363571439153837, guid: 6f2d57884c7c51f4b83007f83ca6fa8d,
     type: 3}
   m_offset: 0.5

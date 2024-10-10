@@ -53,6 +53,8 @@ namespace JH
         [SerializeField] private bool m_isGameOver = false;
         [SerializeField] private string m_gameoverSFX;
         private bool isPause;
+        private bool m_quit;
+        public bool Quit => m_quit;
 
         private Transform m_projectileParent;
 
@@ -152,6 +154,10 @@ namespace JH
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
+        void OnApplicationQuit()
+        {
+            m_quit = true;
+        }
+            
     }
 }

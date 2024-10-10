@@ -9,11 +9,7 @@ namespace JH
 {
     public class FoodPowerSoulEaterSkill : FoodPowerSkill
     {
-        private FoodPowerGSkillData m_subData;
-        float m_damageTimer = 0;
-
         private Damageable m_casterDamageable;
-
         private Rigidbody m_rigidbody;
         private SphereCollider m_collider;
         [SerializeField] private SerializableDictionary<int, Damageable> m_damageableDic = new SerializableDictionary<int, Damageable>();
@@ -22,111 +18,124 @@ namespace JH
         [Header("영혼 포식자 스킬")]
         [SerializeField] private GameObject m_radiusEffect;
 
+        float m_damageTimer;
 
 
         protected override void Init()
         {
-            m_subData = m_data as FoodPowerGSkillData;
-            if (m_subData == null)
-            {
-                Debug.LogError("데이터를 확인해주세요.");
-                return;
-            }
-            if (Caster.TryGetComponent<Damageable>(out Damageable damageable))
+            if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
                 m_casterDamageable = damageable;
+
             m_collider = transform.AddComponent<SphereCollider>();
             m_collider.isTrigger = true;
             m_rigidbody = transform.AddComponent<Rigidbody>();
             m_rigidbody.isKinematic = true;
-
         }
         // 비활성화되면 리스너를 모두 제거한다.
-        private void OnDisable()
+        protected override void OnDisableEvent()
         {
+            base.OnDisableEvent();
             foreach (var damageable in m_damageableDic.Values)
             {
                 damageable.DieDamageableEvent.RemoveListener(SoulEater);
             }
-
-
         }
 
-        public override void LeagcyActiveSkill()
-        {
-            base.LeagcyActiveSkill();
-            m_damageTimer = 0;
-            m_collider.radius = m_levelData.Radius;
-            m_radiusEffect.transform.localScale = Vector3.one * m_levelData.Radius;
-
-            StartCoroutine(ActiveSkillRoutine());
-        }
         protected override void UpdateBehavior()
         {
             base.UpdateBehavior();
-
-            if (m_levelData.GetAdditionalValue(0) < m_damageTimer)
+            if (m_damageTimer <= 0 && IsActive)
             {
+                m_damageTimer = LevelData.TryGetValue1();
                 Attack();
             }
 
-            m_damageTimer += Time.deltaTime;
 
+            m_damageTimer = m_damageTimer - Time.deltaTime <= 0 ? 0 : m_damageTimer -= Time.deltaTime;
         }
 
         private void Attack()
         {
-            m_damageTimer = 0;
+            // 캐스터 타겟이면 사용하지 않는다.
+            if (Data.SkillTarget == TargetTag.Caster)
+                return;
 
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_levelData.Radius);
+            Collider[] colls = Physics.OverlapSphere(transform.position, LevelData.Radius, Data.TargetLayer, QueryTriggerInteraction.Ignore);
             for (int i = 0; i < colls.Length; i++)
             {
-                if (colls[i].isTrigger)
-                {
-                    continue;
-                }
 
-                if (colls[i].CompareTag(m_subData.Target.ToString()))
+
+                if (colls[i].CompareTag(Data.SkillTarget.ToString()))
                 {
+                    // 180도만 제한한다.
+                    if (GFunc.TargetAngleCheck(transform, colls[i].transform, LevelData.Arc) == false)
+                        continue;
+
 
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
-                        damageable.OnDamage(m_levelData.Damage);
+                        Debug.Log("데미지 보낸다" + LevelData.Damage);
+                        damageable.OnDamage(LevelData.Damage);
                     }
+
+
+                    // 버프도 같이 보낸다.
+                    OnBuff(colls[i].transform);
+                    RemoveBuff(colls[i].transform);
                 }
             }
+
+           
         }
 
+        public override void ActiveSkill()
+        {
+            base.ActiveSkill();
+
+            m_collider.radius = LevelData.Radius;
+            m_radiusEffect.transform.localScale = Vector3.one * LevelData.Radius;
+
+            // 한 투사체만 생성
+            ActiveProjectiles(onlyProjectile: true);
+
+            PlayEffect();
+
+
+            if (m_data.SkillTarget == TargetTag.Caster)
+                OnBuff(Caster.Transform);
+        }
+
+        public override void InactiveSkill()
+        {
+            // 투사체를 리셋
+            ResetProjectiles();
+
+            if (m_data.SkillTarget == TargetTag.Caster)
+                RemoveBuff(Caster.Transform);
+
+            StopEffect();
+            base.InactiveSkill();
+        }
         public void SoulEater(Damageable damageable)
         {
             float rand = Random.Range(0, 100);
 
             RemoveDamageable(damageable);
 
-            if (m_levelData.GetAdditionalValue(1) < rand)
+            if (LevelData.TryGetValue1(1) < rand)
                 return;
 
             if (m_casterDamageable != null)
-                m_casterDamageable.RestoreHealth(m_levelData.GetAdditionalValue(2));
+                m_casterDamageable.RestoreHealth(LevelData.TryGetValue1(2));
         }
 
-
-
-        public override void InactiveSkill()
-        {
-            base.InactiveSkill();
-
-
-            Destroy(gameObject);
-
-        }
-
-
+        #region Damageable
         private void AddDamageable(Damageable damageable)
         {
-            int key = damageable.gameObject.GetInstanceID();
-
             if (damageable.IsDie)
                 return;
+
+            int key = damageable.gameObject.GetInstanceID();
 
             if (m_damageableDic.ContainsKey(key))
                 return;
@@ -142,13 +151,14 @@ namespace JH
             damageable.DieDamageableEvent.RemoveListener(SoulEater);
             m_damageableDic.Remove(key);
         }
+        #endregion Damageable
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.isTrigger || IsActive == false)
                 return;
 
-            if (other.CompareTag(m_subData.Target.ToString()))
+            if (other.CompareTag(Data.SkillTarget.ToString()))
             {
                 if (other.TryGetComponent<Damageable>(out Damageable damageable))
                     AddDamageable(damageable);
@@ -156,18 +166,17 @@ namespace JH
 
         }
 
-
-
-
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag(m_subData.Target.ToString()))
+            if (other.CompareTag(Data.SkillTarget.ToString()))
             {
                 if (other.TryGetComponent<Damageable>(out Damageable damageable))
                     RemoveDamageable(damageable);
             }
 
         }
+
+
 
         void OnDrawGizmosSelected()
         {

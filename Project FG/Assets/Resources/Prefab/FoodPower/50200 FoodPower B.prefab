@@ -55,5 +55,5 @@ MonoBehaviour:
   LevelUpEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_skillPrefab: {fileID: 4226847010749041626, guid: faa35d5e0be01f048bd14ab85f3bd113,
+  m_shieldSkill: {fileID: 4226847010749041626, guid: 71fb861ef58630540be51f7e92adc3d7,
     type: 3}

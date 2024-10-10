@@ -29575,7 +29575,7 @@ GameObject:
   - component: {fileID: 1513349173095639169}
   m_Layer: 0
   m_Name: "90500  PROJECTILE  \uD3ED\uBC1C"
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29589,7 +29589,7 @@ Transform:
   m_GameObject: {fileID: 5006260386408819739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29611,11 +29611,13 @@ MonoBehaviour:
   m_data: {fileID: 11400000, guid: 3548ca3a05a5d804eaf43302128bc199, type: 2}
   m_skill: {fileID: 0}
   m_buffs: []
-  m_isStopDestroy: 1
-  m_collisionParticles:
-  - {fileID: 3589830772802491886}
+  m_particles:
   - {fileID: 3041776926893483952}
-  m_collisionEffect: []
+  - {fileID: 3589830772802491886}
+  m_effects: []
+  m_debug: {fileID: 0}
+  m_debugMode: 0
+  m_isStopDestroy: 1
 --- !u!1 &6705063712781487625
 GameObject:
   m_ObjectHideFlags: 0

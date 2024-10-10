@@ -55,4 +55,5 @@ MonoBehaviour:
   LevelUpEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_skill: {fileID: 603099643357149795, guid: 9e14bdae6614f61408502433b54525cb, type: 3}
+  m_donutSkill: {fileID: 603099643357149795, guid: 4be8891cefade794fb95f38d565a2018,
+    type: 3}

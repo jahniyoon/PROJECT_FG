@@ -85,7 +85,7 @@ namespace JH
             if(m_skillCoolDownTimer <= 0)
             {
                 ActiveSkill();
-                m_skillCoolDownTimer = m_subData.FrozenSkill.Data.SkillCoolDown;
+                m_skillCoolDownTimer = m_subData.FrozenSkill.Data.CoolDown;
             }
 
 

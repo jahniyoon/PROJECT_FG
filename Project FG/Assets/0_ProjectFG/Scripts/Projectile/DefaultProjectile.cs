@@ -12,35 +12,24 @@ namespace JH
 
 
 
-        [SerializeField] private int m_penetrateCount;
-
-
-        protected Vector3 m_spawnPos;
-
         protected override void AwakeInit()
         {
+            base.AwakeInit();
             m_collider = GetComponent<SphereCollider>();
             m_rigid = GetComponent<Rigidbody>();
-            m_spawnPos = transform.position;
-            m_penetrateCount = m_data.Penetrate;
             m_collider.radius = m_data.ProjectileScale * 0.5f;
 
         }
         public override void SetSkill(SkillBase skill)
         {
             base.SetSkill(skill);
-            Invoke(nameof(DestroyProjectile), m_skill.Data.SkillLifeTime);
         }
 
 
-        void Update()
-        {
-            UpdatePosition();
-        }
         // 위치
-        protected virtual void UpdatePosition()
+        protected void FixedUpdate()
         {
-            Vector3 velocity = transform.forward * (m_data.ProjectileSpeed * Time.deltaTime);
+            Vector3 velocity = transform.forward * (m_projectileSpeed * Time.deltaTime);
             m_rigid.MovePosition(m_rigid.position + velocity);
         }
 
@@ -49,20 +38,23 @@ namespace JH
         protected virtual void Collision()
         {
             if (m_penetrateCount <= 0)
-                DestroyProjectile();
+                InActiveProjectile();
 
             m_penetrateCount--;
         }
 
-        // 투사체 파괴
-        protected virtual void DestroyProjectile()
-        {
-            Destroy(gameObject);
-        }
 
         // 무시할 콜라이더
         protected virtual bool IgnoreCollider(Collider other)
         {
+
+            // 자기 자신은 무시
+            if (m_skill.Caster.GameObject == other.gameObject)
+                return true;
+
+            if (other.CompareTag("Projectile"))
+                return true;
+
             return other.isTrigger;
         }
 
@@ -74,10 +66,11 @@ namespace JH
             // 태그 체크 먼저 하고
             if (TagCheck(other))
             {
-                Damageable target = other.transform.GetComponent<Damageable>();
+                if(other.TryGetComponent<Damageable>(out Damageable damageable))
+                    damageable.OnDamage(m_skill.LevelData.Damage);
 
-                if (target)
-                    target.OnDamage(m_skill.Data.SkillDamage);
+                if (other.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
+                    OnBuff(other.transform);
             }
 
             Collision();

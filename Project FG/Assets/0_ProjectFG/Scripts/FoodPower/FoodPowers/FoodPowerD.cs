@@ -11,29 +11,24 @@ namespace JH
     public class FoodPowerD : FoodPower
     {
         [Header("Skill")]
-        [SerializeField] private FoodPowerSkill m_skill;
-        private FoodPowerSkill m_activeSkill;
+        [SerializeField] private FoodPowerSkill m_donutSkill;
+        private FoodPowerSkill m_skill;
 
 
 
         public override void Active()
         {
-            Vector3 position = m_casterPosition.position;
+            if (m_skill == null)
+                m_skill = Instantiate(m_donutSkill.gameObject, this.transform).GetComponent<FoodPowerSkill>();
+            m_skill.SkillInit(Caster);
+            m_skill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
 
-            Quaternion direction = GetDirection();
-
-            m_activeSkill = Instantiate(m_skill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
-            m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
-            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
-
-            m_activeSkill.LeagcyActiveSkill();
         }
         public override void Inactive()
         {
-            if (m_activeSkill)
+            if (m_skill != null)
             {
-                m_activeSkill.InactiveSkill();
-                Destroy(m_activeSkill.gameObject);
+                m_skill.InactiveSkill();
             }
             base.Inactive();
         }

@@ -67,7 +67,7 @@ namespace GoogleSheetsToUnity
 
         private string Encrypt(string token)
         {
-            //Debug.Log("암호화 : " + token);
+            //DebugProjectile.Log("암호화 : " + token);
             TextAsset key = Resources.Load("SECRETKEY") as TextAsset;
             if (key == null)
             {

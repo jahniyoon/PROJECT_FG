@@ -13,13 +13,10 @@ namespace JH
         private SphereCollider m_collider;
         [Header("AOEProjectile")]
         [SerializeField] private List<Transform> m_aoeTargets = new List<Transform>();
+        [SerializeField] private Transform m_effectTransform;
 
 
-        [SerializeField] bool m_isDestroy;
 
-        [Header("Particles")]
-        [SerializeField] private ParticleSystem[] m_collisionParticles;
-        [SerializeField] private VisualEffect[] m_collisionEffect;
 
 
         protected override void AwakeInit()
@@ -35,42 +32,39 @@ namespace JH
         public override void SetSkill(SkillBase skill)
         {
             base.SetSkill(skill);
-            m_collider.radius = m_skill.Data.SkillRadius;
-
-
+            m_collider.radius = m_skill.LevelData.Radius;
+            m_effectTransform.transform.localScale = Vector3.one * m_skill.LevelData.Radius;
         }
         public override void ActiveProjectile()
         {
-
-            foreach (var effect in m_collisionParticles)
-            {
-                effect.Stop();
-                effect.Play();
-            }
+            PlayEffect();
         }
         public override ProjectileBase InActiveProjectile()
         {
             StopEffect();
-            return  this;
+            RemoveAllTarget();
+            return base.InActiveProjectile();
         }
 
         public void AddTarget(Transform target)
         {
             if (m_aoeTargets.Contains(target))
                 return;
+
+
             OnBuff(target);
             m_aoeTargets.Add(target);
         }
 
         public void RemoveTarget(Transform target)
         {
-            if(m_aoeTargets.Contains(target) == false)
-                    return;
+            if (m_aoeTargets.Contains(target) == false)
+                return;
 
 
-            for(int i = 0; i < m_aoeTargets.Count; i++)
+            for (int i = 0; i < m_aoeTargets.Count; i++)
             {
-                if(m_aoeTargets[i] == target)
+                if (m_aoeTargets[i] == target)
                 {
                     RemoveBuff(target);
                     m_aoeTargets.RemoveAt(i);
@@ -81,37 +75,29 @@ namespace JH
         }
         public void RemoveAllTarget()
         {
+
             for (int i = 0; i < m_aoeTargets.Count; i++)
             {
                 RemoveBuff(m_aoeTargets[i]);
-                m_aoeTargets.RemoveAt(i);
             }
-
-
-
+            m_aoeTargets.Clear();
         }
 
-        private void StopEffect()
+        private void OnTriggerStay(Collider other)
         {
-            foreach (var effect in m_collisionParticles)
-            {
-                effect.Stop();
-            }            
+            if (m_skill == null)
+                return;
 
-
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
             if (other.isTrigger || m_skill.IsActive == false)
                 return;
             if (other.CompareTag(m_skill.Data.SkillTarget.ToString()))
-            {
                 AddTarget(other.transform);
-            }
         }
         private void OnTriggerExit(Collider other)
         {
+            if (m_skill == null)
+                return;
+
             if (other.isTrigger)
                 return;
 

@@ -10022,7 +10022,7 @@ GameObject:
   - component: {fileID: 8033957559513531765}
   - component: {fileID: 3632960342059153868}
   - component: {fileID: 5956328369330435029}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 20200 Enemy B
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -10070,7 +10070,7 @@ MonoBehaviour:
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
   m_attackCoolDown: 0
-  m_stunEffect: {fileID: 0}
+  m_stunEffect: {fileID: 8063288106136316370}
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
@@ -10092,7 +10092,7 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
-  m_damageReduction: 0
+  m_HitdamageDecrease: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_execution: 0
   DamageEvent:

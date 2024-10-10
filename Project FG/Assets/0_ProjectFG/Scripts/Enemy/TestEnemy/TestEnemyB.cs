@@ -29,7 +29,7 @@ namespace JH
 
             // 스킬을 초기화한다.
             m_shildSkill = Instantiate(m_subbData.ShieldSkill, transform).GetComponent<SkillBase>();
-            m_shildSkill.SkillInit(this.gameObject, m_model);
+            //m_shildSkill.SkillInit(this.gameObject, m_model);
         }
         private bool TryGetData()
         {

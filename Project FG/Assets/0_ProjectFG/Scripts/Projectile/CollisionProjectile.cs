@@ -11,13 +11,12 @@ namespace JH
         [Header("Collision")]
         [SerializeField] bool m_isStopDestroy;
 
-        [Header("Particles")]
-        [SerializeField] private ParticleSystem[] m_collisionParticles;
-        [SerializeField] private VisualEffect[] m_collisionEffect;
+
+
 
         public override void ActiveProjectile()
         {
-
+            base.ActiveProjectile();
             Collision();
         }
 
@@ -28,29 +27,22 @@ namespace JH
             if (m_skill.Data.SkillTarget == TargetTag.Caster)
                 return;
 
-            Collider[] colls = Physics.OverlapSphere(transform.position + transform.forward * m_skill.Data.ProjectileOffset, m_skill.Data.SkillRadius);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.Radius, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
             for (int i = 0; i < colls.Length; i++)
             {
-                if (colls[i].isTrigger)
-                {
-                    continue;
-                }
 
 
                 if (colls[i].CompareTag(m_skill.Data.SkillTarget.ToString()))
                 {
                     // 180도만 제한한다.
-                    if (GFunc.TargetAngleCheck(transform, colls[i].transform, m_skill.Data.SkillArc) == false)
+                    if (GFunc.TargetAngleCheck(transform, colls[i].transform, m_skill.LevelData.Arc) == false)
                         continue;
 
 
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
-                        damageable.OnDamage(m_skill.Data.SkillDamage);
+                        damageable.OnDamage(m_skill.LevelData.Damage);
                     }
-
-                    var knockBackForce = m_skill.Data.TryGetBuffValue(0);
-                    var knockBackDuration = m_skill.Data.TryGetBuffValue(1);
 
 
                     // 버프도 같이 보낸다.
@@ -59,36 +51,18 @@ namespace JH
                 }
             }
 
-            foreach (var effect in m_collisionParticles)
-            {
-                effect.Stop();
-                effect.Play();
-            }
-            foreach (var effect in m_collisionEffect)
-            {
-                effect.Stop();
-                effect.Play();
-            }
+            PlayEffect();
 
-            Invoke(nameof(StopEffect), m_skill.Data.SkillLifeTime);
+            if (0 <= m_skill.LevelData.LifeTime)
+                Invoke(nameof(StopEffect), m_skill.LevelData.LifeTime);
         }
 
-        private void StopEffect()
+
+        protected override void DebugProjectile()
         {
-            foreach (var effect in m_collisionParticles)
-            {
-                effect.Stop();
-            }            
-            foreach (var effect in m_collisionEffect)
-            {
-                effect.Stop();
-            }
-
-            this.gameObject.SetActive(false);
-
-            if (m_isStopDestroy)
-                Destroy(gameObject);
-
+            m_debug.gameObject.SetActive(true);
+            m_debug.position = transform.position;
+            m_debug.localScale = Vector3.one * m_skill.LevelData.Radius;
         }
     }
 

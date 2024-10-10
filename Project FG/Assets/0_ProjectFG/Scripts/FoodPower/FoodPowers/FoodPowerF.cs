@@ -11,8 +11,8 @@ namespace JH
     public class FoodPowerF : FoodPower
     {
         [Header("Skill")]
-        [SerializeField] private FoodPowerSkill m_skill;
-        private FoodPowerSkill m_activeSkill;
+        [SerializeField] private FoodPowerSkill m_areaSkill;
+        private FoodPowerSkill m_skill;
 
 
         // 레벨업 한 경우에 스킬을 다시 켜줘야한다.
@@ -23,28 +23,21 @@ namespace JH
             Active();
         }
 
-        public override void Inactive()
-        {
-            if (m_activeSkill)
-            {
-                m_activeSkill.InactiveSkill();
-                Destroy(m_activeSkill.gameObject);
-            }
-            base.Inactive();
-        }
 
         public override void Active()
         {
-            Vector3 position = m_casterPosition.position;
-
-            Quaternion direction = GetDirection();
-
-            m_activeSkill = Instantiate(m_skill.gameObject, position, direction, m_caster.transform).GetComponent<FoodPowerSkill>();
-            m_activeSkill.SkillInit(m_caster.gameObject, m_casterPosition);
-            m_activeSkill.SetFoodPowerData(m_data.GetLevelData(m_powerLevel));
-
-            m_activeSkill.LeagcyActiveSkill();
+            if (m_skill == null)
+                m_skill = Instantiate(m_areaSkill.gameObject, this.transform).GetComponent<FoodPowerSkill>();
+            m_skill.SkillInit(Caster);
+            m_skill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
         }
+        public override void Inactive()
+        {
+            if (m_skill != null)
+                m_skill.InactiveSkill();
+            base.Inactive();
+        }
+
 
     }
 }

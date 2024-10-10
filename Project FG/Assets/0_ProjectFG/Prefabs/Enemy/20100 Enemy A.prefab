@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 23499756991660013}
   - component: {fileID: 3259780185787352137}
   - component: {fileID: 5231404429864551605}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 20100 Enemy A
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_stunEffect: {fileID: 8781372125469236361}
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
+  m_skillTimer: 0
   m_attackSkills: []
   m_routineSkills: []
 --- !u!114 &4054980681047267653

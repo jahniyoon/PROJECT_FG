@@ -65,7 +65,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [SerializeField] protected List<SkillBase> m_attackSkills = new List<SkillBase>();
     [SerializeField] protected List<SkillBase> m_routineSkills = new List<SkillBase>();
 
-
+    protected Transform m_skillParent;
 
 
     protected float m_attackTimer = 0;
@@ -75,6 +75,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     public FSMState State => m_state;
     public int ID => m_data.ID;
     public Transform Transform => this.transform;
+    public Transform Model => m_model;
+    public GameObject GameObject => this.gameObject;    
     public bool NotCount => m_notCount;
     public Damageable Damageable => m_damageable;
 
@@ -170,6 +172,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
             m_predationIcon.transform.localPosition = localPos;
         }
         m_spriteColor = GetComponent<SpriteColor>();
+
+        m_skillParent = new GameObject("Skill").transform;
+        m_skillParent.parent = this.transform;
     }
 
     protected virtual void StartInit()
@@ -517,25 +522,32 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
                 m_attackSkills.Add(skill);
         }
 
+        bool routine = true;
+
         foreach (int id in m_data.RoutineSkillID)
         {
-            SkillBase skill = CreateSkill(GFunc.GetSkillPrefab(id));
-            if (skill != null)
+            // 루틴 스킬은 생성 시
+            SkillBase skill = CreateSkill(GFunc.GetSkillPrefab(id), routine);
+            if (skill == null)
+                continue;
                 m_routineSkills.Add(skill);
         }
     }
 
     // 스킬 생성
-    private SkillBase CreateSkill(SkillBase skill)
+    private SkillBase CreateSkill(SkillBase skill, bool routine = false)
     {
         if (skill == null)
             return null;
-        SkillBase newSkill = Instantiate(skill.gameObject, transform.position, transform.rotation, transform).GetComponent<SkillBase>();
-
-        newSkill.SkillInit(this.gameObject, m_model);
-
+        SkillBase newSkill = Instantiate(skill.gameObject, transform.position, transform.rotation, m_skillParent).GetComponent<SkillBase>();
+        
         if (m_target)
             newSkill.SetTarget(m_target);
+
+        newSkill.SkillInit(this, routine);
+
+
+
         return newSkill;
 
         #region AimType

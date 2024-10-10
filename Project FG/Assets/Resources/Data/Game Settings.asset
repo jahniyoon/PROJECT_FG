@@ -21,14 +21,11 @@ MonoBehaviour:
   <PlayerMaxHealth>k__BackingField: 200
   <PlayerMoveSpeed>k__BackingField: 6
   <PlayerRotateSpeed>k__BackingField: 20
-  <PlayerAttackDamage>k__BackingField: 30
-  <PlayerAttackCoolDown>k__BackingField: 0.25
-  <PlayerAttackStunDuration>k__BackingField: 0.1
   <PredationRestoreHealth>k__BackingField: 10
   <PredationPlayerRange>k__BackingField: 5
   <PredationAimRange>k__BackingField: 3
   <PredationCoolDown>k__BackingField: 0
-  <DashDuration>k__BackingField: 0.2
+  <DashDuration>k__BackingField: 0.15
   <PredationFatalityDuration>k__BackingField: 0.3
   <PredationIconScale>k__BackingField: 0.5
   <MaxHunger>k__BackingField: 10
@@ -36,10 +33,8 @@ MonoBehaviour:
   <HungerSkillDamage>k__BackingField: 200
   <HungerSkillStun>k__BackingField: 1
   <HungerSkillDelay>k__BackingField: 0.3
-  <DefaultFoodPower>k__BackingField: {fileID: -2637219223760161457, guid: d9970a426d59f2541b7f4ae51c1dcdba,
+  <DefaultFoodPower>k__BackingField: {fileID: 1961031887029804917, guid: e4f1cddfa1001a44d867c05bf2da3093,
     type: 3}
-  <FoodPowerDelay>k__BackingField: 0.25
-  <FoodPowerAimType>k__BackingField: 1
   <FoodCombo>k__BackingField:
   - ComboType: 0
     Level: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7398567460825691467}
   - component: {fileID: 1066783928727135755}
   - component: {fileID: 4765512241324836864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 20700 Enemy G
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -64,14 +64,12 @@ MonoBehaviour:
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
   m_attackCoolDown: 0
-  m_stunEffect: {fileID: 0}
+  m_stunEffect: {fileID: 5300735016244865262}
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
   m_attackSkills: []
   m_routineSkills: []
-  m_towerTime: 0
-  m_towerTimer: 0
 --- !u!114 &7817002158819193060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +86,7 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
-  m_damageReduction: 0
+  m_HitdamageDecrease: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_execution: 0
   DamageEvent:
