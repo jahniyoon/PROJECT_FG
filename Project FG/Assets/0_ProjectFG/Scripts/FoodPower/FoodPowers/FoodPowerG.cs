@@ -11,8 +11,8 @@ namespace JH
     public class FoodPowerG : FoodPower
     {
         [Header("Skill")]
-        [SerializeField] private FoodPowerSkill m_skill;
-        private FoodPowerSkill m_activeSkill;
+        [SerializeField] private FoodPowerSkill m_healSkill;
+        private FoodPowerSkill m_skill;
 
 
         public override void Init(bool isMain = false)
@@ -22,31 +22,34 @@ namespace JH
         }
         private void UpdateLevel()
         {
-            if(m_activeSkill)
-            m_activeSkill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
+            if(m_skill)
+            m_skill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
         }
 
         public override void Active()
         {
-            Vector3 position = Caster.Transform.position;
+            if (m_skill == null)
+                m_skill = Instantiate(m_healSkill.gameObject, this.transform).GetComponent<FoodPowerSkill>();
 
-            Quaternion direction = GetDirection();
-
-            m_activeSkill = Instantiate(m_skill.gameObject, position, direction, Caster.Transform).GetComponent<FoodPowerSkill>();
-            m_activeSkill.SkillInit(Caster);
-            m_activeSkill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
+            m_skill.SkillInit(Caster);
+            m_skill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
 
         }
         public override void Inactive()
         {
-
-            if (m_activeSkill)
+            if (m_skill)
             {
-                m_activeSkill.InactiveSkill();
-                Destroy(m_activeSkill.gameObject);
+                m_healSkill.InactiveSkill();
             }
             base.Inactive();
         }
-
+        public override void Remove()
+        {
+            base.Remove();
+            if (m_skill != null)
+            {
+                m_skill.RemoveSkill();
+            }
+        }
     }
 }

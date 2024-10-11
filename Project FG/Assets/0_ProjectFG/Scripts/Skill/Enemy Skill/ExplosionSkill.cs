@@ -15,8 +15,9 @@ namespace JH
             Invoke(nameof(StopEffect), m_data.SkillLifeTime);
         }
 
-        private void StopEffect()
+        protected override void StopEffect()
         {
+            base.StopEffect();
             if (m_collisionEffect != null)
             {
                 m_collisionEffect.Stop();

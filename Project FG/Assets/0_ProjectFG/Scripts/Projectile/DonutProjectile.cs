@@ -19,13 +19,13 @@ namespace JH
 
         public void ShootDonut()
         {
-            m_outerRadius = m_skill.Data.SkillRadius;
-            m_innerRadius = m_skill.Data.TryGetValue1();
+            m_outerRadius = m_skill.LevelData.Radius;
+            m_innerRadius = m_skill.LevelData.TryGetValue1();
 
             m_donutEffect.SetRadius(m_outerRadius, m_innerRadius);
 
-            float duration = m_skill.Data.TryGetValue1(1);
-            StartCoroutine(AimRoutine(m_skill.Data.SkillDamage, duration));
+            float duration = m_skill.LevelData.TryGetValue1(1);
+            StartCoroutine(AimRoutine(m_skill.LevelData.Damage, duration));
         }
 
 
@@ -42,6 +42,16 @@ namespace JH
             }
             m_donutEffect.SetActive(false);
             Explosion(damage);
+
+
+            timer = 0;
+
+            while(timer < m_skill.LevelData.LifeTime)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            InActiveProjectile();
             yield break;
         }
 
@@ -81,6 +91,12 @@ namespace JH
                 effect.Play();
 
             }
+        }
+
+        public override ProjectileBase InActiveProjectile()
+        {
+            Destroy(this.gameObject);
+            return this;
         }
     }
 

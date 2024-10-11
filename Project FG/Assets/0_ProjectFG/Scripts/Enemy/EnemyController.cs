@@ -372,10 +372,28 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
         m_canPredation = false;
         m_predationIcon.IconEnable(m_canPredation);
+
+        m_healthBar.HealthBarEnable(false);
+        m_predationIcon.gameObject.SetActive(false);
         // 버프 모두 지워주기
         m_buffHandler.RemoveAllBuff();
 
         transform.GetComponent<CapsuleCollider>().enabled = false;
+
+        // 죽으면 모든 스킬을 꺼준다.
+        for (int i = 0; i < m_routineSkills.Count; i++)
+        {
+            m_routineSkills[i].InactiveSkill();
+            m_routineSkills[i].RemoveSkill();
+
+        }
+
+        for (int i = 0; i < m_attackSkills.Count; i++)
+        {
+            m_attackSkills[i].InactiveSkill();
+            m_attackSkills[i].RemoveSkill();
+
+        }
 
 
         if (m_is2D == false)

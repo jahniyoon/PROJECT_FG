@@ -152,7 +152,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1076442344049760639}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50
@@ -5166,7 +5166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 209889bb9d23ffb42bd53637607ec172, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4119767ddae279c45bf8ef436a50cefe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

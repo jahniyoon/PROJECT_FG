@@ -94,6 +94,11 @@ namespace JH
 
         }
 
+        public virtual void Remove()
+        {
+            Inactive();
+        }
+
         public virtual void LevelUp()
         {
             m_powerLevel++;

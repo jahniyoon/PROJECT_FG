@@ -32,9 +32,9 @@ namespace JH
             m_rigidbody.isKinematic = true;
         }
         // 비활성화되면 리스너를 모두 제거한다.
-        protected override void OnDisableEvent()
+        public override void RemoveSkill()
         {
-            base.OnDisableEvent();
+            base.RemoveSkill();
             foreach (var damageable in m_damageableDic.Values)
             {
                 damageable.DieDamageableEvent.RemoveListener(SoulEater);

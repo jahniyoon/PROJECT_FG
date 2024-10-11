@@ -13,7 +13,7 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_slashSkill;
-        private FoodPowerSkill m_skill;
+        protected FoodPowerSkill m_skill;
 
         // 푸드파워 활성화
         public override void Active()
@@ -30,12 +30,20 @@ namespace JH
         {
             if (m_skill != null)
             {
-                m_skill.InactiveSkill();
                 m_skill.ActiveEvent.RemoveListener(SkillActiveEvent);
+                m_skill.InactiveSkill();
             }
             base.Inactive();
         }
+        public override void Remove()
+        {
+            base.Remove();
+            if (m_skill != null)
+            {
+                m_skill.RemoveSkill();
+            }
+        }
 
-       
+
     }
 }

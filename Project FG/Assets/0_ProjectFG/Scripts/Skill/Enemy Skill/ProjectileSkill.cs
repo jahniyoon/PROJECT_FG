@@ -12,18 +12,10 @@ namespace JH
         public override void ActiveSkill()
         {
             base.ActiveSkill();
-            ShootProjectiles();
+            CreateProjectiles(true);
         }
 
-        private void ShootProjectiles()
-        {
-            for (int i = 0; i < m_projectiles.Count; i++)
-            {
-                CreateProjectile(m_projectiles[i]);
-            }
-        }
-
-  
+    
         //private void CreateProjectile(ProjectileBase projectile)
         //{
         //    Transform parent = GameManager.Instance.ProjectileParent;

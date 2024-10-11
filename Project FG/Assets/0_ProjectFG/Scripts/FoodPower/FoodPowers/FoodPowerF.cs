@@ -37,7 +37,14 @@ namespace JH
                 m_skill.InactiveSkill();
             base.Inactive();
         }
-
+        public override void Remove()
+        {
+            base.Remove();
+            if (m_skill != null)
+            {
+                m_skill.RemoveSkill();
+            }
+        }
 
     }
 }

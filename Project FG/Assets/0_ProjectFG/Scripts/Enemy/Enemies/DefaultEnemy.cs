@@ -16,15 +16,16 @@ namespace JH
             base.StartInit();
         }
 
+        public bool TargetCheck()
+        {
+            if(m_player == null)
+                return false;
+            if (m_player.State == FSMState.Die)
+                return false;
+            return true;
+        }
         protected override void Die()
         {
-            // 죽으면 모든 스킬을 꺼준다.
-            for (int i = 0; i < m_routineSkills.Count; i++)
-                m_routineSkills[i].InactiveSkill();
-
-            for (int i = 0; i < m_attackSkills.Count; i++)
-                m_attackSkills[i].InactiveSkill();
-
             base.Die();
         }
 

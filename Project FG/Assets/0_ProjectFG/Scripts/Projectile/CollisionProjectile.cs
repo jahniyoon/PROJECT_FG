@@ -54,7 +54,7 @@ namespace JH
             PlayEffect();
 
             if (0 <= m_skill.LevelData.LifeTime)
-                Invoke(nameof(StopEffect), m_skill.LevelData.LifeTime);
+                Invoke(nameof(InActiveProjectile), m_skill.LevelData.LifeTime);
         }
 
 

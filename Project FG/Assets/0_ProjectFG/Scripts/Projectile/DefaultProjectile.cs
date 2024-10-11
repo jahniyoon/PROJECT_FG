@@ -42,6 +42,11 @@ namespace JH
 
             m_penetrateCount--;
         }
+        public override ProjectileBase InActiveProjectile()
+        {
+            Destroy(this.gameObject);
+            return this;
+        }
 
 
         // 무시할 콜라이더
@@ -66,7 +71,7 @@ namespace JH
             // 태그 체크 먼저 하고
             if (TagCheck(other))
             {
-                if(other.TryGetComponent<Damageable>(out Damageable damageable))
+                if (other.TryGetComponent<Damageable>(out Damageable damageable))
                     damageable.OnDamage(m_skill.LevelData.Damage);
 
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))

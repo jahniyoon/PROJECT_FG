@@ -79,6 +79,11 @@ namespace JH
 
         protected void RemoveBuff(Transform target)
         {
+            if (target == null)
+            {
+                Debug.LogError("타겟이 없다");
+                return;
+            }
             if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
 
                 for (int i = 0; i < m_buffs.Count; i++)
@@ -90,13 +95,14 @@ namespace JH
         public virtual void ActiveProjectile()
         {
             TryDebug();
-
-            if(0 <= m_skill.LevelData.LifeTime)
+            lifeTime = m_skill.LevelData.LifeTime;
+            if (0 <= m_skill.LevelData.LifeTime)
             Invoke(nameof(InActiveProjectile), m_skill.LevelData.LifeTime);
         }
+        public float lifeTime;
         public virtual ProjectileBase InActiveProjectile()
         {
-            gameObject?.SetActive(false);
+            gameObject.SetActive(false);
             return this;
         }
 

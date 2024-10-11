@@ -295,7 +295,7 @@ namespace JH
             foreach (FoodPower power in foodPowers)
             {
                 // 파워도 꺼야함
-                power.Inactive();
+                power.Remove();
                 Destroy(power.gameObject);
             }
 

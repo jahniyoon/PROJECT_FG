@@ -40,6 +40,9 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
+            if(TargetCheck() == false)
+                return new IdleState();
+
             if (HitStateCheck())
                 return new HitState();
 
@@ -55,6 +58,7 @@ namespace JH
         {
             // 정지를 시킨경우 켜지 않는다.
             m_agent.isStopped = m_isStop;
+            m_agent.avoidancePriority = 50;
         }
 
         protected override void MoveStateStay()
@@ -63,6 +67,8 @@ namespace JH
             if (0 < m_skillTimer)
                 return;
 
+            m_agent.avoidancePriority = 50;
+
             Vector3 destination = m_target.position;
 
             // 회피거리보다 가까우면
@@ -70,8 +76,12 @@ namespace JH
                 destination = FindChasePos();
 
             // 공격범위보다 가까우면 멈춘다.
-            else if (m_targetDistance < m_data.AttackRange)
+            else if (m_targetDistance <= m_data.AttackRange)
+            {
+                m_agent.avoidancePriority = 49;
                 destination = this.transform.position;
+
+            }
 
             ModelRotate(destination, false, true);
 
@@ -81,8 +91,10 @@ namespace JH
         }
         protected override void MoveStateExit()
         {
+            m_agent.avoidancePriority = 49;
             m_agent.SetDestination(this.transform.position);
             m_agent.isStopped = true;
+
         }
         #endregion
 
@@ -95,7 +107,7 @@ namespace JH
             if (HitStateCheck())
                 return new HitState();
 
-            if (m_target == null)
+            if (TargetCheck() == false)
                 return new IdleState();
 
             if (AttackRangeCheck() == false)

@@ -33,7 +33,7 @@ MonoBehaviour:
   <HungerSkillDamage>k__BackingField: 200
   <HungerSkillStun>k__BackingField: 1
   <HungerSkillDelay>k__BackingField: 0.3
-  <DefaultFoodPower>k__BackingField: {fileID: 1961031887029804917, guid: e4f1cddfa1001a44d867c05bf2da3093,
+  <DefaultFoodPower>k__BackingField: {fileID: -2637219223760161457, guid: 3bdabdddb3aabbd42b619b9bcaa394cd,
     type: 3}
   <FoodCombo>k__BackingField:
   - ComboType: 0

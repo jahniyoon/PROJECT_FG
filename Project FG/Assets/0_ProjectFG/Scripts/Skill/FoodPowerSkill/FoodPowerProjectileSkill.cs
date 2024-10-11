@@ -21,7 +21,7 @@ namespace JH
         protected override void SetProjectile(ProjectileBase projectile)
         {
             base.SetProjectile(projectile);
-            Debug.Log(LevelData.TryGetValue1() + " " + LevelData.TryGetValue1(1));
+            //Debug.Log(LevelData.TryGetValue1() + " " + LevelData.TryGetValue1(1));
             projectile.SetSpeedPenetrate(LevelData.TryGetValue1(), Mathf.FloorToInt(LevelData.TryGetValue1(1)));
         }
     }

@@ -56,7 +56,7 @@ MonoBehaviour:
   m_effects:
   - {fileID: 2610968725412591849}
   m_debug: {fileID: 5887216952585686314}
-  m_debugMode: 1
+  m_debugMode: 0
   m_isStopDestroy: 1
 --- !u!135 &1057847645469016943
 SphereCollider:

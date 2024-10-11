@@ -192,7 +192,7 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
-  m_damageReduction: 0
+  m_HitdamageDecrease: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_execution: 0
   DamageEvent:
@@ -258,7 +258,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1395570049775427166}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50

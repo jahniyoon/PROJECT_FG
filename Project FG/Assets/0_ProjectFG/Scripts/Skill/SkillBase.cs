@@ -9,7 +9,6 @@ namespace JH
 {
     public class SkillBase : MonoBehaviour
     {
-        protected bool m_quit;
 
         [Header("Data")]
         [SerializeField] protected SkillData m_data;
@@ -142,25 +141,6 @@ namespace JH
         protected virtual void Init() { }
 
         #endregion Init
-        private void OnDisable()
-        {
-            if (m_quit)
-                return;
-            OnDisableEvent();
-        }
-        protected virtual void OnDisableEvent()
-        {
-            for (int i = 0; i < m_activeProjectiles.Count; i++)
-            {
-                m_activeProjectiles[i].InActiveProjectile();
-                Destroy(m_activeProjectiles[i].gameObject);
-            }
-        }
-
-        void OnApplicationQuit()
-        {
-            m_quit = true;
-        }
 
 
         // 스킬에 업데이트가 필요한 부분
@@ -242,8 +222,18 @@ namespace JH
 
             SetState(SkillState.Reloading);
             InactiveEvent?.Invoke();
-        }
 
+        }
+        public virtual void RemoveSkill()
+        {
+            for (int i = 0; i < m_activeProjectiles.Count; i++)
+            {
+                if (m_activeProjectiles[i] == null)
+                    continue;
+                m_activeProjectiles[i].InActiveProjectile();
+                Destroy(m_activeProjectiles[i].gameObject);
+            }
+        }
         // 스킬 지속시간동안 이뤄지는 루틴
         protected virtual IEnumerator ActiveSkillRoutine(float duration = 0)
         {
@@ -358,8 +348,6 @@ namespace JH
                 if (projectile == null)
                     continue;
 
-                m_projectiles[i] = projectile;
-
                 if (active)
                     projectile.ActiveProjectile();
             }
@@ -372,6 +360,7 @@ namespace JH
             SetAim(cloneProjectile.transform);
             cloneProjectile.SetSkill(this);
             SetProjectile(cloneProjectile);
+
 
             return cloneProjectile;
         }
@@ -400,6 +389,7 @@ namespace JH
                 for (int i = 0; i < m_activeProjectiles.Count; i++)
                 {
                     var projectile = m_activeProjectiles[i];
+
                     projectile.gameObject.SetActive(true);
 
                     // 여러발을 생성해야할 때
@@ -469,6 +459,7 @@ namespace JH
             {
                 targetPos = Target.transform.position;
                 targetPos.y = Caster.Model.position.y;
+                if(targetPos - position != Vector3.zero)
                 targetRotation.SetLookRotation(targetPos - position);
 
             }
@@ -597,7 +588,7 @@ namespace JH
 
         #region Particle
 
-        protected void PlayEffect()
+        protected virtual void PlayEffect()
         {
             for (int i = 0; i < m_particles.Count; i++)
             {
@@ -613,7 +604,7 @@ namespace JH
                 m_visualEffects[i].Play();
             }
         }
-        protected void StopEffect()
+        protected virtual void StopEffect()
         {
             for (int i = 0; i < m_particles.Count; i++)
             {
