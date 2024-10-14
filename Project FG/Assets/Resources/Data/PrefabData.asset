@@ -34,3 +34,12 @@ MonoBehaviour:
   - {fileID: 8091879795670687881, guid: cd852b8e615bd564fa28b06b1033124b, type: 3}
   - {fileID: 4006167616861498636, guid: c400e8231f38bed4b90fdc9eb9debfed, type: 3}
   - {fileID: -1691910585403954198, guid: 3c2096bcb282f1a4c9b640a90376b3b3, type: 3}
+  m_foodPowerPrefabs:
+  - {fileID: -2637219223760161457, guid: 3bdabdddb3aabbd42b619b9bcaa394cd, type: 3}
+  - {fileID: 5687485155441610432, guid: 595741bf9a6d3d84f8a70178d75c0efa, type: 3}
+  - {fileID: -7065989394218447537, guid: 89a1e498fede29340b9c409d1b3c4ad9, type: 3}
+  - {fileID: 2633911718938606930, guid: 93f7afc12cb901948a919b634922316f, type: 3}
+  - {fileID: 3405992995521304662, guid: 07a0ff45d86a860499b4f93086022415, type: 3}
+  - {fileID: 1187938833569862731, guid: 15b47ff4e66f5074e9778a7786055e7c, type: 3}
+  - {fileID: 2780114308409712790, guid: 33ba44060c9658842aca3fd6d56f1b14, type: 3}
+  - {fileID: 1961031887029804917, guid: e4f1cddfa1001a44d867c05bf2da3093, type: 3}

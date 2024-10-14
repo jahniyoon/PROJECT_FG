@@ -20,8 +20,10 @@ namespace JH
         {
             if (m_skill == null)
                 m_skill = Instantiate(m_slashSkill.gameObject, this.transform).GetComponent<FoodPowerSkill>();
+
+            FoodPowerLevelData levelData = m_data.GetFoodPowerLevelData(m_powerLevel);
             m_skill.SkillInit(Caster);
-            m_skill.SetFoodPowerData(m_data.GetFoodPowerLevelData(m_powerLevel));
+            m_skill.SetFoodPowerData(levelData);
             m_skill.ActiveEvent.AddListener(SkillActiveEvent);
         }
 

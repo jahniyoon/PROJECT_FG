@@ -47,7 +47,12 @@ namespace JH
 
         private void Shoot()
         {
-            Vector3 target = m_skill.Target.position;
+
+            Vector3 target = transform.position + transform.forward * m_skill.LevelData.Range;
+
+            if (m_skill.Target != null)
+                target = m_skill.Target.position;
+
             target.y = transform.position.y;
             transform.LookAt(target);
 
@@ -120,8 +125,8 @@ namespace JH
 
         public override ProjectileBase InActiveProjectile()
         {
-            DestroyProjectile();
-            return base.InActiveProjectile();
+            Destroy(m_trailParent.gameObject);
+            return this;
         }
 
         // 투사체 파괴

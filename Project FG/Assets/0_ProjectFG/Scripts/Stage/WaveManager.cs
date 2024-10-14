@@ -31,7 +31,8 @@ namespace JH
         [SerializeField] private float m_baconMinDistance = 5;
         private Transform m_enemyParent;
         private List<Vector3> m_spawnBaconPos = new List<Vector3>();
-
+        private List<GameObject> m_waveList = new List<GameObject>();
+        private List<GameObject> m_waveDestroyList = new List<GameObject>();
 
 
         private void Awake()
@@ -134,10 +135,11 @@ namespace JH
             WaveEnd();
             yield break;
         }
-
+  
         private void SpawnEnemy(GameObject EnemyPrefab)
         {
             GameObject Enemy = Instantiate(EnemyPrefab, m_enemyParent);
+            m_waveList.Add(Enemy);
             EnemyController[] Enemies = Enemy.GetComponentsInChildren<EnemyController>();
 
             foreach (var enemy in Enemies)
@@ -184,21 +186,38 @@ namespace JH
             EnemyController[] Enemies = m_enemyParent.GetComponentsInChildren<EnemyController>();
             foreach (EnemyController enemy in Enemies)
             {
+                if (enemy.State == FSMState.Die)
+                    continue;
                 enemy.KillEnemy();
             }
 
+            m_waveDestroyList = m_waveList;
+            m_waveList.Clear();
+            Invoke(nameof(DestroyWave), 2f);
 
             if (m_waves.Count <= m_curWave)
             {
                 Clear();
                 return;
             }
+
             UIManager.Instance.WaveUI.SetRemainEnemy(0, false);
             UIManager.Instance.WaveUI.SetWave(m_curWave, false);
 
 
             UIManager.Instance.WaveUI.NextWave(true);
         }
+
+        private void DestroyWave()
+        {
+            // 프리팹 정리
+            for (int i = 0; i < m_waveDestroyList.Count; i++)
+            {
+                Destroy(m_waveDestroyList[i]);
+            }
+            m_waveDestroyList.Clear();
+        }
+
         public void NextWave()
         {
             UIManager.Instance.WaveUI.NextWave(false);

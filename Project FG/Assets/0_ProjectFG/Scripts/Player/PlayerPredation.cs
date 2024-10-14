@@ -97,7 +97,7 @@ namespace JH
 
                 if (colls[i].CompareTag("Enemy"))
                 {
-
+                  
                     if (colls[i].TryGetComponent<IPredationable>(out IPredationable predation))
                     {
                         if (predation.CanPredation == false)
@@ -107,17 +107,7 @@ namespace JH
                     }
                 }
 
-                //if (m_scanColls[i].CompareTag("Enemy"))
-                //{
-                //    EnemyController enemy = m_scanColls[i].GetComponent<EnemyController>();
-
-                //    //  포식 가능 상태가 아니면 패스
-                //    if (enemy.CanPredation == false)
-                //        continue;
-
-                //    target = DistanceChecker(position, target, enemy.transform);
-                //}
-
+             
             }
 
             return target;

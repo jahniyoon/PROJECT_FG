@@ -52,12 +52,13 @@ MonoBehaviour:
       Damage: 100
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 10
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv2"
@@ -69,12 +70,13 @@ MonoBehaviour:
       Damage: 120
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 12
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv3"
@@ -86,12 +88,13 @@ MonoBehaviour:
       Damage: 140
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 14
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv4"
@@ -103,12 +106,13 @@ MonoBehaviour:
       Damage: 170
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 16
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv5"
@@ -120,12 +124,13 @@ MonoBehaviour:
       Damage: 200
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 18
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv6"
@@ -137,12 +142,13 @@ MonoBehaviour:
       Damage: 230
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 20
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv7"
@@ -154,12 +160,13 @@ MonoBehaviour:
       Damage: 260
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 25
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv8"
@@ -171,12 +178,13 @@ MonoBehaviour:
       Damage: 290
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 30
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv9"
@@ -188,12 +196,13 @@ MonoBehaviour:
       Damage: 300
       Range: 0
       ProjectileOffset: 0
-      Radius: 4
+      Radius: 1
       Arc: 360
       LifeTime: 40
       Count: 1
       BuffValues: []
-      Value1: []
+      Value1:
+      - 4
       Value2: []
       Value3: []
   <IngameUpgradeID>k__BackingField: 

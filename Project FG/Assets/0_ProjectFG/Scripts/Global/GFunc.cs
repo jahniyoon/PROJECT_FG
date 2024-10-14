@@ -209,17 +209,19 @@ namespace JH
 
         public static SkillBase GetSkillPrefab(int skillID)
         {
-            PrefabData skillData = Resources.Load<PrefabData>("Data/PrefabData");           
-            return skillData.TryGetSkill(skillID);
+            PrefabData prefabData = Resources.Load<PrefabData>("Data/PrefabData");           
+            return prefabData.TryGetSkill(skillID);
         }
         public static ProjectileBase GetProjectilePrefab(int projectileID)
         {
-            PrefabData skillData = Resources.Load<PrefabData>("Data/PrefabData");
-            return skillData.TryGetProjectile(projectileID);
-
-
+            PrefabData prefabData = Resources.Load<PrefabData>("Data/PrefabData");
+            return prefabData.TryGetProjectile(projectileID);
         }
-
+        public static FoodPower GetFoodPowerPrefab(int foodPowerID)
+        {
+            PrefabData prefabData = Resources.Load<PrefabData>("Data/PrefabData");
+            return prefabData.TryGetFoodPower(foodPowerID);
+        }
         public static BuffBase TryGetBuff(int buffID)
         {
             BuffData data = GetBuffData(buffID);

@@ -12,7 +12,7 @@ namespace JH
         private Rigidbody m_rigid;
         private SphereCollider m_collider;
         [Header("AOEProjectile")]
-        [SerializeField] private List<Transform> m_aoeTargets = new List<Transform>();
+        [SerializeField] private List<Damageable> m_aoeTargets = new List<Damageable>();
         [SerializeField] private Transform m_effectTransform;
 
 
@@ -48,23 +48,38 @@ namespace JH
 
         public void AddTarget(Transform target)
         {
-            if (m_aoeTargets.Contains(target))
+            Damageable damageable;
+            target.TryGetComponent(out damageable);
+
+            if (damageable == null)
+                return;
+            if (damageable.IsDie)
+                return;
+
+            if (m_aoeTargets.Contains(damageable))
                 return;
 
 
             OnBuff(target);
-            m_aoeTargets.Add(target);
+            m_aoeTargets.Add(damageable);
         }
 
         public void RemoveTarget(Transform target)
         {
-            if (m_aoeTargets.Contains(target) == false)
+            Damageable damageable;
+            target.TryGetComponent(out damageable);
+
+            if (damageable == null)
+                return;
+
+
+            if (m_aoeTargets.Contains(damageable) == false)
                 return;
 
 
             for (int i = 0; i < m_aoeTargets.Count; i++)
             {
-                if (m_aoeTargets[i] == target)
+                if (m_aoeTargets[i] == damageable)
                 {
                     RemoveBuff(target);
                     m_aoeTargets.RemoveAt(i);
@@ -78,7 +93,7 @@ namespace JH
 
             for (int i = 0; i < m_aoeTargets.Count; i++)
             {
-                RemoveBuff(m_aoeTargets[i]);
+                RemoveBuff(m_aoeTargets[i].transform);
             }
             m_aoeTargets.Clear();
         }

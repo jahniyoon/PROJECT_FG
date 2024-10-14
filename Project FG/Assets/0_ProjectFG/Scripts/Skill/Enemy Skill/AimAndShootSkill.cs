@@ -31,7 +31,6 @@ namespace JH
 
         protected override void Init()
         {
-            CreateProjectiles();
             if(Caster.Transform.TryGetComponent<IAimSkillCaster>(out IAimSkillCaster aimCaster))
             {
                 m_aimCaster = aimCaster;

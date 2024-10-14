@@ -19,6 +19,9 @@ namespace JH
         [field: Header("투사체 프리팹 데이터")]
 
         public List<ProjectileBase> m_projectilePrefabs = new List<ProjectileBase>();
+        [field: Header("푸드파워 프리팹 데이터")]
+
+        public List<FoodPower> m_foodPowerPrefabs = new List<FoodPower>();
 
         public SkillBase TryGetSkill(int skillID)
         {
@@ -40,6 +43,18 @@ namespace JH
             }
 
             Debug.Log(projectileID + " 투사체를 찾을 수 없습니다.");
+            return null;
+        }
+
+        public FoodPower TryGetFoodPower(int foodPowerID)
+        {
+            foreach (var foodPower in m_foodPowerPrefabs)
+            {
+                if (foodPower.ID == foodPowerID)
+                    return foodPower;
+            }
+
+            Debug.Log(foodPowerID + " 푸드파워를 찾을 수 없습니다.");
             return null;
         }
 

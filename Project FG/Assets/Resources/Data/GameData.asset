@@ -24,7 +24,7 @@ MonoBehaviour:
   ignoreSOWorksheets:
   - FOOD POWER LEVEL
   m_gameData:
-    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d0100943d0100f83d01005c3e0100c03e0100f45f0100fe5f01005860010062600100bc600100206101002a6101003461010084610100e86101004c620100b0620100
+    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d0100943d0100f83d01005c3e0100c03e0100f45f0100fe5f01005860010062600100bc600100206101002a6101003461010084610100e86101004c620100b0620100ba620100
     m_Values:
     - Name: 20100  ENEMY  Enemy A
       SheetID: ENEMY
@@ -228,7 +228,7 @@ MonoBehaviour:
       - ColumnID: RoutineSkill
         Value: '-'
       - ColumnID: AdditionalValue
-        Value: '-'
+        Value: 5, 10
     - Name: 20800  ENEMY  Enemy H
       SheetID: ENEMY
       Data:
@@ -539,7 +539,7 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: -1
       - ColumnID: BuffID
-        Value: '-'
+        Value: 80410
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
@@ -723,9 +723,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50200  FOOD POWER  FoodPower B
       SheetID: FOOD POWER
       Data:
@@ -750,9 +750,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80500, 81000
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50300  FOOD POWER  FoodPower C
       SheetID: FOOD POWER
       Data:
@@ -777,9 +777,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50400  FOOD POWER  FoodPower D
       SheetID: FOOD POWER
       Data:
@@ -804,9 +804,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50500  FOOD POWER  FoodPower E
       SheetID: FOOD POWER
       Data:
@@ -831,9 +831,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50600  FOOD POWER  FoodPower F
       SheetID: FOOD POWER
       Data:
@@ -856,11 +856,11 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: 90420
       - ColumnID: BuffID
-        Value: 80800
+        Value: 80110
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50700  FOOD POWER  FoodPower G
       SheetID: FOOD POWER
       Data:
@@ -883,11 +883,11 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: 90100
       - ColumnID: BuffID
-        Value: '-'
+        Value: 80310
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: 50800  FOOD POWER  FoodPower H
       SheetID: FOOD POWER
       Data:
@@ -912,9 +912,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: 0
+        Value: '-'
       - ColumnID: SkillSpeed
-        Value: 0
+        Value: '-'
     - Name: "60001  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv0"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -1602,7 +1602,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1637,7 +1637,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1672,7 +1672,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1707,7 +1707,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1742,7 +1742,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1777,7 +1777,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1812,7 +1812,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1847,7 +1847,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -1882,7 +1882,7 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
         Value: 8
       - ColumnID: Count
@@ -2232,9 +2232,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2267,9 +2267,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2302,9 +2302,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2337,9 +2337,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2372,9 +2372,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2407,9 +2407,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2442,9 +2442,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2477,9 +2477,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -2512,9 +2512,9 @@ MonoBehaviour:
       - ColumnID: Radius
         Value: 0
       - ColumnID: Arc
-        Value: '-'
+        Value: 0
       - ColumnID: LifeTime
-        Value: '-'
+        Value: 0
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
@@ -3175,7 +3175,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3185,7 +3185,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3210,7 +3210,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3220,7 +3220,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3245,7 +3245,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3255,7 +3255,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3280,7 +3280,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3290,7 +3290,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3315,7 +3315,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3325,7 +3325,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3350,7 +3350,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3360,7 +3360,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3385,7 +3385,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3395,7 +3395,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3420,7 +3420,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3430,7 +3430,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -3455,7 +3455,7 @@ MonoBehaviour:
       - ColumnID: ProjectileOffset
         Value: 0
       - ColumnID: Radius
-        Value: 4
+        Value: 1
       - ColumnID: Arc
         Value: 360
       - ColumnID: LifeTime
@@ -3465,7 +3465,7 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: '-'
+        Value: 4
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
@@ -4156,13 +4156,13 @@ MonoBehaviour:
         Value: 1
       - ColumnID: DerivativesID
         Value: '-'
-    - Name: "90500  PROJECTILE  \uD3ED\uBC1C"
+    - Name: "90500  PROJECTILE  \uC801 H\uC758 \uC790\uD3ED \uD3ED\uBC1C"
       SheetID: PROJECTILE
       Data:
       - ColumnID: ID
         Value: 90500
       - ColumnID: Name
-        Value: "\uD3ED\uBC1C"
+        Value: "\uC801 H\uC758 \uC790\uD3ED \uD3ED\uBC1C"
       - ColumnID: Description
         Value: "\uC6D0\uD615 \uD3ED\uBC1C"
       - ColumnID: Type
@@ -4230,5 +4230,24 @@ MonoBehaviour:
         Value: 0
       - ColumnID: ProjectileScale
         Value: 0.2
+      - ColumnID: DerivativesID
+        Value: 90810
+    - Name: "90810  PROJECTILE  \uD478\uB4DC\uD30C\uC6CCG \uC9C0\uB8B0\uC758 \uD3ED\uBC1C"
+      SheetID: PROJECTILE
+      Data:
+      - ColumnID: ID
+        Value: 90810
+      - ColumnID: Name
+        Value: "\uD478\uB4DC\uD30C\uC6CCG \uC9C0\uB8B0\uC758 \uD3ED\uBC1C"
+      - ColumnID: Description
+        Value: "\uC9C0\uB8B0\uC758 \uD3ED\uBC1C"
+      - ColumnID: Type
+        Value: Collision
+      - ColumnID: Penetrate
+        Value: 0
+      - ColumnID: ProjectileSpeed
+        Value: 0
+      - ColumnID: ProjectileScale
+        Value: 1
       - ColumnID: DerivativesID
         Value: '-'

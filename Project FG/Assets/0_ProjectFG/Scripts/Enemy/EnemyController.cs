@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster
 {
     private FSM<EnemyController> m_fsm;
+    private CapsuleCollider m_capsule;
     protected PlayerController m_player;
     protected NavMeshAgent m_agent;
     protected Damageable m_damageable;
@@ -128,6 +129,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_model = transform.GetChild(0);
         m_agent = GetComponent<NavMeshAgent>();
         m_damageable = GetComponent<Damageable>();
+        m_capsule = GetComponent<CapsuleCollider>();
 
         // TODO : 에네미 다 만들고 게임 오브젝트 내에 있도록 수정
         var healthBar = transform.GetComponentInChildren<MiniHealthBar>();
@@ -257,7 +259,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         float curRatio = m_damageable.Health / (float)m_damageable.MaxHealth;
 
-        if (m_damageable.IsDie)
+        if (m_damageable.IsDie || m_damageable.Excution)
             return false;
 
         return curRatio <= m_data.PredationHealthRatio * 0.01f;
@@ -319,22 +321,13 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         float ratio = m_damageable.Health / (float)m_damageable.MaxHealth;
         m_healthBar.SetHealthSlider(ratio);
 
-        bool isPredation = m_canPredation;
-
         // 체력을 업데이트 할 때마다 포식상태 체크 및 업데이트
         m_canPredation = CanPredationCheck();
         m_predationIcon.IconEnable(m_canPredation);
-
-        // 포식 가능한 상태가 아니였다가 포식 가능 상태가 되었을 때
-        if (isPredation == false && m_canPredation == true)
-        {
-            m_buffHandler.OnBuff(this.gameObject, m_stunBuff);
-        }
-
     }
     public void Predation()
     {
-
+        m_buffHandler.OnBuff(this.gameObject, m_stunBuff);
     }
 
     protected virtual void OnRestore()
@@ -355,7 +348,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     public void KillEnemy()
     {
         m_damageable.SetHealth(0);
-        Die();
+        m_damageable.Die();
     }
 
     protected void IsStop(bool enable = true)
@@ -370,7 +363,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
         UIManager.Instance.MinimapUI.RemoveObject(m_instanceID);
 
-        m_canPredation = false;
         m_predationIcon.IconEnable(m_canPredation);
 
         m_healthBar.HealthBarEnable(false);
@@ -378,7 +370,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         // 버프 모두 지워주기
         m_buffHandler.RemoveAllBuff();
 
-        transform.GetComponent<CapsuleCollider>().enabled = false;
 
         // 죽으면 모든 스킬을 꺼준다.
         for (int i = 0; i < m_routineSkills.Count; i++)
@@ -400,6 +391,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
             m_hitEffect.Die();
 
         UIManager.Instance.Debug.KillCountText(1);
+        m_capsule.center =new Vector3(0,-10,0);
         Invoke(nameof(Dead), 1f);
     }
 
@@ -423,6 +415,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         if (damage == 0)
             damage = m_damageable.Health;
         m_damageable.OnDamage(damage, true);
+        m_canPredation = false;
     }
     public FoodPower GetFoodPower()
     {

@@ -303,12 +303,12 @@ namespace JH
             {
                 base.Enter(t);
                 t.StateHandler(FSMState.Hit);
+                t.m_effectHandler.StunEnable(true);
             }
             // 상태 중일 때 실행될 메서드
             public override void Stay(PlayerController t)
             {
                 base.Stay(t);
-                t.m_effectHandler.StunEnable(t.Status.IsStun);
             }
 
             // 상태를 빠져 나갈 때 실행될 메서드

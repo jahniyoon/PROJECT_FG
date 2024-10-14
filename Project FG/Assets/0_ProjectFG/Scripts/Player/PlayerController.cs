@@ -33,6 +33,7 @@ namespace JH
         [Header("Player")]
         [SerializeField] private FSMState m_playerState;
         [SerializeField] private bool m_isFreeze;
+        [SerializeField] private bool m_isKnockback;
         [SerializeField] private bool m_healthBarEnable;
         [SerializeField] private MiniHealthBar m_healthBarPrefab;
         [Header("Effect")]
@@ -179,6 +180,12 @@ namespace JH
             m_playerHunger.AddDefaultPower();
         }
 
+        public void GetDebugFoodPower()
+        {
+            if (m_playerState == FSMState.Freeze || m_playerState == FSMState.Die)
+                return;
+            m_playerHunger.AddDebugPower();
+        }
         private bool IsFixedFrame()
         {
             Debug.Log(Time.time + " / " + Time.fixedTime + " / " + Time.deltaTime + " / " + Time.fixedDeltaTime);
@@ -193,7 +200,7 @@ namespace JH
 
         public void OnKnockback(Vector3 hitPosition, float force, float duration)
         {
-            SetFreeze(true);
+            //SetFreeze(true);
 
             if (knockbackRoutine != null)
             {
@@ -221,20 +228,22 @@ namespace JH
             endPos = GFunc.FindNavPos(transform, endPos, force * 2);
             //DebugProjectile.Log($"넉백 {hitPos}=>{endPos} {force}, {duration}");
 
+            m_isKnockback = true;
             while (timer < duration)
             {
                 transform.position = Vector3.Lerp(startPos, endPos, timer / duration);
                 timer += Time.deltaTime;
                 yield return null;
             }
-            SetFreeze(false);
+            m_isKnockback = false;
+            //SetFreeze(false);
             yield break;
         }
 
 
         public bool HitStateCheck()
         {
-            bool state = m_buffHandler.Status.IsStun;
+            bool state = m_buffHandler.Status.IsStun || m_isKnockback;
 
             return state;
         }

@@ -86,7 +86,8 @@ namespace JH
         Reloading,
         Ready,
         Cast,
-        Active
+        Active,
+        Disable
     }
     public enum ProjectileType
     {
@@ -99,7 +100,7 @@ namespace JH
         HitScan,
         Grenade,
         Mine
-            
+
     }
 
     // TODO : 정리 필요
@@ -157,6 +158,7 @@ namespace JH
         Hit,        // 피격
         Die         // 사망
     }
+
 
     public enum AimState
     {

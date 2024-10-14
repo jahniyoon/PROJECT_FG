@@ -88,12 +88,19 @@ namespace JH
             {
                 PC.GetDefaultFoodPower();
             }
-
+            if (Input.GetKeyDown(KeyCode.F4))
+            {
+                PC.GetDebugFoodPower();
+            }
             //if (Input.GetKeyDown(KeyCode.R))
             //{
             //    ResetScene();
             //}
 
+            if (Input.GetKeyDown(KeyCode.F10))
+            {
+                Time.timeScale += 1;
+            }
             if (Input.GetKeyDown(KeyCode.F11))
             {
                 Time.timeScale = 0.1f;
@@ -141,7 +148,12 @@ namespace JH
 
         public void TitleScene()
         {
-            //SceneManager.LoadScene("Title Scene");
+            SceneManager.LoadScene("Title Scene");
+
+
+        }
+        public void QuitGame()
+        {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -158,6 +170,6 @@ namespace JH
         {
             m_quit = true;
         }
-            
+
     }
 }

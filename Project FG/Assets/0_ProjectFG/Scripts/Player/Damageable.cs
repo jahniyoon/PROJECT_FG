@@ -89,6 +89,7 @@ namespace JH
                 m_health -= finalDamage;
             }
 
+            if(Excution)
             m_execution = Execution;
 
             UIManager.Instance.Debug.OnDamage(finalDamage, transform, m_damageEffectColor);
@@ -122,6 +123,7 @@ namespace JH
 
             m_health = 0;
             m_isDie = true;
+            UpdateHealthEvent?.Invoke();
 
         }
 

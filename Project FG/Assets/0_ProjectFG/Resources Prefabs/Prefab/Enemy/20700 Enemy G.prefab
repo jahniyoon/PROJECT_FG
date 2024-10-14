@@ -65,7 +65,7 @@ MonoBehaviour:
   m_dieSpeed: 1.2
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 5300735016244865262}
-  m_notCount: 0
+  m_notCount: 1
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
   m_attackSkills: []

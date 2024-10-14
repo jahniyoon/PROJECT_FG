@@ -28,7 +28,7 @@ namespace JH
             base.ActiveSkill();
 
             // 한 투사체만 필요하므로
-            ActiveProjectiles(onlyProjectile:true);
+            ActiveProjectiles();
             PlayEffect();
 
             if (m_data.SkillTarget == TargetTag.Caster)

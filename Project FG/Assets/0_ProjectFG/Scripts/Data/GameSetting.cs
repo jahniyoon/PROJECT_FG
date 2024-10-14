@@ -73,6 +73,7 @@ namespace JH
 
         [field: Header("푸드파워")]
         [field: SerializeField] public FoodPower DefaultFoodPower { get; private set; }
+        [field: SerializeField] public FoodPower DebugFoodPower { get; private set; }
 
 
         [field: Header("식사콤보")]

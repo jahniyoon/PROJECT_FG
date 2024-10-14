@@ -17,7 +17,7 @@ namespace JH
         {
             base.ActiveSkill();
             // 한 투사체만 생성
-            ActiveProjectiles(onlyProjectile: true);
+            ActiveProjectiles();
 
             PlayEffect();
         

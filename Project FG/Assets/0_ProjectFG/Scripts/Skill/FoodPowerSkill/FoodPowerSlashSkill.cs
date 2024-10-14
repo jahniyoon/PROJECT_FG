@@ -11,7 +11,7 @@ namespace JH
 
         public override void ActiveSkill()
         {
-            bool canActiveSkill = ActiveProjectiles(onlyProjectile:true);
+            bool canActiveSkill = ActiveProjectiles();
             if (canActiveSkill == false)
                 return;
             base.ActiveSkill();

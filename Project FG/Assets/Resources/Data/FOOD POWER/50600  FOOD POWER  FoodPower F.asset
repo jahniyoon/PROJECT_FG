@@ -38,7 +38,7 @@ MonoBehaviour:
     Value3: []
   <SkillDelay>k__BackingField: 0
   <SkillSpeed>k__BackingField: 0
-  <BuffID>k__BackingField: a03b0100
+  <BuffID>k__BackingField: ee380100
   <ProjectileID>k__BackingField: 34610100
   <Icon>k__BackingField: {fileID: 21300000, guid: f6ce302cbbde71d4e808327772be1ac3,
     type: 3}

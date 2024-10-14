@@ -57,6 +57,11 @@ namespace JH
             yield break;
         }
 
+        public override ProjectileBase InActiveProjectile()
+        {
+            Destroy(this.gameObject);
+            return null;
+        }
 
         private void Explosion()
         {

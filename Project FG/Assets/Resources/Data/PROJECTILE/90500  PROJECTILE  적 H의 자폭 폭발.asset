@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95aeecee567cd0646a78f8286ca5ebc2, type: 3}
-  m_Name: "90800  PROJECTILE  \uD478\uB4DC\uD30C\uC6CC G \uC9C0\uB8B0"
+  m_Name: "90500  PROJECTILE  \uC801 H\uC758 \uC790\uD3ED \uD3ED\uBC1C"
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 90800
-  <Name>k__BackingField: "\uD478\uB4DC\uD30C\uC6CC G \uC9C0\uB8B0"
-  <Description>k__BackingField: "\uC9C0\uB8B0"
-  <Type>k__BackingField: 8
+  <ID>k__BackingField: 90500
+  <Name>k__BackingField: "\uC801 H\uC758 \uC790\uD3ED \uD3ED\uBC1C"
+  <Description>k__BackingField: "\uC6D0\uD615 \uD3ED\uBC1C"
+  <Type>k__BackingField: 1
   <Penetrate>k__BackingField: 0
-  <ProjectileScale>k__BackingField: 0.2
+  <ProjectileScale>k__BackingField: 5
   <ProjectileSpeed>k__BackingField: 0
-  <DerivativesID>k__BackingField: ba620100
+  <DerivativesID>k__BackingField: 

@@ -11,7 +11,7 @@ namespace JH
         public override void ActiveSkill()
         {
             base.ActiveSkill();
-            ActiveProjectiles(true);
+            ShootProjectiles();
         }
 
  

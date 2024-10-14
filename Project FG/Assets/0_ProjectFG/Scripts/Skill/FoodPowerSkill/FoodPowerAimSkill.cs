@@ -22,13 +22,10 @@ namespace JH
         [SerializeField] private GameObject m_aimEffect;
         [SerializeField] private float m_aimDuration = 0.25f;
         private SpriteRenderer m_spriteRenderer;
-        [SerializeField] private TrailEffect m_trailEffect;
 
         protected override void Init()
         {
             m_spriteRenderer = m_aimEffect.GetComponentInChildren<SpriteRenderer>();
-            CreateProjectiles();
-
         }
 
         protected override void UpdateBehavior()
@@ -169,11 +166,11 @@ namespace JH
             {
                 if (hit.transform.TryGetComponent<IDamageable>(out IDamageable damageable))
                 {
-                    damageable.OnDamage(LevelData.Damage);
-
-                    m_trailEffect?.OnTrail(transform.position, hit.point);
+                    damageable.OnDamage(LevelData.Damage);                    
+                    //m_trailEffect?.OnTrail(transform.position, hit.point);
                 }
             }
+            ActiveProjectiles();
         }
 
         private Vector3 aimScale = Vector3.one;

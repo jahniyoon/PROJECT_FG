@@ -172,6 +172,7 @@ MonoBehaviour:
     Radius: 0
     Arc: 0
     LifeTime: 0
+    Count: 1
     BuffValues: []
     Value1: []
     Value2: []
@@ -179,16 +180,15 @@ MonoBehaviour:
   m_state: 0
   m_routine: 0
   m_skillTarget: {fileID: 0}
-  m_scanLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  m_maxScanTarget: 10
+  m_isAlwaysShoot: 1
   m_skillCoolDown: 0
   m_skillCoolDownTimer: 0
   m_duration: 0
   m_buffs: []
   m_projectiles: []
-  m_particles: []
+  m_activeProjectiles: []
+  m_particles:
+  - {fileID: 4520273383334341823}
   m_visualEffects: []
   CastEvent:
     m_PersistentCalls:
@@ -212,11 +212,11 @@ MonoBehaviour:
       Radius: 0
       Arc: 0
       LifeTime: 0
+      Count: 1
       BuffValues: []
       Value1: []
       Value2: []
       Value3: []
-    Count: 0
   m_damageableDic:
     keys: 
     values: []
@@ -232,6 +232,10 @@ PrefabInstance:
     - target: {fileID: 166724, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
       propertyPath: m_Name
       value: MagicAuraGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 166724, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 457060, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
       propertyPath: m_LocalScale.x
@@ -289,6 +293,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 19815426, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19849878, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19878952, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19918602, guid: 254ac81d69ffe6342ad05aa1f459477e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -309,6 +325,12 @@ PrefabInstance:
 --- !u!4 &4520273383319028211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 457060, guid: 254ac81d69ffe6342ad05aa1f459477e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4520273383319189655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4520273383334341823 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19878952, guid: 254ac81d69ffe6342ad05aa1f459477e,
     type: 3}
   m_PrefabInstance: {fileID: 4520273383319189655}
   m_PrefabAsset: {fileID: 0}

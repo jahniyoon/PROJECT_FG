@@ -27,6 +27,9 @@ namespace JH
                 case BuffType.SlowSpeed:
                     return buff = new SlowDebuff(data);
 
+                case BuffType.PredationreStun:
+                    return buff = new StunBuff(data);
+
                 default:
                     return buff = new BuffBase(data);
             }

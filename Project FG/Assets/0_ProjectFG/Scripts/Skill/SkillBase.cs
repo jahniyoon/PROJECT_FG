@@ -67,10 +67,13 @@ namespace JH
         private void Awake()
         {
             m_scanColls = new Collider[30];
-            SetLevelData(m_data.LevelData);
-
+            AwakeInit();
         }
 
+        protected virtual void AwakeInit()
+        {
+
+        }
         private void Update()
         {
             UpdateBehavior();
@@ -79,40 +82,26 @@ namespace JH
 
         #region Init
         // 스킬 초기화. 캐스터를 정해준다.
-        public void SkillInit(ISkillCaster caster, bool routine = false)
+        public void SkillInit(ISkillCaster caster, bool routine = false, LevelData levelData = default)
         {
             // 캐스터를 가져온다.
             m_skillCaster = caster;
 
-
-
+            // 레벨데이터를 세팅한다.
+            if (levelData == default)
+                SetLevelData(m_data.LevelData);
 
             // 듀레이션과 쿨타임을 가져온다.
             SetDuration(LevelData.Duration);
-            m_skillCoolDown = LevelData.CoolDown;
+            SetCoolDown();
 
-            // 스킬을 즉시 시작 가능하게 할지 말지 정해진다.
-            if (m_init == false)
-            {
-                m_skillCoolDownTimer = 0;
-                if (Data.ActiveTime == SkillActiveTime.CoolDown || Data.ActiveTime == SkillActiveTime.CoolDownReset)
-                    ResetTimer();
-            }
-
-            else
-            {
-                // 리셋 타이머의 경우에만 리셋한다.
-                if (Data.ActiveTime == SkillActiveTime.ActiveReset || Data.ActiveTime == SkillActiveTime.CoolDownReset)
-                    ResetTimer();
-            }
 
             // 스킬에 버프를 장착한다.
             m_buffs.Clear();
             for (int i = 0; i < Data.BuffID.Length; i++)
             {
                 BuffBase buff = GFunc.TryGetBuff(Data.BuffID[i]);
-                if (buff == null)
-                    continue;
+                if (buff == null) continue;
 
                 buff.SetCaster(Caster.Transform);
                 buff.SetBuffValue(LevelData.BuffValues);
@@ -125,13 +114,11 @@ namespace JH
             {
                 ProjectileBase projectile = GFunc.GetProjectilePrefab(Data.ProjectileID[i]);
                 if (projectile == null) continue;
-
                 m_projectiles.Add(projectile);
             }
             ProjectileInit();
 
             m_routine = routine;
-
 
             m_init = true;
             Init();
@@ -147,9 +134,9 @@ namespace JH
         protected virtual void UpdateBehavior()
         {
             // 쿨타임이 계속 돌아간다.
-            m_skillCoolDownTimer = m_skillCoolDownTimer - Time.deltaTime <= 0 ? 0 : m_skillCoolDownTimer - Time.deltaTime;
+            m_skillCoolDownTimer = m_skillCoolDownTimer + Time.deltaTime < m_skillCoolDown ? m_skillCoolDownTimer + Time.deltaTime : m_skillCoolDown;
 
-            if (m_skillCoolDownTimer <= 0 && State == SkillState.Reloading)
+            if (m_skillCoolDown <= m_skillCoolDownTimer && State == SkillState.Reloading)
                 SetState(SkillState.Ready);
 
             // 사용 가능하면 스킬을 캐스팅한다.
@@ -170,6 +157,7 @@ namespace JH
             // 루틴 스킬이면 캐스터 체크를 안해도 된다.
             if (m_routine)
                 return true;
+
 
             // 캐스터의 상태조건을 체크하고, 쿨타임이 되어야한다.
             return Caster.CanActiveSkill();
@@ -228,11 +216,12 @@ namespace JH
         {
             for (int i = 0; i < m_activeProjectiles.Count; i++)
             {
-                if (m_activeProjectiles[i] == null)
-                    continue;
+                if (m_activeProjectiles[i] == null) continue;
+
                 m_activeProjectiles[i].InActiveProjectile();
                 Destroy(m_activeProjectiles[i].gameObject);
             }
+            SetState(SkillState.Disable);
         }
         // 스킬 지속시간동안 이뤄지는 루틴
         protected virtual IEnumerator ActiveSkillRoutine(float duration = 0)
@@ -265,10 +254,13 @@ namespace JH
         // 쿨타임을 초기화한다.
         protected void ResetTimer()
         {
-            m_skillCoolDownTimer = m_skillCoolDown;
+            m_skillCoolDownTimer = 0;
         }
         protected void SetState(SkillState nextState)
         {
+            // 비활성화가 되어있으면 다시 활성화 불가
+            if (m_state == SkillState.Disable) return;
+
             m_state = nextState;
         }
 
@@ -276,6 +268,23 @@ namespace JH
         protected void SetDuration(float duration)
         {
             m_duration = duration;
+        }
+        protected void SetCoolDown()
+        {
+            m_skillCoolDown = LevelData.CoolDown;
+
+            // 스킬을 즉시 시작 가능하게 할지 말지 정해진다.
+            if (m_init == false)
+            {
+                m_skillCoolDownTimer = m_skillCoolDown;
+                if (Data.ActiveTime == SkillActiveTime.CoolDown || Data.ActiveTime == SkillActiveTime.CoolDownReset)
+                    ResetTimer();
+                return;
+            }
+
+            // 리셋 타이머의 경우에만 리셋한다.
+            if (Data.ActiveTime == SkillActiveTime.ActiveReset || Data.ActiveTime == SkillActiveTime.CoolDownReset)
+                ResetTimer();
         }
 
         // 스킬의 레벨 데이터를 수정한다.
@@ -311,9 +320,7 @@ namespace JH
 
         protected void ProjectileInit()
         {
-
-            if (m_activeProjectiles.Count != 0)
-                return;
+            if (m_activeProjectiles.Count != 0) return;
 
             for (int i = 0; i < m_projectiles.Count; i++)
             {
@@ -336,21 +343,40 @@ namespace JH
 
 
         /// <summary>
-        ///   투사체를 생성 후 캐싱한다. 추후 오브젝트 풀링 파트. 현재는 근접류가 사용중
+        ///   단순히 투사체를 생성 및 발사하는 경우
         /// </summary>
-        /// <param name="active">활성화가 필요한 경우</param>
-        protected void CreateProjectiles(bool active = false)
+        protected bool ShootProjectiles()
         {
+            // 조준이 근처 타겟 검색이면 한번 스캔한다.
+            if (Data.AimType == AimType.NearTargetDirection)
+            {
+                ScanTarget();
+
+                // 타겟이 없으면 안함
+                if (Target == null && m_isAlwaysShoot == false)
+                {
+                    return false;
+                }
+            }
+
+
             for (int i = 0; i < m_projectiles.Count; i++)
             {
-                var projectile = CreateProjectile(m_projectiles[i]);
+                ProjectileBase projectile;
 
-                if (projectile == null)
-                    continue;
+                // 여러발을 생성해야할 때
+                for (int j = 0; j < LevelData.Count; j++)
+                {
+                    // 생성해야하는 경우 투사체를 생성한다.
+                    projectile = CreateProjectile(m_projectiles[i]);
 
-                if (active)
-                    projectile.ActiveProjectile();
+                    if (projectile == null)
+                        continue;
+
+                    ActiveProjectile(projectile, j);
+                }
             }
+            return true;
         }
 
         // 투사체를 생성하고 세팅한다.
@@ -361,15 +387,13 @@ namespace JH
             cloneProjectile.SetSkill(this);
             SetProjectile(cloneProjectile);
 
-
             return cloneProjectile;
         }
 
         /// <summary>
-        /// 모든 투사체를 발사한다.
+        /// 모든 투사체 실행한다.
         /// </summary>
-        /// <param name="create">생성해서 날리는 투사체면 true</param>
-        protected bool ActiveProjectiles(bool create = false, bool onlyProjectile = false)
+        protected bool ActiveProjectiles()
         {
 
             // 조준이 근처 타겟 검색이면 한번 스캔한다.
@@ -384,38 +408,15 @@ namespace JH
                 }
             }
 
-            if (onlyProjectile)
+            for (int i = 0; i < m_activeProjectiles.Count; i++)
             {
-                for (int i = 0; i < m_activeProjectiles.Count; i++)
-                {
-                    var projectile = m_activeProjectiles[i];
+                var projectile = m_activeProjectiles[i];
 
-                    projectile.gameObject.SetActive(true);
-
-                    // 여러발을 생성해야할 때
-                    for (int j = 0; j < LevelData.Count; j++)
-                    {
-
-                        if (projectile == null)
-                            continue;
-
-                        ActiveProjectile(projectile, j);
-                    }
-                }
-                return true;
-            }
-
-
-            for (int i = 0; i < m_projectiles.Count; i++)
-            {
-                var projectile = m_projectiles[i];
+                projectile.gameObject.SetActive(true);
 
                 // 여러발을 생성해야할 때
                 for (int j = 0; j < LevelData.Count; j++)
                 {
-                    // 생성해야하는 경우 투사체를 생성한다.
-                    if (create)
-                        projectile = CreateProjectile(m_projectiles[i]);
 
                     if (projectile == null)
                         continue;
@@ -423,6 +424,8 @@ namespace JH
                     ActiveProjectile(projectile, j);
                 }
             }
+
+
             return true;
         }
 
@@ -459,8 +462,8 @@ namespace JH
             {
                 targetPos = Target.transform.position;
                 targetPos.y = Caster.Model.position.y;
-                if(targetPos - position != Vector3.zero)
-                targetRotation.SetLookRotation(targetPos - position);
+                if (targetPos - position != Vector3.zero)
+                    targetRotation.SetLookRotation(targetPos - position);
 
             }
 

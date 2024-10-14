@@ -66,18 +66,24 @@ namespace JH
         // 포식 성공 시 푸드파워 추가
         public FoodPower AddHunger(FoodPower foodPower, int hunger = 0, bool isDefault = false, bool effect = false)
         {
+
+            string defaultName = "Default";
+            if (effect)
+                defaultName = "Effect";
+
             // 푸드파워 깊은 복사 이후에 초기화
             FoodPower newPower = Instantiate(foodPower.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
-            string PowerName = hunger == 0 ? $"Default : {foodPower.name} {foodPowers.Count}" :
-                $"{foodPower.name} {foodPowers.Count}";
+            string PowerName = hunger == 0 ? $"[{foodPowers.Count}] {defaultName} : {newPower.name}" :
+                $"[{foodPowers.Count}] Stack : {newPower.name}";
 
             newPower.gameObject.name = PowerName;
 
 
             // 푸드파워의 캐스터 세팅
-            newPower.SetCaster(m_player, m_player.Aim);
+            newPower.SetCaster(m_player);
             newPower.Init();
 
+            // 효과 푸드파워면 이전 레벨을 기억해야함
             if (effect)
                 newPower.SetLevel(foodPower.Level);
 
@@ -117,12 +123,13 @@ namespace JH
                 for (int i = 0; i < foodPowers.Count; i++)
                 {
                     // 같은 푸드파워가 있다면 레벨 업
-                    if (foodPowers[i].ID == foodPower.ID)
+                    if (foodPowers[i].ID == newPower.ID)
                     {
                         cantStart = true;
 
                         if (hunger == 0)
                         {
+                            // 이전 푸드파워의 레벨
                             for (int j = 0; j <= foodPower.Level; j++)
                                 foodPowers[i].LevelUp();
                         }
@@ -323,7 +330,8 @@ namespace JH
             foreach (var item in m_foodComboStacks)
             {
                 // 푸드파워 깊은 복사 이후에 초기화
-                FoodPower newPower = Instantiate(item.Key.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
+                FoodPower prefab = GFunc.GetFoodPowerPrefab(item.Key.ID);
+                FoodPower newPower = Instantiate(prefab.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
                 newPower.gameObject.name = $"Effect : {newPower.name} Lv.{item.Value}";
                 newPower.Init();
                 newPower.SetLevel(item.Value);
@@ -370,6 +378,10 @@ namespace JH
         public void AddDefaultPower()
         {
             AddHunger(m_defaultFoodPower, 1);
+        }        
+        public void AddDebugPower()
+        {
+            AddHunger(m_gameSettings.DebugFoodPower, 1);
         }
 
 

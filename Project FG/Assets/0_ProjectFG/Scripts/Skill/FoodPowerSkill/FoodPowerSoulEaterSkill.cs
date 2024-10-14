@@ -20,20 +20,25 @@ namespace JH
 
         float m_damageTimer;
 
+        protected override void AwakeInit()
+        {
+            m_collider = transform.AddComponent<SphereCollider>();
+            m_rigidbody = transform.AddComponent<Rigidbody>();
+        }
 
         protected override void Init()
         {
             if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
                 m_casterDamageable = damageable;
 
-            m_collider = transform.AddComponent<SphereCollider>();
             m_collider.isTrigger = true;
-            m_rigidbody = transform.AddComponent<Rigidbody>();
             m_rigidbody.isKinematic = true;
         }
+
         // 비활성화되면 리스너를 모두 제거한다.
         public override void RemoveSkill()
         {
+            StopEffect();
             base.RemoveSkill();
             foreach (var damageable in m_damageableDic.Values)
             {
@@ -96,7 +101,7 @@ namespace JH
             m_radiusEffect.transform.localScale = Vector3.one * LevelData.Radius;
 
             // 한 투사체만 생성
-            ActiveProjectiles(onlyProjectile: true);
+            ActiveProjectiles();
 
             PlayEffect();
 

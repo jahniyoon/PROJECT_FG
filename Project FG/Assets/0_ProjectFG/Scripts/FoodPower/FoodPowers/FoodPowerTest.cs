@@ -21,13 +21,8 @@ namespace JH
             Vector3 position = Caster.Transform.position;
             position.y += m_offset;
 
-            Quaternion direction = GetDirection();
 
-            // 방향이 없으면 발사하지 않는다.
-            if (direction == Quaternion.identity)
-                return;
-
-            GameObject projectile = Instantiate(m_projectilePrefab, position, direction, parent);
+            GameObject projectile = Instantiate(m_projectilePrefab, position, transform.rotation, parent);
             //projectile.GetComponent<DefaultProjectile>().ProjectileInit();
         }
 

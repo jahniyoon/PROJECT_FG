@@ -42,6 +42,7 @@ namespace JH
             if (m_skill != null)
             {
                 m_skill.RemoveSkill();
+                m_skill = null;
             }
         }
 
