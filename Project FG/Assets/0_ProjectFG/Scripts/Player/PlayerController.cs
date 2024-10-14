@@ -58,6 +58,7 @@ namespace JH
         public Transform Transform => this.transform;
         public GameObject GameObject => this.gameObject;
         public Status Status => m_buffHandler.Status;
+        public List<SkillBase> Skills => m_playerHunger.Skills;
         #endregion
 
         private void Awake()

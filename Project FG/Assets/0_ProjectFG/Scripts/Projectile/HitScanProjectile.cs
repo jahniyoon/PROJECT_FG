@@ -129,13 +129,6 @@ namespace JH
             return this;
         }
 
-        // 투사체 파괴
-        protected virtual void DestroyProjectile()
-        {
-            Destroy(m_trailParent.gameObject);
-            Destroy(gameObject);
-        }
-
 
 
 

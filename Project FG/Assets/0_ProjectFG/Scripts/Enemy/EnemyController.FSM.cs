@@ -65,6 +65,49 @@ public partial class EnemyController
     #endregion
 
 
+    #region ▶ STATE FREEZE : 정지 상태    
+    public class FreezeState : FSM<EnemyController>
+    {
+        // 상태 전이 조건을 넣는 메서드
+        public override FSM<EnemyController> StateTransition(EnemyController t)
+        {
+            FSM<EnemyController> nextState = t.FreezeStateConditional();
+            if (nextState == null)
+                return this;
+
+            return nextState;
+        }
+
+        public override void Enter(EnemyController t)
+        {
+            base.Enter(t);
+            t.StateHandler(FSMState.Freeze);
+            t.FreezeStateEnter();
+        }
+        public override void Stay(EnemyController t)
+        {
+            base.Stay(t);
+            t.FreezeStateStay();
+        }
+        public override void Exit(EnemyController t)
+        {
+            base.Exit(t);
+            t.FreezeStateExit();
+        }
+    }
+    protected virtual void FreezeStateEnter()
+    {
+        // 가상함수
+    }
+    protected virtual void FreezeStateStay()
+    {
+        // 가상함수
+    }
+    protected virtual void FreezeStateExit()
+    {
+        // 가상함수
+    }
+    #endregion
     #region ▶ STATE IDLE : 대기 상태
     public class IdleState : FSM<EnemyController>
     {
@@ -82,6 +125,7 @@ public partial class EnemyController
         {
             base.Enter(t);
             t.StateHandler(FSMState.Idle);
+            t.IdleStateEnter();
         }
         public override void Stay(EnemyController t)
         {

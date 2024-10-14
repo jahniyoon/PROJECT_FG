@@ -70,7 +70,7 @@ namespace JH
                 destination = FindChasePos();
 
             // 공격범위보다 가까우면 멈춘다.
-            else if (m_targetDistance < m_data.AttackRange)
+            else if (m_targetDistance < m_data.ChaseRange)
                 destination = this.transform.position;
 
             ModelRotate(destination, false, true);

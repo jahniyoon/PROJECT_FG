@@ -97,9 +97,9 @@ namespace JH
             // + 조준중일 때 이동상태가 되지 않는다.
             //
 
-            if (m_data.AttackRange < m_targetDistance && m_isAttackReady
+            if (m_data.ChaseRange < m_targetDistance && m_isAttackReady
                 || TargetAngleCheck() == false && m_isAttackReady
-            || m_isAttackReady == false && m_data.AttackRange < m_targetDistance)
+            || m_isAttackReady == false && m_data.ChaseRange < m_targetDistance)
                 return new MoveState();
 
             return null;
@@ -154,7 +154,7 @@ namespace JH
                 return;
             }
             // 바로 발사하도록 하기위해, 슛 타이머가 0이 될 때마다 발사
-            if (1 / m_subData.FireRate <= m_shootTimer && TargetAngleCheck() && m_targetDistance < m_data.AttackRange)
+            if (1 / m_subData.FireRate <= m_shootTimer && TargetAngleCheck() && m_targetDistance < m_data.ChaseRange)
             {
                 Shoot();
                 m_shootTimer = 0;

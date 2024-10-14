@@ -22,6 +22,7 @@ namespace JH
         [Header("습득한 푸드파워")]
         [SerializeField] protected bool m_effectFoodPower;
 
+        protected FoodPowerSkill m_skill;
 
         // 푸드파워 실행 루틴
         Coroutine foodRoutine;
@@ -50,7 +51,7 @@ namespace JH
             ActiveEvent.RemoveAllListeners();
         }
 
- 
+
         public virtual void Init(bool isMain = false)
         {
             if (m_data == null)
@@ -66,6 +67,11 @@ namespace JH
         public virtual void SetCaster(ISkillCaster caster)
         {
             m_caster = caster;
+        }
+
+        public virtual SkillBase GetSkillBase()
+        {
+            return m_skill;
         }
 
 

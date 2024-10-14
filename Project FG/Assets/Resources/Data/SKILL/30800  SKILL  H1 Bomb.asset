@@ -15,7 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: 30800
   <Name>k__BackingField: H1 Bomb
   <Description>k__BackingField: "\uC801 H1\uC758 \uC790\uD3ED \uAE30\uC220"
-  <BaseType>k__BackingField: 5
+  <BaseType>k__BackingField: 8
   <SkillTarget>k__BackingField: 1
   <ActiveTime>k__BackingField: 0
   <AimType>k__BackingField: 7

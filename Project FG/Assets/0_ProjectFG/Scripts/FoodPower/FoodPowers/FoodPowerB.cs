@@ -13,7 +13,6 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_shieldSkill;
-        private FoodPowerSkill m_skill;
 
         // 푸드파워 활성화
         public override void Active()

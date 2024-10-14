@@ -448,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7706511779175063818}
-  - component: {fileID: 7739748500684854266}
+  - component: {fileID: 988746368819048731}
   - component: {fileID: 3235985373210815659}
   - component: {fileID: 747710950884759557}
   - component: {fileID: 2205635320854898863}
@@ -480,7 +480,7 @@ Transform:
   - {fileID: 5529000692485489397}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7739748500684854266
+--- !u!114 &988746368819048731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4584335951347710697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381bd05c9fa7efd478c45833563a6b9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ee03a5ee9a2e242851fb78d5b004b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 468fe959a64b50b459266f5b2334041f, type: 2}
@@ -498,7 +498,6 @@ MonoBehaviour:
   m_targetDistance: 0
   m_healthBar: {fileID: 0}
   m_healthBarOffset: 1
-  m_FoodPower: {fileID: 0}
   m_canPredation: 0
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
@@ -507,6 +506,7 @@ MonoBehaviour:
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
+  m_skills: []
   m_attackSkills: []
   m_routineSkills: []
 --- !u!114 &3235985373210815659

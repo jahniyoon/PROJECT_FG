@@ -14,6 +14,9 @@ namespace JH
             if (canActiveSkill == false)
                 return;
             base.ActiveSkill();
+            
+            // 발사 후 바로 비활성화 해주기
+            InactiveSkill();
         }
 
     }

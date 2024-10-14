@@ -12,7 +12,6 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_areaSkill;
-        private FoodPowerSkill m_skill;
 
 
         // 레벨업 한 경우에 스킬을 다시 켜줘야한다.

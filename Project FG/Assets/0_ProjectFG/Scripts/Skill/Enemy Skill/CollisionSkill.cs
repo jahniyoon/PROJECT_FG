@@ -9,10 +9,13 @@ namespace JH
     public class CollisionSkill : SkillBase
     {
 
-        public override void ActiveSkill()
+        public override sealed void ActiveSkill()
         {
             base.ActiveSkill();
             ActiveProjectiles();
+            ActiveCollision();
         }
+        protected virtual void ActiveCollision() { }
+
     }
 }

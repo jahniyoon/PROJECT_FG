@@ -12,7 +12,6 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_healSkill;
-        private FoodPowerSkill m_skill;
 
 
         public override void Init(bool isMain = false)

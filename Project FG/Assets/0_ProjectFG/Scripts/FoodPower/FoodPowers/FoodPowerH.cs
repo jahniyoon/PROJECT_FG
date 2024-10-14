@@ -12,7 +12,6 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_mineSkill;
-        private FoodPowerSkill m_skill;
 
 
 

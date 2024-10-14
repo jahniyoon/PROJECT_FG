@@ -11,7 +11,6 @@ namespace JH
     {
         [Header("Test Projectile")]
         [SerializeField] private FoodPowerSkill m_projectileSkill;
-        private FoodPowerSkill m_skill;
 
         public override void Active()
         {

@@ -7,26 +7,31 @@ namespace JH
 {
 	public class ExplosionSkill : SkillBase
 	{
-        [SerializeField] private VisualEffect m_collisionEffect;
+
+        public override void CastSkill()
+        {
+            base.CastSkill();
+            SetSkillFix();
+
+            if (Caster.GameObject.TryGetComponent<SpriteColor>(out SpriteColor sprite))
+                sprite.PlayFlicking();
+
+        }
 
         public override void ActiveSkill()
         {
             base.ActiveSkill();
-            Invoke(nameof(StopEffect), m_data.SkillLifeTime);
+
+            Explosion();
+
         }
 
-        protected override void StopEffect()
+        private void Explosion()
         {
-            base.StopEffect();
-            if (m_collisionEffect != null)
-            {
-                m_collisionEffect.Stop();
-            }
-        }
 
-        public override void InactiveSkill()
-        {
-            base.InactiveSkill();
+            ShootProjectiles();
+            if(Caster.GameObject.TryGetComponent<Damageable>(out Damageable damageable))
+                damageable.Die();
 
         }
 

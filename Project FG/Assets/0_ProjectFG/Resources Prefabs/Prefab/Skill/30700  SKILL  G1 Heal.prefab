@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6019822597920969320}
-  - component: {fileID: 1929835702349482798}
+  - component: {fileID: -6469454859752179282}
   m_Layer: 0
   m_Name: 30700  SKILL  G1 Heal
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1929835702349482798
+--- !u!114 &-6469454859752179282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 915979191191696451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942f2e50cb65123428b895028cf837c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d08d83d786c5a14085d3fd892295e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 03ca239c45fe4c441b33853a59e6c591, type: 2}
@@ -54,23 +54,23 @@ MonoBehaviour:
     Radius: 0
     Arc: 0
     LifeTime: 0
+    Count: 1
     BuffValues: []
     Value1: []
     Value2: []
     Value3: []
+  m_freeze: 0
+  m_fixed: 0
   m_state: 0
   m_routine: 0
   m_skillTarget: {fileID: 0}
-  m_scanLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  m_maxScanTarget: 10
-  m_isAlwaywShoot: 1
+  m_isAlwaysShoot: 1
   m_skillCoolDown: 0
   m_skillCoolDownTimer: 0
   m_duration: 0
   m_buffs: []
   m_projectiles: []
+  m_activeProjectiles: []
   m_particles: []
   m_visualEffects: []
   CastEvent:
@@ -82,4 +82,3 @@ MonoBehaviour:
   InactiveEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_effects: []

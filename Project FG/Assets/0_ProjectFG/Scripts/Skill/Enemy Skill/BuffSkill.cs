@@ -17,6 +17,14 @@ namespace JH
 
             if (m_data.SkillTarget == TargetTag.Caster)
                 OnBuff(Caster.Transform);
+
+
+            foreach(var skill in Caster.Skills)
+            {
+                if(skill.Data.BaseType == SkillType.Buff)
+                    continue;
+                skill.FreezeSkill();
+            }
         }
 
         public override void InactiveSkill()
@@ -25,6 +33,13 @@ namespace JH
 
             if (m_data.SkillTarget == TargetTag.Caster)
                 RemoveBuff(Caster.Transform);
+
+            foreach (var skill in Caster.Skills)
+            {
+                if (skill.Data.BaseType == SkillType.Buff)
+                    continue;
+                skill.FreezeSkill(false);
+            }
 
             base.InactiveSkill();
 

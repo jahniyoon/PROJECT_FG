@@ -41,7 +41,7 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 3
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 1
       - ColumnID: EscapeRange
         Value: 0
@@ -65,12 +65,12 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uD0F1\uCEE4\uD615"
       - ColumnID: BaseType
-        Value: CantAttackOnBuff
+        Value: Default
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
         Value: 4
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 1.5
       - ColumnID: EscapeRange
         Value: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 1
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 5
       - ColumnID: EscapeRange
         Value: 3
@@ -128,7 +128,7 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 1
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 5
       - ColumnID: EscapeRange
         Value: 3
@@ -152,12 +152,12 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC18D\uC0AC\uD3EC\uD615"
       - ColumnID: BaseType
-        Value: AimAndShoot
+        Value: Default
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
         Value: 3
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 7
       - ColumnID: EscapeRange
         Value: 5
@@ -186,7 +186,7 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 1
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 1
       - ColumnID: EscapeRange
         Value: 0
@@ -210,12 +210,12 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uCE58\uC720\uD615"
       - ColumnID: BaseType
-        Value: Tower
+        Value: Default
       - ColumnID: Health
         Value: 200
       - ColumnID: MoveSpeed
         Value: 3
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 10
       - ColumnID: EscapeRange
         Value: 5
@@ -239,12 +239,12 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC790\uD3ED\uD615"
       - ColumnID: BaseType
-        Value: Suicide
+        Value: Default
       - ColumnID: Health
         Value: 150
       - ColumnID: MoveSpeed
         Value: 5
-      - ColumnID: AttackRange
+      - ColumnID: ChaseRange
         Value: 3
       - ColumnID: EscapeRange
         Value: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC801 F1\uC758 \uB0C9\uAE30 \uC7A5\uD310 \uAE30\uC220"
       - ColumnID: BaseType
-        Value: AreaSkill
+        Value: FixedAreaSkill
       - ColumnID: Target
         Value: Player
       - ColumnID: ActiveTime
@@ -660,7 +660,7 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC801 H1\uC758 \uC790\uD3ED \uAE30\uC220"
       - ColumnID: BaseType
-        Value: CollisionSkill
+        Value: ExplosionSkill
       - ColumnID: Target
         Value: Player
       - ColumnID: ActiveTime

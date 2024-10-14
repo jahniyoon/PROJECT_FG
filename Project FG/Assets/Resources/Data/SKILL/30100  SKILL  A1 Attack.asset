@@ -15,7 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: 30100
   <Name>k__BackingField: A1 Attack
   <Description>k__BackingField: "\uC801 A1\uC758 \uADFC\uC811\uACF5\uACA9"
-  <BaseType>k__BackingField: 5
+  <BaseType>k__BackingField: 6
   <SkillTarget>k__BackingField: 1
   <ActiveTime>k__BackingField: 0
   <AimType>k__BackingField: 11

@@ -12,7 +12,6 @@ namespace JH
     {
         [Header("Skill")]
         [SerializeField] private FoodPowerSkill m_aimShootSkill;
-        private FoodPowerSkill m_skill;
 
         public override void LevelUp()
         {

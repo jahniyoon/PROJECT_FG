@@ -61,7 +61,7 @@ namespace JH
         private void AimEnable(bool enable = true)
         {
             m_aimShader.gameObject.SetActive(enable);
-            m_aimShader.SetRadius(m_subData.AttackRange, m_subData.AimAngle);
+            m_aimShader.SetRadius(m_subData.ChaseRange, m_subData.AimAngle);
             m_aimShader.SetColor(m_subData.OuterColor, m_subData.SliderColor);
         }
         private void AimSlider(float value)
@@ -84,7 +84,7 @@ namespace JH
             m_shootPos.LookAt(target);
 
             RaycastHit hit;
-            if (Physics.Raycast(m_shootPos.position, m_shootPos.forward, out hit, m_data.AttackRange, m_targetLayer, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(m_shootPos.position, m_shootPos.forward, out hit, m_data.ChaseRange, m_targetLayer, QueryTriggerInteraction.Ignore))
             {
                 if (hit.transform.TryGetComponent<IDamageable>(out IDamageable damageable))
                 {
@@ -101,7 +101,7 @@ namespace JH
             else
             {
                 //DebugProjectile.Log("감나빗");
-                Vector3 forwardPoint = m_shootPos.position + m_shootPos.forward * m_data.AttackRange;
+                Vector3 forwardPoint = m_shootPos.position + m_shootPos.forward * m_data.ChaseRange;
                 if (m_shootHitEffect)
                 {
                     m_shootHitEffect.Stop();
@@ -150,7 +150,7 @@ namespace JH
             if (canGizmo)
             {
                 Gizmos.color = new Color(1, 0, 0, 0.5f);
-                Gizmos.DrawSphere(transform.position, m_subData.AttackRange);
+                Gizmos.DrawSphere(transform.position, m_subData.ChaseRange);
             }
         }
     }

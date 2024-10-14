@@ -78,10 +78,7 @@ namespace JH
 
 
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
-                    {
-                        Debug.Log("데미지 보낸다" + LevelData.Damage);
                         damageable.OnDamage(LevelData.Damage);
-                    }
 
 
                     // 버프도 같이 보낸다.

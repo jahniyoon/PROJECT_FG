@@ -31,7 +31,7 @@ namespace JH
 
         [field: Header("에네미 범위")]
         [field: Tooltip("공격 범위\n해당 범위 내에 타겟이 있으면 공격 상태로 전환한다.")]
-        [field: SerializeField] public float AttackRange { get; private set; }
+        [field: SerializeField] public float ChaseRange { get; private set; }
         [field: Tooltip("회피 범위\n해당 범위 내에 타겟이 있으면 회피한다.")]
         [field: SerializeField] public float EscapeRange { get; private set; }
 
@@ -107,8 +107,8 @@ namespace JH
                 if (item.ColumnID == "MoveSpeed")
                     MoveSpeed = float.Parse(item.Value);
 
-                if (item.ColumnID == "AttackRange")
-                    AttackRange = float.Parse(item.Value);
+                if (item.ColumnID == "ChaseRange")
+                    ChaseRange = float.Parse(item.Value);
 
                 if (item.ColumnID == "EscapeRange")
                     EscapeRange = float.Parse(item.Value);
@@ -145,7 +145,7 @@ namespace JH
             dataList.Add(SetData("BaseType", Type.ToString()));
             dataList.Add(SetData("Health", Health.ToString()));
             dataList.Add(SetData("MoveSpeed", MoveSpeed.ToString()));
-            dataList.Add(SetData("AttackRange", AttackRange.ToString()));
+            dataList.Add(SetData("ChaseRange", ChaseRange.ToString()));
             dataList.Add(SetData("EscapeRange", EscapeRange.ToString()));
             dataList.Add(SetData("PredationHealthRatio", PredationHealthRatio.ToString()));
             dataList.Add(SetData("PredationStunCoolDown", PredationStunCoolDown.ToString()));

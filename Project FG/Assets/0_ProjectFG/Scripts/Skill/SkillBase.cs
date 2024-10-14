@@ -17,6 +17,8 @@ namespace JH
         [Header("Skill Caster")]
         [SerializeField] protected ISkillCaster m_skillCaster;      //  스킬의 캐스터 정보
         [Header("Skill State")]
+        [SerializeField] private bool m_freeze;                     // 스킬 사용가능한 상태
+        [SerializeField] private bool m_fixed;                     // 스킬의 캐스터가 정지해야할 때
         [SerializeField] protected SkillState m_state;               // 스킬 상태
         [SerializeField] protected bool m_routine;               // 스스로 쿨이 돌면 사용한다.
 
@@ -52,6 +54,7 @@ namespace JH
 
         #region Property
         public bool IsActive => m_state == SkillState.Active;
+        public bool IsFixed => m_fixed;
         public SkillData Data => m_data;
         public LevelData LevelData => m_skillLevelData;
         public ISkillCaster Caster => m_skillCaster;
@@ -136,7 +139,7 @@ namespace JH
             // 쿨타임이 계속 돌아간다.
             m_skillCoolDownTimer = m_skillCoolDownTimer + Time.deltaTime < m_skillCoolDown ? m_skillCoolDownTimer + Time.deltaTime : m_skillCoolDown;
 
-            if (m_skillCoolDown <= m_skillCoolDownTimer && State == SkillState.Reloading)
+            if (m_skillCoolDown <= m_skillCoolDownTimer && State == SkillState.Reloading && m_freeze == false)
                 SetState(SkillState.Ready);
 
             // 사용 가능하면 스킬을 캐스팅한다.
@@ -224,7 +227,7 @@ namespace JH
             SetState(SkillState.Disable);
         }
         // 스킬 지속시간동안 이뤄지는 루틴
-        protected virtual IEnumerator ActiveSkillRoutine(float duration = 0)
+        protected virtual IEnumerator ActiveSkillRoutine()
         {
             float timer = 0;
 
@@ -264,6 +267,11 @@ namespace JH
             m_state = nextState;
         }
 
+        public void FreezeSkill(bool enable = true)
+        {
+            m_freeze = enable;
+        }
+
         // 스킬의 지속시간을 동적으로 변경한다.
         protected void SetDuration(float duration)
         {
@@ -287,6 +295,11 @@ namespace JH
                 ResetTimer();
         }
 
+        // 스킬이 고정형인지 체크한다. 캐스터는 이 값을 참조해 멈춰야하는지 확인할 수 있다.
+        protected void SetSkillFix(bool enable = true)
+        {
+            m_fixed = enable;
+        }
         // 스킬의 레벨 데이터를 수정한다.
         protected void SetLevelData(LevelData levelData)
         {
@@ -585,6 +598,13 @@ namespace JH
                 if (colDistance < curDistance)
                     SetTarget(m_scanColls[i].transform);
             }
+        }
+        protected float TargetAngle()
+        {
+            Vector3 target = m_skillTarget.position;
+            target.y = transform.position.y;
+            Vector3 dir = target - transform.position;
+            return Vector3.SignedAngle(transform.forward, dir, Vector3.up);
         }
         #endregion
 

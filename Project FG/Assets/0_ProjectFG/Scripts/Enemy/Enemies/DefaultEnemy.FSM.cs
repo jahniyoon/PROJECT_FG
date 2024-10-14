@@ -7,6 +7,28 @@ namespace JH
 {
     public partial class DefaultEnemy
     {
+        #region FREEZE STATE
+        protected override FSM<EnemyController> FreezeStateConditional()
+        {
+            if (m_damageable.IsDie)
+                return new DieState();
+
+            if (HitStateCheck())
+                return new HitState();
+
+            if (CheckFreezeState() == false)
+                return new IdleState();
+
+            return null;
+        }
+
+        protected override void FreezeStateStay()
+        {
+            base.FreezeStateStay();
+            ModelRotate(m_target.position, false, true);
+        }
+        #endregion
+
         #region IDLE STATE
         protected override FSM<EnemyController> IdleStateConditional()
         {
@@ -15,6 +37,9 @@ namespace JH
 
             if (HitStateCheck())
                 return new HitState();
+
+            if (CheckFreezeState())
+                return new FreezeState();
 
 
             if (m_target)
@@ -40,11 +65,15 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if(TargetCheck() == false)
-                return new IdleState();
-
             if (HitStateCheck())
                 return new HitState();
+
+            if (CheckFreezeState())
+                return new FreezeState();
+
+            if (TargetCheck() == false)
+                return new IdleState();
+
 
             if (m_target == null)
                 return new IdleState();
@@ -63,24 +92,26 @@ namespace JH
 
         protected override void MoveStateStay()
         {
-            // 스킬 타이머동안은 움직이지 않는다.
-            if (0 < m_skillTimer)
-                return;
-
             m_agent.avoidancePriority = 50;
 
             Vector3 destination = m_target.position;
 
-            // 회피거리보다 가까우면
-            if (m_targetDistance < m_data.EscapeRange)
-                destination = FindChasePos();
-
-            // 공격범위보다 가까우면 멈춘다.
-            else if (m_targetDistance <= m_data.AttackRange)
+            // 스킬 타이머동안은 움직이지 않는다.
+            if (0 < m_skillTimer)
             {
                 m_agent.avoidancePriority = 49;
                 destination = this.transform.position;
+            }
 
+            // 회피거리보다 가까우면
+            else if (m_targetDistance < m_data.EscapeRange)
+                destination = FindChasePos();
+
+            // 공격범위보다 가까우면 멈춘다.
+            else if (m_targetDistance <= m_data.ChaseRange)
+            {
+                m_agent.avoidancePriority = 49;
+                destination = this.transform.position;
             }
 
             ModelRotate(destination, false, true);
@@ -106,6 +137,9 @@ namespace JH
 
             if (HitStateCheck())
                 return new HitState();
+
+            if (CheckFreezeState())
+                return new FreezeState();
 
             if (TargetCheck() == false)
                 return new IdleState();

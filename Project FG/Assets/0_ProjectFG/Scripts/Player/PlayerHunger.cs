@@ -17,7 +17,8 @@ namespace JH
 
         [Header("Food Power")]
         [SerializeField] private FoodPower m_defaultFoodPower;
-        [SerializeField] private List<FoodPower> foodPowers = new List<FoodPower>();
+        [SerializeField] private List<FoodPower> m_foodPowers = new List<FoodPower>();
+        [SerializeField] private List<SkillBase> m_skills = new List<SkillBase>();
 
         [Header("Food Combo")]
         [SerializeField] SerializableDictionary<FoodPower, int> m_FoodComboEffects = new SerializableDictionary<FoodPower, int>();
@@ -34,6 +35,7 @@ namespace JH
         [SerializeField] private ParticleSystem m_hungerSkillEffect;
 
         [SerializeField] private Color DebugColor;
+        public List<SkillBase> Skills => m_skills;
 
         private void Awake()
         {
@@ -47,7 +49,8 @@ namespace JH
         private void Start()
         {
             SetMaxHunger(m_player.Setting.MaxHunger);
-            foodPowers.Clear();
+            m_foodPowers.Clear();
+            m_skills.Clear();
             m_cantPredation = false;
 
             if (m_defaultFoodPower != null)
@@ -73,8 +76,8 @@ namespace JH
 
             // 푸드파워 깊은 복사 이후에 초기화
             FoodPower newPower = Instantiate(foodPower.gameObject, m_foodPowerParent).GetComponent<FoodPower>();
-            string PowerName = hunger == 0 ? $"[{foodPowers.Count}] {defaultName} : {newPower.name}" :
-                $"[{foodPowers.Count}] Stack : {newPower.name}";
+            string PowerName = hunger == 0 ? $"[{m_foodPowers.Count}] {defaultName} : {newPower.name}" :
+                $"[{m_foodPowers.Count}] Stack : {newPower.name}";
 
             newPower.gameObject.name = PowerName;
 
@@ -120,10 +123,10 @@ namespace JH
             }
             else
             {
-                for (int i = 0; i < foodPowers.Count; i++)
+                for (int i = 0; i < m_foodPowers.Count; i++)
                 {
                     // 같은 푸드파워가 있다면 레벨 업
-                    if (foodPowers[i].ID == newPower.ID)
+                    if (m_foodPowers[i].ID == newPower.ID)
                     {
                         cantStart = true;
 
@@ -131,18 +134,21 @@ namespace JH
                         {
                             // 이전 푸드파워의 레벨
                             for (int j = 0; j <= foodPower.Level; j++)
-                                foodPowers[i].LevelUp();
+                                m_foodPowers[i].LevelUp();
                         }
 
                         else
-                            foodPowers[i].LevelUp();
+                            m_foodPowers[i].LevelUp();
 
                         break;
                     }
                 }
             }
             // 리스트에 추가한다.
-            foodPowers.Add(newPower);
+            m_foodPowers.Add(newPower);
+
+
+
             CheckFoodCombo();
 
             // 레벨업이 아닌경우에만 루틴을 시작
@@ -150,6 +156,10 @@ namespace JH
             {
                 newPower.SetMain(true);
                 StartFoodPowerRoutine();
+
+                // 추가한 파워를 스킬에 넣어준다.
+                var foodPowerSkill = newPower.GetSkillBase();
+                m_skills.Add(foodPowerSkill);
             }
 
             return newPower;
@@ -162,10 +172,10 @@ namespace JH
             m_foodComboStacks.Clear();
 
             FoodPower targetFP = null;
-            for (int i = 0; i < foodPowers.Count; i++)
+            for (int i = 0; i < m_foodPowers.Count; i++)
             {
                 // 효과는 계산하지 않는다.
-                if (foodPowers[i].IsEffectFoodPower)
+                if (m_foodPowers[i].IsEffectFoodPower)
                     continue;
 
                 // 7이상은 패스
@@ -175,12 +185,12 @@ namespace JH
                 // 없으면 비워주고 다음으로
                 if (targetFP == null)
                 {
-                    targetFP = foodPowers[i];
+                    targetFP = m_foodPowers[i];
                     count = 1;
                     continue;
                 }
                 // 만약 같으면 카운트를 높인다.
-                if (targetFP.ID == foodPowers[i].ID)
+                if (targetFP.ID == m_foodPowers[i].ID)
                 {
                     count++;
                     continue;
@@ -194,7 +204,7 @@ namespace JH
                     //m_foodComboStacks.Add(targetFP, count-2);
 
                     // 다음 타겟
-                    targetFP = foodPowers[i];
+                    targetFP = m_foodPowers[i];
                     count = 1;
                 }
             }
@@ -299,14 +309,15 @@ namespace JH
             SetFoodCombo();
 
             // 모두 리스트에서 지우고 삭제
-            foreach (FoodPower power in foodPowers)
+            foreach (FoodPower power in m_foodPowers)
             {
                 // 파워도 꺼야함
                 power.Remove();
                 Destroy(power.gameObject);
             }
 
-            foodPowers.Clear();
+            m_foodPowers.Clear();
+            m_skills.Clear();
 
             // 기본 푸드파워를 넣어준다.
             if (m_defaultFoodPower != null)
@@ -345,7 +356,7 @@ namespace JH
 
         private void StartFoodPowerRoutine()
         {
-            if (foodPowers.Count == 0)
+            if (m_foodPowers.Count == 0)
                 return;
             SetFoodPowerRoutine();
         }
@@ -354,20 +365,20 @@ namespace JH
         {
             StopFoodPowerRoutine();
 
-            for (int i = 0; i < foodPowers.Count; i++)
+            for (int i = 0; i < m_foodPowers.Count; i++)
             {
 
-                if (foodPowers[i].Main)
-                    foodPowers[i].ActiveFoodPower();
+                if (m_foodPowers[i].Main)
+                    m_foodPowers[i].ActiveFoodPower();
 
             }
         }
         public void StopFoodPowerRoutine()
         {
             // 먼저 루틴을 모두 꺼준다.
-            for (int i = 0; i < foodPowers.Count; i++)
+            for (int i = 0; i < m_foodPowers.Count; i++)
             {
-                foodPowers[i].InActiveFoodPower();
+                m_foodPowers[i].InActiveFoodPower();
             }
 
         }
@@ -397,25 +408,4 @@ namespace JH
 
     }
 }
-
-
-// Legacy : 푸드파워들을 관리하는 메서드
-//public void FoodPowerManager()
-//{
-//    if (foodPowers.Count == 0)
-//        return;
-
-//    for(int i = 0; i < foodPowers.Count; i++)
-//    {
-//        if (foodPowers[i].CoolDown < foodPowers[i].Timer)
-//        {
-//            foodPowers[i].Active();
-//            foodPowers[i].SetTimer(0);
-//            continue;
-//        }
-
-//        float m_posCheckTimer = foodPowers[i].Timer + Time.deltaTime;
-//        foodPowers[i].SetTimer(m_posCheckTimer);                
-//    }           
-//}
 

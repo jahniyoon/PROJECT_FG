@@ -78,7 +78,7 @@ namespace JH
 
         private void AttackBehavior()
         {
-            if (m_targetDistance < m_data.AttackRange && CanAttackCheck())
+            if (m_targetDistance < m_data.ChaseRange && CanAttackCheck())
             {
                 m_attackCoolDown = m_subData.AttackCoolDown;
                 ShootProjectile();

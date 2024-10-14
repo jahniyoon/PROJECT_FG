@@ -15,11 +15,11 @@ MonoBehaviour:
   <ID>k__BackingField: 20700
   <Name>k__BackingField: Enemy G
   <Description>k__BackingField: "\uCE58\uC720\uD615"
-  <Type>k__BackingField: 4
+  <Type>k__BackingField: 0
   <Health>k__BackingField: 200
   <MoveSpeed>k__BackingField: 3
   <RotateSpeed>k__BackingField: 0
-  <AttackRange>k__BackingField: 10
+  <ChaseRange>k__BackingField: 10
   <EscapeRange>k__BackingField: 5
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0

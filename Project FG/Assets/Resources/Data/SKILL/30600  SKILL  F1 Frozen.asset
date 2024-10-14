@@ -15,7 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: 30600
   <Name>k__BackingField: F1 Frozen
   <Description>k__BackingField: "\uC801 F1\uC758 \uB0C9\uAE30 \uC7A5\uD310 \uAE30\uC220"
-  <BaseType>k__BackingField: 2
+  <BaseType>k__BackingField: 3
   <SkillTarget>k__BackingField: 1
   <ActiveTime>k__BackingField: 0
   <AimType>k__BackingField: 6

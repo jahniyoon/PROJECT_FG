@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583026403003809290}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -169,83 +169,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_stageSize: {x: 50, y: 50}
   m_waves:
-  - SpawnEnemy: {fileID: 6383514284322566460, guid: e62c86fd9ba18114ab045d3211e3a454,
+  - SpawnEnemy: {fileID: 7325081793853281390, guid: f95a3152bdb2e4c4db537843b95ae740,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 2
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 4439504954173903427, guid: 7f429217739d3ba4aa81398b3a2cf5fd,
+  - SpawnEnemy: {fileID: 7325081793853281390, guid: 97c3f26ac9b657646af8d319327094ef,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 3
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 7325081793853281390, guid: b103f452f06ab2745a10d81e55f6069e,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: 362d18d950d2aee4f8d49bec48f9cf7c,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 6
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 399979490239774952, guid: d084a33df5df4084fb257c7b78dfd206,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: dbf055d06aad725428c03a0454ab6cf1,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 7
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 3081380198935050420, guid: d1449af242f2df649867250e27d5de3e,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: 7a682249d82f48b478e02f09ff765b85,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 8
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 4236716245782709705, guid: c6ee33a426931fe46b12b0d80fa4ddf8,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: 15d41d85ffdd7d04d91bd512703092d2,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 9
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 5090535804664883285, guid: f9130277d555fb641996a45f3e8f1ba1,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: c40b08120660f8f40857f46bd6af3db4,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 10
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 4158388656185241753, guid: ce44f39fc31c3b2448e98ee497b38494,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: d5b2ea92c06ff784084882e28616b986,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 11
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 4263152508264495954, guid: 52a41c1b064f2a6429a3ba4c43f4103b,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: 5c5535bd5e53a9f4d914c8bbdc556ece,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 11
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
-  - SpawnEnemy: {fileID: 861909258867761318, guid: 3e9bd303ebfab1a44a9c297f082372ec,
+  - SpawnEnemy: {fileID: 399979490239774952, guid: 78c0d152bb6483f42b4a7d8a8203ca27,
       type: 3}
-    EnemyCreationCount: 4
-    EnemyCreationTime: 15
-    EnemyLeftNumber: 5
+    EnemyCreationCount: 12
+    EnemyCreationTime: 8
+    EnemyLeftNumber: 3
     BaconSpawnDuration: 20
     BaconCreateProbability: 50
     BaconMaxValue: 10
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_spawnCount: 0
   m_remainEnemy: 0
   m_baconSpawnCount: 0
-  m_baconPrefab: {fileID: 174998505642172883, guid: 1044493790cf74a4e85ebf5ffdf32d94,
+  m_baconPrefab: {fileID: 174998505642172883, guid: 6293fd3fce0a6ee4cbb3dde1c875d559,
     type: 3}
   m_baconMinDistance: 5
 --- !u!1 &1663438312053369768
@@ -719,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 4563821622442733052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 15, z: -2}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -29,6 +29,18 @@ namespace JH
             base.Die();
         }
 
+        public bool CheckFreezeState()
+        {
+            foreach(var skill in Skills)
+            {
+                if (skill.IsFixed)
+                    return true;
+            }
+
+
+            return false;
+        }
+
 
 
     }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4086753696024563130}
+  - component: {fileID: -649299482315367982}
   - component: {fileID: 4115101769217291921}
   - component: {fileID: 7817002158819193060}
   - component: {fileID: 2427144918497479914}
@@ -41,7 +42,7 @@ Transform:
   - {fileID: 713370809725852600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4115101769217291921
+--- !u!114 &-649299482315367982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,6 +50,35 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076442344049760639}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ee03a5ee9a2e242851fb78d5b004b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_data: {fileID: 11400000, guid: f8a47a81e36bd214aac0082a536c235a, type: 2}
+  m_state: 0
+  m_target: {fileID: 0}
+  m_targetDistance: 0
+  m_healthBar: {fileID: 0}
+  m_healthBarOffset: 1
+  m_canPredation: 0
+  m_predationIcon: {fileID: 0}
+  m_dieSpeed: 1.2
+  m_attackCoolDown: 0
+  m_stunEffect: {fileID: 5300735016244865262}
+  m_notCount: 1
+  m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
+  m_skillTimer: 0
+  m_skills: []
+  m_attackSkills: []
+  m_routineSkills: []
+--- !u!114 &4115101769217291921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076442344049760639}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2eb7ef38939bd764a91ccbf253f6302d, type: 3}
   m_Name: 
@@ -59,7 +89,6 @@ MonoBehaviour:
   m_targetDistance: 0
   m_healthBar: {fileID: 0}
   m_healthBarOffset: 1
-  m_FoodPower: {fileID: 0}
   m_canPredation: 0
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
@@ -68,6 +97,7 @@ MonoBehaviour:
   m_notCount: 1
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
+  m_skills: []
   m_attackSkills: []
   m_routineSkills: []
 --- !u!114 &7817002158819193060

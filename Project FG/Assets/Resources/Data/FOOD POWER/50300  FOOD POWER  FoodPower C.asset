@@ -15,7 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: 50300
   <Name>k__BackingField: FoodPower C
   <Description>k__BackingField: "\uD478\uB4DC\uD30C\uC6CC C"
-  <BaseType>k__BackingField: 9
+  <BaseType>k__BackingField: 11
   <SkillTarget>k__BackingField: 0
   <ActiveTime>k__BackingField: 1
   <AimType>k__BackingField: 10

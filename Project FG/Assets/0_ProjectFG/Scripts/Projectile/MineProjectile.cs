@@ -29,7 +29,7 @@ namespace JH
         {
             base.SetSkill(skill);
             m_collider.radius = m_skill.LevelData.Radius;
-            m_model.transform.localScale = Vector3.one * m_skill.LevelData.Radius;
+            m_model.transform.localScale = Vector3.one * m_skill.LevelData.TryGetValue1();
         }
         public override void ActiveProjectile()
         {
@@ -37,12 +37,18 @@ namespace JH
 
             isSpawn = true;
         }
+
+        public override ProjectileBase InActiveProjectile()
+        {
+            Destroy(gameObject);
+            return this;
+        }
         public void Explosion()
         {
 
 
             m_isStopDestroy = true;
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.Radius, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.TryGetValue1(), m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
             for (int i = 0; i < colls.Length; i++)
             {
 
@@ -69,9 +75,9 @@ namespace JH
             m_mine.gameObject.SetActive(false);
             PlayEffect();
 
-            if (0 <= m_skill.LevelData.LifeTime)
-            Invoke(nameof(InActiveProjectile), m_skill.LevelData.LifeTime);
         }
+
+
 
 
         protected override void DebugProjectile()

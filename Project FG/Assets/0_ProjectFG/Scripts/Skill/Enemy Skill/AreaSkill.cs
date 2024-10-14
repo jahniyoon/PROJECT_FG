@@ -20,10 +20,10 @@ namespace JH
                 if (m_data.ActiveTime == SkillActiveTime.CoolDown)
                     ResetTimer();
             }
-            
+
         }
 
-        public override void ActiveSkill()
+        public sealed override void ActiveSkill()
         {
             base.ActiveSkill();
 
@@ -33,10 +33,14 @@ namespace JH
 
             if (m_data.SkillTarget == TargetTag.Caster)
                 OnBuff(Caster.Transform);
+            ActiveArea();
         }
+        protected virtual void ActiveArea() { }
+        protected virtual void InactiveArea() { }
 
 
-        public override void InactiveSkill()
+
+        public sealed override void InactiveSkill()
         {
             ResetProjectiles();
 
@@ -44,6 +48,7 @@ namespace JH
                 RemoveBuff(Caster.Transform);
 
             StopEffect();
+            InactiveArea();
             base.InactiveSkill();
 
         }

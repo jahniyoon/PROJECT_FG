@@ -5105,7 +5105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1702940834078256832}
-  - component: {fileID: 514109408918877448}
+  - component: {fileID: 9182587213510610998}
   - component: {fileID: 1266399028778045480}
   - component: {fileID: 7701093915276329915}
   - component: {fileID: 2978544248097671524}
@@ -5137,7 +5137,7 @@ Transform:
   - {fileID: 3750346454956671010}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &514109408918877448
+--- !u!114 &9182587213510610998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5146,7 +5146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2554822481681098258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c70202deffb4e4aa8a6ae66710b9b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ee03a5ee9a2e242851fb78d5b004b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: a88343105f0c2c948965285224e79378, type: 2}
@@ -5155,7 +5155,6 @@ MonoBehaviour:
   m_targetDistance: 0
   m_healthBar: {fileID: 0}
   m_healthBarOffset: 1
-  m_FoodPower: {fileID: 0}
   m_canPredation: 0
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
@@ -5164,12 +5163,9 @@ MonoBehaviour:
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
+  m_skills: []
   m_attackSkills: []
   m_routineSkills: []
-  m_aimState: 0
-  m_isAim: 0
-  m_aimTimer: 0
-  m_shootingTimer: 0
 --- !u!114 &1266399028778045480
 MonoBehaviour:
   m_ObjectHideFlags: 0

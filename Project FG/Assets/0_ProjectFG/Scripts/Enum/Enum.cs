@@ -15,10 +15,12 @@ namespace JH
         None,
         AimShootSkill,  // 특수 스킬
         AreaSkill,      // 범위 스킬
+        FixedAreaSkill,      // 범위 스킬
         Buff,     // 캐스터 버프
         DonutSkill,
         CollisionSkill, // 콜리전 스킬
         ProjectileSkill, // 투사체 스킬
+        ExplosionSkill,
 
 
         // 푸드파워 타입
@@ -83,11 +85,12 @@ namespace JH
 
     public enum SkillState
     {
-        Reloading,
-        Ready,
-        Cast,
-        Active,
-        Disable
+        Reloading,  // 재장전 중
+        Ready,      // 준비 완료. 활성화 할 수 있음
+        Cast,       // 캐스트 완료.
+        Active,     // 활성화
+        Disable,    // 비활성화
+        Freeze      // 멈춤
     }
     public enum ProjectileType
     {

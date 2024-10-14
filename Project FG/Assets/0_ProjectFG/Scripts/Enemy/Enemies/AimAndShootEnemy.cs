@@ -25,18 +25,6 @@ namespace JH
             m_aimSkill = TryGetSkill(0);
         }
 
-        protected override void Die()
-        {
-            // 죽으면 모든 스킬을 꺼준다.
-            for (int i = 0; i < m_routineSkills.Count; i++)
-                m_routineSkills[i].InactiveSkill();
-
-            for (int i = 0; i < m_attackSkills.Count; i++)
-                m_attackSkills[i].InactiveSkill();
-
-            base.Die();
-        }
-
 
 
         public override bool CanActiveSkill()
@@ -61,16 +49,7 @@ namespace JH
             m_aimTimer = 0;
             m_shootingTimer = 0;
         }
-        private bool TargetAngleCheck()
-        {
-            if (m_aimSkill == null)
-                return false;
-
-            float angle = TargetAngle();
-
-            return Mathf.Abs(angle) <= m_aimSkill.Data.SkillArc * 0.5f;
-        }
-
+   
         // 공격 상태를 체크
         private bool AttackAimCheck()
         {
@@ -84,14 +63,14 @@ namespace JH
             if (m_aimState == AimState.Reload)
                 return false;
 
-            if (m_isAim == false && m_data.AttackRange < m_targetDistance)
+            if (m_isAim == false && m_data.ChaseRange < m_targetDistance)
             {
                 return false;
             }
 
 
             // 조준이 완료되고, 타겟이 공격범위 밖으로 나가면 다시 이동상태
-            if (m_isAim && m_data.AttackRange < m_targetDistance)
+            if (m_isAim && m_data.ChaseRange < m_targetDistance)
             {
                 return false;
             }

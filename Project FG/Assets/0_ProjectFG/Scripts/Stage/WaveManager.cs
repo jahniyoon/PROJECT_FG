@@ -191,9 +191,6 @@ namespace JH
                 enemy.KillEnemy();
             }
 
-            m_waveDestroyList = m_waveList;
-            m_waveList.Clear();
-            Invoke(nameof(DestroyWave), 2f);
 
             if (m_waves.Count <= m_curWave)
             {
@@ -211,16 +208,18 @@ namespace JH
         private void DestroyWave()
         {
             // 프리팹 정리
-            for (int i = 0; i < m_waveDestroyList.Count; i++)
+            for (int i = 0; i < m_waveList.Count; i++)
             {
-                Destroy(m_waveDestroyList[i]);
+                Destroy(m_waveList[i]);
             }
-            m_waveDestroyList.Clear();
+            m_waveList.Clear();
         }
 
         public void NextWave()
         {
             UIManager.Instance.WaveUI.NextWave(false);
+            DestroyWave();
+
 
             m_curWave++;
             WaveStart(m_curWave);

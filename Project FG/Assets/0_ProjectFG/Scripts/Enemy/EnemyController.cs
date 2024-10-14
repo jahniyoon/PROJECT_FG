@@ -39,7 +39,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("HealthBar")]
     [SerializeField] private MiniHealthBar m_healthBar;
     [SerializeField] private float m_healthBarOffset = 1;
-    [SerializeField] private FoodPower m_FoodPower;
 
     [Header("Predation")]
     [SerializeField] private bool m_canPredation;
@@ -63,6 +62,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("에네미 스킬")]
 
     [SerializeField] protected float m_skillTimer = 0;
+    [SerializeField] protected List<SkillBase> m_skills = new List<SkillBase>();
     [SerializeField] protected List<SkillBase> m_attackSkills = new List<SkillBase>();
     [SerializeField] protected List<SkillBase> m_routineSkills = new List<SkillBase>();
 
@@ -77,9 +77,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     public int ID => m_data.ID;
     public Transform Transform => this.transform;
     public Transform Model => m_model;
-    public GameObject GameObject => this.gameObject;    
+    public GameObject GameObject => this.gameObject;
     public bool NotCount => m_notCount;
     public Damageable Damageable => m_damageable;
+    public List<SkillBase> Skills => m_skills;
 
     #region Lifecycle
     private void Awake()
@@ -142,7 +143,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
         m_hitEffect = GetComponent<HitEffect>();
 
-        m_FoodPower = m_data.FoodPower;
 
         // 포식 아이콘 미리 꺼둔다.
         var predationIcon = transform.GetComponentInChildren<WorldSpaceIcon>();
@@ -361,6 +361,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         if (m_damageable.Excution)
             m_spriteRenderer.sortingOrder = 6;
 
+        m_spriteColor?.StopFlicking();
+
         UIManager.Instance.MinimapUI.RemoveObject(m_instanceID);
 
         m_predationIcon.IconEnable(m_canPredation);
@@ -376,7 +378,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         {
             m_routineSkills[i].InactiveSkill();
             m_routineSkills[i].RemoveSkill();
-
         }
 
         for (int i = 0; i < m_attackSkills.Count; i++)
@@ -391,7 +392,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
             m_hitEffect.Die();
 
         UIManager.Instance.Debug.KillCountText(1);
-        m_capsule.center =new Vector3(0,-10,0);
+        m_capsule.center = new Vector3(0, -10, 0);
         Invoke(nameof(Dead), 1f);
     }
 
@@ -419,7 +420,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     }
     public FoodPower GetFoodPower()
     {
-        return m_FoodPower;
+        return m_data.FoodPower;
     }
 
     protected void ResetAttackTimer()
@@ -449,10 +450,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         if (m_target == null)
             return false;
 
-        
+
 
         // 타겟과의 거리가 도망가는 거리보다 크고, 공격 가능거리보다 짧다.
-        if (m_data.EscapeRange <= m_targetDistance && m_targetDistance < m_data.AttackRange)
+        if (m_data.EscapeRange <= m_targetDistance && m_targetDistance < m_data.ChaseRange)
             return true;
 
         return false;
@@ -529,8 +530,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         foreach (int id in m_data.AttackSkillID)
         {
             SkillBase skill = CreateSkill(GFunc.GetSkillPrefab(id));
-            if (skill != null)
-                m_attackSkills.Add(skill);
+            if (skill == null) continue;
+
+            m_attackSkills.Add(skill);
+            m_skills.Add(skill);
         }
 
         bool routine = true;
@@ -539,9 +542,10 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         {
             // 루틴 스킬은 생성 시
             SkillBase skill = CreateSkill(GFunc.GetSkillPrefab(id), routine);
-            if (skill == null)
-                continue;
-                m_routineSkills.Add(skill);
+            if (skill == null) continue;
+
+            m_routineSkills.Add(skill);
+            m_skills.Add(skill);
         }
     }
 
@@ -551,7 +555,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         if (skill == null)
             return null;
         SkillBase newSkill = Instantiate(skill.gameObject, transform.position, transform.rotation, m_skillParent).GetComponent<SkillBase>();
-        
+
         if (m_target)
             newSkill.SetTarget(m_target);
 
@@ -623,9 +627,9 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     protected SkillBase TryGetSkill(int index = 0)
     {
-        for(int i = 0; i < m_attackSkills.Count; i++)
+        for (int i = 0; i < m_attackSkills.Count; i++)
         {
-            if(index == i)
+            if (index == i)
                 return m_attackSkills[i];
         }
         return null;
