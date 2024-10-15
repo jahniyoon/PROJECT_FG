@@ -9,14 +9,17 @@ namespace JH
     {
         protected Vector3 m_spawnPos;
         protected Transform m_model;
+        protected Transform m_effectsTransform;
         [SerializeField] protected ProjectileData m_data;
         [Header("Caster Info")]
         [SerializeField] protected SkillBase m_skill;
+        [SerializeField] protected bool m_derivatives;
         [SerializeField] protected List<BuffBase> m_buffs = new List<BuffBase>();
         [Header("Projectile Info")]
 
         [SerializeField] protected int m_penetrateCount;
         [SerializeField] protected float m_projectileSpeed;
+        [SerializeField] protected float m_radius;
         [Header("Particles")]
         [SerializeField] private ParticleSystem[] m_particles;
         [SerializeField] private VisualEffect[] m_effects;
@@ -36,6 +39,8 @@ namespace JH
             if (m_model != null)
                 m_model.transform.localScale = Vector3.one * m_data.ProjectileScale;
 
+            m_effectsTransform = transform.GetChild(1);
+
             m_spawnPos = transform.position;
             m_penetrateCount = m_data.Penetrate;
             m_projectileSpeed = m_data.ProjectileSpeed;
@@ -43,6 +48,12 @@ namespace JH
         }
 
         protected virtual void AwakeInit() { }
+
+        public void SetSkill(SkillBase skill, bool derivatives)
+        {
+            m_derivatives = derivatives;
+            SetSkill(skill);
+        }
         public virtual void SetSkill(SkillBase skill)
         {
             m_skill = skill;
@@ -57,6 +68,13 @@ namespace JH
                 buff.SetBuffValue(m_skill.LevelData.BuffValues);
                 m_buffs.Add(buff);
             }
+            SetRadius(m_skill.LevelData.Radius);
+        }
+
+        public virtual void SetRadius(float radius)
+        {
+            m_radius = radius;
+            m_effectsTransform.transform.localScale = Vector3.one * radius;
         }
         public void SetSpeedPenetrate(float speed, int penetrate)
         {
@@ -87,23 +105,39 @@ namespace JH
             if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
 
                 for (int i = 0; i < m_buffs.Count; i++)
-            {
+                {
                     buff.RemoveBuff(m_skill.Caster.GameObject, m_buffs[i]);
-            }
+                }
         }
 
         public virtual void ActiveProjectile()
         {
             TryDebug();
-            lifeTime = m_skill.LevelData.LifeTime;
             if (0 <= m_skill.LevelData.LifeTime)
-            Invoke(nameof(InActiveProjectile), m_skill.LevelData.LifeTime);
+                Invoke(nameof(InActiveProjectile), m_skill.LevelData.LifeTime);
         }
-        public float lifeTime;
+
         public virtual ProjectileBase InActiveProjectile()
         {
+            CreateDerivativesProjectiles();
             gameObject.SetActive(false);
             return this;
+        }
+
+        // 파생 투사체 생성
+        public void CreateDerivativesProjectiles()
+        {
+
+            if (m_derivatives) return;
+
+            foreach (var projectileID in m_data.DerivativesID)
+            {
+                var projectilePrefab = GFunc.GetProjectilePrefab(projectileID);
+                var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation, GameManager.Instance.ProjectileParent);
+                projectile.SetSkill(m_skill, true);
+                projectile.SetRadius(m_skill.LevelData.TryGetValue3());
+                projectile.ActiveProjectile();
+            }
         }
 
         protected void PlayEffect()

@@ -17,6 +17,6 @@ MonoBehaviour:
   <Description>k__BackingField: "\uC9C0\uB8B0"
   <Type>k__BackingField: 8
   <Penetrate>k__BackingField: 0
-  <ProjectileScale>k__BackingField: 0.2
+  <ProjectileScale>k__BackingField: 1.5
   <ProjectileSpeed>k__BackingField: 0
   <DerivativesID>k__BackingField: ba620100

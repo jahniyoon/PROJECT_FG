@@ -20,6 +20,7 @@ namespace JH
             m_collider.radius = m_data.ProjectileScale * 0.5f;
 
         }
+
         public override void SetSkill(SkillBase skill)
         {
             base.SetSkill(skill);
@@ -45,6 +46,7 @@ namespace JH
         public override ProjectileBase InActiveProjectile()
         {
             Destroy(this.gameObject);
+            CreateDerivativesProjectiles();
             return this;
         }
 

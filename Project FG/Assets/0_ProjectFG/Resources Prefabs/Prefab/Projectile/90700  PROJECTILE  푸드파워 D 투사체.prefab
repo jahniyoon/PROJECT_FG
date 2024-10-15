@@ -49013,7 +49013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8829031737300424884}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59021,6 +59021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: a7b3be7865770704eb22aef4203e11cc, type: 2}
   m_skill: {fileID: 0}
+  m_derivatives: 0
   m_buffs: []
   m_penetrateCount: 0
   m_projectileSpeed: 0

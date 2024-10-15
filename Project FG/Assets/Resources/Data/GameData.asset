@@ -775,7 +775,7 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: 90210
       - ColumnID: BuffID
-        Value: '-'
+        Value: 80500
       - ColumnID: SkillDelay
         Value: '-'
       - ColumnID: SkillSpeed
@@ -829,7 +829,7 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: 90600
       - ColumnID: BuffID
-        Value: '-'
+        Value: 81000
       - ColumnID: SkillDelay
         Value: '-'
       - ColumnID: SkillSpeed
@@ -910,7 +910,7 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: 90800
       - ColumnID: BuffID
-        Value: '-'
+        Value: 80410
       - ColumnID: SkillDelay
         Value: '-'
       - ColumnID: SkillSpeed
@@ -3185,11 +3185,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60066  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv2"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3220,11 +3220,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60067  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv3"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3255,11 +3255,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60068  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv4"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3290,11 +3290,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60069  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv5"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3325,11 +3325,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60070  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv6"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3360,11 +3360,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60071  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv7"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3395,11 +3395,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60072  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv8"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3430,11 +3430,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "60073  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCH lv9"
       SheetID: FOOD POWER LEVEL
       Data:
@@ -3465,11 +3465,11 @@ MonoBehaviour:
       - ColumnID: BuffValue
         Value: '-'
       - ColumnID: Value1
-        Value: 4
+        Value: 0
       - ColumnID: Value2
         Value: '-'
       - ColumnID: Value3
-        Value: '-'
+        Value: 4
     - Name: "80100  BUFF  \uB0C9\uB3D9"
       SheetID: BUFF
       Data:
@@ -4229,7 +4229,7 @@ MonoBehaviour:
       - ColumnID: ProjectileSpeed
         Value: 0
       - ColumnID: ProjectileScale
-        Value: 0.2
+        Value: 1.5
       - ColumnID: DerivativesID
         Value: 90810
     - Name: "90810  PROJECTILE  \uD478\uB4DC\uD30C\uC6CCG \uC9C0\uB8B0\uC758 \uD3ED\uBC1C"

@@ -463,7 +463,7 @@ namespace JH
 
         #region Aim
         // 조준과 관련된 메서드
-        protected Transform SetAim(Transform transform, int index = 0)
+        public Transform SetAim(Transform transform, int index = 0)
         {
             Transform parent = GameManager.Instance.ProjectileParent;
             Vector3 position = Caster.Model.position;

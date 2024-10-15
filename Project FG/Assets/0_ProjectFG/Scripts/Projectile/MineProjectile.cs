@@ -28,9 +28,15 @@ namespace JH
         public override void SetSkill(SkillBase skill)
         {
             base.SetSkill(skill);
-            m_collider.radius = m_skill.LevelData.Radius;
-            m_model.transform.localScale = Vector3.one * m_skill.LevelData.TryGetValue1();
+            m_model.transform.localScale = Vector3.one * m_data.ProjectileScale;
         }
+        public override void SetRadius(float radius)
+        {
+            base.SetRadius(radius);
+            m_collider.radius = radius;
+
+        }
+
         public override void ActiveProjectile()
         {
             base.ActiveProjectile();
@@ -46,31 +52,32 @@ namespace JH
         public void Explosion()
         {
 
+            CreateDerivativesProjectiles();
 
             m_isStopDestroy = true;
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.TryGetValue1(), m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
-            for (int i = 0; i < colls.Length; i++)
-            {
+            //Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.TryGetValue1(), m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
+            //for (int i = 0; i < colls.Length; i++)
+            //{
 
 
-                if (colls[i].CompareTag(m_skill.Data.SkillTarget.ToString()))
-                {
-                    // 180도만 제한한다.
-                    if (GFunc.TargetAngleCheck(transform, colls[i].transform, m_skill.LevelData.Arc) == false)
-                        continue;
+            //    if (colls[i].CompareTag(m_skill.Data.SkillTarget.ToString()))
+            //    {
+            //         180도만 제한한다.
+            //        if (GFunc.TargetAngleCheck(transform, colls[i].transform, m_skill.LevelData.Arc) == false)
+            //            continue;
 
 
-                    if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
-                    {
-                        damageable.OnDamage(m_skill.LevelData.Damage);
-                    }
+            //        if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
+            //        {
+            //            damageable.OnDamage(m_skill.LevelData.Damage);
+            //        }
 
 
-                    // 버프도 같이 보낸다.
-                    m_skill.OnBuff(colls[i].transform);
-                    m_skill.RemoveBuff(colls[i].transform);
-                }
-            }
+            //         버프도 같이 보낸다.
+            //        m_skill.OnBuff(colls[i].transform);
+            //        m_skill.RemoveBuff(colls[i].transform);
+            //    }
+            //}
 
             m_mine.gameObject.SetActive(false);
             PlayEffect();
@@ -84,7 +91,7 @@ namespace JH
         {
             m_debug.gameObject.SetActive(true);
             m_debug.position = transform.position;
-            m_debug.localScale = Vector3.one * m_skill.LevelData.Radius;
+            m_debug.localScale = Vector3.one * m_radius;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -93,7 +100,9 @@ namespace JH
                 return;
 
             if (other.CompareTag(m_skill.Data.SkillTarget.ToString()))
+            {
                 Explosion();
+            }
 
         }
     }

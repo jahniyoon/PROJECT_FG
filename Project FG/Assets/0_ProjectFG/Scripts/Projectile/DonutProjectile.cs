@@ -19,7 +19,7 @@ namespace JH
 
         public void ShootDonut()
         {
-            m_outerRadius = m_skill.LevelData.Radius;
+            m_outerRadius = m_radius;
             m_innerRadius = m_skill.LevelData.TryGetValue1();
 
             m_donutEffect.SetRadius(m_outerRadius, m_innerRadius);
@@ -27,6 +27,7 @@ namespace JH
             float duration = m_skill.LevelData.TryGetValue1(1);
             StartCoroutine(AimRoutine(m_skill.LevelData.Damage, duration));
         }
+
 
 
         IEnumerator AimRoutine(float damage, float duration)
@@ -57,7 +58,7 @@ namespace JH
 
         public void Explosion(float damage)
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_outerRadius);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_radius);
             Vector3 targetPos;
 
             for (int i = 0; i < colls.Length; i++)

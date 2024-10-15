@@ -58,9 +58,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv2"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv2"
     ID: 60066
@@ -76,9 +77,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv3"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv3"
     ID: 60067
@@ -94,9 +96,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv4"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv4"
     ID: 60068
@@ -112,9 +115,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv5"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv5"
     ID: 60069
@@ -130,9 +134,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv6"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv6"
     ID: 60070
@@ -148,9 +153,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv7"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv7"
     ID: 60071
@@ -166,9 +172,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv8"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv8"
     ID: 60072
@@ -184,9 +191,10 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   - Name: "\uD478\uB4DC\uD30C\uC6CCH lv9"
     Description: "\uD478\uB4DC\uD30C\uC6CCH lv9"
     ID: 60073
@@ -202,8 +210,9 @@ MonoBehaviour:
       Count: 1
       BuffValues: []
       Value1:
-      - 4
+      - 0
       Value2: []
-      Value3: []
+      Value3:
+      - 4
   <IngameUpgradeID>k__BackingField: 
   <AlwaysShoot>k__BackingField: 0

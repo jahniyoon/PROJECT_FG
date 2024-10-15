@@ -13,7 +13,6 @@ namespace JH
         private SphereCollider m_collider;
         [Header("AOEProjectile")]
         [SerializeField] private List<Damageable> m_aoeTargets = new List<Damageable>();
-        [SerializeField] private Transform m_effectTransform;
 
 
 
@@ -32,9 +31,14 @@ namespace JH
         public override void SetSkill(SkillBase skill)
         {
             base.SetSkill(skill);
-            m_collider.radius = m_skill.LevelData.Radius;
-            m_effectTransform.transform.localScale = Vector3.one * m_skill.LevelData.Radius;
         }
+
+        public override void SetRadius(float radius)
+        {
+            base.SetRadius(radius);
+            m_collider.radius = radius;
+        }
+
         public override void ActiveProjectile()
         {
             PlayEffect();

@@ -12,7 +12,10 @@ namespace JH
         [SerializeField] bool m_isStopDestroy;
 
 
-
+        public override void SetRadius(float radius)
+        {
+            base.SetRadius(radius);
+        }
 
         public override void ActiveProjectile()
         {
@@ -27,7 +30,7 @@ namespace JH
             if (m_skill.Data.SkillTarget == TargetTag.Caster)
                 return;
 
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.Radius, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_radius, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
             for (int i = 0; i < colls.Length; i++)
             {
 
@@ -62,7 +65,7 @@ namespace JH
         {
             m_debug.gameObject.SetActive(true);
             m_debug.position = transform.position;
-            m_debug.localScale = Vector3.one * m_skill.LevelData.Radius;
+            m_debug.localScale = Vector3.one * m_radius;
         }
     }
 

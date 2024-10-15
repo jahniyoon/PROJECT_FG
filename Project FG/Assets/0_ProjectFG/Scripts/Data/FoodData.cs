@@ -173,10 +173,7 @@ namespace JH
             dataList.Add(SetData("IngameUpgradeID", GFunc.IntsToString(IngameUpgradeID)));
             dataList.Add(SetData("ProjectileID", GFunc.IntsToString(ProjectileID)));
             dataList.Add(SetData("BuffID", GFunc.IntsToString(BuffID)));
-            dataList.Add(SetData("BuffValue", GFunc.FloatsToString(BuffValues)));
-            dataList.Add(SetData("Value1", GFunc.FloatsToString(Value1)));
-            dataList.Add(SetData("Value2", GFunc.FloatsToString(Value2)));
-            dataList.Add(SetData("Value3", GFunc.FloatsToString(Value3)));
+
             dataList.Add(SetData("SkillDelay", SkillDelay.ToString()));
             dataList.Add(SetData("SkillSpeed", SkillSpeed.ToString()));
             return dataList;

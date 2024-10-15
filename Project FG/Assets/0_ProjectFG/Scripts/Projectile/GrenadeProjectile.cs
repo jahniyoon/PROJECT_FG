@@ -9,8 +9,6 @@ namespace JH
         [Header("Grenade")]
         [SerializeField] private bool m_randomRange;
 
-        [Header("Explosion Effect")]
-        [SerializeField] private Transform m_effectTransform;
 
         Vector3 m_targetPos;
 
@@ -24,7 +22,6 @@ namespace JH
                 range = Random.Range(0, skill.LevelData.Range);
 
             m_targetPos = transform.position + transform.forward * range;
-            m_effectTransform.localScale = Vector3.one * skill.LevelData.Radius;
             StartCoroutine(ShootRoutine());
         }
 
@@ -66,7 +63,7 @@ namespace JH
         private void Explosion()
         {
             m_model.gameObject.SetActive(false);
-            Collider[] colls = Physics.OverlapSphere(transform.position, m_skill.LevelData.Radius, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
+            Collider[] colls = Physics.OverlapSphere(transform.position, m_radius, m_skill.Data.TargetLayer, QueryTriggerInteraction.Ignore);
             for (int i = 0; i < colls.Length; i++)
             {
 

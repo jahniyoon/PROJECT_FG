@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146284286524518062}
   m_Layer: 0
-  m_Name: Effect Radius
+  m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 67c02e15c756c8c4ab3632c02530000f, type: 2}
   m_skill: {fileID: 0}
+  m_derivatives: 0
   m_buffs: []
   m_penetrateCount: 0
   m_projectileSpeed: 0
@@ -120,7 +121,6 @@ MonoBehaviour:
   m_debug: {fileID: 0}
   m_debugMode: 0
   m_aoeTargets: []
-  m_effectTransform: {fileID: 2146284286524518062}
 --- !u!1001 &556525436519560679
 PrefabInstance:
   m_ObjectHideFlags: 0
