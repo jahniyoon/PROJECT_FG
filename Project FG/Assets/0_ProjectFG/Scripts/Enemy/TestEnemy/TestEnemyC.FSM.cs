@@ -68,7 +68,7 @@ namespace JH
 
             // 회피 범위보다 가까우면 가까우면 
             if (m_targetDistance < m_data.EscapeRange)
-                destination = FindChasePos();
+                destination = FindEscapePos();
             // 브레이크를 위해
             else if (m_targetDistance < m_data.EscapeRange + 0.25f)
                 destination = transform.position;

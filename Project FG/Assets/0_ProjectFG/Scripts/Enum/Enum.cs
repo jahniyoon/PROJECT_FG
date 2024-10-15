@@ -161,6 +161,13 @@ namespace JH
         Hit,        // 피격
         Die         // 사망
     }
+    public enum EnemyMoveState
+    {
+        Stop,
+        Surround,
+        Chase,
+        Escape
+    }
 
 
     public enum AimState

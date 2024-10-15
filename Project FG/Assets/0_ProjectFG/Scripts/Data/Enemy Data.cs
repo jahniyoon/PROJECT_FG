@@ -30,11 +30,18 @@ namespace JH
 
 
         [field: Header("에네미 범위")]
+        [field: SerializeField] public float SurroundRange { get; private set; }
+        [field: SerializeField] public float SurroundDistance { get; private set; }
         [field: Tooltip("공격 범위\n해당 범위 내에 타겟이 있으면 공격 상태로 전환한다.")]
         [field: SerializeField] public float ChaseRange { get; private set; }
         [field: Tooltip("회피 범위\n해당 범위 내에 타겟이 있으면 회피한다.")]
         [field: SerializeField] public float EscapeRange { get; private set; }
+        [field: SerializeField] public float EscapeAngle { get; private set; }
 
+        [field: Header("에네미 거리 체크 딜레이")]
+        [field: SerializeField] public float SurroundDelay { get; private set; }
+        [field: SerializeField] public float ChaseDelay { get; private set; }
+        [field: SerializeField] public float EscapeDelay { get; private set; }
 
 
         [field: Header("포식 가능 상태")]
@@ -107,11 +114,30 @@ namespace JH
                 if (item.ColumnID == "MoveSpeed")
                     MoveSpeed = float.Parse(item.Value);
 
+                if (item.ColumnID == "SurroundRange")
+                    SurroundRange = float.Parse(item.Value);    
+                
+                if (item.ColumnID == "SurroundDistance")
+                    SurroundDistance = float.Parse(item.Value);
+                               
                 if (item.ColumnID == "ChaseRange")
                     ChaseRange = float.Parse(item.Value);
 
                 if (item.ColumnID == "EscapeRange")
                     EscapeRange = float.Parse(item.Value);
+
+                if (item.ColumnID == "EscapeAngle")
+                    EscapeAngle = float.Parse(item.Value);
+
+                if (item.ColumnID == "SurroundDelay")
+                    SurroundDelay = float.Parse(item.Value);
+
+
+                if (item.ColumnID == "ChaseDelay")
+                    ChaseDelay = float.Parse(item.Value);
+
+                if (item.ColumnID == "EscapeDelay")
+                    EscapeDelay = float.Parse(item.Value);
 
                 if (item.ColumnID == "PredationHealthRatio")
                     PredationHealthRatio = float.Parse(item.Value);
@@ -145,8 +171,18 @@ namespace JH
             dataList.Add(SetData("BaseType", Type.ToString()));
             dataList.Add(SetData("Health", Health.ToString()));
             dataList.Add(SetData("MoveSpeed", MoveSpeed.ToString()));
+            
+            dataList.Add(SetData("SurroundRange", SurroundRange.ToString()));
+            dataList.Add(SetData("SurroundDistance", SurroundDistance.ToString()));
             dataList.Add(SetData("ChaseRange", ChaseRange.ToString()));
             dataList.Add(SetData("EscapeRange", EscapeRange.ToString()));
+            dataList.Add(SetData("EscapeAngle", EscapeAngle.ToString()));
+            
+            dataList.Add(SetData("SurroundDelay", SurroundDelay.ToString()));
+            dataList.Add(SetData("ChaseDelay", ChaseDelay.ToString()));
+            dataList.Add(SetData("EscapeDelay", EscapeDelay.ToString()));
+
+
             dataList.Add(SetData("PredationHealthRatio", PredationHealthRatio.ToString()));
             dataList.Add(SetData("PredationStunCoolDown", PredationStunCoolDown.ToString()));
             dataList.Add(SetData("AttackSkill", GFunc.IntsToString(AttackSkillID)));

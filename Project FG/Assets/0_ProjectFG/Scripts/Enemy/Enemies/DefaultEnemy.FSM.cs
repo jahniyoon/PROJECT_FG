@@ -86,42 +86,97 @@ namespace JH
         protected override void MoveStateEnter()
         {
             // 정지를 시킨경우 켜지 않는다.
-            m_agent.isStopped = m_isStop;
-            m_agent.avoidancePriority = 50;
+            m_agent.isStopped = false;
+
+            m_distanceCheckDelay = 0;
         }
 
         protected override void MoveStateStay()
         {
             m_agent.avoidancePriority = 50;
 
-            Vector3 destination = m_target.position;
+            m_distanceCheckDelay = 0 < m_distanceCheckDelay - Time.deltaTime ? m_distanceCheckDelay - Time.deltaTime : 0;
 
             // 스킬 타이머동안은 움직이지 않는다.
             if (0 < m_skillTimer)
             {
-                m_agent.avoidancePriority = 49;
-                destination = this.transform.position;
+                StopBehavior();
+                return;
             }
 
+            // 거리체크 딜레이동안은 이동 체크를 안한다.
+            if (0 < m_distanceCheckDelay)
+                return;
+
+
+            if (m_data.SurroundRange < m_targetDistance)
+            {
+                SurroundBehavior();
+                return;
+            }
             // 회피거리보다 가까우면
-            else if (m_targetDistance < m_data.EscapeRange)
-                destination = FindChasePos();
+            if (m_targetDistance < m_data.EscapeRange)
+            {
+                EscapeBehavior();
+                return;
+            }
 
             // 공격범위보다 가까우면 멈춘다.
-            else if (m_targetDistance <= m_data.ChaseRange)
+            if (m_targetDistance <= m_data.ChaseRange)
             {
-                m_agent.avoidancePriority = 49;
-                destination = this.transform.position;
+                StopBehavior();
+                return;
             }
 
-            ModelRotate(destination, false, true);
+            ChaseBehavior();
 
-
-            if (m_isStop == false)
-                m_agent.SetDestination(destination);
         }
+
+
+        protected void StopBehavior()
+        {
+            SetMoveState(EnemyMoveState.Stop);
+
+            m_agent.avoidancePriority = 49;
+
+            SetMoveDestination(transform.position);
+        }
+
+        // 포위 행동
+        protected void SurroundBehavior()
+        {
+            SetMoveState(EnemyMoveState.Surround);
+            m_distanceCheckDelay += m_data.SurroundDelay;
+
+            Vector3 surroundPos = FindSurroundPos();
+
+            SetMoveDestination(surroundPos);
+        }
+
+        // 추적 행동
+        protected void ChaseBehavior()
+        {
+            SetMoveState(EnemyMoveState.Chase);
+            m_distanceCheckDelay += m_data.ChaseDelay;
+
+            SetMoveDestination(m_target.position);
+
+
+        }
+
+        // 회피 행동
+        protected void EscapeBehavior()
+        {
+            SetMoveState(EnemyMoveState.Escape);
+            m_distanceCheckDelay += m_data.EscapeDelay;
+
+            SetMoveDestination(FindEscapePos());
+        }
+
         protected override void MoveStateExit()
         {
+            SetMoveState(EnemyMoveState.Stop);
+
             m_agent.avoidancePriority = 49;
             m_agent.SetDestination(this.transform.position);
             m_agent.isStopped = true;

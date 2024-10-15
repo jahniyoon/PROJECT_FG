@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 
@@ -54,6 +55,9 @@ namespace JH
         [SerializeField] private string m_gameoverSFX;
         private bool isPause;
         private bool m_quit;
+        private bool m_isDebug;
+
+        #region Property
         public bool Quit => m_quit;
 
         private Transform m_projectileParent;
@@ -68,6 +72,7 @@ namespace JH
         public bool IsGameOver => m_isGameOver;
 
         public Transform Aim => m_aim;
+        #endregion
 
         private void Update()
         {
@@ -91,6 +96,10 @@ namespace JH
             if (Input.GetKeyDown(KeyCode.F4))
             {
                 PC.GetDebugFoodPower();
+            }
+            if (Input.GetKeyDown(KeyCode.F5))
+            {
+                DebugMode();
             }
             //if (Input.GetKeyDown(KeyCode.R))
             //{
@@ -116,6 +125,17 @@ namespace JH
                 Pause();
             }
 
+        }
+
+        private void DebugMode()
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach(var enemy in enemies)
+            {
+                if (enemy.TryGetComponent<EnemyController>(out EnemyController enemyController))
+                    enemyController.DebugEnable(!m_isDebug);
+            }
+            m_isDebug = !m_isDebug;
         }
 
         private void Pause()

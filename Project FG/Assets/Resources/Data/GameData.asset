@@ -41,10 +41,22 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 3
+      - ColumnID: SurroundRange
+        Value: 1
+      - ColumnID: SurroundDistance
+        Value: 2
       - ColumnID: ChaseRange
         Value: 1
       - ColumnID: EscapeRange
         Value: 0
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
+        Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
       - ColumnID: PredationStunCoolDown
@@ -70,10 +82,22 @@ MonoBehaviour:
         Value: 200
       - ColumnID: MoveSpeed
         Value: 4
+      - ColumnID: SurroundRange
+        Value: 1.5
+      - ColumnID: SurroundDistance
+        Value: 3
       - ColumnID: ChaseRange
         Value: 1.5
       - ColumnID: EscapeRange
         Value: 1
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
+        Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
       - ColumnID: PredationStunCoolDown
@@ -99,9 +123,21 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 1
+      - ColumnID: SurroundRange
+        Value: 5
+      - ColumnID: SurroundDistance
+        Value: 10
       - ColumnID: ChaseRange
         Value: 5
       - ColumnID: EscapeRange
+        Value: 3
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
         Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
@@ -128,9 +164,21 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 1
+      - ColumnID: SurroundRange
+        Value: 5
+      - ColumnID: SurroundDistance
+        Value: 10
       - ColumnID: ChaseRange
         Value: 5
       - ColumnID: EscapeRange
+        Value: 3
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
         Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
@@ -157,10 +205,22 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 3
+      - ColumnID: SurroundRange
+        Value: 7
+      - ColumnID: SurroundDistance
+        Value: 14
       - ColumnID: ChaseRange
         Value: 7
       - ColumnID: EscapeRange
         Value: 5
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
+        Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
       - ColumnID: PredationStunCoolDown
@@ -186,10 +246,22 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 1
+      - ColumnID: SurroundRange
+        Value: 1
+      - ColumnID: SurroundDistance
+        Value: 2
       - ColumnID: ChaseRange
         Value: 1
       - ColumnID: EscapeRange
         Value: 0
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
+        Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
       - ColumnID: PredationStunCoolDown
@@ -215,10 +287,22 @@ MonoBehaviour:
         Value: 200
       - ColumnID: MoveSpeed
         Value: 3
+      - ColumnID: SurroundRange
+        Value: 10
+      - ColumnID: SurroundDistance
+        Value: 20
       - ColumnID: ChaseRange
         Value: 10
       - ColumnID: EscapeRange
         Value: 5
+      - ColumnID: EscapeAngle
+        Value: 180
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
+        Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
       - ColumnID: PredationStunCoolDown
@@ -244,10 +328,22 @@ MonoBehaviour:
         Value: 150
       - ColumnID: MoveSpeed
         Value: 5
+      - ColumnID: SurroundRange
+        Value: 3
+      - ColumnID: SurroundDistance
+        Value: 6
       - ColumnID: ChaseRange
         Value: 3
       - ColumnID: EscapeRange
         Value: 0
+      - ColumnID: EscapeAngle
+        Value: 90
+      - ColumnID: SurroundDelay
+        Value: 0.1
+      - ColumnID: ChaseDelay
+        Value: 0.1
+      - ColumnID: EscapeDelay
+        Value: 3
       - ColumnID: PredationHealthRatio
         Value: 50
       - ColumnID: PredationStunCoolDown
@@ -723,9 +819,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50200  FOOD POWER  FoodPower B
       SheetID: FOOD POWER
       Data:
@@ -750,9 +846,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80500, 81000
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50300  FOOD POWER  FoodPower C
       SheetID: FOOD POWER
       Data:
@@ -777,9 +873,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80500
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50400  FOOD POWER  FoodPower D
       SheetID: FOOD POWER
       Data:
@@ -804,9 +900,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50500  FOOD POWER  FoodPower E
       SheetID: FOOD POWER
       Data:
@@ -831,9 +927,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 81000
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50600  FOOD POWER  FoodPower F
       SheetID: FOOD POWER
       Data:
@@ -858,9 +954,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80110
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50700  FOOD POWER  FoodPower G
       SheetID: FOOD POWER
       Data:
@@ -885,9 +981,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80310
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: 50800  FOOD POWER  FoodPower H
       SheetID: FOOD POWER
       Data:
@@ -912,9 +1008,9 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80410
       - ColumnID: SkillDelay
-        Value: '-'
+        Value: 0
       - ColumnID: SkillSpeed
-        Value: '-'
+        Value: 0
     - Name: "60001  FOOD POWER LEVEL  \uD478\uB4DC\uD30C\uC6CCA lv0"
       SheetID: FOOD POWER LEVEL
       Data:

@@ -11,10 +11,6 @@ namespace JH
     {
 
 
-        protected override void StartInit()
-        {
-            base.StartInit();
-        }
 
         public bool TargetCheck()
         {
@@ -24,10 +20,6 @@ namespace JH
                 return false;
             return true;
         }
-        protected override void Die()
-        {
-            base.Die();
-        }
 
         public bool CheckFreezeState()
         {
@@ -36,12 +28,9 @@ namespace JH
                 if (skill.IsFixed)
                     return true;
             }
-
-
             return false;
         }
 
-
-
+     
     }
 }

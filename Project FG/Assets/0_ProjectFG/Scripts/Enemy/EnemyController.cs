@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster
 {
@@ -17,8 +18,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     protected SpriteColor m_spriteColor;
     protected SpriteRenderer m_spriteRenderer;
 
-    protected bool m_isStop = false;
-
     [Header("Enemy Data")]
     [SerializeField] protected EnemyData m_data;
     protected bool m_is2D;
@@ -26,6 +25,8 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("State")]
 
     [SerializeField] protected FSMState m_state;
+    [SerializeField] protected EnemyMoveState m_moveState;
+    [SerializeField] protected float m_distanceCheckDelay;
 
     [Header("Buff")]
     protected BuffHandler m_buffHandler;
@@ -52,6 +53,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("Stun")]
     [SerializeField] protected ParticleSystem m_stunEffect;
     protected bool m_isKnockback;
+
     [Header("Enemy Count")]
     [SerializeField] private bool m_notCount;
     [Header("Minimap Color")]
@@ -66,11 +68,19 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [SerializeField] protected List<SkillBase> m_attackSkills = new List<SkillBase>();
     [SerializeField] protected List<SkillBase> m_routineSkills = new List<SkillBase>();
 
+
+    [Header("DEBUG")]
+
+    public GameObject m_MovePosition;
+
+
     protected Transform m_skillParent;
 
 
     protected float m_attackTimer = 0;
     private int m_instanceID;
+    Vector3 m_moveDestination;
+
 
     public bool CanPredation => m_canPredation;
     public FSMState State => m_state;
@@ -351,10 +361,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_damageable.Die();
     }
 
-    protected void IsStop(bool enable = true)
-    {
-        m_isStop = enable;
-    }
 
     protected virtual void Die()
     {
@@ -463,17 +469,21 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     /// 플레이어를 피해 도망갈 포지션을 찾는다.
     /// </summary>
     /// <returns></returns>
-    protected Vector3 FindChasePos()
+    protected Vector3 FindEscapePos()
     {
         // Vector2 일 때 방향 필요.
         // 현재 적의 위치
-        Vector3 currentPosition = transform.position;
+        Vector3 currentPosition = m_model.position;
 
         // 적에서 플레이어까지의 방향 벡터 (플레이어 방향)
         Vector3 directionToPlayer = m_target.position - currentPosition;
 
         // 플레이어로부터 반대 방향 (벡터의 반대 방향)
         Vector3 oppositeDirection = -directionToPlayer.normalized;
+
+        
+        float randomAngle = Random.Range(m_data.EscapeAngle * -0.5f, m_data.EscapeAngle * 0.5f);
+        oppositeDirection = Quaternion.AngleAxis(randomAngle, Vector3.up) * oppositeDirection;
 
         // 도망가는 위치 = 현재 위치에서 반대 방향으로 일정 거리만큼 이동한 위치
         Vector3 escapePosition = currentPosition + oppositeDirection * m_data.EscapeRange;
@@ -644,8 +654,61 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         return true;
     }
 
+    #region MOVE STATE
+    // 이동 상태 업데이트
+    protected void SetMoveState(EnemyMoveState nextState)
+    {
+        m_moveState = nextState;
+    }
+
+    // 스킬 타이머동안 움직이지 못함
     public void UpdateSkillTimer(float timer)
     {
         m_skillTimer = timer;
     }
+
+    // 이동 위치를 정해준다.
+    protected void SetMoveDestination(Vector3 destination)
+    {
+
+        if (m_MovePosition != null)
+        {
+            m_MovePosition.transform.parent = transform.parent;
+            m_MovePosition.transform.position = destination;
+        }
+
+        m_moveDestination = destination;
+
+        m_agent.SetDestination(m_moveDestination);
+        ModelRotate(m_moveDestination, false, true);
+    }
+
+    // 포위 위치를 찾는다.
+    protected Vector3 FindSurroundPos()
+    {
+        Vector3 position = m_target.position;
+        position.y = m_model.position.y;
+        m_model.LookAt(position);
+
+        // 랜덤한 포위거리
+        float distance = Random.Range(m_data.SurroundDistance * -1, m_data.SurroundDistance);
+        
+        // 랜덤 포위 기반, 타겟 위치를 업데이트
+        position = position + m_model.right * distance;
+
+        // 네비게이션 확인
+        position = GFunc.FindNavPos(transform.transform, position, m_data.SurroundDistance);
+
+
+        return position;
+    }
+
+    #endregion
+
+    public void DebugEnable(bool enable)
+    {
+        if (m_MovePosition != null)
+            m_MovePosition.gameObject.SetActive(enable);
+    }
+
 }

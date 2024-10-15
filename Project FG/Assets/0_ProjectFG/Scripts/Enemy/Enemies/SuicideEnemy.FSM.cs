@@ -54,7 +54,7 @@ namespace JH
         protected override void MoveStateEnter()
         {
             // 정지를 시킨경우 켜지 않는다.
-            m_agent.isStopped = m_isStop;
+            m_agent.isStopped = false;
         }
 
         protected override void MoveStateStay()
@@ -67,7 +67,7 @@ namespace JH
 
             // 회피거리보다 가까우면
             if (m_targetDistance < m_data.EscapeRange)
-                destination = FindChasePos();
+                destination = FindEscapePos();
 
             // 공격범위보다 가까우면 멈춘다.
             else if (m_targetDistance < m_data.ChaseRange)
@@ -76,8 +76,7 @@ namespace JH
             ModelRotate(destination, false, true);
 
 
-            if (m_isStop == false)
-                m_agent.SetDestination(destination);
+            m_agent.SetDestination(destination);
         }
         protected override void MoveStateExit()
         {
@@ -109,7 +108,6 @@ namespace JH
             base.AttackStateEnter();
 
 
-            IsStop();
             m_spriteColor.PlayFlicking();
             float time = 2;
             if (TryGetSkill() != null)

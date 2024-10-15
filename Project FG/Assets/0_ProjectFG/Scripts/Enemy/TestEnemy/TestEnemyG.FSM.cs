@@ -66,7 +66,7 @@ namespace JH
             // 공격 거리보다 가까우면
             if (targetDistance < m_data.EscapeRange)
             {
-                Vector3 destination = FindChasePos();
+                Vector3 destination = FindEscapePos();
 
                 m_agent.SetDestination(destination);
                 ModelRotate(destination);

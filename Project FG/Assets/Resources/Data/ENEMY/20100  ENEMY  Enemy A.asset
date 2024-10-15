@@ -19,8 +19,14 @@ MonoBehaviour:
   <Health>k__BackingField: 150
   <MoveSpeed>k__BackingField: 3
   <RotateSpeed>k__BackingField: 0
+  <SurroundRange>k__BackingField: 1
+  <SurroundDistance>k__BackingField: 2
   <ChaseRange>k__BackingField: 1
   <EscapeRange>k__BackingField: 0
+  <EscapeAngle>k__BackingField: 180
+  <SurroundDelay>k__BackingField: 0.1
+  <ChaseDelay>k__BackingField: 0.1
+  <EscapeDelay>k__BackingField: 3
   <PredationHealthRatio>k__BackingField: 50
   <PredationStunCoolDown>k__BackingField: 0
   <PredationStun>k__BackingField: {fileID: 11400000, guid: 63b7b36b68aa60049a91f2e349e20247,
