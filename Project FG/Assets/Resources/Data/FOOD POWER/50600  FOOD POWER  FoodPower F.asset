@@ -57,7 +57,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 10
+      - Values:
+        - 10
       Value1: []
       Value2: []
       Value3: []
@@ -75,7 +76,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 15
+      - Values:
+        - 15
       Value1: []
       Value2: []
       Value3: []
@@ -93,7 +95,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 20
+      - Values:
+        - 20
       Value1: []
       Value2: []
       Value3: []
@@ -111,7 +114,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 25
+      - Values:
+        - 25
       Value1: []
       Value2: []
       Value3: []
@@ -129,7 +133,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 30
+      - Values:
+        - 30
       Value1: []
       Value2: []
       Value3: []
@@ -147,7 +152,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 35
+      - Values:
+        - 35
       Value1: []
       Value2: []
       Value3: []
@@ -165,7 +171,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 40
+      - Values:
+        - 40
       Value1: []
       Value2: []
       Value3: []
@@ -183,7 +190,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 45
+      - Values:
+        - 45
       Value1: []
       Value2: []
       Value3: []
@@ -201,7 +209,8 @@ MonoBehaviour:
       LifeTime: -1
       Count: 1
       BuffValues:
-      - 50
+      - Values:
+        - 50
       Value1: []
       Value2: []
       Value3: []

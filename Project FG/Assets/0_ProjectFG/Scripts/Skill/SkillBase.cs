@@ -107,7 +107,7 @@ namespace JH
                 if (buff == null) continue;
 
                 buff.SetCaster(Caster.Transform);
-                buff.SetBuffValue(LevelData.BuffValues);
+                buff.SetBuffValue(LevelData.TryGetBuffValues(i));
                 m_buffs.Add(buff);
             }
 

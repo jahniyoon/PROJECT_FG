@@ -18,7 +18,8 @@ MonoBehaviour:
   <Type>k__BackingField: 19
   <Condition>k__BackingField: 1
   <StackType>k__BackingField: "\uAC31\uC2E0 \uADDC\uCE59 \uCC38\uC870"
-  <Value1>k__BackingField: []
+  <Value1>k__BackingField:
+  - 10
   <Value2>k__BackingField: []
   <IsOneAndOnly>k__BackingField: 0
   <Priority>k__BackingField: 0

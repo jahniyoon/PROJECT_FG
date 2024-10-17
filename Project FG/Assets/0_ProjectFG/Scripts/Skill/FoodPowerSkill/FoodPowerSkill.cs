@@ -19,17 +19,22 @@ namespace JH
         public void SetFoodPowerData(FoodPowerLevelData levelData)
         {
             m_foodPowerData = levelData;
-            SetLevelData(levelData.LevelData);
 
-
-            SetDuration(LevelData.Duration);
-            m_skillCoolDown = levelData.LevelData.CoolDown;
-  
             LevelDataChange();
         }
 
 
-        protected virtual void LevelDataChange() { }
+        protected virtual void LevelDataChange()
+        {
+            SetLevelData(m_foodPowerData.LevelData);
+            SetDuration(m_foodPowerData.LevelData.Duration);
+            m_skillCoolDown = m_foodPowerData.LevelData.CoolDown;
+
+            for (int i = 0; i < m_buffs.Count; i++)
+            {
+                m_buffs[i].SetBuffValue(LevelData.TryGetBuffValues(i));
+            }
+        }
 
 
     }

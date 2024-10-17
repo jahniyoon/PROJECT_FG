@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f00db7b7b77a142b702cfb4aedf5d1, type: 3}
-  m_Name: "81400  BUFF  \uD3EC\uC2DD \uAC00\uB2A5 \uC0C1\uD0DC \uC2A4\uD134"
+  m_Name: "81210  BUFF  \uBC94\uC704 \uBB34\uC801"
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 81400
-  <Name>k__BackingField: "\uD3EC\uC2DD \uAC00\uB2A5 \uC0C1\uD0DC \uC2A4\uD134"
+  <ID>k__BackingField: 81210
+  <Name>k__BackingField: "\uBC94\uC704 \uBB34\uC801"
   <Description>k__BackingField: 
-  <Type>k__BackingField: 22
+  <Type>k__BackingField: 20
   <Condition>k__BackingField: 1
   <StackType>k__BackingField: 
-  <Value1>k__BackingField:
-  - 1
+  <Value1>k__BackingField: []
   <Value2>k__BackingField: []
   <IsOneAndOnly>k__BackingField: 0
   <Priority>k__BackingField: 0

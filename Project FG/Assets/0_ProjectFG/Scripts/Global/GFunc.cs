@@ -102,6 +102,45 @@ namespace JH
             }
             return sb.ToString();
         }
+
+        public static List<BuffValues> StringToBuffValues(string input)
+        {
+            List<BuffValues> buffValues = new List<BuffValues>();
+            buffValues.Clear();
+
+            string[] values = input.Replace("]", "[").Split("[");
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                // 비어있으면 패스
+                if (values[i].NullIfEmpty() == null) continue;
+
+                float[] floats = GFunc.StringToFloats(values[i]);
+                buffValues.Add(new BuffValues(floats));
+            }
+
+            return buffValues;
+        }
+        public static string BuffValuesToString(List<BuffValues> values)
+        {
+            sb.Clear();
+            if(values == null || values.Count == 0) return "-";
+            
+            for(int i = 0; i < values.Count; i++)
+            {
+                sb.Append("[");
+                for(int j = 0; j < values[i].Length; j++)
+                {
+                    string floats = GFunc.FloatsToString(values[i].Values);
+                    sb.Append(floats);
+                }
+                sb.Append("]");
+            }
+            return sb.ToString();
+        }
+
+
+
         // 각도를 제한하는 함수
         public static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
@@ -241,59 +280,6 @@ namespace JH
             return Resources.Load<BuffDataBase>("Data/BuffData");
         }
 
-        public static Quaternion GetQuaternion(AimType AimType, Transform transform)
-        {
-  
-                Quaternion direction = Quaternion.identity;
-
-                switch (AimType)
-                {
-                    // 플레이어 방향
-                    case AimType.MoveDirection:
-                        return transform.localRotation;
-
-
-                    //// 가까운 타겟 방향
-                    //case AimType.NearTargetDirection:
-                    //    Transform target = ScanPosition(Model.position, m_data.TargetNearestScanRadius);
-
-                    //    // 타겟이 Null이 아닐 경우에만
-                    //    if (target != null)
-                    //        return Quaternion.LookRotation(target.position - Model.position);
-
-                    //    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
-                    //    else if (target == null && m_data.AlwaysShoot)
-                    //        return Model.rotation;
-
-                    //    break;
-
-                    // PC의 포지션
-                    case AimType.PcPosition:
-                        return direction;
-
-                    // 랜덤한 방향
-                    case AimType.RandomDirection:
-                        Vector3 randomDir = direction.eulerAngles;
-                        randomDir.y = Random.Range(0, 360);
-                        direction.eulerAngles = randomDir;
-                        return direction;
-
-                    //// 랜덤한 적 방향
-                    //case AimType.RandomEnemyDirection:
-                    //    Transform randomTarget = ScanRandomPosition(Model.position, m_data.TargetNearestScanRadius);
-
-                    //    // 타겟이 Null이 아닐 경우에만
-                    //    if (randomTarget != null)
-                    //        return Quaternion.LookRotation(randomTarget.position - transform.position);
-
-                    //    // 만약 항상 쏴야하는 경우, 플레이어 방향으로 다시 바꿔준다.
-                    //    else if (randomTarget == null)
-                    //        return transform.rotation;
-                    //    break;
-                }
-
-                return direction;
-        }
 
         public static int XORCombine(int x, int y)
         {

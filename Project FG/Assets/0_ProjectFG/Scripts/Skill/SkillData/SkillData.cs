@@ -42,7 +42,7 @@ namespace JH
         public float SkillRadius => LevelData.Radius;
         public float SkillArc => LevelData.Arc;
         public float SkillLifeTime => LevelData.LifeTime;
-        public float[] BuffValues => LevelData.BuffValues;
+        public List<BuffValues> BuffValues => LevelData.BuffValues;
         public float[] Value1 => LevelData.Value1;
         public float[] Value2 => LevelData.Value2;
         public float[] Value3 => LevelData.Value3;
@@ -114,7 +114,7 @@ namespace JH
             dataList.Add(SetData("Arc", SkillArc.ToString()));
             dataList.Add(SetData("LifeTime", SkillLifeTime.ToString()));
             dataList.Add(SetData("BuffID",GFunc.IntsToString(BuffID)));
-            dataList.Add(SetData("BuffValue", GFunc.FloatsToString(BuffValues)));
+            dataList.Add(SetData("BuffValue", GFunc.BuffValuesToString(BuffValues)));
             dataList.Add(SetData("Value1",GFunc.FloatsToString(Value1)));
             dataList.Add(SetData("Value2", GFunc.FloatsToString(Value2)));
             dataList.Add(SetData("Value3", GFunc.FloatsToString(Value3)));
@@ -187,7 +187,7 @@ namespace JH
                     BuffID = GFunc.StringToInts(item.Value);
 
                 if (item.ColumnID == "BuffValue")
-                    LevelData.BuffValues = GFunc.StringToFloats(item.Value);
+                    LevelData.BuffValues = GFunc.StringToBuffValues(item.Value);
 
                 if (item.ColumnID == "Value1")
                     LevelData.Value1 = GFunc.StringToFloats(item.Value);

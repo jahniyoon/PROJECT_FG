@@ -15,7 +15,7 @@ MonoBehaviour:
   <ID>k__BackingField: 30700
   <Name>k__BackingField: G1 Heal
   <Description>k__BackingField: "\uC801 G1\uC758 \uCE58\uC720 \uC7A5\uD310 \uAE30\uC220"
-  <BaseType>k__BackingField: 2
+  <BaseType>k__BackingField: 3
   <SkillTarget>k__BackingField: 0
   <ActiveTime>k__BackingField: 1
   <AimType>k__BackingField: 6
@@ -33,8 +33,9 @@ MonoBehaviour:
     LifeTime: -1
     Count: 1
     BuffValues:
-    - 1
-    - -10
+    - Values:
+      - 1
+      - -10
     Value1:
     - 5
     - 10

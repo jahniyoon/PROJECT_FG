@@ -24,7 +24,7 @@ MonoBehaviour:
   ignoreSOWorksheets:
   - FOOD POWER LEVEL
   m_gameData:
-    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d0100943d0100f83d01005c3e0100c03e0100f45f0100fe5f01005860010062600100bc600100206101002a6101003461010084610100e86101004c620100b0620100ba620100
+    m_Keys: 844e0000e84e00004c4f0000b04f00001450000078500000dc5000004051000094750000f8750000027600005c760000c07600002477000088770000ec77000050780000b4c3000018c400007cc40000e0c4000044c50000a8c500000cc6000070c6000061ea000062ea000063ea000064ea000065ea000066ea000067ea000068ea000069ea00006aea00006bea00006cea00006dea00006eea00006fea000070ea000071ea000072ea000073ea000074ea000075ea000076ea000077ea000078ea000079ea00007aea00007bea00007cea00007dea00007eea00007fea000080ea000081ea000082ea000083ea000084ea000085ea000086ea000087ea000088ea000089ea00008aea00008bea00008cea00008dea00008eea00008fea000090ea000091ea000092ea000093ea000094ea000095ea000096ea000097ea000098ea000099ea00009aea00009bea00009cea00009dea00009eea00009fea0000a0ea0000a1ea0000a2ea0000a3ea0000a4ea0000a5ea0000a6ea0000a7ea0000a8ea0000a9ea0000e4380100ee3801004839010052390100ac390100b6390100103a01001a3a0100743a01007e3a0100883a0100923a0100d83a0100e23a0100ec3a0100f63a01003c3b0100463b0100a03b0100aa3b0100043c0100683c0100cc3c0100303d01003a3d0100943d0100f83d01005c3e0100c03e0100f45f0100fe5f01005860010062600100bc600100206101002a6101003461010084610100e86101004c620100b0620100ba620100
     m_Values:
     - Name: 20100  ENEMY  Enemy A
       SheetID: ENEMY
@@ -312,7 +312,7 @@ MonoBehaviour:
       - ColumnID: RoutineSkill
         Value: '-'
       - ColumnID: AdditionalValue
-        Value: 5, 10
+        Value: '-'
     - Name: 20800  ENEMY  Enemy H
       SheetID: ENEMY
       Data:
@@ -658,7 +658,7 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC801 F1\uC758 \uB0C9\uAE30 \uC7A5\uD310 \uAE30\uC220"
       - ColumnID: BaseType
-        Value: FixedAreaSkill
+        Value: AreaSkill
       - ColumnID: Target
         Value: Player
       - ColumnID: ActiveTime
@@ -684,7 +684,7 @@ MonoBehaviour:
       - ColumnID: LifeTime
         Value: -1
       - ColumnID: BuffID
-        Value: 80100
+        Value: 80110
       - ColumnID: BuffValue
         Value: 25, 10
       - ColumnID: Value1
@@ -707,7 +707,7 @@ MonoBehaviour:
       - ColumnID: Description
         Value: "\uC801 G1\uC758 \uCE58\uC720 \uC7A5\uD310 \uAE30\uC220"
       - ColumnID: BaseType
-        Value: AreaSkill
+        Value: FixedAreaSkill
       - ColumnID: Target
         Value: Enemy
       - ColumnID: ActiveTime
@@ -1389,7 +1389,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 20, 3, 0.1
+        Value: '[20][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1424,7 +1424,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 25, 3, 0.1
+        Value: '[25][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1459,7 +1459,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 30, 3, 0.1
+        Value: '[30][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1494,7 +1494,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 35, 3, 0.1
+        Value: '[35][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1529,7 +1529,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 40, 3, 0.1
+        Value: '[40][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1564,7 +1564,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 45, 3, 0.1
+        Value: '[45][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1599,7 +1599,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 50, 3, 0.1
+        Value: '[50][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1634,7 +1634,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 55, 3, 0.1
+        Value: '[55][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -1669,7 +1669,7 @@ MonoBehaviour:
       - ColumnID: Count
         Value: 1
       - ColumnID: BuffValue
-        Value: 60, 3, 0.1
+        Value: '[60][3, 0.1]'
       - ColumnID: Value1
         Value: '-'
       - ColumnID: Value2
@@ -3574,8 +3574,7 @@ MonoBehaviour:
       - ColumnID: Name
         Value: "\uB0C9\uB3D9"
       - ColumnID: Description
-        Value: "\uC801F1\uC758 \uB0C9\uAE30\uC7A5\uD310, \uD478\uB4DC\uD30C\uC6CCF
-          \uB4F1\uC774 \uC0AC\uC6A9\uD558\uB294 \uB0C9\uAE30 \uB514\uBC84\uD504"
+        Value: 
       - ColumnID: BaseType
         Value: Frozen
       - ColumnID: EffectCondition
@@ -3594,7 +3593,8 @@ MonoBehaviour:
       - ColumnID: Name
         Value: "\uBC94\uC704 \uB0C9\uB3D9"
       - ColumnID: Description
-        Value: 
+        Value: "\uC801F1\uC758 \uB0C9\uAE30\uC7A5\uD310, \uD478\uB4DC\uD30C\uC6CCF
+          \uB4F1\uC774 \uC0AC\uC6A9\uD558\uB294 \uB0C9\uAE30 \uB514\uBC84\uD504"
       - ColumnID: BaseType
         Value: Frozen
       - ColumnID: EffectCondition
@@ -3602,7 +3602,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
       - ColumnID: Value1
-        Value: 0.2
+        Value: 5, 1, 0.2
       - ColumnID: Value2
         Value: '-'
     - Name: "80200  BUFF  \uAC00\uC5F4"
@@ -3621,7 +3621,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5"
       - ColumnID: Value1
-        Value: '-'
+        Value: 0.2
       - ColumnID: Value2
         Value: '-'
     - Name: "80210  BUFF  \uBC94\uC704 \uAC00\uC5F4"
@@ -3640,7 +3640,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5"
       - ColumnID: Value1
-        Value: '-'
+        Value: 0.2
       - ColumnID: Value2
         Value: '-'
     - Name: "80300  BUFF  \uBD80\uD328"
@@ -3710,7 +3710,7 @@ MonoBehaviour:
       - ColumnID: Description
         Value: 
       - ColumnID: BaseType
-        Value: AreaHeal
+        Value: Heal
       - ColumnID: EffectCondition
         Value: Area
       - ColumnID: StackType
@@ -3811,7 +3811,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
-        Value: 1
+        Value: '-'
       - ColumnID: Value2
         Value: '-'
     - Name: "80610  BUFF  \uBC94\uC704 \uAC15\uD654"
@@ -3868,7 +3868,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
-        Value: 1
+        Value: '-'
       - ColumnID: Value2
         Value: '-'
     - Name: "80700  BUFF  \uC774\uC18D \uC99D\uAC00"
@@ -4002,9 +4002,9 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uAC31\uC2E0 \uADDC\uCE59 \uCC38\uC870"
       - ColumnID: Value1
-        Value: '-'
+        Value: 1
       - ColumnID: Value2
-        Value: '-'
+        Value: 10
     - Name: "81200  BUFF  \uBB34\uC801"
       SheetID: BUFF
       Data:
@@ -4012,6 +4012,25 @@ MonoBehaviour:
         Value: 81200
       - ColumnID: Name
         Value: "\uBB34\uC801"
+      - ColumnID: Description
+        Value: 
+      - ColumnID: BaseType
+        Value: Invincible
+      - ColumnID: EffectCondition
+        Value: Duration
+      - ColumnID: StackType
+        Value: 
+      - ColumnID: Value1
+        Value: '-'
+      - ColumnID: Value2
+        Value: '-'
+    - Name: "81210  BUFF  \uBC94\uC704 \uBB34\uC801"
+      SheetID: BUFF
+      Data:
+      - ColumnID: ID
+        Value: 81210
+      - ColumnID: Name
+        Value: "\uBC94\uC704 \uBB34\uC801"
       - ColumnID: Description
         Value: 
       - ColumnID: BaseType
@@ -4040,9 +4059,9 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: 
       - ColumnID: Value1
-        Value: 10
+        Value: 1
       - ColumnID: Value2
-        Value: '-'
+        Value: 10
     - Name: "81400  BUFF  \uD3EC\uC2DD \uAC00\uB2A5 \uC0C1\uD0DC \uC2A4\uD134"
       SheetID: BUFF
       Data:
@@ -4059,7 +4078,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: 
       - ColumnID: Value1
-        Value: '-'
+        Value: 1
       - ColumnID: Value2
         Value: '-'
     - Name: "81500  BUFF  \uD3EC\uC2DD \uD328\uB9C1 \uAC00\uB2A5 \uC0C1\uD0DC"
@@ -4097,7 +4116,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: 
       - ColumnID: Value1
-        Value: 1
+        Value: '-'
       - ColumnID: Value2
         Value: '-'
     - Name: "90100  PROJECTILE  \uADFC\uC811 \uACF5\uACA9 \uCEEC\uB9AC\uC804"
@@ -4347,3 +4366,4 @@ MonoBehaviour:
         Value: 1
       - ColumnID: DerivativesID
         Value: '-'
+  testString: '[101, 514][212][54, 548, 31]'

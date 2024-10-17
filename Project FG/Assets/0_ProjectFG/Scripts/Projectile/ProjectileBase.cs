@@ -65,7 +65,7 @@ namespace JH
                     continue;
 
                 buff.SetCaster(transform);
-                buff.SetBuffValue(m_skill.LevelData.BuffValues);
+                buff.SetBuffValue(m_skill.LevelData.TryGetBuffValues(i));
                 m_buffs.Add(buff);
             }
             SetRadius(m_skill.LevelData.Radius);

@@ -7,8 +7,6 @@ namespace JH
 {
     public class FoodPowerSlashSkill : FoodPowerSkill
     {
-
-
         public override void ActiveSkill()
         {
             bool canActiveSkill = ActiveProjectiles();

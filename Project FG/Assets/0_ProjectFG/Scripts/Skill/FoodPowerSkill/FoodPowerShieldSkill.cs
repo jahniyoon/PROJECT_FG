@@ -11,23 +11,23 @@ namespace JH
         [SerializeField] private GameObject m_shieldEffect;
         [SerializeField] private ParticleSystem m_knockbackEffect;
 
-        [SerializeField] BuffBase m_shieldBuff;
-        [SerializeField] BuffBase m_knockBackBuff;
+        //[SerializeField] BuffBase m_shieldBuff;
+        //[SerializeField] BuffBase m_knockBackBuff;
 
 
         protected override void Init()
         {
             base.Init();
 
-            //  피해감소 버프 가져오기
-            m_shieldBuff = GFunc.TryGetBuff(Data.TryGetBuffID(0));
+            ////  피해감소 버프 가져오기
+            //m_shieldBuff = GFunc.TryGetBuff(Data.TryGetBuffID(0));
 
             // 넉백 이벤트 연결
             if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
                 damageable.DamageEvent.AddListener(DamageEvent);
 
-            // 넉백 버프 가져오기
-            m_knockBackBuff = GFunc.TryGetBuff(Data.TryGetBuffID(1));
+            //// 넉백 버프 가져오기
+            //m_knockBackBuff = GFunc.TryGetBuff(Data.TryGetBuffID(1));
 
         }
 
@@ -36,25 +36,26 @@ namespace JH
         protected override void LevelDataChange()
         {
             base.LevelDataChange();
-            if (m_shieldBuff != null)
-            {
-                float[] damageBuffValue = new float[1] { LevelData.TryGetBuffValue() };
-                m_shieldBuff.SetBuffValue(damageBuffValue);
-            }
+            //base.LevelDataChange();
+            //if (m_shieldBuff != null)
+            //{
+            //    float[] damageBuffValue = new float[1] { LevelData.TryGetBuffValue() };
+            //    m_shieldBuff.SetBuffValue(damageBuffValue);
+            //}
 
-            if (m_knockBackBuff != null)
-            {
-                m_knockBackBuff.SetCaster(transform);
-                float[] knockBackBuffValue = new float[2] { LevelData.TryGetBuffValue(1), LevelData.TryGetBuffValue(2) };
-                m_knockBackBuff.SetBuffValue(knockBackBuffValue);
-            }
+            //if (m_knockBackBuff != null)
+            //{
+            //    m_knockBackBuff.SetCaster(transform);
+            //    float[] knockBackBuffValue = new float[2] { LevelData.TryGetBuffValue(1), LevelData.TryGetBuffValue(2) };
+            //    m_knockBackBuff.SetBuffValue(knockBackBuffValue);
+            //}
 
 
-            // 피해감소 버프 활성화
+            //// 피해감소 버프 활성화
             if (Caster.Transform.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
             {
-                buffHandler.RemoveBuff(Caster.GameObject, m_shieldBuff);
-                buffHandler.OnBuff(Caster.GameObject, m_shieldBuff);
+                buffHandler.RemoveBuff(Caster.GameObject, Buffs[0]);
+                buffHandler.OnBuff(Caster.GameObject, Buffs[0]);
             }
         }
 
@@ -85,8 +86,8 @@ namespace JH
                 if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     damageable.OnDamage(LevelData.Damage);
 
-                    if (colls[i].TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
-                    buffHandler.OnBuff(Caster.GameObject, m_knockBackBuff);
+                if (colls[i].TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
+                    buffHandler.OnBuff(Caster.GameObject, Buffs[1]);
             }
             InactiveSkill();
 
@@ -101,18 +102,33 @@ namespace JH
 
         }
 
-        // 비활성화되면 리스너를 모두 제거한다.
-        private void OnDisable()
+        public override void RemoveSkill()
         {
             // 피해감소 버프 비활성화
             if (Caster.GameObject.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
-                buffHandler.RemoveBuff(Caster.GameObject, m_shieldBuff);
+                buffHandler.RemoveBuff(Caster.GameObject, Buffs[0]);
 
             if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
             {
                 damageable.DamageEvent.RemoveListener(DamageEvent);
             }
+        
+            base.RemoveSkill();
         }
+
+
+        //// 비활성화되면 리스너를 모두 제거한다.
+        //private void OnDisable()
+        //{
+        //    // 피해감소 버프 비활성화
+        //    if (Caster.GameObject.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
+        //        buffHandler.RemoveBuff(Caster.GameObject, Buffs[0]);
+
+        //    if (Caster.Transform.TryGetComponent<Damageable>(out Damageable damageable))
+        //    {
+        //        damageable.DamageEvent.RemoveListener(DamageEvent);
+        //    }
+        //}
 
 
     }

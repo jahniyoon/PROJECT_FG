@@ -9,6 +9,8 @@ using System.Text;
 using UnityEngine.Rendering;
 using System.Linq;
 using UnityEngine.Playables;
+using Unity.VisualScripting;
+
 
 
 
@@ -29,6 +31,8 @@ namespace JH
 
         StringBuilder m_savePath = new StringBuilder();
         StringBuilder m_loadPath = new StringBuilder();
+
+        public string testString;
 
 
         #region UPDATE / EXPORT
@@ -133,7 +137,7 @@ namespace JH
             return false;
         }
 
-       
+
 
         // 가져온 SO를 유형에 맞게 생성해준다.
         private void CreateSO(GameData gameData)
@@ -191,7 +195,7 @@ namespace JH
             }
 
             // 데이터가 변경되므로 foreach 대신 for문으로 변경
-            for(int i = 0; i < keyList.Count; i++)
+            for (int i = 0; i < keyList.Count; i++)
             {
                 var gameData = m_gameData[keyList[i]];
 
@@ -206,6 +210,13 @@ namespace JH
 
         }
 
+
+        public void Test()
+        {
+
+           
+
+        }
 
     }
 
@@ -245,6 +256,10 @@ namespace JH
             {
                 ExportAllSO();
             }
+            //if (GUILayout.Button("TEST"))
+            //{
+            //    Test();
+            //}
         }
 
 
@@ -312,6 +327,11 @@ namespace JH
             data.UpdateAllSO();
             //  시트에 맞게 내보낸다.
             ExportAllData();
+        }
+
+        void Test()
+        {
+            data.Test();
         }
     }
 #endif

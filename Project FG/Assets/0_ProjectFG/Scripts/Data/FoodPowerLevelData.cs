@@ -20,15 +20,38 @@ namespace JH
         public float Arc;
         public float LifeTime;
         public float Count = 1;
-        public float[] BuffValues;
+        public List<BuffValues> BuffValues;
         public float[] Value1;
         public float[] Value2;
         public float[] Value3;
-        public float TryGetBuffValue(int num = 0)
+        public float[] TryGetBuffValues(int index)
         {
-            if (BuffValues.Length - 1 < num)
+            {
+                if (BuffValues.Count - 1 < index)
+                {
+                    //Debug.Log($"{index}번째 버프 값이 존재하지 않습니다.");
+                    return new float[1] {0};
+                }
+                return BuffValues[index].Values;
+            }
+        }
+
+        public float TryGetBuffValue(int index, int num = 0)
+        {
+            if (BuffValues.Count - 1 < index)
+            {
+                //Debug.Log($"{index}번째 버프 값이 존재하지 않습니다.");
                 return 0;
-            return BuffValues[num];
+            }
+
+            
+            if (BuffValues[index].Length - 1 < num)
+            {
+                //Debug.Log($"{index}번째의 {num}버프 값이 존재하지 않습니다.");
+                return 0;
+            }
+
+            return BuffValues[index].Values[num];
         }
         public float TryGetValue1(int num = 0)
         {
@@ -107,7 +130,7 @@ namespace JH
                     LevelData.Count = int.Parse(Data.Value);
 
                 if (Data.ColumnID == "BuffValue")
-                    LevelData.BuffValues = GFunc.StringToFloats(Data.Value);
+                    LevelData.BuffValues = GFunc.StringToBuffValues(Data.Value);
 
                 if (Data.ColumnID == "Value1")
                     LevelData.Value1 = GFunc.StringToFloats(Data.Value);
@@ -153,7 +176,7 @@ namespace JH
             dataList.Add(SetData("LifeTime", LevelData.LifeTime.ToString()));
             dataList.Add(SetData("Count", LevelData.Count.ToString()));
 
-            dataList.Add(SetData("BuffValue", GFunc.FloatsToString(LevelData.BuffValues)));
+            dataList.Add(SetData("BuffValue", GFunc.BuffValuesToString(LevelData.BuffValues)));
             dataList.Add(SetData("Value1", GFunc.FloatsToString(LevelData.Value1)));
             dataList.Add(SetData("Value2", GFunc.FloatsToString(LevelData.Value2)));
             dataList.Add(SetData("Value3", GFunc.FloatsToString(LevelData.Value3)));

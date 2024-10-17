@@ -33,8 +33,9 @@ MonoBehaviour:
     LifeTime: 0.1
     Count: 1
     BuffValues:
-    - 2
-    - 0.1
+    - Values:
+      - 2
+      - 0.1
     Value1: []
     Value2: []
     Value3: []
