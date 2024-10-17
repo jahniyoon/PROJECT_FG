@@ -225,12 +225,22 @@ namespace JH
             m_stunEffect.gameObject.SetActive(true);
             m_stunEffect.Stop();
             m_stunEffect.Play();
+
+            foreach(var skill in m_attackSkills)
+            {
+                skill.FreezeSkill(true);
+            }
         }
 
         protected override void HitStateExit()
         {
             m_stunEffect.gameObject.SetActive(false);
             m_stunEffect.Stop();
+
+            foreach (var skill in m_attackSkills)
+            {
+                skill.FreezeSkill(false);
+            }
         }
         #endregion
 

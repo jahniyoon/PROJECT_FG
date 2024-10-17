@@ -270,6 +270,7 @@ namespace JH
         public void FreezeSkill(bool enable = true)
         {
             m_freeze = enable;
+            InactiveSkill();
         }
 
         // 스킬의 지속시간을 동적으로 변경한다.
