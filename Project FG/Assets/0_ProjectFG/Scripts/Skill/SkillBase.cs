@@ -147,6 +147,8 @@ namespace JH
                 CastSkill();
         }
 
+        #region SkillBase
+
         // 스킬이 사용한 조건을 체크한다.
         protected virtual bool CheckCondition()
         {
@@ -215,6 +217,7 @@ namespace JH
             InactiveEvent?.Invoke();
 
         }
+        // 스킬 삭제
         public virtual void RemoveSkill()
         {
             for (int i = 0; i < m_activeProjectiles.Count; i++)
@@ -253,6 +256,8 @@ namespace JH
             InactiveSkill();
             yield break;
         }
+        #endregion SkillBase
+
 
         // 쿨타임을 초기화한다.
         protected void ResetTimer()
@@ -315,6 +320,23 @@ namespace JH
         {
             for (int i = 0; i < m_buffs.Count; i++)
             {
+                // 지속형이면 붙일 필요가 없음
+                if (m_buffs[i].Data.Condition == BuffEffectCondition.Area)
+                    continue;
+
+                if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
+                    buff.OnBuff(Caster.GameObject, m_buffs[i]);
+            }
+        }
+
+        public void OnAreaBuff(Transform target)
+        {
+            for (int i = 0; i < m_buffs.Count; i++)
+            {
+                // 지속형이 아니면 붙일 필요가 없음
+                if (m_buffs[i].Data.Condition != BuffEffectCondition.Area)
+                    continue;
+
                 if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
                     buff.OnBuff(Caster.GameObject, m_buffs[i]);
             }
@@ -324,6 +346,23 @@ namespace JH
         {
             for (int i = 0; i < m_buffs.Count; i++)
             {
+                // 지속형이면 붙일 필요가 없음
+                if (m_buffs[i].Data.Condition == BuffEffectCondition.Area)
+                    continue;
+
+                if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
+                    buff.RemoveBuff(Caster.GameObject, m_buffs[i]);
+            }
+        }
+        // 타겟에 스킬의 버프를 떼어준다.
+        public void RemoveAreaBuff(Transform target)
+        {
+            for (int i = 0; i < m_buffs.Count; i++)
+            {
+                // 지속형이 아니면 붙일 필요가 없음
+                if (m_buffs[i].Data.Condition != BuffEffectCondition.Area)
+                    continue;
+
                 if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
                     buff.RemoveBuff(Caster.GameObject, m_buffs[i]);
             }
@@ -459,8 +498,6 @@ namespace JH
         }
 
         #endregion Skill Projectile
-
-
 
         #region Aim
         // 조준과 관련된 메서드
@@ -608,7 +645,6 @@ namespace JH
             return Vector3.SignedAngle(transform.forward, dir, Vector3.up);
         }
         #endregion
-
 
         #region Particle
 

@@ -64,7 +64,7 @@ namespace JH
                 return;
 
 
-            OnBuff(target);
+            OnAreaBuff(target);
             m_aoeTargets.Add(damageable);
         }
 
@@ -85,7 +85,7 @@ namespace JH
             {
                 if (m_aoeTargets[i] == damageable)
                 {
-                    RemoveBuff(target);
+                    RemoveAreaBuff(target);
                     m_aoeTargets.RemoveAt(i);
                     break;
                 }
@@ -97,7 +97,7 @@ namespace JH
 
             for (int i = 0; i < m_aoeTargets.Count; i++)
             {
-                RemoveBuff(m_aoeTargets[i].transform);
+                RemoveAreaBuff(m_aoeTargets[i].transform);
             }
             m_aoeTargets.Clear();
         }

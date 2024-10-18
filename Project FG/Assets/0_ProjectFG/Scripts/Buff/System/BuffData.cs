@@ -77,11 +77,9 @@ namespace JH
                 if (item.ColumnID == "Description")
                     Description = item.Value;
 
-                // 레벨 데이터를 모두 가져와서 넣는다.
                 if (item.ColumnID == "BaseType")
                     Type = (BuffType)Enum.Parse(typeof(BuffType), item.Value);
 
-                // 레벨 데이터를 모두 가져와서 넣는다.
                 if (item.ColumnID == "EffectCondition")
                     Condition = (BuffEffectCondition)Enum.Parse(typeof(BuffEffectCondition), item.Value);
 

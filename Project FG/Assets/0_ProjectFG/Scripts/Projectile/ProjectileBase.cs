@@ -81,6 +81,7 @@ namespace JH
             m_penetrateCount = penetrate;
             m_projectileSpeed = speed;
         }
+
         // 투사체의 수 만큼 버프가 생겨야하므로 따로 관리
         protected void OnBuff(Transform target)
         {
@@ -88,12 +89,22 @@ namespace JH
 
                 for (int i = 0; i < m_buffs.Count; i++)
                 {
+                    if (m_buffs[i].Data.Condition == BuffEffectCondition.Area)
+                        continue;
                     buff.OnBuff(m_skill.Caster.GameObject, m_buffs[i]);
                 }
         }
 
-
-
+        protected void OnAreaBuff(Transform target)
+        {
+            if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
+                for (int i = 0; i < m_buffs.Count; i++)
+                {
+                    if (m_buffs[i].Data.Condition != BuffEffectCondition.Area)
+                        continue;
+                    buff.OnBuff(m_skill.Caster.GameObject, m_buffs[i]);
+                }
+        }
 
         protected void RemoveBuff(Transform target)
         {
@@ -106,9 +117,29 @@ namespace JH
 
                 for (int i = 0; i < m_buffs.Count; i++)
                 {
+                    if (m_buffs[i].Data.Condition == BuffEffectCondition.Area)
+                        continue;
+                        buff.RemoveBuff(m_skill.Caster.GameObject, m_buffs[i]);
+                }
+        }
+
+        protected void RemoveAreaBuff(Transform target)
+        {
+            if (target == null)
+            {
+                Debug.LogError("타겟이 없다");
+                return;
+            }
+            if (target.TryGetComponent<BuffHandler>(out BuffHandler buff))
+
+                for (int i = 0; i < m_buffs.Count; i++)
+                {
+                    if (m_buffs[i].Data.Condition != BuffEffectCondition.Area)
+                        continue;
                     buff.RemoveBuff(m_skill.Caster.GameObject, m_buffs[i]);
                 }
         }
+
 
         public virtual void ActiveProjectile()
         {

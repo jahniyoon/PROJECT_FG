@@ -53,9 +53,9 @@ namespace JH
                 return BuffID[BuffID.Length -1];
             return BuffID[num];
         }
-        public float TryGetBuffValue(int num = 0)
+        public float TryGetBuffValue(int index, int num = 0)
         {
-            return LevelData.TryGetBuffValue(num);
+            return LevelData.TryGetBuffValue(index, num);
         }
         public float TryGetValue1(int num = 0)
         {

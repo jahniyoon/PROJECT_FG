@@ -83,7 +83,6 @@ namespace JH
 
                     // 버프도 같이 보낸다.
                     OnBuff(colls[i].transform);
-                    RemoveBuff(colls[i].transform);
                 }
             }
 
@@ -144,6 +143,7 @@ namespace JH
 
             m_damageableDic.Add(key, damageable);
             damageable.DieDamageableEvent.AddListener(SoulEater);
+            OnAreaBuff(damageable.transform);
         }
         private void RemoveDamageable(Damageable damageable)
         {
@@ -152,6 +152,8 @@ namespace JH
                 return;
             damageable.DieDamageableEvent.RemoveListener(SoulEater);
             m_damageableDic.Remove(key);
+            RemoveAreaBuff(damageable.transform);
+
         }
         #endregion Damageable
 

@@ -50,7 +50,6 @@ namespace JH
 
                     // 버프도 같이 보낸다.
                     m_skill.OnBuff(colls[i].transform);
-                    m_skill.RemoveBuff(colls[i].transform);
                 }
             }
 
