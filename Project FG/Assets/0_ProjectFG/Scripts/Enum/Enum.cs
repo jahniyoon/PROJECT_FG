@@ -43,11 +43,11 @@ namespace JH
     public enum BuffType
     {
         None,
-        Immediately,    // 즉시
-        TimeCondition,      // 조건
-        Stack,           // 스택
-        Stay,           // 계속 붙어있을 때 까지
-        Attachment,           // 뗄 때까지
+        //Immediately,    // 즉시
+        //TimeCondition,      // 조건
+        //Stack,           // 스택
+        //Stay,           // 계속 붙어있을 때 까지
+        //Attachment,           // 뗄 때까지
 
         Frozen, //냉기
         Burn,   // 화상
@@ -70,6 +70,16 @@ namespace JH
         ParryingStun        // 패링 스턴
 
     }
+
+    public enum BuffStackType
+    {
+        None,
+        //Immediately,    // 즉시
+        //TimeCondition,      // 조건
+        Stack,           // 스택
+        //Stay,           // 계속 붙어있을 때 까지
+        //Attachment,           // 뗄 때까지
+    }
     public enum BuffEffectCondition
     {
         None,
@@ -78,9 +88,12 @@ namespace JH
         Mark
     }
 
-    public enum StackType
+    public enum BuffOverlap
     {
-
+        None,
+        Overlap,
+        OverlapSum,
+        SameTypeHighValue
     }
 
     public enum SkillState

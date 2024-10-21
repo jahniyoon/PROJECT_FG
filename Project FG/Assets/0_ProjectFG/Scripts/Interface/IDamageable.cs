@@ -7,6 +7,7 @@ public interface IDamageable
     public float Health { get; }
     public bool IsDie {  get; }
     public void OnDamage(float damage);
+    public void OnDamage(float damage, Color color);
 
     public void Die();
 }

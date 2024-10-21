@@ -102,7 +102,7 @@ namespace JH
             {
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buff))
                 {
-                    buff.RemoveBuff(Caster.GameObject, m_buff, true);
+                    buff.RemoveBuff(Caster.GameObject, m_buff);
 
                   
                 }

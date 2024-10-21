@@ -14,13 +14,18 @@ namespace JH
             m_data = data;
         }
 
+        public override float GetDuration()
+        {
+            return GetBuffValue(1);
+        }
+
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);
 
             if (handler.TryGetComponent<IKnockbackable>(out IKnockbackable knockbackable))
             {
-                knockbackable.OnKnockback(m_caster.position, GetBuffValue(0), GetBuffValue(1));
+                knockbackable.OnKnockback(Caster.position, GetBuffValue(0), GetBuffValue(1));
             }
         }
         

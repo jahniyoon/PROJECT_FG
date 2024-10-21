@@ -15,8 +15,9 @@ MonoBehaviour:
   <ID>k__BackingField: 80510
   <Name>k__BackingField: "\uBC94\uC704 \uBC29\uC5B4"
   <Description>k__BackingField: 
-  <Type>k__BackingField: 12
+  <Type>k__BackingField: 7
   <Condition>k__BackingField: 2
+  <OverlapType>k__BackingField: 2
   <StackType>k__BackingField: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
   <Value1>k__BackingField: []
   <Value2>k__BackingField: []

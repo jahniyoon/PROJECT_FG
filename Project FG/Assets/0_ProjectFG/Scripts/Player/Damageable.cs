@@ -72,10 +72,17 @@ namespace JH
         {
             OnDamage(damage, false);
         }
-
-
-        public void OnDamage(float damage, bool Execution = false)
+        public void OnDamage(float damage, Color color)
         {
+            OnDamage(damage, false, color);
+        }
+
+
+        public void OnDamage(float damage, bool Execution = false, Color color = default)
+        {
+            if (color == default)
+                color = m_damageEffectColor;
+
             if (IsDie)
                 return;
 
@@ -92,7 +99,7 @@ namespace JH
             if(Excution)
             m_execution = Execution;
 
-            UIManager.Instance.Debug.OnDamage(finalDamage, transform, m_damageEffectColor);
+            UIManager.Instance.Debug.OnDamage(finalDamage, transform, color);
             if (m_health <= 0)
             {
                 Die();

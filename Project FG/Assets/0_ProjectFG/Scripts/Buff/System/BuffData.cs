@@ -21,6 +21,7 @@ namespace JH
         [field: Header("Buff Info")]
         [field: SerializeField] public BuffType Type { get; private set; } // 버프 타입
         [field: SerializeField] public BuffEffectCondition Condition { get; private set; } // 버프 타입
+        [field: SerializeField] public BuffOverlap OverlapType { get; private set; } // 버프 타입
         [field: SerializeField] public string StackType { get; private set; } // 버프 타입
         [field: SerializeField] public float[] Value1 { get; private set; } // 버프 타입
         [field: SerializeField] public float[] Value2 { get; private set; } // 버프 타입
@@ -37,8 +38,18 @@ namespace JH
         [field: SerializeField] public float StackUpTime { get; private set; }
         [field: SerializeField] public float DecreaseTime { get; private set; }
 
-
-
+        public float TryGetValue1(int num = 0)
+        {
+            if (Value1.Length - 1 < num)
+                return 0;
+            return Value1[num];
+        }
+        public float TryGetValue2(int num = 0)
+        {
+            if (Value2.Length - 1 < num)
+                return 0;
+            return Value1[num];
+        }
 
         public override void SetData(GameData gamedata)
         {
@@ -83,6 +94,10 @@ namespace JH
                 if (item.ColumnID == "EffectCondition")
                     Condition = (BuffEffectCondition)Enum.Parse(typeof(BuffEffectCondition), item.Value);
 
+
+                if (item.ColumnID == "OverlapType")
+                    OverlapType = (BuffOverlap)Enum.Parse(typeof(BuffOverlap), item.Value);
+
                 if (item.ColumnID == "StackType")
                     StackType = item.Value;
 
@@ -105,6 +120,7 @@ namespace JH
             dataList.Add(SetData("Description", Description));
             dataList.Add(SetData("BaseType", Type.ToString()));
             dataList.Add(SetData("EffectCondition", Condition.ToString()));
+            dataList.Add(SetData("OverlapType", OverlapType.ToString()));
             dataList.Add(SetData("StackType", StackType));
             dataList.Add(SetData("Value1", GFunc.FloatsToString(Value1)));
             dataList.Add(SetData("Value2", GFunc.FloatsToString(Value2)));

@@ -46,7 +46,9 @@ namespace JH
             if (Input.GetKeyDown(KeyCode.Keypad7))
                 SpawnEnemy(7);
             if (Input.GetKeyDown(KeyCode.Keypad8))
-                SpawnEnemy(8);
+                SpawnEnemy(8); 
+            if (Input.GetKeyDown(KeyCode.Keypad9))
+                SpawnEnemy(9);
         }
 
 

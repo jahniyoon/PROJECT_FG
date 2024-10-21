@@ -18,6 +18,10 @@ namespace JH
             BuffBase buff;
             switch (data.Type)
             {
+
+                case BuffType.Frozen:
+                    return buff = new FrozenBuff(data);
+
                 case BuffType.KnockBack:
                     return buff = new KnockbackBuff(data);
 
@@ -29,6 +33,7 @@ namespace JH
 
                 case BuffType.PredationreStun:
                     return buff = new StunBuff(data);
+
 
                 default:
                     return buff = new BuffBase(data);

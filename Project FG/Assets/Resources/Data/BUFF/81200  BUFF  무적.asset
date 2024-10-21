@@ -15,8 +15,9 @@ MonoBehaviour:
   <ID>k__BackingField: 81200
   <Name>k__BackingField: "\uBB34\uC801"
   <Description>k__BackingField: 
-  <Type>k__BackingField: 20
+  <Type>k__BackingField: 15
   <Condition>k__BackingField: 1
+  <OverlapType>k__BackingField: 0
   <StackType>k__BackingField: 
   <Value1>k__BackingField: []
   <Value2>k__BackingField: []

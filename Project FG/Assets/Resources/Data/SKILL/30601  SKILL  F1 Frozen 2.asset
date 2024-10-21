@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ae48906bdd6f2646b5254e2654b98b3, type: 3}
-  m_Name: 30600  SKILL  F1 Frozen
+  m_Name: 30601  SKILL  F1 Frozen 2
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 30600
-  <Name>k__BackingField: F1 Frozen
+  <ID>k__BackingField: 30601
+  <Name>k__BackingField: F1 Frozen 2
   <Description>k__BackingField: "\uC801 F1\uC758 \uB0C9\uAE30 \uC7A5\uD310 \uAE30\uC220"
   <BaseType>k__BackingField: 2
   <SkillTarget>k__BackingField: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
   <AimType>k__BackingField: 6
   <TargetLayer>k__BackingField:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 0
   <LevelData>k__BackingField:
     CoolDown: 10
     Duration: 10
@@ -34,12 +34,12 @@ MonoBehaviour:
     Count: 1
     BuffValues:
     - Values:
-      - 15
-      - 15
+      - 25
+      - 10
     Value1: []
     Value2: []
     Value3: []
   <SkillDelay>k__BackingField: 0
   <SkillSpeed>k__BackingField: 0
-  <BuffID>k__BackingField: ee380100
+  <BuffID>k__BackingField: ef380100
   <ProjectileID>k__BackingField: 20610100

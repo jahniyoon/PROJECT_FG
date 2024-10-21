@@ -126,7 +126,7 @@ namespace JH
 
 
         // SO 생성 무시 해야하는지 체크
-        // TRUE : ID 충돌. 무시해야함
+        // TRUE : CasterID 충돌. 무시해야함
         private bool CheckIgnoreSOSheet(GameData data)
         {
             foreach (var sheetID in ignoreSOWorksheets)

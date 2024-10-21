@@ -17,8 +17,8 @@ namespace JH
         [SerializeField] private float m_stunDuration;
         public override void StatusInit()
         {
-            Status status = new Status();
-            status.Init(StunTimer: m_stunDuration);
+            BuffStatus status = new BuffStatus();
+            status.SetStunTimer(stunTimer: m_stunDuration);
             m_status = status;
         }
         public override void ActiveBuff(BuffHandler handler)

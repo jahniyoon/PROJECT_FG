@@ -229,13 +229,13 @@ namespace JH
 //        public void ImportData(bool isOnline = false)
 //        {
 //            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
-//            if (gameData.GameData.ContainsKey(data.ID) == false)
+//            if (gameData.GameData.ContainsKey(data.CasterID) == false)
 //            {
-//                DebugProjectile.LogWarning("데이터 ID를 확인해주세요." + data.ID);
+//                DebugProjectile.LogWarning("데이터 ID를 확인해주세요." + data.CasterID);
 //                return;
 //            }
 
-//            List<GSTU_Data> gstuDatas = gameData.GameData[data.ID].Data;
+//            BuffList<GSTU_Data> gstuDatas = gameData.GameData[data.CasterID].Data;
 //            data.UpdateData(gstuDatas);
 
 //#if UNITY_EDITOR
@@ -252,9 +252,9 @@ namespace JH
 //        public void ExportData()
 //        {
 //            DataReader gameData = Resources.Load<DataReader>("Data/GameData");
-//            if (gameData.GameData.ContainsKey(data.ID) == false)
+//            if (gameData.GameData.ContainsKey(data.CasterID) == false)
 //            {
-//                DebugProjectile.LogWarning("데이터 ID를 확인해주세요." + data.ID);
+//                DebugProjectile.LogWarning("데이터 ID를 확인해주세요." + data.CasterID);
 //                return;
 //            }
 //            data.UpdateGameData();

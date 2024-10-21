@@ -39,6 +39,7 @@ namespace JH
         #endregion
 
         private static StringBuilder sb = new StringBuilder();
+        private static StringBuilder buffValueSb = new StringBuilder();
 
         /// <summary>
         /// 매개 변수로 받은 모든 string 인자를 더해서 반환한다.
@@ -123,20 +124,21 @@ namespace JH
         }
         public static string BuffValuesToString(List<BuffValues> values)
         {
-            sb.Clear();
+            buffValueSb.Clear();
             if(values == null || values.Count == 0) return "-";
             
             for(int i = 0; i < values.Count; i++)
             {
-                sb.Append("[");
-                for(int j = 0; j < values[i].Length; j++)
-                {
-                    string floats = GFunc.FloatsToString(values[i].Values);
-                    sb.Append(floats);
-                }
-                sb.Append("]");
+                buffValueSb.Append("[");
+                buffValueSb.Append(GFunc.FloatsToString(values[i].Values));
+                //for(int j = 0; j < values[i].Length; j++)
+                //{
+                //    string floats = GFunc.FloatsToString(values[i].Values);
+                //    buffValueSb.Append(floats);
+                //}
+                buffValueSb.Append("]");
             }
-            return sb.ToString();
+            return buffValueSb.ToString();
         }
 
 

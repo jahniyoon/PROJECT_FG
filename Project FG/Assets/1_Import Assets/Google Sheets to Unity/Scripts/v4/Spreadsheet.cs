@@ -278,7 +278,7 @@ namespace GoogleSheetsToUnity
                  int startColumnAsInt = GoogleSheetsToUnityUtilities.NumberFromExcelColumn(startColumn);
                  int currentRow = startRow;
 
-                 foreach (List<string> dataValue in data.valueRange.values)
+                 foreach (BuffList<string> dataValue in data.valueRange.values)
                  {
                      int currentColumn = startColumnAsInt;
 
@@ -291,14 +291,14 @@ namespace GoogleSheetsToUnity
 
                          if (!rows.ContainsKey(currentRow))
                          {
-                             rows.Add(currentRow, new List<GSTU_Cell>());
+                             rows.Add(currentRow, new BuffList<GSTU_Cell>());
                          }
 
                          rows[currentRow].Add(cell);
 
                          if (!columns.ContainsPrimaryKey(realColumn))
                          {
-                             columns.Add(realColumn, new List<GSTU_Cell>());
+                             columns.Add(realColumn, new BuffList<GSTU_Cell>());
                          }
 
                          columns[realColumn].Add(cell);

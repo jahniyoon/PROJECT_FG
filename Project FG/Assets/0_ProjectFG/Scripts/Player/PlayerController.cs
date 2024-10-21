@@ -57,7 +57,7 @@ namespace JH
         public FSMState State => m_playerState;
         public Transform Transform => this.transform;
         public GameObject GameObject => this.gameObject;
-        public Status Status => m_buffHandler.Status;
+        public BuffStatus Status => m_buffHandler.Status;
         public List<SkillBase> Skills => m_playerHunger.Skills;
         #endregion
 
@@ -244,7 +244,7 @@ namespace JH
 
         public bool HitStateCheck()
         {
-            bool state = m_buffHandler.Status.IsStun || m_isKnockback;
+            bool state = m_buffHandler.Status.IsStatusState() || m_isKnockback;
 
             return state;
         }

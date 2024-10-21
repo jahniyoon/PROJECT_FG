@@ -15,6 +15,7 @@ MonoBehaviour:
   m_buffList:
   - {fileID: 11400000, guid: c1b4b404c6ecf8c489571549a450a49c, type: 2}
   - {fileID: 11400000, guid: ebd07a9f433fc8d4aa2ad884f5aa4ce8, type: 2}
+  - {fileID: 11400000, guid: 3360a5a59c8799c4181cd1b7bb6efffe, type: 2}
   - {fileID: 11400000, guid: 6559a67c87658ac43aa90b25d5e5904b, type: 2}
   - {fileID: 11400000, guid: 3b4855108d8f8e24eb27b9d732ff3fc0, type: 2}
   - {fileID: 11400000, guid: a8668830273da8847be0c0c5ddc23964, type: 2}
@@ -37,6 +38,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 68abccd54e190534482737fb3fba8dee, type: 2}
   - {fileID: 11400000, guid: ba28dc9fc2c0e7447827a1b6af1e4f31, type: 2}
   - {fileID: 11400000, guid: fcac20af4c162a54680f2098b59634d9, type: 2}
+  - {fileID: 11400000, guid: d4546fb910b54134e9dc27e8d4f0d8c2, type: 2}
   - {fileID: 11400000, guid: a2bbb40073389a54bb085b14c048fdce, type: 2}
   - {fileID: 11400000, guid: 63b7b36b68aa60049a91f2e349e20247, type: 2}
   - {fileID: 11400000, guid: 619baaf162412d7479232ccd8a0f9043, type: 2}

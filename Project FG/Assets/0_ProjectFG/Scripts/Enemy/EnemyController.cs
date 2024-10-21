@@ -445,7 +445,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     protected virtual bool HitStateCheck()
     {
-        return m_buffHandler.Status.IsStun || m_isKnockback;
+        return m_buffHandler.Status.IsStatusState() || m_isKnockback;
     }
 
 
