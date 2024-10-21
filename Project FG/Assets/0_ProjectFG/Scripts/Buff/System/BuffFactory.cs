@@ -22,6 +22,9 @@ namespace JH
                 case BuffType.Frozen:
                     return buff = new FrozenBuff(data);
 
+                case BuffType.Heal:
+                    return buff = new HealBuff(data);
+
                 case BuffType.KnockBack:
                     return buff = new KnockbackBuff(data);
 

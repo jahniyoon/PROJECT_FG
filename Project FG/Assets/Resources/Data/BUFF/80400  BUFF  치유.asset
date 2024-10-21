@@ -20,7 +20,8 @@ MonoBehaviour:
   <OverlapType>k__BackingField: 3
   <StackType>k__BackingField: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58
     \uC6B0\uC120"
-  <Value1>k__BackingField: []
+  <Value1>k__BackingField:
+  - 1
   <Value2>k__BackingField: []
   <IsOneAndOnly>k__BackingField: 0
   <Priority>k__BackingField: 0

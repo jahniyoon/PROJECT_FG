@@ -55,37 +55,49 @@ namespace JH
             return true;
         }
 
-        public virtual bool CanActive(int Count)
-        {
-            return m_data.ActiveStack <= Count;
-        }
         public virtual float GetDuration()
         {
             return 0;
         }
 
-        // 버프 활성화
+        /// <summary>
+        /// 버프가 활성화 될 때 실행되는 버프
+        /// </summary>
+        /// <param name="handler"></param>
         public virtual void ActiveBuff(BuffHandler handler) { }
 
-        // 조건에 맞으면 활성화되는 버프
-        public virtual void ConditionBuff(BuffHandler handler) { }
-
+        /// <summary>
+        /// 스택이 목표 스택에 도달했을 때 실행되는 버프
+        /// </summary>
+        /// <param name="handler"></param>
         public virtual void StackBuff(BuffHandler handler) { }
 
-        // 버프를 쌓을 때 호출한다.
+        /// <summary>
+        /// 스택을 쌓을 때 실행되는 버프
+        /// </summary>
+        /// <param name="handler"></param>
         public virtual void StackUpBuff(BuffHandler handler) { }
 
 
-        // 버프 비활성화
+        /// <summary>
+        /// 버프 비활성화
+        /// </summary>
+        /// <param name="handler"></param>
         public virtual void InactiveBuff(BuffHandler handler) { }
 
-        // 상태이상 업데이트
+       /// <summary>
+       /// 상태이상 초기화
+       /// </summary>
         public virtual void StatusInit()
         {
             m_status = new BuffStatus(); 
         }
 
-        // 버프를 서로 비교해서 기준에 맞는 값을 보내준다.
+        /// <summary>
+        /// 버프를 서로 비교해서 기준에 맞는 값을 보내준다.
+        /// </summary>
+        /// <param name="otherBuff">비교 대상의 버프</param>
+        /// <returns></returns>
         public virtual BuffBase ComparisonBuff(BuffBase otherBuff)
         {
             Debug.Log("버프베이스 들어오나?");
@@ -93,7 +105,10 @@ namespace JH
             return this;
         }
 
-        // 외부에서 버프의 값을 수정하고싶을 때
+        /// <summary>
+        /// 스킬 등 외부에서 버프의 값을 수정해야 할 경우
+        /// </summary>
+        /// <param name="values"></param>
         public virtual void SetBuffValue(float[] values) 
         {
             BuffValue = values;
@@ -109,15 +124,20 @@ namespace JH
             Value2 = values;
         }
 
-        public float GetBuffValue(int value = 0)
+        /// <summary>
+        /// 버프의 추가 값을 가져온다.
+        /// </summary>
+        /// <param name="index">배열 인덱스</param>
+        /// <returns></returns>
+        public float GetBuffValue(int index = 0)
         {
             if (BuffValue.Length == 0)
                 return 0;
 
-            if(BuffValue.Length < value)
+            if(BuffValue.Length < index)
                 return BuffValue[BuffValue.Length - 1];
 
-            return BuffValue[value];
+            return BuffValue[index];
         }
         public float GetValue1(int value = 0)
         {

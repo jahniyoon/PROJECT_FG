@@ -825,7 +825,7 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80410
       - ColumnID: BuffValue
-        Value: '[1, -10]'
+        Value: '[1, 10]'
       - ColumnID: Value1
         Value: 5, 10
       - ColumnID: Value2
@@ -1096,7 +1096,7 @@ MonoBehaviour:
       - ColumnID: ProjectileID
         Value: 90800
       - ColumnID: BuffID
-        Value: 80410
+        Value: '-'
       - ColumnID: SkillDelay
         Value: 0
       - ColumnID: SkillSpeed
@@ -3707,8 +3707,8 @@ MonoBehaviour:
       - ColumnID: Name
         Value: "\uBC94\uC704 \uB0C9\uB3D9 2"
       - ColumnID: Description
-        Value: "\uC801F1\uC758 \uB0C9\uAE30\uC7A5\uD310, \uD478\uB4DC\uD30C\uC6CCF
-          \uB4F1\uC774 \uC0AC\uC6A9\uD558\uB294 \uB0C9\uAE30 \uB514\uBC84\uD504"
+        Value: "\uAC19\uC740 \uBC84\uD504, \uC218\uCE58 \uC6B0\uC120 \uD14C\uC2A4\uD2B8\uC6A9
+          \uBC84\uD504"
       - ColumnID: BaseType
         Value: Frozen
       - ColumnID: EffectCondition
@@ -3823,7 +3823,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
       - ColumnID: Value1
-        Value: '-'
+        Value: 1
       - ColumnID: Value2
         Value: '-'
     - Name: "80410  BUFF  \uBC94\uC704 \uCE58\uC720"
@@ -3844,7 +3844,7 @@ MonoBehaviour:
       - ColumnID: StackType
         Value: "\uAC19\uC740 TYPE \uB0B4 \uB192\uC740 \uC218\uCE58 \uC6B0\uC120"
       - ColumnID: Value1
-        Value: '-'
+        Value: 1
       - ColumnID: Value2
         Value: '-'
     - Name: "80500  BUFF  \uBC29\uC5B4"

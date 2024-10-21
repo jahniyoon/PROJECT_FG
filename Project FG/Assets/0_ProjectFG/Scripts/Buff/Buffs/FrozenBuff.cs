@@ -33,7 +33,7 @@ namespace JH
             m_frozenDuration = m_data.TryGetValue1(2);
             m_stackDownCoolDown = m_data.TryGetValue1(3);
         }
-
+        // 버프를 비교해 높은 값을 가져온다.
         public override BuffBase ComparisonBuff(BuffBase targetBuff)
         {
             m_slowSpeed = Mathf.Max(this.GetBuffValue(), targetBuff.GetBuffValue());
@@ -41,12 +41,14 @@ namespace JH
 
             return this;
         }
+        // 스택이 목표 스택에 도달했을 경우
         public override void StackBuff(BuffHandler handler)
         {
             base.StackBuff(handler);
             handler.Status.OnFrozen(m_frozenDuration);
 
         }
+        // 스택이 오를 경우의 버프
         public override void StackUpBuff(BuffHandler handler)
         {
             base.StackUpBuff(handler);

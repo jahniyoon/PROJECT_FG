@@ -11,6 +11,7 @@ namespace JH
         [Header("상태이상 관련 버프")]
         [SerializeField] private float m_stunTimer = 0;
 
+
         [Header("냉기 상태이상")]
         [SerializeField] private bool m_hasFrozenBuff;
         [SerializeField] private float m_frozenTimer = 0;   // 프로즌 타이머
@@ -22,6 +23,11 @@ namespace JH
         private int m_frozenStack = 0;   // 동결 스택
         private float m_frozenStackUpCoolDown = 0;   // 냉기 데미지 쿨타임
         private float m_frozenStackDownCoolDown = 0;   // 냉기 데미지 쿨타임
+
+
+        [Header("힐 버프")]
+        [SerializeField] private bool m_hasHealBuff;
+        private Dictionary<HealBuff, float> m_healBuffs = new Dictionary<HealBuff, float>();
 
 
         #region Property
@@ -104,6 +110,40 @@ namespace JH
         #endregion
 
 
+        #region Heal
+        public void AddHealBuff(HealBuff healBuff)
+        {
+            if (m_healBuffs.ContainsKey(healBuff)) return;
+
+            m_healBuffs.Add(healBuff, 0);
+        }
+        public void RemoveHealBuff(HealBuff healBuff)
+        {
+            if(m_healBuffs.ContainsKey(healBuff))
+            m_healBuffs.Remove(healBuff);
+        }
+
+        private void HealBuffUpdate(float deltaTime)
+        {
+            m_hasHealBuff = 0 < m_healBuffs.Count;
+
+            if (m_hasHealBuff == false)
+                return;
+
+            var keys = new List<HealBuff>(m_healBuffs.Keys);
+            foreach (var key in keys)
+            {
+                m_healBuffs[key] += deltaTime;
+                if (key.Data.TryGetValue1() < m_healBuffs[key])
+                {
+                    key.ActiveBuff(m_handler);
+                    m_healBuffs[key] = 0;
+                }
+            }
+        }
+        #endregion
+
+
         #region Stun
         public void SetStunTimer(float stunTimer = 0)
         {
@@ -125,6 +165,7 @@ namespace JH
         {
             m_stunTimer = 0 < m_stunTimer - deltaTime ? m_stunTimer - deltaTime : 0;
             FrozenUpdate(deltaTime);
+            HealBuffUpdate(deltaTime);
         }
     }
 }
