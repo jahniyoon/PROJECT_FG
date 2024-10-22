@@ -32,14 +32,16 @@ namespace JH
             m_healValue = Mathf.Max(this.GetBuffValue(0), otherBuff.GetBuffValue(0));
             return this;
         }
+        public void Heal(BuffHandler handler)
+        {
+            if (handler.TryGetComponent<Damageable>(out Damageable damageable))
+                damageable.RestoreHealth(m_healValue);
+        }
 
 
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);
-            if(handler.TryGetComponent<Damageable>(out Damageable damageable))
-                damageable.RestoreHealth(m_healValue);
-
             handler.Status.AddHealBuff(this);
         }
 

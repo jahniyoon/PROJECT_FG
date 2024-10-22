@@ -228,14 +228,6 @@ namespace JH
 
 
 
-
-        // 버프들은 상태 이상에 수정할 정보를 전달해준다.
-        public void BuffStatus(BuffStatus newStatus)
-        {
-            m_status.Stun(newStatus);
-        }
-
-
         // 버프 비활성화
         private void InactiveBuff(BuffElement buffElement)
         {
@@ -287,14 +279,14 @@ namespace JH
         //{
         //    foreach (var buffElement in m_buffs)
         //    {
-        //        if (TargetBuff.Stun.CasterID != buffElement.Value.Stun.CasterID)
+        //        if (TargetBuff.OnStun.CasterID != buffElement.Value.OnStun.CasterID)
         //            continue;
 
         //        // 돌아가는게 있을 때
         //        if (buffElement.Value.isOneAndOnlyEnable)
         //        {
         //            // 우선도가 높거나 같으면 계승받는다.
-        //            if (buffElement.Value.Stun.Priority <= TargetBuff.Stun.Priority)
+        //            if (buffElement.Value.OnStun.Priority <= TargetBuff.OnStun.Priority)
         //            {
         //                // 코루틴을 꺼준다.
         //                buffElement.Value.isOneAndOnlyEnable = false;
@@ -325,13 +317,13 @@ namespace JH
         //    {
 
         //        // 같은 종류의 버프인지 체크한다.
-        //        if (item.Value.Stun.CasterID != buffElement.CasterID)
+        //        if (item.Value.OnStun.CasterID != buffElement.CasterID)
         //            continue;
 
         //        // 같은 버프 중 켜져있다면 일단 다 꺼준다.
         //        if (item.Value.isActive)
         //        {
-        //            item.Value.Stun.InactiveBuff(this);
+        //            item.Value.OnStun.InactiveBuff(this);
         //            item.Value.SetActive(false);
         //        }
         //        if (item.Key == checkThis)
@@ -345,7 +337,7 @@ namespace JH
         //            continue;
         //        }
 
-        //        if (priorityBuff.Stun.Priority < item.Value.Stun.Priority)
+        //        if (priorityBuff.OnStun.Priority < item.Value.OnStun.Priority)
         //            priorityBuff = item.Value;
         //    }
         //    if (priorityBuff == null)
@@ -360,7 +352,7 @@ namespace JH
         //// 유지할 버프가 있는지 체크하고 유지한다.
         //private bool MaintainBuffCheck(BuffElement buffElement, int checkThis = default)
         //{
-        //    BuffBase buffElement = buffElement.Stun;
+        //    BuffBase buffElement = buffElement.OnStun;
 
         //    // 기준을 정한다.
         //    BuffElement priorityBuff = null;
@@ -369,13 +361,13 @@ namespace JH
         //    {
 
         //        // 같은 종류의 버프인지 체크한다.
-        //        if (item.Value.Stun.CasterID != buffElement.CasterID)
+        //        if (item.Value.OnStun.CasterID != buffElement.CasterID)
         //            continue;
 
         //        // 같은 버프 중 켜져있다면 일단 다 꺼준다.
         //        if (item.Value.isActive)
         //        {
-        //            item.Value.Stun.InactiveBuff(this);
+        //            item.Value.OnStun.InactiveBuff(this);
         //            item.Value.SetActive(false);
         //        }
         //        if (item.Key == checkThis)
@@ -389,7 +381,7 @@ namespace JH
         //            continue;
         //        }
 
-        //        if (priorityBuff.Stun.Priority < item.Value.Stun.Priority)
+        //        if (priorityBuff.OnStun.Priority < item.Value.OnStun.Priority)
         //            priorityBuff = item.Value;
         //    }
         //    if (priorityBuff == null)
@@ -411,7 +403,7 @@ namespace JH
         //{
         //    foreach (var item in m_buffs)
         //    {
-        //        if (item.Value.Stun.CasterID == buffElement.CasterID)
+        //        if (item.Value.OnStun.CasterID == buffElement.CasterID)
         //        {
         //            item.Value.ResetStack();
         //        }

@@ -25,8 +25,10 @@ namespace JH
                 case BuffType.Heal:
                     return buff = new HealBuff(data);
 
-                case BuffType.KnockBack:
-                    return buff = new KnockbackBuff(data);
+                case BuffType.Burn:
+                    return buff = new BurnBuff(data);
+
+     
 
                 case BuffType.HitDamageDecrease:
                         return buff = new HitDamageDecrease(data);
@@ -46,9 +48,19 @@ namespace JH
                 case BuffType.FastSpeed:
                     return buff = new FastSpeedBuff(data);
 
+
+
+                case BuffType.KnockBack:
+                    return buff = new KnockbackBuff(data);
+
+                case BuffType.Stun:
+                    return buff = new StunBuff(data);
+
                 case BuffType.PredationreStun:
                     return buff = new StunBuff(data);
 
+                case BuffType.Invincible:
+                    return buff = new InvincibleBuff(data);
 
 
                 default:

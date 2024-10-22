@@ -14,7 +14,7 @@ namespace JH
 
 
         [Header("냉기")]
-        [SerializeField] private bool m_hasFrozenBuff;
+        [SerializeField] private bool m_isFrozen;
         [SerializeField] private float m_frozenTimer = 0;   // 프로즌 타이머
         [SerializeField] private int m_frozenCurStack = 0;   // 동결 스택
         [SerializeField] private float m_frozenStackTimer = 0;   // 프로즌 타이머
@@ -26,18 +26,26 @@ namespace JH
         private float m_frozenStackDownCoolDown = 0;   // 냉기 데미지 쿨타임
 
 
-        [Header("힐")]
-        [SerializeField] private bool m_hasHealBuff;
-        private Dictionary<HealBuff, float> m_healBuffs = new Dictionary<HealBuff, float>();
+        [Header("화상")]
+        [SerializeField] private bool m_isBurn;
+        private Dictionary<BurnBuff, float> m_burnBuffs = new Dictionary<BurnBuff, float>();
 
+
+        [Header("힐")]
+        [SerializeField] private bool m_isHeal;
+        private Dictionary<HealBuff, float> m_healBuffs = new Dictionary<HealBuff, float>();
 
         [Header("스턴")]
         [SerializeField] private float m_stunTimer = 0;
 
+        [Header("무적")]
+        [SerializeField] private bool m_isInvincible;
+        private List<InvincibleBuff> m_invincibleBuffs = new List<InvincibleBuff>();
+
         #region Property
-        public float StunTimer => m_stunTimer;         // 이동속도
         public bool IsStun => m_stunTimer > 0;
-        public bool IsFrozen => m_frozenTimer > 0;
+        public bool IsBurn => m_isBurn;
+        public bool IsFrozen => m_isFrozen;
         #endregion
 
         public void Init(BuffHandler handler)
@@ -67,11 +75,11 @@ namespace JH
 
         private void FrozenUpdate(float deltaTime)
         {
-            m_hasFrozenBuff = m_frozenBuff != null;
+            m_isFrozen = m_frozenBuff != null;
             m_frozenTimer = 0 < m_frozenTimer - deltaTime ? m_frozenTimer - deltaTime : 0;
 
             // 버프가 없으면 시간을 줄여준다.
-            if (m_hasFrozenBuff == false)
+            if (m_isFrozen == false)
             {
                 m_frozenStackTimer = 0 < m_frozenStackTimer - deltaTime ? m_frozenStackTimer - deltaTime : 0;
 
@@ -125,34 +133,67 @@ namespace JH
 
         #endregion
 
+        #region Burn
+        public void AddBurnBuff(BurnBuff burnBuff)
+        {
+            if (m_burnBuffs.ContainsKey(burnBuff)) return;
+            m_burnBuffs.Add(burnBuff, burnBuff.Data.TryGetValue1());
+        }
+        public void RemoveBurnBuff(BurnBuff burnBuff)
+        {
+            if (m_burnBuffs.ContainsKey(burnBuff))
+                m_burnBuffs.Remove(burnBuff);
+
+        }
+        private void BurnBuffUpdate(float deltaTime)
+        {
+            m_isBurn = 0 < m_burnBuffs.Count;
+
+            if (m_isBurn == false)
+                return;
+
+            var keys = new List<BurnBuff>(m_burnBuffs.Keys);
+            foreach (var key in keys)
+            {
+                m_burnBuffs[key] += deltaTime;
+                if (key.Data.TryGetValue1() < m_burnBuffs[key])
+                {
+                    key.Burn(m_handler);
+                    m_burnBuffs[key] = 0;
+                }
+            }
+        }
+
+        #endregion
 
         #region Heal
         public void AddHealBuff(HealBuff healBuff)
         {
             if (m_healBuffs.ContainsKey(healBuff)) return;
 
-            m_healBuffs.Add(healBuff, 0);
+            m_healBuffs.Add(healBuff, healBuff.Data.TryGetValue1());
         }
         public void RemoveHealBuff(HealBuff healBuff)
         {
-            if(m_healBuffs.ContainsKey(healBuff))
-            m_healBuffs.Remove(healBuff);
+            if (m_healBuffs.ContainsKey(healBuff))
+                m_healBuffs.Remove(healBuff);
         }
 
         private void HealBuffUpdate(float deltaTime)
         {
-            m_hasHealBuff = 0 < m_healBuffs.Count;
+            m_isHeal = 0 < m_healBuffs.Count;
 
-            if (m_hasHealBuff == false)
+            if (m_isHeal == false)
                 return;
 
             var keys = new List<HealBuff>(m_healBuffs.Keys);
             foreach (var key in keys)
             {
                 m_healBuffs[key] += deltaTime;
+                // 주기적으로 힐을 넣는다.
                 if (key.Data.TryGetValue1() < m_healBuffs[key])
                 {
-                    key.ActiveBuff(m_handler);
+                    key.Heal(m_handler);
                     m_healBuffs[key] = 0;
                 }
             }
@@ -161,27 +202,46 @@ namespace JH
 
 
         #region Stun
-        public void SetStunTimer(float stunTimer = 0)
-        {
-            this.m_stunTimer = stunTimer;
-        }
+
 
         // 버프되는 부분 (이곳에 버프가 누적되면 합연산인지 곱연산인지 정리하면 된다.)
-        public void Stun(BuffStatus other)
+        public void OnStun(float timer)
         {
-            this.m_stunTimer = other.m_stunTimer;
+            m_stunTimer += timer;
+        }
+        private void StunUpdate(float deltaTime)
+        {
+            m_stunTimer = 0 < m_stunTimer - deltaTime ? m_stunTimer - deltaTime : 0;
         }
 
         #endregion
 
+        #region Invincible
+        public void AddInvincible(InvincibleBuff buff)
+        {
+            if (m_invincibleBuffs.Contains(buff)) return;
+            m_invincibleBuffs.Add(buff);
 
+            buff.Invincible(m_handler, true);
+        }
+        public void RemoveInvincible(InvincibleBuff buff)
+        {
+            if(m_invincibleBuffs.Contains(buff))
+                m_invincibleBuffs.Remove(buff);
+
+            // 리스트가 비어있으면 무적 상태 해제
+            if(m_invincibleBuffs.Count == 0)
+                buff.Invincible(m_handler, false);
+        }
+        #endregion
 
         // 타이머를 계속 업데이트한다.
         public void UpdateTimer(float deltaTime)
         {
-            m_stunTimer = 0 < m_stunTimer - deltaTime ? m_stunTimer - deltaTime : 0;
+            StunUpdate(deltaTime);
             FrozenUpdate(deltaTime);
             HealBuffUpdate(deltaTime);
+            BurnBuffUpdate(deltaTime);
         }
     }
 }

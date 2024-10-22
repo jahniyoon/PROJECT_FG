@@ -12,20 +12,15 @@ namespace JH
         {
             m_data = data;
         }
-
-        [Header("Stun Buff")]
-        [SerializeField] private float m_stunDuration;
-        public override void StatusInit()
+        public override float GetDuration()
         {
-            BuffStatus status = new BuffStatus();
-            status.SetStunTimer(stunTimer: m_stunDuration);
-            m_status = status;
+            return GetBuffValue();
         }
+
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);
-            StatusInit();
-            handler.BuffStatus(m_status);
+            handler.Status.OnStun(GetBuffValue());
         }
 
      
