@@ -724,6 +724,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     }
     #endregion
 
+  
 
     public void DebugEnable(bool enable)
     {

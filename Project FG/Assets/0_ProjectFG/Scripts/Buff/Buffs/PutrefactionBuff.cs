@@ -29,7 +29,7 @@ namespace JH
             {
                 // 부패 세팅하고
                 m_putrefaction = new Putrefaction();
-                m_putrefaction.SetPutrefaction(GetBuffValue(1), GetBuffValue(0), GetValue1(0), GetValue1(1), GetValue1(2), GetValue1(3));
+                m_putrefaction.SetPutrefaction(GetBuffValue(1), GetBuffValue(0), TryGetValue1(0), TryGetValue1(1), TryGetValue1(2), TryGetValue1(3));
                 // 부패 추가
                 putrefaction.AddPuterefaction(m_putrefaction);
             }

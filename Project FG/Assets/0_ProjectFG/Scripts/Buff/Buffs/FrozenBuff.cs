@@ -28,10 +28,10 @@ namespace JH
             m_slowSpeed = GetBuffValue();     // 스피드
             m_dotDamage = GetBuffValue(1);    // 데미지
 
-            m_stackUpCoolDown = m_data.TryGetValue1(0);
+            m_stackUpCoolDown = TryGetValue1(0);
             m_stack = Mathf.FloorToInt(m_data.TryGetValue1(1));
-            m_frozenDuration = m_data.TryGetValue1(2);
-            m_stackDownCoolDown = m_data.TryGetValue1(3);
+            m_frozenDuration = TryGetValue1(2);
+            m_stackDownCoolDown = TryGetValue1(3);
         }
         // 버프를 비교해 높은 값을 가져온다.
         public override BuffBase ComparisonBuff(BuffBase targetBuff)

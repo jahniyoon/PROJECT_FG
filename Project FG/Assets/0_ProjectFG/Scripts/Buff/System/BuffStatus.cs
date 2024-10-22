@@ -143,7 +143,7 @@ namespace JH
         public void AddBurnBuff(BurnBuff burnBuff)
         {
             if (m_burnBuffs.ContainsKey(burnBuff)) return;
-            m_burnBuffs.Add(burnBuff, burnBuff.Data.TryGetValue1());
+            m_burnBuffs.Add(burnBuff, burnBuff.TryGetValue1());
         }
         public void RemoveBurnBuff(BurnBuff burnBuff)
         {
@@ -162,7 +162,7 @@ namespace JH
             foreach (var key in keys)
             {
                 m_burnBuffs[key] += deltaTime;
-                if (key.Data.TryGetValue1() < m_burnBuffs[key])
+                if (key.TryGetValue1() < m_burnBuffs[key])
                 {
                     key.Burn(m_handler);
                     m_burnBuffs[key] = 0;
@@ -218,7 +218,7 @@ namespace JH
         {
             if (m_healBuffs.ContainsKey(healBuff)) return;
 
-            m_healBuffs.Add(healBuff, healBuff.Data.TryGetValue1());
+            m_healBuffs.Add(healBuff, healBuff.TryGetValue1());
         }
         public void RemoveHealBuff(HealBuff healBuff)
         {
@@ -238,7 +238,7 @@ namespace JH
             {
                 m_healBuffs[key] += deltaTime;
                 // 주기적으로 힐을 넣는다.
-                if (key.Data.TryGetValue1() < m_healBuffs[key])
+                if (key.TryGetValue1() < m_healBuffs[key])
                 {
                     key.Heal(m_handler);
                     m_healBuffs[key] = 0;

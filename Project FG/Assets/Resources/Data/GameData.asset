@@ -905,7 +905,7 @@ MonoBehaviour:
       - ColumnID: IngameUpgradeID
         Value: '-'
       - ColumnID: ProjectileID
-        Value: 90100
+        Value: 90110
       - ColumnID: BuffID
         Value: '-'
       - ColumnID: SkillDelay
@@ -3861,7 +3861,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Duration
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -3882,7 +3882,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Area
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -3903,7 +3903,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Duration
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -3924,7 +3924,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Area
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -3945,7 +3945,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Duration
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -3966,7 +3966,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Area
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -3987,7 +3987,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Duration
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -4008,7 +4008,7 @@ MonoBehaviour:
       - ColumnID: EffectCondition
         Value: Area
       - ColumnID: OverlapType
-        Value: OverlapSum
+        Value: Overlap
       - ColumnID: StackType
         Value: "\uC911\uCCA9 \uAC00\uB2A5. \uD569\uC5F0\uC0B0"
       - ColumnID: Value1
@@ -4196,7 +4196,7 @@ MonoBehaviour:
       - ColumnID: BaseType
         Value: Invincible
       - ColumnID: EffectCondition
-        Value: Duration
+        Value: Area
       - ColumnID: OverlapType
         Value: None
       - ColumnID: StackType

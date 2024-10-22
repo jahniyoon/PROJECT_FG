@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 1929835702349482798, guid: 24b4cd56a60c7734bbc1ead3f619f6fd, type: 3}
   m_projectilePrefabs:
   - {fileID: 3477764139044051456, guid: 1e113b5ba1d0eb74a900618d0f2afcb4, type: 3}
+  - {fileID: 5210199712220438308, guid: d4c7e4b85c80e2d4eb79adcde19314f9, type: 3}
   - {fileID: -105819037022775862, guid: 332359e3f5d86ff4981374091b34060b, type: 3}
   - {fileID: -2285201732519977713, guid: ae251740225bcef46ae00619db6a8058, type: 3}
   - {fileID: 4389255518941853, guid: 9bdd723352a25864f8757caf099b0005, type: 3}

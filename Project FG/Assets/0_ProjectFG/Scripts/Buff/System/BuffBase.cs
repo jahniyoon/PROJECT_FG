@@ -34,8 +34,7 @@ namespace JH
         public float DecreaseTime => m_data.DecreaseTime;
         public BuffData Data => m_data;
         public float[] BuffValue;
-        public float[] Value1;
-        public float[] Value2;
+
         public Transform Caster => m_caster;
 
 
@@ -118,16 +117,6 @@ namespace JH
             BuffValue = values;
         }
 
-        public virtual void SetValue1(float[] values)
-        {
-            Value1 = values;
-        }
-
-        public virtual void SetValue2(float[] values)
-        {
-            Value2 = values;
-        }
-
         /// <summary>
         /// 버프의 추가 값을 가져온다.
         /// </summary>
@@ -143,26 +132,16 @@ namespace JH
 
             return BuffValue[index];
         }
-        public float GetValue1(int value = 0)
+        public float TryGetValue1(int value = 0)
         {
-            if (Value1.Length == 0)
-                return 0;
-
-            if (Value1.Length - 1 < value)
-                return Value1[Value1.Length - 1];
-
-            return Value1[value];
+            return m_data.TryGetValue1(value);
+        
         }
 
         public float GetValue2(int value = 0)
         {
-            if (Value2.Length == 0)
-                return 0;
+            return m_data.TryGetValue2(value);
 
-            if (Value2.Length - 1 < value)
-                return Value2[Value2.Length - 1];
-
-            return Value2[value];
         }
 
         public float FinalDamage(float damage, DamageType type)

@@ -6,26 +6,27 @@ using static UnityEngine.Rendering.DebugUI;
 
 namespace JH
 {
-    // 데미지 무시 관련 버프
-    public class FearBuff : BuffBase
+    // 표식 버프
+    public class MarkBuff : BuffBase
 	{
-        public FearBuff(BuffData data) : base(data) 
+        public MarkBuff(BuffData data) : base(data) 
         {           
             m_data = data;
         }
 
         public override float GetDuration()
         {
-            return GetBuffValue();
+            return TryGetValue1();
         }
 
         public override void ActiveBuff(BuffHandler handler)
         {
             base.ActiveBuff(handler);
 
-            if (handler.TryGetComponent<IFearable>(out IFearable fearable))
+            if (handler.TryGetComponent<IMarkable>(out IMarkable markable))
             {
-                fearable.OnFear(Caster.position, TryGetValue1(), GetDuration(), TryGetValue1(1));
+                markable.SetCaster(m_skillCaster);
+                markable.OnMarkStack(GetBuffValue(), TryGetValue1(), Mathf.FloorToInt(TryGetValue1(1)));
             }
         }
         

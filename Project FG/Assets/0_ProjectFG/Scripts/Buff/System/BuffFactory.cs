@@ -32,8 +32,6 @@ namespace JH
                     return buff = new PutrefactionBuff(data);
 
 
-
-
                 case BuffType.HitDamageDecrease:
                         return buff = new HitDamageDecrease(data);
 
@@ -59,6 +57,9 @@ namespace JH
 
                 case BuffType.Fear:
                     return buff = new FearBuff(data);
+
+                case BuffType.Mark:
+                    return buff = new MarkBuff(data);
 
                 case BuffType.Stun:
                     return buff = new StunBuff(data);

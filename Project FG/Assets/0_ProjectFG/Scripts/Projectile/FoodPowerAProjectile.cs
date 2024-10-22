@@ -6,25 +6,11 @@ using UnityEngine.VFX;
 
 namespace JH
 {
-    public class CollisionProjectile : ProjectileBase
+    public class FoodPowerAProjectile : CollisionProjectile
     {
-        [Header("Collision")]
-        [SerializeField] bool m_isStopDestroy;
 
 
-        public override void SetRadius(float radius)
-        {
-            base.SetRadius(radius);
-        }
-
-        public override void ActiveProjectile()
-        {
-            base.ActiveProjectile();
-            Collision();
-        }
-
-
-        public virtual void Collision()
+        public override void Collision()
         {
             // 캐스터 타겟이면 사용하지 않는다.
             if (m_skill.Data.SkillTarget == TargetTag.Caster)
@@ -47,6 +33,9 @@ namespace JH
                         damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage, DamageType.Default));
                     }
 
+                    // 푸드파워 A는 스택을 내린다.
+                    if (colls[i].TryGetComponent<AttackMark>(out AttackMark mark))
+                        mark.StackDown();
 
                     // 버프도 같이 보낸다.
                     m_skill.OnBuff(colls[i].transform);
@@ -60,12 +49,6 @@ namespace JH
         }
 
 
-        protected override void DebugProjectile()
-        {
-            m_debug.gameObject.SetActive(true);
-            m_debug.position = transform.position;
-            m_debug.localScale = Vector3.one * m_radius;
-        }
     }
 
 }

@@ -10137,6 +10137,7 @@ GameObject:
   - component: {fileID: 8033957559513531765}
   - component: {fileID: 3632960342059153868}
   - component: {fileID: 5956328369330435029}
+  - component: {fileID: -2670452441517150083}
   m_Layer: 10
   m_Name: 20200 Enemy B
   m_TagString: Enemy
@@ -10184,10 +10185,13 @@ MonoBehaviour:
   m_healthBar: {fileID: 0}
   m_healthBarOffset: 1
   m_canPredation: 0
+  m_fearPredationRatio: 0
   m_predationIcon: {fileID: 0}
   m_dieSpeed: 1.2
   m_attackCoolDown: 0
   m_stunEffect: {fileID: 8063288106136316370}
+  m_isKnockback: 0
+  m_isFear: 0
   m_notCount: 0
   m_minimapColor: {r: 1, g: 0, b: 0, a: 1}
   m_skillTimer: 0
@@ -10211,7 +10215,8 @@ MonoBehaviour:
   m_health: 0
   m_isDie: 0
   m_invincible: 0
-  m_HitdamageDecrease: 0
+  m_HitdamageIncrease: 0
+  m_HitAttributeDamageIncrease: 0
   m_damageEffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_execution: 0
   DamageEvent:
@@ -10239,10 +10244,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_status:
+    m_attackDamageIncrease: 0
+    m_attributeDamageIncrease: 0
+    m_isFrozen: 0
+    m_frozenTimer: 0
+    m_frozenCurStack: 0
+    m_frozenStackTimer: 0
+    m_isBurn: 0
+    m_isPutrefaction: 0
+    m_isHeal: 0
     m_stunTimer: 0
-  m_buffList:
-    keys: 
-    values: []
+    m_isInvincible: 0
+  m_buffs:
+    m_buffList: []
+  m_overlapBuffs:
+    m_buffList: []
   m_inherenceBuff: []
   AddBuffEvent:
     m_PersistentCalls:
@@ -10328,6 +10344,18 @@ MonoBehaviour:
   m_hitDuration: 0.175
   m_flickingDuration: 0.175
   m_hitMaterial: {fileID: 2100000, guid: 5375bbf6406a1014bba196dc33100ac3, type: 2}
+--- !u!114 &-2670452441517150083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914888377291002978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ef1cba794f9c042ab261994e56f728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8032881480564529439
 GameObject:
   m_ObjectHideFlags: 0
