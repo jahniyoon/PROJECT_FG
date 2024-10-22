@@ -244,7 +244,7 @@ namespace JH
 
         public bool HitStateCheck()
         {
-            bool state = m_buffHandler.Status.IsStatusState() || m_isKnockback;
+            bool state = m_buffHandler.Status.CCStateCheck() || m_isKnockback;
 
             return state;
         }

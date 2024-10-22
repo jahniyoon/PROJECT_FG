@@ -13,7 +13,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
             if (CheckFreezeState() == false)
@@ -35,7 +35,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
             if (CheckFreezeState())
@@ -65,7 +65,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
             if (CheckFreezeState())
@@ -176,11 +176,14 @@ namespace JH
         protected override void MoveStateExit()
         {
             SetMoveState(EnemyMoveState.Stop);
+            StopMove();
+        }
 
+        private void StopMove()
+        {
             m_agent.avoidancePriority = 49;
             m_agent.SetDestination(this.transform.position);
             m_agent.isStopped = true;
-
         }
         #endregion
 
@@ -190,7 +193,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
             if (CheckFreezeState())
@@ -215,7 +218,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck() == false)
+            if (CCStateCheck() == false)
                 return new IdleState();
 
             return null;
@@ -226,10 +229,38 @@ namespace JH
             m_stunEffect.Stop();
             m_stunEffect.Play();
 
-            foreach(var skill in m_attackSkills)
+            foreach (var skill in m_attackSkills)
             {
                 skill.FreezeSkill(true);
             }
+        }
+
+        //우선순위
+        // 스턴 > 넉백 > 
+        protected override void HitStateStay()
+        {
+            base.HitStateStay();
+
+            if (m_buffHandler.Status.IsStun)
+                return;
+
+            if (m_buffHandler.Status.IsFrozen)
+                return;
+
+            if (m_isKnockback)
+                return;
+
+        
+            FearState();
+        }
+
+        private void FearState()
+        {
+            if (m_isFear == false)
+                return;
+
+            m_agent.isStopped = false;
+            SetMoveDestination(FindEscapePos());
         }
 
         protected override void HitStateExit()
@@ -241,6 +272,8 @@ namespace JH
             {
                 skill.FreezeSkill(false);
             }
+
+            StopMove();
         }
         #endregion
 

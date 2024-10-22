@@ -13,7 +13,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
 
@@ -40,7 +40,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
             if (m_target == null)
@@ -91,7 +91,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck())
+            if (CCStateCheck())
                 return new HitState();
 
             if (m_target == null)
@@ -112,7 +112,7 @@ namespace JH
             if (m_damageable.IsDie)
                 return new DieState();
 
-            if (HitStateCheck() == false)
+            if (CCStateCheck() == false)
                 return new IdleState();
 
             return null;

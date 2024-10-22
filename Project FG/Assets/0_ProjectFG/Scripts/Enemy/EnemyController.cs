@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster, IPutrefaction
+public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster, IPutrefaction, IFearable
 {
     private FSM<EnemyController> m_fsm;
     private CapsuleCollider m_capsule;
@@ -28,9 +28,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [SerializeField] protected EnemyMoveState m_moveState;
     [SerializeField] protected float m_distanceCheckDelay;
 
-    [Header("Buff")]
-    protected BuffHandler m_buffHandler;
-    protected float m_slowDebuff = 0;
 
 
     [Header("Target")]
@@ -43,6 +40,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
     [Header("Predation")]
     [SerializeField] private bool m_canPredation;
+    [SerializeField] protected float m_fearPredationRatio;
     [SerializeField] private WorldSpaceIcon m_predationIcon;
     [SerializeField] protected float m_dieSpeed = 1.2f;
     protected BuffBase m_stunBuff;
@@ -50,17 +48,20 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     [Header("Attack CoolDown")]
     [SerializeField] protected float m_attackCoolDown;
 
-    [Header("Stun")]
+
+    [Header("Buff")]
+    protected BuffHandler m_buffHandler;
+    protected float m_slowSpeed = 0;
+    protected float m_fearSpeed = 0;
     [SerializeField] protected ParticleSystem m_stunEffect;
-    protected bool m_isKnockback;
+    [SerializeField] protected bool m_isKnockback;
+    [SerializeField] protected bool m_isFear;
 
     [Header("Enemy Count")]
     [SerializeField] private bool m_notCount;
     [Header("Minimap Color")]
     [SerializeField] protected Color m_minimapColor = Color.red;
-    // 공격 타이머 : 공격 상태 돌입 후 해당 타이머가 공격속도에 해당하는 값이 되면 공격이 실행된다.
 
-    [Header("Skills")]
     [Header("에네미 스킬")]
 
     [SerializeField] protected float m_skillTimer = 0;
@@ -247,34 +248,11 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     protected virtual void BuffHandler()
     {
     }
-    public float FinalSpeed(float curSpeed)
-    {
-        return curSpeed * (100 - m_slowDebuff) * 0.01f;
-    }
-    public void SetMoveSpeed(float value)
-    {
-        m_slowDebuff += value;
-        m_agent.speed = FinalSpeed(m_data.MoveSpeed);
-    }
+
 
     protected virtual void SetTarget(Transform target)
     {
         m_target = target;
-    }
-
-    protected virtual void AttackCheck()
-    {
-
-    }
-
-    protected bool CanPredationCheck()
-    {
-        float curRatio = m_damageable.Health / (float)m_damageable.MaxHealth;
-
-        if (m_damageable.IsDie || m_damageable.Excution)
-            return false;
-
-        return curRatio <= m_data.PredationHealthRatio * 0.01f;
     }
 
 
@@ -439,15 +417,17 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     }
 
 
+    #region State Check
+
     protected virtual bool CanAttackCheck()
     {
         return m_attackCoolDown <= 0;
     }
 
 
-    protected virtual bool HitStateCheck()
+    protected virtual bool CCStateCheck()
     {
-        return m_buffHandler.Status.IsStatusState() || m_isKnockback;
+        return m_buffHandler.Status.CCStateCheck() || m_isKnockback || m_isFear;
     }
 
 
@@ -467,75 +447,32 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         return false;
     }
 
-    /// <summary>
-    /// 플레이어를 피해 도망갈 포지션을 찾는다.
-    /// </summary>
-    /// <returns></returns>
-    protected Vector3 FindEscapePos()
+    protected bool CanPredationCheck()
     {
-        // Vector2 일 때 방향 필요.
-        // 현재 적의 위치
-        Vector3 currentPosition = m_model.position;
+        float curRatio = m_damageable.Health / (float)m_damageable.MaxHealth;
 
-        // 적에서 플레이어까지의 방향 벡터 (플레이어 방향)
-        Vector3 directionToPlayer = m_target.position - currentPosition;
-
-        // 플레이어로부터 반대 방향 (벡터의 반대 방향)
-        Vector3 oppositeDirection = -directionToPlayer.normalized;
-
-        
-        float randomAngle = Random.Range(m_data.EscapeAngle * -0.5f, m_data.EscapeAngle * 0.5f);
-        oppositeDirection = Quaternion.AngleAxis(randomAngle, Vector3.up) * oppositeDirection;
-
-        // 도망가는 위치 = 현재 위치에서 반대 방향으로 일정 거리만큼 이동한 위치
-        Vector3 escapePosition = currentPosition + oppositeDirection * m_data.EscapeRange;
-
-        escapePosition = GFunc.FindNavPos(transform, escapePosition, m_data.EscapeRange * 2);
-        return escapePosition;
-
-
-        //// 이동가능한 곳인지 체크한다.
-
+        if (m_damageable.IsDie || m_damageable.Excution)
+            return false;
+        // 공포 효과에 따라 달라짐
+        return curRatio <= (m_data.PredationHealthRatio + m_fearPredationRatio) * 0.01f;
     }
 
+    #endregion
 
-    public void OnKnockback(Vector3 hitPosition, float force, float duration)
+    #region Speed
+
+    public float FinalSpeed(float curSpeed)
     {
-        if (knockbackRoutine != null)
-        {
-            StopCoroutine(knockbackRoutine);
-            knockbackRoutine = null;
-        }
-        knockbackRoutine = StartCoroutine(KnockBackRoutine(hitPosition, force, duration));
-
+        return curSpeed * (100 - m_slowSpeed + m_fearSpeed) * 0.01f;
     }
-    Coroutine knockbackRoutine;
-
-    IEnumerator KnockBackRoutine(Vector3 hitPos, float force, float duration)
+    public void SetMoveSpeed(float value)
     {
-        m_isKnockback = true;
-
-
-        float timer = 0;
-        Vector3 startPos = transform.position;
-
-        // 플레이어로부터 반대 방향 (벡터의 반대 방향)
-        Vector3 knockbackDirection = -(hitPos - startPos).normalized;
-
-        // 넉백 방향에 거리 추가
-        Vector3 endPos = startPos + knockbackDirection * force;
-        // 가능한 곳인지 확인 및 보정
-        endPos = GFunc.FindNavPos(transform, endPos, force * 2);
-
-        while (timer < duration)
-        {
-            transform.position = Vector3.Lerp(startPos, endPos, timer / duration);
-            timer += Time.deltaTime;
-            yield return null;
-        }
-        m_isKnockback = false;
-        yield break;
+        m_slowSpeed += value;
+        m_agent.speed = FinalSpeed(m_data.MoveSpeed);
     }
+    #endregion
+
+    #region Skill
     // 모든 스킬을 가져온다.
     private void GetSkills()
     {
@@ -576,65 +513,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
 
         return newSkill;
-
-        #region AimType
-        //Transform skillParent = this.transform;
-
-        //Vector3 skillPosition = this.transform.position;
-        //Vector3 skillLocalPosition = Vector3.zero;
-
-        //// 조준 타입에 따라 다르게 세팅해준다.
-        //switch (newSkill.Data.AimType)
-        //{
-        //    case AimType.Caster:
-        //        skillParent = m_model.transform;
-        //        break;
-
-        //    case AimType.CasterPosition:
-        //        skillParent = GameManager.Instance.ProjectileParent;
-        //        break;
-
-        //    case AimType.CasterDirection:
-        //        newSkill.transform.rotation = m_model.transform.rotation;
-        //        break;
-
-        //    case AimType.NearTargetDirection:
-        //        if (m_target)
-        //            newSkill.transform.LookAt(m_target.transform.position);
-        //        break;
-
-        //    case AimType.TargetDirection:
-        //        if (m_target)
-        //            newSkill.transform.LookAt(m_target.transform.position);
-        //        break;
-
-        //    case AimType.TargetPosition:
-        //        if (m_target)
-        //            skillPosition = m_target.transform.position;
-        //        break;
-
-        //    case AimType.RandomDirection:
-        //        Vector3 randomRotation = Vector3.zero;
-        //        randomRotation.y = Random.Range(0, 360);
-        //        newSkill.transform.eulerAngles = randomRotation;
-        //        break;
-
-        //    case AimType.RandomTargetDirection:
-        //        if (m_target)
-        //            newSkill.transform.LookAt(m_target.transform.position);
-        //        break;
-
-        //    case AimType.RandomTargetPosition:
-        //        if (m_target)
-        //            skillPosition = m_target.transform.position;
-        //        break;
-
-        //}
-
-        //newSkill.transform.parent = skillParent;
-        //newSkill.transform.localPosition = skillLocalPosition;
-        //newSkill.transform.position = skillPosition;
-        #endregion
     }
 
     protected SkillBase TryGetSkill(int index = 0)
@@ -646,6 +524,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         }
         return null;
     }
+    #endregion
 
     #region ISkillCaster
     public virtual bool CanActiveSkill()
@@ -661,7 +540,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         m_skillTimer = timer;
     }
-    public float FinalDamage(float damage, DamageType type )
+    public float FinalDamage(float damage, DamageType type)
     {
         return m_buffHandler.Status.FinalAttackDamage(damage, type);
     }
@@ -689,7 +568,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     }
     #endregion
 
-    #region MOVE STATE
+    #region Move State
     // 이동 상태 업데이트
     protected void SetMoveState(EnemyMoveState nextState)
     {
@@ -722,7 +601,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
 
         // 랜덤한 포위거리
         float distance = Random.Range(m_data.SurroundDistance * -1, m_data.SurroundDistance);
-        
+
         // 랜덤 포위 기반, 타겟 위치를 업데이트
         position = position + m_model.right * distance;
 
@@ -733,7 +612,118 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         return position;
     }
 
+    /// <summary>
+    /// 플레이어를 피해 도망갈 포지션을 찾는다.
+    /// </summary>
+    /// <returns></returns>
+    protected Vector3 FindEscapePos()
+    {
+        // Vector2 일 때 방향 필요.
+        // 현재 적의 위치
+        Vector3 currentPosition = m_model.position;
+
+        // 적에서 플레이어까지의 방향 벡터 (플레이어 방향)
+        Vector3 directionToPlayer = m_target.position - currentPosition;
+
+        // 플레이어로부터 반대 방향 (벡터의 반대 방향)
+        Vector3 oppositeDirection = -directionToPlayer.normalized;
+
+
+        float randomAngle = Random.Range(m_data.EscapeAngle * -0.5f, m_data.EscapeAngle * 0.5f);
+        oppositeDirection = Quaternion.AngleAxis(randomAngle, Vector3.up) * oppositeDirection;
+
+        // 도망가는 위치 = 현재 위치에서 반대 방향으로 일정 거리만큼 이동한 위치
+        Vector3 escapePosition = currentPosition + oppositeDirection * m_data.EscapeRange;
+
+        escapePosition = GFunc.FindNavPos(transform, escapePosition, m_data.EscapeRange * 2);
+        return escapePosition;
+
+
+        //// 이동가능한 곳인지 체크한다.
+
+    }
+
     #endregion
+
+    #region KnockBack
+    Coroutine m_knockbackRoutine;
+
+    public void OnKnockback(Vector3 hitPosition, float force, float duration)
+    {
+        if (m_knockbackRoutine != null)
+        {
+            StopCoroutine(m_knockbackRoutine);
+            m_knockbackRoutine = null;
+        }
+        m_knockbackRoutine = StartCoroutine(KnockBackRoutine(hitPosition, force, duration));
+
+    }
+
+    IEnumerator KnockBackRoutine(Vector3 hitPos, float force, float duration)
+    {
+        m_isKnockback = true;
+
+
+        float timer = 0;
+        Vector3 startPos = transform.position;
+
+        // 플레이어로부터 반대 방향 (벡터의 반대 방향)
+        Vector3 knockbackDirection = -(hitPos - startPos).normalized;
+
+        // 넉백 방향에 거리 추가
+        Vector3 endPos = startPos + knockbackDirection * force;
+        // 가능한 곳인지 확인 및 보정
+        endPos = GFunc.FindNavPos(transform, endPos, force * 2);
+
+        while (timer < duration)
+        {
+            transform.position = Vector3.Lerp(startPos, endPos, timer / duration);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        m_isKnockback = false;
+        yield break;
+    }
+    #endregion
+
+    #region Fear
+    Coroutine m_fearkRoutine;
+
+    public void OnFear(Vector3 fearPos, float escapeSpeed, float duration, float predationHealthRatio)
+    {
+        if (m_fearkRoutine != null)
+        {
+            StopCoroutine(m_fearkRoutine);
+            m_fearkRoutine = null;
+        }
+        m_fearkRoutine = StartCoroutine(FearRoutine(fearPos, escapeSpeed, duration, predationHealthRatio));
+    }
+
+    IEnumerator FearRoutine(Vector3 fearPos, float escapeSpeed, float duration, float predationHealthRatio)
+    {
+        m_isFear = true;
+        m_fearPredationRatio = predationHealthRatio;
+        m_fearSpeed = escapeSpeed;
+        UpdateHealth(); // 체력 업데이트
+
+        float timer = 0;
+        if(timer < duration)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        m_isFear = false;
+
+        // 값 다시 되돌려놓는다.
+        m_fearPredationRatio = 0;
+        m_fearSpeed = 0;
+        UpdateHealth(); // 체력 업데이트
+
+
+        yield break;
+    }
+    #endregion
+
 
     public void DebugEnable(bool enable)
     {

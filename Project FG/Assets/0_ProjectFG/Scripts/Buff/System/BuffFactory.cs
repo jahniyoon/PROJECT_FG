@@ -57,6 +57,9 @@ namespace JH
                 case BuffType.KnockBack:
                     return buff = new KnockbackBuff(data);
 
+                case BuffType.Fear:
+                    return buff = new FearBuff(data);
+
                 case BuffType.Stun:
                     return buff = new StunBuff(data);
 

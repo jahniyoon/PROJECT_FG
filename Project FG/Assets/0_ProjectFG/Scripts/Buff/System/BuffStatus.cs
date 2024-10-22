@@ -60,7 +60,7 @@ namespace JH
         }
 
         //  상태이상을 체크
-        public bool IsStatusState()
+        public bool CCStateCheck()
         {
             return IsStun || IsFrozen;
         }
