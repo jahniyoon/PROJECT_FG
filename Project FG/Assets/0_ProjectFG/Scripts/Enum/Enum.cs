@@ -88,6 +88,11 @@ namespace JH
         Mark
     }
 
+    public enum DamageType
+    {
+        Default,
+        Attribute
+    }
     public enum BuffOverlap
     {
         None,

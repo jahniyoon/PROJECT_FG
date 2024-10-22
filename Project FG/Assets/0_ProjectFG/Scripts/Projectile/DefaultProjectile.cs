@@ -74,7 +74,7 @@ namespace JH
             if (TagCheck(other))
             {
                 if (other.TryGetComponent<Damageable>(out Damageable damageable))
-                    damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage));
+                    damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage, DamageType.Default));
 
                 if (other.TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
                     OnBuff(other.transform);

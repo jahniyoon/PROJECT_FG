@@ -23,7 +23,7 @@ namespace JH
         public void Burn(BuffHandler handler)
         {
             if (handler.TryGetComponent<IDamageable>(out IDamageable damageable))
-                damageable.OnDamage(FinalDamage(m_skillCaster.FinalDamage(GetBuffValue(0))), new Color(1,0.5f,1,1));
+                damageable.OnDamage(FinalDamage(GetBuffValue(0), DamageType.Attribute), new Color(1,0.5f,1,1));
         }
 
         public override void ActiveBuff(BuffHandler handler)

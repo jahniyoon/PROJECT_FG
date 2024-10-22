@@ -28,7 +28,11 @@ namespace JH
                 case BuffType.Burn:
                     return buff = new BurnBuff(data);
 
-     
+                case BuffType.Putrefaction:
+                    return buff = new PutrefactionBuff(data);
+
+
+
 
                 case BuffType.HitDamageDecrease:
                         return buff = new HitDamageDecrease(data);

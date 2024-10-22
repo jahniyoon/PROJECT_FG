@@ -259,9 +259,9 @@ namespace JH
         {
             m_skillTimer = timer;
         }
-        public float FinalDamage(float damage)
+        public float FinalDamage(float damage, DamageType type)
         {
-            return Status.FinalAttackDamage(damage);
+            return Status.FinalAttackDamage(damage, type);
         }
         #endregion ISkill Caster
     }

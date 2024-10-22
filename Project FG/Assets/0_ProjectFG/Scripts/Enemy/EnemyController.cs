@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster
+public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable, IKnockbackable, ISkillCaster, IPutrefaction
 {
     private FSM<EnemyController> m_fsm;
     private CapsuleCollider m_capsule;
@@ -120,12 +120,14 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_damageable.UpdateHealthEvent.AddListener(UpdateHealth);
         m_damageable.DamageEvent.AddListener(OnDamage);
         m_damageable.DieEvent.AddListener(Die);
+        m_damageable.DieEvent.AddListener(OnPutrefaction);
     }
     protected virtual void OnDisableInit()
     {
         m_damageable.UpdateHealthEvent.RemoveListener(UpdateHealth);
         m_damageable.DamageEvent.RemoveListener(OnDamage);
         m_damageable.DieEvent.RemoveListener(Die);
+        m_damageable.DieEvent.RemoveListener(OnPutrefaction);
     }
 
     protected virtual void AwakeInit()
@@ -659,9 +661,31 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         m_skillTimer = timer;
     }
-    public float FinalDamage(float damage)
+    public float FinalDamage(float damage, DamageType type )
     {
-        return m_buffHandler.Status.FinalAttackDamage(damage);
+        return m_buffHandler.Status.FinalAttackDamage(damage, type);
+    }
+    #endregion
+
+    #region IPutrefaction
+    public void AddPuterefaction(Putrefaction putrefaction)
+    {
+        m_buffHandler.Status.AddPutrefactionBuff(putrefaction);
+    }
+    public void RemovePuterefaction(Putrefaction putrefaction)
+    {
+        m_buffHandler.Status.RemovePutrefactionBuff(putrefaction);
+    }
+    // 사망 시 부패가 있으면 부패 폭발을 한다.
+    public void OnPutrefaction()
+    {
+        m_buffHandler.Status.OnPutrefactionTransition();
+    }
+
+    // 전이된 부패는 예약해서 제거한다.
+    public void SetPutrefactionOver(Putrefaction putrefaction)
+    {
+        Invoke(nameof(putrefaction.PutrefactionOver), putrefaction.Duration);
     }
     #endregion
 

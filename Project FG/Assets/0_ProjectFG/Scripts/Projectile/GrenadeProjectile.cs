@@ -70,7 +70,7 @@ namespace JH
                 if (colls[i].CompareTag(m_skill.Data.SkillTarget.ToString()))
                 {
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
-                        damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage));
+                        damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage, DamageType.Default));
 
                     if (colls[i].TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
                         OnBuff(colls[i].transform);

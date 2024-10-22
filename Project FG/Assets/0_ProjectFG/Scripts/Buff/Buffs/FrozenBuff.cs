@@ -53,7 +53,7 @@ namespace JH
         {
             base.StackUpBuff(handler);
             if (handler.TryGetComponent<IDamageable>(out IDamageable damageable))
-                damageable.OnDamage(FinalDamage(m_dotDamage), Color.cyan);
+                damageable.OnDamage(FinalDamage(m_dotDamage, DamageType.Attribute), Color.cyan);
         }
 
 

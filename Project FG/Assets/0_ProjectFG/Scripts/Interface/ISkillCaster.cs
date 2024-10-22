@@ -13,7 +13,7 @@ namespace JH
         public Transform Model { get; }
         public GameObject GameObject { get; }
         public List<SkillBase> Skills { get; }
-        public float FinalDamage(float damage);
+        public float FinalDamage(float damage, DamageType type);
 	}
 
     

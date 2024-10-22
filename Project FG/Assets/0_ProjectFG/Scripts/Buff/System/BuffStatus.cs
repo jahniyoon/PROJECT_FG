@@ -11,6 +11,7 @@ namespace JH
 
         [Header("주는 데미지")]
         [SerializeField] private float m_attackDamageIncrease = 0;   // 주는 데미지 증가
+        [SerializeField] private float m_attributeDamageIncrease = 0;   // 주는 속성 데미지 증가
 
 
         [Header("냉기")]
@@ -30,6 +31,10 @@ namespace JH
         [SerializeField] private bool m_isBurn;
         private Dictionary<BurnBuff, float> m_burnBuffs = new Dictionary<BurnBuff, float>();
 
+        [Header("부패")]
+        [SerializeField] private bool m_isPutrefaction;
+        private List<Putrefaction> m_putrefactions = new List<Putrefaction>();
+
 
         [Header("힐")]
         [SerializeField] private bool m_isHeal;
@@ -45,6 +50,7 @@ namespace JH
         #region Property
         public bool IsStun => m_stunTimer > 0;
         public bool IsBurn => m_isBurn;
+        public bool IsPutrefaction => m_isBurn;
         public bool IsFrozen => m_isFrozen;
         #endregion
 
@@ -64,7 +70,7 @@ namespace JH
         {
             m_attackDamageIncrease += attackDamageIncrease;
         }
-        public float FinalAttackDamage(float damage)
+        public float FinalAttackDamage(float damage, DamageType type)
         {
             return damage * (100 - m_attackDamageIncrease) * 0.01f;
         }
@@ -166,6 +172,47 @@ namespace JH
 
         #endregion
 
+        #region Putrefaction
+        public void AddPutrefactionBuff(Putrefaction putrrefaction)
+        {
+            if (m_putrefactions.Contains(putrrefaction)) return;
+            m_putrefactions.Add(putrrefaction);
+        }
+        public void RemovePutrefactionBuff(Putrefaction putrrefaction)
+        {
+            if (m_putrefactions.Contains(putrrefaction))
+                m_putrefactions.Remove(putrrefaction);
+        }
+        // 부패가 전이
+        public void OnPutrefactionTransition()
+        {
+            for(int i = 0; i < m_putrefactions.Count; i++)
+            {
+                m_putrefactions[i].OnPutrefactionTransition(m_handler);
+            }
+        }
+        private void PutrefactionBuffUpdate(float deltaTime)
+        {
+            m_isPutrefaction = 0 < m_putrefactions.Count;
+
+            if (m_isPutrefaction == false)
+                return;
+
+            for (int i = 0; i < m_putrefactions.Count; i++)
+            {
+                m_putrefactions[i].Tick(deltaTime);
+
+                // 데미지를 줄 수 있으면
+                if (m_putrefactions[i].CanPutrefactionDamage)
+                    m_putrefactions[i].OnPutrefactionDamage(m_handler);
+
+                // 지속시간이 끝났으면 제거
+                if (m_putrefactions[i].isPutrefactionOver)
+                    RemovePutrefactionBuff(m_putrefactions[i]);
+            }
+        }
+        #endregion
+
         #region Heal
         public void AddHealBuff(HealBuff healBuff)
         {
@@ -242,6 +289,7 @@ namespace JH
             FrozenUpdate(deltaTime);
             HealBuffUpdate(deltaTime);
             BurnBuffUpdate(deltaTime);
+            PutrefactionBuffUpdate(deltaTime);
         }
     }
 }

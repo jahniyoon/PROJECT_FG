@@ -79,7 +79,7 @@ namespace JH
                         continue;
 
                     if (colls[i].TryGetComponent<IDamageable>(out IDamageable damageable))
-                        damageable.OnDamage(m_skill.Caster.FinalDamage(damage));
+                        damageable.OnDamage(m_skill.Caster.FinalDamage(damage, DamageType.Default));
 
                    OnBuff(colls[i].transform);
                    RemoveBuff(colls[i].transform);

@@ -165,11 +165,11 @@ namespace JH
             return Value2[value];
         }
 
-        public float FinalDamage(float damage)
+        public float FinalDamage(float damage, DamageType type)
         {
             if (m_skillCaster == null)
                 return damage;
-            return m_skillCaster.FinalDamage(damage);
+            return m_skillCaster.FinalDamage(damage, type);
         }
     }
 }

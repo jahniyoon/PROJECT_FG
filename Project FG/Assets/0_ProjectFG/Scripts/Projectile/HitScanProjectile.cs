@@ -65,7 +65,7 @@ namespace JH
 
                     if (hit.transform.TryGetComponent<IDamageable>(out IDamageable damageable))
                     {
-                        damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage));
+                        damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage, DamageType.Default));
 
                         OnBuff(hit.transform);
                         RemoveBuff(hit.transform);
