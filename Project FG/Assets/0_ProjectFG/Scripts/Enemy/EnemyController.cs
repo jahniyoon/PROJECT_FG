@@ -249,7 +249,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
     {
         return curSpeed * (100 - m_slowDebuff) * 0.01f;
     }
-    public void SetSlowSpeed(float value)
+    public void SetMoveSpeed(float value)
     {
         m_slowDebuff += value;
         m_agent.speed = FinalSpeed(m_data.MoveSpeed);
@@ -645,7 +645,7 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         return null;
     }
 
-
+    #region ISkillCaster
     public virtual bool CanActiveSkill()
     {
         if (m_state != FSMState.Attack)
@@ -654,6 +654,17 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         return true;
     }
 
+    // 스킬 타이머동안 움직이지 못함
+    public void UpdateSkillTimer(float timer)
+    {
+        m_skillTimer = timer;
+    }
+    public float FinalDamage(float damage)
+    {
+        return m_buffHandler.Status.FinalAttackDamage(damage);
+    }
+    #endregion
+
     #region MOVE STATE
     // 이동 상태 업데이트
     protected void SetMoveState(EnemyMoveState nextState)
@@ -661,11 +672,6 @@ public partial class EnemyController : MonoBehaviour, IPredationable, ISlowable,
         m_moveState = nextState;
     }
 
-    // 스킬 타이머동안 움직이지 못함
-    public void UpdateSkillTimer(float timer)
-    {
-        m_skillTimer = timer;
-    }
 
     // 이동 위치를 정해준다.
     protected void SetMoveDestination(Vector3 destination)

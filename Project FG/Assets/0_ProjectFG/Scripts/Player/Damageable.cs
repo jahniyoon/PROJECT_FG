@@ -14,6 +14,8 @@ namespace JH
         [SerializeField] private bool m_isDie;
 
         [SerializeField] private bool m_invincible;
+        [Header("Buff")]
+        [SerializeField] private float m_HitdamageIncrease;   // 피해 증가
         [SerializeField] private float m_HitdamageDecrease;   // 피해 감소
         [SerializeField] private Color m_damageEffectColor = Color.white;
         [SerializeField] private bool m_execution;
@@ -112,9 +114,9 @@ namespace JH
         // 최종데미지
         private float FinalDamage(float damage)
         {
-            float finalDamage = damage * (100 - m_HitdamageDecrease) * 0.01f;
+            float finalDamage = damage * (100 - (m_HitdamageIncrease + m_HitdamageDecrease)) * 0.01f;
 
-            return finalDamage;
+            return Mathf.FloorToInt(finalDamage);
         }
         public void Die()
         {
@@ -134,15 +136,22 @@ namespace JH
 
         }
 
-        public void InvincibleMode()
+        public void SetInvincible(bool enable)
+        {
+            m_invincible = enable;
+        }
+        public void SwitchInvincible()
         {
             m_invincible = !m_invincible;
         }
 
-        public void SetDamageReduction(float value)
+        public void SetHitDamageDecrease(float value)
         {
             m_HitdamageDecrease += value;
         }
-
+        public void SetHitDamageIncrease(float value)
+        {
+            m_HitdamageIncrease += value;
+        }
     }
 }

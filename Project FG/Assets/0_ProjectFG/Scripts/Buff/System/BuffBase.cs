@@ -9,6 +9,9 @@ namespace JH
     {
         [SerializeField] protected BuffData m_data;
         protected BuffStatus m_status = new BuffStatus();
+        protected Transform m_caster;
+        protected ISkillCaster m_skillCaster;
+
         public BuffStatus Status
         {
             get
@@ -33,7 +36,7 @@ namespace JH
         public float[] BuffValue;
         public float[] Value1;
         public float[] Value2;
-        protected Transform Caster;
+        public Transform Caster => m_caster;
 
 
         public BuffBase(BuffData data)
@@ -44,9 +47,10 @@ namespace JH
 
         // 버프를 사용하는 캐스터를 세팅한다.
         // 넉백같은 경우 위치를 스스로가 체크해야하기 때문에 각자 캐스터가 필요
-        public void SetCaster(Transform caster)
+        public void SetCaster(ISkillCaster skill, Transform caster)
         {
-            Caster = caster;
+            m_skillCaster = skill;
+            m_caster = caster;
         }
 
         // 버프 활성화가 가능한지 체크하는 조건식
@@ -159,6 +163,13 @@ namespace JH
                 return Value2[Value2.Length - 1];
 
             return Value2[value];
+        }
+
+        public float FinalDamage(float damage)
+        {
+            if (m_skillCaster == null)
+                return damage;
+            return m_skillCaster.FinalDamage(damage);
         }
     }
 }

@@ -6,12 +6,16 @@ using static UnityEngine.Rendering.DebugUI;
 
 namespace JH
 {
-    // 데미지 무시 관련 버프
-    public class DamageReductionBuff : BuffBase
+    // 받는 데미지 증가
+    public class HitDamageDecrease : BuffBase
 	{
-        public DamageReductionBuff(BuffData data) : base(data) 
+        public HitDamageDecrease(BuffData data) : base(data) 
         {           
             m_data = data;
+        }
+        public override float GetDuration()
+        {
+            return GetBuffValue(1); // 지속 시간
         }
 
         public override void ActiveBuff(BuffHandler handler)

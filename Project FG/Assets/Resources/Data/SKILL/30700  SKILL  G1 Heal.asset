@@ -34,8 +34,8 @@ MonoBehaviour:
     Count: 1
     BuffValues:
     - Values:
-      - 1
       - 10
+      - 1
     Value1:
     - 5
     - 10

@@ -166,7 +166,7 @@ namespace JH
             {
                 if (hit.transform.TryGetComponent<IDamageable>(out IDamageable damageable))
                 {
-                    damageable.OnDamage(LevelData.Damage);                    
+                    damageable.OnDamage(Caster.FinalDamage(LevelData.Damage));                    
                     //m_trailEffect?.OnTrail(transform.position, hit.point);
                 }
             }

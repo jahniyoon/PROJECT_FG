@@ -172,7 +172,7 @@ namespace JH
 
         public void GodMode()
         {
-            m_damageable.InvincibleMode();
+            m_damageable.SwitchInvincible();
         }
         public void GetDefaultFoodPower()
         {
@@ -258,6 +258,10 @@ namespace JH
         public void UpdateSkillTimer(float timer)
         {
             m_skillTimer = timer;
+        }
+        public float FinalDamage(float damage)
+        {
+            return Status.FinalAttackDamage(damage);
         }
         #endregion ISkill Caster
     }

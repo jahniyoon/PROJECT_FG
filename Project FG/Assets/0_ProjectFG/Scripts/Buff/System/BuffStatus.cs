@@ -8,27 +8,31 @@ namespace JH
     public class BuffStatus
     {
         private BuffHandler m_handler;
-        [Header("상태이상 관련 버프")]
-        [SerializeField] private float m_stunTimer = 0;
+
+        [Header("주는 데미지")]
+        [SerializeField] private float m_attackDamageIncrease = 0;   // 주는 데미지 증가
 
 
-        [Header("냉기 상태이상")]
+        [Header("냉기")]
         [SerializeField] private bool m_hasFrozenBuff;
         [SerializeField] private float m_frozenTimer = 0;   // 프로즌 타이머
         [SerializeField] private int m_frozenCurStack = 0;   // 동결 스택
         [SerializeField] private float m_frozenStackTimer = 0;   // 프로즌 타이머
         private FrozenBuff m_frozenBuff;
 
-        [Header("냉기 버프 데이터")]
+        [Header("냉기 데이터")]
         private int m_frozenStack = 0;   // 동결 스택
         private float m_frozenStackUpCoolDown = 0;   // 냉기 데미지 쿨타임
         private float m_frozenStackDownCoolDown = 0;   // 냉기 데미지 쿨타임
 
 
-        [Header("힐 버프")]
+        [Header("힐")]
         [SerializeField] private bool m_hasHealBuff;
         private Dictionary<HealBuff, float> m_healBuffs = new Dictionary<HealBuff, float>();
 
+
+        [Header("스턴")]
+        [SerializeField] private float m_stunTimer = 0;
 
         #region Property
         public float StunTimer => m_stunTimer;         // 이동속도
@@ -46,6 +50,18 @@ namespace JH
         {
             return IsStun || IsFrozen;
         }
+
+        #region AttackDamage
+        public void SetAttackDamage(float attackDamageIncrease)
+        {
+            m_attackDamageIncrease += attackDamageIncrease;
+        }
+        public float FinalAttackDamage(float damage)
+        {
+            return damage * (100 - m_attackDamageIncrease) * 0.01f;
+        }
+
+        #endregion
 
         #region Frozen
 

@@ -123,7 +123,7 @@ namespace JH
         {
             return curSpeed * (100 - m_slowDebuff) * 0.01f;
         }
-        public void SetSlowSpeed(float value)
+        public void SetMoveSpeed(float value)
         {
             m_slowDebuff += value;
         }

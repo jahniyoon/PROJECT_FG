@@ -29,13 +29,26 @@ namespace JH
                     return buff = new KnockbackBuff(data);
 
                 case BuffType.HitDamageDecrease:
-                        return buff = new DamageReductionBuff(data);
+                        return buff = new HitDamageDecrease(data);
+
+                case BuffType.HitDamageIncrease:
+                    return buff = new HitDamageIncrease(data);
+
+                case BuffType.AttackDamageIncrease:
+                    return buff = new AttackDamageIncrease(data);
+
+                case BuffType.AttackDamageDecrease:
+                    return buff = new AttackDamageDecrease(data);
 
                 case BuffType.SlowSpeed:
                     return buff = new SlowDebuff(data);
 
+                case BuffType.FastSpeed:
+                    return buff = new FastSpeedBuff(data);
+
                 case BuffType.PredationreStun:
                     return buff = new StunBuff(data);
+
 
 
                 default:

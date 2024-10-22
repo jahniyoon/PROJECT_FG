@@ -825,7 +825,7 @@ MonoBehaviour:
       - ColumnID: BuffID
         Value: 80410
       - ColumnID: BuffValue
-        Value: '[1, 10]'
+        Value: '[10, 1]'
       - ColumnID: Value1
         Value: 5, 10
       - ColumnID: Value2

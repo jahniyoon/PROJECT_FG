@@ -64,7 +64,7 @@ namespace JH
                 if (buff == null)
                     continue;
 
-                buff.SetCaster(transform);
+                buff.SetCaster(skill.Caster, transform);
                 buff.SetBuffValue(m_skill.LevelData.TryGetBuffValues(i));
                 m_buffs.Add(buff);
             }

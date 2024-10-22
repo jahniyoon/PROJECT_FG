@@ -84,7 +84,7 @@ namespace JH
                     continue;
 
                 if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
-                    damageable.OnDamage(LevelData.Damage);
+                    damageable.OnDamage(Caster.FinalDamage(LevelData.Damage));
 
                 if (colls[i].TryGetComponent<BuffHandler>(out BuffHandler buffHandler))
                     buffHandler.OnBuff(Caster.GameObject, Buffs[1]);

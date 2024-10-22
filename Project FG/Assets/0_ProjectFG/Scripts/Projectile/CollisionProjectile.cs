@@ -44,7 +44,7 @@ namespace JH
 
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
                     {
-                        damageable.OnDamage(m_skill.LevelData.Damage);
+                        damageable.OnDamage(m_skill.Caster.FinalDamage(m_skill.LevelData.Damage));
                     }
 
 

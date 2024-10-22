@@ -23,13 +23,13 @@ namespace JH
         public override void SetBuffValue(float[] values)
         {
             base.SetBuffValue(values);
-            m_duration = GetBuffValue();
-            m_healValue = GetBuffValue(1);
+            m_healValue = GetBuffValue(0);
+            m_duration = GetBuffValue(1);
         }
 
         public override BuffBase ComparisonBuff(BuffBase otherBuff)
         {
-            m_healValue = Mathf.Max(this.GetBuffValue(1), otherBuff.GetBuffValue(1));
+            m_healValue = Mathf.Max(this.GetBuffValue(0), otherBuff.GetBuffValue(0));
             return this;
         }
 
@@ -47,7 +47,7 @@ namespace JH
         {
             base.InactiveBuff(handler);
             handler.Status.RemoveHealBuff(this);
-            m_healValue = GetBuffValue(1);
+            m_healValue = GetBuffValue(0);
 
         }
 

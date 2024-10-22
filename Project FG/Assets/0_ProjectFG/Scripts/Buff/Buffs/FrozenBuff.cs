@@ -53,7 +53,7 @@ namespace JH
         {
             base.StackUpBuff(handler);
             if (handler.TryGetComponent<IDamageable>(out IDamageable damageable))
-                damageable.OnDamage(m_dotDamage, Color.cyan);
+                damageable.OnDamage(FinalDamage(m_dotDamage), Color.cyan);
         }
 
 
@@ -64,7 +64,7 @@ namespace JH
             handler.Status.SetFrozen(m_stackUpCoolDown, m_stack, m_stackDownCoolDown);
 
             if (handler.TryGetComponent<ISlowable>(out ISlowable slowable))
-                slowable.SetSlowSpeed(m_slowSpeed);
+                slowable.SetMoveSpeed(m_slowSpeed);
         }
 
         public override void InactiveBuff(BuffHandler handler)
@@ -75,7 +75,7 @@ namespace JH
 
 
             if (handler.TryGetComponent<ISlowable>(out ISlowable slowable))
-                slowable.SetSlowSpeed(m_slowSpeed * -1);
+                slowable.SetMoveSpeed(m_slowSpeed * -1);
 
 
             m_slowSpeed = GetBuffValue();

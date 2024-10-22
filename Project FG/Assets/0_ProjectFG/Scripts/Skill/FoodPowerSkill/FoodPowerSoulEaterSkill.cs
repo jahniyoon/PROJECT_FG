@@ -78,7 +78,7 @@ namespace JH
 
 
                     if (colls[i].TryGetComponent<Damageable>(out Damageable damageable))
-                        damageable.OnDamage(LevelData.Damage);
+                        damageable.OnDamage(Caster.FinalDamage(LevelData.Damage));
 
 
                     // 버프도 같이 보낸다.

@@ -7,6 +7,6 @@ namespace JH
 	public interface ISlowable
 	{
         public float FinalSpeed(float speed);
-        public void SetSlowSpeed(float speed);
+        public void SetMoveSpeed(float speed);
 	}
 }

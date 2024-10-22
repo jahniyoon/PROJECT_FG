@@ -19,7 +19,7 @@ namespace JH
         {
             base.ActiveBuff(handler);
             if (handler.TryGetComponent<ISlowable>(out ISlowable slowable))
-                slowable.SetSlowSpeed(GetBuffValue());
+                slowable.SetMoveSpeed(GetBuffValue());
         }
 
 
@@ -29,7 +29,7 @@ namespace JH
         {
             base.InactiveBuff(handler);
             if (handler.TryGetComponent<ISlowable>(out ISlowable slowable))
-                slowable.SetSlowSpeed(GetBuffValue() * -1);
+                slowable.SetMoveSpeed(GetBuffValue() * -1);
         }
 
 

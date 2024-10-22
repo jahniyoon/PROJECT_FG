@@ -106,7 +106,7 @@ namespace JH
                 BuffBase buff = GFunc.TryGetBuff(Data.BuffID[i]);
                 if (buff == null) continue;
 
-                buff.SetCaster(Caster.Transform);
+                buff.SetCaster(m_skillCaster, Caster.Transform);
                 buff.SetBuffValue(LevelData.TryGetBuffValues(i));
                 m_buffs.Add(buff);
             }

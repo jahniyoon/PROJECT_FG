@@ -13,8 +13,10 @@ namespace JH
     {
         [Header("버프 상태")]
         [SerializeField] private BuffStatus m_status;
+
         [Header("영향을 받고있는 버프 리스트")]
         [SerializeField] private BuffElementList m_buffs = new BuffElementList();   // 영향받고있는 버프 리스트
+
         [Header("하나만 적용되어야하는 버프 리스트")]
         [SerializeField] private BuffElementList m_overlapBuffs = new BuffElementList();    // 중첩이되어 계산이 필요한 버프들
 
@@ -155,7 +157,7 @@ namespace JH
             foreach (var targetBuff in m_buffs.BuffList)
             {
                 // 오버랩할 필요가 없으면 바로 실행
-                if(targetBuff.Buff.Data.OverlapType != BuffOverlap.SameTypeHighValue)
+                if (targetBuff.Buff.Data.OverlapType != BuffOverlap.SameTypeHighValue)
                 {
                     ActiveBuff(targetBuff);
                     continue;
@@ -167,9 +169,9 @@ namespace JH
                     OverlapBuff(overlapBuff, targetBuff);
 
                 // 없으면 추가한다.
-                else                
-                AddOverlapBuff(targetBuff);
-                
+                else
+                    AddOverlapBuff(targetBuff);
+
             }
         }
 
@@ -224,7 +226,7 @@ namespace JH
             return m_overlapBuffs.Contains(target.CasterID);
         }
 
- 
+
 
 
         // 버프들은 상태 이상에 수정할 정보를 전달해준다.
@@ -256,6 +258,11 @@ namespace JH
             for (int i = m_buffs.BuffList.Count - 1; 0 <= i; i--)
             {
                 RemoveBuff(m_buffs.BuffList[i].CasterID, m_buffs.BuffList[i].Buff);
+            }
+
+            for (int i = 0; i < m_overlapBuffs.Count; i++)
+            {
+                RemoveBuff(m_overlapBuffs.BuffList[i].CasterID, m_overlapBuffs.BuffList[i].Buff);
             }
         }
 
